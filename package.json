@@ -58,7 +58,7 @@
   },
   "globs": {
     "distCss": [
-      "./build/css/*.css",
+      "./build/css/tailwind/*.css",
       "./src/css/site.css"
     ],
     "img": [
