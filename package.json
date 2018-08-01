@@ -1,0 +1,144 @@
+{
+  "name": "oakland",
+  "version": "1.0.0",
+  "description": "Website for oaklandca.gov",
+  "main": "gulpfile.js",
+  "author": "Christopher Kennedy, onebrightlight <chris@onebrightlight.com>",
+  "copyright": "onebrightlight",
+  "license": "UNLICENSED",
+  "private": true,
+  "paths": {
+    "src": {
+      "base": "./src/",
+      "css": "./src/css/",
+      "fonts": "./src/fonts/",
+      "img": "./src/img/",
+      "json": "./src/json/",
+      "js": "./src/js/",
+      "scss": "./src/scss/"
+    },
+    "dist": {
+      "base": "./web/",
+      "css": "./web/assets/css/",
+      "js": "./web/assets/js/",
+      "fonts": "./web/assets/fonts/",
+      "img": "./web/assets/img/"
+    },
+    "build": {
+      "base": "./build/",
+      "css": "./build/css/",
+      "fonts": "./build/fonts/",
+      "js": "./build/js/",
+      "html": "./build/html/",
+      "img": "./build/img/"
+    },
+    "favicon": {
+      "src": "./src/img/favicon.png",
+      "dest": "./web/img/site/",
+      "path": "/img/site/"
+    },
+    "tailwindcss": {
+      "src": "./src/css/tailwind.css",
+      "build": "./build/css/tailwind/",
+      "conf": "./tailwind.js"
+    },
+    "scss": [],
+    "craftConfig": "./config/",
+    "templates": "./templates/"
+  },
+  "urls": {
+    "live": "https://oaklandca.gov/",
+    "local": "https://oaklandca.test/",
+    "critical": "https://oaklandca.test/"
+  },
+  "vars": {
+    "siteCssName": "site.combined.min.css",
+    "scssName": "style.scss",
+    "cssName": "style.css"
+  },
+  "globs": {
+    "distCss": [
+      "./build/css/*.css",
+      "./src/css/site.css"
+    ],
+    "img": [
+      "./web/img/"
+    ],
+    "components": [],
+    "fonts": [
+      "./src/fonts/*.{eot,ttf,woff,woff2}"
+    ],
+    "purgecss": [
+      "./templates/**/*.{html,twig}"
+    ],
+    "purgecssWhitelist": [],
+    "critical": [
+      {
+        "url": "",
+        "template": "index"
+      },
+      {
+        "url": "offline",
+        "template": "offline"
+      },
+      {
+        "url": "error",
+        "template": "error"
+      },
+      {
+        "url": "503",
+        "template": "503"
+      },
+      {
+        "url": "404",
+        "template": "404"
+      }
+    ],
+    "criticalWhitelist": [],
+    "download": [
+      {
+        "url": "https://www.google-analytics.com/analytics.js",
+        "dest": "./web/js/"
+      }
+    ],
+    "distJs": [
+      "./build/js/*.js"
+    ],
+    "babelJs": [
+      "./src/js/*.js"
+    ],
+    "inlineJs": [],
+    "siteIcon": "./web/img/site/favicon.*"
+  },
+  "devDependencies": {
+    "autoprefixer": "^8.6.3",
+    "babel-core": "^6.26.3",
+    "babel-preset-es2015": "^6.24.1",
+    "chalk": "^2.4.1",
+    "fancy-log": "^1.3.2",
+    "git-rev-sync": "^1.12.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-download": "^0.0.1",
+    "gulp-filter": "^5.1.0",
+    "gulp-header": "^2.0.5",
+    "gulp-if": "^2.0.2",
+    "gulp-livereload": "^3.8.1",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-newer": "^1.4.0",
+    "gulp-plumber": "^1.2.0",
+    "gulp-postcss": "^7.0.1",
+    "gulp-print": "^2.0.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-size": "^3.0.0",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-uglify": "^3.0.1",
+    "moment": "^2.22.2",
+    "postcss-easy-import": "^3.0.0",
+    "postcss-preset-env": "^5.1.0",
+    "tailwindcss": "^0.6.0"
+  },
+  "dependencies": {
+    "hover.css": "^2.3.2"
+  }
+}
