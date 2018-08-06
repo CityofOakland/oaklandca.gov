@@ -1,3 +1,11 @@
-<div class="container mx-auto text-sm pt-4 pb-3 pl-8 border-white border-l-2 text-white">
-  <a class="text-cararra" href="#">Oakland</a> → <a class="text-cararra" href="#">Officials</a> → <span class="font-bold">City Attorney</span>
+{% if whiteBg is defined %}
+  {% set linkColor = 'astronaut' %}
+  {% set barColor = 'shark' %}
+{% else %}
+  {% set linkColor = 'cararra' %}
+  {% set barColor = 'white' %}
+{% endif %}
+
+<div class="container mx-auto text-sm pt-4 pb-3 pl-8 border-{{ barColor }} border-l-2 text-{{ barColor }}">
+  <a class="text-{{ linkColor }}" href="#">Oakland</a> → <a class="text-{{ linkColor }}" href="#">Officials</a> → <span class="font-bold">City Attorney</span>
 </div>
