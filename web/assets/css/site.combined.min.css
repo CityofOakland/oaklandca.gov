@@ -18308,6 +18308,7 @@ a:hover {
 @media (min-width: 576px) {
   .horizontal-card {
     grid-template-columns: 1fr 1.5fr;
+    grid-gap: 48px;
   }
 }
 
