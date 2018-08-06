@@ -1,7 +1,7 @@
 <section class="container mx-auto p-8">
-  <h2 class="my-0">Horizontal Cards</h2>
-  {% for item in 0 .. 9 %}
-    <article class="py-8 sm:py-16 horizontal-card{% if not loop.last %} border-celeste border-b{% endif %}">
+  <h2 class="mb-0">Horizontal Cards</h2>
+  {% for item in 0 .. 4 %}
+    <article class="py-8 sm:py-16 horizontal-card{% if not loop.last %} border-celeste border-b-2{% endif %}">
       <figure>
         <img src="https://placeimg.com/640/480/any/{{ item }}" class="block">
       </figure>
@@ -18,4 +18,15 @@
       </div>
     </article>
   {% endfor %}
+  <div class="py-8 border-celeste border-t-2">
+    <ul class="list-reset flex max-w-sm justify-between">
+      <li><a href="#">First</a></li>
+      <li><a href="#">Prev</a></li>
+      <li class="text-camouflage-green">2</li>
+      <li><a href="#">3</a></li>
+      <li><a href="#">4</a></li>
+      <li><a href="#">Next</a></li>
+      <li><a href="#">Last</a></li>
+    </ul>
+  </div>
 </section>
