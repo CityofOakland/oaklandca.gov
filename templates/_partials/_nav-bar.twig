@@ -1,4 +1,23 @@
-<div class="bg-transparent text-white fixed w-full z-50 trans trans-fast" id="nav-bar">
+{% if not craft.app.request.segments() %}
+  {% set bgColor = 'bg-transparent' %}
+  {% js %}
+    window.onscroll = function changeClass(){
+      var navBar = document.getElementById('nav-bar');
+      var scrollPosY = window.pageYOffset | document.body.scrollTop;
+      if(scrollPosY > 1) {
+        navBar.classList.add('bg-shark');
+        navBar.classList.remove('bg-transparent');
+      } else if(scrollPosY <= 100) {
+        navBar.classList.add('bg-transparent');
+        navBar.classList.remove('bg-shark');
+      }
+    }
+  {% endjs %}
+{% else %}
+  {% set bgColor = 'bg-shark' %}
+{% endif %}
+
+<div class="{{ bgColor }} text-white fixed w-full z-50 trans trans-fast" id="nav-bar">
   <div class="container mx-auto">
     <nav class="flex items-center justify-between">
       <div>
@@ -17,27 +36,3 @@
     </nav>
   </div>
 </div>
-{% js %}
-window.onscroll = function changeClass(){
-  var navBar = document.getElementById('nav-bar');
-  var scrollPosY = window.pageYOffset | document.body.scrollTop;
-  if(scrollPosY > 1) {
-    navBar.classList.add('bg-shark');
-    navBar.classList.remove('bg-transparent');
-  } else if(scrollPosY <= 100) {
-    navBar.classList.add('bg-transparent');
-    navBar.classList.remove('bg-shark');
-  }
-}
-
-{# var navButton = document.getElementById('nav-menu-button');
-var menuNav = document.getElementById('menu-nav');
-var body = document.getElementById('page-body');
-
-navButton.addEventListener('click', function(e) {
-  e.preventDefault();
-  e.target.classList.toggle('nav-button-active');
-  menuNav.classList.toggle('menu-nav-hidden');
-  body.classList.toggle('no-scroll');
-}); #}
-{% endjs %}
