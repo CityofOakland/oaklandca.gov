@@ -11,6 +11,46 @@
  */
 @tailwind preflight;
 
+body {
+  @apply font-sans text-lg leading-normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-light leading-none;
+}
+
+h2 {
+  @apply text-4xl my-8;
+}
+
+h3 {
+  @apply text-3xl my-6;
+}
+
+h4 {
+  @apply text-2xl my-6;
+}
+
+ol,
+ul,
+dl,
+p {
+  @apply my-4;
+}
+
+a {
+  @apply no-underline text-curious-blue trans trans-fast;
+}
+
+a:hover {
+  @apply text-astronaut;
+}
+
 /**
  * This injects any component classes registered by plugins.
  *
@@ -36,6 +76,34 @@
  * @import "components/forms";
  */
 
+ .logo {
+   fill: #ffffff;
+ }
+
+ .btn {
+   @apply inline-block bg-astronaut py-4 px-8 text-white no-underline trans trans-fast;
+ }
+
+ .btn:hover {
+   @apply underline;
+ }
+
+ .btn-bright {
+   @apply bg-apple;
+ }
+
+ .btn-bright:hover {
+   @apply bg-parsley;
+ }
+
+ .card-grid-button {
+   @apply bg-white border-l-4 text-shark no-underline text-xl border-apple p-8 trans trans-fast;
+ }
+
+ .card-grid-button:hover {
+   @apply bg-apple underline text-white;
+ }
+
 /**
  * This injects all of Tailwind's utility classes, generated based on your
  * config file.
@@ -60,3 +128,53 @@
  * @import "utilities/background-patterns";
  * @import "utilities/skew-transforms";
  */
+
+/* Object Fit */
+
+.object-fit-cover {
+  z-index: -1;
+  object-fit: cover;
+}
+
+/* Transition Helpers */
+/* Default */
+.trans {
+  transition-duration: .25s;
+  transition-property: all;
+  transition-timing-function: ease-in-out;
+}
+
+/* Delays */
+.trans-delay-slow  { transition-delay: 1s; }
+.trans-delay       { transition-delay: .5s; }
+.trans-delay-fast  { transition-delay: .25s; }
+
+/* Duration */
+.trans-slower      { transition-duration: .75s; }
+.trans-slow        { transition-duration: .5s; }
+.trans-regular     { transition-duration: .25s; }
+.trans-fast        { transition-duration: .15s; }
+.trans-faster      { transition-duration: .075s; }
+
+/* Properties */
+.trans-all         { transition-property: all; }
+.trans-none        { transition-property: none; }
+.trans-bg          { transition-property: background; }
+.trans-opacity     { transition-property: opacity; }
+.trans-color       { transition-property: color; }
+.trans-shadow      { transition-property: box-shadow; }
+.trans-height      { transition-property: height; }
+
+/* Timing Function */
+.trans-linear      { transition-timing-function: linear; }
+.trans-ease        { transition-timing-function: ease; }
+.trans-ease-in     { transition-timing-function: ease-in; }
+.trans-ease-out    { transition-timing-function: ease-out; }
+.trans-ease-in-out { transition-timing-function: ease-in-out; }
+
+ /* Use this utility to hide text only meant for screen readers */
+ .hide-text {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}

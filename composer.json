@@ -5,17 +5,19 @@
     "nystudio107/craft-typogrify": "1.1.11",
     "solspace/craft3-calendar": "v2.0.5",
     "verbb/default-dashboard": "1.0.2",
-    "solspace/craft3-freeform": "v2.2.1",
-    "solspace/craft3-freeform-pro": "v2.2.1",
+    "solspace/craft3-freeform": "2.2.2",
+    "solspace/craft3-freeform-pro": "2.2.2",
     "superbig/craft-audit": "1.0.1",
     "verbb/workflow": "1.0.2",
-    "nystudio107/craft-seomatic": "3.1.6",
+    "nystudio107/craft-seomatic": "3.1.11",
     "mmikkel/cp-field-inspect": "1.0.4",
     "swixpop/locate": "2.0.1",
     "craftcms/store-hours": "2.1.0.1",
     "craftcms/redactor": "2.1.5",
     "verbb/redactor-tweaks": "2.0.2",
-    "dukt/analytics": "4.0.2"
+    "dukt/analytics": "4.0.2",
+    "aelvan/inlin": "v2.0.0",
+    "topshelfcraft/wordsmith": "3.0.2"
   },
   "autoload": {
     "psr-4": {

@@ -46,9 +46,11 @@ View the full documentation at https://tailwindcss.com.
 let colors = {
   "transparent": "transparent",
   "shark": "#212529",
+  "shark-transparent": "rgba(33, 37, 41, .33)",
   "tundora": "#404040",
   "celeste": "#cfd0ce",
   "cararra": "#e9eae7",
+  "white": "#ffffff",
   "apple": "#6db943",
   "camouflage-green": "#757773",
   "parsley": "#1e4a18",
@@ -123,6 +125,7 @@ module.exports = {
 
   fonts: {
     "sans": [
+      "Montserrat",
       "system-ui",
       "BlinkMacSystemFont",
       "-apple-system",
@@ -724,6 +727,9 @@ module.exports = {
 
   opacity: {
     "0": "0",
+    "3.125": ".03125",
+    "6.25": ".0625",
+    "12.5": ".125",
     "25": ".25",
     "50": ".5",
     "75": ".75",

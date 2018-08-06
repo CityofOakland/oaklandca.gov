@@ -4,8 +4,61 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "24fe0aaae8999a5951a9ea1457ba7d91",
+    "content-hash": "4e2d6146254735128a17554dd0b67e9d",
     "packages": [
+        {
+            "name": "aelvan/inlin",
+            "version": "2.0.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/aelvan/Inlin-Craft/zipball/0887d3c77b36b74002fba00e8261f1134dbe862b",
+                "reference": "0887d3c77b36b74002fba00e8261f1134dbe862b",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "~3.0.0-beta.23"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Inlin",
+                "handle": "inlin",
+                "schemaVersion": "2.0.0",
+                "hasCpSettings": false,
+                "hasCpSection": false,
+                "changelogUrl": "https://github.com/aelvan/Inlin-Craft/blob/craft3/CHANGELOG.md",
+                "class": "aelvan\\inlin\\Inlin"
+            },
+            "autoload": {
+                "psr-4": {
+                    "aelvan\\inlin\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "André Elvan",
+                    "homepage": "https://www.vaersaagod.no"
+                }
+            ],
+            "description": "A simple plugin for inlining stuff in your templates.",
+            "keywords": [
+                "cms",
+                "craft",
+                "craft-plugin",
+                "craftcms",
+                "criticalcss",
+                "inline",
+                "inlining",
+                "svg"
+            ],
+            "support": {
+                "docs": "https://github.com/aelvan/Inlin-Craft/blob/craft3/README.md",
+                "issues": "https://github.com/aelvan/Inlin-Craft/issues"
+            },
+            "time": "2017-08-09T22:00:10+00:00"
+        },
         {
             "name": "cebe/markdown",
             "version": "1.1.2",
@@ -1047,6 +1100,81 @@
             "time": "2018-07-19T17:21:27+00:00"
         },
         {
+            "name": "erusev/parsedown",
+            "version": "1.7.1",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/erusev/parsedown/zipball/92e9c27ba0e74b8b028b111d1b6f956a15c01fc1",
+                "reference": "92e9c27ba0e74b8b028b111d1b6f956a15c01fc1",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Parsedown": ""
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Emanuil Rusev",
+                    "email": "hello@erusev.com",
+                    "homepage": "http://erusev.com"
+                }
+            ],
+            "description": "Parser for Markdown.",
+            "homepage": "http://parsedown.org",
+            "keywords": [
+                "markdown",
+                "parser"
+            ],
+            "time": "2018-03-08T01:11:30+00:00"
+        },
+        {
+            "name": "erusev/parsedown-extra",
+            "version": "0.7.1",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/erusev/parsedown-extra/zipball/0db5cce7354e4b76f155d092ab5eb3981c21258c",
+                "reference": "0db5cce7354e4b76f155d092ab5eb3981c21258c",
+                "shasum": ""
+            },
+            "require": {
+                "erusev/parsedown": "~1.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "ParsedownExtra": ""
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Emanuil Rusev",
+                    "email": "hello@erusev.com",
+                    "homepage": "http://erusev.com"
+                }
+            ],
+            "description": "An extension of Parsedown that adds support for Markdown Extra.",
+            "homepage": "https://github.com/erusev/parsedown-extra",
+            "keywords": [
+                "markdown",
+                "markdown extra",
+                "parsedown",
+                "parser"
+            ],
+            "time": "2015-11-01T10:19:22+00:00"
+        },
+        {
             "name": "ezyang/htmlpurifier",
             "version": "v4.10.0",
             "dist": {
@@ -1497,6 +1625,52 @@
                 "youtube"
             ],
             "time": "2017-10-28T11:24:20+00:00"
+        },
+        {
+            "name": "icanboogie/inflector",
+            "version": "v1.4.4",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ICanBoogie/Inflector/zipball/a875d3c16215327e1a2555592b167ae2591c5c2f",
+                "reference": "a875d3c16215327e1a2555592b167ae2591c5c2f",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "php": ">=5.3.4"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "lib/"
+                ],
+                "files": [
+                    "lib/helpers.php"
+                ]
+            },
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Olivier Laviale",
+                    "email": "olivier.laviale@gmail.com",
+                    "homepage": "http://www.weirdog.com/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Multilingual inflector that transforms words from singular to plural, underscore to camel case, and more.",
+            "homepage": "http://icanboogie.org/",
+            "keywords": [
+                "camelize",
+                "hyphenate",
+                "inflect",
+                "multilingual",
+                "pluralize",
+                "singularize",
+                "underscore"
+            ],
+            "time": "2017-06-30T13:16:14+00:00"
         },
         {
             "name": "jasongrimes/paginator",
@@ -2037,6 +2211,36 @@
             "time": "2018-03-28T07:58:02+00:00"
         },
         {
+            "name": "mofodojodino/profanity-filter",
+            "version": "1.3.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mofodojodino/ProfanityFilter/zipball/529d24adcdb5b9507a4622db6aba6e54c5bb82a9",
+                "reference": "529d24adcdb5b9507a4622db6aba6e54c5bb82a9",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "": "src"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dean Tedesco",
+                    "email": "dino@tedesco.net.au"
+                }
+            ],
+            "description": "Filters out profanities from strings.",
+            "time": "2016-05-11T00:19:07+00:00"
+        },
+        {
             "name": "monolog/monolog",
             "version": "1.23.0",
             "dist": {
@@ -2187,11 +2391,11 @@
         },
         {
             "name": "nystudio107/craft-seomatic",
-            "version": "3.1.6",
+            "version": "3.1.11",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/0b0ec4965ebeb568983dedd555f5034cc350d1b8",
-                "reference": "0b0ec4965ebeb568983dedd555f5034cc350d1b8",
+                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/685ed77d010d4f708238e41a9c0e65b0e9dcaa98",
+                "reference": "685ed77d010d4f708238e41a9c0e65b0e9dcaa98",
                 "shasum": ""
             },
             "require": {
@@ -2256,7 +2460,7 @@
                 "docs": "https://github.com/nystudio107/craft-seomatic/blob/v3/README.md",
                 "issues": "https://github.com/nystudio107/craft-seomatic/issues"
             },
-            "time": "2018-07-25T18:25:05+00:00"
+            "time": "2018-08-06T01:09:43+00:00"
         },
         {
             "name": "nystudio107/craft-typogrify",
@@ -2938,11 +3142,11 @@
         },
         {
             "name": "solspace/craft3-freeform",
-            "version": "2.2.1",
+            "version": "2.2.2",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/solspace/craft3-freeform/zipball/a998d0388324c8ce2a396d622225bad7d442230c",
-                "reference": "a998d0388324c8ce2a396d622225bad7d442230c",
+                "url": "https://api.github.com/repos/solspace/craft3-freeform/zipball/758b6a27b15f709de203f4980c05426cb42c515c",
+                "reference": "758b6a27b15f709de203f4980c05426cb42c515c",
                 "shasum": ""
             },
             "require": {
@@ -2980,15 +3184,15 @@
                 }
             ],
             "description": "The most intuitive and powerful form builder for Craft.",
-            "time": "2018-07-19T16:13:25+00:00"
+            "time": "2018-08-02T04:03:36+00:00"
         },
         {
             "name": "solspace/craft3-freeform-pro",
-            "version": "2.2.1",
+            "version": "2.2.2",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/solspace/craft3-freeform-pro/zipball/91b095ee47388b0cc82366cc1da2bcba5cf71543",
-                "reference": "91b095ee47388b0cc82366cc1da2bcba5cf71543",
+                "url": "https://api.github.com/repos/solspace/craft3-freeform-pro/zipball/add65af73605ac07c8f8f38fece61ef109fa06b5",
+                "reference": "add65af73605ac07c8f8f38fece61ef109fa06b5",
                 "shasum": ""
             },
             "require": {
@@ -3017,7 +3221,7 @@
                 }
             ],
             "description": "Adds API integrations, premium field types, advanced exporting and widgets to Freeform.",
-            "time": "2018-07-19T16:16:31+00:00"
+            "time": "2018-08-02T04:04:18+00:00"
         },
         {
             "name": "sunra/php-simple-html-dom-parser",
@@ -3794,6 +3998,55 @@
             "time": "2017-06-24T16:45:30+00:00"
         },
         {
+            "name": "tcb13/substringy",
+            "version": "1.0.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/TCB13/SubStringy/zipball/ddf4ea3e13b1c96446ef2c71950882b06121ab66",
+                "reference": "ddf4ea3e13b1c96446ef2c71950882b06121ab66",
+                "shasum": ""
+            },
+            "require": {
+                "danielstjules/stringy": "^3.1",
+                "ext-mbstring": "*",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "SubStringy\\": "src/"
+                },
+                "files": [
+                    "src/Create.php"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tadeu Bento",
+                    "email": "tcb13@iklive.org",
+                    "homepage": "http://www.iklive.org"
+                }
+            ],
+            "description": "A sub string manipulation library with multibyte support that extends Stringy",
+            "homepage": "https://github.com/tcb13/SubStringy",
+            "keywords": [
+                "UTF",
+                "helpers",
+                "manipulation",
+                "methods",
+                "multibyte",
+                "string",
+                "substring",
+                "utf-8",
+                "utility",
+                "utils"
+            ],
+            "time": "2017-10-10T16:40:59+00:00"
+        },
+        {
             "name": "theiconic/php-ga-measurement-protocol",
             "version": "v2.7.1",
             "dist": {
@@ -3823,6 +4076,67 @@
             ],
             "description": "Send data to Google Analytics from the server using PHP. This library fully implements GA measurement protocol.",
             "time": "2017-06-30T02:41:52+00:00"
+        },
+        {
+            "name": "topshelfcraft/wordsmith",
+            "version": "3.0.2",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/TopShelfCraft/Wordsmith/zipball/44b7ca6fa1ad4b4b645dd52fcb4cd06ffd5f215a",
+                "reference": "44b7ca6fa1ad4b4b645dd52fcb4cd06ffd5f215a",
+                "shasum": ""
+            },
+            "require": {
+                "danielstjules/stringy": "~3.1.0",
+                "davechild/textstatistics": "^1.0",
+                "erusev/parsedown-extra": "^0.7.1",
+                "icanboogie/inflector": "^1.4",
+                "mofodojodino/profanity-filter": "^1.3",
+                "mundschenk-at/php-typography": "^6.0",
+                "tcb13/substringy": "^1.0"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Wordsmith",
+                "handle": "wordsmith",
+                "schemaVersion": "0.0.0.0",
+                "hasCpSettings": false,
+                "hasCpSection": false,
+                "changelogUrl": "https://raw.githubusercontent.com/topshelfcraft/wordsmith/master/CHANGELOG.md",
+                "components": {
+                    "emoji": "topshelfcraft\\wordsmith\\services\\EmojiService",
+                    "smith": "topshelfcraft\\wordsmith\\services\\WordsmithService",
+                    "typography": "topshelfcraft\\wordsmith\\services\\TypographyService"
+                },
+                "class": "topshelfcraft\\wordsmith\\Wordsmith"
+            },
+            "autoload": {
+                "psr-4": {
+                    "topshelfcraft\\wordsmith\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Rog",
+                    "homepage": "https://topshelfcraft.com"
+                }
+            ],
+            "description": "...because you have the best words.",
+            "keywords": [
+                "cms",
+                "craft",
+                "craft-plugin",
+                "craftcms",
+                "wordsmith"
+            ],
+            "support": {
+                "docs": "https://wordsmith.docs.topshelfcraft.com/",
+                "issues": "https://github.com/topshelfcraft/wordsmith/issues"
+            },
+            "time": "2017-12-31T18:01:39+00:00"
         },
         {
             "name": "true/punycode",

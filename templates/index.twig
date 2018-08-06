@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="/assets/css/site.combined.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i" rel="stylesheet">
+</head>
+
+<body>
+  {% include '_partials/_nav-bar' %}
+  {% include '_partials/_home-hero' %}
+  {% include '_partials/_page-alert' %}
+  <section class="container mx-auto p-8">
+    {% for item in 0 .. 9 %}
+      <article class="py-16 horizontal-card{% if not loop.last %} border-celeste border-b{% endif %}">
+        <figure>
+          <img src="https://placeimg.com/640/480/any/{{ item }}" class="block">
+        </figure>
+        <div>
+          <div class="text-base text-camouflage-green mb-6">Tuesday, August 07, 2018 | Press Release</div>
+          <h3 class="text-4xl mt-4"><a href="#">National Night Out</a></h3>
+          <div class="text-shark mt-4">
+            <p>
+              To ensure that parking remains available to those who need it, Oakland’s Department of Transportation (OakDOT) has resumed
+              enforcement that cracks down on disabled person placard fraud and abuse.
+            </p>
+          </div>
+        </div>
+      </article>
+    {% endfor %}
+  </section>
+  {% include '_partials/_search-bar' %}
+  {% include '_partials/_vertical-cards' %}
+  {% include '_partials/_card-filter' %}
+  {% include '_partials/_profile-cards' %}
+  {% include '_partials/_footer' %}
+</body>
+
+</html>

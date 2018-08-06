@@ -1,0 +1,23 @@
+<div class="container mx-auto my-8 p-8">
+  <div class="flex flex-col sm:flex-row items-center">
+    <h2 class="my-0 sm:flex-1">Vertical Cards</h2>
+    <a href="#" class="btn btn-bright mt-4 sm:mt-0">Link Off »</a>
+  </div>
+  <div class="card-grid vertical-cards mt-8">
+    {% for item in 0..4 %}
+    <article>
+      <figure>
+        <img src="https://placeimg.com/640/480/any/{{ item }}" class="block">
+      </figure>
+      <div class="mt-4 text-base text-camouflage-green">Tuesday, August 07, 2018</div>
+      <h3 class="text-2xl mt-4"><a href="#">National Night Out</a></h3>
+      <div class="text-shark mt-4">
+        <p>
+          To ensure that parking remains available to those who need it, Oakland’s Department of Transportation (OakDOT) has resumed
+          enforcement that cracks down on disabled person placard fraud and abuse.
+        </p>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</div>

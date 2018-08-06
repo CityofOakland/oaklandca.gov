@@ -51,6 +51,15 @@ gulp.task("tailwind", () => {
     .pipe(gulp.dest(pkg.paths.tailwindcss.build));
 });
 
+gulp.task("images", () => {
+  $.fancyLog("-> Compiling tailwind css");
+  return gulp.src(pkg.paths.src.img + "**/*")
+    .pipe($.imagemin({
+      verbose: true
+    }))
+    .pipe(gulp.dest(pkg.paths.dist.img));
+});
+
 gulp.task("css", ["tailwind"], () => {
   $.fancyLog("-> Building css");
   var plugins = [
@@ -136,7 +145,7 @@ gulp.task("fonts", () => {
 gulp.task("default", function () {
   $.fancyLog("-> Livereload listening for changes");
   $.livereload.listen();
-  gulp.watch(pkg.paths.src.css + "*.css", ["css"]);
+  gulp.watch(pkg.paths.src.css + "*.css", ["css", "tailwind"]);
   gulp.watch([pkg.paths.templates + "**/*.{html,htm,twig}"], () => {
     gulp.src(pkg.paths.templates)
       .pipe($.plumber({

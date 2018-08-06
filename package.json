@@ -48,8 +48,8 @@
   },
   "urls": {
     "live": "https://oaklandca.gov/",
-    "local": "https://oaklandca.test/",
-    "critical": "https://oaklandca.test/"
+    "local": "http://oakland.test/",
+    "critical": "http://oakland.test/"
   },
   "vars": {
     "siteCssName": "site.combined.min.css",
@@ -123,6 +123,7 @@
     "gulp-filter": "^5.1.0",
     "gulp-header": "^2.0.5",
     "gulp-if": "^2.0.2",
+    "gulp-imagemin": "^4.1.0",
     "gulp-livereload": "^3.8.1",
     "gulp-load-plugins": "^1.5.0",
     "gulp-newer": "^1.4.0",

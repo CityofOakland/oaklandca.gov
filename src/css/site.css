@@ -1,0 +1,53 @@
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(1fr);
+  grid-gap: 32px;
+}
+
+@media (min-width: 576px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.filter-grid {
+  grid-auto-rows: 1fr;
+}
+
+.vertical-cards,
+.profile-cards {
+  grid-row-gap: 48px;
+}
+
+.horizontal-card {
+  display: grid;
+  grid-template-columns: repeat(1fr);
+  grid-gap: 32px;
+}
+
+@media (min-width: 576px) {
+  .horizontal-card {
+    grid-template-columns: 1fr 1.5fr;
+  }
+}
+
+a,
+input,
+textarea,
+button {
+  &:focus {
+    outline-style: solid;
+    outline-color: invert;
+    outline-width: 3px;
+  }
+}
+
+.banner {
+  padding-top: 10rem;
+}

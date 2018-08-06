@@ -1,8 +1,8 @@
 /**
  * @project        oakland
  * @author         Christopher Kennedy, onebrightlight <chris@onebrightlight.com>
- * @build          Wed, Aug 1, 2018 10:40 AM ET
- * @release        4d8f5821889e1c4c6e14c1c723dee3dc54dfeda4 [master]
+ * @build          Mon, Aug 6, 2018 11:52 AM ET
+ * @release        2a07e0ff8588237484b913f5e7ed200373fe56e4 [master]
  * @copyright      Copyright (c) 2018, onebrightlight
  *
  */
@@ -644,6 +644,61 @@ table {
   border-collapse: collapse;
 }
 
+body {
+  font-family: Montserrat, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue, -apple-system, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 300;
+  line-height: 1;
+}
+
+h2 {
+  font-size: 2.25rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+h3 {
+  font-size: 1.875rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+ol,
+ul,
+dl,
+p {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: #398cd3;
+  transition-duration: .25s;
+  transition-property: all;
+  transition-timing-function: ease-in-out;
+  transition-duration: .15s;
+}
+
+a:hover {
+  color: #255375;
+}
+
 /**
  * This injects any component classes registered by plugins.
  *
@@ -696,6 +751,57 @@ table {
  * @import "components/forms";
  */
 
+.logo {
+  fill: #fff;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #255375;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  color: #fff;
+  text-decoration: none;
+  transition-duration: .25s;
+  transition-property: all;
+  transition-timing-function: ease-in-out;
+  transition-duration: .15s;
+}
+
+.btn:hover {
+  text-decoration: underline;
+}
+
+.btn-bright {
+  background-color: #6db943;
+}
+
+.btn-bright:hover {
+  background-color: #1e4a18;
+}
+
+.card-grid-button {
+  background-color: #fff;
+  border-left-width: 4px;
+  color: #212529;
+  text-decoration: none;
+  font-size: 1.25rem;
+  border-color: #6db943;
+  padding: 2rem;
+  transition-duration: .25s;
+  transition-property: all;
+  transition-timing-function: ease-in-out;
+  transition-duration: .15s;
+}
+
+.card-grid-button:hover {
+  background-color: #6db943;
+  text-decoration: underline;
+  color: #fff;
+}
+
 /**
  * This injects all of Tailwind's utility classes, generated based on your
  * config file.
@@ -736,6 +842,10 @@ table {
   background-color: #212529;
 }
 
+.bg-shark-transparent {
+  background-color: rgba(33, 37, 41, .33);
+}
+
 .bg-tundora {
   background-color: #404040;
 }
@@ -746,6 +856,10 @@ table {
 
 .bg-cararra {
   background-color: #e9eae7;
+}
+
+.bg-white {
+  background-color: #fff;
 }
 
 .bg-apple {
@@ -784,6 +898,10 @@ table {
   background-color: #212529;
 }
 
+.hover\:bg-shark-transparent:hover {
+  background-color: rgba(33, 37, 41, .33);
+}
+
 .hover\:bg-tundora:hover {
   background-color: #404040;
 }
@@ -794,6 +912,10 @@ table {
 
 .hover\:bg-cararra:hover {
   background-color: #e9eae7;
+}
+
+.hover\:bg-white:hover {
+  background-color: #fff;
 }
 
 .hover\:bg-apple:hover {
@@ -832,6 +954,10 @@ table {
   background-color: #212529;
 }
 
+.focus\:bg-shark-transparent:focus {
+  background-color: rgba(33, 37, 41, .33);
+}
+
 .focus\:bg-tundora:focus {
   background-color: #404040;
 }
@@ -842,6 +968,10 @@ table {
 
 .focus\:bg-cararra:focus {
   background-color: #e9eae7;
+}
+
+.focus\:bg-white:focus {
+  background-color: #fff;
 }
 
 .focus\:bg-apple:focus {
@@ -952,6 +1082,10 @@ table {
   border-color: #212529;
 }
 
+.border-shark-transparent {
+  border-color: rgba(33, 37, 41, .33);
+}
+
 .border-tundora {
   border-color: #404040;
 }
@@ -962,6 +1096,10 @@ table {
 
 .border-cararra {
   border-color: #e9eae7;
+}
+
+.border-white {
+  border-color: #fff;
 }
 
 .border-apple {
@@ -1000,6 +1138,10 @@ table {
   border-color: #212529;
 }
 
+.hover\:border-shark-transparent:hover {
+  border-color: rgba(33, 37, 41, .33);
+}
+
 .hover\:border-tundora:hover {
   border-color: #404040;
 }
@@ -1010,6 +1152,10 @@ table {
 
 .hover\:border-cararra:hover {
   border-color: #e9eae7;
+}
+
+.hover\:border-white:hover {
+  border-color: #fff;
 }
 
 .hover\:border-apple:hover {
@@ -1048,6 +1194,10 @@ table {
   border-color: #212529;
 }
 
+.focus\:border-shark-transparent:focus {
+  border-color: rgba(33, 37, 41, .33);
+}
+
 .focus\:border-tundora:focus {
   border-color: #404040;
 }
@@ -1058,6 +1208,10 @@ table {
 
 .focus\:border-cararra:focus {
   border-color: #e9eae7;
+}
+
+.focus\:border-white:focus {
+  border-color: #fff;
 }
 
 .focus\:border-apple:focus {
@@ -1623,7 +1777,7 @@ table {
 }
 
 .font-sans {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue, -apple-system, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: Montserrat, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue, -apple-system, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 .font-serif {
@@ -2848,6 +3002,18 @@ table {
   opacity: 1;
 }
 
+.opacity-3\.125 {
+  opacity: .03125;
+}
+
+.opacity-6\.25 {
+  opacity: .0625;
+}
+
+.opacity-12\.5 {
+  opacity: .125;
+}
+
 .outline-none {
   outline: 0;
 }
@@ -3559,6 +3725,10 @@ table {
   color: #212529;
 }
 
+.text-shark-transparent {
+  color: rgba(33, 37, 41, .33);
+}
+
 .text-tundora {
   color: #404040;
 }
@@ -3569,6 +3739,10 @@ table {
 
 .text-cararra {
   color: #e9eae7;
+}
+
+.text-white {
+  color: #fff;
 }
 
 .text-apple {
@@ -3607,6 +3781,10 @@ table {
   color: #212529;
 }
 
+.hover\:text-shark-transparent:hover {
+  color: rgba(33, 37, 41, .33);
+}
+
 .hover\:text-tundora:hover {
   color: #404040;
 }
@@ -3617,6 +3795,10 @@ table {
 
 .hover\:text-cararra:hover {
   color: #e9eae7;
+}
+
+.hover\:text-white:hover {
+  color: #fff;
 }
 
 .hover\:text-apple:hover {
@@ -3655,6 +3837,10 @@ table {
   color: #212529;
 }
 
+.focus\:text-shark-transparent:focus {
+  color: rgba(33, 37, 41, .33);
+}
+
 .focus\:text-tundora:focus {
   color: #404040;
 }
@@ -3665,6 +3851,10 @@ table {
 
 .focus\:text-cararra:focus {
   color: #e9eae7;
+}
+
+.focus\:text-white:focus {
+  color: #fff;
 }
 
 .focus\:text-apple:focus {
@@ -4120,6 +4310,120 @@ table {
  * @import "utilities/skew-transforms";
  */
 
+/* Object Fit */
+
+.object-fit-cover {
+  z-index: -1;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+/* Transition Helpers */
+
+/* Default */
+
+.trans {
+  transition-duration: .25s;
+  transition-property: all;
+  transition-timing-function: ease-in-out;
+}
+
+/* Delays */
+
+.trans-delay-slow {
+  transition-delay: 1s;
+}
+
+.trans-delay {
+  transition-delay: .5s;
+}
+
+.trans-delay-fast {
+  transition-delay: .25s;
+}
+
+/* Duration */
+
+.trans-slower {
+  transition-duration: .75s;
+}
+
+.trans-slow {
+  transition-duration: .5s;
+}
+
+.trans-regular {
+  transition-duration: .25s;
+}
+
+.trans-fast {
+  transition-duration: .15s;
+}
+
+.trans-faster {
+  transition-duration: .075s;
+}
+
+/* Properties */
+
+.trans-all {
+  transition-property: all;
+}
+
+.trans-none {
+  transition-property: none;
+}
+
+.trans-bg {
+  transition-property: background;
+}
+
+.trans-opacity {
+  transition-property: opacity;
+}
+
+.trans-color {
+  transition-property: color;
+}
+
+.trans-shadow {
+  transition-property: box-shadow;
+}
+
+.trans-height {
+  transition-property: height;
+}
+
+/* Timing Function */
+
+.trans-linear {
+  transition-timing-function: linear;
+}
+
+.trans-ease {
+  transition-timing-function: ease;
+}
+
+.trans-ease-in {
+  transition-timing-function: ease-in;
+}
+
+.trans-ease-out {
+  transition-timing-function: ease-out;
+}
+
+.trans-ease-in-out {
+  transition-timing-function: ease-in-out;
+}
+
+/* Use this utility to hide text only meant for screen readers */
+
+.hide-text {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
 @media (min-width: 576px) {
   .sm\:list-reset {
     list-style: none;
@@ -4152,6 +4456,10 @@ table {
     background-color: #212529;
   }
 
+  .sm\:bg-shark-transparent {
+    background-color: rgba(33, 37, 41, .33);
+  }
+
   .sm\:bg-tundora {
     background-color: #404040;
   }
@@ -4162,6 +4470,10 @@ table {
 
   .sm\:bg-cararra {
     background-color: #e9eae7;
+  }
+
+  .sm\:bg-white {
+    background-color: #fff;
   }
 
   .sm\:bg-apple {
@@ -4200,6 +4512,10 @@ table {
     background-color: #212529;
   }
 
+  .sm\:hover\:bg-shark-transparent:hover {
+    background-color: rgba(33, 37, 41, .33);
+  }
+
   .sm\:hover\:bg-tundora:hover {
     background-color: #404040;
   }
@@ -4210,6 +4526,10 @@ table {
 
   .sm\:hover\:bg-cararra:hover {
     background-color: #e9eae7;
+  }
+
+  .sm\:hover\:bg-white:hover {
+    background-color: #fff;
   }
 
   .sm\:hover\:bg-apple:hover {
@@ -4248,6 +4568,10 @@ table {
     background-color: #212529;
   }
 
+  .sm\:focus\:bg-shark-transparent:focus {
+    background-color: rgba(33, 37, 41, .33);
+  }
+
   .sm\:focus\:bg-tundora:focus {
     background-color: #404040;
   }
@@ -4258,6 +4582,10 @@ table {
 
   .sm\:focus\:bg-cararra:focus {
     background-color: #e9eae7;
+  }
+
+  .sm\:focus\:bg-white:focus {
+    background-color: #fff;
   }
 
   .sm\:focus\:bg-apple:focus {
@@ -4360,6 +4688,10 @@ table {
     border-color: #212529;
   }
 
+  .sm\:border-shark-transparent {
+    border-color: rgba(33, 37, 41, .33);
+  }
+
   .sm\:border-tundora {
     border-color: #404040;
   }
@@ -4370,6 +4702,10 @@ table {
 
   .sm\:border-cararra {
     border-color: #e9eae7;
+  }
+
+  .sm\:border-white {
+    border-color: #fff;
   }
 
   .sm\:border-apple {
@@ -4408,6 +4744,10 @@ table {
     border-color: #212529;
   }
 
+  .sm\:hover\:border-shark-transparent:hover {
+    border-color: rgba(33, 37, 41, .33);
+  }
+
   .sm\:hover\:border-tundora:hover {
     border-color: #404040;
   }
@@ -4418,6 +4758,10 @@ table {
 
   .sm\:hover\:border-cararra:hover {
     border-color: #e9eae7;
+  }
+
+  .sm\:hover\:border-white:hover {
+    border-color: #fff;
   }
 
   .sm\:hover\:border-apple:hover {
@@ -4456,6 +4800,10 @@ table {
     border-color: #212529;
   }
 
+  .sm\:focus\:border-shark-transparent:focus {
+    border-color: rgba(33, 37, 41, .33);
+  }
+
   .sm\:focus\:border-tundora:focus {
     border-color: #404040;
   }
@@ -4466,6 +4814,10 @@ table {
 
   .sm\:focus\:border-cararra:focus {
     border-color: #e9eae7;
+  }
+
+  .sm\:focus\:border-white:focus {
+    border-color: #fff;
   }
 
   .sm\:focus\:border-apple:focus {
@@ -5031,7 +5383,7 @@ table {
   }
 
   .sm\:font-sans {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue, -apple-system, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-family: Montserrat, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue, -apple-system, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   }
 
   .sm\:font-serif {
@@ -6256,6 +6608,18 @@ table {
     opacity: 1;
   }
 
+  .opacity-3\.sm\:125 {
+    opacity: .03125;
+  }
+
+  .opacity-6\.sm\:25 {
+    opacity: .0625;
+  }
+
+  .opacity-12\.sm\:5 {
+    opacity: .125;
+  }
+
   .sm\:overflow-auto {
     overflow: auto;
   }
@@ -6951,6 +7315,10 @@ table {
     color: #212529;
   }
 
+  .sm\:text-shark-transparent {
+    color: rgba(33, 37, 41, .33);
+  }
+
   .sm\:text-tundora {
     color: #404040;
   }
@@ -6961,6 +7329,10 @@ table {
 
   .sm\:text-cararra {
     color: #e9eae7;
+  }
+
+  .sm\:text-white {
+    color: #fff;
   }
 
   .sm\:text-apple {
@@ -6999,6 +7371,10 @@ table {
     color: #212529;
   }
 
+  .sm\:hover\:text-shark-transparent:hover {
+    color: rgba(33, 37, 41, .33);
+  }
+
   .sm\:hover\:text-tundora:hover {
     color: #404040;
   }
@@ -7009,6 +7385,10 @@ table {
 
   .sm\:hover\:text-cararra:hover {
     color: #e9eae7;
+  }
+
+  .sm\:hover\:text-white:hover {
+    color: #fff;
   }
 
   .sm\:hover\:text-apple:hover {
@@ -7047,6 +7427,10 @@ table {
     color: #212529;
   }
 
+  .sm\:focus\:text-shark-transparent:focus {
+    color: rgba(33, 37, 41, .33);
+  }
+
   .sm\:focus\:text-tundora:focus {
     color: #404040;
   }
@@ -7057,6 +7441,10 @@ table {
 
   .sm\:focus\:text-cararra:focus {
     color: #e9eae7;
+  }
+
+  .sm\:focus\:text-white:focus {
+    color: #fff;
   }
 
   .sm\:focus\:text-apple:focus {
@@ -7530,6 +7918,10 @@ table {
     background-color: #212529;
   }
 
+  .md\:bg-shark-transparent {
+    background-color: rgba(33, 37, 41, .33);
+  }
+
   .md\:bg-tundora {
     background-color: #404040;
   }
@@ -7540,6 +7932,10 @@ table {
 
   .md\:bg-cararra {
     background-color: #e9eae7;
+  }
+
+  .md\:bg-white {
+    background-color: #fff;
   }
 
   .md\:bg-apple {
@@ -7578,6 +7974,10 @@ table {
     background-color: #212529;
   }
 
+  .md\:hover\:bg-shark-transparent:hover {
+    background-color: rgba(33, 37, 41, .33);
+  }
+
   .md\:hover\:bg-tundora:hover {
     background-color: #404040;
   }
@@ -7588,6 +7988,10 @@ table {
 
   .md\:hover\:bg-cararra:hover {
     background-color: #e9eae7;
+  }
+
+  .md\:hover\:bg-white:hover {
+    background-color: #fff;
   }
 
   .md\:hover\:bg-apple:hover {
@@ -7626,6 +8030,10 @@ table {
     background-color: #212529;
   }
 
+  .md\:focus\:bg-shark-transparent:focus {
+    background-color: rgba(33, 37, 41, .33);
+  }
+
   .md\:focus\:bg-tundora:focus {
     background-color: #404040;
   }
@@ -7636,6 +8044,10 @@ table {
 
   .md\:focus\:bg-cararra:focus {
     background-color: #e9eae7;
+  }
+
+  .md\:focus\:bg-white:focus {
+    background-color: #fff;
   }
 
   .md\:focus\:bg-apple:focus {
@@ -7738,6 +8150,10 @@ table {
     border-color: #212529;
   }
 
+  .md\:border-shark-transparent {
+    border-color: rgba(33, 37, 41, .33);
+  }
+
   .md\:border-tundora {
     border-color: #404040;
   }
@@ -7748,6 +8164,10 @@ table {
 
   .md\:border-cararra {
     border-color: #e9eae7;
+  }
+
+  .md\:border-white {
+    border-color: #fff;
   }
 
   .md\:border-apple {
@@ -7786,6 +8206,10 @@ table {
     border-color: #212529;
   }
 
+  .md\:hover\:border-shark-transparent:hover {
+    border-color: rgba(33, 37, 41, .33);
+  }
+
   .md\:hover\:border-tundora:hover {
     border-color: #404040;
   }
@@ -7796,6 +8220,10 @@ table {
 
   .md\:hover\:border-cararra:hover {
     border-color: #e9eae7;
+  }
+
+  .md\:hover\:border-white:hover {
+    border-color: #fff;
   }
 
   .md\:hover\:border-apple:hover {
@@ -7834,6 +8262,10 @@ table {
     border-color: #212529;
   }
 
+  .md\:focus\:border-shark-transparent:focus {
+    border-color: rgba(33, 37, 41, .33);
+  }
+
   .md\:focus\:border-tundora:focus {
     border-color: #404040;
   }
@@ -7844,6 +8276,10 @@ table {
 
   .md\:focus\:border-cararra:focus {
     border-color: #e9eae7;
+  }
+
+  .md\:focus\:border-white:focus {
+    border-color: #fff;
   }
 
   .md\:focus\:border-apple:focus {
@@ -8409,7 +8845,7 @@ table {
   }
 
   .md\:font-sans {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue, -apple-system, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-family: Montserrat, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue, -apple-system, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   }
 
   .md\:font-serif {
@@ -9634,6 +10070,18 @@ table {
     opacity: 1;
   }
 
+  .opacity-3\.md\:125 {
+    opacity: .03125;
+  }
+
+  .opacity-6\.md\:25 {
+    opacity: .0625;
+  }
+
+  .opacity-12\.md\:5 {
+    opacity: .125;
+  }
+
   .md\:overflow-auto {
     overflow: auto;
   }
@@ -10329,6 +10777,10 @@ table {
     color: #212529;
   }
 
+  .md\:text-shark-transparent {
+    color: rgba(33, 37, 41, .33);
+  }
+
   .md\:text-tundora {
     color: #404040;
   }
@@ -10339,6 +10791,10 @@ table {
 
   .md\:text-cararra {
     color: #e9eae7;
+  }
+
+  .md\:text-white {
+    color: #fff;
   }
 
   .md\:text-apple {
@@ -10377,6 +10833,10 @@ table {
     color: #212529;
   }
 
+  .md\:hover\:text-shark-transparent:hover {
+    color: rgba(33, 37, 41, .33);
+  }
+
   .md\:hover\:text-tundora:hover {
     color: #404040;
   }
@@ -10387,6 +10847,10 @@ table {
 
   .md\:hover\:text-cararra:hover {
     color: #e9eae7;
+  }
+
+  .md\:hover\:text-white:hover {
+    color: #fff;
   }
 
   .md\:hover\:text-apple:hover {
@@ -10425,6 +10889,10 @@ table {
     color: #212529;
   }
 
+  .md\:focus\:text-shark-transparent:focus {
+    color: rgba(33, 37, 41, .33);
+  }
+
   .md\:focus\:text-tundora:focus {
     color: #404040;
   }
@@ -10435,6 +10903,10 @@ table {
 
   .md\:focus\:text-cararra:focus {
     color: #e9eae7;
+  }
+
+  .md\:focus\:text-white:focus {
+    color: #fff;
   }
 
   .md\:focus\:text-apple:focus {
@@ -10908,6 +11380,10 @@ table {
     background-color: #212529;
   }
 
+  .lg\:bg-shark-transparent {
+    background-color: rgba(33, 37, 41, .33);
+  }
+
   .lg\:bg-tundora {
     background-color: #404040;
   }
@@ -10918,6 +11394,10 @@ table {
 
   .lg\:bg-cararra {
     background-color: #e9eae7;
+  }
+
+  .lg\:bg-white {
+    background-color: #fff;
   }
 
   .lg\:bg-apple {
@@ -10956,6 +11436,10 @@ table {
     background-color: #212529;
   }
 
+  .lg\:hover\:bg-shark-transparent:hover {
+    background-color: rgba(33, 37, 41, .33);
+  }
+
   .lg\:hover\:bg-tundora:hover {
     background-color: #404040;
   }
@@ -10966,6 +11450,10 @@ table {
 
   .lg\:hover\:bg-cararra:hover {
     background-color: #e9eae7;
+  }
+
+  .lg\:hover\:bg-white:hover {
+    background-color: #fff;
   }
 
   .lg\:hover\:bg-apple:hover {
@@ -11004,6 +11492,10 @@ table {
     background-color: #212529;
   }
 
+  .lg\:focus\:bg-shark-transparent:focus {
+    background-color: rgba(33, 37, 41, .33);
+  }
+
   .lg\:focus\:bg-tundora:focus {
     background-color: #404040;
   }
@@ -11014,6 +11506,10 @@ table {
 
   .lg\:focus\:bg-cararra:focus {
     background-color: #e9eae7;
+  }
+
+  .lg\:focus\:bg-white:focus {
+    background-color: #fff;
   }
 
   .lg\:focus\:bg-apple:focus {
@@ -11116,6 +11612,10 @@ table {
     border-color: #212529;
   }
 
+  .lg\:border-shark-transparent {
+    border-color: rgba(33, 37, 41, .33);
+  }
+
   .lg\:border-tundora {
     border-color: #404040;
   }
@@ -11126,6 +11626,10 @@ table {
 
   .lg\:border-cararra {
     border-color: #e9eae7;
+  }
+
+  .lg\:border-white {
+    border-color: #fff;
   }
 
   .lg\:border-apple {
@@ -11164,6 +11668,10 @@ table {
     border-color: #212529;
   }
 
+  .lg\:hover\:border-shark-transparent:hover {
+    border-color: rgba(33, 37, 41, .33);
+  }
+
   .lg\:hover\:border-tundora:hover {
     border-color: #404040;
   }
@@ -11174,6 +11682,10 @@ table {
 
   .lg\:hover\:border-cararra:hover {
     border-color: #e9eae7;
+  }
+
+  .lg\:hover\:border-white:hover {
+    border-color: #fff;
   }
 
   .lg\:hover\:border-apple:hover {
@@ -11212,6 +11724,10 @@ table {
     border-color: #212529;
   }
 
+  .lg\:focus\:border-shark-transparent:focus {
+    border-color: rgba(33, 37, 41, .33);
+  }
+
   .lg\:focus\:border-tundora:focus {
     border-color: #404040;
   }
@@ -11222,6 +11738,10 @@ table {
 
   .lg\:focus\:border-cararra:focus {
     border-color: #e9eae7;
+  }
+
+  .lg\:focus\:border-white:focus {
+    border-color: #fff;
   }
 
   .lg\:focus\:border-apple:focus {
@@ -11787,7 +12307,7 @@ table {
   }
 
   .lg\:font-sans {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue, -apple-system, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-family: Montserrat, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue, -apple-system, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   }
 
   .lg\:font-serif {
@@ -13012,6 +13532,18 @@ table {
     opacity: 1;
   }
 
+  .opacity-3\.lg\:125 {
+    opacity: .03125;
+  }
+
+  .opacity-6\.lg\:25 {
+    opacity: .0625;
+  }
+
+  .opacity-12\.lg\:5 {
+    opacity: .125;
+  }
+
   .lg\:overflow-auto {
     overflow: auto;
   }
@@ -13707,6 +14239,10 @@ table {
     color: #212529;
   }
 
+  .lg\:text-shark-transparent {
+    color: rgba(33, 37, 41, .33);
+  }
+
   .lg\:text-tundora {
     color: #404040;
   }
@@ -13717,6 +14253,10 @@ table {
 
   .lg\:text-cararra {
     color: #e9eae7;
+  }
+
+  .lg\:text-white {
+    color: #fff;
   }
 
   .lg\:text-apple {
@@ -13755,6 +14295,10 @@ table {
     color: #212529;
   }
 
+  .lg\:hover\:text-shark-transparent:hover {
+    color: rgba(33, 37, 41, .33);
+  }
+
   .lg\:hover\:text-tundora:hover {
     color: #404040;
   }
@@ -13765,6 +14309,10 @@ table {
 
   .lg\:hover\:text-cararra:hover {
     color: #e9eae7;
+  }
+
+  .lg\:hover\:text-white:hover {
+    color: #fff;
   }
 
   .lg\:hover\:text-apple:hover {
@@ -13803,6 +14351,10 @@ table {
     color: #212529;
   }
 
+  .lg\:focus\:text-shark-transparent:focus {
+    color: rgba(33, 37, 41, .33);
+  }
+
   .lg\:focus\:text-tundora:focus {
     color: #404040;
   }
@@ -13813,6 +14365,10 @@ table {
 
   .lg\:focus\:text-cararra:focus {
     color: #e9eae7;
+  }
+
+  .lg\:focus\:text-white:focus {
+    color: #fff;
   }
 
   .lg\:focus\:text-apple:focus {
@@ -14286,6 +14842,10 @@ table {
     background-color: #212529;
   }
 
+  .xl\:bg-shark-transparent {
+    background-color: rgba(33, 37, 41, .33);
+  }
+
   .xl\:bg-tundora {
     background-color: #404040;
   }
@@ -14296,6 +14856,10 @@ table {
 
   .xl\:bg-cararra {
     background-color: #e9eae7;
+  }
+
+  .xl\:bg-white {
+    background-color: #fff;
   }
 
   .xl\:bg-apple {
@@ -14334,6 +14898,10 @@ table {
     background-color: #212529;
   }
 
+  .xl\:hover\:bg-shark-transparent:hover {
+    background-color: rgba(33, 37, 41, .33);
+  }
+
   .xl\:hover\:bg-tundora:hover {
     background-color: #404040;
   }
@@ -14344,6 +14912,10 @@ table {
 
   .xl\:hover\:bg-cararra:hover {
     background-color: #e9eae7;
+  }
+
+  .xl\:hover\:bg-white:hover {
+    background-color: #fff;
   }
 
   .xl\:hover\:bg-apple:hover {
@@ -14382,6 +14954,10 @@ table {
     background-color: #212529;
   }
 
+  .xl\:focus\:bg-shark-transparent:focus {
+    background-color: rgba(33, 37, 41, .33);
+  }
+
   .xl\:focus\:bg-tundora:focus {
     background-color: #404040;
   }
@@ -14392,6 +14968,10 @@ table {
 
   .xl\:focus\:bg-cararra:focus {
     background-color: #e9eae7;
+  }
+
+  .xl\:focus\:bg-white:focus {
+    background-color: #fff;
   }
 
   .xl\:focus\:bg-apple:focus {
@@ -14494,6 +15074,10 @@ table {
     border-color: #212529;
   }
 
+  .xl\:border-shark-transparent {
+    border-color: rgba(33, 37, 41, .33);
+  }
+
   .xl\:border-tundora {
     border-color: #404040;
   }
@@ -14504,6 +15088,10 @@ table {
 
   .xl\:border-cararra {
     border-color: #e9eae7;
+  }
+
+  .xl\:border-white {
+    border-color: #fff;
   }
 
   .xl\:border-apple {
@@ -14542,6 +15130,10 @@ table {
     border-color: #212529;
   }
 
+  .xl\:hover\:border-shark-transparent:hover {
+    border-color: rgba(33, 37, 41, .33);
+  }
+
   .xl\:hover\:border-tundora:hover {
     border-color: #404040;
   }
@@ -14552,6 +15144,10 @@ table {
 
   .xl\:hover\:border-cararra:hover {
     border-color: #e9eae7;
+  }
+
+  .xl\:hover\:border-white:hover {
+    border-color: #fff;
   }
 
   .xl\:hover\:border-apple:hover {
@@ -14590,6 +15186,10 @@ table {
     border-color: #212529;
   }
 
+  .xl\:focus\:border-shark-transparent:focus {
+    border-color: rgba(33, 37, 41, .33);
+  }
+
   .xl\:focus\:border-tundora:focus {
     border-color: #404040;
   }
@@ -14600,6 +15200,10 @@ table {
 
   .xl\:focus\:border-cararra:focus {
     border-color: #e9eae7;
+  }
+
+  .xl\:focus\:border-white:focus {
+    border-color: #fff;
   }
 
   .xl\:focus\:border-apple:focus {
@@ -15165,7 +15769,7 @@ table {
   }
 
   .xl\:font-sans {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue, -apple-system, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-family: Montserrat, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue, -apple-system, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   }
 
   .xl\:font-serif {
@@ -16390,6 +16994,18 @@ table {
     opacity: 1;
   }
 
+  .opacity-3\.xl\:125 {
+    opacity: .03125;
+  }
+
+  .opacity-6\.xl\:25 {
+    opacity: .0625;
+  }
+
+  .opacity-12\.xl\:5 {
+    opacity: .125;
+  }
+
   .xl\:overflow-auto {
     overflow: auto;
   }
@@ -17085,6 +17701,10 @@ table {
     color: #212529;
   }
 
+  .xl\:text-shark-transparent {
+    color: rgba(33, 37, 41, .33);
+  }
+
   .xl\:text-tundora {
     color: #404040;
   }
@@ -17095,6 +17715,10 @@ table {
 
   .xl\:text-cararra {
     color: #e9eae7;
+  }
+
+  .xl\:text-white {
+    color: #fff;
   }
 
   .xl\:text-apple {
@@ -17133,6 +17757,10 @@ table {
     color: #212529;
   }
 
+  .xl\:hover\:text-shark-transparent:hover {
+    color: rgba(33, 37, 41, .33);
+  }
+
   .xl\:hover\:text-tundora:hover {
     color: #404040;
   }
@@ -17143,6 +17771,10 @@ table {
 
   .xl\:hover\:text-cararra:hover {
     color: #e9eae7;
+  }
+
+  .xl\:hover\:text-white:hover {
+    color: #fff;
   }
 
   .xl\:hover\:text-apple:hover {
@@ -17181,6 +17813,10 @@ table {
     color: #212529;
   }
 
+  .xl\:focus\:text-shark-transparent:focus {
+    color: rgba(33, 37, 41, .33);
+  }
+
   .xl\:focus\:text-tundora:focus {
     color: #404040;
   }
@@ -17191,6 +17827,10 @@ table {
 
   .xl\:focus\:text-cararra:focus {
     color: #e9eae7;
+  }
+
+  .xl\:focus\:text-white:focus {
+    color: #fff;
   }
 
   .xl\:focus\:text-apple:focus {
@@ -17632,5 +18272,52 @@ table {
   }
 }
 
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(1fr);
+  grid-gap: 32px;
+}
 
+@media (min-width: 576px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.filter-grid {
+  grid-auto-rows: 1fr;
+}
+
+.vertical-cards,
+.profile-cards {
+  grid-row-gap: 48px;
+}
+
+.horizontal-card {
+  display: grid;
+  grid-template-columns: repeat(1fr);
+  grid-gap: 32px;
+}
+
+@media (min-width: 576px) {
+  .horizontal-card {
+    grid-template-columns: 1fr 1.5fr;
+  }
+}
+
+a:focus, input:focus, textarea:focus, button:focus {
+    outline-style: solid;
+    outline-color: invert;
+    outline-width: 3px;
+  }
+
+.banner {
+  padding-top: 10rem;
+}
 /*# sourceMappingURL=site.combined.min.css.map */

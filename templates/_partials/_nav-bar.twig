@@ -1,0 +1,43 @@
+<div class="bg-transparent text-white fixed w-full z-50 trans trans-fast" id="nav-bar">
+  <div class="container mx-auto">
+    <nav class="flex items-center justify-between">
+      <div>
+        <a href="/" class="block pt-16 pl-8 mb-8 sm:border-l-2 sm:border-white text-white hover:text-apple fill-current trans-fast">
+          {{ craft.inlin.er('/assets/img/logo-oakland.svg') | replace('<svg ', '<svg class="h-12 sm:h-16" ') | raw }}
+        </a>
+      </div>
+      <button class="btn flex lg:hidden mr-8">Menu</button>
+      <ul class="list-reset hidden uppercase lg:flex pr-8">
+        <li class="mr-8"><a href="#" class="text-white hover:text-apple trans-fast">News</a></li>
+        <li class="mr-8"><a href="#" class="text-white hover:text-apple trans-fast">Services</a></li>
+        <li class="mr-8"><a href="#" class="text-white hover:text-apple trans-fast">Departments</a></li>
+        <li class="mr-8"><a href="#" class="text-white hover:text-apple trans-fast">Events</a></li>
+        <li><a href="#" class="text-white hover:text-apple trans-fast">Officials</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+{% js %}
+window.onscroll = function changeClass(){
+  var navBar = document.getElementById('nav-bar');
+  var scrollPosY = window.pageYOffset | document.body.scrollTop;
+  if(scrollPosY > 1) {
+    navBar.classList.add('bg-shark');
+    navBar.classList.remove('bg-transparent');
+  } else if(scrollPosY <= 100) {
+    navBar.classList.add('bg-transparent');
+    navBar.classList.remove('bg-shark');
+  }
+}
+
+{# var navButton = document.getElementById('nav-menu-button');
+var menuNav = document.getElementById('menu-nav');
+var body = document.getElementById('page-body');
+
+navButton.addEventListener('click', function(e) {
+  e.preventDefault();
+  e.target.classList.toggle('nav-button-active');
+  menuNav.classList.toggle('menu-nav-hidden');
+  body.classList.toggle('no-scroll');
+}); #}
+{% endjs %}
