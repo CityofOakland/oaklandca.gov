@@ -1,8 +1,8 @@
 /**
  * @project        oakland
  * @author         Christopher Kennedy, onebrightlight <chris@onebrightlight.com>
- * @build          Mon, Aug 6, 2018 11:52 AM ET
- * @release        2a07e0ff8588237484b913f5e7ed200373fe56e4 [master]
+ * @build          Mon, Aug 6, 2018 3:09 PM ET
+ * @release        eb071b2b807d84cf9d2d46f1d4b479a5ed355b1a [master]
  * @copyright      Copyright (c) 2018, onebrightlight
  *
  */
@@ -1942,6 +1942,10 @@ a:hover {
 
 .h-32 {
   height: 8rem;
+}
+
+.h-40 {
+  height: 10rem;
 }
 
 .h-48 {
@@ -5550,6 +5554,10 @@ a:hover {
     height: 8rem;
   }
 
+  .sm\:h-40 {
+    height: 10rem;
+  }
+
   .sm\:h-48 {
     height: 12rem;
   }
@@ -9010,6 +9018,10 @@ a:hover {
 
   .md\:h-32 {
     height: 8rem;
+  }
+
+  .md\:h-40 {
+    height: 10rem;
   }
 
   .md\:h-48 {
@@ -12474,6 +12486,10 @@ a:hover {
     height: 8rem;
   }
 
+  .lg\:h-40 {
+    height: 10rem;
+  }
+
   .lg\:h-48 {
     height: 12rem;
   }
@@ -15936,6 +15952,10 @@ a:hover {
     height: 8rem;
   }
 
+  .xl\:h-40 {
+    height: 10rem;
+  }
+
   .xl\:h-48 {
     height: 12rem;
   }
@@ -18320,5 +18340,9 @@ a:focus, input:focus, textarea:focus, button:focus {
 
 .banner {
   padding-top: 10rem;
+}
+
+.banner-image-push {
+  top: 10rem;
 }
 /*# sourceMappingURL=site.combined.min.css.map */

@@ -52,3 +52,7 @@ button {
 .banner {
   padding-top: 10rem;
 }
+
+.banner-image-push {
+  top: 10rem;
+}
