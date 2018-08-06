@@ -104,6 +104,14 @@ a:hover {
    @apply bg-apple underline text-white;
  }
 
+ .banner {
+  @apply relative text-white text-xl leading-loose bg-shark z-0;
+ }
+
+ .banner-image {
+   @apply absolute pin object-fit-cover w-full h-full;
+ }
+
 /**
  * This injects all of Tailwind's utility classes, generated based on your
  * config file.

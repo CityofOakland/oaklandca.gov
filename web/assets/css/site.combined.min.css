@@ -1,8 +1,8 @@
 /**
  * @project        oakland
  * @author         Christopher Kennedy, onebrightlight <chris@onebrightlight.com>
- * @build          Mon, Aug 6, 2018 3:09 PM ET
- * @release        eb071b2b807d84cf9d2d46f1d4b479a5ed355b1a [master]
+ * @build          Mon, Aug 6, 2018 4:03 PM ET
+ * @release        bbba17d5be47444f6cd836e1cc95741037d5432a [master]
  * @copyright      Copyright (c) 2018, onebrightlight
  *
  */
@@ -800,6 +800,28 @@ a:hover {
   background-color: #6db943;
   text-decoration: underline;
   color: #fff;
+}
+
+.banner {
+  position: relative;
+  color: #fff;
+  font-size: 1.25rem;
+  line-height: 2;
+  background-color: #212529;
+  z-index: 0;
+}
+
+.banner-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 
 /**
@@ -18338,7 +18360,7 @@ a:focus, input:focus, textarea:focus, button:focus {
     outline-width: 3px;
   }
 
-.banner {
+.banner-home {
   padding-top: 10rem;
 }
 
