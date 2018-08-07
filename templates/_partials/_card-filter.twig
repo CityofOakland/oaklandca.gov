@@ -1,4 +1,9 @@
-{% include '_partials/_extras/_limit' %}
+{% if limit is not defined %}
+  {% set limit = 6 %}
+{% endif %}
+{% if linkDisable is not defined %}
+  {% set linkDisable = false %}
+{% endif %}
 {% include '_partials/_extras/_link-disable' %}
 <div class="mt-8 bg-cararra relative z-0">
   <div class="container mx-auto p-8 py-12">
