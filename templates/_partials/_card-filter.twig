@@ -4,7 +4,6 @@
 {% if linkDisable is not defined %}
   {% set linkDisable = false %}
 {% endif %}
-{% include '_partials/_extras/_link-disable' %}
 <div class="mt-8 bg-cararra relative z-0">
   <div class="container mx-auto p-8 py-12">
     <div class="flex flex-col sm:flex-row items-center">
@@ -14,7 +13,7 @@
     <div class="card-grid filter-grid mt-8">
       {% set filters = ["Elections", "Apply for a Passport", "Public Records", "KTOP TV 10", "Statement of Economic Interest/Form 700", "City Council Meeting Schedule", "City Council Meeting Information"] %}
       {% for item in 0.. limit - 1 %}
-        <a href="#" class="card-grid-button">{{ filters[item] }}</a>
+        <a href="#" class="card-grid-button">{{ random(filters) }}</a>
       {% endfor %}
     </div>
   </div>
