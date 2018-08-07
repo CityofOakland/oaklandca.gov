@@ -1,10 +1,12 @@
+{% include '_partials/_extras/_limit' %}
+{% include '_partials/_extras/_link-disable' %}
 <div class="container mx-auto my-8 p-8">
   <div class="flex flex-col sm:flex-row items-center">
     <h2 class="my-0 sm:flex-1">Vertical Cards</h2>
-    <a href="#" class="btn btn-bright mt-4 sm:mt-0">Link Off »</a>
+    {% if not linkDisable %}<a href="#" class="btn btn-bright mt-4 sm:mt-0">Link Off »</a>{% endif %}
   </div>
   <div class="card-grid vertical-cards mt-8">
-    {% for item in 0..4 %}
+    {% for item in 0.. limit - 1 %}
     <article>
       <figure>
         <img src="https://placeimg.com/640/480/any/{{ item }}" class="block">
