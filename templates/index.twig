@@ -3,9 +3,127 @@
 {% block content %}
   {% include '_partials/_home-hero' %}
   {% include '_partials/_page-alert' %}
-  {% include '_partials/_horizontal-cards' %}
-  {% include '_partials/_search-bar' %}
-  {% include '_partials/_vertical-cards' %}
-  {% include '_partials/_card-filter' %}
-  {% include '_partials/_profile-cards' %}
+
+  {# Begin News #}
+  <section class="bg-rotate">
+    <div class="container mx-auto p-8 py-12">
+      {% include '_partials/_module-header' with {
+        "headerText": "News & Updates",
+        "linkText": "Newsroom",
+        "linkUrl": "/news"
+      } %}
+      <div class="news-grid md:flex mt-8">
+        {% set featuredNews = craft.entries()
+          .section('news')
+          .search('featureOnHomepage:1')
+          .newsImage(':notempty:')
+          .after('2017-10-01')
+          .orderBy('RAND()')
+          .one() %}
+        {% set featuredNewsId = featuredNews.id ?? '' %}
+        <article class="featured-news md:w-2/3 md:mr-8">
+          {% if featuredNews.newsImage | length %}
+            <figure>
+              <img class="block" src="{{ featuredNews.newsImage.one.url }}">
+            </figure>
+          {% endif %}
+          <p class="my-4 text-camouflage-green">{{ featuredNews.postDate | date('M j, Y') }}</p>
+          <h2 class="my-0 leading-tight text-xl md:text-2xl"><a href="{{ featuredNews.url }}">{{ featuredNews.title }}</a></h2>
+          {{ featuredNews.summary | md }}
+        </article>
+        <div class="other-news md:w-1/3">
+          {% for entry in craft.entries.section('news').id('not ' ~ featuredNewsId).featureOnHomepage(true).limit(5).all() %}
+            <article class="py-6 border-b border-celeste{% if loop.last %} border-none{% endif %}">
+              <h2 class="my-0 text-lg leading-normal"><a href="{{ entry.url }}">{{ entry.title }}</a></h2>
+              <p class="mt-4 mb-0 text-sm text-camouflage-green">{{ entry.postDate | date('M j, Y') }}</p>
+            </article>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {# Begin Services #}
+  <section class="bg-rotate relative z-0">
+    <div class="container mx-auto p-8 py-12">
+      {% include '_partials/_module-header' with {
+        "headerText": "Most Requested Services",
+        "linkText": "Services A - Z",
+        "linkUrl": "/services/",
+        "buttonBright": true
+      } %}
+      <div class="card-grid filter-grid mt-8">
+        {% for entry in entry.highlightedServices.all() %}
+          {% include '_partials/_services' %}
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {# End Services #}
+
+  {# Begin Events #}
+  <section class="bg-rotate">
+    <div class="container mx-auto p-8">
+      {% include '_partials/_module-header' with {
+        "headerText": "Upcoming Events",
+        "linkText": "All Meetings & Events",
+        "linkUrl": "/events"
+      } %}
+      <div class="card-grid vertical-cards mt-8">
+        {% set options = {
+          calendar: "events",
+          limit: 3
+        } %}
+        {% for entry in craft.calendar.events(options).all() %}
+          {% include '_partials/_vertical-cards' with {
+            title: entry.title,
+            url: entry.url,
+            photo: entry.eventImage.one,
+            byline: entry.startDate.format("l d, Y"),
+            body: entry.body
+          } %}
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {# End Events #}
+
+  {# Begin Departments #}
+  <section class="bg-rotate relative z-0">
+    <div class="container mx-auto p-8 py-12">
+    {% include '_partials/_module-header' with {
+      "headerText": "Featured Departments",
+      "linkText": "All Departments",
+      "linkUrl": "/departments"
+    } %}
+    <div class="card-grid card-department-grid filter-grid mt-8">
+      {% for entry in entry.highlightedDepartments.all() %}
+        {% include '_partials/_departments' %}
+      {% endfor %}
+    </div>
+  </section>
+  {# End Departments #}
+
+  {# Begin Officials #}
+  <section class="bg-rotate">
+    <div class="container mx-auto p-8">
+      {% include '_partials/_module-header' with {
+        "headerText": "City Officials",
+        "linkText": "Find Your Council District",
+        "linkUrl": "http://gisapps.mapoakland.com/councildistricts/",
+        "buttonBright": true
+      } %}
+      <div class="card-grid profile-cards mt-12">
+        {% for entry in craft.entries.section('electedOfficials').all() %}
+          {% include '_partials/_profile-cards' with {
+            photo: entry.portrait.one,
+            name: entry.groupHeadName,
+            jobTitle: entry.title,
+            url: entry.redirectUrl ?? entry.url ?? ''
+          } %}
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {# End Officials #}
 {% endblock %}

@@ -1,19 +1,11 @@
-<div class="container mx-auto my-8 p-8">
-  <div class="flex flex-col sm:flex-row items-center">
-    <h2 class="my-0 sm:flex-1">City Officials</h2>
-    <a href="#" class="btn btn-bright mt-4 sm:mt-0">Find Your Council District »</a>
+<a href="{{ url }}" class="block text-shark flex items-start">
+  <figure class="block w-1/4">
+    {% if photo | length %}
+      <img src="{{ photo.getUrl('smallSquare') }}" alt="Portrait of {{ jobTitle }}, {{ name }}" class="block rounded-full h-full w-full">
+    {% endif %}
+  </figure>
+  <div class="ml-6 w-3/4">
+    <h3 class="m-0 text-2xl">{{ name }}</h3>
+    <p class="mt-2">{{ jobTitle }}</p>
   </div>
-  <div class="card-grid profile-cards mt-12">
-    {% for item in 0 .. 15 %}
-      <a href="#" class="block text-shark flex items-start">
-        <figure class="block h-24 w-24">
-          <img src="http://placeimg.com/480/480/people/{{ loop.index }}" alt="" class="block h-24 w-24 rounded-full">
-        </figure>
-        <div class="ml-6 flex-1">
-          <h3 class="m-0 text-2xl">Person’s Name</h3>
-          <p class="mt-0">Job Title</p>
-        </div>
-      </a>
-    {% endfor %}
-  </div>
-</div>
+</a>

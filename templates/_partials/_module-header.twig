@@ -1,0 +1,6 @@
+  {% set linkDisable = linkDisable ?? false %}
+  {% set buttonBright = buttonBright ?? false %}
+  <div class="flex flex-col sm:flex-row items-center">
+    <h2 class="my-0 sm:flex-1">{{ headerText }}</h2>
+    {% if not linkDisable %}<a href="{{ linkUrl }}" class="btn {%if buttonBright %}btn-bright {% endif %}mt-4 sm:mt-0">{{ linkText }} »</a>{% endif %}
+  </div>
