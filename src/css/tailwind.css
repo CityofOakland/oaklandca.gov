@@ -101,15 +101,29 @@ a:hover {
 /* Banner Styles */
 
 .banner {
-  @apply relative text-white text-xl leading-loose bg-shark z-0;
+  @apply relative text-white text-xl leading-loose bg-astronaut z-0;
   padding-top: 10rem;
+}
+
+.banner-home {
+  @apply bg-shark;
 }
 
 .banner-image {
   @apply absolute pin object-fit-cover w-full h-full;
 }
 
-/* Department Styles */
+/* Service Styles */
+
+.card-grid-button {
+  @apply bg-white border-l-4 text-shark no-underline text-xl border-apple p-8 trans trans-fast;
+}
+
+.card-grid-button:hover {
+  @apply bg-apple underline text-white;
+}
+
+/* Department Styles (modifies Service Styles) */
 
 .card-department {
   @apply bg-shark border-astronaut text-white;
@@ -125,16 +139,6 @@ a:hover {
 
 .card-department:hover img {
   @apply opacity-75;
-}
-
-/* Service Styles */
-
-.card-grid-button {
-  @apply bg-white border-l-4 text-shark no-underline text-xl border-apple p-8 trans trans-fast;
-}
-
-.card-grid-button:hover {
-  @apply bg-apple underline text-white;
 }
 
 /* Background Section Color Rotations */
