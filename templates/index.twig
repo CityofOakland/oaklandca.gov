@@ -54,10 +54,7 @@
       } %}
       <div class="card-grid filter-grid mt-8">
         {% for entry in entry.highlightedServices.all() %}
-          {% include '_partials/_title-cards' with {
-            title: entry.title,
-            url: entry.redirectUrl ?? entry.url ?? ''
-          } %}
+          {% include '_partials/_title-cards' %}
         {% endfor %}
       </div>
     </div>
