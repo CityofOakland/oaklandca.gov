@@ -11,11 +11,13 @@
 {% set links = links ?? '' %}
 
 {% set colors = colorPalette[colorScheme] %}
+{% set linkColor = colors.linkColor %}
+{% set barColor = colors.barColor %}
 
-<div class="container mx-auto text-sm pt-4 pb-3 pl-8 border-{{ colors.barColor }} border-l-2 text-{{ colors.barColor }}">
-  <a class="text-{{ colors.linkColor }}" href="/">Oakland</a> →
+<div class="container mx-auto text-sm pt-4 pb-3 pl-8 border-{{ barColor }} border-l-2 text-{{ barColor }}">
+  <a class="text-{{ linkColor }} hover:text-{{ barColor }} hover:underline" href="/">Oakland</a> →
   {% for link in links if links is defined %}
-    <a class="text-{{ colors.linkColor }}" href="{{ link.link }}">{{ link.title }}</a> →
+    <a class="text-{{ linkColor }} hover:text-{{ barColor }} hover:underline" href="{{ link.link }}">{{ link.title }}</a> →
   {% endfor %}
   <span class="font-bold">{{ title }}</span>
 </div>
