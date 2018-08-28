@@ -54,7 +54,10 @@
       } %}
       <div class="card-grid filter-grid mt-8">
         {% for entry in entry.highlightedServices.all() %}
-          {% include '_partials/_services' %}
+          {% include '_partials/_title-cards' with {
+            title: entry.title,
+            url: entry.redirectUrl ?? entry.url ?? ''
+          } %}
         {% endfor %}
       </div>
     </div>
@@ -98,7 +101,11 @@
     } %}
     <div class="card-grid card-department-grid filter-grid mt-8">
       {% for entry in entry.highlightedDepartments.all() %}
-        {% include '_partials/_departments' %}
+        {% include '_partials/_photo-cards' with {
+          title: entry.title,
+          photo: entry.banner.one,
+          url: entry.redirectUrl ?? entry.url ?? ''
+        } %}
       {% endfor %}
     </div>
   </section>

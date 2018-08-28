@@ -1,0 +1,6 @@
+<a href="{{ url }}" class="card-grid-button card-department relative z-0">
+  {% if photo | length %}
+    <img src="{{ photo.url }}" alt="" class="object-fit-cover absolute h-full w-full pin">
+  {% endif %}
+  {{ title }}
+</a>
