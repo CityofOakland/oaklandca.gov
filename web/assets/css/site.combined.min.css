@@ -1,8 +1,8 @@
 /**
  * @project        oakland
  * @author         Christopher Kennedy, onebrightlight <chris@onebrightlight.com>
- * @build          Mon, Aug 6, 2018 4:03 PM ET
- * @release        bbba17d5be47444f6cd836e1cc95741037d5432a [master]
+ * @build          Tue, Aug 28, 2018 10:30 AM ET
+ * @release        85ee7039bfb06f5988c74099d214384513f5dfa1 [master]
  * @copyright      Copyright (c) 2018, onebrightlight
  *
  */
@@ -755,6 +755,8 @@ a:hover {
   fill: #fff;
 }
 
+/* Button Styles */
+
 .btn {
   display: inline-block;
   background-color: #255375;
@@ -771,7 +773,9 @@ a:hover {
 }
 
 .btn:hover {
+  color: #fff;
   text-decoration: underline;
+  background-color: #212529;
 }
 
 .btn-bright {
@@ -780,7 +784,59 @@ a:hover {
 
 .btn-bright:hover {
   background-color: #1e4a18;
+  color: #fff;
 }
+
+/* Banner Styles */
+
+.banner {
+  position: relative;
+  color: #fff;
+  font-size: 1.25rem;
+  line-height: 2;
+  background-color: #212529;
+  z-index: 0;
+  padding-top: 10rem;
+}
+
+.banner-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+/* Department Styles */
+
+.card-department {
+  background-color: #212529;
+  border-color: #255375;
+  color: #fff;
+}
+
+.card-department img {
+  opacity: .25;
+  transition-duration: .25s;
+  transition-property: all;
+  transition-timing-function: ease-in-out;
+  transition-property: opacity;
+}
+
+.card-department:hover {
+  background-color: #212529;
+}
+
+.card-department:hover img {
+  opacity: .75;
+}
+
+/* Service Styles */
 
 .card-grid-button {
   background-color: #fff;
@@ -802,26 +858,14 @@ a:hover {
   color: #fff;
 }
 
-.banner {
-  position: relative;
-  color: #fff;
-  font-size: 1.25rem;
-  line-height: 2;
-  background-color: #212529;
-  z-index: 0;
+/* Background Section Color Rotations */
+
+main > .bg-rotate:nth-child(odd) {
+  background-color: #fff;
 }
 
-.banner-image {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: -1;
-  -o-object-fit: cover;
-     object-fit: cover;
-  width: 100%;
-  height: 100%;
+main > .bg-rotate:nth-child(even) {
+  background-color: #e9eae7;
 }
 
 /**
@@ -3037,6 +3081,38 @@ a:hover {
 }
 
 .opacity-12\.5 {
+  opacity: .125;
+}
+
+.hover\:opacity-0:hover {
+  opacity: 0;
+}
+
+.hover\:opacity-25:hover {
+  opacity: .25;
+}
+
+.hover\:opacity-50:hover {
+  opacity: .5;
+}
+
+.hover\:opacity-75:hover {
+  opacity: .75;
+}
+
+.hover\:opacity-100:hover {
+  opacity: 1;
+}
+
+.hover\:opacity-3\.125:hover {
+  opacity: .03125;
+}
+
+.hover\:opacity-6\.25:hover {
+  opacity: .0625;
+}
+
+.hover\:opacity-12\.5:hover {
   opacity: .125;
 }
 
@@ -6650,6 +6726,38 @@ a:hover {
     opacity: .125;
   }
 
+  .sm\:hover\:opacity-0:hover {
+    opacity: 0;
+  }
+
+  .sm\:hover\:opacity-25:hover {
+    opacity: .25;
+  }
+
+  .sm\:hover\:opacity-50:hover {
+    opacity: .5;
+  }
+
+  .sm\:hover\:opacity-75:hover {
+    opacity: .75;
+  }
+
+  .sm\:hover\:opacity-100:hover {
+    opacity: 1;
+  }
+
+  .hover\:opacity-3\.sm\:125:hover {
+    opacity: .03125;
+  }
+
+  .hover\:opacity-6\.sm\:25:hover {
+    opacity: .0625;
+  }
+
+  .hover\:opacity-12\.sm\:5:hover {
+    opacity: .125;
+  }
+
   .sm\:overflow-auto {
     overflow: auto;
   }
@@ -10113,6 +10221,38 @@ a:hover {
   }
 
   .opacity-12\.md\:5 {
+    opacity: .125;
+  }
+
+  .md\:hover\:opacity-0:hover {
+    opacity: 0;
+  }
+
+  .md\:hover\:opacity-25:hover {
+    opacity: .25;
+  }
+
+  .md\:hover\:opacity-50:hover {
+    opacity: .5;
+  }
+
+  .md\:hover\:opacity-75:hover {
+    opacity: .75;
+  }
+
+  .md\:hover\:opacity-100:hover {
+    opacity: 1;
+  }
+
+  .hover\:opacity-3\.md\:125:hover {
+    opacity: .03125;
+  }
+
+  .hover\:opacity-6\.md\:25:hover {
+    opacity: .0625;
+  }
+
+  .hover\:opacity-12\.md\:5:hover {
     opacity: .125;
   }
 
@@ -13582,6 +13722,38 @@ a:hover {
     opacity: .125;
   }
 
+  .lg\:hover\:opacity-0:hover {
+    opacity: 0;
+  }
+
+  .lg\:hover\:opacity-25:hover {
+    opacity: .25;
+  }
+
+  .lg\:hover\:opacity-50:hover {
+    opacity: .5;
+  }
+
+  .lg\:hover\:opacity-75:hover {
+    opacity: .75;
+  }
+
+  .lg\:hover\:opacity-100:hover {
+    opacity: 1;
+  }
+
+  .hover\:opacity-3\.lg\:125:hover {
+    opacity: .03125;
+  }
+
+  .hover\:opacity-6\.lg\:25:hover {
+    opacity: .0625;
+  }
+
+  .hover\:opacity-12\.lg\:5:hover {
+    opacity: .125;
+  }
+
   .lg\:overflow-auto {
     overflow: auto;
   }
@@ -17048,6 +17220,38 @@ a:hover {
     opacity: .125;
   }
 
+  .xl\:hover\:opacity-0:hover {
+    opacity: 0;
+  }
+
+  .xl\:hover\:opacity-25:hover {
+    opacity: .25;
+  }
+
+  .xl\:hover\:opacity-50:hover {
+    opacity: .5;
+  }
+
+  .xl\:hover\:opacity-75:hover {
+    opacity: .75;
+  }
+
+  .xl\:hover\:opacity-100:hover {
+    opacity: 1;
+  }
+
+  .hover\:opacity-3\.xl\:125:hover {
+    opacity: .03125;
+  }
+
+  .hover\:opacity-6\.xl\:25:hover {
+    opacity: .0625;
+  }
+
+  .hover\:opacity-12\.xl\:5:hover {
+    opacity: .125;
+  }
+
   .xl\:overflow-auto {
     overflow: auto;
   }
@@ -18316,7 +18520,7 @@ a:hover {
 
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(1fr);
+  grid-template-columns: repeat(1, 1fr);
   grid-gap: 32px;
 }
 
@@ -18326,9 +18530,15 @@ a:hover {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .card-grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .card-department-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -18360,11 +18570,4 @@ a:focus, input:focus, textarea:focus, button:focus {
     outline-width: 3px;
   }
 
-.banner-home {
-  padding-top: 10rem;
-}
-
-.banner-image-push {
-  top: 10rem;
-}
 /*# sourceMappingURL=site.combined.min.css.map */

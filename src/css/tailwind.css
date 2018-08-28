@@ -76,41 +76,76 @@ a:hover {
  * @import "components/forms";
  */
 
- .logo {
-   fill: #ffffff;
- }
+.logo {
+  fill: #ffffff;
+}
 
- .btn {
-   @apply inline-block bg-astronaut py-4 px-8 text-white no-underline trans trans-fast;
- }
+/* Button Styles */
 
- .btn:hover {
-   @apply underline;
- }
+.btn {
+  @apply inline-block bg-astronaut py-4 px-8 text-white no-underline trans trans-fast;
+}
 
- .btn-bright {
-   @apply bg-apple;
- }
+.btn:hover {
+  @apply text-white underline bg-shark;
+}
 
- .btn-bright:hover {
-   @apply bg-parsley;
- }
+.btn-bright {
+  @apply bg-apple;
+}
 
- .card-grid-button {
-   @apply bg-white border-l-4 text-shark no-underline text-xl border-apple p-8 trans trans-fast;
- }
+.btn-bright:hover {
+  @apply bg-parsley text-white;
+}
 
- .card-grid-button:hover {
-   @apply bg-apple underline text-white;
- }
+/* Banner Styles */
 
- .banner {
+.banner {
   @apply relative text-white text-xl leading-loose bg-shark z-0;
- }
+  padding-top: 10rem;
+}
 
- .banner-image {
-   @apply absolute pin object-fit-cover w-full h-full;
- }
+.banner-image {
+  @apply absolute pin object-fit-cover w-full h-full;
+}
+
+/* Department Styles */
+
+.card-department {
+  @apply bg-shark border-astronaut text-white;
+}
+
+.card-department img {
+  @apply opacity-25 trans trans-opacity;
+}
+
+.card-department:hover {
+  @apply bg-shark;
+}
+
+.card-department:hover img {
+  @apply opacity-75;
+}
+
+/* Service Styles */
+
+.card-grid-button {
+  @apply bg-white border-l-4 text-shark no-underline text-xl border-apple p-8 trans trans-fast;
+}
+
+.card-grid-button:hover {
+  @apply bg-apple underline text-white;
+}
+
+/* Background Section Color Rotations */
+
+main > .bg-rotate:nth-child(odd) {
+  @apply bg-white;
+}
+
+main > .bg-rotate:nth-child(even) {
+  @apply bg-cararra;
+}
 
 /**
  * This injects all of Tailwind's utility classes, generated based on your
