@@ -1,0 +1,38 @@
+{% extends '_layout' %}
+
+{% block content %}
+  <div class="banner leading-normal">
+    <div class="container mx-auto px-8">
+    {% include '_partials/_breadcrumbs' with {
+      title: entry.title,
+      colorScheme: 'light',
+      links: [
+        {
+          title: 'Departments',
+          link: '/departments'
+        }
+      ]
+    } %}
+    </div>
+    <div class="container mx-auto p-8 py-16">
+      <h1 class="font-bold mb-0">{{ entry.title | replace({' Index': ''}) }}</h1>
+      {% if entry.leadIn %}
+        <p class="mt-8 mb-0">{{ entry.leadIn }}</p>
+      {% endif %}
+    </div>
+  </div>
+  {# Begin Departments #}
+  <section class="bg-rotate relative z-0">
+    <div class="container mx-auto p-8 py-16">
+      <div class="card-grid filter-grid">
+        {% for entry in craft.entries.section('departments').officialDepartment(true).orderBy('title asc').all() %}
+          {% include '_partials/_title-cards' with {
+            title: entry.title,
+            url: entry.redirectUrl ?? entry.url ?? ''
+          } %}
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {# End Departments #}
+{% endblock %}

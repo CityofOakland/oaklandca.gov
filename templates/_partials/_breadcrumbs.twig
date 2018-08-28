@@ -1,11 +1,18 @@
-{% if whiteBg is defined %}
-  {% set linkColor = 'astronaut' %}
-  {% set barColor = 'shark' %}
-{% else %}
-  {% set linkColor = 'cararra' %}
-  {% set barColor = 'white' %}
-{% endif %}
+{% set colorPalette = {
+  'light': {
+    'linkColor': 'cararra',
+    'barColor': 'white',
+  },
+  'dark': {
+    'linkColor': 'astronaut',
+    'barColor': 'shark',
+  },
+} %}
 
-<div class="container mx-auto text-sm pt-4 pb-3 pl-8 border-{{ barColor }} border-l-2 text-{{ barColor }}">
-  <a class="text-{{ linkColor }}" href="#">Oakland</a> → <a class="text-{{ linkColor }}" href="#">Officials</a> → <span class="font-bold">City Attorney</span>
+<div class="container mx-auto text-sm pt-4 pb-3 pl-8 border-{{ colorPalette[colorScheme].barColor }} border-l-2 text-{{ colorPalette[colorScheme].barColor }}">
+  <a class="text-{{ colorPalette[colorScheme].linkColor }}" href="/">Oakland</a> →
+  {% for link in links %}
+    <a class="text-{{ colorPalette[colorScheme].linkColor }}" href="{{ link.link }}">{{ link.title }}</a> →
+  {% endfor %}
+  <span class="font-bold">{{ title }}</span>
 </div>
