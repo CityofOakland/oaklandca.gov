@@ -78,8 +78,9 @@
           {% include '_partials/_vertical-cards' with {
             title: entry.title,
             url: entry.url,
+            icon: 'calendar',
             photo: entry.eventImage.one,
-            byline: entry.startDate.format("l d, Y"),
+            byline: entry.startDate.format("M d, Y"),
             body: entry.body
           } %}
         {% endfor %}

@@ -24,6 +24,34 @@
   </div>
   {# End Banner #}
 
+  {# Begin Events #}
+  <section class="bg-rotate">
+    <div class="container mx-auto p-8">
+      {% include '_partials/_module-header' with {
+        "headerText": "Events",
+        "linkText": "All Events",
+        "linkUrl": "/events"
+      } %}
+      <div class="card-grid vertical-cards mt-8">
+        {% set options = {
+          calendar: "events",
+          limit: 3
+        } %}
+        {% for entry in craft.calendar.events(options).relatedTo(entry).all() %}
+          {% include '_partials/_vertical-cards' with {
+            title: entry.title,
+            url: entry.url,
+            icon: 'calendar',
+            photo: entry.eventImage.one,
+            byline: entry.startDate.format("M d, Y"),
+            body: entry.body
+          } %}
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {# End Events #}
+
   {# Begin Featured Services #}
     {% if entry.pageServices | length %}
       <section class="bg-rotate">
