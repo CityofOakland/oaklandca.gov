@@ -1,3 +1,4 @@
-<a href="{{ url ?? entry.url ?? '' }}" class="card-grid-button">
-  {{ title ?? entry.title ?? '' }}
-</a>
+{% set url = url ?? entry.url ?? null %}
+{% set title = title ?? entry.title ?? null %}
+
+<a href="{{ url }}" class="card-grid-button">{{ title }}</a>
