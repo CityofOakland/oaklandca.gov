@@ -8,11 +8,14 @@
     'barColor': 'shark',
   },
 } %}
+{% set links = links ?? '' %}
 
-<div class="container mx-auto text-sm pt-4 pb-3 pl-8 border-{{ colorPalette[colorScheme].barColor }} border-l-2 text-{{ colorPalette[colorScheme].barColor }}">
-  <a class="text-{{ colorPalette[colorScheme].linkColor }}" href="/">Oakland</a> →
-  {% for link in links %}
-    <a class="text-{{ colorPalette[colorScheme].linkColor }}" href="{{ link.link }}">{{ link.title }}</a> →
+{% set colors = colorPalette[colorScheme] %}
+
+<div class="container mx-auto text-sm pt-4 pb-3 pl-8 border-{{ colors.barColor }} border-l-2 text-{{ colors.barColor }}">
+  <a class="text-{{ colors.linkColor }}" href="/">Oakland</a> →
+  {% for link in links if links is defined %}
+    <a class="text-{{ colors.linkColor }}" href="{{ link.link }}">{{ link.title }}</a> →
   {% endfor %}
   <span class="font-bold">{{ title }}</span>
 </div>
