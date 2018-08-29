@@ -1,12 +1,12 @@
 {
   "require": {
-    "craftcms/cms": "3.0.21",
+    "craftcms/cms": "3.0.22",
     "vlucas/phpdotenv": "^2.4.0",
     "nystudio107/craft-typogrify": "1.1.11",
     "solspace/craft3-calendar": "v2.0.5",
     "solspace/craft3-freeform": "2.2.2",
     "solspace/craft3-freeform-pro": "2.2.2",
-    "nystudio107/craft-seomatic": "3.1.16",
+    "nystudio107/craft-seomatic": "3.1.17",
     "mmikkel/cp-field-inspect": "1.0.4",
     "craftcms/store-hours": "2.1.0.1",
     "craftcms/redactor": "2.1.6",
