@@ -7,7 +7,7 @@
         "linkUrl": "/news"
       } %}
       <div class="card-grid vertical-cards mt-8">
-        {% for entry in entry.pageNews %}
+        {% for entry in entry.pageNews.all() %}
           {% include '_partials/_elements/_vertical-cards' with {
             title: entry.title,
             url: entry.url,
