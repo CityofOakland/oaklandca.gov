@@ -1,14 +1,14 @@
 {% if entry.pageTopics | length %}
   <section class="bg-rotate">
     <div class="container mx-auto p-8">
-      {% include '_partials/_module-header' with {
+      {% include '_partials/_elements/_module-header' with {
         "headerText": "Topics",
         "linkText": "All Topics",
         "linkUrl": "/topics"
       } %}
       <div class="card-grid vertical-cards mt-8">
         {% for entry in entry.pageTopics %}
-          {% include '_partials/_title-cards' %}
+          {% include '_partials/_elements/_title-cards' %}
         {% endfor %}
       </div>
     </div>

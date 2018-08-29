@@ -1,14 +1,14 @@
 {% if entry.pageNews | length %}
   <section class="bg-rotate">
     <div class="container mx-auto p-8">
-      {% include '_partials/_module-header' with {
+      {% include '_partials/_elements/_module-header' with {
         "headerText": "News",
         "linkText": "All News",
         "linkUrl": "/news"
       } %}
       <div class="card-grid vertical-cards mt-8">
         {% for entry in entry.pageNews %}
-          {% include '_partials/_vertical-cards' with {
+          {% include '_partials/_elements/_vertical-cards' with {
             title: entry.title,
             url: entry.url,
             icon: 'newspaper',
