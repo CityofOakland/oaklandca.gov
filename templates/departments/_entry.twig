@@ -1,91 +1,12 @@
 {% extends '_layout' %}
 
 {% block content %}
-  {# Begin Banner #}
-  <div class="banner leading-normal">
-    <div class="container mx-auto px-8">
-    {% include '_partials/_breadcrumbs' with {
-      title: entry.title,
-      colorScheme: 'light',
-      links: [
-        {
-          title: 'Departments',
-          link: '/departments'
-        }
-      ]
-    } %}
-    </div>
-    <div class="container mx-auto p-8 py-16">
-      <h1 class="font-bold mb-0">{{ entry.title | replace({' Index': ''}) }}</h1>
-      {% if entry.leadIn %}
-        <p class="mt-8 mb-0">{{ entry.leadIn }}</p>
-      {% endif %}
-    </div>
-  </div>
-  {# End Banner #}
-
-  {# Begin Events #}
-  {% set options = {
-    calendar: "events",
-    limit: 3
-  } %}
-  {% set events = craft.calendar.events(options).relatedTo(entry).all() %}
-  {% if events | length %}
-    <section class="bg-rotate">
-      <div class="container mx-auto p-8">
-        {% include '_partials/_module-header' with {
-          "headerText": "Events",
-          "linkText": "All Events",
-          "linkUrl": "/events"
-        } %}
-        <div class="card-grid vertical-cards mt-8">
-          {% for entry in events %}
-            {% include '_partials/_vertical-cards' with {
-              title: entry.title,
-              url: entry.url,
-              icon: 'calendar',
-              photo: entry.eventImage.one,
-              byline: entry.startDate.format("M d, Y"),
-              body: entry.body
-            } %}
-          {% endfor %}
-        </div>
-      </div>
-    </section>
-  {% endif %}
-  {# End Events #}
-
-  {# Begin Featured Services #}
-    {% if entry.pageServices | length %}
-      <section class="bg-rotate">
-        <div class="container mx-auto p-8 py-16">
-          {% include '_partials/_module-header' with {
-            "headerText": "Featured Services",
-          } %}
-          <div class="card-grid filter-grid mt-8">
-            {% for entry in entry.pageServices.all() %}
-              {% include '_partials/_title-cards' %}
-            {% endfor %}
-          </div>
-        </div>
-      </section>
-    {% endif %}
-  {# End Featured Services #}
-
-  {# Begin Boards and Commissions #}
-  {% if entry.boardsCommissions | length %}
-    <section class="bg-rotate">
-      <div class="container mx-auto p-8 py-16">
-        {% include '_partials/_module-header' with {
-          "headerText": "Related Boards & Commissions",
-        } %}
-        <div class="card-grid filter-grid mt-8">
-          {% for entry in entry.boardsCommissions.all() %}
-            {% include '_partials/_title-cards' %}
-          {% endfor %}
-        </div>
-      </div>
-    </section>
-  {% endif %}
-  {# End Boards and Commissions #}
+  {% include '_partials/_page-banners' %}
+  {% include '_partials/_page-events' %}
+  {% include '_partials/_page-news' %}
+  {% include '_partials/_page-services' %}
+  {% include '_partials/_page-topics' %}
+  {% include '_partials/_page-projects' %}
+  {% include '_partials/_page-documents' %}
+  {% include '_partials/_page-boards' %}
 {% endblock %}

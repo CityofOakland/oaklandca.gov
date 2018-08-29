@@ -1,0 +1,28 @@
+{% set options = {
+  calendar: "events",
+  limit: 3
+} %}
+{% set events = craft.calendar.events(options).relatedTo(entry).all() %}
+{% if events | length %}
+  <section class="bg-rotate">
+    <div class="container mx-auto p-8">
+      {% include '_partials/_module-header' with {
+        "headerText": "Events",
+        "linkText": "All Events",
+        "linkUrl": "/events"
+      } %}
+      <div class="card-grid vertical-cards mt-8">
+        {% for entry in events %}
+          {% include '_partials/_vertical-cards' with {
+            title: entry.title,
+            url: entry.url,
+            icon: 'calendar',
+            photo: entry.eventImage.one,
+            byline: entry.startDate.format("M d, Y"),
+            body: entry.body
+          } %}
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+{% endif %}
