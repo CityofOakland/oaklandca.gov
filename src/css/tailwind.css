@@ -98,6 +98,10 @@ a:hover {
   @apply bg-parsley text-white;
 }
 
+.btn-sm {
+  @apply px-2 py-2;
+}
+
 /* Banner Styles */
 
 .banner {
@@ -119,8 +123,16 @@ a:hover {
   @apply bg-white border-l-4 text-shark no-underline text-xl border-apple p-8 trans trans-fast;
 }
 
+main > .bg-rotate:nth-child(even) .card-grid-button {
+  @apply bg-cararra;
+}
+
 .card-grid-button:hover {
   @apply bg-apple underline text-white;
+}
+
+main > .bg-rotate:nth-child(even) .card-grid-button:hover {
+  @apply bg-apple;
 }
 
 /* Department Styles (modifies Service Styles) */
@@ -144,11 +156,11 @@ a:hover {
 /* Background Section Color Rotations */
 
 main > .bg-rotate:nth-child(odd) {
-  @apply bg-white;
+  @apply bg-cararra;
 }
 
 main > .bg-rotate:nth-child(even) {
-  @apply bg-cararra;
+  @apply bg-white;
 }
 
 /**

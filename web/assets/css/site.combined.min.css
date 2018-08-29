@@ -1,8 +1,8 @@
 /**
  * @project        oakland
  * @author         Christopher Kennedy, onebrightlight <chris@onebrightlight.com>
- * @build          Tue, Aug 28, 2018 10:30 AM ET
- * @release        85ee7039bfb06f5988c74099d214384513f5dfa1 [master]
+ * @build          Wed, Aug 29, 2018 10:37 AM ET
+ * @release        bcacb7f6758ec8d9f7dc70de691c7efe63a4f75e [master]
  * @copyright      Copyright (c) 2018, onebrightlight
  *
  */
@@ -787,6 +787,13 @@ a:hover {
   color: #fff;
 }
 
+.btn-sm {
+  padding-left: .5rem;
+  padding-right: .5rem;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+}
+
 /* Banner Styles */
 
 .banner {
@@ -832,10 +839,18 @@ a:hover {
   transition-duration: .15s;
 }
 
+main > .bg-rotate:nth-child(even) .card-grid-button {
+  background-color: #e9eae7;
+}
+
 .card-grid-button:hover {
   background-color: #6db943;
   text-decoration: underline;
   color: #fff;
+}
+
+main > .bg-rotate:nth-child(even) .card-grid-button:hover {
+  background-color: #6db943;
 }
 
 /* Department Styles (modifies Service Styles) */
@@ -865,11 +880,11 @@ a:hover {
 /* Background Section Color Rotations */
 
 main > .bg-rotate:nth-child(odd) {
-  background-color: #fff;
+  background-color: #e9eae7;
 }
 
 main > .bg-rotate:nth-child(even) {
-  background-color: #e9eae7;
+  background-color: #fff;
 }
 
 /**
