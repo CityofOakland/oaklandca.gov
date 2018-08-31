@@ -16,7 +16,7 @@
             {% endif %}
           </figure>
           {% if entry.teams | length %}
-            {% for entry in entry.teams %}
+            {% for entry in entry.teams.all() %}
               <a href="{{ entry.url }}" class="btn btn-bright btn-sm block text-center mt-4">{{ entry.title }}</a>
             {% endfor %}
           {% endif %}
