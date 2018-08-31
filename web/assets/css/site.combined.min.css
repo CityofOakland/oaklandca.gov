@@ -839,7 +839,7 @@ a:hover {
   transition-duration: .15s;
 }
 
-main > .bg-rotate:nth-child(even) .card-grid-button {
+main > .bg-rotate:nth-child(odd) .card-grid-button {
   background-color: #e9eae7;
 }
 
@@ -849,7 +849,7 @@ main > .bg-rotate:nth-child(even) .card-grid-button {
   color: #fff;
 }
 
-main > .bg-rotate:nth-child(even) .card-grid-button:hover {
+main > .bg-rotate:nth-child(odd) .card-grid-button:hover {
   background-color: #6db943;
 }
 
@@ -879,11 +879,11 @@ main > .bg-rotate:nth-child(even) .card-grid-button:hover {
 
 /* Background Section Color Rotations */
 
-main > .bg-rotate:nth-child(odd) {
+main > .bg-rotate:nth-child(even) {
   background-color: #e9eae7;
 }
 
-main > .bg-rotate:nth-child(even) {
+main > .bg-rotate:nth-child(odd) {
   background-color: #fff;
 }
 

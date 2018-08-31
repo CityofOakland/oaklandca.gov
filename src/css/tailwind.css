@@ -123,7 +123,7 @@ a:hover {
   @apply bg-white border-l-4 text-shark no-underline text-xl border-apple p-8 trans trans-fast;
 }
 
-main > .bg-rotate:nth-child(even) .card-grid-button {
+main > .bg-rotate:nth-child(odd) .card-grid-button {
   @apply bg-cararra;
 }
 
@@ -131,7 +131,7 @@ main > .bg-rotate:nth-child(even) .card-grid-button {
   @apply bg-apple underline text-white;
 }
 
-main > .bg-rotate:nth-child(even) .card-grid-button:hover {
+main > .bg-rotate:nth-child(odd) .card-grid-button:hover {
   @apply bg-apple;
 }
 
@@ -155,11 +155,11 @@ main > .bg-rotate:nth-child(even) .card-grid-button:hover {
 
 /* Background Section Color Rotations */
 
-main > .bg-rotate:nth-child(odd) {
+main > .bg-rotate:nth-child(even) {
   @apply bg-cararra;
 }
 
-main > .bg-rotate:nth-child(even) {
+main > .bg-rotate:nth-child(odd) {
   @apply bg-white;
 }
 
