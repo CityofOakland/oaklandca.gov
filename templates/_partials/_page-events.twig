@@ -5,7 +5,7 @@
 {% set events = craft.calendar.events(options).relatedTo(entry).all() %}
 {% if events | length %}
   <section class="bg-rotate">
-    <div class="container mx-auto p-8">
+    <div class="container mx-auto p-8 py-16">
       {% include '_partials/_elements/_module-header' with {
         "headerText": "Events",
         "linkText": "All Events",
