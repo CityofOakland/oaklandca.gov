@@ -1,0 +1,33 @@
+{% extends '_layout' %}
+
+{% block content %}
+  <div class="banner leading-normal">
+    <div class="container mx-auto p-8 py-16">
+      <h1 class="font-bold mb-0">{{ entry.title | replace({' Index': ''}) }}</h1>
+      {% if entry.leadIn %}
+        <p class="mt-8 mb-0">{{ entry.leadIn }}</p>
+      {% endif %}
+    </div>
+  </div>
+
+  <section class="bg-white">
+    <div class="container mx-auto p-8 py-16">
+      {% include '_partials/_elements/_module-header' with {
+        "headerText": "City Officials",
+        "linkText": "View Staff Directory",
+        "linkUrl": "/staff/",
+        "buttonBright": true
+      } %}
+      <div class="card-grid profile-cards mt-12">
+        {% for entry in craft.entries.section('electedOfficials').all() %}
+          {% include '_partials/_elements/_profile-cards' with {
+            photo: entry.portrait.one,
+            name: entry.groupHeadName,
+            jobTitle: entry.title,
+            url: entry.redirectUrl ?? entry.url ?? ''
+          } %}
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+{% endblock %}
