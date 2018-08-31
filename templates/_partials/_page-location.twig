@@ -1,0 +1,62 @@
+<section class="bg-white">
+  <div class="container mx-auto p-8">
+    {% include '_partials/_elements/_module-header' with {
+      "headerText": "Contact",
+    } %}
+    <div class="sm:flex mt-4">
+      {% if entry.addresses | length %}
+        <div class="sm:w-1/2 sm:pr-8">
+          <h3 class="text-xl font-bold">Address{% if entry.addresses | length > 1 %}es{% endif %}</h3>
+          {% for location in entry.addresses.all() %}
+            {% if location.locationName | length %}
+              <h4 class="text-xl font-bold">{{ address.locationName }}</h4>
+            {% endif %}
+            <div class="mt-4 mb-8">
+              {{ location.address.street1 }}<br>
+              {% if location.address.street2 | length %}{{ location.address.street2 }}<br>{% endif %}
+              {{ location.address.city }}, {{ location.address.state }} {{ location.address.zip }}
+            </div>
+            {% set options = {
+                height: 300,
+                zoom: 14,
+                draggable: true,
+                markerOptions: {
+                    icon: 'https://maps.google.com/mapfiles/ms/icons/green-dot.png'
+                },
+                infoWindowOptions: {
+                    maxWidth: 200
+                }
+            } %}
+            {{ craft.smartMap.map(location.address, options) }}
+          {% endfor %}
+          {{ entry.addressExtended }}
+        </div>
+      {% endif %}
+      <div class="sm:w-1/2 sm:pl-8">
+        {% if entry.phoneNumbers | length %}
+          <h3 class="text-xl font-bold">Phone Numbers</h3>
+          <ul class="list-reset mb-8">
+            {% for phone in entry.phoneNumbers.all() %}
+              {% include '_partials/_elements/_phone-numbers' %}
+            {% endfor %}
+          </ul>
+        {% endif %}
+        {% if entry.emailAddress |length %}
+        <h3 class="text-xl font-bold">Email Address</h3>
+        <p><a href="mailto:{{ entry.emailAddress }}">{{ entry.emailAddress }}</a></p>
+        {% endif %}
+        {% if entry.openHours | length %}
+          <h3 class="text-xl font-bold">Open Hours</h3>
+          {% for item in entry.openHours.all() %}
+            {% if item.hoursTitle | length %}<h4 class="text-lg font-bold">{{ item.hoursTitle }}{% endif %}
+            <dl>
+              {% for day in item.hours.getRange(1, 0) %}
+                {% include '_partials/_elements/_hours' %}
+              {% endfor %}
+            </dl>
+          {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
