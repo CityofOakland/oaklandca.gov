@@ -1,0 +1,8 @@
+<li>
+  {% switch phone.type %}
+    {% case "other" %}
+      {{ phone.numberTitle }}: {{ phone.number }}
+    {% default %}
+      {{ phone.getType().name }}: {{ phone.number }}
+  {% endswitch %}
+</li>
