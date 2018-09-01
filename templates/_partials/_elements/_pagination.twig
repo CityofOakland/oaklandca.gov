@@ -1,0 +1,9 @@
+{% spaceless %}
+  <div class="pagination my-8 text-base">
+    <a class="mr-2" href="{{ pageInfo.firstUrl }}">First</a>
+    {% if pageInfo.prevUrl %}<a class="mx-2" href="{{ pageInfo.prevUrl }}">Previous</a>{% endif %}
+
+    {% if pageInfo.nextUrl %}<a class="mx-2" href="{{ pageInfo.nextUrl }}">Next</a>{% endif %}
+    <a class="ml-2" href="{{ pageInfo.lastUrl }}">Last</a>
+  </div>
+{% endspaceless %}
