@@ -1,8 +1,8 @@
 /**
  * @project        oakland
  * @author         Christopher Kennedy, onebrightlight <chris@onebrightlight.com>
- * @build          Wed, Aug 29, 2018 10:37 AM ET
- * @release        bcacb7f6758ec8d9f7dc70de691c7efe63a4f75e [master]
+ * @build          Fri, Aug 31, 2018 11:19 AM ET
+ * @release        161de63f86d711b0844710186e7056d6c447eae5 [master]
  * @copyright      Copyright (c) 2018, onebrightlight
  *
  */
@@ -657,7 +657,7 @@ h4,
 h5,
 h6 {
   font-weight: 300;
-  line-height: 1;
+  line-height: 1.25;
 }
 
 h2 {
