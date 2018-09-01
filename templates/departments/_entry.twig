@@ -1,7 +1,15 @@
 {% extends '_layout' %}
 
 {% block content %}
-  {% include '_partials/_page-banners' %}
+  {% include '_partials/_page-banners' with {
+    breadCrumbs: true,
+    breadCrumbLinks: [
+      {
+        title: 'Departments',
+        link: '/departments'
+      }
+    ],
+  } %}
   {% include '_partials/_page-events' %}
   {% include '_partials/_page-news' %}
   {% include '_partials/_page-services' %}

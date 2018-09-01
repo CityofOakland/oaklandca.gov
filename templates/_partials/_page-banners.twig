@@ -1,18 +1,15 @@
 <div class="banner leading-normal">
   <div class="container mx-auto px-8">
-  {% include '_partials/_elements/_breadcrumbs' with {
-    title: entry.title,
-    colorScheme: 'light',
-    links: [
-      {
-        title: 'Departments',
-        link: '/departments'
-      }
-    ]
-  } %}
+  {% if breadCrumbs is defined and breadCrumbs %}
+    {% include '_partials/_elements/_breadcrumbs' with {
+      title: entry.title,
+      breadCrumbColorScheme: breadCrumbColorScheme ?? 'light',
+      links: breadCrumbLinks ?? null
+    } %}
+  {% endif %}
   </div>
   <div class="container mx-auto p-8 py-16">
-    <h1 class="font-bold mb-0">{{ entry.title | replace({' Index': ''}) }}</h1>
+    <h1 class="font-bold mb-0">{{ bannerTitle ?? entry.title ?? '' }}</h1>
     {% if entry.leadIn %}
       <p class="mt-8 mb-0">{{ entry.leadIn }}</p>
     {% endif %}
