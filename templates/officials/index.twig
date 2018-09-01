@@ -19,7 +19,7 @@
         "buttonBright": true
       } %}
       <div class="card-grid profile-cards mt-12">
-        {% for entry in craft.entries.section('electedOfficials').all() %}
+        {% for entry in craft.entries.section('officialsEntries').all() %}
           {% include '_partials/_elements/_profile-cards' with {
             photo: entry.portrait.one,
             name: entry.groupHeadName,
