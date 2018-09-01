@@ -1,0 +1,26 @@
+{% if entry.callToAction | length %}
+  <div class="card-grid filter-grid mb-16">
+    {% for cta in entry.callToAction.all() %}
+      {% set url = '' %}
+      {% set text = '' %}
+      {% switch cta.type %}
+        {% case "onlineLink" %}
+          {% set url = cta.linkUrl %}
+          {% set text = cta.onlineTitle ~ ' - ' ~ cta.linkText %}
+        {% case "phoneNumber" %}
+          {% set url = 'tel:' ~ cta.number | replace('/[^0-9]/', '') %}
+          {% set text = cta.phoneNumberTitle ~ ': ' ~ cta.number %}
+        {% case "physicalAddress" %}
+        {% case "documentLink" %}
+          {% set doc = cta.documentLink.one %}
+          {% set url = doc.url ?? '' %}
+          {% set text = cta.documentLabel ?? doc.title ~ ' - ' ~ cta.buttonLabel %}
+        {% case "emailAddress" %}
+          {% set url = 'mailto:' ~ cta.emailAddress %}
+          {% set text = cta.emailTitle ~ ' - ' ~ cta.linkText %}
+        {% default %}
+      {% endswitch %}
+      <a href="{{ url }}" class="btn">{{ text | raw }}</a>
+    {% endfor %}
+  </div>
+{% endif %}
