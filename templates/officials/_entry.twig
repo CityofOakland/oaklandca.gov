@@ -1,0 +1,24 @@
+{% extends '_layout' %}
+
+{% block content %}
+  {% include '_partials/_page-banners' with {
+    bannerTitle: entry.groupHeadTitle ~ ' ' ~ entry.groupHeadName,
+    breadCrumbs: true,
+    breadCrumbLinks: [
+      {
+        title: 'City Officials',
+        link: '/officials'
+    }
+    ]
+  } %}
+  {% include '_partials/_page-events' %}
+  {% include '_partials/_page-news' %}
+  {% include '_partials/_page-services' %}
+  {% include '_partials/_page-topics' %}
+  {% include '_partials/_page-projects' %}
+  {% include '_partials/_page-documents' %}
+  {% include '_partials/_page-leadership' with {
+    headerText: 'About ' ~ entry.groupHeadTitle ~ ' ' ~ entry.groupHeadName,
+  } %}
+  {% include '_partials/_page-location' %}
+{% endblock %}
