@@ -1,3 +1,4 @@
+{% set location = location ?? entry %}
 {{ location.address.street1 }}<br>
 {% if location.address.street2 | length %}{{ location.address.street2 }}<br>{% endif %}
 {{ location.address.city }}, {{ location.address.state }} {{ location.address.zip }}
