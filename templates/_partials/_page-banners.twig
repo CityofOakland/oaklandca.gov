@@ -1,8 +1,10 @@
+{% set relatedEvents = craft.calendar.events.relatedTo(entry) %}
+{% set relatedNews = craft.entries.section('news').relatedTo(entry) %}
 {% set bannerNav = [] %}
-{% if entry.pageEvents | length %}
+{% if relatedEvents | length %}
   {% set bannerNav = bannerNav | merge([{'text': 'Events', 'link': 'page-events'}]) %}
 {% endif %}
-{% if entry.pageNews | length %}
+{% if relatedNews | length %}
   {% set bannerNav = bannerNav | merge([{'text': 'News', 'link': 'page-news'}]) %}
 {% endif %}
 {% if entry.pageServices | length %}
