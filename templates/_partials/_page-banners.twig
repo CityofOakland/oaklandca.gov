@@ -17,6 +17,12 @@
 {% if entry.pageDocuments | length %}
   {% set bannerNav = bannerNav | merge([{'text': 'Documents', 'link': 'page-documents'}]) %}
 {% endif %}
+{% if managementTitle is defined %}
+  {% set bannerNav = bannerNav | merge([{'text': managementTitle, 'link': 'page-leadership'}]) %}
+{% endif %}
+{% if contactTitle is defined %}
+  {% set bannerNav = bannerNav | merge([{'text': contactTitle, 'link': 'page-contact'}]) %}
+{% endif %}
 
 <div class="banner leading-normal">
   <div class="container mx-auto px-8">
@@ -35,15 +41,15 @@
   </div>
   <div class="relative container mx-auto p-8 py-16 z-10">
     <div class="sm:flex">
-      <div class="hidden pr-8 w-1/4 sm:block">
-        {% if bannerNav | length %}
-          <ul class="list-reset text-md">
+      {% if bannerNav | length %}
+        <div class="hidden pr-8 w-1/4 sm:block">
+          <ul class="list-reset text-sm">
             {% for item in bannerNav ?? '' %}
               <li class="my-2"><a class="text-white hover:text-white" href="#{{ item.link }}">{{ item.text }}</a></li>
             {% endfor %}
           </ul>
-        {% endif %}
-      </div>
+        </div>
+      {% endif %}
       <div>
         <h1 class="font-bold mb-0">{{ bannerTitle ?? entry.title ?? '' }}</h1>
         {% if entry.leadIn %}
