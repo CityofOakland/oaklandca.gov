@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "2b4711f6a74f2083c81d27e710fce01f",
+    "content-hash": "e95d029cf5a22434ef2a6630fae588d7",
     "packages": [
         {
             "name": "aelvan/inlin",
@@ -2728,6 +2728,51 @@
             "time": "2018-06-19T14:25:30+00:00"
         },
         {
+            "name": "marionnewlevant/twig-perversion",
+            "version": "2.0.5",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/marionnewlevant/craft-twig_perversion/zipball/5f680c39df55de53def3a8fd9b6f38bbd8885168",
+                "reference": "5f680c39df55de53def3a8fd9b6f38bbd8885168",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0-RC1"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "handle": "twig-perversion",
+                "name": "Twig Perversion",
+                "schemaVersion": "1.0.0",
+                "hasSettings": false,
+                "hasCpSection": false,
+                "documentationUrl": "https://github.com/marionnewlevant/craft-twig_perversion/blob/v2/README.md",
+                "changelogUrl": "https://raw.githubusercontent.com/marionnewlevant/craft-twig_perversion/v2/CHANGELOG.md"
+            },
+            "autoload": {
+                "psr-4": {
+                    "marionnewlevant\\twigperversion\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marion Newlevant",
+                    "homepage": "http://marion.newlevant.com"
+                }
+            ],
+            "description": "Making twig do things it really shouldn't",
+            "keywords": [
+                "craft",
+                "craftcms",
+                "plugin",
+                "twigperversion"
+            ],
+            "time": "2018-08-24T18:43:39+00:00"
+        },
+        {
             "name": "masterminds/html5",
             "version": "2.3.0",
             "dist": {
@@ -3178,11 +3223,11 @@
         },
         {
             "name": "nystudio107/craft-seomatic",
-            "version": "3.1.17",
+            "version": "3.1.18.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/9b789c96ecb76c12c5be00e8d1c4a0b299a9f5d6",
-                "reference": "9b789c96ecb76c12c5be00e8d1c4a0b299a9f5d6",
+                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/4421d03f19e37eca3f8dd6c383f0df20e7fb8e1f",
+                "reference": "4421d03f19e37eca3f8dd6c383f0df20e7fb8e1f",
                 "shasum": ""
             },
             "require": {
@@ -3247,7 +3292,7 @@
                 "docs": "https://github.com/nystudio107/craft-seomatic/blob/v3/README.md",
                 "issues": "https://github.com/nystudio107/craft-seomatic/issues"
             },
-            "time": "2018-08-29T05:24:43+00:00"
+            "time": "2018-08-30T22:26:11+00:00"
         },
         {
             "name": "nystudio107/craft-typogrify",

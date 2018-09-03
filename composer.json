@@ -6,7 +6,7 @@
     "solspace/craft3-calendar": "v2.0.5",
     "solspace/craft3-freeform": "2.2.2",
     "solspace/craft3-freeform-pro": "2.2.2",
-    "nystudio107/craft-seomatic": "3.1.17",
+    "nystudio107/craft-seomatic": "3.1.18.1",
     "mmikkel/cp-field-inspect": "1.0.4",
     "craftcms/store-hours": "2.1.0.1",
     "craftcms/redactor": "2.1.6",
@@ -26,7 +26,8 @@
     "doublesecretagency/craft-cpbodyclasses": "2.1.0",
     "lewisjenkins/craft-dynamic-fields": "3.0.6",
     "superbig/craft3-beam": "2.0.0",
-    "doublesecretagency/craft-inventory": "2.0.2"
+    "doublesecretagency/craft-inventory": "2.0.2",
+    "marionnewlevant/twig-perversion": "v2.0.5"
   },
   "autoload": {
     "psr-4": {
