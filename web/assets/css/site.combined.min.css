@@ -1,8 +1,8 @@
 /**
  * @project        oakland
  * @author         Christopher Kennedy, onebrightlight <chris@onebrightlight.com>
- * @build          Fri, Aug 31, 2018 11:19 AM ET
- * @release        161de63f86d711b0844710186e7056d6c447eae5 [master]
+ * @build          Sun, Sep 2, 2018 7:41 PM ET
+ * @release        b5d247b9f64d9500ee1ffed953e6fc99ebf75d71 [master]
  * @copyright      Copyright (c) 2018, onebrightlight
  *
  */
@@ -699,6 +699,13 @@ a:hover {
   color: #255375;
 }
 
+.anchor-link {
+  position: relative;
+  display: block;
+  visibility: hidden;
+  top: -10rem;
+}
+
 /**
  * This injects any component classes registered by plugins.
  *
@@ -794,6 +801,17 @@ a:hover {
   padding-bottom: .5rem;
 }
 
+main,
+footer {
+  position: relative;
+  top: 10rem;
+}
+
+.home main,
+.home footer {
+  top: 0;
+}
+
 /* Banner Styles */
 
 .banner {
@@ -803,11 +821,11 @@ a:hover {
   line-height: 2;
   background-color: #255375;
   z-index: 0;
-  padding-top: 10rem;
 }
 
 .banner-home {
   background-color: #212529;
+  padding-top: 10rem;
 }
 
 .banner-image {

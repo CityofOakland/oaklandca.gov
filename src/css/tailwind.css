@@ -51,6 +51,11 @@ a:hover {
   @apply text-astronaut;
 }
 
+.anchor-link {
+  @apply relative block invisible;
+  top: -10rem;
+}
+
 /**
  * This injects any component classes registered by plugins.
  *
@@ -102,15 +107,25 @@ a:hover {
   @apply px-2 py-2;
 }
 
+main, footer {
+  position: relative;
+  top: 10rem;
+}
+
+.home main,
+.home footer {
+  top: 0;
+}
+
 /* Banner Styles */
 
 .banner {
   @apply relative text-white text-xl leading-loose bg-astronaut z-0;
-  padding-top: 10rem;
 }
 
 .banner-home {
   @apply bg-shark;
+  padding-top: 10rem;
 }
 
 .banner-image {
