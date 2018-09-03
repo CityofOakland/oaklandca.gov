@@ -99,7 +99,7 @@
       "linkText": "All Departments",
       "linkUrl": "/departments"
     } %}
-    <div class="card-grid card-department-grid filter-grid mt-8">
+    <div class="card-grid card-department-grid grid-equal-height mt-8">
       {% for entry in entry.highlightedDepartments.all() %}
         {% include '_partials/_elements/_photo-cards' with {
           title: entry.title,
@@ -120,7 +120,7 @@
         "linkUrl": "http://gisapps.mapoakland.com/councildistricts/",
         "buttonBright": true
       } %}
-      <div class="card-grid profile-cards mt-12">
+      <div class="card-grid grid-equal-height profile-cards mt-12">
         {% for entry in craft.entries.section('officials').all() %}
           {% include '_partials/_elements/_profile-cards' with {
             photo: entry.portrait.one,
