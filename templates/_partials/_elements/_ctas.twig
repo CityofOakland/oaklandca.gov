@@ -1,5 +1,5 @@
 {% if entry.callToAction | length %}
-  <div class="card-grid filter-grid mb-16">
+  <div class="card-grid grid-equal-height mb-16">
     {% for cta in entry.callToAction.all() %}
       {% set url = '' %}
       {% set text = '' %}

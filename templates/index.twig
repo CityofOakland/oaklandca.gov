@@ -43,23 +43,25 @@
     </div>
   </section>
 
-  {# Begin Services #}
-  <section class="bg-rotate relative z-0">
-    <div class="container mx-auto p-8 py-12">
-      {% include '_partials/_elements/_module-header' with {
-        "headerText": "Most Requested Services",
-        "linkText": "Services A - Z",
-        "linkUrl": "/services/",
-        "buttonBright": true
-      } %}
-      <div class="card-grid filter-grid mt-8">
-        {% for entry in entry.highlightedServices.all() %}
-          {% include '_partials/_elements/_title-cards' %}
-        {% endfor %}
+  {% if entry.highlightedServices | length %}
+    {# Begin Services #}
+    <section class="bg-rotate relative z-0">
+      <div class="container mx-auto p-8 py-12">
+        {% include '_partials/_elements/_module-header' with {
+          "headerText": "Most Requested Services",
+          "linkText": "Services A - Z",
+          "linkUrl": "/services/",
+          "buttonBright": true
+        } %}
+        <div class="card-grid grid-equal-height mt-8">
+          {% for entry in entry.highlightedServices.all() %}
+            {% include '_partials/_elements/_title-cards' %}
+          {% endfor %}
+        </div>
       </div>
-    </div>
-  </section>
-  {# End Services #}
+    </section>
+    {# End Services #}
+  {% endif %}
 
   {# Begin Events #}
   <section class="bg-rotate">

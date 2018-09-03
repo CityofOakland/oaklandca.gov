@@ -24,12 +24,13 @@
   }
 }
 
-.filter-grid {
-  grid-auto-rows: 1fr;
+@media (min-width: 576px) {
+  .grid-equal-height {
+    grid-auto-rows: 1fr;
+  }
 }
 
-.vertical-cards,
-.profile-cards {
+.vertical-cards {
   grid-row-gap: 48px;
 }
 
