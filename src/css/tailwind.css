@@ -132,6 +132,22 @@ main, footer {
   @apply absolute pin object-fit-cover w-full h-full;
 }
 
+/* Image Blur */
+@responsive {
+  .image-blur-none {
+    filter: blur(0);
+  }
+  .image-blur-base {
+    filter: blur(10px);
+  }
+  .image-blur-small {
+    filter: blur(5px);
+  }
+  .image-blur-large {
+    filter: blur(25px);
+  }
+}
+
 /* Service Styles */
 
 .card-grid-button {

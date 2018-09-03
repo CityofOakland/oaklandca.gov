@@ -1,0 +1,33 @@
+{% extends '_layout' %}
+
+{% block content %}
+  {% include '_partials/_page-banners' with {
+    bannerImage: entry.newsImage,
+    bannerImageBlur: 'large',
+    breadCrumbs: true,
+    breadCrumbLinks: [
+      {
+        title: 'News',
+        link: '/news'
+      }
+    ],
+  } %}
+  <section class="bg-white relative z-0">
+    <div class="container mx-auto p-8 py-16 sm:flex">
+      <div class="sm:w-3/4 sm:mr-8">
+        {% if entry.newsImage | length %}
+          <figure class="max-w-full mb-8">
+            <img src="{{ entry.newsImage.one.url }}" alt="">
+          </figure>
+        {% endif %}
+        {{ entry.body }}
+      </div>
+      <div class="sm:flex-1">
+        {% if entry.mediaContact | length %}
+          <h3>Media Contact</h3>
+          {{ entry.mediaContact }}
+        {% endif %}
+      </div>
+    </div>
+  </section>
+{% endblock %}

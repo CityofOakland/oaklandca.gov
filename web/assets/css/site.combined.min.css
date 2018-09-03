@@ -1,8 +1,8 @@
 /**
  * @project        oakland
  * @author         Christopher Kennedy, onebrightlight <chris@onebrightlight.com>
- * @build          Sun, Sep 2, 2018 7:41 PM ET
- * @release        b5d247b9f64d9500ee1ffed953e6fc99ebf75d71 [master]
+ * @build          Mon, Sep 3, 2018 11:50 AM ET
+ * @release        ef9d84598a3ff52993b0ad21d2696e91f782a023 [master]
  * @copyright      Copyright (c) 2018, onebrightlight
  *
  */
@@ -839,6 +839,28 @@ footer {
      object-fit: cover;
   width: 100%;
   height: 100%;
+}
+
+/* Image Blur */
+
+.image-blur-none {
+  -webkit-filter: blur(0);
+          filter: blur(0);
+}
+
+.image-blur-base {
+  -webkit-filter: blur(10px);
+          filter: blur(10px);
+}
+
+.image-blur-small {
+  -webkit-filter: blur(5px);
+          filter: blur(5px);
+}
+
+.image-blur-large {
+  -webkit-filter: blur(25px);
+          filter: blur(25px);
 }
 
 /* Service Styles */
@@ -4564,6 +4586,26 @@ main > .bg-rotate:nth-child(odd) {
 }
 
 @media (min-width: 576px) {
+  .sm\:image-blur-none {
+    -webkit-filter: blur(0);
+            filter: blur(0);
+  }
+
+  .sm\:image-blur-base {
+    -webkit-filter: blur(10px);
+            filter: blur(10px);
+  }
+
+  .sm\:image-blur-small {
+    -webkit-filter: blur(5px);
+            filter: blur(5px);
+  }
+
+  .sm\:image-blur-large {
+    -webkit-filter: blur(25px);
+            filter: blur(25px);
+  }
+
   .sm\:list-reset {
     list-style: none;
     padding: 0;
@@ -8062,6 +8104,26 @@ main > .bg-rotate:nth-child(odd) {
 }
 
 @media (min-width: 768px) {
+  .md\:image-blur-none {
+    -webkit-filter: blur(0);
+            filter: blur(0);
+  }
+
+  .md\:image-blur-base {
+    -webkit-filter: blur(10px);
+            filter: blur(10px);
+  }
+
+  .md\:image-blur-small {
+    -webkit-filter: blur(5px);
+            filter: blur(5px);
+  }
+
+  .md\:image-blur-large {
+    -webkit-filter: blur(25px);
+            filter: blur(25px);
+  }
+
   .md\:list-reset {
     list-style: none;
     padding: 0;
@@ -11560,6 +11622,26 @@ main > .bg-rotate:nth-child(odd) {
 }
 
 @media (min-width: 992px) {
+  .lg\:image-blur-none {
+    -webkit-filter: blur(0);
+            filter: blur(0);
+  }
+
+  .lg\:image-blur-base {
+    -webkit-filter: blur(10px);
+            filter: blur(10px);
+  }
+
+  .lg\:image-blur-small {
+    -webkit-filter: blur(5px);
+            filter: blur(5px);
+  }
+
+  .lg\:image-blur-large {
+    -webkit-filter: blur(25px);
+            filter: blur(25px);
+  }
+
   .lg\:list-reset {
     list-style: none;
     padding: 0;
@@ -15058,6 +15140,26 @@ main > .bg-rotate:nth-child(odd) {
 }
 
 @media (min-width: 1200px) {
+  .xl\:image-blur-none {
+    -webkit-filter: blur(0);
+            filter: blur(0);
+  }
+
+  .xl\:image-blur-base {
+    -webkit-filter: blur(10px);
+            filter: blur(10px);
+  }
+
+  .xl\:image-blur-small {
+    -webkit-filter: blur(5px);
+            filter: blur(5px);
+  }
+
+  .xl\:image-blur-large {
+    -webkit-filter: blur(25px);
+            filter: blur(25px);
+  }
+
   .xl\:list-reset {
     list-style: none;
     padding: 0;

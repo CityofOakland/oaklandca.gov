@@ -26,11 +26,13 @@
   {% set bannerNav = bannerNav | merge([{'text': contactTitle, 'link': 'page-contact'}]) %}
 {% endif %}
 
+{% set bannerImage = bannerImage ?? entry.banner ?? '' %}
+
 <div class="banner leading-normal">
   <div class="container mx-auto px-8">
-    {% if entry.banner | length %}
+    {% if bannerImage | length %}
       <figure class="absolute bg-shark pin z-0">
-        <img class="banner-image opacity-50 z-0" src="{{ entry.banner.one.url }}" style="object-position:{{ entry.banner.one.getFocalPoint('asCss') }};" alt="{{ entry.banner.one.title }}">
+        <img class="banner-image opacity-50 z-0 image-blur-{{ bannerImageBlur ?? 'none' }}" src="{{ bannerImage.one.url }}" style="object-position:{{ bannerImage.one.getFocalPoint('asCss') }};" alt="{{ bannerImage.one.title }}">
       </figure>
     {% endif %}
     {% if breadCrumbs is defined and breadCrumbs %}
