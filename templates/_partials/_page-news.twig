@@ -27,7 +27,7 @@
             body: entry.summary
           } %}
         {% endfor %}
-        {% for entry in relatedNews.id(idsToExcludeString) %}
+        {% for entry in relatedNews.id(idsToExcludeString).all() %}
           {% include '_partials/_elements/_vertical-cards' with {
             title: entry.title,
             url: entry.url,
