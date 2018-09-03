@@ -10,8 +10,11 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i" rel="stylesheet">
 
 </head>
+{% if not craft.app.request.segments() %}
+  {% set pageClass = "home" %}
+{% endif %}
 
-<body>
+<body class="{{ pageClass ?? '' }}">
   {% include '_partials/_elements/_nav-bar' %}
   <main>
     {% block content %}
