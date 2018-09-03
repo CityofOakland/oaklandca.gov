@@ -27,7 +27,7 @@
     {% endif %}
     {% if breadCrumbs is defined and breadCrumbs %}
       {% include '_partials/_elements/_breadcrumbs' with {
-        title: entry.title,
+        title: bannerTitle ?? entry.title,
         breadCrumbColorScheme: breadCrumbColorScheme ?? 'light',
         links: breadCrumbLinks ?? null
       } %}
