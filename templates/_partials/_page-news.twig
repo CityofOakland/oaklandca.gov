@@ -1,4 +1,4 @@
-{% set relatedNews = craft.entries.section('newsEntries').relatedTo(entry) %}
+{% set relatedNews = craft.entries.section('news').relatedTo(entry) %}
 
 {# Since Craft doesn’t let us pass an array of ids by default into its "not" id parameter, we have to use the following setup #}
 {% set idsToExclude = ['and'] %}

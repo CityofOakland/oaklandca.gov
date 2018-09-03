@@ -7,7 +7,7 @@
   {% include '_partials/_elements/_search-bar' with { searchSegment: "resources"} %}
   <section class="bg-white relative z-0">
     <div class="container mx-auto p-8 py-16">
-      {% paginate craft.entries.section('resourceEntries').limit(25).orderBy('title') as pageInfo, pageEntries %}
+      {% paginate craft.entries.section('resources').limit(25).orderBy('title') as pageInfo, pageEntries %}
       {% include '_partials/_elements/_pagination' %}
       {% for entry in pageEntries %}
         <article>

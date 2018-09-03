@@ -9,7 +9,7 @@
   <section class="bg-cararra relative z-0">
     <div class="container mx-auto p-8 py-16">
       <div class="card-grid filter-grid">
-        {% for entry in craft.entries.section('departmentEntries').officialDepartment(true).orderBy('title asc').all() %}
+        {% for entry in craft.entries.section('departments').officialDepartment(true).orderBy('title asc').all() %}
           {% include '_partials/_elements/_title-cards' %}
         {% endfor %}
       </div>
