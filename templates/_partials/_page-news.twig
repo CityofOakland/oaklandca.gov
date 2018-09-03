@@ -1,5 +1,15 @@
-{% if entry.pageNews | length %}
+{% set relatedNews = craft.entries.section('newsEntries').relatedTo(entry) %}
+
+{# Since Craft doesn’t let us pass an array of ids by default into its "not" id parameter, we have to use the following setup #}
+{% set idsToExclude = ['and'] %}
+{% for entry in entry.pageNews.ids() %}
+  {% set idsToExclude = idsToExclude|merge([entry]) %}
+{% endfor %}
+{% set idsToExcludeString = idsToExclude | join(', not ') %}
+
+{% if relatedNews | length %}
   <section class="bg-rotate">
+    <a id="page-news" class="anchor-link"></a>
     <div class="container mx-auto p-8 py-16">
       {% include '_partials/_elements/_module-header' with {
         "headerText": "News",
@@ -8,6 +18,16 @@
       } %}
       <div class="card-grid vertical-cards mt-8">
         {% for entry in entry.pageNews.all() %}
+          {% include '_partials/_elements/_vertical-cards' with {
+            title: entry.title,
+            url: entry.url,
+            icon: 'newspaper',
+            photo: entry.newsImage.one,
+            byline: entry.postDate.format("M d, Y"),
+            body: entry.summary
+          } %}
+        {% endfor %}
+        {% for entry in relatedNews.id(idsToExcludeString) %}
           {% include '_partials/_elements/_vertical-cards' with {
             title: entry.title,
             url: entry.url,

@@ -1,36 +1,32 @@
 <section class="bg-white">
+  <a id="page-contact" class="anchor-link"></a>
   <div class="container mx-auto px-8 py-16">
     {% include '_partials/_elements/_module-header' with {
       "headerText": "Contact",
     } %}
     <div class="lg:flex mt-4">
-      {% if entry.addresses | length %}
+      {% if entry.addresses | length or entry.address | length %}
         <div class="lg:w-1/2 lg:pr-8">
           <h3 class="text-xl font-bold">Address{% if entry.addresses | length > 1 %}es{% endif %}</h3>
-          {% for location in entry.addresses.all() %}
+          {% for location in entry.addresses.all() ?? '' %}
             {% if location.locationName | length %}
               <h4 class="text-xl font-bold">{{ location.locationName }}</h4>
             {% endif %}
             <div class="mt-4 mb-8">
               {% include '_partials/_elements/_address' %}
             </div>
-            {% set options = {
-                height: 400,
-                zoom: 15,
-                draggable: true,
-                markerOptions: {
-                    icon: 'https://maps.google.com/mapfiles/ms/icons/green-dot.png'
-                },
-                infoWindowOptions: {
-                    maxWidth: 200
-                }
-            } %}
-            {{ craft.smartMap.map(location.address, options) }}
+            {% include '_partials/_elements/_location-map' %}
           {% endfor %}
-          {{ entry.addressExtended }}
+          {% if entry.address | length %}
+            <div class="mt-4 mb-8">
+              {% include '_partials/_elements/_address' %}
+            </div>
+            {% include '_partials/_elements/_location-map' %}
+          {% endif %}
+        {{ entry.addressExtended }}
         </div>
       {% endif %}
-      <div class="{% if entry.addresses | length %}lg:w-1/2 lg:pl-8{% endif %}">
+      <div class="{% if entry.addresses | length or entry.address | length %}lg:w-1/2 lg:pl-8{% endif %}">
         {% if entry.phoneNumbers | length %}
           <h3 class="text-xl font-bold">Phone Numbers</h3>
           <ul class="list-reset mb-8">

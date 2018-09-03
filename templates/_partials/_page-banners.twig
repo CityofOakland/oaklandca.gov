@@ -1,17 +1,55 @@
+{% set bannerNav = [] %}
+{% if entry.pageEvents | length %}
+  {% set bannerNav = bannerNav | merge([{'text': 'Events', 'link': 'page-events'}]) %}
+{% endif %}
+{% if entry.pageNews | length %}
+  {% set bannerNav = bannerNav | merge([{'text': 'News', 'link': 'page-news'}]) %}
+{% endif %}
+{% if entry.pageServices | length %}
+  {% set bannerNav = bannerNav | merge([{'text': 'Services', 'link': 'page-services'}]) %}
+{% endif %}
+{% if entry.pageTopics | length %}
+  {% set bannerNav = bannerNav | merge([{'text': 'Topics', 'link': 'page-topics'}]) %}
+{% endif %}
+{% if entry.pageProjects | length %}
+  {% set bannerNav = bannerNav | merge([{'text': 'Projects', 'link': 'page-projects'}]) %}
+{% endif %}
+{% if entry.pageDocuments | length %}
+  {% set bannerNav = bannerNav | merge([{'text': 'Documents', 'link': 'page-documents'}]) %}
+{% endif %}
+
 <div class="banner leading-normal">
   <div class="container mx-auto px-8">
-  {% if breadCrumbs is defined and breadCrumbs %}
-    {% include '_partials/_elements/_breadcrumbs' with {
-      title: entry.title,
-      breadCrumbColorScheme: breadCrumbColorScheme ?? 'light',
-      links: breadCrumbLinks ?? null
-    } %}
-  {% endif %}
-  </div>
-  <div class="container mx-auto p-8 py-16">
-    <h1 class="font-bold mb-0">{{ bannerTitle ?? entry.title ?? '' }}</h1>
-    {% if entry.leadIn %}
-      <p class="mt-8 mb-0">{{ entry.leadIn }}</p>
+    {% if entry.banner | length %}
+      <figure class="absolute bg-shark pin z-0">
+        <img class="banner-image opacity-50 z-0" src="{{ entry.banner.one.url }}" style="object-position:{{ entry.banner.one.getFocalPoint('asCss') }};" alt="{{ entry.banner.one.title }}">
+      </figure>
     {% endif %}
+    {% if breadCrumbs is defined and breadCrumbs %}
+      {% include '_partials/_elements/_breadcrumbs' with {
+        title: entry.title,
+        breadCrumbColorScheme: breadCrumbColorScheme ?? 'light',
+        links: breadCrumbLinks ?? null
+      } %}
+    {% endif %}
+  </div>
+  <div class="relative container mx-auto p-8 py-16 z-10">
+    <div class="sm:flex">
+      <div class="hidden pr-8 w-1/4 sm:block">
+        {% if bannerNav | length %}
+          <ul class="list-reset text-md">
+            {% for item in bannerNav ?? '' %}
+              <li class="my-2"><a class="text-white hover:text-white" href="#{{ item.link }}">{{ item.text }}</a></li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+      <div>
+        <h1 class="font-bold mb-0">{{ bannerTitle ?? entry.title ?? '' }}</h1>
+        {% if entry.leadIn %}
+          <p class="mt-8 mb-0">{{ entry.leadIn }}</p>
+        {% endif %}
+      </div>
+    </div>
   </div>
 </div>
