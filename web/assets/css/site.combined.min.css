@@ -18571,6 +18571,9 @@ main > .bg-rotate:nth-child(odd) {
   .card-grid {
     grid-template-columns: repeat(3, 1fr);
   }
+  .card-grid.wide-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (min-width: 768px) {
