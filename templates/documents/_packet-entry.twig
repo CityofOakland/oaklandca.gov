@@ -1,0 +1,28 @@
+{% extends '_layout' %}
+
+{% set document = entry.documentFile %}
+
+{% block content %}
+  {% include '_partials/_page-banners' with {
+    breadCrumbs: true,
+    breadCrumbLinks: [
+      {
+        title: 'Documents',
+        link: '/documents'
+      }
+    ]
+  } %}
+  <section class="bg-white relative z-0">
+    <div class="container mx-auto p-8 py-16">
+      {{ entry.summary }}
+      {% if entry.documents.exists() %}
+        <h2 class="border-b border-celeste py-2">Documents</h2>
+      {% endif %}
+      {% for entry in entry.documents.all() %}
+        <article>
+          <h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+{% endblock %}
