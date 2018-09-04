@@ -1,0 +1,33 @@
+{% extends '_layout' %}
+
+{% set document = entry.documentFile %}
+
+{% block content %}
+  {% include '_partials/_page-banners' with {
+    breadCrumbs: true,
+    breadCrumbLinks: [
+      {
+        title: 'Documents',
+        link: '/documents'
+      }
+    ],
+    leadIn: 'Publish Date: ' ~ entry.postDate | date('M, d Y')
+  } %}
+  <section class="bg-white relative z-0">
+    <div class="container mx-auto p-8 py-16">
+    {% if document.exists() %}
+      <div>
+        <a class="btn" href="{{ document.one.url }}">Download {{ document.one.filename }}</a>
+      </div>
+    {% endif %}
+    {% if entry.documentType.exists() %}
+      <p class="font-bold">
+        {% for type in entry.documentType %}
+          {{ type.title }}{% if not loop.last %} | {% endif %}
+        {% endfor %}
+      </p>
+    {% endif %}
+    {{ entry.summary }}
+    </div>
+  </section>
+{% endblock %}
