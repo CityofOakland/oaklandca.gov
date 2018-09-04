@@ -1,0 +1,34 @@
+{% extends '_layouts/_banner-with-nav' %}
+
+{% set relatedEvents = craft.calendar.events.relatedTo(entry) %}
+{% set relatedNews = craft.entries.section('news').relatedTo(entry) %}
+
+{% block content %}
+  {% include '_partials/_page-banners' with {
+    breadCrumbs: true,
+    breadCrumbLinks: [
+      {
+        title: 'Topics',
+        link: '/topics'
+      }
+    ],
+    navMenu: {
+      'services': entry.pageServices.exists(),
+      'resources': entry.pageResources.exists(),
+      'documents': entry.pageDocuments.exists(),
+      'projects': entry.pageProjects.exists(),
+      'news': relatedNews.exists(),
+      'events': relatedEvents.exists(),
+      'about': true,
+      'contact': true
+    }
+  } %}
+  {% include '_partials/_page-services' %}
+  {% include '_partials/_page-resources' %}
+  {% include '_partials/_page-documents' %}
+  {% include '_partials/_page-projects' %}
+  {% include '_partials/_page-news' %}
+  {% include '_partials/_page-events' %}
+  {% include '_partials/_page-about' %}
+  {% include '_partials/_page-location' %}
+{% endblock %}
