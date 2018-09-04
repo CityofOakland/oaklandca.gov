@@ -1,32 +1,6 @@
 {% set bannerImage = bannerImage ?? entry.banner ?? '' %}
-
-{% set relatedEvents = craft.calendar.events.relatedTo(entry) %}
-{% set relatedNews = craft.entries.section('news').relatedTo(entry) %}
-{% set bannerNav = [] %}
-{% if relatedEvents | length %}
-  {% set bannerNav = bannerNav | merge([{'text': 'Events', 'link': 'page-events'}]) %}
-{% endif %}
-{% if relatedNews | length %}
-  {% set bannerNav = bannerNav | merge([{'text': 'News', 'link': 'page-news'}]) %}
-{% endif %}
-{% if entry.pageServices | length %}
-  {% set bannerNav = bannerNav | merge([{'text': 'Services', 'link': 'page-services'}]) %}
-{% endif %}
-{% if entry.pageTopics | length %}
-  {% set bannerNav = bannerNav | merge([{'text': 'Topics', 'link': 'page-topics'}]) %}
-{% endif %}
-{% if entry.pageProjects | length %}
-  {% set bannerNav = bannerNav | merge([{'text': 'Projects', 'link': 'page-projects'}]) %}
-{% endif %}
-{% if entry.pageDocuments | length %}
-  {% set bannerNav = bannerNav | merge([{'text': 'Documents', 'link': 'page-documents'}]) %}
-{% endif %}
-{% if managementTitle is defined %}
-  {% set bannerNav = bannerNav | merge([{'text': managementTitle, 'link': 'page-leadership'}]) %}
-{% endif %}
-{% if contactTitle is defined %}
-  {% set bannerNav = bannerNav | merge([{'text': contactTitle, 'link': 'page-contact'}]) %}
-{% endif %}
+{% set bannerTitle = bannerTitle ?? entry.title ?? '' %}
+{% set leadIn = leadIn ?? entry.leadIn ?? '' %}
 
 <div class="banner leading-normal">
   <div class="container mx-auto px-8">
@@ -37,7 +11,7 @@
     {% endif %}
     {% if breadCrumbs is defined and breadCrumbs %}
       {% include '_partials/_elements/_breadcrumbs' with {
-        title: bannerTitle ?? entry.title,
+        title: bannerTitle,
         breadCrumbColorScheme: breadCrumbColorScheme ?? 'light',
         links: breadCrumbLinks ?? null
       } %}
@@ -57,9 +31,9 @@
         </div>
       {% endif %}
       <div class="flex-1">
-        <h1 class="font-bold mb-0">{{ bannerTitle ?? entry.title ?? '' }}</h1>
-        {% if entry.leadIn %}
-          <p class="mt-8 mb-0">{{ entry.leadIn }}</p>
+        <h1 class="font-bold mb-0">{{ bannerTitle }}</h1>
+        {% if leadIn %}
+          <p class="mt-8 mb-0">{{ leadIn }}</p>
         {% endif %}
         {% if entry.ctaButton | length %}
           {% set attributes = {
