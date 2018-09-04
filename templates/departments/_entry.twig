@@ -1,4 +1,7 @@
-{% extends '_layout' %}
+{% extends '_layouts/_banner-with-nav' %}
+
+{% set relatedEvents = craft.calendar.events.relatedTo(entry) %}
+{% set relatedNews = craft.entries.section('news').relatedTo(entry) %}
 
 {% block content %}
   {% include '_partials/_page-banners' with {
@@ -10,7 +13,17 @@
       }
     ],
     managementTitle: 'Our Management',
-    contactTitle: 'Contact Us'
+    contactTitle: 'Contact Us',
+    navMenu: {
+      'events': relatedEvents.exists(),
+      'news': relatedNews.exists(),
+      'services': entry.pageServices.exists(),
+      'topics': entry.pageTopics.exists(),
+      'projects': entry.pageProjects.exists(),
+      'documents': entry.pageDocuments.exists(),
+      'leadership': true,
+      'contact': true
+    }
   } %}
   {% include '_partials/_page-events' %}
   {% include '_partials/_page-news' %}

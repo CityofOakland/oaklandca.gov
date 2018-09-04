@@ -1,4 +1,7 @@
-{% extends '_layout' %}
+{% extends '_layouts/_banner-with-nav' %}
+
+{% set relatedMeetings = craft.calendar.events.relatedTo(entry) %}
+{% set relatedNews = craft.entries.section('news').relatedTo(entry) %}
 
 {% block content %}
   {% include '_partials/_page-banners' with {
@@ -9,16 +12,24 @@
         link: '/boards-commissions'
       }
     ],
-    managementTitle: 'About',
-    contactTitle: 'Contact Us'
+    navMenu: {
+      'meetings': relatedMeetings.exists(),
+      'documents': entry.pageDocuments.exists(),
+      'projects': entry.pageProjects.exists(),
+      'topics': entry.pageTopics.exists(),
+      'services': entry.pageServices.exists(),
+      'news': relatedNews.exists(),
+      'about': true,
+      'contact': true
+    }
   } %}
   {% include '_partials/_page-meetings' %}
-  {% include '_partials/_page-news' %}
-  {% include '_partials/_page-services' %}
-  {% include '_partials/_page-topics' %}
-  {% include '_partials/_page-projects' %}
   {% include '_partials/_page-documents' %}
-  {% include '_partials/_page-boards' %}
-  {% include '_partials/_page-leadership' %}
+  {% include '_partials/_page-projects' %}
+  {% include '_partials/_page-topics' %}
+  {% include '_partials/_page-resources' %}
+  {% include '_partials/_page-services' %}
+  {% include '_partials/_page-news' %}
+  {% include '_partials/_page-about' %}
   {% include '_partials/_page-location' %}
 {% endblock %}

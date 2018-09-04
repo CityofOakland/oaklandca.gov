@@ -1,0 +1,26 @@
+<section class="bg-white">
+  <a id="page-about" class="anchor-link"></a>
+  <div class="container mx-auto px-8 py-16">
+    {% include '_partials/_elements/_module-header' with {
+      headerText: headerText ?? "About",
+    } %}
+    <div class="mt-8 sm:flex">
+      {% if entry.teams | length %}
+        <div class="sm:w-1/4 sm:mr-8">
+          {% for entry in entry.teams.all() %}
+            <a href="{{ entry.url }}" class="btn btn-bright btn-sm block text-center mb-4">{{ entry.title }}</a>
+          {% endfor %}
+        </div>
+      {% endif %}
+      <div class="sm:flex-1">
+        <div class="text-xl">
+          {% if entry.about | length %}
+            {{ entry.about }}
+          {% else %}
+            {{ entry.leadIn }}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
