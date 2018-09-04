@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "e95d029cf5a22434ef2a6630fae588d7",
+    "content-hash": "b206ac28727b6a50ca495ca6a88ea575",
     "packages": [
         {
             "name": "aelvan/inlin",
@@ -646,11 +646,11 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "3.0.22",
+            "version": "3.0.23",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/de45c0bef138486f6efc907d15444912205bc11a",
-                "reference": "de45c0bef138486f6efc907d15444912205bc11a",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/0994bbe16ccb7cb0a0992d5591a61051758e5580",
+                "reference": "0994bbe16ccb7cb0a0992d5591a61051758e5580",
                 "shasum": ""
             },
             "require": {
@@ -721,7 +721,7 @@
                 "docs": "https://github.com/craftcms/docs",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2018-08-28T16:31:41+00:00"
+            "time": "2018-09-04T17:57:44+00:00"
         },
         {
             "name": "craftcms/oauth2-craftid",
@@ -882,11 +882,11 @@
         },
         {
             "name": "craftcms/store-hours",
-            "version": "2.1.0.1",
+            "version": "2.1.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/store-hours/zipball/53f42f2638ad8219f3b8840d32f45b0acd0fcf13",
-                "reference": "53f42f2638ad8219f3b8840d32f45b0acd0fcf13",
+                "url": "https://api.github.com/repos/craftcms/store-hours/zipball/ac8ef94ee160bdb82464bfbd47f0e81dcdcf51e4",
+                "reference": "ac8ef94ee160bdb82464bfbd47f0e81dcdcf51e4",
                 "shasum": ""
             },
             "require": {
@@ -931,7 +931,7 @@
                 "docs": "https://github.com/craftcms/store-hours",
                 "rss": "https://github.com/craftcms/store-hours/commits/v2.atom"
             },
-            "time": "2018-07-19T20:38:07+00:00"
+            "time": "2018-09-03T13:05:48+00:00"
         },
         {
             "name": "craftcms/vue-asset",
