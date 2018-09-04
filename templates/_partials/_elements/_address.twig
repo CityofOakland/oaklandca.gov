@@ -1,4 +1,18 @@
 {% set location = location ?? entry %}
-{{ location.address.street1 }}<br>
-{% if location.address.street2 | length %}{{ location.address.street2 }}<br>{% endif %}
-{{ location.address.city }}, {{ location.address.state }} {{ location.address.zip }}
+{% set options = {
+    height: 400,
+    zoom: 15,
+    draggable: true,
+    markerOptions: {
+        icon: 'https://maps.google.com/mapfiles/ms/icons/green-dot.png'
+    },
+    infoWindowOptions: {
+        maxWidth: 200
+    }
+} %}
+<div class="mt-4 mb-8">
+  {{ location.address.street1 }}<br>
+  {% if location.address.street2 | length %}{{ location.address.street2 }}<br>{% endif %}
+  {{ location.address.city }}, {{ location.address.state }} {{ location.address.zip }}
+</div>
+{{ craft.smartMap.map(location.address, options) }}

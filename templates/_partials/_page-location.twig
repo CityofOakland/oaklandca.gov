@@ -12,16 +12,10 @@
             {% if location.locationName | length %}
               <h4 class="text-xl font-bold">{{ location.locationName }}</h4>
             {% endif %}
-            <div class="mt-4 mb-8">
-              {% include '_partials/_elements/_address' %}
-            </div>
-            {% include '_partials/_elements/_location-map' %}
+            {% include '_partials/_elements/_address' %}
           {% endfor %}
           {% if entry.address | length %}
-            <div class="mt-4 mb-8">
-              {% include '_partials/_elements/_address' %}
-            </div>
-            {% include '_partials/_elements/_location-map' %}
+            {% include '_partials/_elements/_addresses' %}
           {% endif %}
         {{ entry.addressExtended }}
         </div>
@@ -36,8 +30,8 @@
           </ul>
         {% endif %}
         {% if entry.emailAddress |length %}
-        <h3 class="text-xl font-bold">Email Address</h3>
-        <p><a href="mailto:{{ entry.emailAddress }}">{{ entry.emailAddress }}</a></p>
+          <h3 class="text-xl font-bold">Email Address</h3>
+          <p><a href="mailto:{{ entry.emailAddress }}">{{ entry.emailAddress }}</a></p>
         {% endif %}
         {% if entry.openHours | length %}
           <h3 class="text-xl font-bold">Open Hours</h3>
@@ -50,35 +44,7 @@
             </dl>
           {% endfor %}
         {% endif %}
-        {% if entry.facebook | length or entry.twitter | length or entry.instagram | length or entry.medium | length %}
-          <h3 class="text-xl font-bold">Social Media</h3>
-          <div>
-            {% if entry.facebook |length %}
-              {% include '_partials/_elements/_social-media-button' with {
-                network: "facebook",
-                url: entry.facebook
-              } %}
-            {% endif %}
-            {% if entry.twitter |length %}
-              {% include '_partials/_elements/_social-media-button' with {
-                network: "twitter",
-                url: entry.twitter
-              } %}
-            {% endif %}
-            {% if entry.instagram |length %}
-              {% include '_partials/_elements/_social-media-button' with {
-                network: "instagram",
-                url: entry.instagram
-              } %}
-            {% endif %}
-            {% if entry.medium |length %}
-              {% include '_partials/_elements/_social-media-button' with {
-                network: "medium",
-                url: entry.medium
-              } %}
-            {% endif %}
-          </div>
-        {% endif %}
+        {% include '_partials/_elements/_social-media' %}
       </div>
     </div>
   </div>
