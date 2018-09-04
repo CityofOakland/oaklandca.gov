@@ -2,7 +2,7 @@
   <a id="page-contact" class="anchor-link"></a>
   <div class="container mx-auto px-8 py-16">
     {% include '_partials/_elements/_module-header' with {
-      "headerText": "Contact",
+      headerText: headerText ?? "Contact Us",
     } %}
     <div class="lg:flex mt-4">
       {% if entry.addresses | length or entry.address | length %}

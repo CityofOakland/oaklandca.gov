@@ -2,7 +2,7 @@
 
 {# Since Craft doesn’t let us pass an array of ids by default into its "not" id parameter, we have to use the following setup #}
 {% set idsToExclude = ['and'] %}
-{% for entry in entry.pageNews.ids() %}
+{% for entry in entry.pageNews.ids() ?? '' %}
   {% set idsToExclude = idsToExclude|merge([entry]) %}
 {% endfor %}
 {% set idsToExcludeString = idsToExclude | join(', not ') %}
@@ -12,9 +12,9 @@
     <a id="page-news" class="anchor-link"></a>
     <div class="container mx-auto p-8 py-16">
       {% include '_partials/_elements/_module-header' with {
-        "headerText": "News",
-        "linkText": "All News",
-        "linkUrl": "/news"
+        headerText: headerText ?? "News",
+        linkText: linkText ?? "All News",
+        linkUrl: linkUrl ?? "/news"
       } %}
       <div class="card-grid vertical-cards mt-8">
         {% for entry in entry.pageNews.all() %}
