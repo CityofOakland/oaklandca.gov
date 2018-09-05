@@ -1,0 +1,22 @@
+{% extends '_layouts/_banner-with-nav' %}
+
+{% set relatedNews = craft.entries.section('news').relatedTo(entry) %}
+{% set location = entry.addresses | length or entry.phoneNumbers | length or entry.emailAddress | length or entry.openHours | length %}
+
+{% block content %}
+  {% include '_partials/_page-banners' with {
+    breadCrumbs: true,
+    breadCrumbLinks: [
+      {
+        title: 'City Officials',
+        link: '/officials'
+      }
+    ],
+    navMenu: {
+      'news': relatedNews.exists(),
+      'contact': location
+    }
+  } %}
+  {% include '_partials/_page-news' %}
+  {% include '_partials/_page-location' %}
+{% endblock %}
