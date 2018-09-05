@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "b206ac28727b6a50ca495ca6a88ea575",
+    "content-hash": "35137f25dee2f3b70a22ed8a1cc24a47",
     "packages": [
         {
             "name": "aelvan/inlin",
@@ -646,11 +646,11 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "3.0.23",
+            "version": "3.0.23.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/0994bbe16ccb7cb0a0992d5591a61051758e5580",
-                "reference": "0994bbe16ccb7cb0a0992d5591a61051758e5580",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/cc01e227395a251258552760ccbd9ee68218d4c0",
+                "reference": "cc01e227395a251258552760ccbd9ee68218d4c0",
                 "shasum": ""
             },
             "require": {
@@ -721,7 +721,7 @@
                 "docs": "https://github.com/craftcms/docs",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2018-09-04T17:57:44+00:00"
+            "time": "2018-09-05T04:36:33+00:00"
         },
         {
             "name": "craftcms/oauth2-craftid",
@@ -1569,6 +1569,49 @@
                 "php-emoji"
             ],
             "time": "2018-08-02T03:48:08+00:00"
+        },
+        {
+            "name": "embed/embed",
+            "version": "v3.3.5",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/oscarotero/Embed/zipball/46e19804e330065c899657c047288f792e2bca02",
+                "reference": "46e19804e330065c899657c047288f792e2bca02",
+                "shasum": ""
+            },
+            "require": {
+                "composer/ca-bundle": "^1.0",
+                "ext-curl": "*",
+                "ext-mbstring": "*",
+                "php": "^5.5|^7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Embed\\": "src"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Oscar Otero",
+                    "email": "oom@oscarotero.com",
+                    "homepage": "http://oscarotero.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "PHP library to retrieve page info using oembed, opengraph, etc",
+            "homepage": "https://github.com/oscarotero/Embed",
+            "keywords": [
+                "embed",
+                "embedly",
+                "oembed",
+                "opengraph",
+                "twitter cards"
+            ],
+            "time": "2018-06-18T21:12:45+00:00"
         },
         {
             "name": "enshrined/svg-sanitize",
@@ -2905,6 +2948,57 @@
             "time": "2018-07-07T07:35:36+00:00"
         },
         {
+            "name": "mikestecker/craft-videoembedder",
+            "version": "1.0.9",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mikestecker/craft-videoembedder/zipball/59ddb17df8f9473f0f7955e330b727c835b66b01",
+                "reference": "59ddb17df8f9473f0f7955e330b727c835b66b01",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0",
+                "embed/embed": "^3.3"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Video Embedder",
+                "handle": "video-embedder",
+                "schemaVersion": "1.0.0",
+                "hasCpSettings": false,
+                "hasCpSection": false,
+                "changelogUrl": "https://raw.githubusercontent.com/mikestecker/craft-videoembedder/v1/CHANGELOG.md",
+                "class": "mikestecker\\videoembedder\\VideoEmbedder"
+            },
+            "autoload": {
+                "psr-4": {
+                    "mikestecker\\videoembedder\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mike Stecker",
+                    "homepage": "http://github.com/mikestecker"
+                }
+            ],
+            "description": "Craft plugin to generate an embed URL from a YouTube or Vimeo URL.",
+            "keywords": [
+                "cms",
+                "craft",
+                "craft-plugin",
+                "craftcms",
+                "video embedder"
+            ],
+            "support": {
+                "docs": "https://github.com/mikestecker/craft-videoembedder/blob/v1/README.md",
+                "issues": "https://github.com/mikestecker/craft-videoembedder/issues"
+            },
+            "time": "2018-04-12T19:07:27+00:00"
+        },
+        {
             "name": "mk-j/php_xlsxwriter",
             "version": "0.32",
             "dist": {
@@ -3223,17 +3317,17 @@
         },
         {
             "name": "nystudio107/craft-seomatic",
-            "version": "3.1.18.1",
+            "version": "3.1.19",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/4421d03f19e37eca3f8dd6c383f0df20e7fb8e1f",
-                "reference": "4421d03f19e37eca3f8dd6c383f0df20e7fb8e1f",
+                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/869aaec457ddf705b2d8bd2033e6445ddf37cdc8",
+                "reference": "869aaec457ddf705b2d8bd2033e6445ddf37cdc8",
                 "shasum": ""
             },
             "require": {
                 "craftcms/cms": "^3.0.20",
                 "craftcms/vue-asset": "^1.0",
-                "davechild/textstatistics": "^1.0.1",
+                "davechild/textstatistics": "1.0.2",
                 "php-science/textrank": "^1.0.3",
                 "sunra/php-simple-html-dom-parser": "^1.5.2"
             },
@@ -3292,7 +3386,7 @@
                 "docs": "https://github.com/nystudio107/craft-seomatic/blob/v3/README.md",
                 "issues": "https://github.com/nystudio107/craft-seomatic/issues"
             },
-            "time": "2018-08-30T22:26:11+00:00"
+            "time": "2018-09-05T03:07:29+00:00"
         },
         {
             "name": "nystudio107/craft-typogrify",
