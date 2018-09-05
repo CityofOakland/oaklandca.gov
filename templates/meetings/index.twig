@@ -1,0 +1,32 @@
+{% extends 'events' %}
+
+{% block content %}
+  {% include '_partials/_page-banners' with {
+    bannerTitle: entry.title | replace(' Index', ''),
+    breadCrumbs: true,
+  } %}
+  {% include '_partials/_elements/_search-bar' %}
+  <section class="bg-white relative z-0">
+    <div class="container mx-auto p-8 py-16">
+      {% set events = craft.calendar.events({
+        calendarId: 3,
+        rangeStart: now | date('Y-m-d'),
+        rangeEnd: now | date_modify('+1 year') | date('Y-m-d'),
+        limit: 10
+      }) %}
+      {% paginate events as pageInfo, pageEntries %}
+      {% include '_partials/_elements/_pagination' %}
+      {% for entry in pageEntries %}
+        {% include '_partials/_elements/_horizontal-cards' with {
+          title: entry.title,
+          url: entry.url,
+          icon: 'calendar',
+          photo: entry.eventImage.one,
+          byline: entry.startDate.format("M d, Y"),
+          body: entry.body
+        } %}
+      {% endfor %}
+      {% include '_partials/_elements/_pagination' %}
+    </div>
+  </section>
+{% endblock %}
