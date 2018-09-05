@@ -13,6 +13,7 @@
       }
     ],
     navMenu: {
+      'timeline': entry.timeline.exists(),
       'meetings': relatedMeetings.exists(),
       'resources': entry.pageResources.exists(),
       'documents': entry.pageDocuments.exists(),
@@ -21,6 +22,7 @@
       'contact': true
     }
   } %}
+  {% include '_partials/_page-timeline' %}
   {% include '_partials/_page-meetings' %}
   {% include '_partials/_page-resources' %}
   {% include '_partials/_page-topics' %}

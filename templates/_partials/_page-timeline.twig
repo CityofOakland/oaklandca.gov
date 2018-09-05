@@ -1,0 +1,16 @@
+{% if entry.timeline.exists() %}
+  <section class="bg-rotate">
+    <a id="page-timeline" class="anchor-link"></a>
+    <div class="container mx-auto p-8 py-16">
+      {% include '_partials/_elements/_module-header' with {
+        headerText: headerText ?? "Timeline"
+      } %}
+      <dl class="list-reset timeline-grid">
+        {% for block in entry.timeline.all() %}
+          <dt>{{ block.milestoneName }}</dt>
+          <dd>{{ block.milestoneDates }}</dd>
+        {% endfor %}
+      </dl>
+    </div>
+  </section>
+{% endif %}
