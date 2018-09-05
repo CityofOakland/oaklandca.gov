@@ -1,0 +1,89 @@
+{% extends '_layouts/_banner-with-nav' %}
+{% set entry = event %}
+
+{% block content %}
+  {% include '_partials/_page-banners' with {
+    bannerImage: entry.eventImage,
+    bannerImageBlur: 'large',
+    breadCrumbs: true,
+    breadCrumbLinks: [
+      {
+        title: 'Events',
+        link: '/events'
+      }
+    ],
+  } %}
+  <section class="bg-white relative z-0">
+    <div class="container mx-auto p-8 py-16 sm:flex">
+      <div class="sm:w-2/3 sm:mr-8">
+        {% if entry.occurrenceCount > 1 %}
+          <h3>Dates:</h3>
+          <p>
+            {% for event in entry.occurrences %}
+              {{ event.startDate.format("l, F j, Y") }}<br>
+            {% endfor %}
+          </p>
+        {% else %}
+          <h3>Date:</h3>
+          <p>
+            {{ entry.startDate.format("l, F j, Y") }}
+          </p>
+        {% endif %}
+        {% if entry.body | length %}
+          <h3>Details</h3>
+          {{ entry.body }}
+        {% endif %}
+        {% if entry.documents.exists() %}
+          <h3>Documents</h3>
+          <div class="card-grid wide-cards mt-8">
+            {% for entry in entry.documents.all() %}
+              {% include '_partials/_elements/_title-cards' %}
+            {% endfor %}
+          </div>
+        {% endif %}
+        {% if entry.videoLink | length %}
+          <h3>Video</h3>
+          {% set embed = craft.videoEmbedder.getEmbedUrl(entry.videoLink) %}
+          {% if embed | length %}
+            <style>
+              .embed-container {
+                position: relative;
+                padding-bottom: 56.25%;
+                height: 0;
+                overflow: hidden;
+                max-width: 100%;
+              }
+              .embed-container embed,
+              .embed-container iframe,
+              .embed-container object {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+              }
+            </style>
+            <div class='embed-container'>
+              <iframe src='{{ embed }}' frameborder='0' allowfullscreen="allowfullscreen"></iframe>
+            </div>
+          {% endif %}
+        {% endif %}
+        {% if entry.eventContact | length %}
+          <h3>Contact</h3>
+          {{ entry.eventContact }}
+        {% endif %}
+      </div>
+      <div class="sm:flex-1">
+        {% if entry.eventImage.exists() %}
+          <figure>
+            <img class="w-full block" src="{{ entry.eventImage.one.url }}" alt="{{ entry.title }} Image">
+          </figure>
+        {% endif %}
+        {% if entry.address | length %}
+          <h3>Address</h3>
+          {% include '_partials/_elements/_address' %}
+        {% endif %}
+      </div>
+    </div>
+  </section>
+{% endblock %}
