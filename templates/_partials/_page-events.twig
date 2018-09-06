@@ -20,7 +20,7 @@
             icon: 'calendar',
             photo: entry.eventImage.one,
             byline: entry.startDate.format("M d, Y"),
-            body: entry.body
+            body: entry.body | chop(limit=50, unit='w', append='…')
           } %}
         {% endfor %}
       </div>
