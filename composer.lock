@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "35137f25dee2f3b70a22ed8a1cc24a47",
+    "content-hash": "a82c03ac89406964a014bb47bcdd52db",
     "packages": [
         {
             "name": "aelvan/inlin",
@@ -238,61 +238,6 @@
                 "markdown-extra"
             ],
             "time": "2017-07-16T21:13:23+00:00"
-        },
-        {
-            "name": "charliedev/blockonomicon",
-            "version": "1.1.3",
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/charliedevelopment/craft3-blockonomicon/zipball/e57b33e3f79a802cb564ed135fbda0722f12f653",
-                "reference": "e57b33e3f79a802cb564ed135fbda0722f12f653",
-                "shasum": ""
-            },
-            "require": {
-                "craftcms/cms": "^3.0.0-RC6"
-            },
-            "type": "craft-plugin",
-            "extra": {
-                "name": "Blockonomicon",
-                "handle": "blockonomicon",
-                "changelogUrl": "https://raw.githubusercontent.com/charliedevelopment/craft3-blockonomicon/master/CHANGELOG.md",
-                "downloadUrl": "https://github.com/charliedevelopment/craft3-blockonomicon/archive/master.zip",
-                "schemaVersion": "1.0.0",
-                "hasCpSettings": true,
-                "hasCpSection": true,
-                "class": "charliedev\\blockonomicon\\Blockonomicon"
-            },
-            "autoload": {
-                "psr-4": {
-                    "charliedev\\blockonomicon\\": "src/"
-                }
-            },
-            "license": [
-                "proprietary"
-            ],
-            "authors": [
-                {
-                    "name": "Charlie Development",
-                    "email": "support@charliedev.com",
-                    "homepage": "http://charliedev.com/"
-                }
-            ],
-            "description": "Export and import entire matrix blocks and manage/render their views.",
-            "keywords": [
-                "cms",
-                "craft",
-                "craftcms",
-                "export",
-                "import",
-                "matrix",
-                "templating"
-            ],
-            "support": {
-                "issues": "https://github.com/charliedevelopment/craft3-blockonomicon/issues?state=open",
-                "source": "https://github.com/charliedevelopment/craft3-blockonomicon",
-                "email": "support@charliedev.com"
-            },
-            "time": "2018-06-19T18:59:00+00:00"
         },
         {
             "name": "commerceguys/addressing",
@@ -1758,6 +1703,59 @@
             "time": "2018-02-23T01:58:20+00:00"
         },
         {
+            "name": "fatfish/notification",
+            "version": "1.0.1",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fatfishdigital/Craft3-Notification/zipball/bed529f49405d440a76c83dfd0eafca1d30bbe81",
+                "reference": "bed529f49405d440a76c83dfd0eafca1d30bbe81",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0-RC1",
+                "yii2tech/crontab": "*"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Notification",
+                "handle": "notification",
+                "hasCpSettings": false,
+                "hasCpSection": true,
+                "changelogUrl": "https://raw.githubusercontent.com/fatfishdigital/notification/master/CHANGELOG.md",
+                "components": {
+                    "notificationService": "fatfish\\notification\\services\\NotificationService"
+                },
+                "class": "fatfish\\notification\\Notification"
+            },
+            "autoload": {
+                "psr-4": {
+                    "fatfish\\notification\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fatfish",
+                    "homepage": "https://fatfish.com.au"
+                }
+            ],
+            "description": "Notification plugin for craft 3.x",
+            "keywords": [
+                "cms",
+                "craft",
+                "craft-plugin",
+                "craftcms",
+                "notification"
+            ],
+            "support": {
+                "docs": "https://github.com/fatfishdigital/notification/blob/master/README.md",
+                "issues": "https://github.com/fatfishdigital/notification/issues"
+            },
+            "time": "2018-09-04T07:41:32+00:00"
+        },
+        {
             "name": "firebase/php-jwt",
             "version": "v5.0.0",
             "dist": {
@@ -1891,11 +1889,11 @@
         },
         {
             "name": "giggsey/libphonenumber-for-php",
-            "version": "8.9.11",
+            "version": "8.9.12",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giggsey/libphonenumber-for-php/zipball/2a6b6661f42644941e4c8e895518f27c99587a68",
-                "reference": "2a6b6661f42644941e4c8e895518f27c99587a68",
+                "url": "https://api.github.com/repos/giggsey/libphonenumber-for-php/zipball/b906325b1bcf99309bc10bff7cbdc1ed8fbcf774",
+                "reference": "b906325b1bcf99309bc10bff7cbdc1ed8fbcf774",
                 "shasum": ""
             },
             "require": {
@@ -1940,7 +1938,7 @@
                 "phonenumber",
                 "validation"
             ],
-            "time": "2018-07-26T10:50:48+00:00"
+            "time": "2018-08-23T10:23:25+00:00"
         },
         {
             "name": "giggsey/locale",
@@ -2716,59 +2714,6 @@
                 "oauth2"
             ],
             "time": "2018-03-19T17:28:55+00:00"
-        },
-        {
-            "name": "lewisjenkins/craft-dynamic-fields",
-            "version": "3.0.6",
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/lewisjenkins/craft-dynamic-fields/zipball/a01cb8b43c454d5abdfc78abedd092422cc40383",
-                "reference": "a01cb8b43c454d5abdfc78abedd092422cc40383",
-                "shasum": ""
-            },
-            "require": {
-                "craftcms/cms": "^3.0.0"
-            },
-            "type": "craft-plugin",
-            "extra": {
-                "name": "Craft Dynamic Fields",
-                "handle": "craft-dynamic-fields",
-                "developer": "Lewis Jenkins",
-                "developerUrl": "https://lj.io",
-                "hasCpSettings": false,
-                "hasCpSection": false,
-                "changelogUrl": "https://raw.githubusercontent.com/lewisjenkins/craft-dynamic-fields/master/CHANGELOG.md",
-                "documentationUrl": "https://github.com/lewisjenkins/craft-dynamic-fields/blob/master/README.md",
-                "class": "lewisjenkins\\craftdynamicfields\\CraftDynamicFields"
-            },
-            "autoload": {
-                "psr-4": {
-                    "lewisjenkins\\craftdynamicfields\\": "src/"
-                }
-            },
-            "license": [
-                "proprietary"
-            ],
-            "authors": [
-                {
-                    "name": "Lewis Jenkins",
-                    "homepage": "https://lj.io"
-                }
-            ],
-            "description": "Populate Craft fields with dynamic data using the power of Twig.",
-            "keywords": [
-                "cms",
-                "craft",
-                "craft dynamic fields",
-                "craft-plugin",
-                "craftcms"
-            ],
-            "support": {
-                "docs": "https://github.com/lewisjenkins/craft-dynamic-fields/blob/master/README.md",
-                "issues": "https://github.com/lewisjenkins/craft-dynamic-fields/issues",
-                "email": "lewis@lj.io"
-            },
-            "time": "2018-06-19T14:25:30+00:00"
         },
         {
             "name": "marionnewlevant/twig-perversion",
@@ -3902,6 +3847,57 @@
                 "rrule"
             ],
             "time": "2018-04-13T09:24:21+00:00"
+        },
+        {
+            "name": "rynpsc/craft-phone-number",
+            "version": "1.0.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rynpsc/craft-phone-number/zipball/800b491cf301a01089041df6764ddbb231dd74e4",
+                "reference": "800b491cf301a01089041df6764ddbb231dd74e4",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0",
+                "giggsey/libphonenumber-for-php": "^8.8"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Phone Number",
+                "handle": "phone-number",
+                "class": "rynpsc\\phonenumber\\PhoneNumber",
+                "changelogUrl": "https://raw.githubusercontent.com/rynpsc/craft-phone-number/master/CHANGELOG.md",
+                "downloadUrl": "https://github.com/rynpsc/craft-phone-number/archive/master.zip"
+            },
+            "autoload": {
+                "psr-4": {
+                    "rynpsc\\phonenumber\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ryan Pascoe",
+                    "homepage": "https://www.ryanpascoe.co"
+                }
+            ],
+            "description": "International phone number field.",
+            "keywords": [
+                "cms",
+                "craftcms",
+                "libphonenumber",
+                "number",
+                "phone",
+                "yii2"
+            ],
+            "support": {
+                "issues": "https://github.com/rynpsc/craft-phone-number/issues?state=open",
+                "source": "https://github.com/rynpsc/craft-phone-number",
+                "docs": "https://github.com/rynpsc/craft-phone-number"
+            },
+            "time": "2018-09-05T19:36:55+00:00"
         },
         {
             "name": "seld/cli-prompt",
@@ -5461,6 +5457,47 @@
                 "environment"
             ],
             "time": "2018-07-29T20:33:41+00:00"
+        },
+        {
+            "name": "yii2tech/crontab",
+            "version": "1.0.3",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yii2tech/crontab/zipball/594f8039307ff5e9ee325b0d2b714a68f23df0d6",
+                "reference": "594f8039307ff5e9ee325b0d2b714a68f23df0d6",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "yii2tech\\crontab\\": ""
+                }
+            },
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Paul Klimov",
+                    "email": "klimov.paul@gmail.com"
+                }
+            ],
+            "description": "Crontab support extension for the Yii2 framework",
+            "keywords": [
+                "cron",
+                "cronjob",
+                "crontab",
+                "yii2"
+            ],
+            "time": "2017-11-03T15:43:19+00:00"
         },
         {
             "name": "yiisoft/yii2",

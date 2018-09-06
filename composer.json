@@ -19,16 +19,16 @@
     "doublesecretagency/craft-smartmap": "3.1.3",
     "mmikkel/incognito-field": "1.0.0",
     "doublesecretagency/craft-cpcss": "2.1.0",
-    "charliedev/blockonomicon": "1.1.3",
     "fruitstudios/linkit": "1.1.0",
     "verbb/feed-me": "3.0.0-beta.21",
     "verbb/feed-me-pro": "3.0.4",
     "doublesecretagency/craft-cpbodyclasses": "2.1.0",
-    "lewisjenkins/craft-dynamic-fields": "3.0.6",
     "superbig/craft3-beam": "2.0.0",
     "doublesecretagency/craft-inventory": "2.0.2",
     "marionnewlevant/twig-perversion": "v2.0.5",
-    "mikestecker/craft-videoembedder": "1.0.9"
+    "mikestecker/craft-videoembedder": "1.0.9",
+    "rynpsc/craft-phone-number": "1.0.0",
+    "fatfish/notification": "v1.0.1"
   },
   "autoload": {
     "psr-4": {
