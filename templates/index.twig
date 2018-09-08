@@ -8,9 +8,9 @@
   <section class="bg-rotate">
     <div class="container mx-auto p-8 py-12">
       {% include '_partials/_elements/_module-header' with {
-        "headerText": "News & Updates",
-        "linkText": "Newsroom",
-        "linkUrl": "/news"
+        headerText: "News & Updates",
+        linkText: "Newsroom",
+        linkUrl: "/news"
       } %}
       <div class="news-grid md:flex mt-8">
         {% set featuredNews = craft.entries()
@@ -48,10 +48,10 @@
     <section class="bg-rotate relative z-0">
       <div class="container mx-auto p-8 py-12">
         {% include '_partials/_elements/_module-header' with {
-          "headerText": "Most Requested Services",
-          "linkText": "Services A - Z",
-          "linkUrl": "/services/",
-          "buttonBright": true
+          headerText: "Most Requested Services",
+          linkText: "Services A - Z",
+          linkUrl: "/services/",
+          buttonBright: true
         } %}
         <div class="card-grid grid-equal-height mt-8">
           {% for entry in entry.highlightedServices.all() %}
@@ -67,9 +67,9 @@
   <section class="bg-rotate">
     <div class="container mx-auto p-8">
       {% include '_partials/_elements/_module-header' with {
-        "headerText": "Upcoming Events",
-        "linkText": "All Meetings & Events",
-        "linkUrl": "/events"
+        headerText: "Upcoming Events",
+        linkText: "All Meetings & Events",
+        linkUrl: "/events"
       } %}
       <div class="card-grid vertical-cards mt-8">
         {% set options = {
@@ -95,9 +95,9 @@
   <section class="bg-rotate relative z-0">
     <div class="container mx-auto p-8 py-12">
     {% include '_partials/_elements/_module-header' with {
-      "headerText": "Featured Departments",
-      "linkText": "All Departments",
-      "linkUrl": "/departments"
+      headerText: "Featured Departments",
+      linkText: "All Departments",
+      linkUrl: "/departments"
     } %}
     <div class="card-grid card-department-grid grid-equal-height mt-8">
       {% for entry in entry.highlightedDepartments.all() %}
@@ -115,10 +115,10 @@
   <section class="bg-rotate">
     <div class="container mx-auto p-8">
       {% include '_partials/_elements/_module-header' with {
-        "headerText": "City Officials",
-        "linkText": "Find Your Council District",
-        "linkUrl": "http://gisapps.mapoakland.com/councildistricts/",
-        "buttonBright": true
+        headerText: "City Officials",
+        linkText: "Find Your Council District",
+        linkUrl: "http://gisapps.mapoakland.com/councildistricts/",
+        buttonBright: true
       } %}
       <div class="card-grid grid-equal-height profile-cards mt-12">
         {% for entry in craft.entries.section('officials').all() %}

@@ -13,10 +13,10 @@
   <section class="bg-white">
     <div class="container mx-auto p-8 py-16">
       {% include '_partials/_elements/_module-header' with {
-        "headerText": "City Officials",
-        "linkText": "View Staff Directory",
-        "linkUrl": "/staff/",
-        "buttonBright": true
+        headerText: "City Officials",
+        linkText: "View Staff Directory",
+        linkUrl: "/staff/",
+        buttonBright: true
       } %}
       <div class="card-grid grid-equal-height profile-cards mt-12">
         {% for entry in craft.entries.section('officials').all() %}
