@@ -2,7 +2,7 @@
   <a id="page-about" class="anchor-link"></a>
   <div class="container mx-auto px-8 py-16">
     {% include '_partials/_elements/_module-header' with {
-      headerText: headerText ?? "About",
+      headerText: pageAboutHeaderText ?? "About",
     } %}
     <div class="mt-8 sm:flex">
       {% if entry.teams | length %}

@@ -3,9 +3,9 @@
     <a id="page-boards" class="anchor-link"></a>
     <div class="container mx-auto p-8 py-16">
       {% include '_partials/_elements/_module-header' with {
-        headerText: headerText ?? "Related Boards & Commissions",
-        linkText: linkText ?? "All Boards & Commissions",
-        linkUrl: linkUrl ?? "/boards-commissions"
+        headerText: pageBoardsHeaderText ?? "Related Boards & Commissions",
+        linkText: pageBoardsLinkText ?? "All Boards & Commissions",
+        linkUrl: pageBoardsLinkUrl ?? "/boards-commissions"
       } %}
       <div class="card-grid grid-equal-height mt-8">
         {% for entry in entry.boardsCommissions.all() %}

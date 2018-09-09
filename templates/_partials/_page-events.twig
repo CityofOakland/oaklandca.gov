@@ -8,9 +8,9 @@
     <a id="page-events" class="anchor-link"></a>
     <div class="container mx-auto p-8 py-16">
       {% include '_partials/_elements/_module-header' with {
-        headerText: headerText ?? "Events",
-        linkText: linkText ?? "All Events",
-        linkUrl: linkUrl ?? "/events"
+        headerText: pageEventsHeaderText ?? "Events",
+        linkText: pageEventsLinkText ?? "All Events",
+        linkUrl: pageEventsLinkUrl ?? "/events"
       } %}
       <div class="card-grid vertical-cards mt-8">
         {% for entry in events %}

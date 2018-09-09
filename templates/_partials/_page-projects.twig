@@ -3,9 +3,9 @@
     <a id="page-projects" class="anchor-link"></a>
     <div class="container mx-auto p-8">
       {% include '_partials/_elements/_module-header' with {
-        headerText: headerText ?? "Projects",
-        linkText: linkText ?? "All Projects",
-        linkUrl: linkUrl ?? "/projects"
+        headerText: pageProjectsHeaderText ?? "Projects",
+        linkText: pageProjectsLinkText ?? "All Projects",
+        linkUrl: pageProjectsLinkUrl ?? "/projects"
       } %}
       <div class="card-grid wide-cards mt-8">
         {% for entry in entry.pageProjects.all() %}
