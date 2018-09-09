@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "a82c03ac89406964a014bb47bcdd52db",
+    "content-hash": "3b04f29e85ac5c3c834b9db1fc31c253",
     "packages": [
         {
             "name": "aelvan/inlin",
@@ -1150,6 +1150,46 @@
             "time": "2014-09-09T13:34:57+00:00"
         },
         {
+            "name": "donatj/phpuseragentparser",
+            "version": "v0.9.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/donatj/PhpUserAgent/zipball/ea79de6a18e52285e62cd75cf1cebe276ecaf503",
+                "reference": "ea79de6a18e52285e62cd75cf1cebe276ecaf503",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "Source/UserAgentParser.php"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jesse G. Donat",
+                    "email": "donatj@gmail.com",
+                    "homepage": "http://donatstudios.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Simple, streamlined PHP user-agent parser",
+            "homepage": "http://donatstudios.com/PHP-Parser-HTTP_USER_AGENT",
+            "keywords": [
+                "browser",
+                "browser detection",
+                "parser",
+                "user agent",
+                "useragent"
+            ],
+            "time": "2017-10-23T16:52:52+00:00"
+        },
+        {
             "name": "doublesecretagency/craft-cpbodyclasses",
             "version": "2.1.0",
             "dist": {
@@ -1661,6 +1701,40 @@
             "time": "2015-11-01T10:19:22+00:00"
         },
         {
+            "name": "evenement/evenement",
+            "version": "v3.0.1",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/igorw/evenement/zipball/531bfb9d15f8aa57454f5f0285b18bec903b8fb7",
+                "reference": "531bfb9d15f8aa57454f5f0285b18bec903b8fb7",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Evenement": "src"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Igor Wiedler",
+                    "email": "igor@wiedler.ch"
+                }
+            ],
+            "description": "Événement is a very simple event dispatching library for PHP",
+            "keywords": [
+                "event-dispatcher",
+                "event-emitter"
+            ],
+            "time": "2017-07-23T21:35:13+00:00"
+        },
+        {
             "name": "ezyang/htmlpurifier",
             "version": "v4.10.0",
             "dist": {
@@ -1701,59 +1775,6 @@
                 "html"
             ],
             "time": "2018-02-23T01:58:20+00:00"
-        },
-        {
-            "name": "fatfish/notification",
-            "version": "1.0.1",
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/fatfishdigital/Craft3-Notification/zipball/bed529f49405d440a76c83dfd0eafca1d30bbe81",
-                "reference": "bed529f49405d440a76c83dfd0eafca1d30bbe81",
-                "shasum": ""
-            },
-            "require": {
-                "craftcms/cms": "^3.0.0-RC1",
-                "yii2tech/crontab": "*"
-            },
-            "type": "craft-plugin",
-            "extra": {
-                "name": "Notification",
-                "handle": "notification",
-                "hasCpSettings": false,
-                "hasCpSection": true,
-                "changelogUrl": "https://raw.githubusercontent.com/fatfishdigital/notification/master/CHANGELOG.md",
-                "components": {
-                    "notificationService": "fatfish\\notification\\services\\NotificationService"
-                },
-                "class": "fatfish\\notification\\Notification"
-            },
-            "autoload": {
-                "psr-4": {
-                    "fatfish\\notification\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fatfish",
-                    "homepage": "https://fatfish.com.au"
-                }
-            ],
-            "description": "Notification plugin for craft 3.x",
-            "keywords": [
-                "cms",
-                "craft",
-                "craft-plugin",
-                "craftcms",
-                "notification"
-            ],
-            "support": {
-                "docs": "https://github.com/fatfishdigital/notification/blob/master/README.md",
-                "issues": "https://github.com/fatfishdigital/notification/issues"
-            },
-            "time": "2018-09-04T07:41:32+00:00"
         },
         {
             "name": "firebase/php-jwt",
@@ -1886,6 +1907,47 @@
                 "fixtures"
             ],
             "time": "2018-07-12T10:23:15+00:00"
+        },
+        {
+            "name": "geoip2/geoip2",
+            "version": "v2.9.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/maxmind/GeoIP2-php/zipball/a807fbf65212eef5d8d2db1a1b31082b53633d77",
+                "reference": "a807fbf65212eef5d8d2db1a1b31082b53633d77",
+                "shasum": ""
+            },
+            "require": {
+                "maxmind-db/reader": "~1.0",
+                "maxmind/web-service-common": "~0.5",
+                "php": ">=5.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "GeoIp2\\": "src"
+                }
+            },
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Gregory J. Oschwald",
+                    "email": "goschwald@maxmind.com",
+                    "homepage": "http://www.maxmind.com/"
+                }
+            ],
+            "description": "MaxMind GeoIP2 PHP API",
+            "homepage": "https://github.com/maxmind/GeoIP2-php",
+            "keywords": [
+                "IP",
+                "geoip",
+                "geoip2",
+                "geolocation",
+                "maxmind"
+            ],
+            "time": "2018-04-10T15:32:59+00:00"
         },
         {
             "name": "giggsey/libphonenumber-for-php",
@@ -2381,6 +2443,42 @@
             "time": "2017-05-01T15:36:40+00:00"
         },
         {
+            "name": "jasongrimes/paginator",
+            "version": "1.0.3",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jasongrimes/php-paginator/zipball/3411e3cd0c6479a0b514f26e4358f0273552f221",
+                "reference": "3411e3cd0c6479a0b514f26e4358f0273552f221",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "JasonGrimes": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jason Grimes",
+                    "email": "jason@grimesit.com"
+                }
+            ],
+            "description": "A lightweight PHP paginator, for generating pagination controls in the style of Stack Overflow and Flickr. The 'first' and 'last' page links are shown inline as page numbers, and excess page numbers are replaced by ellipses.",
+            "homepage": "http://github.com/jasongrimes/php-paginator",
+            "keywords": [
+                "pager",
+                "pagination",
+                "paginator"
+            ],
+            "time": "2018-07-11T18:11:49+00:00"
+        },
+        {
             "name": "justinrainbow/json-schema",
             "version": "5.2.7",
             "dist": {
@@ -2761,6 +2859,47 @@
             "time": "2018-08-24T18:43:39+00:00"
         },
         {
+            "name": "markhuot/craftql",
+            "version": "1.1.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/markhuot/craftql/zipball/1781fcf2279fb0edd144c7d733edf21414296159",
+                "reference": "1781fcf2279fb0edd144c7d733edf21414296159",
+                "shasum": ""
+            },
+            "require": {
+                "react/http": "^0.7",
+                "webonyx/graphql-php": "^0.11.0"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "CraftQL",
+                "handle": "craftql",
+                "developer": "Mark Huot",
+                "developerUrl": "https://www.github.com/markhuot",
+                "class": "markhuot\\CraftQL\\CraftQL"
+            },
+            "autoload": {
+                "psr-4": {
+                    "markhuot\\CraftQL\\": "src/"
+                }
+            },
+            "authors": [
+                {
+                    "name": "Mark Huot",
+                    "email": "mark@markhuot.com"
+                }
+            ],
+            "description": "A GraphQL implementation for Craft",
+            "keywords": [
+                "cms",
+                "craft",
+                "craft-plugin",
+                "craftcms"
+            ],
+            "time": "2018-06-25T02:22:48+00:00"
+        },
+        {
             "name": "masterminds/html5",
             "version": "2.3.0",
             "dist": {
@@ -2813,6 +2952,85 @@
                 "xml"
             ],
             "time": "2017-09-04T12:26:28+00:00"
+        },
+        {
+            "name": "maxmind-db/reader",
+            "version": "v1.3.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/maxmind/MaxMind-DB-Reader-php/zipball/e042b4f8a2dff41e19019faf16427178b07fbd58",
+                "reference": "e042b4f8a2dff41e19019faf16427178b07fbd58",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4"
+            },
+            "suggest": {
+                "ext-bcmath": "bcmath or gmp is required for decoding larger integers with the pure PHP decoder",
+                "ext-gmp": "bcmath or gmp is required for decoding larger integers with the pure PHP decoder",
+                "ext-maxminddb": "A C-based database decoder that provides significantly faster lookups"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "MaxMind\\Db\\": "src/MaxMind/Db"
+                }
+            },
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Gregory J. Oschwald",
+                    "email": "goschwald@maxmind.com",
+                    "homepage": "http://www.maxmind.com/"
+                }
+            ],
+            "description": "MaxMind DB Reader API",
+            "homepage": "https://github.com/maxmind/MaxMind-DB-Reader-php",
+            "keywords": [
+                "database",
+                "geoip",
+                "geoip2",
+                "geolocation",
+                "maxmind"
+            ],
+            "time": "2018-02-21T21:23:33+00:00"
+        },
+        {
+            "name": "maxmind/web-service-common",
+            "version": "v0.5.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/maxmind/web-service-common-php/zipball/61a9836fa3bb1743ab89752bae5005d71e78c73b",
+                "reference": "61a9836fa3bb1743ab89752bae5005d71e78c73b",
+                "shasum": ""
+            },
+            "require": {
+                "composer/ca-bundle": "^1.0.3",
+                "ext-curl": "*",
+                "ext-json": "*",
+                "php": ">=5.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "MaxMind\\Exception\\": "src/Exception",
+                    "MaxMind\\WebService\\": "src/WebService"
+                }
+            },
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Gregory Oschwald",
+                    "email": "goschwald@maxmind.com"
+                }
+            ],
+            "description": "Internal MaxMind Web Service API",
+            "homepage": "https://github.com/maxmind/web-service-common-php",
+            "time": "2018-02-12T22:31:54+00:00"
         },
         {
             "name": "michelf/php-smartypants",
@@ -3814,6 +4032,344 @@
             "time": "2017-01-27T20:57:22+00:00"
         },
         {
+            "name": "react/cache",
+            "version": "v0.5.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/reactphp/cache/zipball/7d7da7fb7574d471904ba357b39bbf110ccdbf66",
+                "reference": "7d7da7fb7574d471904ba357b39bbf110ccdbf66",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "react/promise": "~2.0|~1.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "React\\Cache\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Async, Promise-based cache interface for ReactPHP",
+            "keywords": [
+                "cache",
+                "caching",
+                "promise",
+                "reactphp"
+            ],
+            "time": "2018-06-25T12:52:40+00:00"
+        },
+        {
+            "name": "react/dns",
+            "version": "v0.4.15",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/reactphp/dns/zipball/319e110a436d26a2fa137cfa3ef2063951715794",
+                "reference": "319e110a436d26a2fa137cfa3ef2063951715794",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "react/cache": "^0.5 || ^0.4 || ^0.3",
+                "react/event-loop": "^1.0 || ^0.5 || ^0.4 || ^0.3.5",
+                "react/promise": "^2.1 || ^1.2.1",
+                "react/promise-timer": "^1.2",
+                "react/stream": "^1.0 || ^0.7 || ^0.6 || ^0.5 || ^0.4.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "React\\Dns\\": "src"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Async DNS resolver for ReactPHP",
+            "keywords": [
+                "async",
+                "dns",
+                "dns-resolver",
+                "reactphp"
+            ],
+            "time": "2018-07-02T12:17:56+00:00"
+        },
+        {
+            "name": "react/event-loop",
+            "version": "v1.0.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/reactphp/event-loop/zipball/0266aff7aa7b0613b1f38a723e14a0ebc55cfca3",
+                "reference": "0266aff7aa7b0613b1f38a723e14a0ebc55cfca3",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "suggest": {
+                "ext-event": "~1.0 for ExtEventLoop",
+                "ext-pcntl": "For signal handling support when using the StreamSelectLoop"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "React\\EventLoop\\": "src"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "ReactPHP's core reactor event loop that libraries can use for evented I/O.",
+            "keywords": [
+                "asynchronous",
+                "event-loop"
+            ],
+            "time": "2018-07-11T14:37:46+00:00"
+        },
+        {
+            "name": "react/http",
+            "version": "v0.7.4",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/reactphp/http/zipball/6646135c01097b5316d2cb47bc12e541bf26efae",
+                "reference": "6646135c01097b5316d2cb47bc12e541bf26efae",
+                "shasum": ""
+            },
+            "require": {
+                "evenement/evenement": "^3.0 || ^2.0 || ^1.0",
+                "php": ">=5.3.0",
+                "react/promise": "^2.3 || ^1.2.1",
+                "react/socket": "^1.0 || ^0.8 || ^0.7 || ^0.6 || ^0.5",
+                "react/stream": "^1.0 || ^0.7 || ^0.6 || ^0.5 || ^0.4.6",
+                "ringcentral/psr7": "^1.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "React\\Http\\": "src"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Event-driven, streaming plaintext HTTP and secure HTTPS server for ReactPHP",
+            "keywords": [
+                "event-driven",
+                "http",
+                "https",
+                "reactphp",
+                "server",
+                "streaming"
+            ],
+            "time": "2017-08-16T15:24:39+00:00"
+        },
+        {
+            "name": "react/promise",
+            "version": "v2.7.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/reactphp/promise/zipball/f4edc2581617431aea50430749db55cc3fc031b3",
+                "reference": "f4edc2581617431aea50430749db55cc3fc031b3",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "React\\Promise\\": "src/"
+                },
+                "files": [
+                    "src/functions_include.php"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jan Sorgalla",
+                    "email": "jsorgalla@gmail.com"
+                }
+            ],
+            "description": "A lightweight implementation of CommonJS Promises/A for PHP",
+            "keywords": [
+                "promise",
+                "promises"
+            ],
+            "time": "2018-06-13T15:59:06+00:00"
+        },
+        {
+            "name": "react/promise-timer",
+            "version": "v1.5.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/reactphp/promise-timer/zipball/a11206938ca2394dc7bb368f5da25cd4533fa603",
+                "reference": "a11206938ca2394dc7bb368f5da25cd4533fa603",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3",
+                "react/event-loop": "^1.0 || ^0.5 || ^0.4 || ^0.3.5",
+                "react/promise": "^2.7.0 || ^1.2.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "React\\Promise\\Timer\\": "src/"
+                },
+                "files": [
+                    "src/functions.php"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christian Lück",
+                    "email": "christian@lueck.tv"
+                }
+            ],
+            "description": "A trivial implementation of timeouts for Promises, built on top of ReactPHP.",
+            "homepage": "https://github.com/reactphp/promise-timer",
+            "keywords": [
+                "async",
+                "event-loop",
+                "promise",
+                "reactphp",
+                "timeout",
+                "timer"
+            ],
+            "time": "2018-06-13T16:45:37+00:00"
+        },
+        {
+            "name": "react/socket",
+            "version": "v1.0.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/reactphp/socket/zipball/476e2644a634c6301b8111e6d22a61679e6e6bd0",
+                "reference": "476e2644a634c6301b8111e6d22a61679e6e6bd0",
+                "shasum": ""
+            },
+            "require": {
+                "evenement/evenement": "^3.0 || ^2.0 || ^1.0",
+                "php": ">=5.3.0",
+                "react/dns": "^0.4.13",
+                "react/event-loop": "^1.0 || ^0.5 || ^0.4 || ^0.3.5",
+                "react/promise": "^2.6.0 || ^1.2.1",
+                "react/promise-timer": "^1.4.0",
+                "react/stream": "^1.0 || ^0.7.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "React\\Socket\\": "src"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Async, streaming plaintext TCP/IP and secure TLS socket server and client connections for ReactPHP",
+            "keywords": [
+                "Connection",
+                "Socket",
+                "async",
+                "reactphp",
+                "stream"
+            ],
+            "time": "2018-07-11T14:38:22+00:00"
+        },
+        {
+            "name": "react/stream",
+            "version": "v1.0.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/reactphp/stream/zipball/fdd0140f42805d65bf9687636503db0b326d2244",
+                "reference": "fdd0140f42805d65bf9687636503db0b326d2244",
+                "shasum": ""
+            },
+            "require": {
+                "evenement/evenement": "^3.0 || ^2.0 || ^1.0",
+                "php": ">=5.3.8",
+                "react/event-loop": "^1.0 || ^0.5 || ^0.4 || ^0.3.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "React\\Stream\\": "src"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Event-driven readable and writable streams for non-blocking I/O in ReactPHP",
+            "keywords": [
+                "event-driven",
+                "io",
+                "non-blocking",
+                "pipe",
+                "reactphp",
+                "readable",
+                "stream",
+                "writable"
+            ],
+            "time": "2018-07-11T14:38:16+00:00"
+        },
+        {
+            "name": "ringcentral/psr7",
+            "version": "1.2.2",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ringcentral/psr7/zipball/dcd84bbb49b96c616d1dcc8bfb9bef3f2cd53d1c",
+                "reference": "dcd84bbb49b96c616d1dcc8bfb9bef3f2cd53d1c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3",
+                "psr/http-message": "~1.0"
+            },
+            "provide": {
+                "psr/http-message-implementation": "1.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "RingCentral\\Psr7\\": "src/"
+                },
+                "files": [
+                    "src/functions_include.php"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
+                }
+            ],
+            "description": "PSR-7 message implementation",
+            "keywords": [
+                "http",
+                "message",
+                "stream",
+                "uri"
+            ],
+            "time": "2018-01-15T21:00:49+00:00"
+        },
+        {
             "name": "rlanvin/php-rrule",
             "version": "v1.6.1",
             "dist": {
@@ -4027,14 +4583,15 @@
         },
         {
             "name": "solspace/craft3-calendar",
-            "version": "2.0.5",
+            "version": "2.0.6",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/solspace/craft3-calendar/zipball/7c1cc4dda371006d1ff05adb3bba216726e6fe14",
-                "reference": "7c1cc4dda371006d1ff05adb3bba216726e6fe14",
+                "url": "https://api.github.com/repos/solspace/craft3-calendar/zipball/0a27fe70153db071aabddf7fb03b32f68a572632",
+                "reference": "0a27fe70153db071aabddf7fb03b32f68a572632",
                 "shasum": ""
             },
             "require": {
+                "craftcms/cms": "^3.0.0",
                 "nesbot/carbon": "^1.22.1",
                 "php": ">=7.0",
                 "rlanvin/php-rrule": "~1.6.0",
@@ -4068,7 +4625,7 @@
                 }
             ],
             "description": "The most powerful event management plugin for Craft.",
-            "time": "2018-07-27T04:23:15+00:00"
+            "time": "2018-09-06T17:04:52+00:00"
         },
         {
             "name": "solspace/craft3-commons",
@@ -4218,6 +4775,62 @@
                 "parser"
             ],
             "time": "2016-11-22T22:57:47+00:00"
+        },
+        {
+            "name": "superbig/craft-audit",
+            "version": "1.0.1",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sjelfull/craft-audit/zipball/cc71340f86ea16ba4e89d4e63386e8aa859605e9",
+                "reference": "cc71340f86ea16ba4e89d4e63386e8aa859605e9",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0-RC1",
+                "donatj/phpuseragentparser": "^0.9.0",
+                "geoip2/geoip2": "^2.5",
+                "jasongrimes/paginator": "^1.0.0"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Audit",
+                "handle": "audit",
+                "hasCpSettings": true,
+                "hasCpSection": true,
+                "changelogUrl": "https://raw.githubusercontent.com/sjelfull/craft-audit/v1/CHANGELOG.md",
+                "components": {
+                    "auditService": "superbig\\audit\\services\\AuditService",
+                    "geo": "superbig\\audit\\services\\Audit_GeoService"
+                },
+                "class": "superbig\\audit\\Audit"
+            },
+            "autoload": {
+                "psr-4": {
+                    "superbig\\audit\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Superbig",
+                    "homepage": "https://superbig.co"
+                }
+            ],
+            "description": "Log adding/updating/deleting of elements",
+            "keywords": [
+                "audit",
+                "cms",
+                "craft",
+                "craft-plugin",
+                "craftcms"
+            ],
+            "support": {
+                "docs": "https://github.com/sjelfull/craft-audit/blob/v1/README.md",
+                "issues": "https://github.com/sjelfull/craft-audit/issues"
+            },
+            "time": "2018-06-08T13:32:54+00:00"
         },
         {
             "name": "superbig/craft3-beam",
@@ -5414,6 +6027,59 @@
             "time": "2018-07-10T03:53:00+00:00"
         },
         {
+            "name": "verbb/workflow",
+            "version": "1.0.2",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/verbb/workflow/zipball/a67eb992d9c7da6f035e90fa098e016149e19f8e",
+                "reference": "a67eb992d9c7da6f035e90fa098e016149e19f8e",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Workflow",
+                "handle": "workflow",
+                "schemaVersion": "2.0.0",
+                "hasCpSettings": true,
+                "hasCpSection": true,
+                "changelogUrl": "https://raw.githubusercontent.com/verbb/workflow/craft-3/CHANGELOG.md",
+                "class": "verbb\\workflow\\Workflow"
+            },
+            "autoload": {
+                "psr-4": {
+                    "verbb\\workflow\\": "src/"
+                }
+            },
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Verbb",
+                    "homepage": "https://verbb.io"
+                }
+            ],
+            "description": "A Craft CMS plugin to create a workflow for publishing entries.",
+            "keywords": [
+                "cms",
+                "craft",
+                "craft-plugin",
+                "craftcms",
+                "workflow"
+            ],
+            "support": {
+                "email": "support@verbb.io",
+                "issues": "https://github.com/verbb/workflow/issues?state=open",
+                "source": "https://github.com/verbb/workflow",
+                "docs": "https://github.com/verbb/workflow",
+                "rss": "https://github.com/verbb/workflow/commits/v2.atom"
+            },
+            "time": "2018-07-24T03:19:12+00:00"
+        },
+        {
             "name": "vlucas/phpdotenv",
             "version": "v2.5.1",
             "dist": {
@@ -5457,6 +6123,43 @@
                 "environment"
             ],
             "time": "2018-07-29T20:33:41+00:00"
+        },
+        {
+            "name": "webonyx/graphql-php",
+            "version": "v0.11.6",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/webonyx/graphql-php/zipball/f438a726cd523bc584e78d866eca270165c42fd5",
+                "reference": "f438a726cd523bc584e78d866eca270165c42fd5",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "php": ">=5.5,<8.0-DEV"
+            },
+            "suggest": {
+                "psr/http-message": "To use standard GraphQL server",
+                "react/promise": "To leverage async resolving on React PHP platform"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/deprecated.php"
+                ],
+                "psr-4": {
+                    "GraphQL\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "A PHP port of GraphQL reference implementation",
+            "homepage": "https://github.com/webonyx/graphql-php",
+            "keywords": [
+                "api",
+                "graphql"
+            ],
+            "time": "2018-04-17T10:34:43+00:00"
         },
         {
             "name": "yii2tech/crontab",

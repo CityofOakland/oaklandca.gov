@@ -3,7 +3,7 @@
     "craftcms/cms": "3.0.23.1",
     "vlucas/phpdotenv": "^2.4.0",
     "nystudio107/craft-typogrify": "1.1.11",
-    "solspace/craft3-calendar": "v2.0.5",
+    "solspace/craft3-calendar": "2.0.6",
     "solspace/craft3-freeform": "2.2.2",
     "solspace/craft3-freeform-pro": "2.2.2",
     "nystudio107/craft-seomatic": "3.1.19",
@@ -28,7 +28,9 @@
     "marionnewlevant/twig-perversion": "v2.0.5",
     "mikestecker/craft-videoembedder": "1.0.9",
     "rynpsc/craft-phone-number": "1.0.0",
-    "fatfish/notification": "v1.0.1"
+    "markhuot/craftql": "1.1.0",
+    "verbb/workflow": "1.0.2",
+    "superbig/craft-audit": "1.0.1"
   },
   "autoload": {
     "psr-4": {
