@@ -63,3 +63,14 @@ button {
     outline-width: 3px;
   }
 }
+
+table {
+  border: 1px solid #ccc;
+  /* width: 100%; */
+}
+
+th,
+td {
+  border: 1px solid #aaa;
+  padding: 8px;
+}
