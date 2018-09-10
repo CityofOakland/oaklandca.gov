@@ -1,4 +1,10 @@
 {% extends '_layout' %}
+{% set entry = craft.entries.section('eventsIndex').one %}
+{% set relatedEntry = null %}
+{% if craft.app.request.getSegment(2) == 'related-to' %}
+  {% set urlSlug = craft.app.request.getSegment(3) %}
+  {% set relatedEntry = craft.entries.slug(urlSlug).first() %}
+{% endif %}
 
 {% block content %}
   {% include '_partials/_page-banners' with {
@@ -12,6 +18,7 @@
         calendarId: 2,
         rangeStart: now | date('Y-m-d'),
         rangeEnd: now | date_modify('+1 year') | date('Y-m-d'),
+        relatedTo: relatedEntry,
         limit: 10
       }) %}
       {% paginate events as pageInfo, pageEntries %}

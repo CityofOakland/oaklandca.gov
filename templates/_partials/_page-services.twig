@@ -4,8 +4,8 @@
     <div class="container mx-auto p-8 py-16">
       {% include '_partials/_elements/_module-header' with {
         headerText: pageServicesHeaderText ?? "Featured Services",
-        linkText: pageServicesLinkText ?? "All Services",
-        linkUrl: pageServicesLinkUrl ?? "/services/" ~ entry.type
+        linkText: pageServicesLinkText ?? "Related Services",
+        linkUrl: pageServicesLinkUrl ?? "/services/related-to/" ~ entry.slug
       } %}
       <div class="card-grid grid-equal-height mt-8">
         {% for entry in entry.pageServices.all() %}

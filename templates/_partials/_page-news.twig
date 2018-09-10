@@ -13,8 +13,8 @@
     <div class="container mx-auto p-8 py-16">
       {% include '_partials/_elements/_module-header' with {
         headerText: pageNewsHeaderText ?? "News",
-        linkText: pageNewsLinkText ?? "All News",
-        linkUrl: pageNewsLinkUrl ?? "/news"
+        linkText: pageNewsLinkText ?? "Related News",
+        linkUrl: pageNewsLinkUrl ?? "/news/related-to/" ~ entry.slug
       } %}
       <div class="card-grid vertical-cards mt-8">
         {% for entry in entry.pageNews.all() %}

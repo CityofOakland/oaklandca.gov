@@ -1,4 +1,11 @@
 {% extends '_layout' %}
+{% set entry = craft.entries.section('topicsIndex').one %}
+{% if craft.app.request.getSegment(2) == 'related-to' %}
+  {% set urlSlug = craft.app.request.getSegment(3) %}
+  {% set relatedEntry = craft.entries.slug(urlSlug).first() %}
+{% else %}
+  {% set relatedEntry = null %}
+{% endif %}
 
 {% block content %}
   {% include '_partials/_page-banners' with {
@@ -8,7 +15,7 @@
   {% include '_partials/_elements/_search-bar' %}
   <section class="bg-white relative z-0">
     <div class="container mx-auto p-8 py-16">
-      {% paginate craft.entries.section('topics').limit(25).orderBy('title') as pageInfo, pageEntries %}
+      {% paginate craft.entries.section('topics').relatedTo(relatedEntry).limit(25).orderBy('title') as pageInfo, pageEntries %}
       {% include '_partials/_elements/_pagination' %}
       {% for entry in pageEntries %}
         <article>

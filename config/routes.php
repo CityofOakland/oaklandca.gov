@@ -19,5 +19,13 @@
  */
 
 return [
-
+  'boards-commissions/related-to/<slug>' => ['template' => 'boards-commissions'],
+  'documents/related-to/<slug>' => ['template' => 'documents'],
+  'events/related-to/<slug>' => ['template' => 'events'],
+  'meetings/related-to/<slug>' => ['template' => 'meetings'],
+  'news/related-to/<slug>' => ['template' => 'news'],
+  'projects/related-to/<slug>' => ['template' => 'projects'],
+  'resources/related-to/<slug>' => ['template' => 'resources'],
+  'services/related-to/<slug>' => ['template' => 'services'],
+  'topics/related-to/<slug>' => ['template' => 'topics'],
 ];
