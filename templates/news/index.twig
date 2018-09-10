@@ -3,7 +3,7 @@
 {% set relatedEntry = null %}
 {% if craft.app.request.getSegment(2) == 'related-to' %}
   {% set urlSlug = craft.app.request.getSegment(3) %}
-  {% set relatedEntry = craft.entries.slug(urlSlug).first() %}
+  {% set relatedEntry = craft.entries.slug(urlSlug).one %}
 {% endif %}
 
 {% block content %}
