@@ -18,16 +18,26 @@
       <div class="sm:w-2/3 sm:mr-8">
         {% if entry.occurrenceCount > 1 %}
           <h3>Dates:</h3>
-          <p>
+          <div class="flex flex-wrap">
             {% for event in entry.occurrences %}
-              {{ event.startDate.format("l, F j, Y") }}<br>
+              {% set startDate = event.startDate %}
+              {# TODO: Develop a decent method for displaying this with screen readers. #}
+              <div class="w-24 border border-shark mb-4 mr-4 flex flex-col text-center">
+                <span class="block p-2 bg-shark text-white">{{ startDate.format("M") }}</span>
+                <span class="block text-3xl">{{ startDate.format("j") }}</span>
+                <span class="block bg-cararra">{{ startDate.format("Y") }}</span>
+              </div>
             {% endfor %}
-          </p>
+          </div>
         {% else %}
           <h3>Date:</h3>
-          <p>
-            {{ entry.startDate.format("l, F j, Y") }}
-          </p>
+          {% set startDate = event.startDate %}
+          {# TODO: Develop a decent method for displaying this with screen readers. #}
+          <div class="w-24 border border-shark mb-4 mr-4 flex flex-col text-center">
+            <span class="block p-2 bg-shark text-white">{{ startDate.format("M") }}</span>
+            <span class="block text-3xl">{{ startDate.format("j") }}</span>
+            <span class="block bg-cararra">{{ startDate.format("Y") }}</span>
+          </div>
         {% endif %}
         {% if entry.body | length %}
           <h3>Details</h3>
