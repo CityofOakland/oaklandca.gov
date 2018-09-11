@@ -1,7 +1,5 @@
 {% extends '_layout' %}
 {% set entry = craft.entries.section('searchIndex').one %}
-{% set query = craft.request.getParam('keywords') %}
-{% set entries = craft.entries.search(query).order('score') %}
 
 {% set section = section ?? '' %}
 {% switch section %}
@@ -72,6 +70,17 @@
 
 {% endswitch %}
 
+{% set sectionsToSearch = [] %}
+{% for entry in entry.pageNews.ids() ?? '' %}
+  {% set idsToExclude = idsToExclude|merge([entry]) %}
+{% endfor %}
+
+{% for sec in sections %}
+  {% set sectionsToSearch = sectionsToSearch | merge([sec.handle]) %}
+{% endfor %}
+
+{% set query = craft.request.getParam('keywords') %}
+{% set entries = craft.entries.section(sectionsToSearch).search(query).order('score') %}
 
 {% block content %}
   {% include '_partials/_page-banners' with {
@@ -85,14 +94,16 @@
         <span class="font-bold bg-cararra px-2">{{ query }}</span></h1>
 
       {% if entries | length %}
-        <div class="md:flex mt-8">
-          <div class="md:w-1/4 md:pr-4">
-            <h3 class="text-xl my-0">Top Hit</h3>
+        {% if sections | length > 1 %}
+          <div class="md:flex mt-8">
+            <div class="md:w-1/4 md:pr-4">
+              <h3 class="text-xl my-0">Top Hit</h3>
+            </div>
+            <div class="flex-1">
+              <a class="block w-full sm:pl-2 hover:bg-curious-blue hover:text-white" href="{{ entries.one.url }}">{{ entries.one.title }} (in {{ entries.one.section.name }})</a>
+            </div>
           </div>
-          <div class="flex-1">
-            <a class="block w-full sm:pl-2 hover:bg-curious-blue hover:text-white" href="{{ entries.one.url }}">{{ entries.one.title }} (in {{ entries.one.section.name }})</a>
-          </div>
-        </div>
+        {% endif %}
         {% set allSections = craft.sections.getAllSections() %}
         {% for currentSection in sections %}
           {% if entries.section(currentSection).all() | length %}
@@ -110,7 +121,6 @@
             </div>
           {% endif %}
         {% endfor %}
-
       {% else %}
         <p>{{"Your search for" }}
           “{{ query }}”
