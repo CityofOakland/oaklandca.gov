@@ -17,6 +17,7 @@
       'resources': entry.pageResources.exists(),
       'documents': entry.pageDocuments.exists(),
       'projects': entry.pageProjects.exists(),
+      'topics': entry.pageTopics.exists(),
       'news': relatedNews.exists(),
       'events': relatedEvents.exists(),
       'about': true,
@@ -27,6 +28,7 @@
   {% include '_partials/_page-resources' %}
   {% include '_partials/_page-documents' %}
   {% include '_partials/_page-projects' %}
+  {% include '_partials/_page-topics' %}
   {% include '_partials/_page-news' %}
   {% include '_partials/_page-events' %}
   {% include '_partials/_page-about' %}
