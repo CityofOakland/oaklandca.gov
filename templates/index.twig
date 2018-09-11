@@ -13,13 +13,18 @@
         linkUrl: "/departments/media-center"
       } %}
       <div class="news-grid md:flex mt-8">
-        {% set featuredNews = craft.entries()
-          .section('news')
-          .search('featureOnHomepage:1')
-          .newsImage(':notempty:')
-          .after('2017-10-01')
-          .orderBy('RAND()')
-          .one() %}
+        {% if entry.highlightedNews.exists() %}
+          {% set featuredNews = entry.highlightedNews.one() %}
+        {% else %}
+          {% set featuredNews = craft.entries()
+            .section('news')
+            .search('featureOnHomepage:1')
+            .newsImage(':notempty:')
+            .after('2017-10-01')
+            .orderBy('RAND()')
+            .one() %}
+        {% endif %}
+
         {% set featuredNewsId = featuredNews.id ?? '' %}
         <article class="featured-news md:w-2/3 md:mr-8">
           {% if featuredNews.newsImage | length %}
