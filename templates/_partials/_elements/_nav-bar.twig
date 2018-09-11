@@ -16,24 +16,26 @@
 {% else %}
   {% set bgColor = 'bg-shark' %}
 {% endif %}
+{% set mainNav = craft.entries.section('navigation').slug('main-nav').one() %}
 
 <div class="{{ bgColor }} text-white fixed w-full z-50 trans trans-fast h-40 nav-bar" id="nav-bar">
   <div class="px-8">
     <nav class="flex items-center justify-between">
       <div>
-        <a href="/" class="block pt-16 pl-8 mb-8 sm:border-l-2 sm:border-white text-white hover:text-apple fill-current trans-fast">
-          {{ craft.inlin.er('/assets/img/logo-oakland.svg') | replace('<svg ', '<svg class="h-12 sm:h-16" ') | raw }}
+        <a href="/" class="block pt-16 sm:pl-8 mb-8 sm:border-l-2 sm:border-white text-white hover:text-apple fill-current trans-fast">
+          {{ craft.inlin.er('/assets/img/logo-oakland.svg') | replace('<svg ', '<svg class="h-8 sm:h-16" ') | raw }}
         </a>
       </div>
-      <button class="btn flex lg:hidden mr-8">Menu</button>
+      <button id="menu-toggle" class="btn flex lg:hidden -mr-8">Menu</button>
       <ul class="list-reset hidden uppercase lg:flex">
-        <li class="mr-8"><a href="/departments/media-center" class="text-white hover:text-apple trans-fast">News</a></li>
-        <li class="mr-8"><a href="/services" class="text-white hover:text-apple trans-fast">Services</a></li>
-        <li class="mr-8"><a href="/departments" class="text-white hover:text-apple trans-fast">Departments</a></li>
-        <li class="mr-8"><a href="/events" class="text-white hover:text-apple trans-fast">Events</a></li>
-        <li class="mr-8"><a href="/meetings" class="text-white hover:text-apple trans-fast">Meetings</a></li>
-        <li><a href="/officials" class="text-white hover:text-apple trans-fast">Officials</a></li>
+        {% for nav in mainNav.navBuilder.all() %}
+          <li{% if not loop.last %} class="mr-8"{% endif %}><a href="{{ nav.navLink.url }}" target="{{ nav.navLink.target }}" class="text-white hover:text-apple trans-fast">{{ nav.navLink.text }}</a></li>
+        {% endfor %}
       </ul>
     </nav>
   </div>
 </div>
+
+{% js %}
+  {% include '_js/navigation.js' %}
+{% endjs %}

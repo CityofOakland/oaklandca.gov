@@ -1,8 +1,8 @@
 /**
  * @project        oakland
  * @author         Christopher Kennedy, onebrightlight <chris@onebrightlight.com>
- * @build          Mon, Sep 10, 2018 3:23 PM ET
- * @release        59fb7f97fb4c3ff08c017a1dcba165fa6624bb15 [master]
+ * @build          Mon, Sep 10, 2018 10:20 PM ET
+ * @release        9cd3f3ccaa5a82d30c9d216900fcb831d274c7a5 [master]
  * @copyright      Copyright (c) 2018, onebrightlight
  *
  */
@@ -18746,13 +18746,37 @@ a:focus, input:focus, textarea:focus, button:focus {
 
 table {
   border: 1px solid #ccc;
-  /* width: 100%; */
 }
 
 th,
 td {
   border: 1px solid #aaa;
   padding: 8px;
+}
+
+/* PUSH MENU */
+
+#menu {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  /* transition: right .3s ease-in; */
+}
+
+body.open #menu {
+  right: 0;
+}
+
+.page-holder {
+  position: relative;
+  right: 0;
+  /* transition: right .3s ease-in; */
+}
+
+body.open .page-holder {
+  right: 300px;
+  overflow: hidden;
 }
 
 /*# sourceMappingURL=site.combined.min.css.map */

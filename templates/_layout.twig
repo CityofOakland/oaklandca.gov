@@ -14,13 +14,17 @@
   {% set pageClass = "home" %}
 {% endif %}
 
+{% set mainNav = craft.entries.section('navigation').slug('main-nav').one() %}
 <body class="{{ pageClass ?? '' }}">
-  {% include '_partials/_elements/_nav-bar' %}
-  <main>
-    {% block content %}
-    {% endblock %}
-  </main>
-  {% include '_partials/_elements/_footer' %}
+  {% include '_partials/_elements/_mobile-nav-bar' %}
+  <div class="page-holder">
+    {% include '_partials/_elements/_nav-bar' %}
+    <main>
+      {% block content %}
+      {% endblock %}
+    </main>
+    {% include '_partials/_elements/_footer' %}
+  </div>
 </body>
 
 </html>

@@ -66,11 +66,34 @@ button {
 
 table {
   border: 1px solid #ccc;
-  /* width: 100%; */
 }
 
 th,
 td {
   border: 1px solid #aaa;
   padding: 8px;
+}
+
+/* PUSH MENU */
+#menu {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  /* transition: right .3s ease-in; */
+}
+
+body.open #menu {
+  right: 0;
+}
+
+.page-holder {
+  position: relative;
+  right: 0;
+  /* transition: right .3s ease-in; */
+}
+
+body.open .page-holder {
+  right: 300px;
+  overflow: hidden;
 }

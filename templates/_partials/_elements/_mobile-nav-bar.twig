@@ -1,0 +1,11 @@
+<nav id="menu" role="navigation" class="bg-shark h-full p-8 flex flex-col">
+  <a href="/" class="block mb-4 text-white hover:text-apple fill-current trans-fast">
+    {{ craft.inlin.er('/assets/img/logo-oakland.svg') | replace('<svg ', '<svg class="w-full" ') | raw }}
+  </a>
+  <button class="btn btn-sm" id="close-menu">Close Menu</button>
+  <ul class="list-reset flex-1 overflow-y-scroll">
+    {% for nav in mainNav.navBuilder.all() %}
+      <li{% if not loop.last %} class="border-b border-white"{% endif %}><a href="{{ nav.navLink.url }}" target="{{ nav.navLink.target }}" class="block text-white hover:text-apple trans-fast py-4">{{ nav.navLink.text }}</a></li>
+    {% endfor %}
+  </ul>
+</nav>
