@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "8a1d981181e0088ebd7f0eac73e4a10c",
+    "content-hash": "b0527109e4c0ed7279beea61d111abfb",
     "packages": [
         {
             "name": "aelvan/inlin",
@@ -3192,6 +3192,56 @@
                 "issues": "https://github.com/mmikkel/CpFieldInspect-Craft/issues"
             },
             "time": "2018-03-28T07:58:02+00:00"
+        },
+        {
+            "name": "mmikkel/incognito-field",
+            "version": "1.0.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mmikkel/IncognitoField-Craft3/zipball/5c26d690b5c37cfccf8f8f335e4ffa7ca489bdea",
+                "reference": "5c26d690b5c37cfccf8f8f335e4ffa7ca489bdea",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0-RC1"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Incognito Field",
+                "handle": "incognito-field",
+                "schemaVersion": "1.0.0",
+                "hasCpSettings": false,
+                "hasCpSection": false,
+                "changelogUrl": "https://raw.githubusercontent.com/mmikkel/incognito-field/master/CHANGELOG.md",
+                "class": "mmikkel\\incognitofield\\IncognitoField"
+            },
+            "autoload": {
+                "psr-4": {
+                    "mmikkel\\incognitofield\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mats Mikkel Rummelhoff",
+                    "homepage": "http://vaersaagod.no"
+                }
+            ],
+            "description": "PlainText drop-in replacement that can be set to disabled, hidden or readonly.",
+            "keywords": [
+                "cms",
+                "craft",
+                "craft-plugin",
+                "craftcms",
+                "incognito field"
+            ],
+            "support": {
+                "docs": "https://github.com/mmikkel/incognito-field/blob/master/README.md",
+                "issues": "https://github.com/mmikkel/incognito-field/issues"
+            },
+            "time": "2017-12-09T00:03:36+00:00"
         },
         {
             "name": "mofodojodino/profanity-filter",
