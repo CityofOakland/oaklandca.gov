@@ -1,0 +1,121 @@
+{% extends '_layout' %}
+{% set entry = craft.entries.section('searchIndex').one %}
+{% set query = craft.request.getParam('keywords') %}
+{% set entries = craft.entries.search(query).order('score') %}
+
+{% set section = section ?? '' %}
+{% switch section %}
+
+  {% case "boards-commissions" %}
+    {% set sections = [
+      {
+        name:'Boards & Commissions',
+        handle:'boardsCommissions'
+      }
+    ] %}
+
+  {% case "documents" %}
+    {% set sections = [
+      {
+        name: 'Documents',
+        handle: 'documents, documentPackets',
+      }
+    ] %}
+
+  {% case null %}
+  {% set sections = [
+    {
+      name: 'Services',
+      handle: 'services'
+    },
+    {
+      name: 'Departments',
+      handle: 'departments'
+    },
+    {
+      name: 'Boards & Commissions',
+      handle: 'boardsCommissions'
+    },
+    {
+      name: 'News',
+      handle: 'news'
+    },
+    {
+      name: 'Projects',
+      handle: 'projects'
+    },
+    {
+      name: 'Topics',
+      handle: 'topics'
+    },
+    {
+      name: 'Documents',
+      handle: 'documents, documentPackets',
+    },
+    {
+      name: 'Teams',
+      handle: 'teams'
+    },
+    {
+      name: 'Staff',
+      handle: 'staff'
+    }
+  ] %}
+
+  {% default %}
+    {% set sections = [
+      {
+        name: section | capitalize,
+        handle: section
+      }
+    ] %}
+
+{% endswitch %}
+
+
+{% block content %}
+  {% include '_partials/_page-banners' with {
+    breadCrumbs: true,
+  } %}
+  {% include '_partials/_elements/_search-bar' %}
+  <section class="bg-white relative z-0">
+    <div class="container mx-auto p-8 py-16">
+      <h1>{{ entries | length }}
+        {{"pages match your search for" }}
+        <span class="font-bold bg-cararra px-2">{{ query }}</span></h1>
+
+      {% if entries | length %}
+        <div class="md:flex mt-8">
+          <div class="md:w-1/4 md:pr-4">
+            <h3 class="text-xl my-0">Top Hit</h3>
+          </div>
+          <div class="flex-1">
+            <a class="block w-full sm:pl-2 hover:bg-curious-blue hover:text-white" href="{{ entries.one.url }}">{{ entries.one.title }} (in {{ entries.one.section.name }})</a>
+          </div>
+        </div>
+        {% set allSections = craft.sections.getAllSections() %}
+        {% for currentSection in sections %}
+          {% if entries.section(currentSection).all() | length %}
+            <div class="md:flex mt-4">
+              <div class="md:w-1/4 md:pr-4">
+                <h3 class="text-xl my-0">{{ currentSection.name }}</h3>
+              </div>
+              <div class="flex-1">
+                {% for entry in entries.section(currentSection.handle) %}
+                  <article class="mb-3">
+                    <a class="block w-full sm:pl-2 hover:bg-curious-blue hover:text-white" href="{{ entry.url }}">{{ entry.title }}</a>
+                  </article>
+                {% endfor %}
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+
+      {% else %}
+        <p>{{"Your search for" }}
+          “{{ query }}”
+          {{"didn’t return any results." }}</p>
+      {% endif %}
+    </div>
+  </section>
+{% endblock %}

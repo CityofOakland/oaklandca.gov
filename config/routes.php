@@ -28,4 +28,5 @@ return [
   'resources/related-to/<slug>' => ['template' => 'resources'],
   'services/related-to/<slug>' => ['template' => 'services'],
   'topics/related-to/<slug>' => ['template' => 'topics'],
+  'search/<section>' => ['template' => 'search'],
 ];

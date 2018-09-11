@@ -4,7 +4,7 @@
   {% include '_partials/_page-banners' with {
     breadCrumbs: true,
   } %}
-  {% include '_partials/_elements/_search-bar' with { searchSegment: "news"} %}
+  {% include '_partials/_elements/_search-bar' with { searchSegment: "boards-commissions"} %}
   <section class="bg-white relative z-0">
     <div class="container mx-auto p-8 py-16">
       {% paginate craft.entries.section('boardsCommissions').limit(10).orderBy('title asc') as pageInfo, pageEntries %}
