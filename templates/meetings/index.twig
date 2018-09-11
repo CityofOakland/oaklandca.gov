@@ -1,4 +1,4 @@
-{% extends 'events' %}
+{% extends '_layout' %}
 {% set entry = craft.entries.section('meetingsIndex').one %}
 {% set relatedEntry = null %}
 {% if craft.app.request.getSegment(2) == 'related-to' %}
@@ -8,8 +8,8 @@
 
 {% block content %}
   {% include '_partials/_page-banners' with {
-    bannerTitle: entry.title | replace(' Index', ''),
     breadCrumbs: true,
+    bannerTitle: entry.title | replace(' Index', ''),
   } %}
   {% include '_partials/_elements/_search-bar' with { searchSegment: "meetings"} %}
   <section class="bg-white relative z-0">
