@@ -50,8 +50,7 @@
         {% include '_partials/_elements/_module-header' with {
           headerText: "Most Requested Services",
           linkText: "Services A - Z",
-          linkUrl: "/services/",
-          buttonBright: true
+          linkUrl: "/services/"
         } %}
         <div class="card-grid grid-equal-height mt-8">
           {% for entry in entry.highlightedServices.all() %}
