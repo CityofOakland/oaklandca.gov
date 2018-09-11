@@ -1,0 +1,34 @@
+{% extends '_layout' %}
+
+{% block content %}
+  {% include '_partials/_page-banners' with {
+    bannerTitle: entry.title | replace(' Index', ''),
+    breadCrumbs: true,
+    breadCrumbLinks: [
+      {
+        title: 'Teams',
+        link: '/teams'
+      }
+    ],
+  } %}
+  <section class="bg-white relative z-0">
+    <div class="container mx-auto p-8 py-16">
+    {% for team in entry.teamMembers.all() %}
+      {% if team.staffHeading | length %}
+        <h3 class="mb-0">{{ team.staffHeading }}</h3>
+      {% endif %}
+      <div class="card-grid grid-equal-height profile-cards mt-12">
+      {% for entry in team.staff.all() %}
+        {% include '_partials/_elements/_profile-cards' with {
+          photo: entry.portrait.one,
+          name: entry.title,
+          jobTitle: entry.jobTitle ?? '',
+          url: entry.redirectUrl ?? entry.url ?? '',
+          icon: 'user'
+        } %}
+      {% endfor %}
+      </div>
+    {% endfor %}
+    </div>
+  </section>
+{% endblock %}
