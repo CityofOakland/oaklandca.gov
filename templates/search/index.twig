@@ -79,8 +79,8 @@
   {% set sectionsToSearch = sectionsToSearch | merge([sec.handle]) %}
 {% endfor %}
 
-{% set query = craft.request.getParam('keywords') %}
-{% set entries = craft.entries.section(sectionsToSearch).search(query).order('score') %}
+{% set query = craft.app.request.getParam('keywords') %}
+{% set entries = craft.entries.section(sectionsToSearch).search(query).orderBy('score') %}
 
 {% block content %}
   {% include '_partials/_page-banners' with {
@@ -104,7 +104,7 @@
             </div>
           </div>
         {% endif %}
-        {% set allSections = craft.sections.getAllSections() %}
+        {% set allSections = craft.app.sections.allSections %}
         {% for currentSection in sections %}
           {% if entries.section(currentSection).all() | length %}
             <div class="md:flex mt-4">
@@ -112,7 +112,7 @@
                 <h3 class="text-xl my-0">{{ currentSection.name }}</h3>
               </div>
               <div class="flex-1">
-                {% for entry in entries.section(currentSection.handle) %}
+                {% for entry in entries.section(currentSection.handle).all() %}
                   <article class="mb-3">
                     <a class="block w-full sm:pl-2 hover:bg-curious-blue hover:text-white" href="{{ entry.url }}">{{ entry.title }}</a>
                   </article>
