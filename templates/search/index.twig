@@ -89,13 +89,13 @@
   {% include '_partials/_elements/_search-bar' %}
   <section class="bg-white relative z-0">
     <div class="container mx-auto p-8 py-16">
-      <h1>{{ entries | length }}
+      <h2 class="mt-0 mb-16">{{ entries | length }}
         {{"pages match your search for" }}
-        <span class="font-bold bg-cararra px-2">{{ query }}</span></h1>
+        <span class="font-bold bg-cararra px-2">{{ query }}</span></h2>
 
       {% if entries | length %}
         {% if sections | length > 1 %}
-          <div class="md:flex mt-8">
+          <div class="md:flex">
             <div class="md:w-1/4 md:pr-4">
               <h3 class="text-xl my-0">Top Hit</h3>
             </div>
