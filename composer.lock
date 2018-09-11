@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "b0527109e4c0ed7279beea61d111abfb",
+    "content-hash": "bb1d352b9915aa7aac2a765e06bf3f8f",
     "packages": [
         {
             "name": "aelvan/inlin",
@@ -3428,6 +3428,61 @@
             "time": "2018-08-07T08:39:47+00:00"
         },
         {
+            "name": "nystudio107/craft-retour",
+            "version": "3.0.0-beta.4",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nystudio107/craft-retour/zipball/afc501c721305c4d2c8edf4f845e1ef8936a2c9f",
+                "reference": "afc501c721305c4d2c8edf4f845e1ef8936a2c9f",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0",
+                "league/csv": "^8.2"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Retour",
+                "handle": "retour",
+                "hasCpSettings": true,
+                "hasCpSection": true,
+                "changelogUrl": "https://raw.githubusercontent.com/nystudio107/retour/v1/CHANGELOG.md",
+                "components": {
+                    "redirects": "nystudio107\\retour\\services\\Redirects",
+                    "statistics": "nystudio107\\retour\\services\\Statistics"
+                },
+                "class": "nystudio107\\retour\\Retour"
+            },
+            "autoload": {
+                "psr-4": {
+                    "nystudio107\\retour\\": "src/"
+                }
+            },
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "nystudio107",
+                    "homepage": "https://nystudio107.com/"
+                }
+            ],
+            "description": "Retour allows you to intelligently redirect legacy URLs, so that you don't lose SEO value when rebuilding & restructuring a website",
+            "keywords": [
+                "404",
+                "craft-plugin",
+                "craftcms",
+                "redirect",
+                "retour",
+                "statistics"
+            ],
+            "support": {
+                "docs": "https://github.com/nystudio107/retour/blob/v1/README.md",
+                "issues": "https://github.com/nystudio107/retour/issues"
+            },
+            "time": "2018-09-11T21:48:33+00:00"
+        },
+        {
             "name": "nystudio107/craft-seomatic",
             "version": "3.1.19",
             "dist": {
@@ -6506,7 +6561,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "verbb/feed-me": 10
+        "verbb/feed-me": 10,
+        "nystudio107/craft-retour": 10
     },
     "prefer-stable": false,
     "prefer-lowest": false,
