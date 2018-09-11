@@ -1,8 +1,8 @@
 /**
  * @project        oakland
  * @author         Christopher Kennedy, onebrightlight <chris@onebrightlight.com>
- * @build          Mon, Sep 10, 2018 10:20 PM ET
- * @release        9cd3f3ccaa5a82d30c9d216900fcb831d274c7a5 [master]
+ * @build          Tue, Sep 11, 2018 4:02 PM ET
+ * @release        2330aeb4e0a013649febd691d92cadde5bee8e62 [master]
  * @copyright      Copyright (c) 2018, onebrightlight
  *
  */
@@ -18680,6 +18680,10 @@ main > .bg-rotate:nth-child(odd) {
   .xl\:z-auto {
     z-index: auto;
   }
+}
+
+.iframe-holder iframe {
+  max-width: 100% !important;
 }
 
 .card-grid {
