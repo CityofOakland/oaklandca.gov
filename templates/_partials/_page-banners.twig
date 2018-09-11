@@ -17,9 +17,9 @@
       } %}
     {% endif %}
   </div>
-  <div class="relative container mx-auto p-8 py-16 z-10">
+  <div class="relative container mx-auto p-8{% if not smallBanner ?? ''%} py-16{% endif %} z-10">
     <div class="sm:flex">
-      {% if navMenu is defined %}
+      {% if navMenu is defined and not smallBanner ?? '' %}
         <div class="hidden pr-8 w-1/6 sm:block">
           <ul class="list-reset text-sm">
             {% for key,value in navMenu %}
@@ -33,7 +33,7 @@
       <div class="flex-1">
         <h1 class="font-bold mb-0">{{ bannerTitle }}</h1>
         {% if leadIn %}
-          <p class="mt-8 mb-0">{{ leadIn }}</p>
+          <p class="mb-0">{{ leadIn }}</p>
         {% endif %}
         {% if entry.ctaButton | length %}
           {% set attributes = {
