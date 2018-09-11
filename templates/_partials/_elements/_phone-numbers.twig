@@ -1,8 +1,8 @@
 <li>
   {% switch phone.type %}
     {% case "other" %}
-      <b>{{ phone.numberTitle }}</b>: {{ phone.number }}
+      {{ phone.numberTitle }}: <a href="tel:{{ phone.number }}">{{ phone.number }}</a>
     {% default %}
-      <b>{{ phone.getType().name }}</b>: {{ phone.number }}
+      {{ phone.getType().name }}: <a href="tel:{{ phone.number }}">{{ phone.number }}</a>
   {% endswitch %}
 </li>

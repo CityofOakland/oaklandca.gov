@@ -9,13 +9,13 @@
         {% if entry.address | length or entry.addresses | length %}
           <div class="lg:w-1/2 lg:pr-8">
             {% if entry.addresses | length and not entry.addresses.one.locationName | length %}
-              <h3 class="text-xl font-bold">Addresses</h3>
+              <h3 class="text-2xl mb-0">Addresses</h3>
             {% elseif entry.address | length %}
-              <h3 class="text-xl font-bold">Address</h3>
+              <h3 class="text-2xl mb-0">Address</h3>
             {% endif %}
             {% for location in entry.addresses.all() ?? '' %}
               {% if location.locationName | length %}
-                <h4 class="{% if not loop.first %}mt-8 {% endif %}text-xl font-bold">{{ location.locationName }}</h4>
+                <h4 class="{% if not loop.first %}mt-8 {% endif %}text-2xl mb-0">{{ location.locationName }}</h4>
               {% endif %}
               {% include '_partials/_elements/_address' %}
             {% endfor %}
@@ -27,7 +27,7 @@
         {% endif %}
         <div class="{% if entry.addresses | length or entry.address | length %}lg:w-1/2 lg:pl-8{% else %} flex-1{% endif %}">
           {% if entry.phoneNumbers | length %}
-            <h3 class="text-xl font-bold">Phone Numbers</h3>
+            <h3 class="text-2xl mb-0">Phone Numbers</h3>
             <ul class="list-reset mb-8">
               {% for phone in entry.phoneNumbers.all() %}
                 {% include '_partials/_elements/_phone-numbers' %}
@@ -35,16 +35,16 @@
             </ul>
           {% endif %}
           {% if entry.emailAddress | length %}
-            <h3 class="text-xl font-bold">Email Address</h3>
+            <h3 class="text-2xl mb-0">Email Address</h3>
             <p>
               <a href="mailto:{{ entry.emailAddress }}">{{ entry.emailAddress }}</a>
             </p>
           {% endif %}
           {% if entry.openHours | length %}
-            <h3 class="text-xl font-bold">Open Hours</h3>
+            <h3 class="text-2xl mb-0">Open Hours</h3>
             {% for item in entry.openHours.all() %}
               {% if item.hoursTitle | length %}
-                <h4 class="text-lg font-bold">{{ item.hoursTitle }}</h4>
+                <h4 class="text-lg">{{ item.hoursTitle }}</h4>
               {% endif %}
               <dl>
                 {% for day in item.hours.getRange(1, 0) %}
@@ -54,7 +54,7 @@
             {% endfor %}
           {% endif %}
           {% if entry.boardHours | length %}
-            <h3 class="text-xl font-bold">Business Hours</h3>
+            <h3 class="text-2xl mb-0">Business Hours</h3>
             {{ entry.boardHours }}
           {% endif %}
           {% include '_partials/_elements/_social-media' %}
