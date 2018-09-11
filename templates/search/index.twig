@@ -35,6 +35,10 @@
       handle: 'boardsCommissions'
     },
     {
+      name: 'Index Pages',
+      handle: 'boardsCommissionsIndex, departmentsIndex, documentsIndex, eventsIndex, meetingsIndex, newsIndex, officialsIndex, processesIndex, projectsIndex, resourcesIndex, servicesIndex, staffIndex, teamsIndex, topicsIndex'
+    },
+    {
       name: 'News',
       handle: 'news'
     },
@@ -104,9 +108,8 @@
             </div>
           </div>
         {% endif %}
-        {% set allSections = craft.app.sections.allSections %}
         {% for currentSection in sections %}
-          {% if entries.section(currentSection).all() | length %}
+          {% if entries.section(currentSection.handle).all() | length %}
             <div class="md:flex mt-4">
               <div class="md:w-1/4 md:pr-4">
                 <h3 class="text-xl my-0">{{ currentSection.name }}</h3>
