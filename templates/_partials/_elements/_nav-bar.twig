@@ -32,9 +32,10 @@
         </a>
       </div>
       <button id="menu-toggle" class="btn flex lg:hidden -mr-8">Menu</button>
-      <ul class="list-reset hidden uppercase lg:flex text-base">
+      <ul class="list-reset hidden uppercase flex-1 lg:flex pl-16 xl:pl-32 justify-between text-base">
         {% for nav in mainNav.navBuilder.all() %}
-          <li{% if not loop.last %} class="mr-8"{% endif %}><a href="{{ nav.navLink.url }}" target="{{ nav.navLink.target }}" class="text-white hover:text-apple trans-fast">{{ nav.navLink.text }}</a></li>
+          {% set link = nav.navLink %}
+          <li{% if not loop.last %}{% endif %}><a href="{{ link.url }}"{% if link.target | length %} target="{{ link.target }}"{% endif %} class="text-white hover:text-apple trans-fast">{{ link.text }}</a></li>
         {% endfor %}
       </ul>
     </nav>
