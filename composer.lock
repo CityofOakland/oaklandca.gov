@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "3b04f29e85ac5c3c834b9db1fc31c253",
+    "content-hash": "8a1d981181e0088ebd7f0eac73e4a10c",
     "packages": [
         {
             "name": "aelvan/inlin",
@@ -1384,57 +1384,6 @@
                 "smart-map"
             ],
             "time": "2018-08-14T20:33:59+00:00"
-        },
-        {
-            "name": "dukt/analytics",
-            "version": "4.0.2",
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/dukt/analytics/zipball/384962f62527b998068ca605407481f759a92167",
-                "reference": "384962f62527b998068ca605407481f759a92167",
-                "shasum": ""
-            },
-            "require": {
-                "craftcms/cms": "^3.0.0-RC1",
-                "dukt/oauth2-google": "^2.0",
-                "google/apiclient": "^v2.1.3",
-                "league/oauth2-client": "^2.2",
-                "theiconic/php-ga-measurement-protocol": "^2.0"
-            },
-            "type": "craft-plugin",
-            "extra": {
-                "name": "Analytics",
-                "handle": "analytics",
-                "schemaVersion": "1.1.1",
-                "documentationUrl": "https://docs.dukt.net/analytics/v4",
-                "changelogUrl": "https://raw.githubusercontent.com/dukt/analytics/develop/CHANGELOG.md"
-            },
-            "autoload": {
-                "psr-4": {
-                    "dukt\\analytics\\": "src/"
-                }
-            },
-            "authors": [
-                {
-                    "name": "Dukt",
-                    "homepage": "https://dukt.net/"
-                }
-            ],
-            "description": "Customizable statistics widgets and entry tracking for Google Analytics.",
-            "keywords": [
-                "analytics",
-                "craftcms",
-                "google",
-                "google analytics"
-            ],
-            "support": {
-                "email": "support@dukt.net",
-                "issues": "https://github.com/dukt/analytics/issues?state=open",
-                "source": "https://github.com/dukt/analytics",
-                "docs": "https://github.com/dukt/analytics",
-                "rss": "https://github.com/dukt/analytics/commits/v2.atom"
-            },
-            "time": "2018-06-27T00:29:53+00:00"
         },
         {
             "name": "dukt/oauth2-google",
@@ -3245,56 +3194,6 @@
             "time": "2018-03-28T07:58:02+00:00"
         },
         {
-            "name": "mmikkel/incognito-field",
-            "version": "1.0.0",
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/mmikkel/IncognitoField-Craft3/zipball/5c26d690b5c37cfccf8f8f335e4ffa7ca489bdea",
-                "reference": "5c26d690b5c37cfccf8f8f335e4ffa7ca489bdea",
-                "shasum": ""
-            },
-            "require": {
-                "craftcms/cms": "^3.0.0-RC1"
-            },
-            "type": "craft-plugin",
-            "extra": {
-                "name": "Incognito Field",
-                "handle": "incognito-field",
-                "schemaVersion": "1.0.0",
-                "hasCpSettings": false,
-                "hasCpSection": false,
-                "changelogUrl": "https://raw.githubusercontent.com/mmikkel/incognito-field/master/CHANGELOG.md",
-                "class": "mmikkel\\incognitofield\\IncognitoField"
-            },
-            "autoload": {
-                "psr-4": {
-                    "mmikkel\\incognitofield\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Mats Mikkel Rummelhoff",
-                    "homepage": "http://vaersaagod.no"
-                }
-            ],
-            "description": "PlainText drop-in replacement that can be set to disabled, hidden or readonly.",
-            "keywords": [
-                "cms",
-                "craft",
-                "craft-plugin",
-                "craftcms",
-                "incognito field"
-            ],
-            "support": {
-                "docs": "https://github.com/mmikkel/incognito-field/blob/master/README.md",
-                "issues": "https://github.com/mmikkel/incognito-field/issues"
-            },
-            "time": "2017-12-09T00:03:36+00:00"
-        },
-        {
             "name": "mofodojodino/profanity-filter",
             "version": "1.3.0",
             "dist": {
@@ -4652,89 +4551,6 @@
             "time": "2018-07-13T11:39:24+00:00"
         },
         {
-            "name": "solspace/craft3-freeform",
-            "version": "2.2.2",
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/solspace/craft3-freeform/zipball/758b6a27b15f709de203f4980c05426cb42c515c",
-                "reference": "758b6a27b15f709de203f4980c05426cb42c515c",
-                "shasum": ""
-            },
-            "require": {
-                "egulias/email-validator": "^2.1",
-                "hashids/hashids": "^2.0",
-                "nesbot/carbon": "^1.22.1",
-                "pixel418/markdownify": "2.1.11",
-                "solspace/craft3-commons": "^1.0.12",
-                "symfony/filesystem": "^2.8|^3.0|^4.0",
-                "symfony/finder": "^2.8|^3.0|^4.0",
-                "symfony/property-access": "^2.8|^3.0|^4.0"
-            },
-            "type": "craft-plugin",
-            "extra": {
-                "schemaVersion": "2.0.11",
-                "handle": "freeform",
-                "class": "Solspace\\Freeform\\Freeform",
-                "name": "Freeform Lite",
-                "developer": "Solspace",
-                "developerUrl": "https://solspace.com/craft/freeform",
-                "documentationUrl": "https://solspace.com/craft/freeform/docs",
-                "changelogUrl": "https://raw.githubusercontent.com/solspace/craft3-freeform/master/CHANGELOG.md",
-                "hasSettings": true,
-                "hasCpSection": true
-            },
-            "autoload": {
-                "psr-4": {
-                    "Solspace\\Freeform\\": "src/"
-                }
-            },
-            "authors": [
-                {
-                    "name": "Solspace",
-                    "homepage": "https://solspace.com/"
-                }
-            ],
-            "description": "The most intuitive and powerful form builder for Craft.",
-            "time": "2018-08-02T04:03:36+00:00"
-        },
-        {
-            "name": "solspace/craft3-freeform-pro",
-            "version": "2.2.2",
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/solspace/craft3-freeform-pro/zipball/add65af73605ac07c8f8f38fece61ef109fa06b5",
-                "reference": "add65af73605ac07c8f8f38fece61ef109fa06b5",
-                "shasum": ""
-            },
-            "require": {
-                "solspace/craft3-commons": "^1.0.8"
-            },
-            "type": "craft-plugin",
-            "extra": {
-                "schemaVersion": "2.0.11",
-                "handle": "freeform-pro",
-                "class": "Solspace\\FreeformPro\\FreeformPro",
-                "name": "Freeform Pro",
-                "developer": "Solspace",
-                "developerUrl": "https://solspace.com/craft/freeform",
-                "documentationUrl": "https://solspace.com/craft/freeform/docs",
-                "changelogUrl": "https://raw.githubusercontent.com/solspace/craft3-freeform-pro/master/CHANGELOG.md"
-            },
-            "autoload": {
-                "psr-4": {
-                    "Solspace\\FreeformPro\\": "src/"
-                }
-            },
-            "authors": [
-                {
-                    "name": "Solspace",
-                    "homepage": "https://solspace.com/"
-                }
-            ],
-            "description": "Adds API integrations, premium field types, advanced exporting and widgets to Freeform.",
-            "time": "2018-08-02T04:04:18+00:00"
-        },
-        {
             "name": "sunra/php-simple-html-dom-parser",
             "version": "v1.5.2",
             "dist": {
@@ -5919,58 +5735,6 @@
                 "rss": "https://github.com/verbb/feed-me/commits/v2.atom"
             },
             "time": "2018-08-21T01:49:26+00:00"
-        },
-        {
-            "name": "verbb/feed-me-pro",
-            "version": "3.0.4",
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/verbb/feed-me-pro/zipball/9902d430268673f75e286dbb68e652192576f9be",
-                "reference": "9902d430268673f75e286dbb68e652192576f9be",
-                "shasum": ""
-            },
-            "require": {
-                "craftcms/cms": "^3.0.0"
-            },
-            "type": "craft-plugin",
-            "extra": {
-                "name": "Feed Me Pro",
-                "handle": "feed-me-pro",
-                "description": "Import content from XML, RSS, CSV or JSON feeds into Entries, Categories, Craft Commerce Products (and variants), and more.",
-                "schemaVersion": "1.0.0",
-                "changelogUrl": "https://raw.githubusercontent.com/verbb/feed-me-pro/craft-3/CHANGELOG.md",
-                "class": "verbb\\feedmepro\\FeedMePro"
-            },
-            "autoload": {
-                "psr-4": {
-                    "verbb\\feedmepro\\": "src/"
-                }
-            },
-            "license": [
-                "proprietary"
-            ],
-            "authors": [
-                {
-                    "name": "Verbb",
-                    "homepage": "https://verbb.io"
-                }
-            ],
-            "description": "Import content from XML, RSS, CSV or JSON feeds into Entries, Categories, Craft Commerce Products (and variants), and more.",
-            "keywords": [
-                "cms",
-                "craft",
-                "craft-plugin",
-                "craftcms",
-                "feed me pro"
-            ],
-            "support": {
-                "email": "support@verbb.io",
-                "issues": "https://github.com/verbb/feed-me/issues?state=open",
-                "source": "https://github.com/verbb/feed-me",
-                "docs": "https://github.com/verbb/feed-me",
-                "rss": "https://github.com/verbb/feed-me/commits/v2.atom"
-            },
-            "time": "2018-04-25T00:10:18+00:00"
         },
         {
             "name": "verbb/redactor-tweaks",
