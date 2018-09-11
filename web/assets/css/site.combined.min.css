@@ -1,8 +1,8 @@
 /**
  * @project        oakland
  * @author         Christopher Kennedy, onebrightlight <chris@onebrightlight.com>
- * @build          Sat, Sep 8, 2018 8:36 PM ET
- * @release        0e3fb1aad5363ccb6cc61f67e389c2840885cabd [master]
+ * @build          Mon, Sep 10, 2018 3:23 PM ET
+ * @release        59fb7f97fb4c3ff08c017a1dcba165fa6624bb15 [master]
  * @copyright      Copyright (c) 2018, onebrightlight
  *
  */
@@ -861,6 +861,11 @@ footer {
 .image-blur-large {
   -webkit-filter: blur(25px);
           filter: blur(25px);
+}
+
+.image-blur-xlarge {
+  -webkit-filter: blur(75px);
+          filter: blur(75px);
 }
 
 /* Service Styles */
@@ -4606,6 +4611,11 @@ main > .bg-rotate:nth-child(odd) {
             filter: blur(25px);
   }
 
+  .sm\:image-blur-xlarge {
+    -webkit-filter: blur(75px);
+            filter: blur(75px);
+  }
+
   .sm\:list-reset {
     list-style: none;
     padding: 0;
@@ -8122,6 +8132,11 @@ main > .bg-rotate:nth-child(odd) {
   .md\:image-blur-large {
     -webkit-filter: blur(25px);
             filter: blur(25px);
+  }
+
+  .md\:image-blur-xlarge {
+    -webkit-filter: blur(75px);
+            filter: blur(75px);
   }
 
   .md\:list-reset {
@@ -11642,6 +11657,11 @@ main > .bg-rotate:nth-child(odd) {
             filter: blur(25px);
   }
 
+  .lg\:image-blur-xlarge {
+    -webkit-filter: blur(75px);
+            filter: blur(75px);
+  }
+
   .lg\:list-reset {
     list-style: none;
     padding: 0;
@@ -15158,6 +15178,11 @@ main > .bg-rotate:nth-child(odd) {
   .xl\:image-blur-large {
     -webkit-filter: blur(25px);
             filter: blur(25px);
+  }
+
+  .xl\:image-blur-xlarge {
+    -webkit-filter: blur(75px);
+            filter: blur(75px);
   }
 
   .xl\:list-reset {

@@ -146,6 +146,9 @@ main, footer {
   .image-blur-large {
     filter: blur(25px);
   }
+  .image-blur-xlarge {
+    filter: blur(75px);
+  }
 }
 
 /* Service Styles */

@@ -1,0 +1,47 @@
+{% extends '_layout' %}
+
+{% block content %}
+  {% include '_partials/_page-banners' with {
+    breadCrumbs: true,
+    breadCrumbLinks: [
+      {
+        title: 'Staff',
+        link: '/staff'
+      }
+    ],
+    leadIn: entry.jobTitle,
+    smallBanner: true
+  } %}
+  <section class="bg-white">
+    <div class="container mx-auto px-8 py-16">
+      <div class="sm:flex">
+        <div class="sm:w-1/4 sm:mr-8">
+          <figure class="w-full">
+            {% if entry.portrait | length %}
+              <img src="{{ entry.portrait.one.url }}" alt="Portrait of {{ entry.title }}">
+            {% else %}
+              <div class="bg-cararra text-camouflage-green opacity-75 fill-current h-full p-12">
+                {{ craft.inlin.er('/assets/img/icon-user.svg') | replace('<svg ', '<svg class="h-full w-full" ') | raw }}
+              </div>
+            {% endif %}
+          </figure>
+          {% set dobc = entry.departmentOfficialBoardCommission %}
+          {% if dobc.exists() %}
+            <h3 class="text-lg font-bold flex items-center"><span class="w-16">Team: </span><a href="{{ dobc.one.url }}" class="flex-1 btn btn-bright btn-sm inline-block text-center">{{ dobc.one.title }}</a></h3>
+          {% endif %}
+        </div>
+        <div class="sm:flex-1">
+          <h2 class="text-3xl sm:mt-0 mb-0">{{ entry.title }}</h2>
+          <p class="text-xl mt-2">{{ entry.jobTitle }}</p>
+          <div class="text-xl mt-8">{{ entry.bio }}</div>
+          {% if entry.emailAddress | length %}
+            <p class="my-0"><span class="font-bold">Email Address:</span> <a href="mailto:{{ entry.emailAddress }}">{{ entry.emailAddress }}</a></p>
+          {% endif %}
+          {% if entry.phoneNumber | length %}
+            <p class="my-0"><span class="font-bold">Phone Number:</span> <a href="tel:{{ entry.phoneNumber }}">{{ entry.phoneNumber }}</a></p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}
