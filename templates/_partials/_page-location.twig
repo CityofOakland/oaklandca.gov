@@ -8,11 +8,14 @@
       <div class="lg:flex mt-4">
         {% if entry.address | length or entry.addresses | length %}
           <div class="lg:w-1/2 lg:pr-8">
-            <h3 class="text-xl font-bold">Address{% if entry.addresses | length > 1 %}es{% endif %}
-            </h3>
+            {% if entry.addresses | length and not entry.addresses.one.locationName | length %}
+              <h3 class="text-xl font-bold">Addresses</h3>
+            {% elseif entry.address | length %}
+              <h3 class="text-xl font-bold">Address</h3>
+            {% endif %}
             {% for location in entry.addresses.all() ?? '' %}
               {% if location.locationName | length %}
-                <h4 class="text-xl font-bold">{{ location.locationName }}</h4>
+                <h4 class="{% if not loop.first %}mt-8 {% endif %}text-xl font-bold">{{ location.locationName }}</h4>
               {% endif %}
               {% include '_partials/_elements/_address' %}
             {% endfor %}

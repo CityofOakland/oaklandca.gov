@@ -1,0 +1,50 @@
+{% extends '_layouts/_banner-with-nav' %}
+
+{% set relatedEvents = craft.calendar.events.relatedTo(entry) %}
+{% set relatedNews = craft.entries.section('news').relatedTo(entry) %}
+
+{% block content %}
+  {% include '_partials/_page-banners' with {
+    breadCrumbs: true,
+    breadCrumbLinks: [
+      {
+        title: 'Departments',
+        link: '/departments'
+      }
+    ],
+    managementTitle: 'Our Management',
+    contactTitle: 'Contact Us',
+    navMenu: {
+      'events': relatedEvents.exists(),
+      'minutesAgendas': entry.pageDocuments.exists(),
+      'services': entry.pageServices.exists(),
+      'contact': true
+    }
+  } %}
+  {% include '_partials/_page-events' %}
+  {% include '_partials/_page-documents' with {
+    pageDocumentsHeaderText: 'Minutes & Agendas'
+  } %}
+  {% include '_partials/_page-services' %}
+  <section class="bg-rotate">
+    <div class="container mx-auto p-8 pt-16">
+      {% include '_partials/_elements/_module-header' with {
+        headerText: "City Officials",
+        linkText: "All Elected Officials",
+        linkUrl: "/officials",
+        buttonBright: true
+      } %}
+      <div class="card-grid grid-equal-height profile-cards mt-12">
+        {% for entry in entry.pageOfficials.all() %}
+          {% include '_partials/_elements/_profile-cards' with {
+            photo: entry.portrait.one,
+            name: entry.groupHeadName,
+            jobTitle: entry.title,
+            url: entry.redirectUrl ?? entry.url ?? ''
+          } %}
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% include '_partials/_page-location' %}
+{% endblock %}
