@@ -18,7 +18,7 @@
         calendarId: 3,
         rangeStart: now | date('Y-m-d'),
         rangeEnd: now | date_modify('+1 year') | date('Y-m-d'),
-        relatedTop: relatedEntry,
+        relatedTo: relatedEntry,
         limit: 10
       }) %}
       {% paginate events as pageInfo, pageEntries %}
