@@ -1,0 +1,75 @@
+{% extends '_layout' %}
+
+{% block content %}
+  {% include '_partials/_page-banners' with {
+    breadCrumbs: true,
+    breadCrumbLinks: [
+      {
+        title: 'Services',
+        link: '/services'
+      }
+    ],
+  } %}
+  <section class="bg-white relative z-0">
+    <div class="container mx-auto p-8 py-16">
+      <div class="flex">
+        <div class="md:pr-4 flex-1">
+          <p class="mt-0">For urgent issues</p>
+          <a href="tel:311" class="btn block text-center">Call 311</a>
+          {{ entry.urgentIssuesDescription }}
+        </div>
+        <div class="md:pl-4 flex-1">
+          <p class="mt-0">For non-urgent issues</p>
+          <a href="{{ entry.nonUrgentIssueReportLink.url }}" class="btn block text-center">Report Online</a>
+          {{ entry.nonUrgentIssuesDescription }}
+        </div>
+      </div>
+      <div class="my-16">
+        {{ entry.codeInsertion | raw }}
+      </div>
+    </div>
+  </section>
+  <section class="bg-white">
+    <div class="container mx-auto px-8 py-16">
+      {% include '_partials/_elements/_module-header' with {
+        headerText: pageLocationHeaderText ?? "Contact Us",
+      } %}
+      <div class="lg:flex mt-4">
+        <div class="flex-1">
+          {% if entry.emailAddress | length %}
+            <h3 class="text-2xl mb-0">Email Address</h3>
+            <p>
+              <a href="mailto:{{ entry.emailAddress }}">{{ entry.emailAddress }}</a>
+            </p>
+          {% endif %}
+          {% if entry.phoneNumbers | length %}
+            <h3 class="text-2xl mb-0">Phone Numbers</h3>
+            <ul class="list-reset mb-8">
+              {% for phone in entry.phoneNumbers.all() %}
+                {% include '_partials/_elements/_phone-numbers' %}
+              {% endfor %}
+            </ul>
+          {% endif %}
+          {% if entry.openHours | length %}
+            <h3 class="text-2xl mb-0">Open Hours</h3>
+            {% for item in entry.openHours.all() %}
+              {% if item.hoursTitle | length %}
+                <h4 class="text-lg">{{ item.hoursTitle }}</h4>
+              {% endif %}
+              <dl>
+                {% for day in item.hours.getRange(1, 0) %}
+                  {% include '_partials/_elements/_hours' %}
+                {% endfor %}
+              </dl>
+            {% endfor %}
+          {% endif %}
+          {% if entry.boardHours | length %}
+            <h3 class="text-2xl mb-0">Business Hours</h3>
+            {{ entry.boardHours }}
+          {% endif %}
+          {% include '_partials/_elements/_social-media' %}
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}
