@@ -12,7 +12,7 @@
   } %}
   <section class="bg-white relative z-0">
     <div class="container mx-auto p-8 py-16">
-      <div class="flex">
+      <div class="md:flex">
         <div class="md:pr-4 flex-1">
           <p class="mt-0">For urgent issues</p>
           <a href="tel:311" class="btn block text-center">Call 311</a>
@@ -24,7 +24,19 @@
           {{ entry.nonUrgentIssuesDescription }}
         </div>
       </div>
-      <div class="my-16">
+      <h3 class="border-t border-celeste pt-8">Report a Problem</h3>
+      {{ entry.body }}
+      {% if entry.androidDownloadLink | length or entry.appStoreDownloadLink | length %}
+        <div class="my-8">
+          <a href="{{ entry.appStoreDownloadLink }}">
+            {{ craft.inlin.er('/assets/img/badge-apple-store.svg') | replace('<svg ', '<svg class="h-8 sm:h-16" ') | raw }}
+          </a>
+          <a href="{{ entry.androidDownloadLink }}">
+            {{ craft.inlin.er('/assets/img/badge-google-play.svg') | replace('<svg ', '<svg class="h-8 sm:h-16" ') | raw }}
+          </a>
+        </div>
+      {% endif %}
+      <div class="my-8">
         {{ entry.codeInsertion | raw }}
       </div>
     </div>
@@ -50,24 +62,23 @@
               {% endfor %}
             </ul>
           {% endif %}
-          {% if entry.openHours | length %}
-            <h3 class="text-2xl mb-0">Open Hours</h3>
-            {% for item in entry.openHours.all() %}
-              {% if item.hoursTitle | length %}
-                <h4 class="text-lg">{{ item.hoursTitle }}</h4>
-              {% endif %}
-              <dl>
-                {% for day in item.hours.getRange(1, 0) %}
-                  {% include '_partials/_elements/_hours' %}
-                {% endfor %}
-              </dl>
-            {% endfor %}
-          {% endif %}
-          {% if entry.boardHours | length %}
-            <h3 class="text-2xl mb-0">Business Hours</h3>
-            {{ entry.boardHours }}
-          {% endif %}
           {% include '_partials/_elements/_social-media' %}
+        </div>
+        <div class="flex-1">
+          {% if entry.androidDownloadLink | length or entry.appStoreDownloadLink | length %}
+            <h3 class="text-2xl mb-0">Mobile</h3>
+            <p>Use the OAK311 App:</p>
+            <div class="mb-8">
+              <a href="{{ entry.appStoreDownloadLink }}">
+                {{ craft.inlin.er('/assets/img/badge-apple-store.svg') | replace('<svg ', '<svg class="h-8 sm:h-12" ') | raw }}
+              </a>
+              <a href="{{ entry.androidDownloadLink }}">
+                {{ craft.inlin.er('/assets/img/badge-google-play.svg') | replace('<svg ', '<svg class="h-8 sm:h-12" ') | raw }}
+              </a>
+            </div>
+          {% endif %}
+          <h3 class="text-2xl mb-0">Online</h3>
+          <p><a href="https://311.oaklandca.gov">https://311.oaklandca.gov</a></p>
         </div>
       </div>
     </div>
