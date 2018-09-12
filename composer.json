@@ -4,7 +4,7 @@
     "vlucas/phpdotenv": "^2.4.0",
     "nystudio107/craft-typogrify": "1.1.11",
     "solspace/craft3-calendar": "2.0.6",
-    "nystudio107/craft-seomatic": "3.1.19",
+    "nystudio107/craft-seomatic": "3.1.20",
     "mmikkel/cp-field-inspect": "1.0.4",
     "craftcms/store-hours": "2.1.1",
     "craftcms/redactor": "2.1.6",
