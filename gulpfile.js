@@ -70,7 +70,11 @@ gulp.task("css", ["tailwind"], () => {
       prefix: "_"
     }),
     $.autoprefixer({
-      browsers: ["last 1 version"]
+      browsers: [
+        "last 1 version",
+        "> 1%",
+        "IE 10"
+      ]
     })
   ];
   return gulp.src(pkg.globs.distCss)

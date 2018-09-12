@@ -1,8 +1,8 @@
 /**
  * @project        oakland
  * @author         Christopher Kennedy, onebrightlight <chris@onebrightlight.com>
- * @build          Tue, Sep 11, 2018 1:12 PM ET
- * @release        edb081723dac0e30bec0de727d4a17c9c8ee5e97 [master]
+ * @build          Wed, Sep 12, 2018 4:39 PM ET
+ * @release        73844802d3bfa96a9cde9b15c8316ba4596faf6e [master]
  * @copyright      Copyright (c) 2018, onebrightlight
  *
  */
@@ -1741,151 +1741,188 @@ main > .bg-rotate:nth-child(odd) {
 }
 
 .flex {
+  display: -ms-flexbox;
   display: flex;
 }
 
 .inline-flex {
+  display: -ms-inline-flexbox;
   display: inline-flex;
 }
 
 .flex-row {
-  flex-direction: row;
+  -ms-flex-direction: row;
+      flex-direction: row;
 }
 
 .flex-row-reverse {
-  flex-direction: row-reverse;
+  -ms-flex-direction: row-reverse;
+      flex-direction: row-reverse;
 }
 
 .flex-col {
-  flex-direction: column;
+  -ms-flex-direction: column;
+      flex-direction: column;
 }
 
 .flex-col-reverse {
-  flex-direction: column-reverse;
+  -ms-flex-direction: column-reverse;
+      flex-direction: column-reverse;
 }
 
 .flex-wrap {
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .flex-wrap-reverse {
-  flex-wrap: wrap-reverse;
+  -ms-flex-wrap: wrap-reverse;
+      flex-wrap: wrap-reverse;
 }
 
 .flex-no-wrap {
-  flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
 }
 
 .items-start {
-  align-items: flex-start;
+  -ms-flex-align: start;
+      align-items: flex-start;
 }
 
 .items-end {
-  align-items: flex-end;
+  -ms-flex-align: end;
+      align-items: flex-end;
 }
 
 .items-center {
-  align-items: center;
+  -ms-flex-align: center;
+      align-items: center;
 }
 
 .items-baseline {
-  align-items: baseline;
+  -ms-flex-align: baseline;
+      align-items: baseline;
 }
 
 .items-stretch {
-  align-items: stretch;
+  -ms-flex-align: stretch;
+      align-items: stretch;
 }
 
 .self-auto {
-  align-self: auto;
+  -ms-flex-item-align: auto;
+      align-self: auto;
 }
 
 .self-start {
-  align-self: flex-start;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
 }
 
 .self-end {
-  align-self: flex-end;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
 }
 
 .self-center {
-  align-self: center;
+  -ms-flex-item-align: center;
+      align-self: center;
 }
 
 .self-stretch {
-  align-self: stretch;
+  -ms-flex-item-align: stretch;
+      align-self: stretch;
 }
 
 .justify-start {
-  justify-content: flex-start;
+  -ms-flex-pack: start;
+      justify-content: flex-start;
 }
 
 .justify-end {
-  justify-content: flex-end;
+  -ms-flex-pack: end;
+      justify-content: flex-end;
 }
 
 .justify-center {
-  justify-content: center;
+  -ms-flex-pack: center;
+      justify-content: center;
 }
 
 .justify-between {
-  justify-content: space-between;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
 }
 
 .justify-around {
-  justify-content: space-around;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .content-center {
-  align-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
 }
 
 .content-start {
-  align-content: flex-start;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
 }
 
 .content-end {
-  align-content: flex-end;
+  -ms-flex-line-pack: end;
+      align-content: flex-end;
 }
 
 .content-between {
-  align-content: space-between;
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
 }
 
 .content-around {
-  align-content: space-around;
+  -ms-flex-line-pack: distribute;
+      align-content: space-around;
 }
 
 .flex-1 {
-  flex: 1;
+  -ms-flex: 1;
+      flex: 1;
 }
 
 .flex-auto {
-  flex: auto;
+  -ms-flex: auto;
+      flex: auto;
 }
 
 .flex-initial {
-  flex: initial;
+  -ms-flex: initial;
+      flex: initial;
 }
 
 .flex-none {
-  flex: none;
+  -ms-flex: none;
+      flex: none;
 }
 
 .flex-grow {
-  flex-grow: 1;
+  -ms-flex-positive: 1;
+      flex-grow: 1;
 }
 
 .flex-shrink {
-  flex-shrink: 1;
+  -ms-flex-negative: 1;
+      flex-shrink: 1;
 }
 
 .flex-no-grow {
-  flex-grow: 0;
+  -ms-flex-positive: 0;
+      flex-grow: 0;
 }
 
 .flex-no-shrink {
-  flex-shrink: 0;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
 }
 
 .float-right {
@@ -5408,151 +5445,188 @@ main > .bg-rotate:nth-child(odd) {
   }
 
   .sm\:flex {
+    display: -ms-flexbox;
     display: flex;
   }
 
   .sm\:inline-flex {
+    display: -ms-inline-flexbox;
     display: inline-flex;
   }
 
   .sm\:flex-row {
-    flex-direction: row;
+    -ms-flex-direction: row;
+        flex-direction: row;
   }
 
   .sm\:flex-row-reverse {
-    flex-direction: row-reverse;
+    -ms-flex-direction: row-reverse;
+        flex-direction: row-reverse;
   }
 
   .sm\:flex-col {
-    flex-direction: column;
+    -ms-flex-direction: column;
+        flex-direction: column;
   }
 
   .sm\:flex-col-reverse {
-    flex-direction: column-reverse;
+    -ms-flex-direction: column-reverse;
+        flex-direction: column-reverse;
   }
 
   .sm\:flex-wrap {
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
 
   .sm\:flex-wrap-reverse {
-    flex-wrap: wrap-reverse;
+    -ms-flex-wrap: wrap-reverse;
+        flex-wrap: wrap-reverse;
   }
 
   .sm\:flex-no-wrap {
-    flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
   }
 
   .sm\:items-start {
-    align-items: flex-start;
+    -ms-flex-align: start;
+        align-items: flex-start;
   }
 
   .sm\:items-end {
-    align-items: flex-end;
+    -ms-flex-align: end;
+        align-items: flex-end;
   }
 
   .sm\:items-center {
-    align-items: center;
+    -ms-flex-align: center;
+        align-items: center;
   }
 
   .sm\:items-baseline {
-    align-items: baseline;
+    -ms-flex-align: baseline;
+        align-items: baseline;
   }
 
   .sm\:items-stretch {
-    align-items: stretch;
+    -ms-flex-align: stretch;
+        align-items: stretch;
   }
 
   .sm\:self-auto {
-    align-self: auto;
+    -ms-flex-item-align: auto;
+        align-self: auto;
   }
 
   .sm\:self-start {
-    align-self: flex-start;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
   }
 
   .sm\:self-end {
-    align-self: flex-end;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
   }
 
   .sm\:self-center {
-    align-self: center;
+    -ms-flex-item-align: center;
+        align-self: center;
   }
 
   .sm\:self-stretch {
-    align-self: stretch;
+    -ms-flex-item-align: stretch;
+        align-self: stretch;
   }
 
   .sm\:justify-start {
-    justify-content: flex-start;
+    -ms-flex-pack: start;
+        justify-content: flex-start;
   }
 
   .sm\:justify-end {
-    justify-content: flex-end;
+    -ms-flex-pack: end;
+        justify-content: flex-end;
   }
 
   .sm\:justify-center {
-    justify-content: center;
+    -ms-flex-pack: center;
+        justify-content: center;
   }
 
   .sm\:justify-between {
-    justify-content: space-between;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
   }
 
   .sm\:justify-around {
-    justify-content: space-around;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
   }
 
   .sm\:content-center {
-    align-content: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
   }
 
   .sm\:content-start {
-    align-content: flex-start;
+    -ms-flex-line-pack: start;
+        align-content: flex-start;
   }
 
   .sm\:content-end {
-    align-content: flex-end;
+    -ms-flex-line-pack: end;
+        align-content: flex-end;
   }
 
   .sm\:content-between {
-    align-content: space-between;
+    -ms-flex-line-pack: justify;
+        align-content: space-between;
   }
 
   .sm\:content-around {
-    align-content: space-around;
+    -ms-flex-line-pack: distribute;
+        align-content: space-around;
   }
 
   .sm\:flex-1 {
-    flex: 1;
+    -ms-flex: 1;
+        flex: 1;
   }
 
   .sm\:flex-auto {
-    flex: auto;
+    -ms-flex: auto;
+        flex: auto;
   }
 
   .sm\:flex-initial {
-    flex: initial;
+    -ms-flex: initial;
+        flex: initial;
   }
 
   .sm\:flex-none {
-    flex: none;
+    -ms-flex: none;
+        flex: none;
   }
 
   .sm\:flex-grow {
-    flex-grow: 1;
+    -ms-flex-positive: 1;
+        flex-grow: 1;
   }
 
   .sm\:flex-shrink {
-    flex-shrink: 1;
+    -ms-flex-negative: 1;
+        flex-shrink: 1;
   }
 
   .sm\:flex-no-grow {
-    flex-grow: 0;
+    -ms-flex-positive: 0;
+        flex-grow: 0;
   }
 
   .sm\:flex-no-shrink {
-    flex-shrink: 0;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
   }
 
   .sm\:float-right {
@@ -8931,151 +9005,188 @@ main > .bg-rotate:nth-child(odd) {
   }
 
   .md\:flex {
+    display: -ms-flexbox;
     display: flex;
   }
 
   .md\:inline-flex {
+    display: -ms-inline-flexbox;
     display: inline-flex;
   }
 
   .md\:flex-row {
-    flex-direction: row;
+    -ms-flex-direction: row;
+        flex-direction: row;
   }
 
   .md\:flex-row-reverse {
-    flex-direction: row-reverse;
+    -ms-flex-direction: row-reverse;
+        flex-direction: row-reverse;
   }
 
   .md\:flex-col {
-    flex-direction: column;
+    -ms-flex-direction: column;
+        flex-direction: column;
   }
 
   .md\:flex-col-reverse {
-    flex-direction: column-reverse;
+    -ms-flex-direction: column-reverse;
+        flex-direction: column-reverse;
   }
 
   .md\:flex-wrap {
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
 
   .md\:flex-wrap-reverse {
-    flex-wrap: wrap-reverse;
+    -ms-flex-wrap: wrap-reverse;
+        flex-wrap: wrap-reverse;
   }
 
   .md\:flex-no-wrap {
-    flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
   }
 
   .md\:items-start {
-    align-items: flex-start;
+    -ms-flex-align: start;
+        align-items: flex-start;
   }
 
   .md\:items-end {
-    align-items: flex-end;
+    -ms-flex-align: end;
+        align-items: flex-end;
   }
 
   .md\:items-center {
-    align-items: center;
+    -ms-flex-align: center;
+        align-items: center;
   }
 
   .md\:items-baseline {
-    align-items: baseline;
+    -ms-flex-align: baseline;
+        align-items: baseline;
   }
 
   .md\:items-stretch {
-    align-items: stretch;
+    -ms-flex-align: stretch;
+        align-items: stretch;
   }
 
   .md\:self-auto {
-    align-self: auto;
+    -ms-flex-item-align: auto;
+        align-self: auto;
   }
 
   .md\:self-start {
-    align-self: flex-start;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
   }
 
   .md\:self-end {
-    align-self: flex-end;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
   }
 
   .md\:self-center {
-    align-self: center;
+    -ms-flex-item-align: center;
+        align-self: center;
   }
 
   .md\:self-stretch {
-    align-self: stretch;
+    -ms-flex-item-align: stretch;
+        align-self: stretch;
   }
 
   .md\:justify-start {
-    justify-content: flex-start;
+    -ms-flex-pack: start;
+        justify-content: flex-start;
   }
 
   .md\:justify-end {
-    justify-content: flex-end;
+    -ms-flex-pack: end;
+        justify-content: flex-end;
   }
 
   .md\:justify-center {
-    justify-content: center;
+    -ms-flex-pack: center;
+        justify-content: center;
   }
 
   .md\:justify-between {
-    justify-content: space-between;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
   }
 
   .md\:justify-around {
-    justify-content: space-around;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
   }
 
   .md\:content-center {
-    align-content: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
   }
 
   .md\:content-start {
-    align-content: flex-start;
+    -ms-flex-line-pack: start;
+        align-content: flex-start;
   }
 
   .md\:content-end {
-    align-content: flex-end;
+    -ms-flex-line-pack: end;
+        align-content: flex-end;
   }
 
   .md\:content-between {
-    align-content: space-between;
+    -ms-flex-line-pack: justify;
+        align-content: space-between;
   }
 
   .md\:content-around {
-    align-content: space-around;
+    -ms-flex-line-pack: distribute;
+        align-content: space-around;
   }
 
   .md\:flex-1 {
-    flex: 1;
+    -ms-flex: 1;
+        flex: 1;
   }
 
   .md\:flex-auto {
-    flex: auto;
+    -ms-flex: auto;
+        flex: auto;
   }
 
   .md\:flex-initial {
-    flex: initial;
+    -ms-flex: initial;
+        flex: initial;
   }
 
   .md\:flex-none {
-    flex: none;
+    -ms-flex: none;
+        flex: none;
   }
 
   .md\:flex-grow {
-    flex-grow: 1;
+    -ms-flex-positive: 1;
+        flex-grow: 1;
   }
 
   .md\:flex-shrink {
-    flex-shrink: 1;
+    -ms-flex-negative: 1;
+        flex-shrink: 1;
   }
 
   .md\:flex-no-grow {
-    flex-grow: 0;
+    -ms-flex-positive: 0;
+        flex-grow: 0;
   }
 
   .md\:flex-no-shrink {
-    flex-shrink: 0;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
   }
 
   .md\:float-right {
@@ -12454,151 +12565,188 @@ main > .bg-rotate:nth-child(odd) {
   }
 
   .lg\:flex {
+    display: -ms-flexbox;
     display: flex;
   }
 
   .lg\:inline-flex {
+    display: -ms-inline-flexbox;
     display: inline-flex;
   }
 
   .lg\:flex-row {
-    flex-direction: row;
+    -ms-flex-direction: row;
+        flex-direction: row;
   }
 
   .lg\:flex-row-reverse {
-    flex-direction: row-reverse;
+    -ms-flex-direction: row-reverse;
+        flex-direction: row-reverse;
   }
 
   .lg\:flex-col {
-    flex-direction: column;
+    -ms-flex-direction: column;
+        flex-direction: column;
   }
 
   .lg\:flex-col-reverse {
-    flex-direction: column-reverse;
+    -ms-flex-direction: column-reverse;
+        flex-direction: column-reverse;
   }
 
   .lg\:flex-wrap {
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
 
   .lg\:flex-wrap-reverse {
-    flex-wrap: wrap-reverse;
+    -ms-flex-wrap: wrap-reverse;
+        flex-wrap: wrap-reverse;
   }
 
   .lg\:flex-no-wrap {
-    flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
   }
 
   .lg\:items-start {
-    align-items: flex-start;
+    -ms-flex-align: start;
+        align-items: flex-start;
   }
 
   .lg\:items-end {
-    align-items: flex-end;
+    -ms-flex-align: end;
+        align-items: flex-end;
   }
 
   .lg\:items-center {
-    align-items: center;
+    -ms-flex-align: center;
+        align-items: center;
   }
 
   .lg\:items-baseline {
-    align-items: baseline;
+    -ms-flex-align: baseline;
+        align-items: baseline;
   }
 
   .lg\:items-stretch {
-    align-items: stretch;
+    -ms-flex-align: stretch;
+        align-items: stretch;
   }
 
   .lg\:self-auto {
-    align-self: auto;
+    -ms-flex-item-align: auto;
+        align-self: auto;
   }
 
   .lg\:self-start {
-    align-self: flex-start;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
   }
 
   .lg\:self-end {
-    align-self: flex-end;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
   }
 
   .lg\:self-center {
-    align-self: center;
+    -ms-flex-item-align: center;
+        align-self: center;
   }
 
   .lg\:self-stretch {
-    align-self: stretch;
+    -ms-flex-item-align: stretch;
+        align-self: stretch;
   }
 
   .lg\:justify-start {
-    justify-content: flex-start;
+    -ms-flex-pack: start;
+        justify-content: flex-start;
   }
 
   .lg\:justify-end {
-    justify-content: flex-end;
+    -ms-flex-pack: end;
+        justify-content: flex-end;
   }
 
   .lg\:justify-center {
-    justify-content: center;
+    -ms-flex-pack: center;
+        justify-content: center;
   }
 
   .lg\:justify-between {
-    justify-content: space-between;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
   }
 
   .lg\:justify-around {
-    justify-content: space-around;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
   }
 
   .lg\:content-center {
-    align-content: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
   }
 
   .lg\:content-start {
-    align-content: flex-start;
+    -ms-flex-line-pack: start;
+        align-content: flex-start;
   }
 
   .lg\:content-end {
-    align-content: flex-end;
+    -ms-flex-line-pack: end;
+        align-content: flex-end;
   }
 
   .lg\:content-between {
-    align-content: space-between;
+    -ms-flex-line-pack: justify;
+        align-content: space-between;
   }
 
   .lg\:content-around {
-    align-content: space-around;
+    -ms-flex-line-pack: distribute;
+        align-content: space-around;
   }
 
   .lg\:flex-1 {
-    flex: 1;
+    -ms-flex: 1;
+        flex: 1;
   }
 
   .lg\:flex-auto {
-    flex: auto;
+    -ms-flex: auto;
+        flex: auto;
   }
 
   .lg\:flex-initial {
-    flex: initial;
+    -ms-flex: initial;
+        flex: initial;
   }
 
   .lg\:flex-none {
-    flex: none;
+    -ms-flex: none;
+        flex: none;
   }
 
   .lg\:flex-grow {
-    flex-grow: 1;
+    -ms-flex-positive: 1;
+        flex-grow: 1;
   }
 
   .lg\:flex-shrink {
-    flex-shrink: 1;
+    -ms-flex-negative: 1;
+        flex-shrink: 1;
   }
 
   .lg\:flex-no-grow {
-    flex-grow: 0;
+    -ms-flex-positive: 0;
+        flex-grow: 0;
   }
 
   .lg\:flex-no-shrink {
-    flex-shrink: 0;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
   }
 
   .lg\:float-right {
@@ -15977,151 +16125,188 @@ main > .bg-rotate:nth-child(odd) {
   }
 
   .xl\:flex {
+    display: -ms-flexbox;
     display: flex;
   }
 
   .xl\:inline-flex {
+    display: -ms-inline-flexbox;
     display: inline-flex;
   }
 
   .xl\:flex-row {
-    flex-direction: row;
+    -ms-flex-direction: row;
+        flex-direction: row;
   }
 
   .xl\:flex-row-reverse {
-    flex-direction: row-reverse;
+    -ms-flex-direction: row-reverse;
+        flex-direction: row-reverse;
   }
 
   .xl\:flex-col {
-    flex-direction: column;
+    -ms-flex-direction: column;
+        flex-direction: column;
   }
 
   .xl\:flex-col-reverse {
-    flex-direction: column-reverse;
+    -ms-flex-direction: column-reverse;
+        flex-direction: column-reverse;
   }
 
   .xl\:flex-wrap {
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
 
   .xl\:flex-wrap-reverse {
-    flex-wrap: wrap-reverse;
+    -ms-flex-wrap: wrap-reverse;
+        flex-wrap: wrap-reverse;
   }
 
   .xl\:flex-no-wrap {
-    flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
   }
 
   .xl\:items-start {
-    align-items: flex-start;
+    -ms-flex-align: start;
+        align-items: flex-start;
   }
 
   .xl\:items-end {
-    align-items: flex-end;
+    -ms-flex-align: end;
+        align-items: flex-end;
   }
 
   .xl\:items-center {
-    align-items: center;
+    -ms-flex-align: center;
+        align-items: center;
   }
 
   .xl\:items-baseline {
-    align-items: baseline;
+    -ms-flex-align: baseline;
+        align-items: baseline;
   }
 
   .xl\:items-stretch {
-    align-items: stretch;
+    -ms-flex-align: stretch;
+        align-items: stretch;
   }
 
   .xl\:self-auto {
-    align-self: auto;
+    -ms-flex-item-align: auto;
+        align-self: auto;
   }
 
   .xl\:self-start {
-    align-self: flex-start;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
   }
 
   .xl\:self-end {
-    align-self: flex-end;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
   }
 
   .xl\:self-center {
-    align-self: center;
+    -ms-flex-item-align: center;
+        align-self: center;
   }
 
   .xl\:self-stretch {
-    align-self: stretch;
+    -ms-flex-item-align: stretch;
+        align-self: stretch;
   }
 
   .xl\:justify-start {
-    justify-content: flex-start;
+    -ms-flex-pack: start;
+        justify-content: flex-start;
   }
 
   .xl\:justify-end {
-    justify-content: flex-end;
+    -ms-flex-pack: end;
+        justify-content: flex-end;
   }
 
   .xl\:justify-center {
-    justify-content: center;
+    -ms-flex-pack: center;
+        justify-content: center;
   }
 
   .xl\:justify-between {
-    justify-content: space-between;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
   }
 
   .xl\:justify-around {
-    justify-content: space-around;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
   }
 
   .xl\:content-center {
-    align-content: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
   }
 
   .xl\:content-start {
-    align-content: flex-start;
+    -ms-flex-line-pack: start;
+        align-content: flex-start;
   }
 
   .xl\:content-end {
-    align-content: flex-end;
+    -ms-flex-line-pack: end;
+        align-content: flex-end;
   }
 
   .xl\:content-between {
-    align-content: space-between;
+    -ms-flex-line-pack: justify;
+        align-content: space-between;
   }
 
   .xl\:content-around {
-    align-content: space-around;
+    -ms-flex-line-pack: distribute;
+        align-content: space-around;
   }
 
   .xl\:flex-1 {
-    flex: 1;
+    -ms-flex: 1;
+        flex: 1;
   }
 
   .xl\:flex-auto {
-    flex: auto;
+    -ms-flex: auto;
+        flex: auto;
   }
 
   .xl\:flex-initial {
-    flex: initial;
+    -ms-flex: initial;
+        flex: initial;
   }
 
   .xl\:flex-none {
-    flex: none;
+    -ms-flex: none;
+        flex: none;
   }
 
   .xl\:flex-grow {
-    flex-grow: 1;
+    -ms-flex-positive: 1;
+        flex-grow: 1;
   }
 
   .xl\:flex-shrink {
-    flex-shrink: 1;
+    -ms-flex-negative: 1;
+        flex-shrink: 1;
   }
 
   .xl\:flex-no-grow {
-    flex-grow: 0;
+    -ms-flex-positive: 0;
+        flex-grow: 0;
   }
 
   .xl\:flex-no-shrink {
-    flex-shrink: 0;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
   }
 
   .xl\:float-right {
@@ -18687,8 +18872,10 @@ main > .bg-rotate:nth-child(odd) {
 }
 
 .card-grid {
+  display: -ms-flexbox;
   display: flex;
-  flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
 }
 
 @media (min-width: 576px) {
