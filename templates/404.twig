@@ -1,0 +1,16 @@
+{% extends '_layout' %}
+
+{% block content %}
+  <section class="bg-white">
+    <div class="container mx-auto px-8 py-16">
+      <h2 class="mt-0">We apologize, the page you were looking cannot be found.</h2>
+      <p>Try returning to the homepage or searching for what you need.</p>
+      <form action="{{ url('search') }}">
+        <div class="sm:flex max-w-md">
+          <input type="search" class="w-full mb-4 sm:flex-1 sm:mb-0 p-4 border-shark border rounded-none appearance-none" name="keywords" placeholder="How can we help?" value="">
+          <button type="submit" class="w-full sm:w-auto btn border-l-0 border-shark border">Search</button>
+        </div>
+      </form>
+    </div>
+  </section>
+{% endblock %}
