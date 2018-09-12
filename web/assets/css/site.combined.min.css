@@ -1,8 +1,8 @@
 /**
  * @project        oakland
  * @author         Christopher Kennedy, onebrightlight <chris@onebrightlight.com>
- * @build          Tue, Sep 11, 2018 4:02 PM ET
- * @release        2330aeb4e0a013649febd691d92cadde5bee8e62 [master]
+ * @build          Tue, Sep 11, 2018 1:12 PM ET
+ * @release        edb081723dac0e30bec0de727d4a17c9c8ee5e97 [master]
  * @copyright      Copyright (c) 2018, onebrightlight
  *
  */
@@ -18686,39 +18686,111 @@ main > .bg-rotate:nth-child(odd) {
   max-width: 100% !important;
 }
 
-@supports not (display: grid) {
+.card-grid {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+@media (min-width: 576px) {
+  .card-grid > * {
+    width: 48.75%;
+    margin-right: 2.5%;
+  }
+  .card-grid > *:nth-child(2n+2) {
+    margin-right: 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .card-grid > * {
+    width: 31.66666666%;
+    margin-bottom: 2.5%;
+  }
+  .card-grid > *:nth-child(2n+2) {
+    margin-right: 2.5%;
+  }
+  .card-grid > *:nth-child(3n+3) {
+    margin-right: 0;
+  }
+  .card-grid.wide-cards > * {
+    width: 48.75%;
+    margin-right: 2.5%;
+  }
+  .card-grid.wide-cards > *:nth-child(2n+2) {
+    margin-right: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .card-department-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@supports (display: grid) {
   .card-grid {
-    display: flex;
-    flex-flow: row wrap;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 32px;
+  }
+
+  @media (min-width: 576px) {
+    .card-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 992px) {
+    .card-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .card-grid.wide-cards {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (min-width: 768px) {
+    .card-department-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   @media (min-width: 576px) {
     .card-grid > * {
-      width: 48.75%;
-      margin-right: 2.5%;
+      width: auto;
+      width: initial;
+      margin-right: 0;
+      margin-right: initial;
     }
     .card-grid > *:nth-child(2n+2) {
       margin-right: 0;
+      margin-right: initial;
     }
   }
 
   @media (min-width: 992px) {
     .card-grid > * {
-      width: 31.66666666%;
-      margin-bottom: 2.5%;
+      width: auto;
+      width: initial;
+      margin-bottom: 0;
+      margin-bottom: initial;
     }
     .card-grid > *:nth-child(2n+2) {
-      margin-right: 2.5%;
+      margin-right: 0;
+      margin-right: initial;
     }
     .card-grid > *:nth-child(3n+3) {
       margin-right: 0;
+      margin-right: initial;
     }
     .card-grid.wide-cards > * {
-      width: 48.75%;
-      margin-right: 2.5%;
+      width: auto;
+      width: initial;
+      margin-right: 0;
+      margin-right: initial;
     }
     .card-grid.wide-cards > *:nth-child(2n+2) {
       margin-right: 0;
+      margin-right: initial;
     }
   }
 
@@ -18726,33 +18798,6 @@ main > .bg-rotate:nth-child(odd) {
     .card-department-grid {
       grid-template-columns: repeat(2, 1fr);
     }
-  }
-}
-
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  grid-gap: 32px;
-}
-
-@media (min-width: 576px) {
-  .card-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 992px) {
-  .card-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  .card-grid.wide-cards {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 768px) {
-  .card-department-grid {
-    grid-template-columns: repeat(2, 1fr);
   }
 }
 
