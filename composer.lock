@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "ce12a77c5ca1539805a0a30becf48260",
+    "content-hash": "102c3947496379509763bfa86cda865c",
     "packages": [
         {
             "name": "aelvan/inlin",
@@ -2917,11 +2917,11 @@
         },
         {
             "name": "nystudio107/craft-retour",
-            "version": "3.0.0-beta.6",
+            "version": "3.0.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-retour/zipball/c2320b39e8aa6473c00368524875dde8944d500b",
-                "reference": "c2320b39e8aa6473c00368524875dde8944d500b",
+                "url": "https://api.github.com/repos/nystudio107/craft-retour/zipball/ab6d52e01b78fe3242702247d7b9990a9a83abd4",
+                "reference": "ab6d52e01b78fe3242702247d7b9990a9a83abd4",
                 "shasum": ""
             },
             "require": {
@@ -2968,7 +2968,7 @@
                 "docs": "https://github.com/nystudio107/retour/blob/v1/README.md",
                 "issues": "https://github.com/nystudio107/retour/issues"
             },
-            "time": "2018-09-12T16:58:49+00:00"
+            "time": "2018-09-12T21:22:38+00:00"
         },
         {
             "name": "nystudio107/craft-seomatic",
@@ -5805,8 +5805,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "verbb/feed-me": 10,
-        "nystudio107/craft-retour": 10
+        "verbb/feed-me": 10
     },
     "prefer-stable": false,
     "prefer-lowest": false,
