@@ -1,6 +1,6 @@
 {
   "require": {
-    "craftcms/cms": "3.0.23.1",
+    "craftcms/cms": "3.0.24",
     "vlucas/phpdotenv": "^2.4.0",
     "nystudio107/craft-typogrify": "1.1.11",
     "solspace/craft3-calendar": "2.0.6",
@@ -22,12 +22,13 @@
     "doublesecretagency/craft-inventory": "2.0.2",
     "marionnewlevant/twig-perversion": "v2.0.5",
     "mikestecker/craft-videoembedder": "1.0.9",
-    "rynpsc/craft-phone-number": "1.0.0",
+    "rynpsc/craft-phone-number": "1.1.0",
     "markhuot/craftql": "1.1.0",
     "verbb/workflow": "1.0.2",
     "superbig/craft-audit": "1.0.1",
     "mmikkel/incognito-field": "1.0.0",
-    "nystudio107/craft-retour": "3.0.0-beta.4"
+    "nystudio107/craft-retour": "3.0.0-beta.4",
+    "dolphiq/redirect": "v1.0.18"
   },
   "autoload": {
     "psr-4": {
