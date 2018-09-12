@@ -9,6 +9,7 @@
 
 @media (min-width: 576px) {
   .card-grid > * {
+    display: block;
     width: 48.75%;
     margin-right: 2.5%;
   }
