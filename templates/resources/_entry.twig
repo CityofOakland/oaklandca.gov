@@ -2,6 +2,8 @@
 
 {% block content %}
   {% include '_partials/_page-banners' with {
+    bannerImage: entry.resourceImage,
+    bannerImageBlur: 'large',
     breadCrumbs: true,
     breadCrumbLinks: [
       {
@@ -12,6 +14,11 @@
   } %}
   <section class="bg-white relative z-0">
     <div class="container mx-auto p-8 py-16">
+      {% if entry.resourceImage.exists() %}
+        <figure class="mb-8">
+          <img class="w-full block" src="{{ entry.resourceImage.one.url }}" alt="{{ entry.title }} Image">
+        </figure>
+      {% endif %}
       {% include '_partials/_elements/_ctas' %}
       {% include '_partials/_elements/_transaction-body' %}
     </div>
