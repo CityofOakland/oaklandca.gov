@@ -1,3 +1,4 @@
+{% set defaultButtonUrl = "/boards-commissions/related-to/" ~ entry.slug %}
 {% if entry.pageBoardsCommissions | length %}
   <section class="bg-rotate">
     <a id="page-boards" class="anchor-link"></a>
@@ -5,7 +6,7 @@
       {% include '_partials/_elements/_module-header' with {
         headerText: pageBoardsHeaderText ?? "Related Boards & Commissions",
         linkText: pageBoardsLinkText ?? "Related Boards & Commissions",
-        linkUrl: pageBoardsLinkUrl ?? "/boards-commissions/related-to/" ~ entry.slug
+        linkUrl: pageBoardsLinkUrl ?? defaultButtonUrl
       } %}
       <div class="card-grid grid-equal-height mt-8">
         {% for entry in entry.pageBoardsCommissions.all() %}

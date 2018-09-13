@@ -1,3 +1,4 @@
+{% set defaultButtonUrl = "/resources/related-to/" ~ entry.slug %}
 {% if entry.pageResources | length %}
   <section class="bg-rotate">
     <a id="page-resources" class="anchor-link"></a>
@@ -5,7 +6,7 @@
       {% include '_partials/_elements/_module-header' with {
         headerText: pageResourcesHeaderText ?? "Featured Resources",
         linkText: pageResourcesLinkText ?? "Related Resources",
-        linkUrl: pageResourcesLinkUrl ?? "/resources/related-to/" ~ entry.slug
+        linkUrl: pageResourcesLinkUrl ?? defaultButtonUrl
       } %}
       <div class="card-grid grid-equal-height mt-8">
         {% for entry in entry.pageResources.all() %}

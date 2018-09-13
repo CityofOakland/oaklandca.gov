@@ -1,3 +1,4 @@
+{% set defaultButtonUrl = "/news/related-to/" ~ entry.slug %}
 {% set relatedNews = craft.entries.section('news').relatedTo(entry) %}
 
 {# Since Craft doesn’t let us pass an array of ids by default into its "not" id parameter, we have to use the following setup #}
@@ -14,7 +15,7 @@
       {% include '_partials/_elements/_module-header' with {
         headerText: pageNewsHeaderText ?? "News",
         linkText: pageNewsLinkText ?? "Related News",
-        linkUrl: pageNewsLinkUrl ?? "/news/related-to/" ~ entry.slug
+        linkUrl: pageNewsLinkUrl ?? defaultButtonUrl
       } %}
       <div class="card-grid vertical-cards mt-8">
         {% for entry in entry.pageNews.all() %}

@@ -1,3 +1,4 @@
+{% set defaultButtonUrl = "/events/related-to/" ~ entry.slug %}
 {% set options = {
   calendar: "events",
   limit: 3,
@@ -11,7 +12,7 @@
       {% include '_partials/_elements/_module-header' with {
         headerText: pageEventsHeaderText ?? "Events",
         linkText: pageEventsLinkText ?? "Related Events",
-        linkUrl: pageEventsLinkUrl ?? "/events/related-to/" ~ entry.slug
+        linkUrl: pageEventsLinkUrl ?? defaultButtonUrl
       } %}
       <div class="card-grid vertical-cards mt-8">
         {% for entry in events %}
