@@ -1,9 +1,11 @@
 {% set options = {
   calendar: "meetings",
-  limit: 3
+  limit: 3,
+  rangeStart: now | date('Y-m-d'),
 } %}
-{% set events = craft.calendar.events(options).relatedTo(entry).all() %}
-{% if events | length %}
+{% set relatedEvents = craft.calendar.events(options).relatedTo(entry).all() %}
+
+{% if relatedEvents | length %}
   <section class="bg-rotate">
     <a id="page-events" class="anchor-link"></a>
     <div class="container mx-auto p-8 py-16">
@@ -13,7 +15,7 @@
         linkUrl: pageMeetingsLinkUrl ?? "/meetings/related-to/" ~ entry.slug
       } %}
       <div class="card-grid vertical-cards mt-8">
-        {% for entry in events %}
+        {% for entry in relatedEvents %}
           {% include '_partials/_elements/_vertical-cards' with {
             title: entry.title,
             url: entry.url,

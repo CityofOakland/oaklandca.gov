@@ -1,6 +1,7 @@
 {% set options = {
   calendar: "events",
-  limit: 3
+  limit: 3,
+  rangeStart: now | date('Y-m-d'),
 } %}
 {% set events = craft.calendar.events(options).relatedTo(entry).all() %}
 {% if events | length %}
