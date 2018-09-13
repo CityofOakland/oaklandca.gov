@@ -32,7 +32,11 @@
   {% include '_partials/_page-topics' %}
   {% include '_partials/_page-projects' %}
   {% include '_partials/_page-documents' %}
-  {% include '_partials/_page-boards' %}
+  {% include '_partials/_page-boards' with {
+    pageBoardsHeaderText: 'Boards & Commissions',
+    pageBoardsLinkText: 'Boards & Commissions',
+    pageBoardsLinkUrl: '/boards-commissions',
+  } %}
   {% include '_partials/_page-leadership' %}
   {% include '_partials/_page-location' %}
 {% endblock %}
