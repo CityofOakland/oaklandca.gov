@@ -13,7 +13,7 @@
       {% include '_partials/_elements/_module-header' with {
         headerText: pageMeetingsHeaderText ?? "Meetings",
         linkText: pageMeetingsLinkText ?? "Related Meetings",
-        linkUrl: pageMeetingsLinkUrl defaultButtonUrl
+        linkUrl: pageMeetingsLinkUrl ?? defaultButtonUrl
       } %}
       <div class="card-grid vertical-cards mt-8">
         {% for entry in relatedEvents %}
