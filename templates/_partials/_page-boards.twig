@@ -1,4 +1,4 @@
-{% if entry.boardsCommissions | length %}
+{% if entry.pageBoardsCommissions | length %}
   <section class="bg-rotate">
     <a id="page-boards" class="anchor-link"></a>
     <div class="container mx-auto p-8 py-16">
@@ -8,7 +8,7 @@
         linkUrl: pageBoardsLinkUrl ?? "/boards-commissions/related-to/" ~ entry.slug
       } %}
       <div class="card-grid grid-equal-height mt-8">
-        {% for entry in entry.boardsCommissions.all() %}
+        {% for entry in entry.pageBoardsCommissions.all() %}
           {% include '_partials/_elements/_title-cards' %}
         {% endfor %}
       </div>
