@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "102c3947496379509763bfa86cda865c",
+    "content-hash": "3a282f393b05d25585cc3f3d6af7b892",
     "packages": [
         {
             "name": "aelvan/inlin",
@@ -1540,6 +1540,52 @@
             "time": "2018-02-23T01:58:20+00:00"
         },
         {
+            "name": "frontwise/craft-entryrelationsmanager",
+            "version": "1.0.5",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Frontwise/craft-entryrelationsmanager/zipball/d51849afc208e5f468aac582a12e2ca9b0c79494",
+                "reference": "d51849afc208e5f468aac582a12e2ca9b0c79494",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.20"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Entry relations",
+                "handle": "entry-relations-manager",
+                "hasCpSection": true,
+                "class": "frontwise\\entryrelationsmanager\\EntryRelationsManagerPlugin"
+            },
+            "autoload": {
+                "psr-4": {
+                    "frontwise\\entryrelationsmanager\\": "src/"
+                }
+            },
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Frontwise",
+                    "email": "contact@frontwise.com",
+                    "homepage": "https://frontwise.com"
+                }
+            ],
+            "description": "Keep track of relations to entries. See which entries are safe to delete, and easily replace entry relations",
+            "keywords": [
+                "cms",
+                "craft",
+                "craft-plugin",
+                "craft3",
+                "craftcms",
+                "entries",
+                "relations"
+            ],
+            "time": "2018-08-22T08:32:19+00:00"
+        },
+        {
             "name": "fruitstudios/linkit",
             "version": "1.1.0",
             "dist": {
@@ -2917,11 +2963,11 @@
         },
         {
             "name": "nystudio107/craft-retour",
-            "version": "3.0.1",
+            "version": "3.0.2",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-retour/zipball/ab6d52e01b78fe3242702247d7b9990a9a83abd4",
-                "reference": "ab6d52e01b78fe3242702247d7b9990a9a83abd4",
+                "url": "https://api.github.com/repos/nystudio107/craft-retour/zipball/2c47d719ea47e5beebd9cab10289525873b8f02a",
+                "reference": "2c47d719ea47e5beebd9cab10289525873b8f02a",
                 "shasum": ""
             },
             "require": {
@@ -2968,7 +3014,7 @@
                 "docs": "https://github.com/nystudio107/retour/blob/v1/README.md",
                 "issues": "https://github.com/nystudio107/retour/issues"
             },
-            "time": "2018-09-12T21:22:38+00:00"
+            "time": "2018-09-13T00:18:20+00:00"
         },
         {
             "name": "nystudio107/craft-seomatic",
