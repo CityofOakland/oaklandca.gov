@@ -18,6 +18,7 @@
       'events': relatedEvents.exists(),
       'minutesAgendas': entry.pageDocuments.exists(),
       'services': entry.pageServices.exists(),
+      'resources': entry.pageResources.exists(),
       'contact': true
     }
   } %}
@@ -26,6 +27,7 @@
     pageDocumentsHeaderText: 'Minutes & Agendas'
   } %}
   {% include '_partials/_page-services' %}
+  {% include '_partials/_page-resources' %}
   <section class="bg-rotate">
     <div class="container mx-auto p-8 pt-16">
       {% include '_partials/_elements/_module-header' with {
