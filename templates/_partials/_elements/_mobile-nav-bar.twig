@@ -1,9 +1,17 @@
 <nav id="menu" class="bg-shark h-full p-8 flex flex-col">
-  <a href="/" class="block mb-4 text-white hover:text-apple fill-current trans-fast">
-    {{ craft.inlin.er('/assets/img/logo-oakland.svg') | replace('<svg ', '<svg class="w-full" ') | raw }}
+  <button class="btn btn-sm text-sm hover:bg-apple" id="close-menu">Close Menu</button>
+  <a href="/" class="block my-4 text-white hover:text-apple fill-current trans-fast">
+    {{ craft.inlin.er('/assets/img/logo-oakland.svg') | replace('<svg ', '<svg class="h-8" ') | raw }}
   </a>
-  <button class="btn btn-sm" id="close-menu">Close Menu</button>
   <ul class="list-reset flex-1 overflow-y-scroll">
+    <li>
+      <form action="{{ url('search') }}" class="w-full">
+        <div class="flex w-full h-full">
+          <input type="search" class="w-3/4 mb-0 p-3 border-shark border rounded-none appearance-none" name="keywords" placeholder="Search" value="">
+          <button type="submit" class="flex-1 btn border-l-0 border-shark border hover:bg-apple p-2">Go</button>
+        </div>
+      </form>
+    </li>
     {% for nav in mainNav.navBuilder.all() %}
       {% set link = nav.navLink %}
       <li{% if not loop.last %} class="border-b border-white"{% endif %}><a href="{{ link.url }}"{% if link.target | length %} target="{{ link.target }}"{% endif %} class="block text-white hover:text-apple trans-fast py-4">{{ link.text }}</a></li>

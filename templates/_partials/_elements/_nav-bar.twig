@@ -15,31 +15,47 @@
   {% endjs %}
 {% else %}
   {% set bgColor = 'bg-shark' %}
+  {% set searchNavButton %}
+    <li class="ml-4">
+      <a id="search-menu-toggle" href="/search" class="block text-white hover:text-apple fill-current trans-fast">
+      {{ craft.inlin.er('/assets/img/icon-magnifier.svg') | replace('<svg ', '<svg class="h-4" ') | raw }}
+      </a>
+    </li>
+  {% endset %}
 {% endif %}
 {% set mainNav = craft.entries.section('navigation').slug('main-nav').one() %}
 
 <div class="{{ bgColor }} text-white fixed w-full z-50 trans trans-fast h-40 nav-bar" id="nav-bar">
-  <div class="container mx-auto relative h-full">
-    <div class="px-8">
-      <nav class="flex items-center justify-between">
-        <div>
-          <a href="/" class="block pt-16 sm:pl-8 mb-8 sm:border-l-2 sm:border-white text-white hover:text-apple fill-current trans-fast">
-            {{ craft.inlin.er('/assets/img/logo-oakland.svg') | replace('<svg ', '<svg class="h-8 sm:h-16" ') | raw }}
-          </a>
+  <div class="px-8">
+    <nav class="flex items-center justify-between">
+      <div>
+        <a href="/" class="block pt-16 mb-8 text-white hover:text-apple fill-current trans-fast">
+          {{ craft.inlin.er('/assets/img/logo-oakland.svg') | replace('<svg ', '<svg class="h-8 sm:h-16" ') | raw }}
+        </a>
+      </div>
+      <button id="menu-toggle" class="btn flex lg:hidden -mr-8 hover:bg-apple">Menu</button>
+      <ul class="list-reset hidden uppercase w-full justify-end flex-1 lg:flex text-base">
+        {% for nav in mainNav.navBuilder.all() %}
+          {% set link = nav.navLink %}
+          <li class="ml-4"><a href="{{ link.url }}"{% if link.target | length %} target="{{ link.target }}"{% endif %} class="text-white hover:text-apple trans-fast">{{ link.text }}</a></li>
+        {% endfor %}
+        {{ searchNavButton ?? '' }}
+      </ul>
+    </nav>
+    <div id="google_translate_element" class="absolute pin-b pin-r pb-4 lg:pr-8"></div><script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'ceb,en,es,hmn,ja,km,ko,mn,tl,vi,zh-CN', layout: google.translate.TranslateElement.FloatPosition.TOP_RIGHT}, 'google_translate_element');
+    }
+    </script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  </div>
+  <div id="global-search-bar" class="hidden bg-shark text-white absolute items-center w-full pin-r pin-b py-4 text-base" style="transform: translateY(100%);">
+    <div class="container mx-auto px-8">
+      <form action="{{ url('search') }}" class="w-full">
+        <div class="flex w-full h-full">
+          <input type="search" class="w-full mb-0 px-3 border-shark border rounded-none appearance-none" name="keywords" placeholder="Enter your search phrase (e.g. “Pay a Parking Ticket” here." value="">
+          <button type="submit" class="flex-1 btn border-l-0 border-shark border hover:bg-apple">Search</button>
         </div>
-        <button id="menu-toggle" class="btn flex lg:hidden -mr-8">Menu</button>
-        <ul class="list-reset hidden uppercase flex-1 lg:flex pl-16 xl:pl-32 justify-between text-base">
-          {% for nav in mainNav.navBuilder.all() %}
-            {% set link = nav.navLink %}
-            <li{% if not loop.last %}{% endif %}><a href="{{ link.url }}"{% if link.target | length %} target="{{ link.target }}"{% endif %} class="text-white hover:text-apple trans-fast">{{ link.text }}</a></li>
-          {% endfor %}
-        </ul>
-      </nav>
-      <div id="google_translate_element" class="absolute pin-b pin-r pb-4 lg:pr-8"></div><script type="text/javascript">
-      function googleTranslateElementInit() {
-        new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'ceb,en,es,hmn,ja,km,ko,mn,tl,vi,zh-CN', layout: google.translate.TranslateElement.FloatPosition.TOP_RIGHT}, 'google_translate_element');
-      }
-      </script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+      </form>
     </div>
   </div>
 </div>

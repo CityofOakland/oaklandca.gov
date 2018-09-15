@@ -16,6 +16,7 @@ function removeClass(ele, cls) {
 function init() {
   document.getElementById("menu-toggle").addEventListener("click", toggleMenu);
   document.getElementById("close-menu").addEventListener("click", toggleMenu);
+  document.getElementById("search-menu-toggle").addEventListener("click", toggleSearch);
 }
 
 //The actual fuction
@@ -25,6 +26,16 @@ function toggleMenu() {
     addClass(ele, "open");
   } else {
     removeClass(ele, "open");
+  }
+}
+
+function toggleSearch(e) {
+  var ele = document.getElementById("global-search-bar");
+  e.preventDefault();
+  if (!hasClass(ele, "lg:flex")) {
+    addClass(ele, "lg:flex");
+  } else {
+    removeClass(ele, "lg:flex");
   }
 }
 
