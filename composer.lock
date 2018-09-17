@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "98a6ea1932b1999dee0992ccb466ce89",
+    "content-hash": "bbd31c749ba63d519c28c98d9fdb88b2",
     "packages": [
         {
             "name": "aelvan/inlin",
@@ -2963,11 +2963,11 @@
         },
         {
             "name": "nystudio107/craft-retour",
-            "version": "3.0.3",
+            "version": "3.0.5",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-retour/zipball/0262a0650ba0079eb76aadd82853da3b1a1c65d3",
-                "reference": "0262a0650ba0079eb76aadd82853da3b1a1c65d3",
+                "url": "https://api.github.com/repos/nystudio107/craft-retour/zipball/0579f1034732111aad094460a7f72bfd096aec76",
+                "reference": "0579f1034732111aad094460a7f72bfd096aec76",
                 "shasum": ""
             },
             "require": {
@@ -3014,7 +3014,7 @@
                 "docs": "https://github.com/nystudio107/retour/blob/v1/README.md",
                 "issues": "https://github.com/nystudio107/retour/issues"
             },
-            "time": "2018-09-13T19:15:02+00:00"
+            "time": "2018-09-14T16:06:06+00:00"
         },
         {
             "name": "nystudio107/craft-seomatic",
