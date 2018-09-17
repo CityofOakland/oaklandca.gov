@@ -18,7 +18,12 @@
       {% if entry.documents.exists() %}
         <h2 class="border-b border-celeste py-2">Documents</h2>
       {% endif %}
-      {% for entry in entry.documents.all() %}
+      {% if entry.sortDocumentsByDate %}
+        {% set entries = entry.documents.orderBy('postDate desc').all() %}
+      {% else %}
+        {% set entries = entry.documents.all() %}
+      {% endif %}
+      {% for entry in entries %}
         <article>
           <h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
         </article>
