@@ -24,7 +24,9 @@
       'contact': true
     }
   } %}
-  {% include '_partials/_page-services' %}
+  {% include '_partials/_page-services' with {
+    pageServicesLinkText: 'All Services'
+  } %}
   {% include '_partials/_page-resources' %}
   {% include '_partials/_page-documents' %}
   {% include '_partials/_page-projects' %}
