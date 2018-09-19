@@ -821,6 +821,7 @@ footer {
 .home main,
 .home footer {
   top: 0;
+  padding-top: 0;
 }
 
 /* Banner Styles */
