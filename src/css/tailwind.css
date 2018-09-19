@@ -53,7 +53,6 @@ a:hover {
 
 .anchor-link {
   @apply relative block invisible;
-  top: -10rem;
 }
 
 /**
@@ -109,7 +108,6 @@ a:hover {
 
 main, footer {
   position: relative;
-  top: 10rem;
 }
 
 .home main,
@@ -125,7 +123,6 @@ main, footer {
 
 .banner-home {
   @apply bg-shark;
-  padding-top: 10rem;
 }
 
 .banner-image {
