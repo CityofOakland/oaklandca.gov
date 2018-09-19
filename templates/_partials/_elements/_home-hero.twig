@@ -1,13 +1,13 @@
 <div class="banner banner-home sm:pt-52">
-  <div class="container mx-auto py-32 p-8">
+  <div class="container mx-auto p-8 py-32">
     <img class="banner-image" src="{{ entry.banner.one.url }}" alt="Photo: Grammy winner Fantastic Negrito courtesy of Oakland First Fridays">
     <h1 class="font-bold">Welcome to Oakland</h1>
     <p>The official website for the City of Oakland.<br>
     <b><a class="text-white" href="/topics/oaklandlovelife">#OaklandLoveLife</a></b></p>
     <form action="{{ url('search') }}">
-      <div class="sm:flex max-w-md">
-        <input type="search" class="w-full mb-4 sm:flex-1 sm:mb-0 p-4 border-shark border rounded-none appearance-none" name="keywords" placeholder="How can we help?" value="">
-        <button type="submit" class="w-full sm:w-auto btn border-l-0 border-shark border">Search</button>
+      <div class="max-w-md sm:flex">
+        <input type="search" class="w-full mb-0 p-4 border-shark border rounded-none appearance-none sm:flex-1" name="keywords" placeholder="How can we help?" value="">
+        <button type="submit" class="w-full btn border-l-0 border-shark border sm:w-auto">Search</button>
       </div>
     </form>
   </div>
