@@ -1,10 +1,10 @@
 {
   "require": {
-    "craftcms/cms": "3.0.24",
+    "craftcms/cms": "3.0.25",
     "vlucas/phpdotenv": "^2.4.0",
     "nystudio107/craft-typogrify": "1.1.11",
     "solspace/craft3-calendar": "2.0.6",
-    "nystudio107/craft-seomatic": "3.1.20",
+    "nystudio107/craft-seomatic": "3.1.21",
     "mmikkel/cp-field-inspect": "1.0.4",
     "craftcms/store-hours": "2.1.1",
     "craftcms/redactor": "2.1.6",
@@ -27,7 +27,7 @@
     "verbb/workflow": "1.0.2",
     "superbig/craft-audit": "1.0.1",
     "mmikkel/incognito-field": "1.0.0",
-    "nystudio107/craft-retour": "3.0.5",
+    "nystudio107/craft-retour": "3.0.6",
     "dolphiq/redirect": "v1.0.18",
     "frontwise/craft-entryrelationsmanager": "v1.0.5"
   },

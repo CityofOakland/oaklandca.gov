@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "bbd31c749ba63d519c28c98d9fdb88b2",
+    "content-hash": "46b80fd72656ed221e1dd91c1702ee27",
     "packages": [
         {
             "name": "aelvan/inlin",
@@ -444,11 +444,11 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "3.0.24",
+            "version": "3.0.25",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/c107ad908a987faba50f72831df4bdc9df775f2e",
-                "reference": "c107ad908a987faba50f72831df4bdc9df775f2e",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/30b95277d526af7aeff4a10c23b583fde0adb383",
+                "reference": "30b95277d526af7aeff4a10c23b583fde0adb383",
                 "shasum": ""
             },
             "require": {
@@ -519,7 +519,7 @@
                 "docs": "https://github.com/craftcms/docs",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2018-09-11T17:17:27+00:00"
+            "time": "2018-09-18T16:57:29+00:00"
         },
         {
             "name": "craftcms/oauth2-craftid",
@@ -2151,14 +2151,15 @@
         },
         {
             "name": "league/flysystem",
-            "version": "1.0.46",
+            "version": "1.0.47",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/f3e0d925c18b92cf3ce84ea5cc58d62a1762a2b2",
-                "reference": "f3e0d925c18b92cf3ce84ea5cc58d62a1762a2b2",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/a11e4a75f256bdacf99d20780ce42d3b8272975c",
+                "reference": "a11e4a75f256bdacf99d20780ce42d3b8272975c",
                 "shasum": ""
             },
             "require": {
+                "ext-fileinfo": "*",
                 "php": ">=5.5.9"
             },
             "conflict": {
@@ -2220,7 +2221,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2018-08-22T07:45:22+00:00"
+            "time": "2018-09-14T15:30:29+00:00"
         },
         {
             "name": "league/oauth2-client",
@@ -2963,11 +2964,11 @@
         },
         {
             "name": "nystudio107/craft-retour",
-            "version": "3.0.5",
+            "version": "3.0.6",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-retour/zipball/0579f1034732111aad094460a7f72bfd096aec76",
-                "reference": "0579f1034732111aad094460a7f72bfd096aec76",
+                "url": "https://api.github.com/repos/nystudio107/craft-retour/zipball/03aa5c9f4d7ed470e9da2cbc54904dfc434633b7",
+                "reference": "03aa5c9f4d7ed470e9da2cbc54904dfc434633b7",
                 "shasum": ""
             },
             "require": {
@@ -3014,15 +3015,15 @@
                 "docs": "https://github.com/nystudio107/retour/blob/v1/README.md",
                 "issues": "https://github.com/nystudio107/retour/issues"
             },
-            "time": "2018-09-14T16:06:06+00:00"
+            "time": "2018-09-18T22:22:23+00:00"
         },
         {
             "name": "nystudio107/craft-seomatic",
-            "version": "3.1.20",
+            "version": "3.1.21",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/ed20075a5dac4410e734c96dbde3a1c153e846c8",
-                "reference": "ed20075a5dac4410e734c96dbde3a1c153e846c8",
+                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/37052e99485e85911a693b7035a27c924646da26",
+                "reference": "37052e99485e85911a693b7035a27c924646da26",
                 "shasum": ""
             },
             "require": {
@@ -3047,7 +3048,6 @@
                     "link": "nystudio107\\seomatic\\services\\Link",
                     "metaBundles": "nystudio107\\seomatic\\services\\MetaBundles",
                     "metaContainers": "nystudio107\\seomatic\\services\\MetaContainers",
-                    "redirects": "nystudio107\\seomatic\\services\\Redirects",
                     "script": "nystudio107\\seomatic\\services\\Script",
                     "sitemaps": "nystudio107\\seomatic\\services\\Sitemaps",
                     "tag": "nystudio107\\seomatic\\services\\Tag",
@@ -3087,7 +3087,7 @@
                 "docs": "https://github.com/nystudio107/craft-seomatic/blob/v3/README.md",
                 "issues": "https://github.com/nystudio107/craft-seomatic/issues"
             },
-            "time": "2018-09-12T17:23:59+00:00"
+            "time": "2018-09-18T17:56:09+00:00"
         },
         {
             "name": "nystudio107/craft-typogrify",
