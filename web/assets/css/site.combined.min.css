@@ -1,8 +1,8 @@
 /**
  * @project        oakland
  * @author         Christopher Kennedy, onebrightlight <chris@onebrightlight.com>
- * @build          Wed, Sep 19, 2018 1:06 PM ET
- * @release        fac121c7012089c0ea6557b1b9f8b6e4902d2139 [master]
+ * @build          Wed, Sep 19, 2018 4:31 PM ET
+ * @release        a3142da8fbba3cc07fde0660d2134e6072415cbb [master]
  * @copyright      Copyright (c) 2018, onebrightlight
  *
  */
@@ -4565,6 +4565,10 @@ main > .bg-rotate:nth-child(odd) {
   z-index: 50;
 }
 
+.z-60 {
+  z-index: 60;
+}
+
 .z-auto {
   z-index: auto;
 }
@@ -8313,6 +8317,10 @@ main > .bg-rotate:nth-child(odd) {
     z-index: 50;
   }
 
+  .sm\:z-60 {
+    z-index: 60;
+  }
+
   .sm\:z-auto {
     z-index: auto;
   }
@@ -11931,6 +11939,10 @@ main > .bg-rotate:nth-child(odd) {
 
   .md\:z-50 {
     z-index: 50;
+  }
+
+  .md\:z-60 {
+    z-index: 60;
   }
 
   .md\:z-auto {
@@ -15553,6 +15565,10 @@ main > .bg-rotate:nth-child(odd) {
     z-index: 50;
   }
 
+  .lg\:z-60 {
+    z-index: 60;
+  }
+
   .lg\:z-auto {
     z-index: auto;
   }
@@ -19171,6 +19187,10 @@ main > .bg-rotate:nth-child(odd) {
 
   .xl\:z-50 {
     z-index: 50;
+  }
+
+  .xl\:z-60 {
+    z-index: 60;
   }
 
   .xl\:z-auto {
