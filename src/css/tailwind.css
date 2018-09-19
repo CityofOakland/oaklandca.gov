@@ -54,6 +54,11 @@ a:hover {
 .anchor-link {
   @apply relative block invisible;
 }
+@media (min-width: 576px) {
+  .anchor-link {
+    top: -10rem;
+  }
+}
 
 /**
  * This injects any component classes registered by plugins.
@@ -108,6 +113,12 @@ a:hover {
 
 main, footer {
   position: relative;
+}
+
+@media (min-width: 576px) {
+  main, footer {
+    padding-top: 10rem;
+  }
 }
 
 .home main,

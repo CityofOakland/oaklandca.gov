@@ -1,8 +1,8 @@
 /**
  * @project        oakland
  * @author         Christopher Kennedy, onebrightlight <chris@onebrightlight.com>
- * @build          Wed, Sep 19, 2018 12:35 PM ET
- * @release        21b4a564f9223bc87662426a6c476c87e60248e0 [master]
+ * @build          Wed, Sep 19, 2018 1:06 PM ET
+ * @release        fac121c7012089c0ea6557b1b9f8b6e4902d2139 [master]
  * @copyright      Copyright (c) 2018, onebrightlight
  *
  */
@@ -705,6 +705,12 @@ a:hover {
   visibility: hidden;
 }
 
+@media (min-width: 576px) {
+  .anchor-link {
+    top: -10rem;
+  }
+}
+
 /**
  * This injects any component classes registered by plugins.
  *
@@ -803,6 +809,13 @@ a:hover {
 main,
 footer {
   position: relative;
+}
+
+@media (min-width: 576px) {
+  main,
+  footer {
+    padding-top: 10rem;
+  }
 }
 
 .home main,
