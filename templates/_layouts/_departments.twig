@@ -18,6 +18,7 @@
       'events': relatedEvents.exists(),
       'news': relatedNews.exists(),
       'services': entry.pageServices.exists(),
+      'resources': entry.pageResources.exists(),
       'topics': entry.pageTopics.exists(),
       'projects': entry.pageProjects.exists(),
       'documents': entry.pageDocuments.exists(),
@@ -29,6 +30,7 @@
   {% include '_partials/_page-events' %}
   {% include '_partials/_page-news' %}
   {% include '_partials/_page-services' %}
+  {% include '_partials/_page-resources' %}
   {% include '_partials/_page-topics' %}
   {% include '_partials/_page-projects' %}
   {% include '_partials/_page-documents' %}
