@@ -54,7 +54,7 @@ a:hover {
 .anchor-link {
   @apply relative block invisible;
 }
-@media (min-width: 576px) {
+@media (min-width: 768px) {
   .anchor-link {
     top: -10rem;
   }
@@ -115,7 +115,7 @@ main, footer {
   position: relative;
 }
 
-@media (min-width: 576px) {
+@media (min-width: 768px) {
   main, footer {
     padding-top: 10rem;
   }

@@ -5,11 +5,11 @@
       var navBar = document.getElementById('nav-bar');
       var scrollPosY = window.pageYOffset | document.body.scrollTop;
       if(scrollPosY > 1) {
-        navBar.classList.add('sm:bg-shark');
-        navBar.classList.remove('sm:bg-transparent');
+        navBar.classList.add('md:bg-shark');
+        navBar.classList.remove('md:bg-transparent');
       } else if(scrollPosY <= 100) {
-        navBar.classList.add('sm:bg-transparent');
-        navBar.classList.remove('sm:bg-shark');
+        navBar.classList.add('md:bg-transparent');
+        navBar.classList.remove('md:bg-shark');
       }
     }
   {% endjs %}
@@ -25,15 +25,15 @@
 {% endif %}
 {% set mainNav = craft.entries.section('navigation').slug('main-nav').one() %}
 
-<div class="bg-shark relative text-white block w-full z-50 trans trans-fast nav-bar sm:{{ bgColor }} sm:fixed sm:h-40" id="nav-bar">
+<div class="bg-shark relative text-white block w-full z-50 trans trans-fast nav-bar md:{{ bgColor }} md:fixed md:h-40" id="nav-bar">
   <div class="px-8">
     <nav class="flex items-center justify-between">
       <div>
-        <a href="/" class="block py-8 text-white hover:text-apple fill-current trans-fast sm:pt-16 sm:mb-8">
-          {{ craft.inlin.er('/assets/img/logo-oakland.svg') | replace('<svg ', '<svg class="h-8 sm:h-16" ') | raw }}
+        <a href="/" class="block py-8 text-white hover:text-apple fill-current trans-fast md:pt-16 md:mb-8">
+          {{ craft.inlin.er('/assets/img/logo-oakland.svg') | replace('<svg ', '<svg class="h-8 md:h-16" ') | raw }}
         </a>
       </div>
-      <button id="menu-toggle" class="btn fixed flex pin-r hover:bg-apple z-40 sm:relative sm:-mr-8 lg:hidden">Menu</button>
+      <button id="menu-toggle" class="btn fixed flex pin-r hover:bg-apple z-40 md:relative md:-mr-8 lg:hidden">Menu</button>
       <ul class="list-reset hidden uppercase w-full justify-end flex-1 text-base lg:flex">
         {% for nav in mainNav.navBuilder.all() %}
           {% set link = nav.navLink %}

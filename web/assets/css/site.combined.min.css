@@ -705,7 +705,7 @@ a:hover {
   visibility: hidden;
 }
 
-@media (min-width: 576px) {
+@media (min-width: 768px) {
   .anchor-link {
     top: -10rem;
   }
@@ -811,7 +811,7 @@ footer {
   position: relative;
 }
 
-@media (min-width: 576px) {
+@media (min-width: 768px) {
   main,
   footer {
     padding-top: 10rem;
