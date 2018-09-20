@@ -29,7 +29,8 @@
     "mmikkel/incognito-field": "1.0.0",
     "nystudio107/craft-retour": "3.0.6",
     "dolphiq/redirect": "v1.0.18",
-    "frontwise/craft-entryrelationsmanager": "v1.0.5"
+    "frontwise/craft-entryrelationsmanager": "v1.0.5",
+    "rias/craft-scout": "0.4.2"
   },
   "autoload": {
     "psr-4": {
