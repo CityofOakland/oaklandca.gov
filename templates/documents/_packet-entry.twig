@@ -24,8 +24,12 @@
         {% set entries = entry.documents.all() %}
       {% endif %}
       {% for entry in entries %}
+        {% set file = entry.documentFile.one %}
         <article>
-          <h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
+          <h3 class="text-xl mb-0">
+            <a href="{{ file.url }}" class="fill-current trans-fast inline-flex items-center"><div class="inline-block h-5 w-8">{{ craft.inlin.er('/assets/img/icon-' ~ file.kind ~ '.svg') | replace('<svg ', '<svg class="h-full w-full" ') | raw }}</div>{{ entry.title }} ({{ file.kind | upper }})</a>
+          </h3>
+          <p class="text-sm mt-0 pl-8"><a class="text-astronaut hover:text-camouflage-grey" href="{{ entry.url }}">Permalink</a></p>
         </article>
       {% endfor %}
     </div>
