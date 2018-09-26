@@ -1,16 +1,16 @@
 {% extends '_layout' %}
 {% set entry = craft.entries.section('meetingsIndex').one %}
 {% set relatedEntry = null %}
-{% set bannerTitle = entry.title | replace(' Index', '') %}
+{% set bannerTitle = entry.title | replace(' Index', '') ~ ' Archive' %}
 {% set breadCrumbLinks = [
   {
     title: 'Public Meetings',
     link: '/meetings'
   }
 ] %}
-{% if craft.app.request.getSegment(2) == 'related-to' %}
+{% if craft.app.request.getSegment(3) == 'related-to' %}
   {% set relatedEntry = craft.entries.section(section).slug(slug).one %}
-  {% set bannerTitle = entry.title | replace(' Index', '') ~ ' for ' ~ relatedEntry.title %}
+  {% set bannerTitle = entry.title | replace(' Index', '') ~ ' Archive for ' ~ relatedEntry.title %}
 {% endif %}
 
 {% block content %}
@@ -24,9 +24,10 @@
     <div class="container mx-auto p-8 py-16">
       {% set events = craft.calendar.events({
         calendarId: 3,
-        rangeStart: now | date('Y-m-d'),
-        rangeEnd: now | date_modify('+1 year') | date('Y-m-d'),
+        rangeEnd: now,
+        endsBefore: now,
         relatedTo: relatedEntry,
+        order: 'startDate DESC',
         limit: 10
       }) %}
       {% include '_partials/_page-events-index' %}
