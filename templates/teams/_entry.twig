@@ -18,7 +18,7 @@
         <h3 class="mb-0">{{ team.staffHeading }}</h3>
       {% endif %}
       <div class="card-grid grid-equal-height profile-cards mt-12">
-      {% for entry in team.staff.all() %}
+      {% for entry in team.staff.section('staff').all() %}
         {% include '_partials/_elements/_profile-cards' with {
           photo: entry.portrait.one,
           name: entry.title,
