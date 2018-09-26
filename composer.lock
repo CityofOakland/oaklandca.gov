@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "01c0cd6526ed63e515aa0bd303f33344",
+    "content-hash": "4f140c2a908e02b4db9979bc0825d8c6",
     "packages": [
         {
             "name": "aelvan/inlin",
@@ -1725,11 +1725,11 @@
         },
         {
             "name": "giggsey/libphonenumber-for-php",
-            "version": "8.9.13",
+            "version": "8.9.14",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giggsey/libphonenumber-for-php/zipball/cb4e0cf25f742a838b9d53ed6a7088c4f24086f3",
-                "reference": "cb4e0cf25f742a838b9d53ed6a7088c4f24086f3",
+                "url": "https://api.github.com/repos/giggsey/libphonenumber-for-php/zipball/338f988183bee1e85ec7b4ef425a3e64a7604473",
+                "reference": "338f988183bee1e85ec7b4ef425a3e64a7604473",
                 "shasum": ""
             },
             "require": {
@@ -1774,7 +1774,7 @@
                 "phonenumber",
                 "validation"
             ],
-            "time": "2018-09-10T15:26:43+00:00"
+            "time": "2018-09-19T15:54:29+00:00"
         },
         {
             "name": "giggsey/locale",
@@ -3054,11 +3054,11 @@
         },
         {
             "name": "nystudio107/craft-retour",
-            "version": "3.0.6",
+            "version": "3.0.8",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-retour/zipball/03aa5c9f4d7ed470e9da2cbc54904dfc434633b7",
-                "reference": "03aa5c9f4d7ed470e9da2cbc54904dfc434633b7",
+                "url": "https://api.github.com/repos/nystudio107/craft-retour/zipball/1965222b1937559cac8243989a2baf8505d19aa9",
+                "reference": "1965222b1937559cac8243989a2baf8505d19aa9",
                 "shasum": ""
             },
             "require": {
@@ -3105,7 +3105,7 @@
                 "docs": "https://github.com/nystudio107/retour/blob/v1/README.md",
                 "issues": "https://github.com/nystudio107/retour/issues"
             },
-            "time": "2018-09-18T22:22:23+00:00"
+            "time": "2018-09-20T23:27:24+00:00"
         },
         {
             "name": "nystudio107/craft-seomatic",
@@ -3461,6 +3461,47 @@
                 "psr-3"
             ],
             "time": "2016-10-10T12:19:37+00:00"
+        },
+        {
+            "name": "putyourlightson/craft-entry-count",
+            "version": "2.0.1",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/putyourlightson/craft-entry-count/zipball/036545e072ba8b2173b31b4ae6ccfa372fae1901",
+                "reference": "036545e072ba8b2173b31b4ae6ccfa372fae1901",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Entry Count",
+                "handle": "entry-count",
+                "developer": "PutYourLightsOn",
+                "developerUrl": "https://www.putyourlightson.net/",
+                "schemaVersion": "2.0.0",
+                "hasCpSettings": true,
+                "hasCpSection": true,
+                "changelogUrl": "https://raw.githubusercontent.com/putyourlightson/craft-entry-count/v2/CHANGELOG.md",
+                "class": "putyourlightson\\entrycount\\EntryCount"
+            },
+            "autoload": {
+                "psr-4": {
+                    "putyourlightson\\entrycount\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Count and display the number of times that an entry has been viewed.",
+            "homepage": "https://www.putyourlightson.net/craft-entry-count",
+            "support": {
+                "docs": "https://www.putyourlightson.net/craft-entry-count/docs",
+                "source": "https://github.com/putyourlightson/craft-entry-count",
+                "issues": "https://github.com/putyourlightson/craft-entry-count/issues"
+            },
+            "time": "2018-05-17T16:04:57+00:00"
         },
         {
             "name": "ralouphie/mimey",
@@ -3922,11 +3963,11 @@
         },
         {
             "name": "rynpsc/craft-phone-number",
-            "version": "1.1.0",
+            "version": "1.1.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rynpsc/craft-phone-number/zipball/4150bc29b64482d2ac19baee2faf313554ae05b9",
-                "reference": "4150bc29b64482d2ac19baee2faf313554ae05b9",
+                "url": "https://api.github.com/repos/rynpsc/craft-phone-number/zipball/b427953734ebda5746d2b7674edfd2952b28c313",
+                "reference": "b427953734ebda5746d2b7674edfd2952b28c313",
                 "shasum": ""
             },
             "require": {
@@ -3969,7 +4010,7 @@
                 "source": "https://github.com/rynpsc/craft-phone-number",
                 "docs": "https://github.com/rynpsc/craft-phone-number"
             },
-            "time": "2018-09-10T18:32:23+00:00"
+            "time": "2018-09-24T18:29:32+00:00"
         },
         {
             "name": "seld/cli-prompt",
