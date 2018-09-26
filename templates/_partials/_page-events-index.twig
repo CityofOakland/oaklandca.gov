@@ -1,0 +1,13 @@
+{% paginate events as pageInfo, pageEntries %}
+{% include '_partials/_elements/_pagination' %}
+{% for entry in pageEntries %}
+  {% include '_partials/_elements/_horizontal-cards' with {
+    title: entry.title,
+    url: entry.url,
+    icon: 'calendar',
+    photo: entry.eventImage.one,
+    byline: entry.startDate.format("M d, Y"),
+    body: entry.body | chop(limit=80, unit='w', append='…')
+  } %}
+{% endfor %}
+{% include '_partials/_elements/_pagination' %}
