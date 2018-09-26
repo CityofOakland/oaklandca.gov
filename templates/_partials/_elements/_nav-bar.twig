@@ -25,12 +25,12 @@
 {% endif %}
 {% set mainNav = craft.entries.section('navigation').slug('main-nav').one() %}
 
-<div class="bg-shark relative text-white block w-full z-50 trans trans-fast nav-bar md:{{ bgColor }} md:fixed md:h-40" id="nav-bar">
+<div class="bg-shark relative text-white block w-full z-50 trans trans-fast nav-bar md:{{ bgColor }} md:fixed" id="nav-bar">
   <div class="px-8">
     <nav class="flex items-center justify-between">
       <div>
-        <a href="/" class="block py-8 text-white hover:text-apple fill-current trans-fast md:pt-16 md:mb-8">
-          {{ craft.inlin.er('/assets/img/logo-oakland.svg') | replace('<svg ', '<svg class="h-8 md:h-16" ') | raw }}
+        <a href="/" class="block py-4 md:py-8 text-white hover:text-apple fill-current trans-fast">
+          {{ craft.inlin.er('/assets/img/logo-oakland.svg') | replace('<svg ', '<svg class="h-12 md:h-16" ') | raw }}
         </a>
       </div>
       <button id="menu-toggle" class="btn fixed flex pin-r hover:bg-apple z-40 md:relative md:-mr-8 lg:hidden">Menu</button>

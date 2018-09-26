@@ -116,8 +116,8 @@ main, footer {
 }
 
 @media (min-width: 768px) {
-  main, footer {
-    padding-top: 10rem;
+  main {
+    padding-top: 8.453125rem;
   }
 }
 

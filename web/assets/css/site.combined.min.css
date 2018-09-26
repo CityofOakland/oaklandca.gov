@@ -1,8 +1,8 @@
 /**
  * @project        oakland
  * @author         Christopher Kennedy, onebrightlight <chris@onebrightlight.com>
- * @build          Wed, Sep 19, 2018 4:31 PM ET
- * @release        a3142da8fbba3cc07fde0660d2134e6072415cbb [master]
+ * @build          Wed, Sep 26, 2018 11:35 AM ET
+ * @release        65a884afd2275ac0ceafa6cfd0af7fb4d6b4b528 [master]
  * @copyright      Copyright (c) 2018, onebrightlight
  *
  */
@@ -812,9 +812,8 @@ footer {
 }
 
 @media (min-width: 768px) {
-  main,
-  footer {
-    padding-top: 10rem;
+  main {
+    padding-top: 8.453125rem;
   }
 }
 
