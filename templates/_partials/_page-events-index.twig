@@ -1,5 +1,5 @@
 {% set sectionName = craft.app.request.getSegment(1) %}
-{% paginate events as pageInfo, pageEntries %}
+{% paginate craft.calendar.events(eventOptions) as pageInfo, pageEntries %}
 {% include '_partials/_elements/_pagination' %}
 {% for entry in pageEntries %}
   {% include '_partials/_elements/_horizontal-cards' with {

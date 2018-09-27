@@ -21,22 +21,23 @@
     bannerTitle: bannerTitle,
     breadCrumbLinks: breadCrumbLinks,
   } %}
-  {% include '_partials/_elements/_search-bar' with { searchSegment: "meetings"} %}
+  {# {% include '_partials/_elements/_search-bar' with { searchSegment: "meetings"} %} #}
   <section class="bg-white relative z-0">
     <div class="container mx-auto p-8 py-16">
-      {% set events = craft.calendar.events({
+      {% set eventOptions = {
         calendarId: 3,
         rangeStart: now | date('Y-m-d'),
         rangeEnd: now | date_modify('+1 year') | date('Y-m-d'),
         relatedTo: relatedEntry,
         limit: 10
-      }) %}
+      } %}
+      {% set events = craft.calendar.events(eventOptions) %}
       {% if events | length %}
         <div class="text-right">
           <a href="/{{ craft.app.request.segments | array_splice(1, 0, 'archive') | join('/') }}" class="btn btn-sm px-4">View Past Meetings</a>
         </div>
       {% endif %}
-      {% include '_partials/_page-events-index' %}
+      {% include '_partials/_page-events-index' with {eventOptions: eventOptions} %}
     </div>
   </section>
 {% endblock %}
