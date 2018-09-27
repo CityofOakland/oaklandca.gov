@@ -2,15 +2,17 @@
 {% set entry = craft.entries.section('meetingsIndex').one %}
 {% set relatedEntry = null %}
 {% set bannerTitle = entry.title | replace(' Index', '') %}
-{% set breadCrumbLinks = [
-  {
-    title: 'Public Meetings',
-    link: '/meetings'
-  }
-] %}
+{% set breadCrumbLinks = '' %}
+
 {% if craft.app.request.getSegment(2) == 'related-to' %}
   {% set relatedEntry = craft.entries.section(section).slug(slug).one %}
   {% set bannerTitle = entry.title | replace(' Index', '') ~ ' for ' ~ relatedEntry.title %}
+  {% set breadCrumbLinks = [
+    {
+      title: 'Public Meetings',
+      link: '/meetings'
+    }
+  ] %}
 {% endif %}
 
 {% block content %}
@@ -29,6 +31,11 @@
         relatedTo: relatedEntry,
         limit: 10
       }) %}
+      {% if events | length %}
+        <div class="text-right">
+          <a href="/{{ craft.app.request.segments | array_splice(1, 0, 'archive') | join('/') }}" class="btn btn-sm px-4">View Past Meetings</a>
+        </div>
+      {% endif %}
       {% include '_partials/_page-events-index' %}
     </div>
   </section>

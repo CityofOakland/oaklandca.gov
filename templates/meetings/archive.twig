@@ -30,6 +30,11 @@
         order: 'startDate DESC',
         limit: 10
       }) %}
+      {% if events | length %}
+        <div class="text-right">
+          <a href="/{{ craft.app.request.segments | join('/') | replace({'meetings/archive/': 'meetings/'}) }}" class="btn btn-sm px-4">View Upcoming Meetings</a>
+        </div>
+      {% endif %}
       {% include '_partials/_page-events-index' %}
     </div>
   </section>

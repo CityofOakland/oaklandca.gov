@@ -21,8 +21,8 @@
 return [
   'boards-commissions/related-to/<slug>' => ['template' => 'boards-commissions'],
   'documents/related-to/<slug>' => ['template' => 'documents'],
-  'events/related-to/<slug>' => ['template' => 'events'],
-  'events/archive/related-to/<slug>' => ['template' => 'events/archive'],
+  'events/related-to/<section>/<slug>' => ['template' => 'events'],
+  'events/archive/related-to/<section>/<slug>' => ['template' => 'events/archive'],
   'meetings/related-to/<section>/<slug>' => ['template' => 'meetings'],
   'meetings/archive/related-to/<section>/<slug>' => ['template' => 'meetings/archive'],
   'news/related-to/<slug>' => ['template' => 'news'],

@@ -1,18 +1,16 @@
 {% extends '_layout' %}
 {% set entry = craft.entries.section('eventsIndex').one %}
 {% set relatedEntry = null %}
-{% set bannerTitle = entry.title | replace(' Index', '') %}
-{% set breadCrumbLinks = '' %}
-
-{% if craft.app.request.getSegment(2) == 'related-to' %}
+{% set bannerTitle = entry.title | replace(' Index', '') ~ ' Archive' %}
+{% set breadCrumbLinks = [
+  {
+    title: 'Events',
+    link: '/events'
+  }
+] %}
+{% if craft.app.request.getSegment(3) == 'related-to' %}
   {% set relatedEntry = craft.entries.section(section).slug(slug).one %}
-  {% set bannerTitle = entry.title | replace(' Index', '') ~ ' for ' ~ relatedEntry.title %}
-  {% set breadCrumbLinks = [
-    {
-      title: 'Events',
-      link: '/events'
-    }
-  ] %}
+  {% set bannerTitle = entry.title | replace(' Index', '') ~ ' Archive for ' ~ relatedEntry.title %}
 {% endif %}
 
 {% block content %}
@@ -26,14 +24,15 @@
     <div class="container mx-auto p-8 py-16">
       {% set events = craft.calendar.events({
         calendarId: 2,
-        rangeStart: now | date('Y-m-d'),
-        rangeEnd: now | date_modify('+1 year') | date('Y-m-d'),
+        rangeEnd: now,
+        endsBefore: now,
         relatedTo: relatedEntry,
+        order: 'startDate DESC',
         limit: 10
       }) %}
       {% if events | length %}
         <div class="text-right">
-          <a href="/{{ craft.app.request.segments | array_splice(1, 0, 'archive') | join('/') }}" class="btn btn-sm px-4">View Past Events</a>
+          <a href="/{{ craft.app.request.segments | join('/') | replace({'events/archive': 'events'}) }}" class="btn btn-sm px-4">View Upcoming Events</a>
         </div>
       {% endif %}
       {% include '_partials/_page-events-index' %}
