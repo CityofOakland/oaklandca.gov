@@ -2,24 +2,27 @@
 {% set entry = event %}
 
 {% block content %}
-  {% include '_partials/_page-banners' with {
-    bannerImage: entry.eventImage,
-    bannerImageBlur: 'large',
-    breadCrumbs: true,
-    breadCrumbLinks: [
-      {
-        title: 'Events',
-        link: '/events'
-      }
-    ],
-  } %}
+  {% block banner %}
+    {% include '_partials/_page-banners' with {
+      bannerImage: entry.eventImage,
+      bannerImageBlur: 'large',
+      breadCrumbs: true,
+      breadCrumbLinks: [
+        {
+          title: 'Events',
+          link: '/events'
+        }
+      ],
+    } %}
+  {% endblock %}
   <section class="bg-white relative z-0">
     <div class="container mx-auto p-8 py-16 sm:flex">
       <div class="sm:w-2/3 sm:mr-8">
         {% if entry.occurrenceCount > 1 %}
-          <h3>Dates:</h3>
+          <h3>Upcoming Dates:</h3>
           <div class="flex flex-wrap">
-            {% for event in entry.occurrences %}
+            {# {{ entry.occurrences | length }} #}
+            {% for event in entry.occurrences | slice(0, 6) %}
               {% set startDate = event.startDate %}
               {# TODO: Develop a decent method for displaying this with screen readers. #}
               <div class="w-24 border border-shark mb-4 mr-4 flex flex-col text-center">
@@ -47,7 +50,9 @@
           <h3>Documents</h3>
           <div class="card-grid wide-cards mt-8">
             {% for entry in entry.documents.all() %}
-              {% include '_partials/_elements/_title-cards' %}
+              {% include '_partials/_elements/_title-cards' with {
+                cardColor: 'bg-cararra'
+              } %}
             {% endfor %}
           </div>
         {% endif %}

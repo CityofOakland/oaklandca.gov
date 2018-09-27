@@ -1,1 +1,15 @@
 {% extends 'events/_entry' %}
+
+{% block banner %}
+  {% include '_partials/_page-banners' with {
+    bannerImage: entry.eventImage,
+    bannerImageBlur: 'large',
+    breadCrumbs: true,
+    breadCrumbLinks: [
+      {
+        title: 'Meetings',
+        link: '/meetings'
+      }
+    ],
+  } %}
+{% endblock %}
