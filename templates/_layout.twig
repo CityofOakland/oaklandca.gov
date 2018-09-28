@@ -15,7 +15,7 @@
 {% endif %}
 
 {% set mainNav = craft.entries.section('navigation').slug('main-nav').one() %}
-<body class="{{ pageClass ?? '' }}">
+<body class="overflow-x-hidden {{ pageClass ?? '' }}">
   {% include '_partials/_elements/_mobile-nav-bar' %}
   <div class="page-holder">
     {% include '_partials/_elements/_nav-bar' %}
