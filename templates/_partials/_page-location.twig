@@ -34,6 +34,21 @@
               {% endfor %}
             </ul>
           {% endif %}
+          {% set phonesTrue = entry.phoneNumber ?? entry.faxNumber ?? entry.ttyNumber ?? false %}
+          {% if phonesTrue %}
+            <h3 class="text-2xl mb-0">Phone Numbers</h3>
+            <ul class="list-reset mb-8">
+              {% if entry.phoneNumber | length %}
+                <li>Phone Number: <a href="tel:{{ entry.phoneNumber }}">{{ entry.phoneNumber }}</a></li>
+              {% endif %}
+              {% if entry.faxNumber | length %}
+                <li>Fax Number: <a href="tel:{{ entry.faxNumber }}">{{ entry.faxNumber }}</a></li>
+              {% endif %}
+              {% if entry.ttyNumber | length %}
+                <li>TTY Number: {{ entry.ttyNumber }}</li>
+              {% endif %}
+            </ul>
+          {% endif %}
           {% if entry.emailAddress | length %}
             <h3 class="text-2xl mb-0">Email Address</h3>
             <p>
