@@ -1,4 +1,10 @@
 {% extends '_layout' %}
+{# Sets any overrides for the staff imports #}
+{% set firstName = entry.firstName ?? entry.staffImportGivenName ?? '' %}
+{% set middleInitial = entry.middleInitial ?? entry.staffImportMiddleInitial ?? '' %}
+{% set lastName = entry.lastName ?? entry.staffImportSurname ?? '' %}
+{% set jobTitle = entry.jobTitle ?? entry.staffImportJobTitle ?? '' %}
+{% set email = entry.emailAddress ?? entry.staffImportEmail ?? '' %}
 
 {% block content %}
   {% include '_partials/_page-banners' with {
@@ -9,7 +15,7 @@
         link: '/staff'
       }
     ],
-    leadIn: entry.jobTitle,
+    leadIn: jobTitle,
     smallBanner: true
   } %}
   <section class="bg-white">
@@ -28,14 +34,20 @@
           {% set dobc = entry.departmentOfficialBoardCommission %}
           {% if dobc.exists() %}
             <h3 class="text-lg font-bold flex items-center"><span class="w-16">Team: </span><a href="{{ dobc.one.url }}" class="flex-1 btn btn-bright btn-sm inline-block text-center">{{ dobc.one.title }}</a></h3>
+          {% elseif entry.staffImportDepartment | length %}
+            <h3 class="text-lg font-bold flex items-center">{{ entry.staffImportDepartment }}</h3>
           {% endif %}
         </div>
         <div class="sm:flex-1">
           <h2 class="text-3xl sm:mt-0 mb-0">{{ entry.title }}</h2>
-          <p class="text-xl mt-2">{{ entry.jobTitle }}</p>
-          <div class="text-xl mt-8">{{ entry.bio }}</div>
-          {% if entry.emailAddress | length %}
-            <p class="my-0"><span class="font-bold">Email Address:</span> <a href="mailto:{{ entry.emailAddress }}">{{ entry.emailAddress }}</a></p>
+          <p class="text-xl mt-2">
+            {{ jobTitle }}
+          </p>
+          {% if entry.bio | length %}
+            <div class="text-xl mt-8">{{ entry.bio }}</div>
+          {% endif %}
+          {% if email | length %}
+            <p class="my-0"><span class="font-bold">Email Address:</span> <a href="mailto:{{ email }}">{{ email }}</a></p>
           {% endif %}
           {% if entry.phoneNumber | length %}
             <p class="my-0"><span class="font-bold">Phone Number:</span> <a href="tel:{{ entry.phoneNumber }}">{{ entry.phoneNumber }}</a></p>
