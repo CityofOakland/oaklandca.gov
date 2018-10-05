@@ -26,6 +26,7 @@
           </div>
         {% endif %}
         <div class="{% if entry.addresses | length or entry.address | length %}lg:w-1/2 lg:pl-8{% else %} flex-1{% endif %}">
+          {% set phonesTrue = entry.phoneNumber ?? entry.faxNumber ?? entry.ttyNumber ?? false %}
           {% if entry.phoneNumbers | length %}
             <h3 class="text-2xl mb-0">Phone Numbers</h3>
             <ul class="list-reset mb-8">
@@ -33,9 +34,7 @@
                 {% include '_partials/_elements/_phone-numbers' %}
               {% endfor %}
             </ul>
-          {% endif %}
-          {% set phonesTrue = entry.phoneNumber ?? entry.faxNumber ?? entry.ttyNumber ?? false %}
-          {% if phonesTrue %}
+          {% elseif phonesTrue %}
             <h3 class="text-2xl mb-0">Phone Numbers</h3>
             <ul class="list-reset mb-8">
               {% if entry.phoneNumber | length %}
