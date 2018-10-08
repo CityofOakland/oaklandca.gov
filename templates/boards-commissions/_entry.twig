@@ -24,7 +24,10 @@
       'contact': true
     }
   } %}
-  {% include '_partials/_page-meetings' %}
+  {% include '_partials/_page-meetings' with {
+    pageMeetingsLinkUrl: '/' ~ entry.uri ~ '/meetings',
+    pageMeetingsLinkText: 'View All Meetings'
+  } %}
   {% include '_partials/_page-documents' %}
   {% include '_partials/_page-projects' %}
   {% include '_partials/_page-topics' %}
