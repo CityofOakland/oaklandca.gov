@@ -1,0 +1,2 @@
+<a href="{{ file.url }}" class="fill-current trans-fast flex items-center"><div class="inline-block h-5 w-8">{{ craft.inlin.er('/assets/img/icon-' ~ file.kind ~ '.svg') | replace('<svg ', '<svg class="h-full w-full" ') | raw }}</div>{{ entry.title }} ({{ file.kind | upper }})</a>
+<span class="text-sm mt-0 pl-8 block"><a class="text-astronaut hover:text-camouflage-grey" href="{{ entry.url }}">Permalink</a></span>

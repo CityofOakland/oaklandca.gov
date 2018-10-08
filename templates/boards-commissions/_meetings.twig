@@ -1,0 +1,125 @@
+{% extends '_layouts/_banner-with-nav' %}
+{% set entry = craft.entries.section('boardsCommissions').slug(craft.app.request.getSegment(2)).one %}
+
+{% set relatedmeetings = craft.calendar.events.relatedTo(entry) %}
+{% set relatedNews = craft.entries.section('news').relatedTo(entry) %}
+
+{# Use these variables to set the table status attributes #}
+{% set tableColorPalette = {
+  'active': {
+    'textColor': 'shark',
+    'bgColor': 'white',
+  },
+  'canceled': {
+    'textColor': 'white',
+    'bgColor': 'apple',
+  },
+  'rescheduled': {
+    'textColor': 'white',
+    'bgColor': 'shark',
+  },
+} %}
+
+
+{% block content %}
+  {% include '_partials/_page-banners' with {
+    bannerTitle: 'Meetings for ' ~ entry.title,
+    leadIn: 'The following is an exhaustive list of all meetings found on the <a class="text-white font-bold hover:text-apple" href="https://oaklandca.gov">oaklandca.gov</a> website related to ' ~ entry.title,
+    breadCrumbs: true,
+    breadCrumbLinks: [
+      {
+        title: 'Boards & Commissions',
+        link: '/boards-commissions'
+      },
+      {
+        title: entry.title,
+        link: entry.url
+      }
+    ],
+    ctaButton: false
+  } %}
+  {% set eventOptions = {
+    calendarId: 3,
+    relatedTo: entry,
+    order: "startDate DESC",
+    limit: null
+  } %}
+  {% set events = craft.calendar.events(eventOptions) %}
+  <section class="bg-white">
+    <div class="container mx-auto px-8 py-16">
+      {% js %}
+        {% include '_js/responsivetable.js'  %}
+        responsiveTable('meetings');
+      {% endjs %}
+      {% css %}
+        @media screen and (max-width: 575px) {
+          #meetings caption { background-image: none; }
+          #meetings thead { display: none; }
+          #meetings tbody td {
+            display: block; padding: .6rem;
+          }
+          #meetings tbody tr td:first-child {
+          }
+          #meetings tbody td:before {
+            content: attr(data-th);
+            font-weight: bold;
+            display: block;
+            width: 100%;
+          }
+        }
+      {% endcss %}
+      {% if events | length %}
+        <table id="meetings" class="border border-camouflage-green w-full text-sm">
+          <thead>
+            <tr>
+              <th class="border border-camouflage-green bg-camouflage-green text-white">Meeting</th>
+              <th class="border border-camouflage-green bg-camouflage-green text-white">Date</th>
+              <th class="border border-camouflage-green bg-camouflage-green text-white">Meeting Minutes</th>
+              <th class="border border-camouflage-green bg-camouflage-green text-white">Agenda</th>
+              <th class="border border-camouflage-green bg-camouflage-green text-white">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for event in events.all() %}
+              {% set documents = event.documents %}
+              {% set minutes = craft.categories.group('documentTypes').id(12).one %}
+              {% set agendas = craft.categories.group('documentTypes').id(13).one %}
+              <tr>
+                <td class="border border-camouflage-green bg-camouflage-green text-white sm:bg-white sm:text-shark">
+                  <a class="text-white sm:text-curious-blue" href="{{ event.url }}">{{ event.title }}</a>
+                </td>
+                <td class="border border-camouflage-green">
+                  {{ event.startDate | date('M j, Y') }}
+                </td>
+                <td class="border border-camouflage-green">
+                  {% if documents.relatedTo(minutes) | length %}
+                    {% for document in documents.all() %}
+                      {% set file = document.documentFile.one %}
+                      <a href="{{ file.url }}">{{ file.title }}</a><br>
+                    {% endfor %}
+                  {% else %}
+                    N/A
+                  {% endif %}
+                </td>
+                <td class="border border-camouflage-green">
+                  {% if documents.relatedTo(agendas) | length %}
+                    {% for document in documents.all() %}
+                      {% set file = document.documentFile.one %}
+                      <a href="{{ file.url }}">{{ file.title }}</a><br>
+                    {% endfor %}
+                  {% else %}
+                    N/A
+                  {% endif %}
+                </td>
+                {% set eventStatus = event.eventStatus.value ?? 'active' %}
+                {% set tableColor = tableColorPalette[eventStatus] %}
+                <td class="border border-camouflage-green bg-{{ tableColor.bgColor }} text-{{ tableColor.textColor }}">
+                  {{ event.eventStatus.label ?? 'Active' }}
+                </td>
+            {% endfor %}
+          </tbody>
+        </table>
+      {% endif %}
+    </div>
+  </section>
+{% endblock %}

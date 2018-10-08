@@ -21,7 +21,6 @@
         {% if entry.occurrenceCount > 1 %}
           <h3>Upcoming Dates:</h3>
           <div class="flex flex-wrap">
-            {# {{ entry.occurrences | length }} #}
             {% for event in entry.occurrences | slice(0, 6) %}
               {% set startDate = event.startDate %}
               {# TODO: Develop a decent method for displaying this with screen readers. #}
@@ -46,17 +45,53 @@
           <h3>Details</h3>
           {{ entry.body }}
         {% endif %}
-        {% if entry.documents.exists() %}
-          <h3>Documents</h3>
-          <div class="card-grid wide-cards mt-8">
-            {% for entry in entry.documents.all() %}
-              {% include '_partials/_elements/_title-cards' with {
-                url: entry.documentFile.one.url,
-                title: entry.documentType.one.title ~ ': <br> ' ~ entry.title,
-                cardColor: 'bg-cararra'
-              } %}
+        {# .relatedTo('and', 'not ' ~ minutes ~ ', not ' ~ agendas).all() #}
+        {% set minuteCat = craft.categories.group('documentTypes').id(12).one %}
+        {% set agendaCat = craft.categories.group('documentTypes').id(13).one %}
+
+        {% set minuteIds = craft.entries.relatedTo(minuteCat).ids() %}
+        {% set agendaIds = craft.entries.relatedTo(agendaCat).ids() %}
+
+        {% set otherDocs = 'and, not ' ~ agendaIds | join(', not ') ~ ', not ' ~ minuteIds | join(', not ')  %}
+
+        {% set minutes = entry.documents.id(minuteIds).all() %}
+        {% set agendas = entry.documents.id(agendaIds).all() %}
+        {% set documents = entry.documents.id(otherDocs).all() %}
+
+        {% if minutes | length %}
+          <h3>Minutes</h3>
+          <ul class="list-reset">
+            {% for entry in minutes %}
+              {% set file = entry.documentFile.one %}
+              <li class="mb-4">
+                {% include '_partials/_elements/_document-text' %}
+              </li>
             {% endfor %}
-          </div>
+          </ul>
+        {% endif %}
+
+        {% if agendas | length %}
+          <h3>Agendas</h3>
+          <ul class="list-reset">
+            {% for entry in agendas %}
+              {% set file = entry.documentFile.one %}
+              <li class="mb-4">
+                {% include '_partials/_elements/_document-text' %}
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+
+        {% if documents | length %}
+          <h3>Documents</h3>
+          <ul class="list-reset">
+            {% for entry in documents %}
+              {% set file = entry.documentFile.one %}
+              <li class="mb-4">
+                {% include '_partials/_elements/_document-text' %}
+              </li>
+            {% endfor %}
+          </ul>
         {% endif %}
         {% if entry.videoLink | length %}
           <h3>Video</h3>
@@ -83,6 +118,8 @@
             <div class='embed-container'>
               <iframe src='{{ embed }}' frameborder='0' allowfullscreen="allowfullscreen"></iframe>
             </div>
+          {% else %}
+            <p><a href="{{ entry.videoLink }}" target="_blank">Meeting Video ({{ entry.videoLink }})</a></p>
           {% endif %}
         {% endif %}
         {% if entry.eventContact | length %}
