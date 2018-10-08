@@ -1,6 +1,8 @@
 {% extends '_layouts/_banner-with-nav' %}
 {% set entry = craft.entries.section('boardsCommissions').slug(craft.app.request.getSegment(2)).one %}
 
+{% do seomatic.meta.seoTitle("Meetings for " ~ entry.title) %}
+{% do seomatic.meta.seoDescription("An exhaustive list of all meetings found on the oaklandca.gov website related to " ~ entry.title) %}
 {% set relatedmeetings = craft.calendar.events.relatedTo(entry) %}
 {% set relatedNews = craft.entries.section('news').relatedTo(entry) %}
 
