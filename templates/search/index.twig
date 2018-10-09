@@ -103,12 +103,18 @@
 
       {% if entries | length %}
         {% if sections | length > 1 %}
+          {% set entry = entries.one %}
+          {% if entry.redirectUrl | length %}
+            {% set url = entry.redirectUrl %}
+          {% else %}
+            {% set url = entry.url %}
+          {% endif %}
           <div class="md:flex">
             <div class="md:w-1/4 md:pr-4">
               <h3 class="text-xl my-0">Top Hit</h3>
             </div>
             <div class="flex-1">
-              <a class="block w-full sm:pl-2 hover:bg-curious-blue hover:text-white" href="{{ entries.one.url }}">{{ entries.one.title }} (in {{ entries.one.section.name }})</a>
+              <a class="block w-full sm:pl-2 hover:bg-curious-blue hover:text-white" href="{{ url }}">{{ entry.title }} (in {{ entry.section.name }})</a>
             </div>
           </div>
         {% endif %}
@@ -121,7 +127,12 @@
               <div class="flex-1">
                 {% for entry in entries.section(currentSection.handle).all() %}
                   <article class="mb-3">
-                    <a class="block w-full sm:pl-2 hover:bg-curious-blue hover:text-white" href="{{ entry.url }}">{{ entry.title }}</a>
+                    {% if entry.redirectUrl | length %}
+                      {% set url = entry.redirectUrl %}
+                    {% else %}
+                      {% set url = entry.url %}
+                    {% endif %}
+                    <a class="block w-full sm:pl-2 hover:bg-curious-blue hover:text-white" href="{{ url }}">{{ entry.title }}</a>
                   </article>
                 {% endfor %}
               </div>
