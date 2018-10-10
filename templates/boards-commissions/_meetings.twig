@@ -1,27 +1,29 @@
 {% extends '_layouts/_banner-with-nav' %}
+{# Since this page doesn’t actually exist as an entry, we define our entry here #}
 {% set entry = craft.entries.section('boardsCommissions').slug(craft.app.request.getSegment(2)).one %}
 
+{# We set the metadata title and description here for our fake page data. #}
 {% do seomatic.meta.seoTitle("Meetings for " ~ entry.title) %}
 {% do seomatic.meta.seoDescription("An exhaustive list of all meetings found on the oaklandca.gov website related to " ~ entry.title) %}
+
 {% set relatedmeetings = craft.calendar.events.relatedTo(entry) %}
 {% set relatedNews = craft.entries.section('news').relatedTo(entry) %}
 
-{# Use these variables to set the table status attributes #}
+{# Use these variables to set the table status attributes  #}
 {% set tableColorPalette = {
   'active': {
-    'textColor': 'shark',
-    'bgColor': 'white',
+    'statusTextColor': 'shark',
+    'statusBgColor': 'white',
   },
   'canceled': {
-    'textColor': 'white',
-    'bgColor': 'apple',
+    'statusTextColor': 'white',
+    'statusBgColor': 'apple',
   },
   'rescheduled': {
-    'textColor': 'white',
-    'bgColor': 'shark',
+    'statusTextColor': 'white',
+    'statusBgColor': 'shark',
   },
 } %}
-
 
 {% block content %}
   {% include '_partials/_page-banners' with {
@@ -49,6 +51,7 @@
   {% set events = craft.calendar.events(eventOptions) %}
   <section class="bg-white">
     <div class="container mx-auto px-8 py-16">
+      {# The below tag pairs set javascript and CSS for our responsive tables #}
       {% js %}
         {% include '_js/responsivetable.js'  %}
         responsiveTable('meetings');
@@ -87,7 +90,7 @@
               {% set minutes = craft.categories.group('documentTypes').id(12).one %}
               {% set agendas = craft.categories.group('documentTypes').id(13).one %}
               <tr>
-                <td class="border border-camouflage-green bg-camouflage-green text-white sm:bg-white sm:text-shark">
+                <td class="border border-camouflage-green bg-camouflage-green text-white sm:bg-white sm:text-shark"
                   <a class="text-white sm:text-curious-blue" href="{{ event.url }}">{{ event.title }}</a>
                 </td>
                 <td class="border border-camouflage-green">
@@ -115,7 +118,7 @@
                 </td>
                 {% set eventStatus = event.eventStatus.value ?? 'active' %}
                 {% set tableColor = tableColorPalette[eventStatus] %}
-                <td class="border border-camouflage-green bg-{{ tableColor.bgColor }} text-{{ tableColor.textColor }}">
+                <td class="border border-camouflage-green bg-{{ tableColor.statusBgColor }} text-{{ tableColor.statusTextColor }}">
                   {{ event.eventStatus.label ?? 'Active' }}
                 </td>
             {% endfor %}
