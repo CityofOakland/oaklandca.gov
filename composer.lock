@@ -4,19 +4,19 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "526768a875b53a8114584e719a195fe0",
+    "content-hash": "13078daa0f059829b71151096eeb57dc",
     "packages": [
         {
             "name": "aelvan/inlin",
-            "version": "2.0.0",
+            "version": "2.1.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aelvan/Inlin-Craft/zipball/0887d3c77b36b74002fba00e8261f1134dbe862b",
-                "reference": "0887d3c77b36b74002fba00e8261f1134dbe862b",
+                "url": "https://api.github.com/repos/aelvan/Inlin-Craft/zipball/07a1c05bf5c649eacee5bfee0b1bf4b928e223d4",
+                "reference": "07a1c05bf5c649eacee5bfee0b1bf4b928e223d4",
                 "shasum": ""
             },
             "require": {
-                "craftcms/cms": "~3.0.0-beta.23"
+                "craftcms/cms": "^3.0.0"
             },
             "type": "craft-plugin",
             "extra": {
@@ -57,7 +57,7 @@
                 "docs": "https://github.com/aelvan/Inlin-Craft/blob/craft3/README.md",
                 "issues": "https://github.com/aelvan/Inlin-Craft/issues"
             },
-            "time": "2017-08-09T22:00:10+00:00"
+            "time": "2018-10-06T21:37:30+00:00"
         },
         {
             "name": "algolia/algoliasearch-client-php",
@@ -559,6 +559,57 @@
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
             "time": "2018-09-29T22:15:04+00:00"
+        },
+        {
+            "name": "craftcms/element-api",
+            "version": "2.5.4",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/craftcms/element-api/zipball/c57ed3ec59b7411d708d40dc9c3b041a9656edba",
+                "reference": "c57ed3ec59b7411d708d40dc9c3b041a9656edba",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0-RC16",
+                "league/fractal": "^0.16.0"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Element API",
+                "handle": "element-api",
+                "changelogUrl": "https://raw.githubusercontent.com/craftcms/element-api/v2/CHANGELOG.md",
+                "downloadUrl": "https://github.com/craftcms/element-api/archive/v2.zip"
+            },
+            "autoload": {
+                "psr-4": {
+                    "craft\\elementapi\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Pixel & Tonic",
+                    "homepage": "https://pixelandtonic.com/"
+                }
+            ],
+            "description": "Create a JSON API for your elements in Craft",
+            "keywords": [
+                "api",
+                "cms",
+                "craftcms",
+                "json",
+                "yii2"
+            ],
+            "support": {
+                "email": "support@craftcms.com",
+                "issues": "https://github.com/craftcms/element-api/issues?state=open",
+                "source": "https://github.com/craftcms/element-api",
+                "docs": "https://github.com/craftcms/element-api",
+                "rss": "https://github.com/craftcms/element-api/commits/v2.atom"
+            },
+            "time": "2018-07-29T13:30:29+00:00"
         },
         {
             "name": "craftcms/oauth2-craftid",
@@ -2879,6 +2930,55 @@
             "time": "2016-05-11T00:19:07+00:00"
         },
         {
+            "name": "monachilada/craft-matrixtoolbar",
+            "version": "1.0.5",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/monachilada/craft-matrixtoolbar/zipball/5109e271488ca9bad6d3accad89b52ffa3c8ada1",
+                "reference": "5109e271488ca9bad6d3accad89b52ffa3c8ada1",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0-RC1"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Matrix Toolbar",
+                "handle": "matrixtoolbar",
+                "hasCpSettings": false,
+                "hasCpSection": false,
+                "changelogUrl": "https://raw.githubusercontent.com/monachilada/craft-matrixtoolbar/master/CHANGELOG.md",
+                "class": "monachilada\\matrixtoolbar\\MatrixToolbar"
+            },
+            "autoload": {
+                "psr-4": {
+                    "monachilada\\matrixtoolbar\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mike Pierce",
+                    "homepage": "https://michaelpierce.trade/"
+                }
+            ],
+            "description": "Expand, collapse, change the status of, or delete multiple blocks in a Matrix field simultaneously.",
+            "keywords": [
+                "cms",
+                "craft",
+                "craft-plugin",
+                "craftcms",
+                "matrix toolbar"
+            ],
+            "support": {
+                "docs": "https://github.com/monachilada/craft-matrixtoolbar/blob/master/README.md",
+                "issues": "https://github.com/monachilada/craft-matrixtoolbar/issues"
+            },
+            "time": "2018-10-08T18:59:07+00:00"
+        },
+        {
             "name": "monolog/monolog",
             "version": "1.23.0",
             "dist": {
@@ -3041,11 +3141,11 @@
         },
         {
             "name": "nystudio107/craft-retour",
-            "version": "3.0.9",
+            "version": "3.0.10",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-retour/zipball/8584a2d4a02ea117d9a5689279a16de100710fdb",
-                "reference": "8584a2d4a02ea117d9a5689279a16de100710fdb",
+                "url": "https://api.github.com/repos/nystudio107/craft-retour/zipball/28e15219eb53dc8f74a53215cb66c936964a0054",
+                "reference": "28e15219eb53dc8f74a53215cb66c936964a0054",
                 "shasum": ""
             },
             "require": {
@@ -3092,7 +3192,7 @@
                 "docs": "https://github.com/nystudio107/retour/blob/v1/README.md",
                 "issues": "https://github.com/nystudio107/retour/issues"
             },
-            "time": "2018-09-25T03:36:29+00:00"
+            "time": "2018-10-05T16:06:44+00:00"
         },
         {
             "name": "nystudio107/craft-seomatic",
@@ -3168,11 +3268,11 @@
         },
         {
             "name": "nystudio107/craft-typogrify",
-            "version": "1.1.11",
+            "version": "1.1.15",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-typogrify/zipball/2a59863e4c797212300e69a7c184f20c8771ca35",
-                "reference": "2a59863e4c797212300e69a7c184f20c8771ca35",
+                "url": "https://api.github.com/repos/nystudio107/craft-typogrify/zipball/92f0bcbab4fb683db8950a5998d8c830ee3d7abe",
+                "reference": "92f0bcbab4fb683db8950a5998d8c830ee3d7abe",
                 "shasum": ""
             },
             "require": {
@@ -3219,7 +3319,7 @@
                 "docs": "https://github.com/nystudio107/craft-typogrify/blob/v1/README.md",
                 "issues": "https://github.com/nystudio107/craft-typogrify/issues"
             },
-            "time": "2018-06-13T03:03:12+00:00"
+            "time": "2018-10-09T21:05:35+00:00"
         },
         {
             "name": "paragonie/random_compat",
@@ -3811,11 +3911,11 @@
         },
         {
             "name": "rias/craft-scout",
-            "version": "0.4.2",
+            "version": "1.0.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Rias500/craft-scout/zipball/92097e3d2e0de8d517a0eee07a9377c56321b5f0",
-                "reference": "92097e3d2e0de8d517a0eee07a9377c56321b5f0",
+                "url": "https://api.github.com/repos/Rias500/craft-scout/zipball/ce6759977f02a98f20987dc07cfa24bc93077bc9",
+                "reference": "ce6759977f02a98f20987dc07cfa24bc93077bc9",
                 "shasum": ""
             },
             "require": {
@@ -3862,7 +3962,7 @@
                 "docs": "https://github.com/Rias500/craft3-scout/blob/master/README.md",
                 "issues": "https://github.com/Rias500/craft3-scout/issues"
             },
-            "time": "2018-07-30T14:56:26+00:00"
+            "time": "2018-10-07T10:07:28+00:00"
         },
         {
             "name": "ringcentral/psr7",
@@ -5122,14 +5222,15 @@
         },
         {
             "name": "topshelfcraft/wordsmith",
-            "version": "3.0.2",
+            "version": "3.0.3",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TopShelfCraft/Wordsmith/zipball/44b7ca6fa1ad4b4b645dd52fcb4cd06ffd5f215a",
-                "reference": "44b7ca6fa1ad4b4b645dd52fcb4cd06ffd5f215a",
+                "url": "https://api.github.com/repos/TopShelfCraft/Wordsmith/zipball/802fd83afd84c4704071ff80182e8b742cb93530",
+                "reference": "802fd83afd84c4704071ff80182e8b742cb93530",
                 "shasum": ""
             },
             "require": {
+                "craftcms/cms": "^3.0.0",
                 "danielstjules/stringy": "~3.1.0",
                 "davechild/textstatistics": "^1.0",
                 "erusev/parsedown-extra": "^0.7.1",
@@ -5179,7 +5280,7 @@
                 "docs": "https://wordsmith.docs.topshelfcraft.com/",
                 "issues": "https://github.com/topshelfcraft/wordsmith/issues"
             },
-            "time": "2017-12-31T18:01:39+00:00"
+            "time": "2018-09-04T23:22:37+00:00"
         },
         {
             "name": "true/punycode",
