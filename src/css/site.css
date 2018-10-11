@@ -65,6 +65,7 @@
       grid-template-columns: repeat(2, 1fr);
     }
   }
+
   @media (min-width: 768px) {
     .card-department-grid {
       grid-template-columns: repeat(2, 1fr);
