@@ -20,8 +20,8 @@
       'documents': entry.pageDocuments.exists(),
       'projects': entry.pageProjects.exists(),
       'topics': entry.pageTopics.exists(),
-      'news': relatedNews.exists(),
       'events': relatedEvents.exists(),
+      'news': relatedNews.exists(),
       'about': true,
       'contact': contactState
     }
@@ -33,8 +33,8 @@
   {% include '_partials/_page-documents' %}
   {% include '_partials/_page-projects' %}
   {% include '_partials/_page-topics' %}
-  {% include '_partials/_page-news' %}
   {% include '_partials/_page-events' %}
+  {% include '_partials/_page-news' %}
   {% include '_partials/_page-about' %}
   {% include '_partials/_page-location' %}
 {% endblock %}
