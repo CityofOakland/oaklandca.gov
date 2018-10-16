@@ -4,29 +4,39 @@
   limit: 3,
   rangeStart: now | date('Y-m-d'),
 } %}
+
+{% set pastOptions = {
+  calendar: "meetings",
+  limit: 3,
+  rangeEnd: now | date('Y-m-d'),
+} %}
+
+{% set pastEvents = craft.calendar.events(pastOptions).relatedTo(entry).all() %}
 {% set relatedEvents = craft.calendar.events(options).relatedTo(entry).all() %}
 
-{% if relatedEvents | length %}
+{% if pastEvents | length or relatedEvents | length %}
   <section class="bg-rotate">
     <a id="page-events" class="anchor-link"></a>
     <div class="container mx-auto p-8 py-16">
       {% include '_partials/_elements/_module-header' with {
         headerText: pageMeetingsHeaderText ?? "Meetings",
-        linkText: pageMeetingsLinkText ?? "Related Meetings",
+        linkText: pageMeetingsLinkText ?? "All Meetings",
         linkUrl: pageMeetingsLinkUrl ?? defaultButtonUrl
       } %}
-      <div class="card-grid vertical-cards mt-8">
-        {% for entry in relatedEvents %}
-          {% include '_partials/_elements/_vertical-cards' with {
-            title: entry.title,
-            url: entry.url,
-            icon: 'calendar',
-            photo: entry.eventImage.one,
-            byline: entry.startDate.format("M d, Y"),
-            body: entry.body | chop(limit=50, unit='w', append='…')
-          } %}
-        {% endfor %}
-      </div>
+      {% if relatedEvents | length %}
+        <div class="card-grid vertical-cards mt-8">
+          {% for entry in relatedEvents %}
+            {% include '_partials/_elements/_vertical-cards' with {
+              title: entry.title,
+              url: entry.url,
+              icon: 'calendar',
+              photo: entry.eventImage.one,
+              byline: entry.startDate.format("M d, Y"),
+              body: entry.body | chop(limit=50, unit='w', append='…')
+            } %}
+          {% endfor %}
+        </div>
+      {% endif %}
     </div>
   </section>
 {% endif %}
