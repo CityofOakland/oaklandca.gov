@@ -1,26 +1,37 @@
+{% macro buttonTemplate(descriptorText, url, buttonText) %}
+  <div>
+    <p class="font-bold">{{ descriptorText }}</p>
+    <a href="{{ url }}" class="btn w-full">{{ buttonText | raw }}</a>
+  </div>
+{% endmacro %}
+{% import _self as macro %}
+
 {% if entry.callToAction | length %}
   <div class="card-grid grid-equal-height mb-16">
     {% for cta in entry.callToAction.all() %}
-      {% set url = '' %}
-      {% set text = '' %}
       {% switch cta.type %}
         {% case "onlineLink" %}
-          {% set url = cta.linkUrl %}
-          {% set text = cta.onlineTitle ~ ' - ' ~ cta.linkText %}
+          {{ macro.buttonTemplate(cta.onlineTitle, cta.linkUrl, cta.linkText) }}
         {% case "phoneNumber" %}
-          {% set url = 'tel:' ~ cta.number | replace('/[^0-9]/', '') %}
-          {% set text = cta.phoneNumberTitle ~ ': ' ~ cta.number %}
-        {% case "physicalAddress" %}
+          {{ macro.buttonTemplate(cta.phoneNumberTitle, 'tel:' ~ cta.number | replace('/[^0-9]/', ''), cta.number) }}
         {% case "documentLink" %}
           {% set doc = cta.documentLink.one %}
-          {% set url = doc.url ?? '' %}
-          {% set text = cta.documentLabel ?? doc.title ~ ' - ' ~ cta.buttonLabel %}
+          {{ macro.buttonTemplate(cta.documentLabel ?? doc.title, doc.url ?? '', cta.buttonLabel) }}
         {% case "emailAddress" %}
-          {% set url = 'mailto:' ~ cta.emailAddress %}
-          {% set text = cta.emailTitle ~ ' - ' ~ cta.linkText %}
+          {{ macro.buttonTemplate(cta.emailTitle, 'mailto:' ~ cta.emailAddress, cta.linkText) }}
+        {% case "physicalAddress" %}
+          <div>
+            {% set location = cta.streetAddress %}
+            <p class="font-bold">{{ cta.addressTitle }}</p>
+            <p>
+              {{ location.street1 }}<br>
+              {% if location.street2 | length %}{{ location.street2 }}<br>{% endif %}
+              {{ location.city }}, {{ location.state }} {{ location.zip }}
+            </p>
+            {{ cta.additionalAddressInfo }}
+          </div>
         {% default %}
       {% endswitch %}
-      <a href="{{ url }}" class="btn">{{ text | raw }}</a>
     {% endfor %}
   </div>
 {% endif %}
