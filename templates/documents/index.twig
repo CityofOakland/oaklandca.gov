@@ -1,14 +1,23 @@
 {% extends '_layout' %}
 {% set entry = craft.entries.section('documentsIndex').one %}
 {% set relatedEntry = null %}
+{% set bannerTitle = entry.title | replace(' Index', '') %}
+{% set breadCrumbLinks = '' %}
+
 {% if craft.app.request.getSegment(2) == 'related-to' %}
-  {% set urlSlug = craft.app.request.getSegment(3) %}
-  {% set relatedEntry = craft.entries.slug(urlSlug).one %}
+  {% set relatedEntry = craft.entries.section(section).slug(slug).one %}
+  {% set bannerTitle = entry.title | replace(' Index', '') ~ ' for ' ~ relatedEntry.title %}
+  {% set breadCrumbLinks = [
+    {
+      title: 'Documents',
+      link: '/documents'
+    }
+  ] %}
 {% endif %}
 
 {% block content %}
   {% include '_partials/_page-banners' with {
-    bannerTitle: entry.title | replace(' Index', ''),
+    bannerTitle: bannerTitle,
     breadCrumbs: true,
   } %}
   {% include '_partials/_elements/_search-bar' with { searchSegment: "documents"} %}
