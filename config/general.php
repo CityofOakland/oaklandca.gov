@@ -39,7 +39,7 @@ return [
     // Staging environment settings
     'staging' => [
         // Base site URL
-        'siteUrl' => null,
+        'siteUrl' => 'https://oak-staging.frb.io',
     ],
 
     // Production environment settings
