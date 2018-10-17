@@ -1,24 +1,23 @@
 {% extends '_layout' %}
+{% set entry = craft.entries.section('volunteerIndex').one %}
+{% set relatedEntry = null %}
+{% if craft.app.request.getSegment(2) == 'related-to' %}
+  {% set urlSlug = craft.app.request.getSegment(3) %}
+  {% set relatedEntry = craft.entries.slug(urlSlug).one %}
+{% endif %}
 
 {% block content %}
   {% include '_partials/_page-banners' with {
     bannerTitle: entry.title | replace(' Index', ''),
     breadCrumbs: true,
-    breadCrumbLinks: [
-      {
-        title: 'Teams',
-        link: '/teams'
-      }
-    ],
   } %}
+  {# {% include '_partials/_elements/_search-bar' with { searchSegment: "staff" } %} #}
   <section class="bg-white relative z-0">
     <div class="container mx-auto p-8 py-16">
-    {% for team in entry.teamMembers.all() %}
-      {% if team.staffHeading | length %}
-        <h3 class="mb-0">{{ team.staffHeading }}</h3>
-      {% endif %}
+      {% paginate craft.entries.section('volunteers').relatedTo(relatedEntry).limit(30).orderBy('title') as pageInfo, pageEntries %}
+      {% include '_partials/_elements/_pagination' %}
       <div class="card-grid grid-equal-height profile-cards mt-12">
-      {% for entry in team.staff.all() %}
+      {% for entry in pageEntries %}
         {% include '_partials/_elements/_profile-cards' with {
           photo: entry.portrait.one,
           name: entry.title,
@@ -28,7 +27,7 @@
         } %}
       {% endfor %}
       </div>
-    {% endfor %}
+      {% include '_partials/_elements/_pagination' %}
     </div>
   </section>
 {% endblock %}
