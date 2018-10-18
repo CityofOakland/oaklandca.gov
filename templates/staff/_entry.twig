@@ -1,11 +1,11 @@
 {% extends '_layout' %}
 {# Sets any overrides for the staff imports #}
-{% set firstName = entry.firstName ?? entry.staffImportGivenName ?? '' %}
-{% set middleInitial = entry.middleInitial ?? entry.staffImportMiddleInitial ?? '' %}
-{% set lastName = entry.lastName ?? entry.staffImportSurname ?? '' %}
-{% set jobTitle = entry.jobTitle ?? entry.staffImportJobTitle ?? '' %}
-{% set email = entry.emailAddress ?? entry.staffImportEmail ?? '' %}
-{% set phone = entry.phoneNumber ?? entry.staffImportPhoneNumber ?? '' %}
+{% set firstName = entry.firstName ??? entry.staffImportGivenName ?? '' %}
+{% set middleInitial = entry.middleInitial ??? entry.staffImportMiddleInitial ?? '' %}
+{% set lastName = entry.lastName ??? entry.staffImportSurname ?? '' %}
+{% set jobTitle = entry.jobTitle ??? entry.staffImportJobTitle ?? '' %}
+{% set email = entry.emailAddress ??? entry.staffImportEmail ?? '' %}
+{% set phone = entry.phoneNumber ??? entry.staffImportPhoneNumber ?? '' %}
 
 {% block content %}
   {% include '_partials/_page-banners' with {

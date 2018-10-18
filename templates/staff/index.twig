@@ -20,8 +20,8 @@
       {% for entry in pageEntries %}
         {% set department = entry.departments.one.title ?? entry.staffImportDepartment ?? '' %}
         {% set organization = entry.staffImportOrganization ?? '' %}
-        {% set email = entry.emailAddress ?? entry.staffImportEmail ?? '' %}
-        {% set phone = entry.phoneNumber ?? entry.staffImportPhoneNumber ?? '' %}
+        {% set email = entry.emailAddress ??? entry.staffImportEmail %}
+        {% set phone = entry.phoneNumber ??? entry.staffImportPhoneNumber %}
         {% set extraContent %}
           {% if department | length %}<br>{{ department }}{% endif %}
           {% if organization | length %}<br>{{ organization }}{% endif %}
@@ -30,6 +30,7 @@
             <br><a href="mailto:{{ e }}">{{ e }}</a>
           {% endif %}
           {% if phone | length %}<br><a href="tel:{{ phone }}">{{ phone }}</a>{% endif %}
+          {{ phone }}
         {% endset %}
 
         {% include '_partials/_elements/_profile-cards' with {

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "13078daa0f059829b71151096eeb57dc",
+    "content-hash": "5a38228d268bef629eea5184e2d21af4",
     "packages": [
         {
             "name": "aelvan/inlin",
@@ -3138,6 +3138,61 @@
                 "time"
             ],
             "time": "2018-09-20T19:36:25+00:00"
+        },
+        {
+            "name": "nystudio107/craft-emptycoalesce",
+            "version": "1.0.2",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nystudio107/craft-emptycoalesce/zipball/0197da163afa855aeb290c1399d86cb257ca7b4a",
+                "reference": "0197da163afa855aeb290c1399d86cb257ca7b4a",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Empty Coalesce",
+                "handle": "empty-coalesce",
+                "hasCpSettings": false,
+                "hasCpSection": false,
+                "changelogUrl": "https://raw.githubusercontent.com/nystudio107/craft-emptycoalesce/v1/CHANGELOG.md",
+                "class": "nystudio107\\emptycoalesce\\EmptyCoalesce"
+            },
+            "autoload": {
+                "psr-0": {
+                    "Twig_": "lib/"
+                },
+                "psr-4": {
+                    "nystudio107\\emptycoalesce\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "nystudio107",
+                    "homepage": "https://nystudio107.com/"
+                }
+            ],
+            "description": "Empty Coalesce adds the ??? operator to Twig that will return the first thing that is defined, not null, and not empty.",
+            "keywords": [
+                "coalesce",
+                "coalescing",
+                "craft-plugin",
+                "craft3",
+                "craftcms",
+                "empty",
+                "operator",
+                "twig"
+            ],
+            "support": {
+                "docs": "https://github.com/nystudio107/craft-emptycoalesce/blob/v1/README.md",
+                "issues": "https://github.com/nystudio107/craft-emptycoalesce/issues"
+            },
+            "time": "2018-10-04T22:19:12+00:00"
         },
         {
             "name": "nystudio107/craft-retour",
