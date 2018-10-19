@@ -30,7 +30,6 @@
             <br><a href="mailto:{{ e }}">{{ e }}</a>
           {% endif %}
           {% if phone | length %}<br><a href="tel:{{ phone }}">{{ phone }}</a>{% endif %}
-          {{ phone }}
         {% endset %}
 
         {% include '_partials/_elements/_profile-cards' with {
