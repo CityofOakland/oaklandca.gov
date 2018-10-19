@@ -38,11 +38,9 @@
           {% elseif entry.staffImportDepartment | length %}
             <h3 class="text-lg font-bold flex items-center">{{ entry.staffImportDepartment }}</h3>
           {% endif %}
-          {% set importOrg = entry.staffImportOrganization %}
           {% set importSec = entry.staffImportSection %}
-          {% if importOrg or importSec %}
+          {% if importSec %}
             <p>
-              {{ importOrg }}{% if importOrg and importSec %}<br>{% endif %}
               {{ importSec }}
             </p>
           {% endif %}
