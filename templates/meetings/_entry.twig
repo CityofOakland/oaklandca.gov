@@ -95,7 +95,13 @@
         {% endif %}
         {% if entry.videoLink | length %}
           <h3>Video</h3>
-          {% set embed = craft.videoEmbedder.getEmbedUrl(entry.videoLink) %}
+          {% set videoUrl = entry.videoLink %}
+          {% set splitVideoUrl = videoUrl | split('://')[1] | split('&')[0] %}
+          {% if splitVideoUrl starts with 'oakland.granicus.com' %}
+            {% set embed = "https://" ~ splitVideoUrl ~ "&starttime=undefined&stoptime=undefined&autostart=0&embed=1" %}
+          {% else %}
+            {% set embed = craft.videoEmbedder.getEmbedUrl(entry.videoLink) %}
+          {% endif %}
           {% if embed | length %}
             <style>
               .embed-container {
