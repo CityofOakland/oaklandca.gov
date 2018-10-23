@@ -9,8 +9,7 @@ return [
   'transformer' => function(Solspace\Calendar\Elements\Event $event) {
     return [
       'title' => $event->title,
-      'id' => $event->id,
-      'eventImage' => ! empty($event->eventImage->one()) ? (string) $event->eventImage->one()->url : null,
+      'eventImage' => ! empty($event->eventImage->one()) ? (string) $event->eventImage->one()->getUrl('thumbFullRatio') : null,
       'url' => $event->url,
       'body' => (string) $event->body,
       'contact' => (string) $event->eventContact,

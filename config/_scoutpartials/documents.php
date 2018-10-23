@@ -12,7 +12,6 @@ return [
       $types[] = $value->title;
     return [
       'title' => $entry->title,
-      'id' => $entry->id,
       'url' => $entry->url,
       'summary' => (string) $entry->summary,
       'categories' => $types,

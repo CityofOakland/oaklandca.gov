@@ -9,9 +9,9 @@ return [
   "application_id" => getenv('ALGOLIA_APP_ID'),
   "admin_api_key" => getenv('ALGOLIA_ADMIN_API'),
   "mappings" => [
-    include('_scoutpartials/news.php'),
     include('_scoutpartials/boards.php'),
     include('_scoutpartials/departments.php'),
+    include('_scoutpartials/news.php'),
     include('_scoutpartials/documents.php'),
     include('_scoutpartials/documentpackets.php'),
     include('_scoutpartials/projects.php'),
@@ -23,5 +23,7 @@ return [
     include('_scoutpartials/meetings.php'),
     include('_scoutpartials/citycouncil.php'),
     include('_scoutpartials/staff.php'),
+    include('_scoutpartials/volunteers.php'),
+    include('_scoutpartials/groups.php'),
   ],
 ];

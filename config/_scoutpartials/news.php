@@ -9,9 +9,8 @@ return [
   'transformer' => function(craft\elements\Entry $entry) {
     return [
       'title' => $entry->title,
-      'id' => $entry->id,
       'url' => $entry->url,
-      'newsImage' => ! empty($entry->newsImage->one()) ? (string) $entry->newsImage->one()->url : null,
+      'newsImage' => ! empty($entry->newsImage->one()) ? (string) $entry->newsImage->one()->getUrl('thumbFullRatio') : null,
       'summary' => (string) $entry->summary,
       'body' => (string) $entry->body,
       'mediaContact' => (string) $entry->mediaContact,

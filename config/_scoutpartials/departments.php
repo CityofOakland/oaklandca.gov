@@ -10,15 +10,13 @@ return [
   'transformer' => function(craft\elements\Entry $entry) {
     return [
       'title' => $entry->title,
-      'id' => $entry->id,
       'url' => $entry->url,
-      'banner' => ! empty($entry->banner->one()) ? (string) $entry->banner->one()->url : null,
-      'ctaButtonText' => ! empty($entry->ctaButton->text) ? (string) $entry->ctaButton->text : null,
+      'banner' => ! empty($entry->banner->one()) ? (string) $entry->banner->one()->getUrl('thumbFullRatio') : null,
       'leadIn' => (string) $entry->leadIn,
       'groupHeadName' => (string) $entry->groupHeadName,
       'groupHeadTitle' => (string) $entry->groupHeadTitle,
       'groupHeadBio' => (string) $entry->groupHeadBio,
-      'groupHeadPortrait' => ! empty($entry->portrait->one()) ? (string) $entry->portrait->one()->url : null,
+      'groupHeadPortrait' => ! empty($entry->portrait->one()) ? (string) $entry->portrait->one()->getUrl('thumbFullRatio') : null,
     ];
   },
 ];

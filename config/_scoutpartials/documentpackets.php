@@ -12,7 +12,6 @@ return [
       $documents[] = $value->title;
     return [
       'title' => $entry->title,
-      'id' => $entry->id,
       'url' => $entry->url,
       'leadIn' => (string) $entry->leadIn,
       'summary' => (string) $entry->summary,

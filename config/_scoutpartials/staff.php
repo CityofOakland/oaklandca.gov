@@ -11,7 +11,7 @@ return [
     return [
       'title' => $entry->title,
       'url' => $entry->url,
-      'portrait' => ! empty($entry->portrait->one()) ? (string) $entry->portrait->one()->url : null,
+      'portrait' => ! empty($entry->portrait->one()) ? (string) $entry->portrait->one()->getUrl('thumbFullRatio') : null,
       'jobTitle' => ! empty($entry->jobTitle ? (string) $entry->jobTitle : (string) $entry->staffImportJobTitle),
       'bio' => (string) $entry->bio,
       'email' => ! empty($entry->emailAddress ? (string) $entry->emailAddress : (string) $entry->staffImportEmail),

@@ -16,9 +16,8 @@ return [
     }
     return [
       'title' => $entry->title,
-      'id' => $entry->id,
       'url' => $entry->url,
-      'banner' => ! empty($entry->banner->one()) ? (string) $entry->banner->one()->url : null,
+      'banner' => ! empty($entry->banner->one()) ? (string) $entry->banner->one()->getUrl('thumbFullRatio') : null,
       'leadIn' => (string) $entry->leadIn,
       'about' => (string) $entry->about,
     ];

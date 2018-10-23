@@ -12,7 +12,7 @@ return [
     return [
       'title' => $entry->title,
       'url' => UrlHelper::siteUrl($entry->url),
-      'banner' => ! empty($entry->banner->one()) ? (string) UrlHelper::siteUrl($entry->banner->one()->url) : null,
+      'banner' => ! empty($entry->banner->one()) ? (string) UrlHelper::siteUrl($entry->banner->one()->getUrl('thumbFullRatio')) : null,
       'leadIn' => (string) $entry->leadIn,
       'body' => (string) $entry->body,
       'urgentIssuesDescription' => (string) $entry->urgentIssuesDescription,
