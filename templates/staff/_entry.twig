@@ -5,6 +5,7 @@
 {% set lastName = entry.lastName ??? entry.staffImportSurname ?? '' %}
 {% set jobTitle = entry.jobTitle ??? entry.staffImportJobTitle ?? '' %}
 {% set email = entry.emailAddress ??? entry.staffImportEmail ?? '' %}
+{% set email = email | replace({'@oaklandnet.com': '@oaklandca.gov'}) %}
 {% set phone = entry.phoneNumber ??? entry.staffImportPhoneNumber ?? '' %}
 
 {% block content %}
