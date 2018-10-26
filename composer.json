@@ -34,7 +34,8 @@
     "putyourlightson/craft-entry-count": "2.0.1",
     "monachilada/craft-matrixtoolbar": "1.0.5",
     "craftcms/element-api": "2.5.4",
-    "nystudio107/craft-emptycoalesce": "1.0.2"
+    "nystudio107/craft-emptycoalesce": "1.0.2",
+    "nystudio107/craft-imageoptimize": "1.4.42"
   },
   "autoload": {
     "psr-4": {
