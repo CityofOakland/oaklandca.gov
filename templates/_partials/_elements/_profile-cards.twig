@@ -1,17 +1,29 @@
-<a href="{{ url }}" class="block">
+{% set url = url ?? entry.url ?? '' %}
+{% set photo = photo ?? entry.photo.one ?? '' %}
+{% set jobTitle = jobTitle ?? entry.jobTitle ?? entry.staffImportJobTitle ?? '' %}
+{% set name = name ?? entry.title %}
+<div class="block">
   <div class="text-shark flex items-start">
     <figure class="block w-1/4">
-      {% if photo | length %}
-        <img src="{{ photo.getUrl('smallSquare') }}" alt="Portrait of {{ jobTitle }}, {{ name }}" class="block rounded-full h-full w-full">
-      {% else %}
-        <div class="text-camouflage-green opacity-75 fill-current h-full bg-celeste rounded-full">
-          {{ craft.inlin.er('/assets/img/icon-' ~ icon ~ '.svg') | replace('<svg ', '<svg class="h-full block" ') | raw }}
-        </div>
-      {% endif %}
+      <a href="{{ url }}">
+        {% if photo | length %}
+          <img
+            src="{{ photo.getUrl('smallSquare') }}"
+            alt="Portrait of {{ jobTitle }}, {{ name }}"
+            class="block rounded-full h-full w-full">
+        {% else %}
+          <div class="text-camouflage-green opacity-75 fill-current h-full bg-celeste rounded-full">
+            {{ craft.inlin.er('/assets/img/icon-' ~ icon ~ '.svg') | replace('<svg ', '<svg class="h-full block" ') | raw }}
+          </div>
+        {% endif %}
+      </a>
     </figure>
-    <div class="pl-6 flex-1">
-      <h3 class="m-0 text-2xl">{{ name }}</h3>
-      <p class="mt-2">{{ jobTitle }}</p>
+    <div class="pl-6 w-3/4">
+      <h3 class="m-0 text-2xl"><a href="{{ url }}">{{ name }}</a></h3>
+      <p class="mt-2">
+        {{ jobTitle }}
+        {{ extraContent ?? '' }}
+      </p>
     </div>
   </div>
-</a>
+</div>
