@@ -1,0 +1,95 @@
+{% macro init(indexName) %}
+  const search = instantsearch({
+    appId: "6V5VJO8ZG2",
+    apiKey: "9bded46d3070b2089499c70b2389708b",
+    indexName: "{{ indexName }}",
+    routing: true
+  });
+{% endmacro %}
+
+{% macro input(container, placeholder) %}
+  search.addWidget(
+    instantsearch.widgets.searchBox({
+      container: "{{ container }}",
+      placeholder: "{{ placeholder }}"
+    })
+  );
+{% endmacro %}
+
+{% macro refinementList(container, attributeName, templatesObject, operator, limit) %}
+  search.addWidget(
+    instantsearch.widgets.refinementList({
+      container: "{{ container }}",
+      attributeName: "{{ attributeName }}",
+      operator: "{{ operator ?? "or" }}",
+      limit: {{ limit ?? 10 }},
+      templates: {{ templatesObject }}
+    })
+  );
+{% endmacro %}
+
+{% macro menu(container, attributeName, templatesObject, limit) %}
+  search.addWidget(
+    instantsearch.widgets.menu({
+      container: "{{ container }}",
+      attributeName: "{{ attributeName }}",
+      limit: {{ limit ?? 10 }},
+      templates: {{ templatesObject }}
+    })
+  );
+{% endmacro %}
+
+{% macro menuSelect(container, attributeName, templatesObject, limit) %}
+  search.addWidget(
+    instantsearch.widgets.menuSelect({
+      container: "{{ container }}",
+      attributeName: "{{ attributeName }}",
+      limit: {{ limit ?? 10 }},
+      templates: {{ templatesObject }},
+      cssClasses: {
+        root: 'w-full',
+        select: 'w-full border border-shark'
+        },
+    })
+  );
+{% endmacro %}
+
+{% macro hits(container, templateItem) %}
+  search.addWidget(
+    instantsearch.widgets.hits({
+      container: "{{ container ?? "hits" }}",
+      templates: {
+        empty: "No results",
+        item: "{{ templateItem }}"
+      }
+    })
+  );
+{% endmacro %}
+
+{% macro pagination(container, maxPages, scrollTo) %}
+  search.addWidget(
+    instantsearch.widgets.pagination({
+      container: "{{ container ?? "#pagination" }}",
+      maxPages: {{ maxPages ?? 20 }},
+      // default is to scroll to 'body', here we disable this behavior
+      scrollTo: {{ scrollTo ?? "false" }}
+    })
+  );
+{% endmacro %}
+
+{% macro reset() %}
+  search.addWidget(
+    instantsearch.widgets.clearAll({
+      container: '#clear-all',
+      templates: {
+        link: 'Reset everything'
+      },
+      autoHideContainer: false,
+      clearsQuery: true,
+    })
+  );
+{% endmacro %}
+
+{% macro start() %}
+  search.start();
+{% endmacro %}

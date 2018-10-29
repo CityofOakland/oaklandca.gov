@@ -3,6 +3,21 @@ use craft\elements\Entry;
 use craft\helpers\UrlHelper;
 use Solspace\Calendar\Elements\Event;
 use fruitstudios\linkit\Linkit;
+use League\Fractal\TransformerAbstract;
+
+class eventsTransform extends TransformerAbstract
+{
+  public function transform(Solspace\Calendar\Elements\Event $event)
+  {
+    return [
+      'title' => $event->title,
+      'url' => $event->url,
+      'body' => (string) $event->body,
+      'contact' => (string) $event->eventContact,
+      'eventImage' => ! empty($event->eventImage->one()) ? (string) $event->eventImage->one()->getUrl('smallSquare') : null,
+    ];
+  }
+}
 
 return [
   "sync" => true,
@@ -17,14 +32,29 @@ return [
         'section' => 'news'
       ],
       'transformer' => function(craft\elements\Entry $entry) {
+        $boardsCommissions = [];
+        foreach($entry->boardsCommissions as $value)
+          $boardsCommissions[] = $value->title;
+        $departments = [];
+        foreach($entry->departments as $value)
+          $departments[] = $value->title;
+        $electedOfficials = [];
+        foreach($entry->electedOfficials as $value)
+          $electedOfficials[] = $value->title;
+        $topics = [];
+        foreach($entry->topics as $value)
+          $topics[] = $value->title;
         return [
           'title' => $entry->title,
-          'id' => $entry->id,
           'url' => $entry->url,
           'newsImage' => ! empty($entry->newsImage->one()) ? (string) $entry->newsImage->one()->url : null,
           'summary' => (string) $entry->summary,
           'body' => (string) $entry->body,
           'mediaContact' => (string) $entry->mediaContact,
+          'boardsCommissions' => $boardsCommissions,
+          'departments' => $departments,
+          'electedOfficials' => $electedOfficials,
+          'topics' => $topics,
         ];
       },
     ],
@@ -40,7 +70,6 @@ return [
       'transformer' => function(craft\elements\Entry $entry) {
         return [
           'title' => $entry->title,
-          'id' => $entry->id,
           'url' => $entry->url,
           'banner' => ! empty($entry->banner->one()) ? (string) $entry->banner->one()->url : null,
           'ctaButtonText' => ! empty($entry->ctaButton->text) ? (string) $entry->ctaButton->text : null,
@@ -61,7 +90,6 @@ return [
       'transformer' => function(craft\elements\Entry $entry) {
         return [
           'title' => $entry->title,
-          'id' => $entry->id,
           'url' => $entry->url,
           'banner' => ! empty($entry->banner->one()) ? (string) $entry->banner->one()->url : null,
           'ctaButtonText' => ! empty($entry->ctaButton->text) ? (string) $entry->ctaButton->text : null,
@@ -86,7 +114,6 @@ return [
           $officials[] = [$value->title, $value->groupHeadName];
         return [
           'title' => $entry->title,
-          'id' => $entry->id,
           'url' => $entry->url,
           'banner' => ! empty($entry->banner->one()) ? (string) $entry->banner->one()->url : null,
           'ctaButtonText' => ! empty($entry->ctaButton->text) ? (string) $entry->ctaButton->text : null,
@@ -109,7 +136,6 @@ return [
           $types[] = $value->title;
         return [
           'title' => $entry->title,
-          'id' => $entry->id,
           'url' => $entry->url,
           'summary' => (string) $entry->summary,
           'categories' => $types,
@@ -128,7 +154,6 @@ return [
           $documents[] = $value->title;
         return [
           'title' => $entry->title,
-          'id' => $entry->id,
           'url' => $entry->url,
           'leadIn' => (string) $entry->leadIn,
           'summary' => (string) $entry->summary,
@@ -154,7 +179,6 @@ return [
         }
         return [
           'title' => $entry->title,
-          'id' => $entry->id,
           'url' => $entry->url,
           'banner' => ! empty($entry->banner->one()) ? (string) $entry->banner->one()->url : null,
           'leadIn' => (string) $entry->leadIn,
@@ -177,7 +201,6 @@ return [
         }
         return [
           'title' => $entry->title,
-          'id' => $entry->id,
           'url' => $entry->url,
           'resourceImage' => ! empty($entry->resourceImage->one()) ? (string) $entry->resourceImage->one()->url : null,
           'leadIn' => (string) $entry->leadIn,
@@ -237,7 +260,6 @@ return [
       'transformer' => function(craft\elements\Entry $entry) {
         return [
           'title' => $entry->title,
-          'id' => $entry->id,
           'url' => $entry->url,
           'banner' => ! empty($entry->banner->one()) ? (string) $entry->banner->one()->url : null,
           'leadIn' => (string) $entry->leadIn,
@@ -253,16 +275,7 @@ return [
       'criteria' => [
         'calendar' => 'events',
       ],
-      'transformer' => function(Solspace\Calendar\Elements\Event $event) {
-        return [
-          'title' => $event->title,
-          'id' => $event->id,
-          'url' => $event->url,
-          'eventImage' => ! empty($event->eventImage->one()) ? (string) $event->eventImage->one()->url : null,
-          'body' => (string) $event->body,
-          'contact' => (string) $event->eventContact,
-        ];
-      },
+      'transformer' => new eventsTransform(),
     ],
     // END EVENTS INDEX
     // BEGIN MEETINGS INDEX
@@ -272,18 +285,27 @@ return [
       'criteria' => [
         'calendar' => 'meetings',
       ],
-      'transformer' => function(Solspace\Calendar\Elements\Event $event) {
-        return [
-          'title' => $event->title,
-          'id' => $event->id,
-          'eventImage' => ! empty($event->eventImage->one()) ? (string) $event->eventImage->one()->url : null,
-          'url' => $event->url,
-          'body' => (string) $event->body,
-          'contact' => (string) $event->eventContact,
-        ];
-      },
+      'transformer' => new eventsTransform(),
     ],
     // END MEETINGS INDEX
+    // BEGIN CALENDAR INDEX
+    [
+      'indexName' => getenv('ENVIRONMENT') . '_calendars',
+      'elementType' => \Solspace\Calendar\Elements\Event::class,
+      'criteria' => [
+        'calendar' => 'events',
+      ],
+      'transformer' => new eventsTransform(),
+    ],
+    [
+      'indexName' => getenv('ENVIRONMENT') . '_calendars',
+      'elementType' => \Solspace\Calendar\Elements\Event::class,
+      'criteria' => [
+        'calendar' => 'meetings',
+      ],
+      'transformer' => new eventsTransform(),
+    ],
+    // END CALENDAR INDEX
     // BEGIN STAFF INDEX
     [
       'indexName' => getenv('ENVIRONMENT') . '_staff',
