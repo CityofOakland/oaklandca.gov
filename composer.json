@@ -35,7 +35,8 @@
     "monachilada/craft-matrixtoolbar": "1.0.5",
     "craftcms/element-api": "2.5.4",
     "nystudio107/craft-emptycoalesce": "1.0.2",
-    "nystudio107/craft-imageoptimize": "1.4.42"
+    "nystudio107/craft-imageoptimize": "1.4.42",
+    "craftcms/aws-s3": "1.0.8"
   },
   "autoload": {
     "psr-4": {
