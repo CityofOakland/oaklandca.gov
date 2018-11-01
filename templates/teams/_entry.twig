@@ -19,11 +19,25 @@
       {% endif %}
       <div class="card-grid grid-equal-height profile-cards mt-12">
       {% for entry in team.staff.all() %}
+        {% set department = entry.departments.one.title ?? entry.staffImportDepartment ?? '' %}
+        {% set organization = entry.staffImportOrganization ?? '' %}
+        {% set email = entry.emailAddress ??? entry.staffImportEmail %}
+        {% set phone = entry.phoneNumber ??? entry.staffImportPhoneNumber %}
+        {% set extraContent %}
+          {% if department | length %}<br>{{ department }}{% endif %}
+          {% if email | length %}
+            {% set e = email | replace({'@oaklandnet.com': '@oaklandca.gov'}) %}
+            <br><a href="mailto:{{ e }}">{{ e }}</a>
+          {% endif %}
+          {% if phone | length %}<br><a href="tel:{{ phone }}">{{ phone }}</a>{% endif %}
+        {% endset %}
+
         {% include '_partials/_elements/_profile-cards' with {
           photo: entry.portrait.one,
           name: entry.title,
           jobTitle: entry.jobTitle ?? '',
           url: entry.redirectUrl ?? entry.url ?? '',
+          extraContent: extraContent,
           icon: 'user'
         } %}
       {% endfor %}
