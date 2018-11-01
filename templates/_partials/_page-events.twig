@@ -1,4 +1,4 @@
-{% set defaultButtonUrl = "/events/related-to/" ~ entry.slug %}
+{% set defaultButtonUrl = "/events/related-to/" ~ entry.section.handle ~ "/" ~ entry.slug %}
 {% set options = {
   calendar: "events",
   limit: 3,
