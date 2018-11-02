@@ -46,7 +46,12 @@ gulp.task("tailwind", () => {
   return gulp.src(pkg.paths.tailwindcss.src)
     .pipe($.postcss([
       $.tailwindcss(pkg.paths.tailwindcss.conf),
-      $.autoprefixer
+      $.autoprefixer({
+        grid: true,
+        browsers: [
+          "> 2%",
+        ]
+      })
     ]))
     .pipe(gulp.dest(pkg.paths.tailwindcss.build));
 });
@@ -70,10 +75,9 @@ gulp.task("css", ["tailwind"], () => {
       prefix: "_"
     }),
     $.autoprefixer({
+      grid: true,
       browsers: [
-        "last 1 version",
-        "> 1%",
-        "IE 10"
+        "> 2%",
       ]
     })
   ];
