@@ -2,6 +2,7 @@
 
 {% set relatedEvents = craft.calendar.events.relatedTo(entry) %}
 {% set relatedNews = craft.entries.section('news').relatedTo(entry) %}
+{% set relatedMeetings = craft.calendar.events.relatedTo(entry) %}
 
 {% set contactState = entry.addresses | length or entry.address | length or entry.phoneNumbers | length or entry.emailAddress | length or entry.openHours | length %}
 
@@ -20,6 +21,7 @@
       'documents': entry.pageDocuments.exists(),
       'projects': entry.pageProjects.exists(),
       'topics': entry.pageTopics.exists(),
+      'meetings': relatedMeetings.exists(),
       'events': relatedEvents.exists(),
       'news': relatedNews.exists(),
       'about': true,
@@ -34,6 +36,7 @@
   {% include '_partials/_page-projects' %}
   {% include '_partials/_page-topics' %}
   {% include '_partials/_page-events' %}
+  {% include '_partials/_page-meetings' %}
   {% include '_partials/_page-news' %}
   {% include '_partials/_page-about' %}
   {% include '_partials/_page-location' %}
