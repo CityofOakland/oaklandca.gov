@@ -125,7 +125,7 @@
   grid-gap: 32px;
 }
 
-@media (min-width: 576px) {
+@media (min-width: 1024px) {
   .horizontal-card {
     grid-template-columns: 1fr 1.5fr;
     grid-gap: 48px;

@@ -72,7 +72,11 @@
       container: "{{ container ?? "#pagination" }}",
       maxPages: {{ maxPages ?? 20 }},
       // default is to scroll to 'body', here we disable this behavior
-      scrollTo: {{ scrollTo ?? "false" }}
+      scrollTo: {{ scrollTo ?? "false" }},
+      cssClasses: {
+        root: "p-0",
+        disabled: "w-0"
+      }
     })
   );
 {% endmacro %}

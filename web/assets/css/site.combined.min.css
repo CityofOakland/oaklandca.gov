@@ -1,8 +1,8 @@
 /**
  * @project        oakland
  * @author         Christopher Kennedy, onebrightlight <chris@onebrightlight.com>
- * @build          Fri, Nov 2, 2018 10:32 AM ET
- * @release        52618dd3256f5bc2eb417cfcff0d576b94e4ff0f [master]
+ * @build          Thu, Nov 8, 2018 10:53 AM ET
+ * @release        d2aceef0ca18d5638ea355ac9f5c7f3752f07aa4 [oak-staging]
  * @copyright      Copyright (c) 2018, onebrightlight
  *
  */
@@ -19137,7 +19137,7 @@ main > .bg-rotate:nth-child(odd) {
   grid-gap: 32px;
 }
 
-@media (min-width: 576px) {
+@media (min-width: 1024px) {
   .horizontal-card {
     -ms-grid-columns: 1fr 1.5fr;
         grid-template-columns: 1fr 1.5fr;
