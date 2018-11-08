@@ -9,12 +9,32 @@ class eventsTransform extends TransformerAbstract
 {
   public function transform(Solspace\Calendar\Elements\Event $event)
   {
+    $boardsCommissions = [];
+    foreach($event->boardsCommissions as $value)
+      $boardsCommissions[] = $value->title;
+    $departments = [];
+    foreach($event->departments as $value)
+      $departments[] = $value->title;
+    $electedOfficials = [];
+    foreach($event->electedOfficials as $value)
+      $electedOfficials[] = $value->title;
+    $projects = [];
+    foreach($event->projects as $value)
+      $projects[] = $value->title;
+    $topics = [];
+    foreach($event->topics as $value)
+      $topics[] = $value->title;
     return [
       'title' => $event->title,
       'url' => $event->url,
       'body' => (string) $event->body,
       'contact' => (string) $event->eventContact,
       'eventImage' => ! empty($event->eventImage->one()) ? (string) $event->eventImage->one()->getUrl('smallSquare') : null,
+      'boardsCommissions' => $boardsCommissions,
+      'departments' => $departments,
+      'electedOfficials' => $electedOfficials,
+      'projects' => $projects,
+      'topics' => $topics,
     ];
   }
 }
@@ -41,6 +61,9 @@ return [
         $electedOfficials = [];
         foreach($entry->electedOfficials as $value)
           $electedOfficials[] = $value->title;
+        $projects = [];
+        foreach($entry->projects as $value)
+          $projects[] = $value->title;
         $topics = [];
         foreach($entry->topics as $value)
           $topics[] = $value->title;
@@ -53,6 +76,7 @@ return [
           'mediaContact' => (string) $entry->mediaContact,
           'boardsCommissions' => $boardsCommissions,
           'departments' => $departments,
+          'projects' => $projects,
           'electedOfficials' => $electedOfficials,
           'topics' => $topics,
         ];
@@ -131,6 +155,36 @@ return [
         'section' => 'documents'
       ],
       'transformer' => function(craft\elements\Entry $entry) {
+        $boardsCommissions = [];
+        foreach($entry->boardsCommissions as $value)
+          $boardsCommissions[] = $value->title;
+        $departments = [];
+        foreach($entry->departments as $value)
+          $departments[] = $value->title;
+        $documents = [];
+        foreach($entry->documents as $value)
+          $documents[] = $value->title;
+        $electedOfficials = [];
+        foreach($entry->electedOfficials as $value)
+          $electedOfficials[] = $value->title;
+        $news = [];
+        foreach($entry->news as $value)
+          $news[] = $value->title;
+        $projects = [];
+        foreach($entry->projects as $value)
+          $projects[] = $value->title;
+        $resources = [];
+        foreach($entry->resources as $value)
+          $resources[] = $value->title;
+        $services = [];
+        foreach($entry->services as $value)
+          $services[] = $value->title;
+        $teams = [];
+        foreach($entry->teams as $value)
+          $teams[] = $value->title;
+        $topics = [];
+        foreach($entry->topics as $value)
+          $topics[] = $value->title;
         $types = [];
         foreach($entry->documentType as $value)
           $types[] = $value->title;
@@ -139,6 +193,16 @@ return [
           'url' => $entry->url,
           'summary' => (string) $entry->summary,
           'categories' => $types,
+          'boardsCommissions' => $boardsCommissions,
+          'departments' => $departments,
+          'documents' => $documents,
+          'electedOfficials' => $electedOfficials,
+          'news' => $news,
+          'projects' => $projects,
+          'resources' => $resources,
+          'services' => $services,
+          'teams' => $teams,
+          'topics' => $topics,
         ];
       },
     ],
@@ -195,6 +259,21 @@ return [
         'section' => 'resources'
       ],
       'transformer' => function(craft\elements\Entry $entry) {
+        $boardsCommissions = [];
+        foreach($entry->boardsCommissions as $value)
+          $boardsCommissions[] = $value->title;
+        $departments = [];
+        foreach($entry->departments as $value)
+          $departments[] = $value->title;
+        $electedOfficials = [];
+        foreach($entry->electedOfficials as $value)
+          $electedOfficials[] = $value->title;
+        $projects = [];
+        foreach($entry->projects as $value)
+          $projects[] = $value->title;
+        $topics = [];
+        foreach($entry->topics as $value)
+          $topics[] = $value->title;
         $body = [];
         foreach ($entry->transactionBody as $block) {
           $body[] = (string) $block->text;
@@ -204,6 +283,11 @@ return [
           'url' => $entry->url,
           'resourceImage' => ! empty($entry->resourceImage->one()) ? (string) $entry->resourceImage->one()->url : null,
           'leadIn' => (string) $entry->leadIn,
+          'boardsCommissions' => $boardsCommissions,
+          'departments' => $departments,
+          'electedOfficials' => $electedOfficials,
+          'projects' => $projects,
+          'topics' => $topics,
           'body' => $body,
         ];
       },
@@ -218,6 +302,21 @@ return [
         'type' => 'services'
       ],
       'transformer' => function(craft\elements\Entry $entry) {
+        $boardsCommissions = [];
+        foreach($entry->boardsCommissions as $value)
+          $boardsCommissions[] = $value->title;
+        $departments = [];
+        foreach($entry->departments as $value)
+          $departments[] = $value->title;
+        $electedOfficials = [];
+        foreach($entry->electedOfficials as $value)
+          $electedOfficials[] = $value->title;
+        $projects = [];
+        foreach($entry->projects as $value)
+          $projects[] = $value->title;
+        $topics = [];
+        foreach($entry->topics as $value)
+          $topics[] = $value->title;
         $body = [];
         foreach ($entry->transactionBody as $block) {
           $body[] = (string) $block->text;
@@ -226,6 +325,11 @@ return [
           'title' => $entry->title,
           'url' => Urlhelper::siteUrl($entry->url),
           'leadIn' => (string) $entry->leadIn,
+          'boardsCommissions' => $boardsCommissions,
+          'departments' => $departments,
+          'electedOfficials' => $electedOfficials,
+          'projects' => $projects,
+          'topics' => $topics,
           'body' => $body,
         ];
       },
@@ -258,12 +362,32 @@ return [
         'section' => 'topics'
       ],
       'transformer' => function(craft\elements\Entry $entry) {
+        $boardsCommissions = [];
+        foreach($entry->boardsCommissions as $value)
+          $boardsCommissions[] = $value->title;
+        $departments = [];
+        foreach($entry->departments as $value)
+          $departments[] = $value->title;
+        $electedOfficials = [];
+        foreach($entry->electedOfficials as $value)
+          $electedOfficials[] = $value->title;
+        $projects = [];
+        foreach($entry->projects as $value)
+          $projects[] = $value->title;
+        $topics = [];
+        foreach($entry->topics as $value)
+          $topics[] = $value->title;
         return [
           'title' => $entry->title,
           'url' => $entry->url,
           'banner' => ! empty($entry->banner->one()) ? (string) $entry->banner->one()->url : null,
           'leadIn' => (string) $entry->leadIn,
           'about' => (string) $entry->about,
+          'boardsCommissions' => $boardsCommissions,
+          'departments' => $departments,
+          'electedOfficials' => $electedOfficials,
+          'projects' => $projects,
+          'topics' => $topics,
         ];
       },
     ],
