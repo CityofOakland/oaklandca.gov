@@ -276,7 +276,7 @@ return [
           $topics[] = $value->title;
         $body = [];
         foreach ($entry->transactionBody as $block) {
-          $body[] = (string) $block->text;
+          $body[] = strip_tags($block->text);
         }
         return [
           'title' => $entry->title,
