@@ -23,6 +23,9 @@ return [
         // Control Panel trigger word
         'cpTrigger' => 'admin',
 
+        // Maximum Upload Size
+        'maxUploadFileSize' => 268435456,
+
         // The secure key Craft will use for hashing and encrypting data
         'securityKey' => getenv('SECURITY_KEY'),
     ],

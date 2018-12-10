@@ -1,52 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  {# Calls in the SEOmatic tags, all handled through the CMS settings #}
-  {% hook 'seomaticRender' %}
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {# Calls in the SEOmatic tags, all handled through the CMS settings #}
+    {% hook 'seomaticRender' %}
 
-  {#
-    admin.cacheFlush is a global variable used to force a cache invalidation
-    if we push a major change up.
-  #}
-  <link rel="stylesheet" href="/assets/css/site.combined.min.css?ver={{ admin.cacheFlush }}">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i" rel="stylesheet">
-</head>
+    {# admin.cacheFlush is a global variable used to force a cache invalidation if we push a major change up. #}
+    <link rel="stylesheet" href="/assets/css/site.combined.min.css?ver={{ admin.cacheFlush }}">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i" rel="stylesheet">
+  </head>
 
-{#
-  Checks if the URI is empty and if not, adds the class of “home” to the page
-  body.
-#}
-{% if not craft.app.request.segments() %}
-  {% set pageClass = "home" %}
-{% endif %}
+  {# Checks if the URI is empty and if not, adds the class of “home” to the page body. #}
+  {% if not craft.app.request.segments() %}
+    {% set pageClass = "home" %}
+  {% endif %}
 
-{#
-  We’re setting the class to overflow-x-hidden to prevent content from
-  stretching page width on mobile views.
-#}
-{# Sets the navigation to the nav section entry, “Main Nav” #}
-{% set mainNav = craft.entries.section('navigation').slug('main-nav').one() %}
-<body class="overflow-x-hidden {{ pageClass ?? '' }}">
-  {% include '_partials/_elements/_mobile-nav-bar' %}
-  <div class="page-holder">
-    {% include '_partials/_elements/_nav-bar' %}
-    <main>
-      {% block content %}
-        <div class="container mx-auto py-8">
-          <p>No content has been added to this layout. Please make sure to include the following in your template:</p>
-          <pre class="bg-astronaut text-celeste whitespace-pre-line p-4 inline-block">{% verbatim %}
+  {# We’re setting the class to overflow-x-hidden to prevent content from stretching page width on mobile views.#}
+  {# Sets the navigation to the nav section entry, “Main Nav” #}
+  {% set mainNav = craft.entries.section('navigation').slug('main-nav').one() %}
+  <body class="overflow-x-hidden {{ pageClass ?? '' }}">
+    {% include '_partials/_elements/_mobile-nav-bar' %}
+    <div class="page-holder">
+      {% include '_partials/_elements/_nav-bar' %}
+      <main>
+        {% if craft.app.request.segments() %}
+          {% include '_partials/_elements/_page-alert' %}
+        {% endif %}
+        {% block content %}
+          <div class="container mx-auto py-8">
+            <p>No content has been added to this layout. Please make sure to include the following in your template:</p>
+            <pre class="bg-astronaut text-celeste whitespace-pre-line p-4 inline-block">{% verbatim %}
             {% block content %}
             {% endblock %}{% endverbatim %}
           </pre>
-        </div>
-      {% endblock %}
-    </main>
-    {% include '_partials/_elements/_footer' %}
-  </div>
-</body>
+          </div>
+        {% endblock %}
+      </main>
+      {% include '_partials/_elements/_footer' %}
+    </div>
+  </body>
 
 </html>

@@ -1,16 +1,30 @@
+{% set alertType = sitewideAlert.alertType.label %}
+{% switch alertType %}
+  {% case "Alert" %}
+    {% set alertBg = "alert-red" %}
+  {% case "Warning" %}
+    {% set alertBg = "warning-yellow" %}
+  {% default %}
+    {% set alertBg = "apple" %}
+{% endswitch %}
+
+
 {% if sitewideAlert.alertShowHide == "show" %}
-  <div class="relative bg-apple z-0 text-white text-xl">
-    <img src="/assets/img/oaklandroots.svg" class="absolute pin object-fit-cover w-full h-full opacity-3.125" alt="">
-    <div class="p-8 container mx-auto">
-      <div class="sm:flex content-start items-start">
-        <div class="bg-shark-transparent text-base py-3 px-6 mb-8 sm:mb-0 sm:mr-8">{{ sitewideAlert.alertType.label }}</div>
-        <div class=" mb-6 sm:mb-0 sm:mr-8 flex-1">
-          <p class="text-2xl m-0">{{ sitewideAlert.alertMessage }}</p>
-        </div>
-        <div class="text-base pt-2">
-          <a href="{{ sitewideAlert.alertUrl }}" class="text-white hover:text-white hover:opacity-75 hover:underline">Read More »</a>
-        </div>
+<div class="relative bg-{{ alertBg }} z-0 text-white">
+  <img src="/assets/img/oaklandroots.svg" class="absolute pin object-fit-cover w-full h-full opacity-3.125" alt="">
+  <div class="py-4 px-8 container mx-auto">
+    <div class="sm:flex content-start items-center">
+      <div class="mb-6 sm:mb-0 sm:mr-8 flex-1">
+        <p class="text-lg m-0">
+          {% if alertType != "Information" %}
+            <span class="font-bold">{{ alertType }}</span>:
+          {% endif %}
+          {{ sitewideAlert.alertMessage }}</p>
+      </div>
+      <div>
+        <a href="{{ sitewideAlert.alertUrl }}" class="text-white hover:text-white hover:opacity-75 hover:underline">Read More »</a>
       </div>
     </div>
   </div>
+</div>
 {% endif %}

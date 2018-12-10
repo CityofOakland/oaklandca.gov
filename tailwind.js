@@ -52,6 +52,8 @@ let colors = {
   "cararra": "#e9eae7",
   "white": "#ffffff",
   "apple": "#6db943",
+  "alert-red": "#F31431",
+  "warning-yellow": "#ffae42",
   "camouflage-green": "#757773",
   "parsley": "#1e4a18",
   "curious-blue": "#398cd3",
