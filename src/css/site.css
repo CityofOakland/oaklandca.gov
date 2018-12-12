@@ -38,15 +38,6 @@
   }
 }
 
-/*
-
-@media (min-width: 576px) {
-  .grid-equal-height {
-    grid-auto-rows: 1fr;
-  }
-}
- */
-
 .horizontal-card {
   display: flex;
   flex-direction: column;
