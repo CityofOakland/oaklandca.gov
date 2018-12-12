@@ -1,10 +1,10 @@
 <article class="py-8 sm:py-16 horizontal-card{% if not loop.last %} border-celeste border-b-2{% endif %}">
   {% if photo | length %}
-    <figure class="w-full bg-white relative z-0 flex items-start justify-center">
-      <img src="{{ photo.url }}" class="max-w-full">
+    <figure class="bg-white z-0">
+      <img src="{{ photo.url }}" class="">
     </figure>
   {% elseif icon is defined %}
-    <figure class="w-full h-48 sm:h-64 p-4 bg-celeste relative z-0 flex items-center justify-center">
+    <figure class="h-48 sm:h-64 p-4 bg-celeste relative z-0 flex items-center justify-center">
       <div class="text-camouflage-green opacity-75 fill-current h-full p-12">
         {{ craft.inlin.er('/assets/img/icon-' ~ icon ~ '.svg') | replace('<svg ', '<svg class="h-full" ') | raw }}
       </div>
