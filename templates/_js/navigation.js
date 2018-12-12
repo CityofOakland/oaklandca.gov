@@ -1,7 +1,12 @@
 function init() {
-  document.getElementById("menu-toggle").addEventListener("click", toggleMenu);
-  document.getElementById("close-menu").addEventListener("click", toggleMenu);
-  document.getElementById("search-menu-toggle").addEventListener("click", toggleSearch);
+  var menuToggle = document.getElementById("menu-toggle");
+  var closeMenu = document.getElementById("close-menu");
+  var searchMenuToggle = document.getElementById("search-menu-toggle");
+  menuToggle.addEventListener("click", toggleMenu);
+  closeMenu.addEventListener("click", toggleMenu);
+  if (searchMenuToggle) {
+    searchMenuToggle.addEventListener("click", toggleSearch);
+  }
 }
 
 function toggleMenu(e) {

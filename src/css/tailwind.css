@@ -196,6 +196,10 @@ main > .bg-rotate:nth-child(odd) .card-grid-button:hover {
   @apply opacity-75;
 }
 
+.card-department {
+  @apply bg-shark !important;
+}
+
 /* Background Section Color Rotations */
 
 main > .bg-rotate:nth-child(even) {
