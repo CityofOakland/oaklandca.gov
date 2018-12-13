@@ -95,6 +95,7 @@ return [
         return [
           'title' => $entry->title,
           'url' => $entry->url,
+          'date' => $entry->postDate,
           'banner' => ! empty($entry->banner->one()) ? (string) $entry->banner->one()->url : null,
           'ctaButtonText' => ! empty($entry->ctaButton->text) ? (string) $entry->ctaButton->text : null,
           'leadIn' => (string) $entry->leadIn,
@@ -323,7 +324,7 @@ return [
         }
         return [
           'title' => $entry->title,
-          'url' => Urlhelper::siteUrl($entry->url),
+          'url' => $entry->url,
           'leadIn' => (string) $entry->leadIn,
           'boardsCommissions' => $boardsCommissions,
           'departments' => $departments,
@@ -344,7 +345,7 @@ return [
       'transformer' => function(craft\elements\Entry $entry) {
         return [
           'title' => $entry->title,
-          'url' => UrlHelper::siteUrl($entry->url),
+          'url' => $entry->url,
           'banner' => ! empty($entry->banner->one()) ? (string) UrlHelper::siteUrl($entry->banner->one()->url) : null,
           'leadIn' => (string) $entry->leadIn,
           'body' => (string) $entry->body,
@@ -431,26 +432,26 @@ return [
     ],
     // END CALENDAR INDEX
     // BEGIN STAFF INDEX
-    [
-      'indexName' => getenv('ENVIRONMENT') . '_staff',
-      'elementType' => \craft\elements\Entry::class,
-      'criteria' => [
-        'section' => 'staff',
-        'type' => 'staff'
-      ],
-      'transformer' => function(craft\elements\Entry $entry) {
-        return [
-          'title' => $entry->title,
-          'url' => $entry->url,
-          'portrait' => ! empty($entry->portrait->one()) ? (string) $entry->portrait->one()->url : null,
-          'jobTitle' => ! empty($entry->jobTitle) ? (string) $entry->jobTitle : (string) $entry->staffImportJobTitle,
-          'bio' => (string) $entry->bio,
-          'email' => ! empty($entry->emailAddress) ? (string) $entry->emailAddress : (string) $entry->staffImportEmail,
-          'department' => ! empty($entry->departments->one()) ? (string) $entry->departments->one()->title : null,
-          'employmentType' => (string) $entry->employmentType->label,
-        ];
-      },
-    ],
+    // [
+    //   'indexName' => getenv('ENVIRONMENT') . '_staff',
+    //   'elementType' => \craft\elements\Entry::class,
+    //   'criteria' => [
+    //     'section' => 'staff',
+    //     'type' => 'staff'
+    //   ],
+    //   'transformer' => function(craft\elements\Entry $entry) {
+    //     return [
+    //       'title' => $entry->title,
+    //       'url' => $entry->url,
+    //       'portrait' => ! empty($entry->portrait->one()) ? (string) $entry->portrait->one()->url : null,
+    //       'jobTitle' => ! empty($entry->jobTitle) ? (string) $entry->jobTitle : (string) $entry->staffImportJobTitle,
+    //       'bio' => (string) $entry->bio,
+    //       'email' => ! empty($entry->emailAddress) ? (string) $entry->emailAddress : (string) $entry->staffImportEmail,
+    //       'department' => ! empty($entry->departments->one()) ? (string) $entry->departments->one()->title : null,
+    //       'employmentType' => (string) $entry->employmentType->label,
+    //     ];
+    //   },
+    // ],
     // END STAFF INDEX
   ],
 ];

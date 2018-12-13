@@ -7,51 +7,51 @@
 
 {% js %}
 
-{{ search.init("dev_news") }}
-{{ search.input("#search-input", "Search for news")}}
-{% set boardTemplate %}{header: "Boards & Commissions"}{% endset %}
-{% set topicsTemplate %}{header: "Topics"}{% endset %}
-{% set officialsTemplate %}{header: "Elected Officials"}{% endset %}
-{% set departmentsTemplate %}{header: "Departments"}{% endset %}
-{{ search.menuSelect("#boardsCommissions", "boardsCommissions", boardTemplate) }}
-{{ search.menuSelect("#topics", "topics", topicsTemplate) }}
-{{ search.menuSelect("#electedOfficials", "electedOfficials", officialsTemplate) }}
-{{ search.menuSelect("#departments", "departments", departmentsTemplate) }}
-{{ search.reset() }}
+  {{ search.init("dev_news") }}
+  {{ search.input("#search-input", "Search for news")}}
+  {% set boardTemplate %}{header: "Boards & Commissions"}{% endset %}
+  {% set topicsTemplate %}{header: "Topics"}{% endset %}
+  {% set officialsTemplate %}{header: "Elected Officials"}{% endset %}
+  {% set departmentsTemplate %}{header: "Departments"}{% endset %}
+  {{ search.menuSelect("#boardsCommissions", "boardsCommissions", boardTemplate) }}
+  {{ search.menuSelect("#topics", "topics", topicsTemplate) }}
+  {{ search.menuSelect("#electedOfficials", "electedOfficials", officialsTemplate) }}
+  {{ search.menuSelect("#departments", "departments", departmentsTemplate) }}
+  {{ search.reset() }}
 
-{% set hitsTemplate =
-'<article class="py-8 horizontal-card border-celeste border-b-2">' ~
-  '{{#newsImage}}' ~
-    '<figure class="w-full bg-white relative z-0 flex items-start justify-center">' ~
-      '<img src="{{ newsImage }}" class="max-w-full">' ~
-    '</figure>' ~
-  '{{/newsImage}}' ~
-  '{{^newsImage}}' ~
-    '<figure class="w-full h-48 sm:h-64 p-4 bg-celeste relative z-0 flex items-center justify-center">' ~
-      '<div class="text-camouflage-green opacity-75 fill-current h-full p-12">' ~
-        '<img src="/assets/img/icon-newspaper.svg" class="h-full">' ~
-      '</div>' ~
-    '</figure>' ~
-  '{{/newsImage}}' ~
-  '<div>' ~
-    '<h3 class="text-2xl mt-4 sm:mt-0">' ~
-      '<a href="{{ url }}">' ~
-        '{{{_highlightResult.title.value}}}' ~
-      '</a>' ~
-    '</h3>' ~
-    '<div class="text-shark my-4">' ~
-      '{{{_highlightResult.summary.value}}}' ~
-    '</div>' ~
+  {% set hitsTemplate =
+  '<article class="py-8 horizontal-card border-celeste border-b-2">' ~
+    '{{#newsImage}}' ~
+      '<figure class="w-full bg-white relative z-0 flex items-start justify-center">' ~
+        '<img src="{{ newsImage }}" class="max-w-full">' ~
+      '</figure>' ~
+    '{{/newsImage}}' ~
+    '{{^newsImage}}' ~
+      '<figure class="w-full h-48 sm:h-64 p-4 bg-celeste relative z-0 flex items-center justify-center">' ~
+        '<div class="text-camouflage-green opacity-75 fill-current h-full p-12">' ~
+          '<img src="/assets/img/icon-newspaper.svg" class="h-full">' ~
+        '</div>' ~
+      '</figure>' ~
+    '{{/newsImage}}' ~
     '<div>' ~
-    '<a href="{{ url }}">Read More »</a>' ~
+      '<h3 class="text-2xl mt-4 sm:mt-0">' ~
+        '<a href="{{ url }}">' ~
+          '{{{_highlightResult.title.value}}}' ~
+        '</a>' ~
+      '</h3>' ~
+      '<div class="text-shark my-4">' ~
+        '{{{_highlightResult.summary.value}}}' ~
+      '</div>' ~
+      '<div>' ~
+      '<a href="{{ url }}">Read More »</a>' ~
+      '</div>' ~
     '</div>' ~
-  '</div>' ~
-'</article>'
-%}
+  '</article>'
+  %}
 
-{{ search.hits("#hits", hitsTemplate) }}
-{{ search.pagination() }}
-{{ search.start() }}
+  {{ search.hits("#hits", hitsTemplate) }}
+  {{ search.pagination() }}
+  {{ search.start() }}
 {% endjs %}
 
 {% block content %}
