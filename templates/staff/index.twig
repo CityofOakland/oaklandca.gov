@@ -1,45 +1,37 @@
-{% extends '_layout' %}
-{% set entry = craft.entries.section('staffIndex').one %}
-{% set relatedEntry = null %}
-{% if craft.app.request.getSegment(2) == 'related-to' %}
-  {% set urlSlug = craft.app.request.getSegment(3) %}
-  {% set relatedEntry = craft.entries.slug(urlSlug).one %}
-{% endif %}
+{% extends '_layouts/_instant-search-index' %}
 
-{% block content %}
-  {% include '_partials/_page-banners' with {
-    bannerTitle: entry.title | replace(' Index', ''),
-    breadCrumbs: true,
-  } %}
-  {% include '_partials/_elements/_search-bar' with { searchSegment: "staff" } %}
-  <section class="bg-white relative z-0">
-    <div class="container mx-auto p-8 py-16">
-      {% paginate craft.entries.section('staff').relatedTo(relatedEntry).limit(30).orderBy('lastName asc, staffImportSurname asc') as pageInfo, pageEntries %}
-      {% include '_partials/_elements/_pagination' %}
-      <div class="card-grid wide-cards mt-12">
-      {% for entry in pageEntries %}
-        {% set department = entry.departments.one.title ?? entry.staffImportDepartment ?? '' %}
-        {% set organization = entry.staffImportOrganization ?? '' %}
-        {% set email = entry.emailAddress ??? entry.staffImportEmail %}
-        {% set phone = entry.phoneNumber ??? entry.staffImportPhoneNumber %}
-        {% set extraContent %}
-          {% if department | length %}<br>{{ department }}{% endif %}
-          {% if email | length %}
-            {% set e = email | replace({'@oaklandnet.com': '@oaklandca.gov'}) %}
-            <br><a href="mailto:{{ e }}">{{ e }}</a>
-          {% endif %}
-          {% if phone | length %}<br><a href="tel:{{ phone }}">{{ phone }}</a>{% endif %}
-        {% endset %}
+{% set relationships = [
+] %}
 
-        {% include '_partials/_elements/_profile-cards' with {
-          photo: entry.portrait.one,
-          url: entry.redirectUrl ?? entry.url ?? '',
-          icon: 'user',
-          extraContent: extraContent
-        } %}
-      {% endfor %}
-      </div>
-      {% include '_partials/_elements/_pagination' %}
-    </div>
-  </section>
-{% endblock %}
+{% set algoliaIndex = craft.app.config.env ~ '_staff' %}
+{% set hitsRootClass = 'card-grid wide-cards mt-12' %}
+
+{% set hitsTemplate =
+'<div class="block">' ~
+  '<div class="text-shark md:flex items-start">' ~
+    '<figure class="block h-12 w-12 md:w-1/4">' ~
+      '<a class="block" href="{{ url }}">' ~
+        '{{#portrait}}' ~
+          '<img' ~
+            'src="{{ portrait }}"' ~
+            'alt="Portrait of {{ jobTitle }}, {{ title }}"' ~
+            'class="block rounded-full h-full w-full">' ~
+        '{{/portrait}}' ~
+        '{{^portrait}}' ~
+          '<div class="text-camouflage-green opacity-75 fill-current h-full  bg-celeste rounded-full">' ~
+            '<img src="/assets/img/icon-user.svg" class="h-full block">' ~
+          '</div>' ~
+        '{{/portrait}}' ~
+      '</a>' ~
+    '</figure>' ~
+    '<div class="pt-4 md:pt-0 md:pl-6 md:w-3/4">' ~
+      '<h3 class="m-0 text-2xl"><a href="{{ url }}">{{ title }}</a></h3>' ~
+      '<p class="mt-2">' ~
+        '{{ jobTitle }}' ~
+        '{{#department}}<br>{{ department }}{{/department}}' ~
+        '{{#email}}<br><a href="mailto:{{ email }}">Email</a>{{/email}}' ~
+      '</p>' ~
+    '</div>' ~
+  '</div>' ~
+'</div>'
+%}

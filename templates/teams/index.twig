@@ -1,21 +1,5 @@
-{% extends '_layout' %}
+{% extends '_layouts/_instant-search-index' %}
 
-{% block content %}
-  {% include '_partials/_page-banners' with {
-    bannerTitle: entry.title | replace(' Index', ''),
-    breadCrumbs: true,
-  } %}
-  {% include '_partials/_elements/_search-bar' with { searchSegment: "teams"} %}
-  <section class="bg-white relative z-0">
-    <div class="container mx-auto p-8 py-16">
-      {% paginate craft.entries.section('teams').limit(25).orderBy('title') as pageInfo, pageEntries %}
-      {% include '_partials/_elements/_pagination' %}
-      {% for entry in pageEntries %}
-        <article>
-          <h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
-        </article>
-      {% endfor %}
-      {% include '_partials/_elements/_pagination' %}
-    </div>
-  </section>
-{% endblock %}
+{% set relationships = '' %}
+
+{% set algoliaIndex = craft.app.config.env ~ '_teams' %}

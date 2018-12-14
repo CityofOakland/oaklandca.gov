@@ -1,42 +1,52 @@
-{% extends '_layout' %}
-{% set entry = craft.entries.section('meetingsIndex').one %}
-{% set relatedEntry = null %}
-{% set bannerTitle = entry.title | replace(' Index', '') ~ ' Archive' %}
-{% set breadCrumbLinks = [
-  {
-    title: 'Public Meetings',
-    link: '/meetings'
-  }
-] %}
-{% if craft.app.request.getSegment(3) == 'related-to' %}
-  {% set relatedEntry = craft.entries.section(section).slug(slug).one %}
-  {% set bannerTitle = entry.title | replace(' Index', '') ~ ' Archive for ' ~ relatedEntry.title %}
-{% endif %}
+{% extends '_layouts/_instant-search-index' %}
+{% set dates = 'forward' %}
 
-{% block content %}
-  {% include '_partials/_page-banners' with {
-    breadCrumbs: true,
-    bannerTitle: bannerTitle,
-    breadCrumbLinks: breadCrumbLinks,
-  } %}
-  {# {% include '_partials/_elements/_search-bar' with { searchSegment: "meetings"} %} #}
-  <section class="bg-white relative z-0">
-    <div class="container mx-auto p-8 py-16">
-      {% set eventOptions = {
-        calendarId: 3,
-        rangeEnd: now,
-        endsBefore: now,
-        relatedTo: relatedEntry,
-        order: 'startDate DESC',
-        limit: 10
-      } %}
-      {% set events = craft.calendar.events(eventOptions) %}
-      {% if events | length %}
-        <div class="text-right">
-          <a href="/{{ craft.app.request.segments | join('/') | replace({'meetings/archive': 'meetings'}) }}" class="btn btn-sm px-4">View Upcoming Meetings</a>
-        </div>
-      {% endif %}
-      {% include '_partials/_page-events-index' with {eventOptions: eventOptions} %}
-    </div>
-  </section>
-{% endblock %}
+{% set relationships = [
+  {
+    'title': 'Boards & Commissions',
+    'handle': 'boardsCommissions'
+  },
+  {
+    'title': 'Elected Officials',
+    'handle': 'electedOfficials'
+  },
+  {
+    'title': 'Departments',
+    'handle': 'departments'
+  },
+] %}
+
+{% set entry = craft.entries.section('meetingsIndex').one %}
+
+{% set algoliaIndex = craft.app.config.env ~ '_meetings_reverse' %}
+
+{% set hitsTemplate =
+'<article class="py-8 horizontal-card border-celeste border-b-2">' ~
+  '{{#eventImage}}' ~
+    '<figure class="w-full bg-white relative z-0 flex items-start justify-center">' ~
+      '<img src="{{ eventImage }}" class="max-w-full">' ~
+    '</figure>' ~
+  '{{/eventImage}}' ~
+  '{{^eventImage}}' ~
+    '<figure class="w-full h-48 sm:h-64 p-4 bg-celeste relative z-0 flex items-center justify-center">' ~
+      '<div class="text-camouflage-green opacity-75 fill-current h-full p-12">' ~
+        '<img src="/assets/img/icon-newspaper.svg" class="h-full">' ~
+      '</div>' ~
+    '</figure>' ~
+  '{{/eventImage}}' ~
+'<div>' ~
+    '<div class="text-base text-camouflage-green mb-6">{{ displayDate }}</div>' ~
+    '<h3 class="text-2xl mt-4 sm:mt-0">' ~
+      '<a href="{{ url }}">' ~
+        '{{{_highlightResult.title.value}}}' ~
+      '</a>' ~
+    '</h3>' ~
+    '<div class="text-shark my-4">' ~
+      '{{{_highlightResult.summary.value}}}' ~
+    '</div>' ~
+    '<div>' ~
+    '<a href="{{ url }}">Read More »</a>' ~
+    '</div>' ~
+  '</div>' ~
+'</article>'
+%}

@@ -27,6 +27,8 @@ class eventsTransform extends TransformerAbstract
     return [
       'title' => $event->title,
       'url' => $event->url,
+      'date' => $event->startDate->timestamp,
+      'displayDate' => $event->startDate->format('F j, Y'),
       'body' => (string) $event->body,
       'contact' => (string) $event->eventContact,
       'eventImage' => ! empty($event->eventImage->one()) ? (string) $event->eventImage->one()->getUrl('smallSquare') : null,
@@ -432,26 +434,68 @@ return [
     ],
     // END CALENDAR INDEX
     // BEGIN STAFF INDEX
-    // [
-    //   'indexName' => getenv('ENVIRONMENT') . '_staff',
-    //   'elementType' => \craft\elements\Entry::class,
-    //   'criteria' => [
-    //     'section' => 'staff',
-    //     'type' => 'staff'
-    //   ],
-    //   'transformer' => function(craft\elements\Entry $entry) {
-    //     return [
-    //       'title' => $entry->title,
-    //       'url' => $entry->url,
-    //       'portrait' => ! empty($entry->portrait->one()) ? (string) $entry->portrait->one()->url : null,
-    //       'jobTitle' => ! empty($entry->jobTitle) ? (string) $entry->jobTitle : (string) $entry->staffImportJobTitle,
-    //       'bio' => (string) $entry->bio,
-    //       'email' => ! empty($entry->emailAddress) ? (string) $entry->emailAddress : (string) $entry->staffImportEmail,
-    //       'department' => ! empty($entry->departments->one()) ? (string) $entry->departments->one()->title : null,
-    //       'employmentType' => (string) $entry->employmentType->label,
-    //     ];
-    //   },
-    // ],
+    [
+      'indexName' => getenv('ENVIRONMENT') . '_staff',
+      'elementType' => \craft\elements\Entry::class,
+      'criteria' => [
+        'section' => 'staff',
+        'type' => 'staff'
+      ],
+      'transformer' => function(craft\elements\Entry $entry) {
+        return [
+          'title' => $entry->title,
+          'url' => $entry->url,
+          'portrait' => ! empty($entry->portrait->one()) ? (string) $entry->portrait->one()->url : null,
+          'jobTitle' => ! empty($entry->jobTitle) ? (string) $entry->jobTitle : (string) $entry->staffImportJobTitle,
+          'bio' => (string) $entry->bio,
+          'email' => ! empty($entry->emailAddress) ? (string) $entry->emailAddress : (string) $entry->staffImportEmail,
+          'department' => ! empty($entry->departments->one()) ? (string) $entry->departments->one()->title : $entry->staffImportDepartment,
+          'employmentType' => (string) $entry->employmentType->label,
+        ];
+      },
+    ],
     // END STAFF INDEX
+    // BEGIN VOLUNTEERS INDEX
+    [
+      'indexName' => getenv('ENVIRONMENT') . '_volunteers',
+      'elementType' => \craft\elements\Entry::class,
+      'criteria' => [
+        'section' => 'volunteers',
+        'type' => 'volunteers'
+      ],
+      'transformer' => function(craft\elements\Entry $entry) {
+        return [
+          'title' => $entry->title,
+          'url' => $entry->url,
+          'portrait' => ! empty($entry->portrait->one()) ? (string) $entry->portrait->one()->url : null,
+          'jobTitle' => ! empty($entry->jobTitle) ? (string) $entry->jobTitle : null,
+          'bio' => (string) $entry->bio,
+          'email' => ! empty($entry->emailAddress) ? (string) $entry->emailAddress : null,
+          'department' => ! empty($entry->departmentOfficialBoardCommission->one()) ? (string) $entry->departmentOfficialBoardCommission->one()->title : null,
+        ];
+      },
+    ],
+    // END VOLUNTEERS INDEX
+    // BEGIN TEAMS INDEX
+    [
+      'indexName' => getenv('ENVIRONMENT') . '_teams',
+      'elementType' => \craft\elements\Entry::class,
+      'criteria' => [
+        'section' => 'teams',
+        'type' => 'teams'
+      ],
+      'transformer' => function(craft\elements\Entry $entry) {
+        $teamMembers = [];
+        foreach($entry->teamMembers as $value)
+          foreach($value->staff as $teamMember)
+            $teamMembers[] = $teamMember->title;
+        return [
+          'title' => $entry->title,
+          'url' => $entry->url,
+          'teamMembers' => $teamMembers,
+        ];
+      },
+    ],
+    // END TEAMS INDEX
   ],
 ];

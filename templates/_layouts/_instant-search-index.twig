@@ -36,16 +36,18 @@
 ] %} #}
 
 {% js %}
-  {{ search.init(algoliaIndex) }}
-  {{ search.input("#search-input", searchInputText ?? 'Search')}}
+  {{ search.init(algoliaIndex, dates ?? '') }}
+  {{ search.input("#search-input", searchInputText ?? 'Search') }}
+  {% if searchParams is defined and searchParams != '' %}
+    {{ search.config(searchParams) }}
+  {% endif %}
 
   {% for rel in relationships %}
     {% set menuTemplate %}{header: '{{ rel.title }}'}{% endset %}
     {{ search.menuSelect("#" ~ rel.handle, rel.handle, menuTemplate) }}
   {% endfor %}
 
-  {% set hitsTemplate = hitsTemplate ??
-  '<article class="py-8 sm:py-12 border-celeste border-b-2">' ~
+  {% set defaultTemplate = '<article class="py-8 sm:py-12 border-celeste border-b-2">' ~
     '<h3 class="text-xl md:text-2xl my-0 {{#leadIn}}mt-0 mb-3 md:mb-6{{/leadIn}}">' ~
       '<a href="{{ url }}">' ~
         '{{ title }}' ~
@@ -58,9 +60,12 @@
     '{{/leadIn}}' ~
   '</article>' %}
 
+  {% set hitsTemplate = hitsTemplate ?? defaultTemplate %}
+
   {{ search.reset() }}
-  {{ search.hits("#hits", hitsTemplate) }}
-  {{ search.pagination() }}
+  {{ search.hits("#hits", hitsTemplate, hitsRootClass ?? 'block') }}
+  {{ search.pagination('#top-pagination') }}
+  {{ search.pagination('#bottom-pagination') }}
   {{ search.start() }}
 {% endjs %}
 
@@ -86,10 +91,9 @@
       {% endif %}
 
       <div class="{{ hitsColumn ?? 'w-full' }}">
-        <div id="hits">
-          <!-- Hits widget will appear here -->
-        </div>
-        <div class="text-2xl flex items-center"><div>Pages: </div><div class="inline-block" id="pagination"></div></div>
+        <div class="text-2xl flex items-center"><div>Pages: </div><div class="inline-block" id="top-pagination"></div></div>
+        <div id="hits"></div>
+        <div class="text-2xl flex items-center"><div>Pages: </div><div class="inline-block" id="bottom-pagination"></div></div>
       </div>
       <div class="{{ filterColumn ?? 'hidden' }}">
         {% for rel in relationships %}

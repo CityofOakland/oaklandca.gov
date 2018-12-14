@@ -1,9 +1,19 @@
-{% macro init(indexName) %}
+{% macro init(indexName, dates) %}
+  const ts = Math.round((new Date()).getTime() / 1000);
   const search = instantsearch({
     appId: "6V5VJO8ZG2",
     apiKey: "9bded46d3070b2089499c70b2389708b",
     indexName: "{{ indexName }}",
-    routing: true
+    routing: true,
+    {% if dates is defined and dates == 'forward' %}
+      searchParameters: {
+        filters: 'date >= ' + ts,
+      }
+    {% elseif dates is defined and dates == 'backward' %}
+      searchParameters: {
+        filters: 'date <= ' + ts
+      },
+    {% endif %}
   });
 {% endmacro %}
 
@@ -63,10 +73,13 @@
   );
 {% endmacro %}
 
-{% macro hits(container, templateItem) %}
+{% macro hits(container, templateItem, hitsRootClass) %}
   search.addWidget(
     instantsearch.widgets.hits({
       container: "{{ container ?? "hits" }}",
+      cssClasses: {
+        root: "{{ hitsRootClass }}"
+      },
       templates: {
         empty: "No results",
         item: '{{ templateItem | raw }}'
@@ -96,6 +109,9 @@
       container: '#clear-all',
       templates: {
         link: 'Reset everything'
+      },
+      cssClasses: {
+        link: "block"
       },
       autoHideContainer: false,
       clearsQuery: true,
