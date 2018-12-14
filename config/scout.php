@@ -164,15 +164,9 @@ return [
         $departments = [];
         foreach($entry->departments as $value)
           $departments[] = $value->title;
-        $documents = [];
-        foreach($entry->documents as $value)
-          $documents[] = $value->title;
         $electedOfficials = [];
         foreach($entry->electedOfficials as $value)
           $electedOfficials[] = $value->title;
-        $news = [];
-        foreach($entry->news as $value)
-          $news[] = $value->title;
         $projects = [];
         foreach($entry->projects as $value)
           $projects[] = $value->title;
@@ -182,9 +176,6 @@ return [
         $services = [];
         foreach($entry->services as $value)
           $services[] = $value->title;
-        $teams = [];
-        foreach($entry->teams as $value)
-          $teams[] = $value->title;
         $topics = [];
         foreach($entry->topics as $value)
           $topics[] = $value->title;
@@ -198,13 +189,10 @@ return [
           'categories' => $types,
           'boardsCommissions' => $boardsCommissions,
           'departments' => $departments,
-          'documents' => $documents,
           'electedOfficials' => $electedOfficials,
-          'news' => $news,
           'projects' => $projects,
           'resources' => $resources,
           'services' => $services,
-          'teams' => $teams,
           'topics' => $topics,
         ];
       },
