@@ -1,0 +1,85 @@
+{% extends '_layout' %}
+{% import '_partials/_macros/_search' as search %}
+
+{% do view.registerCssFile("https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.2/dist/instantsearch.min.css") %}
+{% do view.registerJsFile("https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.2") %}
+
+{# {% set relationships = [
+  {
+    'title': 'Boards & Commissions',
+    'handle': 'boardsCommissions'
+  },
+  {
+    'title': 'Topics',
+    'handle': 'topics'
+  },
+  {
+    'title': 'Elected Officials',
+    'handle': 'electedOfficials'
+  },
+  {
+    'title': 'Departments',
+    'handle': 'departments'
+  },
+  {
+    'title': 'Resources',
+    'handle': 'resources'
+  },
+  {
+    'title': 'Services',
+    'handle': 'services'
+  },
+  {
+    'title': 'Projects',
+    'handle': 'projects'
+  },
+] %} #}
+
+{% js %}
+  {{ search.init(algoliaIndex) }}
+  {{ search.input("#search-input", searchInputText ?? 'Search')}}
+
+{% for rel in relationships %}
+{% set menuTemplate %}{header: '{{ rel.title }}'}{% endset %}
+{{ search.menuSelect("#" ~ rel.handle, rel.handle, menuTemplate) }}
+{% endfor %}
+
+  {% set hitsTemplate = hitsTemplate ?? '<article><h3 class="text-xl md:text-2xl my-3"><a href="{{ url }}">{{ title }}</a></h3></article>' %}
+
+  {{ search.reset() }}
+  {{ search.hits("#hits", hitsTemplate) }}
+  {{ search.pagination() }}
+  {{ search.start() }}
+{% endjs %}
+
+{% block content %}
+  {% block pageBanner %}
+    {% include '_partials/_page-banners' with {
+      bannerTitle: entry.title | replace(' Index', ''),
+      breadCrumbs: true,
+    } %}
+  {% endblock %}
+  <div class="bg-cararra">
+    <div class="container mx-auto p-8">
+      <div class="flex flex-col sm:flex-row">
+        <input id="search-input" class="w-full py-4 px-8 mb-4 rounded-none appearance-none" type="search" name="keywords" value="" required>
+      </div>
+    </div>
+  </div>
+  <section class="bg-white relative z-0">
+    <div class="container mx-auto px-8 pt-4 pb-16 flex flex-col-reverse md:flex-row">
+      <div class="md:w-3/4">
+        <div id="hits">
+          <!-- Hits widget will appear here -->
+        </div>
+        <div class="text-2xl flex items-center"><div>Pages: </div><div class="inline-block" id="pagination"></div></div>
+      </div>
+      <div class="md:w-1/4 md:pl-8 md:pt-8">
+        {% for rel in relationships %}
+          <div class="mt-{% if loop.first %}0{% else %}2{% endif %}" id="{{rel.handle}}"></div>
+        {% endfor %}
+        <div id="clear-all" class="mt-2"></div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

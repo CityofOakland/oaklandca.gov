@@ -1,87 +1,52 @@
-{% extends '_layout' %}
+{% extends '_layouts/_instant-search-index' %}
+
+{% set relationships = [
+  {
+    'title': 'Boards & Commissions',
+    'handle': 'boardsCommissions'
+  },
+  {
+    'title': 'Topics',
+    'handle': 'topics'
+  },
+  {
+    'title': 'Elected Officials',
+    'handle': 'electedOfficials'
+  },
+  {
+    'title': 'Departments',
+    'handle': 'departments'
+  },
+] %}
+
 {% set entry = craft.entries.section('newsIndex').one %}
-{% set relatedEntry = null %}
-{% if craft.app.request.getSegment(2) == 'related-to' %}
-  {% set urlSlug = craft.app.request.getSegment(3) %}
-  {% set relatedEntry = craft.entries.slug(urlSlug).one %}
-{% endif %}
-
-{% import '_partials/_macros/_search' as search %}
-
-{% do view.registerCssFile("https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.2/dist/instantsearch.min.css") %}
-{% do view.registerJsFile("https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.2") %}
-{# {% do view.registerJsFile("/assets/js/news-search.js") %} #}
-
-{% js %}
-  {% set algoliaIndex = craft.app.config.env ~ '_news' %}
-  {{ search.init(algoliaIndex) }}
-  {{ search.input("#search-input", "Search for News")}}
-  {% set boardTemplate %}{header: "Boards & Commissions"}{% endset %}
-  {% set topicsTemplate %}{header: "Topics"}{% endset %}
-  {% set officialsTemplate %}{header: "Elected Officials"}{% endset %}
-  {% set departmentsTemplate %}{header: "Departments"}{% endset %}
-  {{ search.menuSelect("#boardsCommissions", "boardsCommissions", boardTemplate) }}
-  {{ search.menuSelect("#topics", "topics", topicsTemplate) }}
-  {{ search.menuSelect("#electedOfficials", "electedOfficials", officialsTemplate) }}
-  {{ search.menuSelect("#departments", "departments", departmentsTemplate) }}
-  {{ search.reset() }}
-
-  {% set hitsTemplate =
-  '<article class="py-8 horizontal-card border-celeste border-b-2">' ~
-    '{{#newsImage}}' ~
-      '<figure class="w-full bg-white relative z-0 flex items-start justify-center">' ~
-        '<img src="{{ newsImage }}" class="max-w-full">' ~
-      '</figure>' ~
-    '{{/newsImage}}' ~
-    '{{^newsImage}}' ~
-      '<figure class="w-full h-48 sm:h-64 p-4 bg-celeste relative z-0 flex items-center justify-center">' ~
-        '<div class="text-camouflage-green opacity-75 fill-current h-full p-12">' ~
-          '<img src="/assets/img/icon-newspaper.svg" class="h-full">' ~
-        '</div>' ~
-      '</figure>' ~
-    '{{/newsImage}}' ~
-    '<div>' ~
-      '<h3 class="text-2xl mt-4 sm:mt-0">' ~
-        '<a href="{{ url }}">' ~
-          '{{{_highlightResult.title.value}}}' ~
-        '</a>' ~
-      '</h3>' ~
-      '<div class="text-shark my-4">' ~
-        '{{{_highlightResult.summary.value}}}' ~
+{% set algoliaIndex = craft.app.config.env ~ '_news' %}
+{% set hitsTemplate =
+'<article class="py-8 horizontal-card border-celeste border-b-2">' ~
+  '{{#newsImage}}' ~
+    '<figure class="w-full bg-white relative z-0 flex items-start justify-center">' ~
+      '<img src="{{ newsImage }}" class="max-w-full">' ~
+    '</figure>' ~
+  '{{/newsImage}}' ~
+  '{{^newsImage}}' ~
+    '<figure class="w-full h-48 sm:h-64 p-4 bg-celeste relative z-0 flex items-center justify-center">' ~
+      '<div class="text-camouflage-green opacity-75 fill-current h-full p-12">' ~
+        '<img src="/assets/img/icon-newspaper.svg" class="h-full">' ~
       '</div>' ~
-      '<div>' ~
-      '<a href="{{ url }}">Read More »</a>' ~
-      '</div>' ~
+    '</figure>' ~
+  '{{/newsImage}}' ~
+  '<div>' ~
+    '<h3 class="text-2xl mt-4 sm:mt-0">' ~
+      '<a href="{{ url }}">' ~
+        '{{{_highlightResult.title.value}}}' ~
+      '</a>' ~
+    '</h3>' ~
+    '<div class="text-shark my-4">' ~
+      '{{{_highlightResult.summary.value}}}' ~
     '</div>' ~
-  '</article>'
-  %}
-
-  {{ search.hits("#hits", hitsTemplate) }}
-  {{ search.pagination() }}
-  {{ search.start() }}
-{% endjs %}
-
-{% block content %}
-  {% include '_partials/_page-banners' with {
-    bannerTitle: entry.title | replace(' Index', ''),
-    breadCrumbs: true,
-  } %}
-  <section class="bg-white relative z-0">
-    <div class="container mx-auto p-8 py-16 flex flex-col-reverse md:flex-row">
-      <div class="md:w-3/4">
-        <div class="text-2xl flex items-center"><div>Pages: </div><div class="inline-block" id="pagination"></div></div>
-        <div id="hits">
-          <!-- Hits widget will appear here -->
-        </div>
-      </div>
-      <div class="md:w-1/4 md:pl-8 md:pt-8">
-        <input id="search-input" class="flex-1 py-4 px-8 mb-4 rounded-none appearance-none" type="search" name="keywords" value="" required>
-        <div class="mt-2" id="departments"></div>
-        <div class="mt-2" id="electedOfficials"></div>
-        <div class="mt-2" id="boardsCommissions"></div>
-        <div class="mt-2" id="topics"></div>
-        <div id="clear-all" class="mt-2"></div>
-      </div>
-    </div>
-  </section>
-{% endblock %}
+    '<div>' ~
+    '<a href="{{ url }}">Read More »</a>' ~
+    '</div>' ~
+  '</div>' ~
+'</article>'
+%}
