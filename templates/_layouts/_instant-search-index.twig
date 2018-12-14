@@ -39,12 +39,24 @@
   {{ search.init(algoliaIndex) }}
   {{ search.input("#search-input", searchInputText ?? 'Search')}}
 
-{% for rel in relationships %}
-{% set menuTemplate %}{header: '{{ rel.title }}'}{% endset %}
-{{ search.menuSelect("#" ~ rel.handle, rel.handle, menuTemplate) }}
-{% endfor %}
+  {% for rel in relationships %}
+    {% set menuTemplate %}{header: '{{ rel.title }}'}{% endset %}
+    {{ search.menuSelect("#" ~ rel.handle, rel.handle, menuTemplate) }}
+  {% endfor %}
 
-  {% set hitsTemplate = hitsTemplate ?? '<article><h3 class="text-xl md:text-2xl my-3"><a href="{{ url }}">{{ title }}</a></h3></article>' %}
+  {% set hitsTemplate = hitsTemplate ??
+  '<article class="py-8 sm:py-12 border-celeste border-b-2">' ~
+    '<h3 class="text-xl md:text-2xl my-0 {{#leadIn}}mt-0 mb-3 md:mb-6{{/leadIn}}">' ~
+      '<a href="{{ url }}">' ~
+        '{{ title }}' ~
+      '</a>' ~
+    '</h3>' ~
+    '{{#leadIn}}' ~
+      '<p class="text-base text-shark md:text-lg my-2 md:my-4">' ~
+        '{{ leadIn }}' ~
+      '</p>' ~
+    '{{/leadIn}}' ~
+  '</article>' %}
 
   {{ search.reset() }}
   {{ search.hits("#hits", hitsTemplate) }}
@@ -68,13 +80,18 @@
   </div>
   <section class="bg-white relative z-0">
     <div class="container mx-auto px-8 pt-4 pb-16 flex flex-col-reverse md:flex-row">
-      <div class="md:w-3/4">
+      {% if relationships | length %}
+        {% set hitsColumn = "md:w-3/4" %}
+        {% set filterColumn = "md:w-1/4 md:pl-8 md:pt-8" %}
+      {% endif %}
+
+      <div class="{{ hitsColumn ?? 'w-full' }}">
         <div id="hits">
           <!-- Hits widget will appear here -->
         </div>
         <div class="text-2xl flex items-center"><div>Pages: </div><div class="inline-block" id="pagination"></div></div>
       </div>
-      <div class="md:w-1/4 md:pl-8 md:pt-8">
+      <div class="{{ filterColumn ?? 'hidden' }}">
         {% for rel in relationships %}
           <div class="mt-{% if loop.first %}0{% else %}2{% endif %}" id="{{rel.handle}}"></div>
         {% endfor %}
