@@ -16,6 +16,7 @@
   <section class="bg-white relative z-0">
     <div class="container mx-auto p-8 py-16 sm:flex">
       <div class="sm:w-3/4 sm:mr-8">
+        <h2 class="text-xl">Post Date: {{ entry.postDate | date() }}</h3>
         {% if entry.newsImage | length %}
           <figure class="max-w-full mb-8">
             <img src="{{ entry.newsImage.one.url }}" alt="">
