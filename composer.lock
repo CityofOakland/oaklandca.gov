@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "d2a6f1ba6fe119a6b961ece3a919b167",
+    "content-hash": "3cdc0a259117617be0c3deefcd360fe4",
     "packages": [
         {
             "name": "99designs/phumbor",
@@ -205,11 +205,11 @@
         },
         {
             "name": "cakephp/core",
-            "version": "3.7.0",
+            "version": "3.7.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cakephp/core/zipball/ae0fd1dd3bdf2eb1cb0c291a0573dc898d9ce6d6",
-                "reference": "ae0fd1dd3bdf2eb1cb0c291a0573dc898d9ce6d6",
+                "url": "https://api.github.com/repos/cakephp/core/zipball/02b4d6579246d7011e5062058c50c041ab542fa9",
+                "reference": "02b4d6579246d7011e5062058c50c041ab542fa9",
                 "shasum": ""
             },
             "require": {
@@ -244,7 +244,7 @@
                 "core",
                 "framework"
             ],
-            "time": "2018-11-13T02:29:05+00:00"
+            "time": "2018-12-13T23:20:56+00:00"
         },
         {
             "name": "cakephp/utility",
@@ -652,11 +652,11 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "3.0.34",
+            "version": "3.0.36",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/6607823af6ccdb336daf24b1c8da587a7b5c8cb1",
-                "reference": "6607823af6ccdb336daf24b1c8da587a7b5c8cb1",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/76b9d7b854a725771028d3bee928b56e6039325c",
+                "reference": "76b9d7b854a725771028d3bee928b56e6039325c",
                 "shasum": ""
             },
             "require": {
@@ -730,7 +730,7 @@
                 "docs": "https://github.com/craftcms/docs",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2018-12-04T23:45:37+00:00"
+            "time": "2018-12-18T20:33:23+00:00"
         },
         {
             "name": "craftcms/element-api",
@@ -867,11 +867,11 @@
         },
         {
             "name": "craftcms/redactor",
-            "version": "2.1.6",
+            "version": "2.1.7",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/redactor/zipball/86699fb2e9be6c689b3f5da75145acacf9497938",
-                "reference": "86699fb2e9be6c689b3f5da75145acacf9497938",
+                "url": "https://api.github.com/repos/craftcms/redactor/zipball/9d2e579b358dd1e42ad34e208ca887d5c9530967",
+                "reference": "9d2e579b358dd1e42ad34e208ca887d5c9530967",
                 "shasum": ""
             },
             "require": {
@@ -910,7 +910,7 @@
                 "source": "https://github.com/craftcms/redactor",
                 "docs": "https://github.com/craftcms/redactor"
             },
-            "time": "2018-08-21T07:54:14+00:00"
+            "time": "2018-12-17T08:09:54+00:00"
         },
         {
             "name": "craftcms/server-check",
@@ -1454,11 +1454,11 @@
         },
         {
             "name": "doublesecretagency/craft-smartmap",
-            "version": "3.2.0",
+            "version": "3.2.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doublesecretagency/craft-smartmap/zipball/01a418b79b83cc8997d78d5ef455122dbf6e1da5",
-                "reference": "01a418b79b83cc8997d78d5ef455122dbf6e1da5",
+                "url": "https://api.github.com/repos/doublesecretagency/craft-smartmap/zipball/57a3e2cbc0b44b902141eadc87d00bc97ff28565",
+                "reference": "57a3e2cbc0b44b902141eadc87d00bc97ff28565",
                 "shasum": ""
             },
             "require": {
@@ -1502,7 +1502,7 @@
                 "docs": "https://www.doublesecretagency.com/plugins/smart-map/docs",
                 "issues": "https://github.com/doublesecretagency/craft-smartmap/issues"
             },
-            "time": "2018-12-06T08:02:36+00:00"
+            "time": "2018-12-14T22:37:17+00:00"
         },
         {
             "name": "egulias/email-validator",
@@ -3647,11 +3647,11 @@
         },
         {
             "name": "nystudio107/craft-emptycoalesce",
-            "version": "1.0.2",
+            "version": "1.0.3",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-emptycoalesce/zipball/0197da163afa855aeb290c1399d86cb257ca7b4a",
-                "reference": "0197da163afa855aeb290c1399d86cb257ca7b4a",
+                "url": "https://api.github.com/repos/nystudio107/craft-emptycoalesce/zipball/3f22807aab2da7ea41a0e1f6396ef3420075d677",
+                "reference": "3f22807aab2da7ea41a0e1f6396ef3420075d677",
                 "shasum": ""
             },
             "require": {
@@ -3698,7 +3698,7 @@
                 "docs": "https://github.com/nystudio107/craft-emptycoalesce/blob/v1/README.md",
                 "issues": "https://github.com/nystudio107/craft-emptycoalesce/issues"
             },
-            "time": "2018-10-04T22:19:12+00:00"
+            "time": "2018-12-18T09:31:49+00:00"
         },
         {
             "name": "nystudio107/craft-imageoptimize",
@@ -3819,11 +3819,11 @@
         },
         {
             "name": "nystudio107/craft-retour",
-            "version": "3.0.18",
+            "version": "3.1.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-retour/zipball/9411b88c592fb3b4dc6a5c76abecb4cec6781e4f",
-                "reference": "9411b88c592fb3b4dc6a5c76abecb4cec6781e4f",
+                "url": "https://api.github.com/repos/nystudio107/craft-retour/zipball/a519941a240f2107b574a82eb3998ae3375c2f34",
+                "reference": "a519941a240f2107b574a82eb3998ae3375c2f34",
                 "shasum": ""
             },
             "require": {
@@ -3870,15 +3870,15 @@
                 "docs": "https://github.com/nystudio107/craft-retour/blob/v1/README.md",
                 "issues": "https://github.com/nystudio107/craft-retour/issues"
             },
-            "time": "2018-11-23T17:18:40+00:00"
+            "time": "2018-12-17T17:11:10+00:00"
         },
         {
             "name": "nystudio107/craft-seomatic",
-            "version": "3.1.35",
+            "version": "3.1.37",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/e3cd8734d50fd5b6a41bf8bd51d440c936c06acf",
-                "reference": "e3cd8734d50fd5b6a41bf8bd51d440c936c06acf",
+                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/b95a32bcbefd45c40e786d1b4bbf03430269e199",
+                "reference": "b95a32bcbefd45c40e786d1b4bbf03430269e199",
                 "shasum": ""
             },
             "require": {
@@ -3941,7 +3941,7 @@
                 "docs": "https://github.com/nystudio107/craft-seomatic/blob/v3/README.md",
                 "issues": "https://github.com/nystudio107/craft-seomatic/issues"
             },
-            "time": "2018-12-03T22:52:52+00:00"
+            "time": "2018-12-19T23:08:59+00:00"
         },
         {
             "name": "nystudio107/craft-typogrify",
@@ -5008,11 +5008,11 @@
         },
         {
             "name": "solspace/craft3-calendar",
-            "version": "2.0.10",
+            "version": "2.0.11",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/solspace/craft3-calendar/zipball/ec27bd3b5df2571a286fbfe1c2d9a6a97f641a75",
-                "reference": "ec27bd3b5df2571a286fbfe1c2d9a6a97f641a75",
+                "url": "https://api.github.com/repos/solspace/craft3-calendar/zipball/5e7ac10f0dfb6efc9119aa1f899f610cefd487c9",
+                "reference": "5e7ac10f0dfb6efc9119aa1f899f610cefd487c9",
                 "shasum": ""
             },
             "require": {
@@ -5050,7 +5050,7 @@
                 }
             ],
             "description": "The most powerful event management plugin for Craft.",
-            "time": "2018-11-08T21:22:36+00:00"
+            "time": "2018-12-13T20:16:59+00:00"
         },
         {
             "name": "solspace/craft3-commons",
@@ -5521,20 +5521,21 @@
         },
         {
             "name": "symfony/inflector",
-            "version": "v3.3.6",
+            "version": "v3.4.20",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/inflector/zipball/aed5a0874a3bcfd8d0393a2d91b4cf828f29c7fb",
-                "reference": "aed5a0874a3bcfd8d0393a2d91b4cf828f29c7fb",
+                "url": "https://api.github.com/repos/symfony/inflector/zipball/85af902561d22b3094be027e054559b73aab42a0",
+                "reference": "85af902561d22b3094be027e054559b73aab42a0",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.5.9"
+                "php": "^5.5.9|>=7.0.8",
+                "symfony/polyfill-ctype": "~1.8"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.3-dev"
+                    "dev-master": "3.4-dev"
                 }
             },
             "autoload": {
@@ -5545,6 +5546,7 @@
                     "/Tests/"
                 ]
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -5568,7 +5570,7 @@
                 "symfony",
                 "words"
             ],
-            "time": "2017-04-12T14:14:56+00:00"
+            "time": "2018-11-11T19:48:54+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -5773,17 +5775,20 @@
         },
         {
             "name": "symfony/property-access",
-            "version": "v3.3.6",
+            "version": "v3.4.20",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/property-access/zipball/4cd2bc4afdfd914ad18cec97bb4159fc403384ea",
-                "reference": "4cd2bc4afdfd914ad18cec97bb4159fc403384ea",
+                "url": "https://api.github.com/repos/symfony/property-access/zipball/df86e7cf3013ed2f9de0435c6fa02ace78127b34",
+                "reference": "df86e7cf3013ed2f9de0435c6fa02ace78127b34",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.5.9",
-                "symfony/inflector": "~3.1",
+                "php": "^5.5.9|>=7.0.8",
+                "symfony/inflector": "~3.1|~4.0",
                 "symfony/polyfill-php70": "~1.0"
+            },
+            "require-dev": {
+                "symfony/cache": "~3.1|~4.0"
             },
             "suggest": {
                 "psr/cache-implementation": "To cache access methods."
@@ -5791,7 +5796,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.3-dev"
+                    "dev-master": "3.4-dev"
                 }
             },
             "autoload": {
@@ -5802,6 +5807,7 @@
                     "/Tests/"
                 ]
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -5828,7 +5834,7 @@
                 "property path",
                 "reflection"
             ],
-            "time": "2017-07-03T08:12:02+00:00"
+            "time": "2018-11-29T12:09:28+00:00"
         },
         {
             "name": "symfony/translation",
@@ -6134,27 +6140,22 @@
         },
         {
             "name": "twig/twig",
-            "version": "v2.5.0",
+            "version": "v2.6.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/6a5f676b77a90823c2d4eaf76137b771adf31323",
-                "reference": "6a5f676b77a90823c2d4eaf76137b771adf31323",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/a11dd39f5b6589e14f0ff3b36675d06047c589b1",
+                "reference": "a11dd39f5b6589e14f0ff3b36675d06047c589b1",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.0",
                 "symfony/polyfill-ctype": "^1.8",
-                "symfony/polyfill-mbstring": "~1.0"
-            },
-            "require-dev": {
-                "psr/container": "^1.0",
-                "symfony/debug": "^2.7",
-                "symfony/phpunit-bridge": "^3.3"
+                "symfony/polyfill-mbstring": "^1.3"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.5-dev"
+                    "dev-master": "2.6-dev"
                 }
             },
             "autoload": {
@@ -6165,7 +6166,6 @@
                     "Twig\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "BSD-3-Clause"
             ],
@@ -6192,15 +6192,15 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2018-07-13T07:18:09+00:00"
+            "time": "2018-12-16T10:36:48+00:00"
         },
         {
             "name": "verbb/feed-me",
-            "version": "3.0.1",
+            "version": "3.0.2.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/verbb/feed-me/zipball/2519ef746430d892463c281498e8495d35d0d881",
-                "reference": "2519ef746430d892463c281498e8495d35d0d881",
+                "url": "https://api.github.com/repos/verbb/feed-me/zipball/548992a0e51618aa7063d52cc9f59be20b2d65b9",
+                "reference": "548992a0e51618aa7063d52cc9f59be20b2d65b9",
                 "shasum": ""
             },
             "require": {
@@ -6251,7 +6251,7 @@
                 "docs": "https://github.com/verbb/feed-me",
                 "rss": "https://github.com/verbb/feed-me/commits/v2.atom"
             },
-            "time": "2018-12-06T04:20:21+00:00"
+            "time": "2018-12-12T23:13:18+00:00"
         },
         {
             "name": "verbb/redactor-tweaks",
