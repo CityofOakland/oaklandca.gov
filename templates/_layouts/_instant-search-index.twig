@@ -1,106 +1,119 @@
 {% extends '_layout' %}
-{% import '_partials/_macros/_search' as search %}
 
 {% do view.registerJsFile("https://cdn.polyfill.io/v2/polyfill.min.js?features=default,Array.prototype.includes,Array.prototype.find") %}
 {% do view.registerCssFile("https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.2/dist/instantsearch.min.css") %}
 {% do view.registerJsFile("https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.2") %}
 
-{# {% set relationships = [
-  {
-    'title': 'Boards & Commissions',
-    'handle': 'boardsCommissions'
-  },
-  {
-    'title': 'Topics',
-    'handle': 'topics'
-  },
-  {
-    'title': 'Elected Officials',
-    'handle': 'electedOfficials'
-  },
-  {
-    'title': 'Departments',
-    'handle': 'departments'
-  },
-  {
-    'title': 'Resources',
-    'handle': 'resources'
-  },
-  {
-    'title': 'Services',
-    'handle': 'services'
-  },
-  {
-    'title': 'Projects',
-    'handle': 'projects'
-  },
-] %} #}
+{% set defaultTemplate = '<article class="py-8 sm:py-12 border-celeste border-b-2">' ~
+  '<h3 class="text-xl md:text-2xl my-0 {{#leadIn}}mt-0 mb-3 md:mb-6{{/leadIn}}">' ~
+    '<a href="{{ url }}">' ~
+      '{{ _highlightResult.title.value }}' ~
+    '</a>' ~
+  '</h3>' ~
+  '{{#leadIn}}' ~
+    '<p class="text-base text-shark md:text-lg my-2 md:my-4">' ~
+      '{{ _highlightResult.leadIn.value }}' ~
+    '</p>' ~
+  '{{/leadIn}}' ~
+'</article>' %}
+{% set hitsTemplate = hitsTemplate ?? defaultTemplate %}
 
 {% js %}
-  {{ search.init(algoliaIndex, dates ?? '') }}
-  {{ search.input("#search-input", searchInputText ?? 'Search') }}
-  {% if searchParams is defined and searchParams != '' %}
-    {{ search.config(searchParams) }}
-  {% endif %}
+  const ts = Math.round((new Date()).getTime() / 1000);
+  const search = instantsearch({
+    appId: "6V5VJO8ZG2",
+    apiKey: "9bded46d3070b2089499c70b2389708b",
+    indexName: "{{ algoliaIndex }}",
+    routing: true,
+    snippetEllipsisText: '…',
+    searchParameters: {
+      snippetEllipsisText: "…",
+      facetFilters: [
+        {% block facetFilters %}
+          {% if section is defined and slug is defined %}
+            {% set facetItem = craft.entries.section(section).slug(slug).one().title %}
+            '{{ section }}:{{ facetItem }}',
+          {% endif %}
+        {% endblock %}
+      ],
+      {% if dates is defined and dates == 'forward' %}
+        filters: 'date >= ' + ts,
+      {% elseif dates is defined and dates == 'backward' %}
+        filters: 'date <= ' + ts
+      {% endif %}
+    },
+  });
 
-  {% for rel in relationships %}
-    {% set menuTemplate %}{header: '{{ rel.title }}'}{% endset %}
-    {{ search.menuSelect("#" ~ rel.handle, rel.handle, menuTemplate) }}
-  {% endfor %}
+  search.addWidget(
+    instantsearch.widgets.searchBox({
+      container: "#search-input",
+      placeholder: "{{ searchInputText ?? 'Search' }}"
+    })
+  );
+  {% css %}
+    .ais-search-box {
+      max-width: initial;
+    }
+    .ais-search-box--magnifier {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  {% endcss %}
 
-  {% set defaultTemplate = '<article class="py-8 sm:py-12 border-celeste border-b-2">' ~
-    '<h3 class="text-xl md:text-2xl my-0 {{#leadIn}}mt-0 mb-3 md:mb-6{{/leadIn}}">' ~
-      '<a href="{{ url }}">' ~
-        '{{ title }}' ~
-      '</a>' ~
-    '</h3>' ~
-    '{{#leadIn}}' ~
-      '<p class="text-base text-shark md:text-lg my-2 md:my-4">' ~
-        '{{ leadIn }}' ~
-      '</p>' ~
-    '{{/leadIn}}' ~
-  '</article>' %}
+  search.addWidget(
+    instantsearch.widgets.configure({
+    })
+  );
 
-  {% set hitsTemplate = hitsTemplate ?? defaultTemplate %}
+  search.addWidget(
+    instantsearch.widgets.hits({
+      container: "#hits",
+      cssClasses: {
+        root: "{{ hitsRootClass ?? 'block' }}"
+      },
+      templates: {
+        empty: "No results",
+        item: '{{ hitsTemplate | raw }}'
+      }
+    })
+  );
+  search.addWidget(
+    instantsearch.widgets.pagination({
+      container: "#bottom-pagination",
+      maxPages: {{ maxPages ?? 20 }},
+      // default is to scroll to 'body', here we disable this behavior
+      scrollTo: {{ scrollTo ?? "false" }},
+      cssClasses: {
+        root: "p-0 inline-block",
+        disabled: "w-0"
+      }
+    })
+  );
+  search.start();
 
-  {{ search.reset() }}
-  {{ search.hits("#hits", hitsTemplate, hitsRootClass ?? 'block') }}
-  {{ search.pagination('#top-pagination') }}
-  {{ search.pagination('#bottom-pagination') }}
-  {{ search.start() }}
 {% endjs %}
+
 
 {% block content %}
   {% block pageBanner %}
     {% include '_partials/_page-banners' with {
       bannerTitle: entry.title | replace(' Index', ''),
-      breadCrumbs: true,
+      breadCrumbs: false,
+      smallBanner: true
     } %}
   {% endblock %}
-  <div class="bg-cararra">
-    <div class="container mx-auto p-8">
+  <div class="bg-cararra" id="search-bar-container">
+    <div class="container mx-auto px-8 py-4 md:p-8">
       <div class="flex flex-col sm:flex-row">
-        <input id="search-input" class="w-full py-4 px-8 mb-4 rounded-none appearance-none" type="search" name="keywords" value="" required>
+        <input id="search-input" class="w-full p-2 md:py-4 md:px-8 rounded-none appearance-none" type="search" name="keywords" value="" required>
       </div>
     </div>
   </div>
   <section class="bg-white relative z-0">
-    <div class="container mx-auto px-8 pt-4 pb-16 flex flex-col-reverse md:flex-row">
-      {% if relationships | length %}
-        {% set hitsColumn = "md:w-3/4" %}
-        {% set filterColumn = "md:w-1/4 md:pl-8 md:pt-8" %}
-      {% endif %}
-
-      <div class="{{ hitsColumn ?? 'w-full' }}">
-        <div class="text-2xl flex items-center"><div>Pages: </div><div class="inline-block" id="top-pagination"></div></div>
+    <div class="container mx-auto px-8 pt-4 pb-16">
+      <div class="w-full">
         <div id="hits"></div>
         <div class="text-2xl flex items-center"><div>Pages: </div><div class="inline-block" id="bottom-pagination"></div></div>
-      </div>
-      <div class="{{ filterColumn ?? 'hidden' }}">
-        {% for rel in relationships %}
-          <div class="mt-{% if loop.first %}0{% else %}2{% endif %}" id="{{rel.handle}}"></div>
-        {% endfor %}
-        <div id="clear-all" class="mt-2"></div>
       </div>
     </div>
   </section>

@@ -1,50 +1,5 @@
-{% extends '_layouts/_instant-search-index' %}
+{% extends '_layouts/_instant-search-event-meetings' %}
 {% set dates = 'forward' %}
 
-{% set relationships = [
-  {
-    'title': 'Boards & Commissions',
-    'handle': 'boardsCommissions'
-  },
-  {
-    'title': 'Elected Officials',
-    'handle': 'electedOfficials'
-  },
-  {
-    'title': 'Departments',
-    'handle': 'departments'
-  },
-] %}
-
+{% set entry = craft.entries.section('eventsIndex').one %}
 {% set algoliaIndex = craft.app.config.env ~ '_events' %}
-
-{% set hitsTemplate =
-'<article class="py-8 horizontal-card border-celeste border-b-2">' ~
-  '{{#eventImage}}' ~
-    '<figure class="w-full bg-white relative z-0 flex items-start justify-center">' ~
-      '<img src="{{ eventImage }}" class="max-w-full">' ~
-    '</figure>' ~
-  '{{/eventImage}}' ~
-  '{{^eventImage}}' ~
-    '<figure class="w-full h-48 sm:h-64 p-4 bg-celeste relative z-0 flex items-center justify-center">' ~
-      '<div class="text-camouflage-green opacity-75 fill-current h-full p-12">' ~
-        '<img src="/assets/img/icon-newspaper.svg" class="h-full">' ~
-      '</div>' ~
-    '</figure>' ~
-  '{{/eventImage}}' ~
-'<div>' ~
-    '<div class="text-base text-camouflage-green mb-6">{{ displayDate }}</div>' ~
-    '<h3 class="text-2xl mt-4 sm:mt-0">' ~
-      '<a href="{{ url }}">' ~
-        '{{{_highlightResult.title.value}}}' ~
-      '</a>' ~
-    '</h3>' ~
-    '<div class="text-shark my-4">' ~
-      '{{{_highlightResult.summary.value}}}' ~
-    '</div>' ~
-    '<div>' ~
-    '<a href="{{ url }}">Read More »</a>' ~
-    '</div>' ~
-  '</div>' ~
-'</article>'
-%}
