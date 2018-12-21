@@ -1,23 +1,4 @@
 {% extends '_layouts/_instant-search-index' %}
 
-{% set relationships = [
-  {
-    'title': 'Boards & Commissions',
-    'handle': 'boardsCommissions'
-  },
-  {
-    'title': 'Topics',
-    'handle': 'topics'
-  },
-  {
-    'title': 'Elected Officials',
-    'handle': 'electedOfficials'
-  },
-  {
-    'title': 'Departments',
-    'handle': 'departments'
-  },
-] %}
-
-{% set entry = craft.entries.section('topicsIndex').one %}
 {% set algoliaIndex = craft.app.config.env ~ '_topics' %}
+{% set entry = craft.entries.section('topicsIndex').one %}

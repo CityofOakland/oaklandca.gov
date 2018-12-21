@@ -1,9 +1,8 @@
 {% extends '_layouts/_instant-search-index' %}
 
-{% set relationships = [
-] %}
-
 {% set algoliaIndex = craft.app.config.env ~ '_volunteers' %}
+{% set entry = craft.entries.section('volunteersIndex').one %}
+
 {% set hitsRootClass = 'card-grid wide-cards mt-12' %}
 
 {% set hitsTemplate =

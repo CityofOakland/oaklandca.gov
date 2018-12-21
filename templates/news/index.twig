@@ -1,8 +1,8 @@
 {% extends '_layouts/_instant-search-index' %}
 
+{% set entry = craft.entries.section('newsIndex').one %}
 {% set algoliaIndex = craft.app.config.env ~ '_news' %}
 
-{% set entry = craft.entries.section('newsIndex').one %}
 {% set hitsTemplate =
 '<article class="py-8 horizontal-card border-celeste border-b-2">' ~
   '{{#newsImage}}' ~

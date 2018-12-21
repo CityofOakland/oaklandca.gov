@@ -1,5 +1,5 @@
 {% extends '_layouts/_instant-search-event-meetings' %}
 {% set dates = 'backward' %}
 
-{% set entry = craft.entries.section('eventsIndex').one %}
 {% set algoliaIndex = craft.app.config.env ~ '_events_reverse' %}
+{% set entry = craft.entries.section('eventsIndex').one %}

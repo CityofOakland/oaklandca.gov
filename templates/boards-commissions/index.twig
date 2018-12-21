@@ -1,5 +1,4 @@
 {% extends '_layouts/_instant-search-index' %}
 
-{% set algoliaIndex = craft.app.config.env ~ '_boards' %}
-
 {% set entry = craft.entries.section('boardsIndex').one %}
+{% set algoliaIndex = craft.app.config.env ~ '_boards' %}

@@ -1,5 +1,4 @@
 {% extends '_layouts/_instant-search-index' %}
 
-{% set relationships = '' %}
-
 {% set algoliaIndex = craft.app.config.env ~ '_teams' %}
+{% set entry = craft.entries.section('teamsIndex').one %}
