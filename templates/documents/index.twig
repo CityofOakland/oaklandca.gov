@@ -1,36 +1,4 @@
-{% extends '_layout' %}
+{% extends '_layouts/_instant-search-index' %}
+
+{% set algoliaIndex = craft.app.config.env ~ '_documents' %}
 {% set entry = craft.entries.section('documentsIndex').one %}
-{% set relatedEntry = null %}
-{% set bannerTitle = entry.title | replace(' Index', '') %}
-{% set breadCrumbLinks = '' %}
-
-{% if craft.app.request.getSegment(2) == 'related-to' %}
-  {% set relatedEntry = craft.entries.section(section).slug(slug).one %}
-  {% set bannerTitle = entry.title | replace(' Index', '') ~ ' for ' ~ relatedEntry.title %}
-  {% set breadCrumbLinks = [
-    {
-      title: 'Documents',
-      link: '/documents'
-    }
-  ] %}
-{% endif %}
-
-{% block content %}
-  {% include '_partials/_page-banners' with {
-    bannerTitle: bannerTitle,
-    breadCrumbs: true,
-  } %}
-  {% include '_partials/_elements/_search-bar' with { searchSegment: "documents"} %}
-  <section class="bg-white relative z-0">
-    <div class="container mx-auto p-8 py-16">
-      {% paginate craft.entries.section('documents').relatedTo(relatedEntry).limit(25).orderBy('title') as pageInfo, pageEntries %}
-      {% include '_partials/_elements/_pagination' %}
-      {% for entry in pageEntries %}
-        <article>
-          <h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
-        </article>
-      {% endfor %}
-      {% include '_partials/_elements/_pagination' %}
-    </div>
-  </section>
-{% endblock %}

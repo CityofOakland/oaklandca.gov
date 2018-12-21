@@ -26,12 +26,6 @@
   }
 }
 
-@media (min-width: 768px) {
-  .card-department-grid > * {
-    width: calc(50% - 32px);
-  }
-}
-
 @media (min-width: 992px) {
   .card-grid > * {
     width: calc(33.3333% - 32px);
