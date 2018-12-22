@@ -24,7 +24,7 @@
         </div>
         <div class="sm:flex-1">
           <h2 class="text-3xl sm:mt-0 mb-0">{{ entry.groupHeadName }}</h2>
-          <p class="text-xl mt-2">{{ entry.groupHeadTitle }}</p>
+          {% if pageLeadershipHeaderText is not defined %}<p class="text-xl mt-2">{{ entry.groupHeadTitle }}</p>{% endif %}
           <div class="text-xl mt-8">{{ entry.groupHeadBio | raw }}</div>
         </div>
       </div>
