@@ -26,10 +26,10 @@ class eventsTransform extends TransformerAbstract
       $topics[] = $value->title;
     return [
       'title' => $event->title,
-      'url' => $event->url,
+      'url' => $event->uri,
       'date' => $event->startDate->timestamp,
       'displayDate' => $event->startDate->format('F j, Y'),
-      'body' => (string) $event->body,
+      'body' => strip_tags($event->body),
       'contact' => (string) $event->eventContact,
       'eventImage' => ! empty($event->eventImage->one()) ? (string) $event->eventImage->one()->getUrl('smallSquare') : null,
       'boardsCommissions' => $boardsCommissions,
@@ -83,10 +83,10 @@ return [
           $topics[] = $value->title;
         return [
           'title' => $entry->title,
-          'url' => $entry->url,
+          'url' => $entry->uri,
           'newsImage' => ! empty($entry->newsImage->one()) ? (string) $entry->newsImage->one()->url : null,
-          'summary' => (string) $entry->summary,
-          'body' => (string) $entry->body,
+          'summary' => strip_tags($entry->summary),
+          'body' => strip_tags($entry->body),
           'mediaContact' => (string) $entry->mediaContact,
           'boardsCommissions' => $boardsCommissions,
           'departments' => $departments,
@@ -108,7 +108,7 @@ return [
       'transformer' => function(craft\elements\Entry $entry) {
         return [
           'title' => $entry->title,
-          'url' => $entry->url,
+          'url' => $entry->uri,
           'date' => $entry->postDate,
           'banner' => ! empty($entry->banner->one()) ? (string) $entry->banner->one()->url : null,
           'ctaButtonText' => ! empty($entry->ctaButton->text) ? (string) $entry->ctaButton->text : null,
@@ -129,7 +129,7 @@ return [
       'transformer' => function(craft\elements\Entry $entry) {
         return [
           'title' => $entry->title,
-          'url' => $entry->url,
+          'url' => $entry->uri,
           'banner' => ! empty($entry->banner->one()) ? (string) $entry->banner->one()->url : null,
           'ctaButtonText' => ! empty($entry->ctaButton->text) ? (string) $entry->ctaButton->text : null,
           'leadIn' => (string) $entry->leadIn,
@@ -153,7 +153,7 @@ return [
           $officials[] = [$value->title, $value->groupHeadName];
         return [
           'title' => $entry->title,
-          'url' => $entry->url,
+          'url' => $entry->uri,
           'banner' => ! empty($entry->banner->one()) ? (string) $entry->banner->one()->url : null,
           'ctaButtonText' => ! empty($entry->ctaButton->text) ? (string) $entry->ctaButton->text : null,
           'leadIn' => $entry->leadIn,
@@ -202,7 +202,7 @@ return [
           $types[] = $value->title;
         return [
           'title' => $entry->title,
-          'url' => $entry->url,
+          'url' => $entry->uri,
           'summary' => (string) $entry->summary,
           'categories' => $types,
           'boardsCommissions' => $boardsCommissions,
@@ -227,7 +227,7 @@ return [
           $documents[] = $value->title;
         return [
           'title' => $entry->title,
-          'url' => $entry->url,
+          'url' => $entry->uri,
           'leadIn' => (string) $entry->leadIn,
           'summary' => (string) $entry->summary,
           'documents' => $documents,
@@ -264,7 +264,7 @@ return [
           $topics[] = $value->title;
         return [
           'title' => $entry->title,
-          'url' => $entry->url,
+          'url' => $entry->uri,
           'banner' => ! empty($entry->banner->one()) ? (string) $entry->banner->one()->url : null,
           'leadIn' => (string) $entry->leadIn,
           'about' => (string) $entry->about,
@@ -305,7 +305,7 @@ return [
         }
         return [
           'title' => $entry->title,
-          'url' => $entry->url,
+          'url' => $entry->uri,
           'resourceImage' => ! empty($entry->resourceImage->one()) ? (string) $entry->resourceImage->one()->url : null,
           'leadIn' => (string) $entry->leadIn,
           'boardsCommissions' => $boardsCommissions,
@@ -348,7 +348,7 @@ return [
         }
         return [
           'title' => $entry->title,
-          'url' => $entry->url,
+          'url' => $entry->uri,
           'leadIn' => (string) $entry->leadIn,
           'boardsCommissions' => $boardsCommissions,
           'departments' => $departments,
@@ -369,8 +369,8 @@ return [
       'transformer' => function(craft\elements\Entry $entry) {
         return [
           'title' => $entry->title,
-          'url' => $entry->url,
-          'banner' => ! empty($entry->banner->one()) ? (string) UrlHelper::siteUrl($entry->banner->one()->url) : null,
+          'url' => $entry->uri,
+          'banner' => ! empty($entry->banner->one()) ? (string) $entry->banner->one()->url : null,
           'leadIn' => (string) $entry->leadIn,
           'body' => (string) $entry->body,
           'urgentIssuesDescription' => (string) $entry->urgentIssuesDescription,
@@ -404,7 +404,7 @@ return [
           $topics[] = $value->title;
         return [
           'title' => $entry->title,
-          'url' => $entry->url,
+          'url' => $entry->uri,
           'banner' => ! empty($entry->banner->one()) ? (string) $entry->banner->one()->url : null,
           'leadIn' => (string) $entry->leadIn,
           'about' => (string) $entry->about,
@@ -490,7 +490,7 @@ return [
       'transformer' => function(craft\elements\Entry $entry) {
         return [
           'title' => $entry->title,
-          'url' => $entry->url,
+          'url' => $entry->uri,
           'portrait' => ! empty($entry->portrait->one()) ? (string) $entry->portrait->one()->url : null,
           'jobTitle' => ! empty($entry->jobTitle) ? (string) $entry->jobTitle : (string) $entry->staffImportJobTitle,
           'bio' => (string) $entry->bio,
@@ -512,7 +512,7 @@ return [
       'transformer' => function(craft\elements\Entry $entry) {
         return [
           'title' => $entry->title,
-          'url' => $entry->url,
+          'url' => $entry->uri,
           'portrait' => ! empty($entry->portrait->one()) ? (string) $entry->portrait->one()->url : null,
           'jobTitle' => ! empty($entry->jobTitle) ? (string) $entry->jobTitle : null,
           'bio' => (string) $entry->bio,
@@ -537,7 +537,7 @@ return [
             $teamMembers[] = $teamMember->title;
         return [
           'title' => $entry->title,
-          'url' => $entry->url,
+          'url' => $entry->uri,
           'teamMembers' => $teamMembers,
         ];
       },
