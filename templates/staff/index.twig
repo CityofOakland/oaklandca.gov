@@ -1,6 +1,6 @@
 {% extends '_layouts/_instant-search-index' %}
 
-{% set algoliaIndex = craft.app.config.env ~ '_staff' %}
+{% set algoliaIndex =  'production_staff' %}
 {% set entry = craft.entries.section('staffIndex').one %}
 
 {% set hitsRootClass = 'card-grid wide-cards mt-12' %}
@@ -9,7 +9,7 @@
 '<div class="block">' ~
   '<div class="text-shark md:flex items-start">' ~
     '<figure class="block h-12 w-12 md:w-1/4">' ~
-      '<a class="block" href="{{ url }}">' ~
+      '<a class="block" href="/{{ url }}">' ~
         '{{#portrait}}' ~
           '<img' ~
             'src="{{ portrait }}"' ~
@@ -24,7 +24,7 @@
       '</a>' ~
     '</figure>' ~
     '<div class="pt-4 md:pt-0 md:pl-6 md:w-3/4">' ~
-      '<h3 class="m-0 text-2xl"><a href="{{ url }}">{{ title }}</a></h3>' ~
+      '<h3 class="m-0 text-2xl"><a href="/{{ url }}">{{ title }}</a></h3>' ~
       '<p class="mt-2">' ~
         '{{ jobTitle }}' ~
         '{{#department}}<br>{{ department }}{{/department}}' ~

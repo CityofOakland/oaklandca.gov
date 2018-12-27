@@ -48,7 +48,7 @@ return [
   "mappings" => [
     // BEGIN NEWS INDEX
     [
-      'indexName' => getenv('ENVIRONMENT') . '_news_test',
+      'indexName' => getenv('ENVIRONMENT') . '_news',
       'indexSettings' => [
         'settings' => [
             'attributesForFaceting' => [
@@ -203,7 +203,7 @@ return [
         return [
           'title' => $entry->title,
           'url' => $entry->uri,
-          'summary' => (string) $entry->summary,
+          'summary' => strip_tags($entry->summary),
           'categories' => $types,
           'boardsCommissions' => $boardsCommissions,
           'departments' => $departments,
@@ -229,7 +229,7 @@ return [
           'title' => $entry->title,
           'url' => $entry->uri,
           'leadIn' => (string) $entry->leadIn,
-          'summary' => (string) $entry->summary,
+          'summary' => strip_tags($entry->summary),
           'documents' => $documents,
         ];
       },
@@ -281,7 +281,8 @@ return [
       'indexName' => getenv('ENVIRONMENT') . '_resources',
       'elementType' => \craft\elements\Entry::class,
       'criteria' => [
-        'section' => 'resources'
+        'section' => 'resources',
+        'type' => 'resources'
       ],
       'transformer' => function(craft\elements\Entry $entry) {
         $boardsCommissions = [];
@@ -307,6 +308,46 @@ return [
           'title' => $entry->title,
           'url' => $entry->uri,
           'resourceImage' => ! empty($entry->resourceImage->one()) ? (string) $entry->resourceImage->one()->url : null,
+          'leadIn' => (string) $entry->leadIn,
+          'boardsCommissions' => $boardsCommissions,
+          'departments' => $departments,
+          'electedOfficials' => $electedOfficials,
+          'projects' => $projects,
+          'topics' => $topics,
+          'body' => $body,
+        ];
+      },
+    ],
+    [
+      'indexName' => getenv('ENVIRONMENT') . '_resources',
+      'elementType' => \craft\elements\Entry::class,
+      'criteria' => [
+        'section' => 'resources',
+        'type' => 'videos'
+      ],
+      'transformer' => function(craft\elements\Entry $entry) {
+        $boardsCommissions = [];
+        foreach($entry->boardsCommissions->all() as $value)
+          $boardsCommissions[] = $value->title;
+        $departments = [];
+        foreach($entry->departments->all() as $value)
+          $departments[] = $value->title;
+        $electedOfficials = [];
+        foreach($entry->electedOfficials->all() as $value)
+          $electedOfficials[] = $value->title;
+        $projects = [];
+        foreach($entry->projects->all() as $value)
+          $projects[] = $value->title;
+        $topics = [];
+        foreach($entry->topics->all() as $value)
+          $topics[] = $value->title;
+        $body = [];
+        foreach ($entry->transactionBody->all() as $block) {
+          $body[] = strip_tags($block->text);
+        }
+        return [
+          'title' => $entry->title,
+          'url' => $entry->uri,
           'leadIn' => (string) $entry->leadIn,
           'boardsCommissions' => $boardsCommissions,
           'departments' => $departments,
@@ -388,26 +429,26 @@ return [
       ],
       'transformer' => function(craft\elements\Entry $entry) {
         $boardsCommissions = [];
-        foreach($entry->boardsCommissions->all()->all() as $value)
+        foreach($entry->boardsCommissions->all() as $value)
           $boardsCommissions[] = $value->title;
         $departments = [];
-        foreach($entry->departments->all()->all() as $value)
+        foreach($entry->departments->all() as $value)
           $departments[] = $value->title;
         $electedOfficials = [];
-        foreach($entry->electedOfficials->all()->all() as $value)
+        foreach($entry->electedOfficials->all() as $value)
           $electedOfficials[] = $value->title;
         $projects = [];
-        foreach($entry->projects->all()->all() as $value)
+        foreach($entry->projects->all() as $value)
           $projects[] = $value->title;
         $topics = [];
-        foreach($entry->topics->all()->all() as $value)
+        foreach($entry->topics->all() as $value)
           $topics[] = $value->title;
         return [
           'title' => $entry->title,
           'url' => $entry->uri,
           'banner' => ! empty($entry->banner->one()) ? (string) $entry->banner->one()->url : null,
           'leadIn' => (string) $entry->leadIn,
-          'about' => (string) $entry->about,
+          'about' => strip_tags($entry->about),
           'boardsCommissions' => $boardsCommissions,
           'departments' => $departments,
           'electedOfficials' => $electedOfficials,
@@ -494,7 +535,7 @@ return [
           'portrait' => ! empty($entry->portrait->one()) ? (string) $entry->portrait->one()->url : null,
           'jobTitle' => ! empty($entry->jobTitle) ? (string) $entry->jobTitle : (string) $entry->staffImportJobTitle,
           'bio' => (string) $entry->bio,
-          'email' => ! empty($entry->emailAddress) ? (string) $entry->emailAddress : (string) $entry->staffImportEmail,
+          'email' => ! empty($entry->emailAddress) ? (string) $entry->emailAddress : str_replace("@oaklandnet.com", "@oaklandca.gov", $entry->staffImportEmail),
           'department' => ! empty($entry->departments->one()) ? (string) $entry->departments->one()->title : $entry->staffImportDepartment,
           'employmentType' => (string) $entry->employmentType->label,
         ];

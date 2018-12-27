@@ -19,7 +19,10 @@
         <h2 class="text-xl">Post Date: {{ entry.postDate | date() }}</h3>
         {% if entry.newsImage | length %}
           <figure class="max-w-full mb-8">
-            <img src="{{ entry.newsImage.one.url }}" alt="">
+            {% set optimizedImages = entry.newsImage.one().newsEntryImage %}
+            <img src="{{ optimizedImages.src() }}"
+                srcset="{{ optimizedImages.srcset() }}"
+                sizes="100vw" />
           </figure>
         {% endif %}
         {{ entry.body }}

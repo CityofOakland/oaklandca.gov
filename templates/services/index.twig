@@ -1,4 +1,4 @@
 {% extends '_layouts/_instant-search-index' %}
 
-{% set algoliaIndex = craft.app.config.env ~ '_services' %}
+{% set algoliaIndex =  'production_services' %}
 {% set entry = craft.entries.section('servicesIndex').one %}

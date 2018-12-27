@@ -1,5 +1,5 @@
 {% extends '_layouts/_instant-search-event-meetings' %}
 {% set dates = 'forward' %}
 
-{% set algoliaIndex = craft.app.config.env ~ '_meetings' %}
+{% set algoliaIndex =  'production_meetings' %}
 {% set entry = craft.entries.section('meetingsIndex').one %}
