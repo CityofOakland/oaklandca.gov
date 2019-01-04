@@ -52,6 +52,12 @@
           {% if entry.phoneNumber | length %}
             <p class="my-0"><span class="font-bold">Phone Number:</span> <a href="tel:{{ entry.phoneNumber }}">{{ entry.phoneNumber }}</a></p>
           {% endif %}
+          {% if entry.termStart | length %}
+            <p><b>Term Start Date</b>: {{ entry.termStart | date() }}</p>
+          {% endif %}
+          {% if entry.termEnd | length %}
+            <p><b>Term End Date</b>: {{ entry.termEnd | date() }}</p>
+          {% endif %}
         </div>
       </div>
     </div>
