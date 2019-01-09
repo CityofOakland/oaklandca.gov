@@ -15,9 +15,9 @@ class eventsTransform extends TransformerAbstract
     $departments = [];
     foreach($event->departments->all() as $value)
       $departments[] = $value->title;
-    $electedOfficials = [];
-    foreach($event->electedOfficials->all() as $value)
-      $electedOfficials[] = $value->title;
+    $officials = [];
+    foreach($event->officials->all() as $value)
+      $officials[] = $value->title;
     $projects = [];
     foreach($event->projects->all() as $value)
       $projects[] = $value->title;
@@ -34,7 +34,7 @@ class eventsTransform extends TransformerAbstract
       'eventImage' => ! empty($event->eventImage->one()) ? (string) $event->eventImage->one()->getUrl('smallSquare') : null,
       'boardsCommissions' => $boardsCommissions,
       'departments' => $departments,
-      'electedOfficials' => $electedOfficials,
+      'officials' => $officials,
       'projects' => $projects,
       'topics' => $topics,
     ];
@@ -55,7 +55,7 @@ return [
               'boardsCommissions',
               'departments',
               'projects',
-              'electedOfficials',
+              'officials',
               'topics'
             ],
         ],
@@ -72,9 +72,9 @@ return [
         $departments = [];
         foreach($entry->departments->all() as $value)
           $departments[] = $value->title;
-        $electedOfficials = [];
-        foreach($entry->electedOfficials->all() as $value)
-          $electedOfficials[] = $value->title;
+        $officials = [];
+        foreach($entry->officials->all() as $value)
+          $officials[] = $value->title;
         $projects = [];
         foreach($entry->projects->all() as $value)
           $projects[] = $value->title;
@@ -91,7 +91,7 @@ return [
           'boardsCommissions' => $boardsCommissions,
           'departments' => $departments,
           'projects' => $projects,
-          'electedOfficials' => $electedOfficials,
+          'officials' => $officials,
           'topics' => $topics,
         ];
       },
@@ -165,12 +165,6 @@ return [
     // BEGIN DOCUMENTS INDEX
     [
       'indexName' => getenv('ENVIRONMENT') . '_documents',
-      'indexSettings' => [
-        'settings' => [
-            'attributesForFaceting' => ['categories', 'boardsCommissions', 'departments', 'electedOfficials', 'projects', 'resources', 'services', 'topics'],
-        ],
-        'forwardToReplicas' => 'true',
-      ],
       'elementType' => \craft\elements\Entry::class,
       'criteria' => [
         'section' => 'documents'
@@ -182,9 +176,9 @@ return [
         $departments = [];
         foreach($entry->departments->all() as $value)
           $departments[] = $value->title;
-        $electedOfficials = [];
-        foreach($entry->electedOfficials->all() as $value)
-          $electedOfficials[] = $value->title;
+        $officials = [];
+        foreach($entry->officials->all() as $value)
+          $officials[] = $value->title;
         $projects = [];
         foreach($entry->projects->all() as $value)
           $projects[] = $value->title;
@@ -207,7 +201,7 @@ return [
           'categories' => $types,
           'boardsCommissions' => $boardsCommissions,
           'departments' => $departments,
-          'electedOfficials' => $electedOfficials,
+          'officials' => $officials,
           'projects' => $projects,
           'resources' => $resources,
           'services' => $services,
@@ -256,9 +250,9 @@ return [
         $departments = [];
         foreach($entry->departments->all() as $value)
           $departments[] = $value->title;
-        $electedOfficials = [];
-        foreach($entry->electedOfficials->all() as $value)
-          $electedOfficials[] = $value->title;
+        $officials = [];
+        foreach($entry->officials->all() as $value)
+          $officials[] = $value->title;
         $topics = [];
         foreach($entry->topics->all() as $value)
           $topics[] = $value->title;
@@ -270,7 +264,7 @@ return [
           'about' => (string) $entry->about,
           'boardsCommissions' => $boardsCommissions,
           'departments' => $departments,
-          'electedOfficials' => $electedOfficials,
+          'officials' => $officials,
           'topics' => $topics,
         ];
       },
@@ -291,9 +285,9 @@ return [
         $departments = [];
         foreach($entry->departments->all() as $value)
           $departments[] = $value->title;
-        $electedOfficials = [];
-        foreach($entry->electedOfficials->all() as $value)
-          $electedOfficials[] = $value->title;
+        $officials = [];
+        foreach($entry->officials->all() as $value)
+          $officials[] = $value->title;
         $projects = [];
         foreach($entry->projects->all() as $value)
           $projects[] = $value->title;
@@ -311,7 +305,7 @@ return [
           'leadIn' => (string) $entry->leadIn,
           'boardsCommissions' => $boardsCommissions,
           'departments' => $departments,
-          'electedOfficials' => $electedOfficials,
+          'officials' => $officials,
           'projects' => $projects,
           'topics' => $topics,
           'body' => $body,
@@ -332,9 +326,9 @@ return [
         $departments = [];
         foreach($entry->departments->all() as $value)
           $departments[] = $value->title;
-        $electedOfficials = [];
-        foreach($entry->electedOfficials->all() as $value)
-          $electedOfficials[] = $value->title;
+        $officials = [];
+        foreach($entry->officials->all() as $value)
+          $officials[] = $value->title;
         $projects = [];
         foreach($entry->projects->all() as $value)
           $projects[] = $value->title;
@@ -351,7 +345,7 @@ return [
           'leadIn' => (string) $entry->leadIn,
           'boardsCommissions' => $boardsCommissions,
           'departments' => $departments,
-          'electedOfficials' => $electedOfficials,
+          'officials' => $officials,
           'projects' => $projects,
           'topics' => $topics,
           'body' => $body,
@@ -374,9 +368,9 @@ return [
         $departments = [];
         foreach($entry->departments->all() as $value)
           $departments[] = $value->title;
-        $electedOfficials = [];
-        foreach($entry->electedOfficials->all() as $value)
-          $electedOfficials[] = $value->title;
+        $officials = [];
+        foreach($entry->officials->all() as $value)
+          $officials[] = $value->title;
         $projects = [];
         foreach($entry->projects->all() as $value)
           $projects[] = $value->title;
@@ -393,7 +387,7 @@ return [
           'leadIn' => (string) $entry->leadIn,
           'boardsCommissions' => $boardsCommissions,
           'departments' => $departments,
-          'electedOfficials' => $electedOfficials,
+          'officials' => $officials,
           'projects' => $projects,
           'topics' => $topics,
           'body' => $body,
@@ -434,9 +428,9 @@ return [
         $departments = [];
         foreach($entry->departments->all() as $value)
           $departments[] = $value->title;
-        $electedOfficials = [];
-        foreach($entry->electedOfficials->all() as $value)
-          $electedOfficials[] = $value->title;
+        $officials = [];
+        foreach($entry->officials->all() as $value)
+          $officials[] = $value->title;
         $projects = [];
         foreach($entry->projects->all() as $value)
           $projects[] = $value->title;
@@ -451,7 +445,7 @@ return [
           'about' => strip_tags($entry->about),
           'boardsCommissions' => $boardsCommissions,
           'departments' => $departments,
-          'electedOfficials' => $electedOfficials,
+          'officials' => $officials,
           'projects' => $projects,
           'topics' => $topics,
         ];
@@ -461,12 +455,6 @@ return [
     // BEGIN EVENTS INDEX
     [
       'indexName' => getenv('ENVIRONMENT') . '_events',
-      'indexSettings' => [
-        'settings' => [
-            'attributesForFaceting' => ['boardsCommissions', 'departments', 'projects', 'electedOfficials', 'topics'],
-        ],
-        'forwardToReplicas' => 'true',
-      ],
       'elementType' => \Solspace\Calendar\Elements\Event::class,
       'criteria' => [
         'calendar' => 'events',
@@ -477,12 +465,6 @@ return [
     // BEGIN MEETINGS INDEX
     [
       'indexName' => getenv('ENVIRONMENT') . '_meetings',
-      'indexSettings' => [
-        'settings' => [
-            'attributesForFaceting' => ['boardsCommissions', 'departments', 'projects', 'electedOfficials', 'topics'],
-        ],
-        'forwardToReplicas' => 'true',
-      ],
       'elementType' => \Solspace\Calendar\Elements\Event::class,
       'criteria' => [
         'calendar' => 'meetings',
@@ -493,12 +475,6 @@ return [
     // BEGIN CALENDAR INDEX
     [
       'indexName' => getenv('ENVIRONMENT') . '_calendars',
-      'indexSettings' => [
-        'settings' => [
-            'attributesForFaceting' => ['boardsCommissions', 'departments', 'projects', 'electedOfficials', 'topics'],
-        ],
-        'forwardToReplicas' => 'true',
-      ],
       'elementType' => \Solspace\Calendar\Elements\Event::class,
       'criteria' => [
         'calendar' => 'events',
@@ -507,12 +483,6 @@ return [
     ],
     [
       'indexName' => getenv('ENVIRONMENT') . '_calendars',
-      'indexSettings' => [
-        'settings' => [
-            'attributesForFaceting' => ['boardsCommissions', 'departments', 'projects', 'electedOfficials', 'topics'],
-        ],
-        'forwardToReplicas' => 'true',
-      ],
       'elementType' => \Solspace\Calendar\Elements\Event::class,
       'criteria' => [
         'calendar' => 'meetings',
