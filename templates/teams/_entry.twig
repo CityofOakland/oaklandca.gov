@@ -29,7 +29,12 @@
             {% set e = email | replace({'@oaklandnet.com': '@oaklandca.gov'}) %}
             <br><a href="mailto:{{ e }}">{{ e }}</a>
           {% endif %}
-          {% if phone | length %}<br><a href="tel:{{ phone }}">{{ phone }}</a>{% endif %}
+          {% if phone | length %}
+            <br><a href="tel:{{ phone }}">{{ phone }}</a>
+          {% endif %}
+          {% if entry.termStart | length and entry.termEnd | length %}
+            <br>{{ entry.termStart | date() }} – {{ entry.termEnd | date() }}
+          {% endif %}
         {% endset %}
 
         {% include '_partials/_elements/_profile-cards' with {

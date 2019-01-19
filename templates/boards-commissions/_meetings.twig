@@ -77,11 +77,12 @@
         <table id="meetings" class="border border-camouflage-green w-full text-sm">
           <thead>
             <tr>
-              <th class="border border-camouflage-green bg-camouflage-green text-white">Meeting</th>
+              <th class="border border-camouflage-green bg-camouflage-green text-white md:w-1/3">Meeting</th>
               <th class="border border-camouflage-green bg-camouflage-green text-white">Date</th>
               <th class="border border-camouflage-green bg-camouflage-green text-white">Meeting Minutes</th>
+              <th class="border border-camouflage-green bg-camouflage-green text-white">Video Link</th>
               <th class="border border-camouflage-green bg-camouflage-green text-white">Agenda</th>
-              <th class="border border-camouflage-green bg-camouflage-green text-white">Status</th>
+              <th class="border border-camouflage-green bg-camouflage-green text-white md:w-10">Status Changes</th>
             </tr>
           </thead>
           <tbody>
@@ -107,6 +108,13 @@
                   {% endif %}
                 </td>
                 <td class="border border-camouflage-green">
+                  {% if event.videoLink | length %}
+                    <a href="{{ event.videoLink }}" target="_blank">Link</a>
+                  {% else %}
+                    N/A
+                  {% endif %}
+                </td>
+                <td class="border border-camouflage-green">
                   {% if documents.relatedTo(agendas) | length %}
                     {% for document in documents.all() %}
                       {% set file = document.documentFile.one %}
@@ -117,9 +125,10 @@
                   {% endif %}
                 </td>
                 {% set eventStatus = event.eventStatus.value ?? 'active' %}
+                {% set eventLabel = event.eventStatus.label ?? 'Active' %}
                 {% set tableColor = tableColorPalette[eventStatus] %}
                 <td class="border border-camouflage-green bg-{{ tableColor.statusBgColor }} text-{{ tableColor.statusTextColor }}">
-                  {{ event.eventStatus.label ?? 'Active' }}
+                  {{ eventLabel == 'Active' ? '' : eventLabel }}
                 </td>
             {% endfor %}
           </tbody>
