@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "46a8c604ea4789c716b0e124a76088a6",
+    "content-hash": "3b018c43f49209c8be559129ddbf1c25",
     "packages": [
         {
             "name": "99designs/phumbor",
@@ -900,15 +900,15 @@
         },
         {
             "name": "craftcms/redactor",
-            "version": "2.1.7",
+            "version": "2.3.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/redactor/zipball/9d2e579b358dd1e42ad34e208ca887d5c9530967",
-                "reference": "9d2e579b358dd1e42ad34e208ca887d5c9530967",
+                "url": "https://api.github.com/repos/craftcms/redactor/zipball/f96f9ce6c94b2c7a443939d244e99ad7317d7a23",
+                "reference": "f96f9ce6c94b2c7a443939d244e99ad7317d7a23",
                 "shasum": ""
             },
             "require": {
-                "craftcms/cms": "^3.0.0-RC15"
+                "craftcms/cms": "^3.1.0"
             },
             "type": "craft-plugin",
             "extra": {
@@ -920,7 +920,6 @@
                     "craft\\redactor\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -932,13 +931,19 @@
             ],
             "description": "Edit rich text content in Craft CMS using Redactor by Imperavi.",
             "keywords": [
-                "Redactor",
                 "cms",
                 "craftcms",
                 "html",
+                "redactor",
                 "yii2"
             ],
-            "time": "2018-12-17T08:09:54+00:00"
+            "support": {
+                "email": "support@craftcms.com",
+                "issues": "https://github.com/craftcms/redactor/issues?state=open",
+                "source": "https://github.com/craftcms/redactor",
+                "docs": "https://github.com/craftcms/redactor"
+            },
+            "time": "2019-01-22T21:41:57+00:00"
         },
         {
             "name": "craftcms/server-check",
@@ -5908,17 +5913,17 @@
         },
         {
             "name": "verbb/feed-me",
-            "version": "3.0.2.1",
+            "version": "3.1.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/verbb/feed-me/zipball/548992a0e51618aa7063d52cc9f59be20b2d65b9",
-                "reference": "548992a0e51618aa7063d52cc9f59be20b2d65b9",
+                "url": "https://api.github.com/repos/verbb/feed-me/zipball/1e5cd22d5c79a1ad3dcaa2ed715cf1347047c269",
+                "reference": "1e5cd22d5c79a1ad3dcaa2ed715cf1347047c269",
                 "shasum": ""
             },
             "require": {
                 "cakephp/core": "^3.5",
                 "cakephp/utility": "^3.3.12",
-                "craftcms/cms": "^3.0.0-RC15",
+                "craftcms/cms": "^3.1.0",
                 "guzzlehttp/guzzle": "~6.3.0",
                 "jakeasmith/http_build_url": "^1.0",
                 "league/csv": "^8.2",
@@ -5926,9 +5931,6 @@
                 "ralouphie/mimey": "^1.0",
                 "seld/jsonlint": "^1.7",
                 "vlucas/phpdotenv": "^2.4"
-            },
-            "require-dev": {
-                "codeception/codeception": "~2.3.3"
             },
             "type": "craft-plugin",
             "extra": {
@@ -5942,7 +5944,6 @@
                     "verbb\\feedme\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "proprietary"
             ],
@@ -5954,13 +5955,20 @@
             ],
             "description": "Import content from XML, RSS, CSV or JSON feeds into Entries, Categories, Craft Commerce Products (and variants), and more.",
             "keywords": [
-                "Craft",
                 "cms",
+                "craft",
                 "craft-plugin",
                 "craftcms",
                 "feed me"
             ],
-            "time": "2018-12-12T23:13:18+00:00"
+            "support": {
+                "email": "support@verbb.io",
+                "issues": "https://github.com/verbb/feed-me/issues?state=open",
+                "source": "https://github.com/verbb/feed-me",
+                "docs": "https://github.com/verbb/feed-me",
+                "rss": "https://github.com/verbb/feed-me/commits/v2.atom"
+            },
+            "time": "2019-01-21T02:03:22+00:00"
         },
         {
             "name": "verbb/redactor-tweaks",
