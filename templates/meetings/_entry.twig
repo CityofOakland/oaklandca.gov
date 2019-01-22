@@ -18,29 +18,20 @@
   <section class="bg-white relative z-0">
     <div class="container mx-auto p-8 py-16 sm:flex">
       <div class="sm:w-2/3 sm:mr-8">
-        {% if entry.occurrenceCount > 1 %}
-          <h3>Upcoming Dates:</h3>
-          <div class="flex flex-wrap">
-            {% for event in entry.occurrences | slice(0, 6) %}
-              {% set startDate = event.startDate %}
-              {# TODO: Develop a decent method for displaying this with screen readers. #}
-              <div class="w-24 border border-shark mb-4 mr-4 flex flex-col text-center">
-                <span class="block p-2 bg-shark text-white">{{ startDate.format("M") }}</span>
-                <span class="block text-3xl">{{ startDate.format("j") }}</span>
-                <span class="block bg-cararra">{{ startDate.format("Y") }}</span>
-              </div>
-            {% endfor %}
-          </div>
-        {% else %}
-          <h3>Date:</h3>
-          {% set startDate = event.startDate %}
-          {# TODO: Develop a decent method for displaying this with screen readers. #}
-          <div class="w-24 border border-shark mb-4 mr-4 flex flex-col text-center">
-            <span class="block p-2 bg-shark text-white">{{ startDate.format("M") }}</span>
-            <span class="block text-3xl">{{ startDate.format("j") }}</span>
-            <span class="block bg-cararra">{{ startDate.format("Y") }}</span>
-          </div>
-        {% endif %}
+        {% set startDate = event.startDate %}
+        {% set endDate = event.endDate %}
+        <div class="text-white bg-shark p-4 md:inline-flex md:items-center">
+          <h3 class="my-0 md:mr-8">Meeting</h3>
+          <time datetime="{{ startDate | atom }}">
+            <h4 class="font-bold my-0 text-4xl">
+              {{ startDate.format("F, j Y") }}
+            </h4>
+            {% if not event.allDay %}
+              <p class="my-0 text-xl">{{ startDate.format("g:ia") }} {% if endDate | length %} — {{ endDate.format("g:ia") }}{% endif %}
+              </p>
+            {% endif %}
+          </time>
+        </div>
         {% if entry.body | length %}
           <h3>Details</h3>
           {{ entry.body }}
