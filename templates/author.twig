@@ -1,0 +1,74 @@
+{% if currentUser %}
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>All entries owned by {{ currentUser.username }}</title>
+    <link rel="stylesheet" href="/assets/css/site.combined.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+  </head>
+  <body>
+    {% set sections = craft.sections.getAllSections() %}
+    <style>
+      .pagination li {
+        margin: 0 10px;
+      }
+    </style>
+    <div class="container mx-auto">
+      <h1 class="my-4 text-3xl uppercase font-bold">All entries owned by {{ currentUser.username }}</h1>
+      <div id="entries">
+        <input type="text" class="search inline-block p-4 border border-astronaut" placeholder="Search Titles" />
+        <ul class="pagination pagination-top flex list-reset"></ul>
+        <table class="text-sm w-full">
+          <thead>
+            <tr class="bg-astronaut text-white">
+              <th class="sort w-1/2" data-sort="title">Entry Title</th>
+              <th class="sort w-1/4" data-sort="section">Section</th>
+              <th class="w-1/4">View on Site</th>
+            </tr>
+          </thead>
+          <tbody class="list">
+            {% for entry in craft.entries.authorId(currentUser).orderBy('title asc').all %}
+              <tr>
+                <td class="title"><a href="{{ entry.cpEditUrl }}">{{ entry.title }}</a></td>
+                <td class="section">{{ entry.section.name }}</td>
+                <td>
+                  {% if entry.url | length %}
+                    <a href="{{ entry.url }}">Link</a>
+                  {% else %}
+                    N/A
+                  {% endif %}
+                </td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        <ul class="pagination pagination-bottom flex list-reset"></ul>
+      </div>
+    </div>
+    <script>
+      var options = {
+        valueNames: ['id', 'title', 'section'],
+        page: 50,
+        pagination: [
+          {
+            name: "pagination-top",
+            paginationClass: "pagination-top",
+            outerWindow: 2
+          }, {
+            paginationClass: "pagination-bottom",
+            innerWindow: 3,
+            left: 2,
+            right: 4
+          }
+        ]
+      }
+      var entriesList = new List('entries', options);
+
+    </script>
+  </body>
+  </html>
+{% endif %}
