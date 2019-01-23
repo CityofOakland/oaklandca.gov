@@ -24,17 +24,19 @@
         <ul class="pagination pagination-top flex list-reset"></ul>
         <table class="text-sm w-full">
           <thead>
-            <tr class="bg-astronaut text-white">
-              <th class="sort w-1/2" data-sort="title">Entry Title</th>
-              <th class="sort w-1/4" data-sort="section">Section</th>
-              <th class="w-1/4">View on Site</th>
+            <tr class="bg-astronaut text-white cursor-pointer">
+              <th class="sort" data-sort="title">Entry Title</th>
+              <th class="sort w-32" data-sort="section">Section</th>
+              <th class="sort w-32" data-sort="status">Status</th>
+              <th class="w-32">View on Site</th>
             </tr>
           </thead>
           <tbody class="list">
-            {% for entry in craft.entries.authorId(currentUser.id).orderBy('title asc').all %}
+            {% for entry in craft.entries.authorId(currentUser.id).orderBy('title asc').limit(null).status(null).all %}
               <tr>
                 <td class="title"><a href="{{ entry.cpEditUrl }}" target="_blank">{{ entry.title }}</a></td>
                 <td class="section">{{ entry.section.name }}</td>
+                <td class="status">{{ entry.status }}</td>
                 <td>
                   {% if entry.url | length %}
                     <a href="{{ entry.url }}">Link</a>
@@ -51,7 +53,7 @@
     </div>
     <script>
       var options = {
-        valueNames: ['id', 'title', 'section'],
+        valueNames: ['id', 'title', 'section', 'status'],
         page: 50,
         pagination: [
           {
