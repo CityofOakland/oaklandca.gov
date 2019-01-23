@@ -31,9 +31,9 @@
             </tr>
           </thead>
           <tbody class="list">
-            {% for entry in craft.entries.authorId(currentUser).orderBy('title asc').all %}
+            {% for entry in craft.entries.authorId(currentUser.id).orderBy('title asc').all %}
               <tr>
-                <td class="title"><a href="{{ entry.cpEditUrl }}">{{ entry.title }}</a></td>
+                <td class="title"><a href="{{ entry.cpEditUrl }}" target="_blank">{{ entry.title }}</a></td>
                 <td class="section">{{ entry.section.name }}</td>
                 <td>
                   {% if entry.url | length %}
