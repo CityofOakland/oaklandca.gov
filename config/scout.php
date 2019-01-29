@@ -197,6 +197,8 @@ return [
         return [
           'title' => $entry->title,
           'url' => $entry->uri,
+          'date' => $entry->postDate->getTimestamp(),
+          'displayDate' => $entry->postDate->format('F j, Y'),
           'summary' => strip_tags($entry->summary),
           'categories' => $types,
           'boardsCommissions' => $boardsCommissions,
@@ -222,6 +224,8 @@ return [
         return [
           'title' => $entry->title,
           'url' => $entry->uri,
+          'date' => $entry->postDate->getTimestamp(),
+          'displayDate' => $entry->postDate->format('F j, Y'),
           'leadIn' => (string) $entry->leadIn,
           'summary' => strip_tags($entry->summary),
           'documents' => $documents,

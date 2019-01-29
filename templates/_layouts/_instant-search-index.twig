@@ -1,10 +1,16 @@
 {% extends '_layout' %}
 
 {% do view.registerJsFile("https://cdn.polyfill.io/v2/polyfill.min.js?features=default,Array.prototype.includes,Array.prototype.find") %}
-{% do view.registerCssFile("https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.2/dist/instantsearch.min.css") %}
-{% do view.registerJsFile("https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.2") %}
+{% do view.registerCssFile("https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4/dist/instantsearch.min.css") %}
+{% do view.registerCssFile ("https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4/dist/instantsearch-theme-algolia.min.css") %}
+{% do view.registerJsFile("https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4") %}
 
 {% set defaultTemplate = '<article class="py-8 sm:py-12 border-celeste border-b-2">' ~
+  '{{#displayDate}}' ~
+  '<div class="text-base text-camouflage-green mb-4">' ~
+    'Publish Date: <b>{{ displayDate }}</b>' ~
+  '</div>' ~
+  '{{/displayDate}}' ~
   '<h3 class="text-xl md:text-2xl my-0 {{#leadIn}}mt-0 mb-3 md:mb-6{{/leadIn}}">' ~
     '<a href="/{{ url }}">' ~
       '{{{ _highlightResult.title.value }}}' ~
@@ -43,6 +49,21 @@
     },
   });
 
+  {% if facets is defined %}
+    {% for facet in facets %}
+      search.addWidget(
+        instantsearch.widgets.menuSelect({
+          container: '#{{ facet.container }}',
+          attributeName: '{{ facet.attribute }}',
+          limit: 10,
+          templates: {
+            header: '{{ facet.header }}'
+          }
+        })
+      );
+    {% endfor %}
+  {% endif %}
+
   search.addWidget(
     instantsearch.widgets.searchBox({
       container: "#search-input",
@@ -79,7 +100,7 @@
   search.addWidget(
     instantsearch.widgets.pagination({
       container: "#bottom-pagination",
-      maxPages: {{ maxPages ?? 20 }},
+      padding: {{ paddedResults ?? 5 }},
       // default is to scroll to 'body', here we disable this behavior
       scrollTo: {{ scrollTo ?? "false" }},
       cssClasses: {
@@ -105,6 +126,11 @@
       <div class="flex flex-col sm:flex-row">
         <input id="search-input" class="w-full p-2 md:py-4 md:px-8 rounded-none appearance-none" type="search" name="keywords" value="" required>
       </div>
+      {% if facets is defined %}
+        {% for facet in facets %}
+          <div id="{{ facet.container }}"></div>
+        {% endfor %}
+      {% endif %}
     </div>
   </div>
   <section class="bg-white relative z-0">
