@@ -33,14 +33,13 @@
     routing: true,
     searchParameters: {
       snippetEllipsisText: "…",
-      facetFilters: [
-        {% block facetFilters %}
-          {% if section is defined and slug is defined %}
+
+      {% block filters %}
+        {% if section is defined and slug is defined %}
             {% set facetItem = craft.entries.section(section).slug(slug).one().title %}
-            '{{ section }}:{{ facetItem }}',
-          {% endif %}
-        {% endblock %}
-      ],
+          filters: '{{ section }}:{{ facetItem }}',
+        {% endif %}
+      {% endblock %}
       {% if dates is defined and dates == 'forward' %}
         filters: 'date >= ' + ts,
       {% elseif dates is defined and dates == 'backward' %}
@@ -52,9 +51,10 @@
   {% if facets is defined %}
     {% for facet in facets %}
       search.addWidget(
-        instantsearch.widgets.menuSelect({
+        instantsearch.widgets.refinementList({
           container: '#{{ facet.container }}',
           attributeName: '{{ facet.attribute }}',
+          operator: 'or',
           limit: 10,
           templates: {
             header: '{{ facet.header }}'
