@@ -102,3 +102,21 @@ body.open .page-holder {
   right: 300px;
   overflow: hidden;
 }
+
+.timeline-grid {
+}
+
+.timeline-grid dt {
+  font-size: 24px;
+  padding-left: 50px;
+  background-image: url('/assets/img/icon-timeline-point.svg');
+  background-size: 36px 36px;
+  background-repeat: no-repeat;
+  background-position: top left;
+}
+
+.timeline-grid dd {
+  font-size: 16px;
+  padding-left: 50px;
+  padding-bottom: 20px;
+}

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "4f38406383056f74afb175d15a73034f",
+    "content-hash": "be59d3b4e83644671de99bc363d64693",
     "packages": [
         {
             "name": "99designs/phumbor",
@@ -628,15 +628,20 @@
         },
         {
             "name": "craftcms/aws-s3",
-            "version": "1.0.8",
+            "version": "dev-craft-3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/craftcms/aws-s3.git",
+                "reference": "0c2b23bfb19484ec53b9f64584ef48a15e0eb267"
+            },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/aws-s3/zipball/94401bcf960eaef1c0f3a9631e8ab34ee4e418fe",
-                "reference": "94401bcf960eaef1c0f3a9631e8ab34ee4e418fe",
+                "url": "https://api.github.com/repos/craftcms/aws-s3/zipball/0c2b23bfb19484ec53b9f64584ef48a15e0eb267",
+                "reference": "0c2b23bfb19484ec53b9f64584ef48a15e0eb267",
                 "shasum": ""
             },
             "require": {
-                "craftcms/cms": "^3.0.0-RC4",
+                "craftcms/cms": "^3.1.0",
                 "league/flysystem-aws-s3-v3": "^1.0.13"
             },
             "type": "craft-plugin",
@@ -670,15 +675,15 @@
                 "s3",
                 "yii2"
             ],
-            "time": "2018-01-02T18:40:37+00:00"
+            "time": "2018-12-10T13:35:04+00:00"
         },
         {
             "name": "craftcms/cms",
-            "version": "3.1.5",
+            "version": "3.1.6.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/b2791566f2981d09fab415a4c9e3674f7144d8a7",
-                "reference": "b2791566f2981d09fab415a4c9e3674f7144d8a7",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/12bf72bc73e0905a5c8a2bf74096046eb07ee075",
+                "reference": "12bf72bc73e0905a5c8a2bf74096046eb07ee075",
                 "shasum": ""
             },
             "require": {
@@ -725,12 +730,6 @@
                 "bower-asset/punycode": "1.3.*",
                 "bower-asset/yii2-pjax": "~2.0.1"
             },
-            "require-dev": {
-                "codeception/codeception": "^2.4",
-                "codeception/mockery-module": "~0.2.2",
-                "codeception/specify": "~0.4.6",
-                "codeception/verify": "~0.3.3"
-            },
             "suggest": {
                 "ext-iconv": "Adds support for more character encodings than PHP’s built-in mb_convert_encoding() function, which Craft will take advantage of when converting strings to UTF-8.",
                 "ext-imagick": "Adds support for more image processing formats and options.",
@@ -742,7 +741,6 @@
                     "craft\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "proprietary"
             ],
@@ -753,7 +751,15 @@
                 "craftcms",
                 "yii2"
             ],
-            "time": "2019-01-25T21:02:47+00:00"
+            "support": {
+                "email": "support@craftcms.com",
+                "issues": "https://github.com/craftcms/cms/issues?state=open",
+                "forum": "https://craftcms.stackexchange.com/",
+                "source": "https://github.com/craftcms/cms",
+                "docs": "https://github.com/craftcms/docs",
+                "rss": "https://github.com/craftcms/cms/releases.atom"
+            },
+            "time": "2019-01-29T22:06:25+00:00"
         },
         {
             "name": "craftcms/element-api",
@@ -884,11 +890,11 @@
         },
         {
             "name": "craftcms/redactor",
-            "version": "2.3.0",
+            "version": "2.3.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/redactor/zipball/f96f9ce6c94b2c7a443939d244e99ad7317d7a23",
-                "reference": "f96f9ce6c94b2c7a443939d244e99ad7317d7a23",
+                "url": "https://api.github.com/repos/craftcms/redactor/zipball/1f561397bab4700f36b1393e11aa17c72c3bca0b",
+                "reference": "1f561397bab4700f36b1393e11aa17c72c3bca0b",
                 "shasum": ""
             },
             "require": {
@@ -904,7 +910,6 @@
                     "craft\\redactor\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -916,13 +921,19 @@
             ],
             "description": "Edit rich text content in Craft CMS using Redactor by Imperavi.",
             "keywords": [
-                "Redactor",
                 "cms",
                 "craftcms",
                 "html",
+                "redactor",
                 "yii2"
             ],
-            "time": "2019-01-22T21:41:57+00:00"
+            "support": {
+                "email": "support@craftcms.com",
+                "issues": "https://github.com/craftcms/redactor/issues?state=open",
+                "source": "https://github.com/craftcms/redactor",
+                "docs": "https://github.com/craftcms/redactor"
+            },
+            "time": "2019-01-30T21:53:19+00:00"
         },
         {
             "name": "craftcms/server-check",
@@ -3011,6 +3022,56 @@
             "time": "2018-11-02T18:12:54+00:00"
         },
         {
+            "name": "mmikkel/incognito-field",
+            "version": "1.0.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mmikkel/IncognitoField-Craft3/zipball/5c26d690b5c37cfccf8f8f335e4ffa7ca489bdea",
+                "reference": "5c26d690b5c37cfccf8f8f335e4ffa7ca489bdea",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0-RC1"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Incognito Field",
+                "handle": "incognito-field",
+                "schemaVersion": "1.0.0",
+                "hasCpSettings": false,
+                "hasCpSection": false,
+                "changelogUrl": "https://raw.githubusercontent.com/mmikkel/incognito-field/master/CHANGELOG.md",
+                "class": "mmikkel\\incognitofield\\IncognitoField"
+            },
+            "autoload": {
+                "psr-4": {
+                    "mmikkel\\incognitofield\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mats Mikkel Rummelhoff",
+                    "homepage": "http://vaersaagod.no"
+                }
+            ],
+            "description": "PlainText drop-in replacement that can be set to disabled, hidden or readonly.",
+            "keywords": [
+                "cms",
+                "craft",
+                "craft-plugin",
+                "craftcms",
+                "incognito field"
+            ],
+            "support": {
+                "docs": "https://github.com/mmikkel/incognito-field/blob/master/README.md",
+                "issues": "https://github.com/mmikkel/incognito-field/issues"
+            },
+            "time": "2017-12-09T00:03:36+00:00"
+        },
+        {
             "name": "mofodojodino/profanity-filter",
             "version": "1.3.0",
             "dist": {
@@ -3529,11 +3590,11 @@
         },
         {
             "name": "nystudio107/craft-seomatic",
-            "version": "3.1.39",
+            "version": "3.1.40",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/8caf690f5790d89708cddc486d89eaee54111970",
-                "reference": "8caf690f5790d89708cddc486d89eaee54111970",
+                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/fcf29f417c089586bd9557e328712dfb343c67d0",
+                "reference": "fcf29f417c089586bd9557e328712dfb343c67d0",
                 "shasum": ""
             },
             "require": {
@@ -3596,7 +3657,7 @@
                 "docs": "https://github.com/nystudio107/craft-seomatic/blob/v3/README.md",
                 "issues": "https://github.com/nystudio107/craft-seomatic/issues"
             },
-            "time": "2019-01-24T17:28:17+00:00"
+            "time": "2019-01-30T19:12:35+00:00"
         },
         {
             "name": "nystudio107/craft-typogrify",
@@ -4217,11 +4278,11 @@
         },
         {
             "name": "solspace/craft3-calendar",
-            "version": "2.0.13",
+            "version": "2.0.14",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/solspace/craft3-calendar/zipball/e3304870a6648f91812f95437039d287bf66a58c",
-                "reference": "e3304870a6648f91812f95437039d287bf66a58c",
+                "url": "https://api.github.com/repos/solspace/craft3-calendar/zipball/c3ac0ef2abef956ffff0c06dffd74de43eccab5d",
+                "reference": "c3ac0ef2abef956ffff0c06dffd74de43eccab5d",
                 "shasum": ""
             },
             "require": {
@@ -4252,7 +4313,6 @@
                     "Solspace\\Calendar\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "authors": [
                 {
                     "name": "Solspace",
@@ -4260,7 +4320,7 @@
                 }
             ],
             "description": "The most powerful event management plugin for Craft.",
-            "time": "2019-01-22T19:24:49+00:00"
+            "time": "2019-01-30T17:34:46+00:00"
         },
         {
             "name": "solspace/craft3-commons",
@@ -6049,7 +6109,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "craftcms/aws-s3": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

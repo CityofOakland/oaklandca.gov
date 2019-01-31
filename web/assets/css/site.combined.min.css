@@ -1,9 +1,9 @@
 /**
  * @project        oakland
  * @author         Christopher Kennedy, onebrightlight <chris@onebrightlight.com>
- * @build          Fri, Dec 21, 2018 1:03 PM ET
- * @release        93bfd1f9ae9ea56afb64db155a9062215bbf1f7a [oak-staging]
- * @copyright      Copyright (c) 2018, onebrightlight
+ * @build          Thu, Jan 31, 2019 11:18 AM ET
+ * @release        18b8ef9fffbc4897d1a50dbff081b1fef79ce1b2 [feature/projects-update]
+ * @copyright      Copyright (c) 2019, onebrightlight
  *
  */
 /**
@@ -19457,6 +19457,24 @@ body.open #menu {
 body.open .page-holder {
   right: 300px;
   overflow: hidden;
+}
+
+.timeline-grid {
+}
+
+.timeline-grid dt {
+  font-size: 24px;
+  padding-left: 50px;
+  background-image: url('/assets/img/icon-timeline-point.svg');
+  background-size: 36px 36px;
+  background-repeat: no-repeat;
+  background-position: top left;
+}
+
+.timeline-grid dd {
+  font-size: 16px;
+  padding-left: 50px;
+  padding-bottom: 20px;
 }
 
 /*# sourceMappingURL=site.combined.min.css.map */
