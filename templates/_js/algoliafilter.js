@@ -9,10 +9,10 @@ filterReveal.addEventListener("click", function(e) {
   if (filters.classList.contains("opacity-0")) {
     filters.classList.add(...openClasses);
     filters.classList.remove(...closedClasses);
-    filterReveal.innerHTML = "Show Filters";
+    filterReveal.innerHTML = "Hide Filters";
   } else {
     filters.classList.add(...closedClasses);
     filters.classList.remove(...openClasses);
-    filterReveal.innerHTML = "Hide Filters";
+    filterReveal.innerHTML = "Show Filters";
   }
 });
