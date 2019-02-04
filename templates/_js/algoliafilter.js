@@ -15,4 +15,4 @@ filterReveal.addEventListener("click", function(e) {
     filters.classList.remove(...openClasses);
     filterReveal.innerHTML = "Show Filters";
   }
-});
+}, false);
