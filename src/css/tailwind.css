@@ -60,7 +60,7 @@ a:hover {
   }
 }
 
-/**
+ /**
  * This injects any component classes registered by plugins.
  *
  * If using `postcss-import`, use this import instead:

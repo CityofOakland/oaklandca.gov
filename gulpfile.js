@@ -154,7 +154,7 @@ gulp.task("default", function () {
   $.fancyLog("-> Livereload listening for changes");
   $.livereload.listen();
   gulp.watch(pkg.paths.src.css + "*.css", ["css", "tailwind"]);
-  gulp.watch([pkg.paths.templates + "**/*.{html,htm,twig}"], () => {
+  gulp.watch([pkg.paths.templates + "**/*.{html,htm,twig,css,js}"], () => {
     gulp.src(pkg.paths.templates)
       .pipe($.plumber({
         errorHandler: onError

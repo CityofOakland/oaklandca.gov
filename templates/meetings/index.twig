@@ -3,3 +3,22 @@
 
 {% set algoliaIndex =  'production_meetings' %}
 {% set entry = craft.entries.section('meetingsIndex').one %}
+
+{% set facets = [
+  {
+    container: 'boardsCommissions',
+    attribute: 'boardsCommissions',
+    header: 'Boards & Commissions'
+  },
+  {
+    container: 'departments',
+    attribute: 'departments',
+    header: 'Departments'
+  },
+  {
+    container: 'projects',
+    attribute: 'projects',
+    header: 'Projects'
+  },
+
+] %}

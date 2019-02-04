@@ -1,0 +1,29 @@
+.ais-search-box {
+  font-size: inherit;
+}
+
+.ais-header {
+  border-bottom: 0;
+  margin-bottom: 0;
+}
+
+.ais-menu-select {
+  margin-bottom: 16px;
+}
+
+.ais-menu-select:last-of-type {
+  margin-bottom: 0;
+}
+
+#facet-holder > div > div {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+select.ais-hits-per-page-selector,
+select.ais-menu-select--select,
+select.ais-numeric-selector,
+select.ais-sort-by-selector {
+  font-size: 1rem;
+  width: 100%;
+}

@@ -59,7 +59,7 @@ let colors = {
   "curious-blue": "#398cd3",
   "cerulean": "#008dd9",
   "atoll": "#0e5478",
-  "astronaut": "#255375",
+  "astronaut": "#255375"
 };
 
 module.exports = {
@@ -451,6 +451,7 @@ module.exports = {
 
   height: {
     "auto": "auto",
+    "0": 0,
     "px": "1px",
     "1": "0.25rem",
     "2": "0.5rem",
@@ -708,6 +709,7 @@ module.exports = {
 
   zIndex: {
     "auto": "auto",
+    "neg-10": -10,
     "0": 0,
     "10": 10,
     "20": 20,
@@ -715,6 +717,7 @@ module.exports = {
     "40": 40,
     "50": 50,
     "60": 60,
+    "70": 70
   },
 
 

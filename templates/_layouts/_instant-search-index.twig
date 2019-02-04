@@ -51,7 +51,7 @@
   {% if facets is defined %}
     {% for facet in facets %}
       search.addWidget(
-        instantsearch.widgets.refinementList({
+        instantsearch.widgets.menuSelect({
           container: '#{{ facet.container }}',
           attributeName: '{{ facet.attribute }}',
           operator: 'or',
@@ -112,6 +112,13 @@
   search.start();
 {% endjs %}
 
+{% css %}
+  {% include "_css/algoliafilter.css" %}
+{% endcss %}
+
+{% js %}
+  {% include "_js/algoliafilter.js" %}
+{% endjs %}
 
 {% block content %}
   {% block pageBanner %}
@@ -122,10 +129,15 @@
     } %}
   {% endblock %}
   <div class="bg-cararra" id="search-bar-container">
-    <div class="container mx-auto px-8 py-4 md:p-8">
+    <div class="container mx-auto px-8 py-4 md:p-8 text-right">
       <div class="flex flex-col sm:flex-row">
         <input id="search-input" class="w-full p-2 md:py-4 md:px-8 rounded-none appearance-none" type="search" name="keywords" value="" required>
       </div>
+      <a class="inline-block mt-4 text-right" href="#" id="filter-reveal">Show Filters</a>
+    </div>
+  </div>
+  <div id="algolia-filters" class="opacity-0 invisible h-0 overflow-hidden bg-shark text-white relative z-neg-10 trans trans-all">
+    <div id="facet-holder" class="mx-auto container p-8 flex-col -my-4">
       {% if facets is defined %}
         {% for facet in facets %}
           <div id="{{ facet.container }}"></div>
