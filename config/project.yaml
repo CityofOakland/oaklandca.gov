@@ -21,7 +21,7 @@ categoryGroups:
     structure:
       maxLevels: '1'
       uid: b4e9ab1c-aa42-46f9-a679-898119f39e8d
-dateModified: 1549569782
+dateModified: 1549570462
 email:
   fromEmail: digitalteam@oaklandnet.com
   fromName: 'City of Oakland'
@@ -3706,7 +3706,7 @@ plugins:
   aws-s3:
     enabled: '1'
     licenseKey: null
-    schemaVersion: 1.0.0
+    schemaVersion: '1.1'
     settings: null
   beam:
     enabled: '1'
@@ -6990,7 +6990,6 @@ volumes:
       keyId: $S3_API_KEY
       region: us-west
       secret: $S3_SECRET
-      storageClass: ''
       subfolder: seo
     sortOrder: '7'
     type: craft\awss3\Volume
@@ -7016,7 +7015,6 @@ volumes:
       keyId: $S3_API_KEY
       region: us-west-2
       secret: $S3_SECRET
-      storageClass: ''
       subfolder: headers
     sortOrder: '1'
     type: craft\awss3\Volume
@@ -7042,7 +7040,6 @@ volumes:
       keyId: $S3_API_KEY
       region: us-west-2
       secret: $S3_SECRET
-      storageClass: ''
       subfolder: data
     sortOrder: '5'
     type: craft\awss3\Volume
@@ -7068,7 +7065,6 @@ volumes:
       keyId: $S3_API_KEY
       region: us-west-2
       secret: $S3_SECRET
-      storageClass: ''
       subfolder: portraits
     sortOrder: '2'
     type: craft\awss3\Volume
@@ -7100,7 +7096,6 @@ volumes:
       keyId: $S3_API_KEY
       region: us-west-2
       secret: $S3_SECRET
-      storageClass: ''
       subfolder: news
     sortOrder: '3'
     type: craft\awss3\Volume
@@ -7116,7 +7111,6 @@ volumes:
       keyId: $S3_API_KEY
       region: us-west-2
       secret: $S3_SECRET
-      storageClass: ''
       subfolder: projects
     sortOrder: null
     type: craft\awss3\Volume
@@ -7145,7 +7139,6 @@ volumes:
       keyId: $S3_API_KEY
       region: us-west-2
       secret: $S3_SECRET
-      storageClass: ''
       subfolder: events
     sortOrder: '4'
     type: craft\awss3\Volume
@@ -7161,7 +7154,6 @@ volumes:
       keyId: $S3_API_KEY
       region: us-west-2
       secret: $S3_SECRET
-      storageClass: ''
       subfolder: documents
     sortOrder: '6'
     type: craft\awss3\Volume
@@ -7177,7 +7169,6 @@ volumes:
       keyId: $S3_API_KEY
       region: us-west
       secret: $S3_SECRET
-      storageClass: ''
       subfolder: resources
     sortOrder: null
     type: craft\awss3\Volume
