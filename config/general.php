@@ -53,11 +53,15 @@ return [
     'staging' => [
         // Base site URL
         'siteUrl' => 'https://oak-staging.frb.io',
+        // Prevents changes to settings in control panel
+        'allowAdminChanges' => false,
     ],
 
     // Production environment settings
     'production' => [
         // Base site URL
         'siteUrl' => 'https://www.oaklandca.gov',
+        // Prevents changes to settings in control panel
+        'allowAdminChanges' => false,
     ],
 ];
