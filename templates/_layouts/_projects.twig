@@ -20,6 +20,13 @@
       'funding': entry.fundingLogos.exists(),
     }
   } %}
+  {% css %}
+    {% include "_css/timeline.css" %}
+  {% endcss %}
+  {% js %}
+    {% include "_js/timeline.js" %}
+    timeline(document.querySelectorAll('.timeline'));
+  {% endjs %}
   <section>
     <a id="page-timeline" class="anchor-link"></a>
     <div class="container mx-auto p-8 py-16">
@@ -27,12 +34,20 @@
         <div class="md:pr-4 md:w-1/2">
           {% if entry.timeline.exists() %}
             <h3>Timeline</h3>
-            <dl class="list-reset timeline-grid">
-              {% for block in entry.timeline.all() %}
-                <dt class="overflow-visible">{{ block.milestoneName }}</dt>
-                <dd>{{ block.milestoneDates }}</dd>
-              {% endfor %}
-            </dl>
+            <div class="timeline" data-vertical-start-position="right">
+              <div class="timeline__wrap">
+                <div class="timeline__items">
+                  {% for block in entry.timeline.all() %}
+                    <div class="timeline__item">
+                      <div class="timeline__content">
+                        <h4 class="font-bold text-xl my-0">{{ block.milestoneName }}</h4>
+                        <p>{{ block.milestoneDates }}</p>
+                      </div>
+                    </div>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
           {% endif %}
         </div>
         <div class="md:pl-4 md:w-1/2">
