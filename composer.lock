@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "56548514ab446ece377d29cb89d66f09",
+    "content-hash": "59498a9cc391b1cbd9291a42c8697b1a",
     "packages": [
         {
             "name": "99designs/phumbor",
@@ -1773,15 +1773,15 @@
         },
         {
             "name": "fruitstudios/linkit",
-            "version": "1.1.6",
+            "version": "1.1.8",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fruitstudios/craft-linkit/zipball/32ccde9a128b9223268f5a0ff1f0e65f79c8c95d",
-                "reference": "32ccde9a128b9223268f5a0ff1f0e65f79c8c95d",
+                "url": "https://api.github.com/repos/fruitstudios/craft-linkit/zipball/3249793e2a41e0b6b3df0cdea03b5ae6ae948c6c",
+                "reference": "3249793e2a41e0b6b3df0cdea03b5ae6ae948c6c",
                 "shasum": ""
             },
             "require": {
-                "craftcms/cms": "^3.0.2"
+                "craftcms/cms": "^3.1.8"
             },
             "type": "craft-plugin",
             "extra": {
@@ -1800,7 +1800,6 @@
                     "fruitstudios\\linkit\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "proprietary"
             ],
@@ -1812,15 +1811,21 @@
             ],
             "description": "One link field to rule them all.",
             "keywords": [
-                "Craft",
                 "cms",
+                "craft",
                 "craft-plugin",
                 "craftcms",
                 "fruit studios",
                 "link it",
                 "linkit"
             ],
-            "time": "2019-01-18T14:59:50+00:00"
+            "support": {
+                "email": "hi@fruitstudios.co.uk",
+                "issues": "https://github.com/fruitstudios/craft-linkit/issues?state=open",
+                "source": "https://github.com/fruitstudios/craft-linkit",
+                "docs": "https://github.com/fruitstudios/craft-linkit"
+            },
+            "time": "2019-02-08T11:27:44+00:00"
         },
         {
             "name": "geoip2/geoip2",
@@ -3423,11 +3428,6 @@
         {
             "name": "nystudio107/craft-imageoptimize-imgix",
             "version": "1.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/nystudio107/craft-imageoptimize-imgix.git",
-                "reference": "410f2d6908ee80aad0abe875f11e08401f93bb84"
-            },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/nystudio107/craft-imageoptimize-imgix/zipball/410f2d6908ee80aad0abe875f11e08401f93bb84",
@@ -3467,11 +3467,6 @@
         {
             "name": "nystudio107/craft-imageoptimize-thumbor",
             "version": "1.1.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/nystudio107/craft-imageoptimize-thumbor.git",
-                "reference": "3e6a18fdc09007b69bd3455e2012c15a7980334b"
-            },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/nystudio107/craft-imageoptimize-thumbor/zipball/3e6a18fdc09007b69bd3455e2012c15a7980334b",
@@ -3562,11 +3557,11 @@
         },
         {
             "name": "nystudio107/craft-seomatic",
-            "version": "3.1.41",
+            "version": "3.1.42",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/21df379f4e2c0a862d8120bd7d83b2d1e55126d9",
-                "reference": "21df379f4e2c0a862d8120bd7d83b2d1e55126d9",
+                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/5ec448f70e6b54b7e409c813f09f8906cd8a1ef2",
+                "reference": "5ec448f70e6b54b7e409c813f09f8906cd8a1ef2",
                 "shasum": ""
             },
             "require": {
@@ -3601,7 +3596,6 @@
                     "nystudio107\\seomatic\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "proprietary"
             ],
@@ -3613,20 +3607,24 @@
             ],
             "description": "SEOmatic facilitates modern SEO best practices & implementation for Craft CMS 3. It is a turnkey SEO system that is comprehensive, powerful, and flexible.",
             "keywords": [
-                "Craft",
-                "JSON-LD",
-                "Sitemap",
                 "cms",
+                "craft",
                 "craft-plugin",
                 "craftcms",
                 "facebook",
+                "json-ld",
                 "meta",
                 "seo",
                 "seomatic",
+                "sitemap",
                 "tags",
                 "twitter"
             ],
-            "time": "2019-02-07T17:31:51+00:00"
+            "support": {
+                "docs": "https://github.com/nystudio107/craft-seomatic/blob/v3/README.md",
+                "issues": "https://github.com/nystudio107/craft-seomatic/issues"
+            },
+            "time": "2019-02-08T01:17:45+00:00"
         },
         {
             "name": "nystudio107/craft-typogrify",
@@ -4074,11 +4072,11 @@
         },
         {
             "name": "rynpsc/craft-phone-number",
-            "version": "1.2.1",
+            "version": "1.2.2",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rynpsc/craft-phone-number/zipball/d57a8e5336881344965393233a4dfa3bd64129cd",
-                "reference": "d57a8e5336881344965393233a4dfa3bd64129cd",
+                "url": "https://api.github.com/repos/rynpsc/craft-phone-number/zipball/d2d9c8bfde39898228864b867e8de1580a6524f2",
+                "reference": "d2d9c8bfde39898228864b867e8de1580a6524f2",
                 "shasum": ""
             },
             "require": {
@@ -4098,7 +4096,6 @@
                     "rynpsc\\phonenumber\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -4117,7 +4114,12 @@
                 "phone",
                 "yii2"
             ],
-            "time": "2019-01-04T17:51:24+00:00"
+            "support": {
+                "issues": "https://github.com/rynpsc/craft-phone-number/issues?state=open",
+                "source": "https://github.com/rynpsc/craft-phone-number",
+                "docs": "https://github.com/rynpsc/craft-phone-number"
+            },
+            "time": "2019-02-10T14:27:09+00:00"
         },
         {
             "name": "seld/cli-prompt",
@@ -5424,11 +5426,11 @@
         },
         {
             "name": "verbb/feed-me",
-            "version": "3.1.4",
+            "version": "3.1.5",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/verbb/feed-me/zipball/237b083face1366d1b58622a47512c78ad392429",
-                "reference": "237b083face1366d1b58622a47512c78ad392429",
+                "url": "https://api.github.com/repos/verbb/feed-me/zipball/d358af23d1d1f3686eb12972cdb402baf0f74344",
+                "reference": "d358af23d1d1f3686eb12972cdb402baf0f74344",
                 "shasum": ""
             },
             "require": {
@@ -5443,9 +5445,6 @@
                 "seld/jsonlint": "^1.7",
                 "vlucas/phpdotenv": "^2.4"
             },
-            "require-dev": {
-                "codeception/codeception": "~2.3.3"
-            },
             "type": "craft-plugin",
             "extra": {
                 "name": "Feed Me",
@@ -5458,7 +5457,6 @@
                     "verbb\\feedme\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "proprietary"
             ],
@@ -5470,13 +5468,20 @@
             ],
             "description": "Import content from XML, RSS, CSV or JSON feeds into Entries, Categories, Craft Commerce Products (and variants), and more.",
             "keywords": [
-                "Craft",
                 "cms",
+                "craft",
                 "craft-plugin",
                 "craftcms",
                 "feed me"
             ],
-            "time": "2019-02-06T11:08:15+00:00"
+            "support": {
+                "email": "support@verbb.io",
+                "issues": "https://github.com/verbb/feed-me/issues?state=open",
+                "source": "https://github.com/verbb/feed-me",
+                "docs": "https://github.com/verbb/feed-me",
+                "rss": "https://github.com/verbb/feed-me/commits/v2.atom"
+            },
+            "time": "2019-02-11T12:21:51+00:00"
         },
         {
             "name": "verbb/redactor-tweaks",

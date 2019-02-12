@@ -21,7 +21,7 @@ categoryGroups:
     structure:
       maxLevels: '1'
       uid: b4e9ab1c-aa42-46f9-a679-898119f39e8d
-dateModified: 1549665403
+dateModified: 1549930099
 email:
   fromEmail: digitalteam@oaklandnet.com
   fromName: 'City of Oakland'
@@ -6990,7 +6990,7 @@ volumes:
       cfDistributionId: ''
       expires: ''
       keyId: $S3_API_KEY
-      region: us-west
+      region: us-west-2
       secret: $S3_SECRET
       subfolder: seo
     sortOrder: '7'
@@ -7107,12 +7107,14 @@ volumes:
     hasUrls: true
     name: Projects
     settings:
+      autoFocalPoint: ''
       bucket: cao-94612
       cfDistributionId: ''
       expires: ''
       keyId: $S3_API_KEY
       region: us-west-2
       secret: $S3_SECRET
+      storageClass: ''
       subfolder: projects
     sortOrder: null
     type: craft\awss3\Volume
@@ -7165,12 +7167,14 @@ volumes:
     hasUrls: true
     name: Resources
     settings:
+      autoFocalPoint: ''
       bucket: cao-94612
       cfDistributionId: ''
       expires: ''
       keyId: $S3_API_KEY
-      region: us-west
+      region: us-west-2
       secret: $S3_SECRET
+      storageClass: ''
       subfolder: resources
     sortOrder: null
     type: craft\awss3\Volume
