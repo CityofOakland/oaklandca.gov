@@ -1,0 +1,34 @@
+{% extends '_layouts/_banner-with-nav' %}
+
+{% set relatedMeetings = craft.calendar.events.relatedTo(entry) %}
+{% set relatedNews = craft.entries.section('news').relatedTo(entry) %}
+
+{% block content %}
+  {% include '_partials/_page-banners' with {
+    breadCrumbs: true,
+    breadCrumbLinks: [
+      {
+        title: 'Projects',
+        link: '/projects'
+      }
+    ],
+    navMenu: {
+      'timeline': entry.timeline.exists(),
+      'meetings': relatedMeetings.exists(),
+      'resources': entry.pageResources.exists(),
+      'documents': entry.pageDocuments.exists(),
+      'about': true,
+      'news': relatedNews.exists(),
+      'contact': true
+    }
+  } %}
+  {% include '_partials/_page-timeline' %}
+  {% include '_partials/_page-meetings' %}
+  {% include '_partials/_page-resources' %}
+  {% include '_partials/_page-topics' %}
+  {% include '_partials/_page-projects' %}
+  {% include '_partials/_page-documents' %}
+  {% include '_partials/_page-about' %}
+  {% include '_partials/_page-news' %}
+  {% include '_partials/_page-location' %}
+{% endblock %}
