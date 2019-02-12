@@ -21,7 +21,7 @@ categoryGroups:
     structure:
       maxLevels: '1'
       uid: b4e9ab1c-aa42-46f9-a679-898119f39e8d
-dateModified: 1548964873
+dateModified: 1549930099
 email:
   fromEmail: digitalteam@oaklandnet.com
   fromName: 'City of Oakland'
@@ -3706,7 +3706,7 @@ plugins:
   aws-s3:
     enabled: '1'
     licenseKey: null
-    schemaVersion: 1.0.0
+    schemaVersion: '1.1'
     settings: null
   beam:
     enabled: '1'
@@ -3777,7 +3777,7 @@ plugins:
   feed-me:
     enabled: '1'
     licenseKey: null
-    schemaVersion: 1.0.1
+    schemaVersion: 1.0.2
     settings: null
   image-optimize:
     enabled: '1'
@@ -6699,57 +6699,59 @@ users:
       handle: electedOfficialLeads
       name: 'Elected Official Leads'
       permissions:
-        - accesscp
-        - calendar-editcalendars
-        - calendar-managecalendars
         - accessplugin-calendar
-        - 'createentries:8b7c4e26-9aab-4c5d-874e-aee151107de3'
-        - 'publishentries:8b7c4e26-9aab-4c5d-874e-aee151107de3'
-        - 'editentries:8b7c4e26-9aab-4c5d-874e-aee151107de3'
-        - 'createentries:983c9f6f-9251-4fd3-91e1-b598eccc6a1a'
-        - 'editentries:983c9f6f-9251-4fd3-91e1-b598eccc6a1a'
-        - 'editentries:92f0f749-ed5b-4acc-aa15-6340f6e25791'
-        - 'editentries:ea100822-9881-41cb-b2ed-e147268773d2'
-        - 'createentries:98d541ae-56ee-4c98-ba9c-37438dc485a0'
-        - 'editentries:98d541ae-56ee-4c98-ba9c-37438dc485a0'
-        - 'createentries:fbf8b9b0-8875-4e08-819a-d62603676dc4'
-        - 'publishentries:fbf8b9b0-8875-4e08-819a-d62603676dc4'
-        - 'editentries:fbf8b9b0-8875-4e08-819a-d62603676dc4'
+        - accesscp
         - registerusers
+        - moderateusers
+        - assignuserpermissions
+        - 'assignusergroup:6227b65d-17fc-4360-8a69-3e70afc30899'
         - assignusergroups
+        - administrateusers
         - editusers
         - 'createentries:9da43fd8-c505-4d19-9486-e0cb669c568a'
         - 'publishentries:9da43fd8-c505-4d19-9486-e0cb669c568a'
         - 'editentries:9da43fd8-c505-4d19-9486-e0cb669c568a'
+        - 'createentries:8b7c4e26-9aab-4c5d-874e-aee151107de3'
+        - 'publishentries:8b7c4e26-9aab-4c5d-874e-aee151107de3'
+        - 'editentries:8b7c4e26-9aab-4c5d-874e-aee151107de3'
         - 'publishentries:20567858-8423-4c20-9004-d0b02150fa2a'
         - 'editentries:20567858-8423-4c20-9004-d0b02150fa2a'
+        - 'createentries:983c9f6f-9251-4fd3-91e1-b598eccc6a1a'
         - 'publishentries:983c9f6f-9251-4fd3-91e1-b598eccc6a1a'
+        - 'editentries:983c9f6f-9251-4fd3-91e1-b598eccc6a1a'
         - 'createentries:28881fc8-3e61-4fdb-a5ee-cce1bab725bf'
         - 'publishentries:28881fc8-3e61-4fdb-a5ee-cce1bab725bf'
         - 'editentries:28881fc8-3e61-4fdb-a5ee-cce1bab725bf'
         - 'createentries:92f0f749-ed5b-4acc-aa15-6340f6e25791'
         - 'publishentries:92f0f749-ed5b-4acc-aa15-6340f6e25791'
+        - 'editentries:92f0f749-ed5b-4acc-aa15-6340f6e25791'
         - 'publishentries:ea100822-9881-41cb-b2ed-e147268773d2'
+        - 'editentries:ea100822-9881-41cb-b2ed-e147268773d2'
+        - 'createentries:98d541ae-56ee-4c98-ba9c-37438dc485a0'
         - 'publishentries:98d541ae-56ee-4c98-ba9c-37438dc485a0'
+        - 'editentries:98d541ae-56ee-4c98-ba9c-37438dc485a0'
         - 'createentries:24fa116b-8516-4626-84f3-86b685e71071'
         - 'publishentries:24fa116b-8516-4626-84f3-86b685e71071'
         - 'editentries:24fa116b-8516-4626-84f3-86b685e71071'
-        - 'createentries:70778563-6dac-453d-a4b0-5121f3a614b7'
-        - 'publishentries:70778563-6dac-453d-a4b0-5121f3a614b7'
-        - 'editpeerentries:70778563-6dac-453d-a4b0-5121f3a614b7'
-        - 'editentries:70778563-6dac-453d-a4b0-5121f3a614b7'
-        - administrateusers
-        - moderateusers
-        - assignuserpermissions
-        - 'assignusergroup:6227b65d-17fc-4360-8a69-3e70afc30899'
         - 'publishentries:07faad04-9ec4-4f68-9fe8-0ca20f189f8a'
         - 'publishpeerentries:07faad04-9ec4-4f68-9fe8-0ca20f189f8a'
         - 'editpeerentries:07faad04-9ec4-4f68-9fe8-0ca20f189f8a'
         - 'editentries:07faad04-9ec4-4f68-9fe8-0ca20f189f8a'
+        - 'createentries:fbf8b9b0-8875-4e08-819a-d62603676dc4'
+        - 'publishentries:fbf8b9b0-8875-4e08-819a-d62603676dc4'
+        - 'editentries:fbf8b9b0-8875-4e08-819a-d62603676dc4'
+        - 'createentries:70778563-6dac-453d-a4b0-5121f3a614b7'
+        - 'publishentries:70778563-6dac-453d-a4b0-5121f3a614b7'
+        - 'editpeerentries:70778563-6dac-453d-a4b0-5121f3a614b7'
+        - 'editentries:70778563-6dac-453d-a4b0-5121f3a614b7'
         - 'createentries:17d5d48d-2d75-4742-8820-cdce13764482'
         - 'publishentries:17d5d48d-2d75-4742-8820-cdce13764482'
         - 'editpeerentries:17d5d48d-2d75-4742-8820-cdce13764482'
         - 'editentries:17d5d48d-2d75-4742-8820-cdce13764482'
+        - 'saveassetinvolume:7a12e399-b320-4d23-8abb-a79b5f303015'
+        - 'viewvolume:7a12e399-b320-4d23-8abb-a79b5f303015'
+        - calendar-editcalendars
+        - calendar-managecalendars
     67bbdab6-8a94-441d-9c36-6d093274da43:
       handle: digitalTeam
       name: Editors
@@ -6988,9 +6990,8 @@ volumes:
       cfDistributionId: ''
       expires: ''
       keyId: $S3_API_KEY
-      region: us-west
+      region: us-west-2
       secret: $S3_SECRET
-      storageClass: ''
       subfolder: seo
     sortOrder: '7'
     type: craft\awss3\Volume
@@ -7016,7 +7017,6 @@ volumes:
       keyId: $S3_API_KEY
       region: us-west-2
       secret: $S3_SECRET
-      storageClass: ''
       subfolder: headers
     sortOrder: '1'
     type: craft\awss3\Volume
@@ -7042,7 +7042,6 @@ volumes:
       keyId: $S3_API_KEY
       region: us-west-2
       secret: $S3_SECRET
-      storageClass: ''
       subfolder: data
     sortOrder: '5'
     type: craft\awss3\Volume
@@ -7068,7 +7067,6 @@ volumes:
       keyId: $S3_API_KEY
       region: us-west-2
       secret: $S3_SECRET
-      storageClass: ''
       subfolder: portraits
     sortOrder: '2'
     type: craft\awss3\Volume
@@ -7100,7 +7098,6 @@ volumes:
       keyId: $S3_API_KEY
       region: us-west-2
       secret: $S3_SECRET
-      storageClass: ''
       subfolder: news
     sortOrder: '3'
     type: craft\awss3\Volume
@@ -7110,6 +7107,7 @@ volumes:
     hasUrls: true
     name: Projects
     settings:
+      autoFocalPoint: ''
       bucket: cao-94612
       cfDistributionId: ''
       expires: ''
@@ -7145,7 +7143,6 @@ volumes:
       keyId: $S3_API_KEY
       region: us-west-2
       secret: $S3_SECRET
-      storageClass: ''
       subfolder: events
     sortOrder: '4'
     type: craft\awss3\Volume
@@ -7161,7 +7158,6 @@ volumes:
       keyId: $S3_API_KEY
       region: us-west-2
       secret: $S3_SECRET
-      storageClass: ''
       subfolder: documents
     sortOrder: '6'
     type: craft\awss3\Volume
@@ -7171,11 +7167,12 @@ volumes:
     hasUrls: true
     name: Resources
     settings:
+      autoFocalPoint: ''
       bucket: cao-94612
       cfDistributionId: ''
       expires: ''
       keyId: $S3_API_KEY
-      region: us-west
+      region: us-west-2
       secret: $S3_SECRET
       storageClass: ''
       subfolder: resources
