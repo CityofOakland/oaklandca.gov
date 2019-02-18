@@ -1,8 +1,8 @@
 /**
  * @project        oakland
  * @author         Christopher Kennedy, onebrightlight <chris@onebrightlight.com>
- * @build          Mon, Feb 4, 2019 2:30 PM ET
- * @release        7c8b78187d6cf41aafa5e296de42d4afd41bd31c [oak-staging]
+ * @build          Sun, Feb 17, 2019 7:40 PM ET
+ * @release        635cde53a744f743b86d8de22d6b7a927376f16a [oak-staging]
  * @copyright      Copyright (c) 2019, onebrightlight
  *
  */
@@ -837,6 +837,17 @@ footer {
      object-fit: cover;
   width: 100%;
   height: 100%;
+}
+
+/* Section Containers */
+
+.section-container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 }
 
 /* Image Blur */

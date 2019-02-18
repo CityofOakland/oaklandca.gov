@@ -21,7 +21,7 @@ categoryGroups:
     structure:
       maxLevels: '1'
       uid: b4e9ab1c-aa42-46f9-a679-898119f39e8d
-dateModified: 1549930099
+dateModified: 1549932623
 email:
   fromEmail: digitalteam@oaklandnet.com
   fromName: 'City of Oakland'
@@ -776,7 +776,7 @@ fields:
     contentColumnType: string
     fieldGroup: 8e8ee56e-cdb8-4206-a3b5-c3aa0eb3a884
     handle: fundingLogos
-    instructions: ''
+    instructions: 'Add logos for any funders that are involved with this project. They will be placed in a grid at the bottom of the page.'
     name: 'Funding Logos'
     searchable: true
     settings:
@@ -1154,7 +1154,7 @@ fields:
     contentColumnType: string
     fieldGroup: 8e8ee56e-cdb8-4206-a3b5-c3aa0eb3a884
     handle: projectDocuments
-    instructions: ''
+    instructions: 'Add any documents or document packets that you wish to display on this page here.'
     name: 'Project Documents'
     searchable: true
     settings:
@@ -1273,7 +1273,7 @@ fields:
     contentColumnType: string
     fieldGroup: 8e8ee56e-cdb8-4206-a3b5-c3aa0eb3a884
     handle: projectBeforePhoto
-    instructions: ''
+    instructions: 'Use this photo to display the project site before work begins.'
     name: 'Project Before Photo'
     searchable: true
     settings:
@@ -1775,7 +1775,7 @@ fields:
     contentColumnType: string
     fieldGroup: 8e8ee56e-cdb8-4206-a3b5-c3aa0eb3a884
     handle: projectAfterPhoto
-    instructions: ''
+    instructions: 'This is the post-project photo OR the projected appearance.'
     name: 'Project After Photo'
     searchable: true
     settings:
@@ -2003,7 +2003,7 @@ fields:
     contentColumnType: string
     fieldGroup: 8e8ee56e-cdb8-4206-a3b5-c3aa0eb3a884
     handle: projectMapImage
-    instructions: ''
+    instructions: 'Add an image of the project map with any key points in a legend.'
     name: 'Project Map Image'
     searchable: true
     settings:
@@ -2231,7 +2231,7 @@ fields:
     contentColumnType: string
     fieldGroup: 8e8ee56e-cdb8-4206-a3b5-c3aa0eb3a884
     handle: relatedProjectEntries
-    instructions: ''
+    instructions: 'Choose any resources, services, or topics you wish to display on this page.'
     name: 'Related Project Entries'
     searchable: true
     settings:
@@ -2269,7 +2269,7 @@ fields:
     contentColumnType: string
     fieldGroup: 8e8ee56e-cdb8-4206-a3b5-c3aa0eb3a884
     handle: projectUpdates
-    instructions: ''
+    instructions: 'Include any news items you wish to display on this page.'
     name: 'Project Updates'
     searchable: true
     settings:
@@ -2477,7 +2477,7 @@ fields:
     contentColumnType: text
     fieldGroup: 8e8ee56e-cdb8-4206-a3b5-c3aa0eb3a884
     handle: externalPhotoGallery
-    instructions: ''
+    instructions: 'Use this link to point to a Flickr or SmugMug gallery'
     name: 'External Photo Gallery'
     searchable: true
     settings:
@@ -5159,7 +5159,7 @@ sections:
                 sortOrder: 4
         handle: legacyProjects
         hasTitleField: true
-        name: 'LEGACY - Projects'
+        name: 'LEGACY Projects'
         sortOrder: 1
         titleFormat: ''
         titleLabel: Title
@@ -5204,13 +5204,13 @@ sections:
                     sortOrder: 11
                   e3f23e85-4290-41f4-bff9-7d12b6e1b52c:
                     required: false
-                    sortOrder: 8
+                    sortOrder: 9
                   f62c85ae-2203-4d1a-8702-da515126a398:
                     required: false
                     sortOrder: 2
                   ffa38afc-e53d-4cb8-8c63-5422d8f647cd:
                     required: false
-                    sortOrder: 9
+                    sortOrder: 8
                 name: Content
                 sortOrder: 1
               -
@@ -5272,7 +5272,7 @@ sections:
                 sortOrder: 4
         handle: projects
         hasTitleField: true
-        name: Projects
+        name: 'Projects (New)'
         sortOrder: 2
         titleFormat: ''
         titleLabel: Title

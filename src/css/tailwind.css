@@ -141,6 +141,12 @@ main, footer {
   @apply absolute pin object-fit-cover w-full h-full;
 }
 
+/* Section Containers */
+
+.section-container {
+  @apply mx-auto px-8 py-16;
+}
+
 /* Image Blur */
 @responsive {
   .image-blur-none {
