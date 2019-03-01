@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "59498a9cc391b1cbd9291a42c8697b1a",
+    "content-hash": "baa54f89abe9b244cd173a2ca79dacf6",
     "packages": [
         {
             "name": "99designs/phumbor",
@@ -147,16 +147,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.87.5",
+            "version": "3.87.21",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "77bbcf213972b7e9ddf4fd101ef5f521adac9f7f"
+                "reference": "266641679eea15075ea13c088f9737460351f7ab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/77bbcf213972b7e9ddf4fd101ef5f521adac9f7f",
-                "reference": "77bbcf213972b7e9ddf4fd101ef5f521adac9f7f",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/266641679eea15075ea13c088f9737460351f7ab",
+                "reference": "266641679eea15075ea13c088f9737460351f7ab",
                 "shasum": ""
             },
             "require": {
@@ -225,20 +225,20 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2019-02-06T23:17:08+00:00"
+            "time": "2019-02-28T20:02:04+00:00"
         },
         {
             "name": "cakephp/core",
-            "version": "3.7.3",
+            "version": "3.7.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cakephp/core.git",
-                "reference": "6325801be06e3fdddc6f49b486861dd47dc5a4fe"
+                "reference": "9a70f1beb7fcc259e1f7050d19c54adcf43032b1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cakephp/core/zipball/6325801be06e3fdddc6f49b486861dd47dc5a4fe",
-                "reference": "6325801be06e3fdddc6f49b486861dd47dc5a4fe",
+                "url": "https://api.github.com/repos/cakephp/core/zipball/9a70f1beb7fcc259e1f7050d19c54adcf43032b1",
+                "reference": "9a70f1beb7fcc259e1f7050d19c54adcf43032b1",
                 "shasum": ""
             },
             "require": {
@@ -246,6 +246,7 @@
                 "php": ">=5.6.0"
             },
             "suggest": {
+                "cakephp/cache": "To use Configure::store() and restore().",
                 "cakephp/event": "To use PluginApplicationInterface or plugin applications."
             },
             "type": "library",
@@ -274,11 +275,11 @@
                 "core",
                 "framework"
             ],
-            "time": "2019-01-12T17:08:38+00:00"
+            "time": "2019-02-09T07:54:49+00:00"
         },
         {
             "name": "cakephp/utility",
-            "version": "3.7.3",
+            "version": "3.7.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cakephp/utility.git",
@@ -627,11 +628,11 @@
         },
         {
             "name": "craftcms/aws-s3",
-            "version": "1.1.3",
+            "version": "1.2.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/aws-s3/zipball/1dd3925a13dcceb2bb0a6d448e06ff68c61cb7c5",
-                "reference": "1dd3925a13dcceb2bb0a6d448e06ff68c61cb7c5",
+                "url": "https://api.github.com/repos/craftcms/aws-s3/zipball/0997e1908e5abfb110c5a43d4fe2691c9ec5a685",
+                "reference": "0997e1908e5abfb110c5a43d4fe2691c9ec5a685",
                 "shasum": ""
             },
             "require": {
@@ -675,15 +676,15 @@
                 "docs": "https://github.com/craftcms/aws-s3",
                 "rss": "https://github.com/craftcms/aws-s3/commits/master.atom"
             },
-            "time": "2019-02-06T08:06:10+00:00"
+            "time": "2019-02-22T00:50:35+00:00"
         },
         {
             "name": "craftcms/cms",
-            "version": "3.1.8",
+            "version": "3.1.15",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/ba226f463efce722ddfbcbf726fed851fff37277",
-                "reference": "ba226f463efce722ddfbcbf726fed851fff37277",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/81e712ccf8f1a9b0a65426c70769229f20dc6b26",
+                "reference": "81e712ccf8f1a9b0a65426c70769229f20dc6b26",
                 "shasum": ""
             },
             "require": {
@@ -714,7 +715,7 @@
                 "true/punycode": "^2.1.0",
                 "twig/twig": "^2.5.0",
                 "yii2tech/ar-softdelete": "^1.0.2",
-                "yiisoft/yii2": "~2.0.15.1",
+                "yiisoft/yii2": "~2.0.16.0",
                 "yiisoft/yii2-debug": "^2.0.10",
                 "yiisoft/yii2-queue": "2.1.0",
                 "yiisoft/yii2-swiftmailer": "^2.1.0",
@@ -726,15 +727,9 @@
             "provide": {
                 "bower-asset/bootstrap": "3.3.* | 3.2.* | 3.1.*",
                 "bower-asset/inputmask": "~3.2.2 | ~3.3.5",
-                "bower-asset/jquery": "3.2.*@stable | 3.1.*@stable | 2.2.*@stable | 2.1.*@stable | 1.11.*@stable | 1.12.*@stable",
+                "bower-asset/jquery": "3.3.*@stable | 3.2.*@stable | 3.1.*@stable | 2.2.*@stable | 2.1.*@stable | 1.11.*@stable | 1.12.*@stable",
                 "bower-asset/punycode": "1.3.*",
                 "bower-asset/yii2-pjax": "~2.0.1"
-            },
-            "require-dev": {
-                "codeception/codeception": "^2.4",
-                "codeception/mockery-module": "~0.2.2",
-                "codeception/specify": "~0.4.6",
-                "codeception/verify": "~0.3.3"
             },
             "suggest": {
                 "ext-iconv": "Adds support for more character encodings than PHP’s built-in mb_convert_encoding() function, which Craft will take advantage of when converting strings to UTF-8.",
@@ -747,7 +742,6 @@
                     "craft\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "proprietary"
             ],
@@ -758,7 +752,15 @@
                 "craftcms",
                 "yii2"
             ],
-            "time": "2019-02-04T19:38:51+00:00"
+            "support": {
+                "email": "support@craftcms.com",
+                "issues": "https://github.com/craftcms/cms/issues?state=open",
+                "forum": "https://craftcms.stackexchange.com/",
+                "source": "https://github.com/craftcms/cms",
+                "docs": "https://github.com/craftcms/docs",
+                "rss": "https://github.com/craftcms/cms/releases.atom"
+            },
+            "time": "2019-02-26T20:13:43+00:00"
         },
         {
             "name": "craftcms/element-api",
@@ -889,11 +891,11 @@
         },
         {
             "name": "craftcms/redactor",
-            "version": "2.3.1",
+            "version": "2.3.2",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/redactor/zipball/1f561397bab4700f36b1393e11aa17c72c3bca0b",
-                "reference": "1f561397bab4700f36b1393e11aa17c72c3bca0b",
+                "url": "https://api.github.com/repos/craftcms/redactor/zipball/e4d96d805af031f4a80e5742e5651f30b55e6bca",
+                "reference": "e4d96d805af031f4a80e5742e5651f30b55e6bca",
                 "shasum": ""
             },
             "require": {
@@ -932,7 +934,7 @@
                 "source": "https://github.com/craftcms/redactor",
                 "docs": "https://github.com/craftcms/redactor"
             },
-            "time": "2019-01-30T21:53:19+00:00"
+            "time": "2019-02-21T13:34:33+00:00"
         },
         {
             "name": "craftcms/server-check",
@@ -1571,11 +1573,16 @@
         },
         {
             "name": "embed/embed",
-            "version": "v3.3.7",
+            "version": "v3.3.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/oscarotero/Embed.git",
+                "reference": "4f0d7c0ba8dce13228fd35b7a73cd4ef5ab0f02c"
+            },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/oscarotero/Embed/zipball/9666691c78b25047bc6ee7e94823de3eaadce0c6",
-                "reference": "9666691c78b25047bc6ee7e94823de3eaadce0c6",
+                "url": "https://api.github.com/repos/oscarotero/Embed/zipball/4f0d7c0ba8dce13228fd35b7a73cd4ef5ab0f02c",
+                "reference": "4f0d7c0ba8dce13228fd35b7a73cd4ef5ab0f02c",
                 "shasum": ""
             },
             "require": {
@@ -1615,7 +1622,7 @@
                 "opengraph",
                 "twitter cards"
             ],
-            "time": "2018-10-22T21:59:03+00:00"
+            "time": "2019-02-25T15:07:28+00:00"
         },
         {
             "name": "enshrined/svg-sanitize",
@@ -1876,16 +1883,16 @@
         },
         {
             "name": "giggsey/libphonenumber-for-php",
-            "version": "8.10.4",
+            "version": "8.10.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/giggsey/libphonenumber-for-php.git",
-                "reference": "3cda94a4a442c24259fb0893618422a56cb8a898"
+                "reference": "75fa86dec0a79632fe492fa121b2a067ec100bf1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giggsey/libphonenumber-for-php/zipball/3cda94a4a442c24259fb0893618422a56cb8a898",
-                "reference": "3cda94a4a442c24259fb0893618422a56cb8a898",
+                "url": "https://api.github.com/repos/giggsey/libphonenumber-for-php/zipball/75fa86dec0a79632fe492fa121b2a067ec100bf1",
+                "reference": "75fa86dec0a79632fe492fa121b2a067ec100bf1",
                 "shasum": ""
             },
             "require": {
@@ -1940,7 +1947,7 @@
                 "phonenumber",
                 "validation"
             ],
-            "time": "2019-01-24T15:41:24+00:00"
+            "time": "2019-02-21T11:30:36+00:00"
         },
         {
             "name": "giggsey/locale",
@@ -3367,19 +3374,19 @@
         },
         {
             "name": "nystudio107/craft-imageoptimize",
-            "version": "1.5.2",
+            "version": "1.5.4",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-imageoptimize/zipball/0439e99602c4e06d6bd957d96ede9162af3bbe87",
-                "reference": "0439e99602c4e06d6bd957d96ede9162af3bbe87",
+                "url": "https://api.github.com/repos/nystudio107/craft-imageoptimize/zipball/18b6e609af1dfc4f953b1ab73b0c64a7b8199646",
+                "reference": "18b6e609af1dfc4f953b1ab73b0c64a7b8199646",
                 "shasum": ""
             },
             "require": {
                 "craftcms/cms": "^3.0.0",
                 "ksubileau/color-thief-php": "^1.3",
                 "mikehaertl/php-shellcommand": "~1.2",
-                "nystudio107/craft-imageoptimize-imgix": "^1.0.0",
-                "nystudio107/craft-imageoptimize-thumbor": "^1.0.0"
+                "nystudio107/craft-imageoptimize-imgix": "^1.0.3",
+                "nystudio107/craft-imageoptimize-thumbor": "^1.1.2"
             },
             "type": "craft-plugin",
             "extra": {
@@ -3401,7 +3408,6 @@
                     "nystudio107\\imageoptimize\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "proprietary"
             ],
@@ -3413,8 +3419,8 @@
             ],
             "description": "Automatically create & optimize responsive image transforms, using either native Craft transforms or a service like Imgix, with zero template changes.",
             "keywords": [
-                "Craft",
                 "cms",
+                "craft",
                 "craft-plugin",
                 "craftcms",
                 "image",
@@ -3423,15 +3429,19 @@
                 "optimize",
                 "optimize-images"
             ],
-            "time": "2019-02-07T14:02:30+00:00"
+            "support": {
+                "docs": "https://github.com/nystudio107/craft-imageoptimize/blob/v1/README.md",
+                "issues": "https://github.com/nystudio107/craft-imageoptimize/issues"
+            },
+            "time": "2019-02-23T03:27:15+00:00"
         },
         {
             "name": "nystudio107/craft-imageoptimize-imgix",
-            "version": "1.0.1",
+            "version": "1.0.3",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-imageoptimize-imgix/zipball/410f2d6908ee80aad0abe875f11e08401f93bb84",
-                "reference": "410f2d6908ee80aad0abe875f11e08401f93bb84",
+                "url": "https://api.github.com/repos/nystudio107/craft-imageoptimize-imgix/zipball/54d30be25179955ed61cd5cea9797b05c6442811",
+                "reference": "54d30be25179955ed61cd5cea9797b05c6442811",
                 "shasum": ""
             },
             "require": {
@@ -3462,15 +3472,15 @@
                 "image-transform",
                 "imgix"
             ],
-            "time": "2019-02-07T14:04:33+00:00"
+            "time": "2019-02-23T03:24:51+00:00"
         },
         {
             "name": "nystudio107/craft-imageoptimize-thumbor",
-            "version": "1.1.1",
+            "version": "1.1.2",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-imageoptimize-thumbor/zipball/3e6a18fdc09007b69bd3455e2012c15a7980334b",
-                "reference": "3e6a18fdc09007b69bd3455e2012c15a7980334b",
+                "url": "https://api.github.com/repos/nystudio107/craft-imageoptimize-thumbor/zipball/a63d192893f69490def882fe23576fb141b29e78",
+                "reference": "a63d192893f69490def882fe23576fb141b29e78",
                 "shasum": ""
             },
             "require": {
@@ -3501,7 +3511,7 @@
                 "image-transform",
                 "thumbor"
             ],
-            "time": "2019-02-07T14:07:16+00:00"
+            "time": "2019-02-08T01:06:56+00:00"
         },
         {
             "name": "nystudio107/craft-retour",
@@ -3557,11 +3567,11 @@
         },
         {
             "name": "nystudio107/craft-seomatic",
-            "version": "3.1.42",
+            "version": "3.1.44",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/5ec448f70e6b54b7e409c813f09f8906cd8a1ef2",
-                "reference": "5ec448f70e6b54b7e409c813f09f8906cd8a1ef2",
+                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/d5552c7fee40af79429307f9f7ba289195f16e6c",
+                "reference": "d5552c7fee40af79429307f9f7ba289195f16e6c",
                 "shasum": ""
             },
             "require": {
@@ -3624,7 +3634,7 @@
                 "docs": "https://github.com/nystudio107/craft-seomatic/blob/v3/README.md",
                 "issues": "https://github.com/nystudio107/craft-seomatic/issues"
             },
-            "time": "2019-02-08T01:17:45+00:00"
+            "time": "2019-02-19T00:18:28+00:00"
         },
         {
             "name": "nystudio107/craft-typogrify",
@@ -3978,11 +3988,11 @@
         },
         {
             "name": "rias/craft-scout",
-            "version": "1.1.1",
+            "version": "1.1.3",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Rias500/craft-scout/zipball/c5d46509cf03f58b08ddc4118b48243f86b68323",
-                "reference": "c5d46509cf03f58b08ddc4118b48243f86b68323",
+                "url": "https://api.github.com/repos/Rias500/craft-scout/zipball/9972228b101b465bbc5f7359e7d8ff2ea92a1172",
+                "reference": "9972228b101b465bbc5f7359e7d8ff2ea92a1172",
                 "shasum": ""
             },
             "require": {
@@ -4029,7 +4039,7 @@
                 "docs": "https://github.com/Rias500/craft3-scout/blob/master/README.md",
                 "issues": "https://github.com/Rias500/craft3-scout/issues"
             },
-            "time": "2019-01-21T14:07:22+00:00"
+            "time": "2019-02-27T09:19:54+00:00"
         },
         {
             "name": "rlanvin/php-rrule",
@@ -4249,11 +4259,11 @@
         },
         {
             "name": "solspace/craft3-calendar",
-            "version": "2.0.15",
+            "version": "2.0.16",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/solspace/craft3-calendar/zipball/d9f21778d01db39b630c27b139ee5bff6248e322",
-                "reference": "d9f21778d01db39b630c27b139ee5bff6248e322",
+                "url": "https://api.github.com/repos/solspace/craft3-calendar/zipball/b7a0e77ca064badbecdeb66bec5c6dfea0924fa9",
+                "reference": "b7a0e77ca064badbecdeb66bec5c6dfea0924fa9",
                 "shasum": ""
             },
             "require": {
@@ -4261,7 +4271,7 @@
                 "nesbot/carbon": "^1.22.1",
                 "php": ">=7.0",
                 "rlanvin/php-rrule": "~1.6.0",
-                "solspace/craft3-commons": "^1.0.16",
+                "solspace/craft3-commons": "^1.0.17",
                 "symfony/filesystem": "^2.8|^3.0|^4.0",
                 "symfony/finder": "^2.8|^3.0|^4.0",
                 "symfony/property-access": "^2.8|^3.0|^4.0"
@@ -4284,7 +4294,6 @@
                     "Solspace\\Calendar\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "authors": [
                 {
                     "name": "Solspace",
@@ -4292,7 +4301,7 @@
                 }
             ],
             "description": "The most powerful event management plugin for Craft.",
-            "time": "2019-02-06T18:06:58+00:00"
+            "time": "2019-02-26T18:23:08+00:00"
         },
         {
             "name": "solspace/craft3-commons",
@@ -5426,11 +5435,11 @@
         },
         {
             "name": "verbb/feed-me",
-            "version": "3.1.5",
+            "version": "3.1.10",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/verbb/feed-me/zipball/d358af23d1d1f3686eb12972cdb402baf0f74344",
-                "reference": "d358af23d1d1f3686eb12972cdb402baf0f74344",
+                "url": "https://api.github.com/repos/verbb/feed-me/zipball/b0c8b6bb89debfbb32305e4e27a7fa2ad7c4bd90",
+                "reference": "b0c8b6bb89debfbb32305e4e27a7fa2ad7c4bd90",
                 "shasum": ""
             },
             "require": {
@@ -5481,7 +5490,7 @@
                 "docs": "https://github.com/verbb/feed-me",
                 "rss": "https://github.com/verbb/feed-me/commits/v2.atom"
             },
-            "time": "2019-02-11T12:21:51+00:00"
+            "time": "2019-02-25T22:20:57+00:00"
         },
         {
             "name": "verbb/redactor-tweaks",
@@ -5634,19 +5643,19 @@
         },
         {
             "name": "yiisoft/yii2",
-            "version": "2.0.15.1",
+            "version": "2.0.16",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/ed3a9e1c4abe206e1c3ce48a6b3624119b79850d",
-                "reference": "ed3a9e1c4abe206e1c3ce48a6b3624119b79850d",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/789de9783d41e6ca10fffc3644a43a764f79b399",
+                "reference": "789de9783d41e6ca10fffc3644a43a764f79b399",
                 "shasum": ""
             },
             "require": {
                 "bower-asset/inputmask": "~3.2.2 | ~3.3.5",
-                "bower-asset/jquery": "3.2.*@stable | 3.1.*@stable | 2.2.*@stable | 2.1.*@stable | 1.11.*@stable | 1.12.*@stable",
+                "bower-asset/jquery": "3.3.*@stable | 3.2.*@stable | 3.1.*@stable | 2.2.*@stable | 2.1.*@stable | 1.11.*@stable | 1.12.*@stable",
                 "bower-asset/punycode": "1.3.*",
                 "bower-asset/yii2-pjax": "~2.0.1",
-                "cebe/markdown": "~1.0.0 | ~1.1.0",
+                "cebe/markdown": "~1.0.0 | ~1.1.0 | ~1.2.0",
                 "ext-ctype": "*",
                 "ext-mbstring": "*",
                 "ezyang/htmlpurifier": "~4.6",
@@ -5668,7 +5677,6 @@
                     "yii\\": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "BSD-3-Clause"
             ],
@@ -5725,7 +5733,7 @@
                 "framework",
                 "yii2"
             ],
-            "time": "2018-03-21T18:36:53+00:00"
+            "time": "2019-01-30T23:54:16+00:00"
         },
         {
             "name": "yiisoft/yii2-bootstrap",

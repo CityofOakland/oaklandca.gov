@@ -21,7 +21,7 @@ categoryGroups:
     structure:
       maxLevels: '1'
       uid: b4e9ab1c-aa42-46f9-a679-898119f39e8d
-dateModified: 1549932623
+dateModified: 1551417575
 email:
   fromEmail: digitalteam@oaklandnet.com
   fromName: 'City of Oakland'
@@ -3828,7 +3828,7 @@ plugins:
   redactor:
     enabled: '1'
     licenseKey: null
-    schemaVersion: 2.2.1
+    schemaVersion: 2.2.2
     settings: null
   redactor-tweaks:
     enabled: '1'
@@ -6434,7 +6434,7 @@ system:
   edition: pro
   live: true
   name: 'City of Oakland'
-  schemaVersion: 3.1.23
+  schemaVersion: 3.1.25
   timeZone: America/Los_Angeles
 tagGroups:
   56057193-b9d8-4ac0-9f31-d4a755c91447:
