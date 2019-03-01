@@ -167,32 +167,33 @@ return [
       'indexName' => getenv('ENVIRONMENT') . '_documents',
       'elementType' => \craft\elements\Entry::class,
       'criteria' => [
-        'section' => 'documents'
+        'section' => 'documents',
+        'with' => ['boardsCommissions', 'departments', 'officials', 'projects', 'resources', 'services', 'topics', 'documentType']
       ],
       'transformer' => function(craft\elements\Entry $entry) {
         $boardsCommissions = [];
-        foreach($entry->boardsCommissions->all() as $value)
+        foreach($entry->boardsCommissions as $value)
           $boardsCommissions[] = $value->title;
         $departments = [];
-        foreach($entry->departments->all() as $value)
+        foreach($entry->departments as $value)
           $departments[] = $value->title;
         $officials = [];
-        foreach($entry->officials->all() as $value)
+        foreach($entry->officials as $value)
           $officials[] = $value->title;
         $projects = [];
-        foreach($entry->projects->all() as $value)
+        foreach($entry->projects as $value)
           $projects[] = $value->title;
         $resources = [];
-        foreach($entry->resources->all() as $value)
+        foreach($entry->resources as $value)
           $resources[] = $value->title;
         $services = [];
-        foreach($entry->services->all() as $value)
+        foreach($entry->services as $value)
           $services[] = $value->title;
         $topics = [];
-        foreach($entry->topics->all() as $value)
+        foreach($entry->topics as $value)
           $topics[] = $value->title;
         $types = [];
-        foreach($entry->documentType->all() as $value)
+        foreach($entry->documentType as $value)
           $types[] = $value->title;
         return [
           'title' => $entry->title,
