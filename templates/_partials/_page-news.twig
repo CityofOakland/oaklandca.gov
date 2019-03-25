@@ -1,12 +1,16 @@
-{% set defaultButtonUrl = "/news/related-to/"  ~ entry.section.handle ~ "/" ~ entry.slug %}
-{% set relatedNews = craft.entries.section('news').relatedTo(entry) %}
-
 {# Since Craft doesn’t let us pass an array of ids by default into its "not" id parameter, we have to use the following setup #}
-{% set idsToExclude = ['and'] %}
+{% set idsToExclude = ['not'] %}
 {% for entry in entry.pageNews.ids() ?? '' %}
   {% set idsToExclude = idsToExclude|merge([entry]) %}
 {% endfor %}
-{% set idsToExcludeString = idsToExclude | join(', not ') %}
+{% set idsToExcludeString = idsToExclude | join(', ') %}
+{% set relatedNews = craft.entries.section('news').relatedTo(entry) %}
+{% set excludedNews = craft.entries.section('news').relatedTo(entry).id(idsToExcludeString) %}
+{% set defaultButtonUrl = "" %}
+
+{% if excludedNews | length %}
+  {% set defaultButtonUrl = "/news/related-to/"  ~ entry.section.handle ~ "/" ~ entry.slug %}
+{% endif %}
 
 {% if relatedNews | length %}
   <section class="bg-rotate">

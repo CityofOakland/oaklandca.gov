@@ -10,19 +10,19 @@ class eventsTransform extends TransformerAbstract
   public function transform(Solspace\Calendar\Elements\Event $event)
   {
     $boardsCommissions = [];
-    foreach($event->boardsCommissions->all() as $value)
+    foreach($event->boardsCommissions as $value)
       $boardsCommissions[] = $value->title;
     $departments = [];
-    foreach($event->departments->all() as $value)
+    foreach($event->departments as $value)
       $departments[] = $value->title;
     $officials = [];
-    foreach($event->officials->all() as $value)
+    foreach($event->officials as $value)
       $officials[] = $value->title;
     $projects = [];
-    foreach($event->projects->all() as $value)
+    foreach($event->projects as $value)
       $projects[] = $value->title;
     $topics = [];
-    foreach($event->topics->all() as $value)
+    foreach($event->topics as $value)
       $topics[] = $value->title;
     return [
       'title' => $event->title,
@@ -216,11 +216,12 @@ return [
       'indexName' => getenv('ENVIRONMENT') . '_documents',
       'elementType' => \craft\elements\Entry::class,
       'criteria' => [
-        'section' => 'documentPackets'
+        'section' => 'documentPackets',
+        'with' => 'documents'
       ],
       'transformer' => function(craft\elements\Entry $entry) {
         $documents = [];
-        foreach($entry->documents->all() as $value)
+        foreach($entry->documents as $value)
           $documents[] = $value->title;
         return [
           'title' => $entry->title,
@@ -281,26 +282,27 @@ return [
       'elementType' => \craft\elements\Entry::class,
       'criteria' => [
         'section' => 'resources',
-        'type' => 'resources'
+        'type' => 'resources',
+        'with' => ['boardsCommissions', 'departments', 'officials', 'projects', 'topics', 'transactionBody']
       ],
       'transformer' => function(craft\elements\Entry $entry) {
         $boardsCommissions = [];
-        foreach($entry->boardsCommissions->all() as $value)
+        foreach($entry->boardsCommissions as $value)
           $boardsCommissions[] = $value->title;
         $departments = [];
-        foreach($entry->departments->all() as $value)
+        foreach($entry->departments as $value)
           $departments[] = $value->title;
         $officials = [];
-        foreach($entry->officials->all() as $value)
+        foreach($entry->officials as $value)
           $officials[] = $value->title;
         $projects = [];
-        foreach($entry->projects->all() as $value)
+        foreach($entry->projects as $value)
           $projects[] = $value->title;
         $topics = [];
-        foreach($entry->topics->all() as $value)
+        foreach($entry->topics as $value)
           $topics[] = $value->title;
         $body = [];
-        foreach ($entry->transactionBody->all() as $block) {
+        foreach ($entry->transactionBody as $block) {
           $body[] = strip_tags($block->text);
         }
         return [
@@ -322,26 +324,27 @@ return [
       'elementType' => \craft\elements\Entry::class,
       'criteria' => [
         'section' => 'resources',
-        'type' => 'videos'
+        'type' => 'videos',
+        'with' => ['boardsCommissions', 'departments', 'officials', 'projects', 'topics', 'transactionBody']
       ],
       'transformer' => function(craft\elements\Entry $entry) {
         $boardsCommissions = [];
-        foreach($entry->boardsCommissions->all() as $value)
+        foreach($entry->boardsCommissions as $value)
           $boardsCommissions[] = $value->title;
         $departments = [];
-        foreach($entry->departments->all() as $value)
+        foreach($entry->departments as $value)
           $departments[] = $value->title;
         $officials = [];
-        foreach($entry->officials->all() as $value)
+        foreach($entry->officials as $value)
           $officials[] = $value->title;
         $projects = [];
-        foreach($entry->projects->all() as $value)
+        foreach($entry->projects as $value)
           $projects[] = $value->title;
         $topics = [];
-        foreach($entry->topics->all() as $value)
+        foreach($entry->topics as $value)
           $topics[] = $value->title;
         $body = [];
-        foreach ($entry->transactionBody->all() as $block) {
+        foreach ($entry->transactionBody as $block) {
           $body[] = strip_tags($block->text);
         }
         return [
@@ -364,27 +367,28 @@ return [
       'elementType' => \craft\elements\Entry::class,
       'criteria' => [
         'section' => 'services',
-        'type' => 'services'
+        'type' => 'services',
+        'with' => ['boardsCommissions', 'departments', 'officials', 'projects', 'topics', 'transactionBody']
       ],
       'transformer' => function(craft\elements\Entry $entry) {
         $boardsCommissions = [];
-        foreach($entry->boardsCommissions->all() as $value)
+        foreach($entry->boardsCommissions as $value)
           $boardsCommissions[] = $value->title;
         $departments = [];
-        foreach($entry->departments->all() as $value)
+        foreach($entry->departments as $value)
           $departments[] = $value->title;
         $officials = [];
-        foreach($entry->officials->all() as $value)
+        foreach($entry->officials as $value)
           $officials[] = $value->title;
         $projects = [];
-        foreach($entry->projects->all() as $value)
+        foreach($entry->projects as $value)
           $projects[] = $value->title;
         $topics = [];
-        foreach($entry->topics->all() as $value)
+        foreach($entry->topics as $value)
           $topics[] = $value->title;
         $body = [];
-        foreach ($entry->transactionBody->all() as $block) {
-          $body[] = (string) $block->text;
+        foreach ($entry->transactionBody as $block) {
+          $body[] = strip_tags($block->text);
         }
         return [
           'title' => $entry->title,
@@ -463,6 +467,7 @@ return [
       'elementType' => \Solspace\Calendar\Elements\Event::class,
       'criteria' => [
         'calendar' => 'events',
+        'with' => ['boardsCommissions', 'departments', 'officials', 'projects', 'topics']
       ],
       'transformer' => new eventsTransform(),
     ],
@@ -473,6 +478,7 @@ return [
       'elementType' => \Solspace\Calendar\Elements\Event::class,
       'criteria' => [
         'calendar' => 'meetings',
+        'with' => ['boardsCommissions', 'departments', 'officials', 'projects', 'topics']
       ],
       'transformer' => new eventsTransform(),
     ],
@@ -483,6 +489,7 @@ return [
       'elementType' => \Solspace\Calendar\Elements\Event::class,
       'criteria' => [
         'calendar' => 'events',
+        'with' => ['boardsCommissions', 'departments', 'officials', 'projects', 'topics']
       ],
       'transformer' => new eventsTransform(),
     ],
