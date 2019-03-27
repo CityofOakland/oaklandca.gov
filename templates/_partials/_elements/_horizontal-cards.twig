@@ -1,4 +1,4 @@
-<article class="py-8 sm:py-16 horizontal-card{% if not loop.last %} border-celeste border-b-2{% endif %}">
+<article class="py-8 sm:py-16 horizontal-card {% if not loop.last %} border-celeste border-b-2 {% endif %}">
   {% if photo | length %}
     <figure class="bg-white z-0">
       <img src="{{ photo.url }}" class="">

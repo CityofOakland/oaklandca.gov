@@ -21,7 +21,7 @@ categoryGroups:
     structure:
       maxLevels: '1'
       uid: b4e9ab1c-aa42-46f9-a679-898119f39e8d
-dateModified: 1551417575
+dateModified: 1553641310
 email:
   fromEmail: digitalteam@oaklandnet.com
   fromName: 'City of Oakland'
@@ -1623,45 +1623,53 @@ fields:
     translationMethod: site
     type: craft\fields\Matrix
   bca7e819-7353-4b88-a1ba-1f0cd2ef15b5:
-    contentColumnType: string
-    fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521
+    name: Address
     handle: address
     instructions: 'To ensure your map is generated correctly on your page, make sure to pick an address the popup provides. If you haven''t received a popup, click **"Search Addresses"** and then choose from that list. If you have successfully chosen an address, you will see the **Latitude** and **Longitude** fields below filled out automatically.'
-    name: Address
     searchable: '1'
+    translationMethod: none
+    translationKeyFormat: null
+    type: doublesecretagency\smartmap\fields\Address
     settings:
+      layout:
+        street1:
+          width: 100
+          enable: 1
+          position: 1
+        street2:
+          width: 100
+          enable: 1
+          position: 2
+        city:
+          width: 50
+          enable: 1
+          position: 3
+        state:
+          width: 15
+          enable: 1
+          position: 4
+        zip:
+          width: 35
+          enable: 1
+          position: 5
+        country:
+          width: 100
+          enable: 0
+          position: 6
+        lat:
+          width: 50
+          enable: 1
+          position: 7
+        lng:
+          width: 50
+          enable: 1
+          position: 8
       dragPinDefault: ''
       dragPinLatitude: '37.8053514'
       dragPinLongitude: '-122.2730467'
       dragPinZoom: '4'
-      layout:
-        city:
-          enable: 1
-          width: 50
-        country:
-          enable: 0
-          width: 100
-        lat:
-          enable: 1
-          width: 50
-        lng:
-          enable: 1
-          width: 50
-        state:
-          enable: 1
-          width: 15
-        street1:
-          enable: 1
-          width: 100
-        street2:
-          enable: 1
-          width: 100
-        zip:
-          enable: 1
-          width: 35
-    translationKeyFormat: null
-    translationMethod: none
-    type: doublesecretagency\smartmap\fields\Address
+    contentColumnType: string
+    fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521
   bd28c3bb-d183-4caf-99bf-bff1b218c7a8:
     contentColumnType: string
     fieldGroup: 767a8f0b-6ea5-4855-a6f3-8c2a4a4aee78
@@ -3706,7 +3714,7 @@ plugins:
   aws-s3:
     enabled: '1'
     licenseKey: null
-    schemaVersion: '1.1'
+    schemaVersion: '1.2'
     settings: null
   beam:
     enabled: '1'
@@ -3777,7 +3785,7 @@ plugins:
   feed-me:
     enabled: '1'
     licenseKey: null
-    schemaVersion: 1.0.2
+    schemaVersion: 2.1.1
     settings: null
   image-optimize:
     enabled: '1'
@@ -3866,7 +3874,7 @@ plugins:
   smart-map:
     enabled: '1'
     licenseKey: 8KND7ZM72H5RQY65UFT7QUH1
-    schemaVersion: 3.2.0
+    schemaVersion: 3.2.2
     settings:
       debugRoute: map/debug
       geolocation: none

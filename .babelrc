@@ -1,0 +1,5 @@
+{
+  "presets": ["@babel/preset-env"],
+  "compact": true,
+  "plugins": ["@babel/plugin-syntax-dynamic-import"]
+}

@@ -1,15 +1,6 @@
-/**
- * This injects Tailwind's base styles, which is a combination of
- * Normalize.css and some additional base styles.
- *
- * You can see the styles here:
- * https://github.com/tailwindcss/tailwindcss/blob/master/css/preflight.css
- *
- * If using `postcss-import`, use this import instead:
- *
- * @import "tailwindcss/preflight";
- */
 @tailwind preflight;
+@tailwind components;
+@tailwind utilities;
 
 body {
   @apply font-sans text-lg leading-normal;
@@ -67,7 +58,6 @@ a:hover {
  *
  * @import "tailwindcss/components";
  */
-@tailwind components;
 
 /**
  * Here you would add any of your custom component classes; stuff that you'd
@@ -224,7 +214,6 @@ main > .bg-rotate:nth-child(odd) {
  *
  * @import "tailwindcss/utilities";
  */
-@tailwind utilities;
 
 /**
  * Here you would add any custom utilities you need that don't come out of the
@@ -289,4 +278,127 @@ main > .bg-rotate:nth-child(odd) {
   text-indent: 100%;
   white-space: nowrap;
   overflow: hidden;
+}
+
+.iframe-holder iframe {
+  max-width: 100% !important;
+}
+
+@media (min-width: 768px) {
+  .card-department-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.card-grid {
+  display: flex;
+  margin-left: -16px;
+  margin-right: -16px;
+  flex-flow: row wrap;
+}
+
+.card-grid > * {
+  margin: 16px;
+}
+
+@media (min-width: 576px) {
+  .card-grid > * {
+    width: calc(50% - 32px);
+    align-self: stretch;
+  }
+}
+
+@media (min-width: 992px) {
+  .card-grid > * {
+    width: calc(33.3333% - 32px);
+  }
+}
+
+.horizontal-card {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 1024px) {
+  .horizontal-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    & > figure {
+      width: calc((100% / 3)  - 24px);
+    }
+
+    & > div {
+      width: calc((100% / 3 * 2)  - 24px);
+    }
+  }
+}
+
+.step-grid {
+  display: grid;
+  grid-gap: 16px;
+  grid-template-columns: 150px 1fr;
+}
+
+a,
+input,
+textarea,
+button {
+  &:focus {
+    outline-style: solid;
+    outline-color: invert;
+    outline-width: 3px;
+  }
+}
+
+table {
+  border: 1px solid #ccc;
+}
+
+th,
+td {
+  border: 1px solid #aaa;
+  padding: 8px;
+}
+
+/* PUSH MENU */
+#menu {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  transition: right .5s ease-out;
+}
+
+body.open #menu {
+  right: 0;
+}
+
+.page-holder {
+  position: relative;
+  right: 0;
+  transition: right .5s ease-out;
+}
+
+body.open .page-holder {
+  right: 300px;
+  overflow: hidden;
+}
+
+.timeline-grid {
+}
+
+.timeline-grid dt {
+  font-size: 24px;
+  padding-left: 50px;
+  background-image: url('/assets/img/icon-timeline-point.svg');
+  background-size: 36px 36px;
+  background-repeat: no-repeat;
+  background-position: top left;
+}
+
+.timeline-grid dd {
+  font-size: 16px;
+  padding-left: 50px;
+  padding-bottom: 20px;
 }

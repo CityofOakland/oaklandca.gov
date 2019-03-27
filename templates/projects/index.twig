@@ -4,7 +4,7 @@
 {% set entry = craft.entries.section('projectsIndex').one %}
 
 {% set hitsTemplate = '<article class="py-8 sm:py-12 border-celeste border-b-2">' ~
-  '<h3 class="text-xl md:text-2xl my-0 {{#leadIn}}mt-0 mb-3 md:mb-6{{/leadIn}}">' ~
+  '<h3 class="text-xl md:text-2xl my-0 {{#leadIn}} mt-0 mb-3 md:mb-6 {{/leadIn}}">' ~
     '<a href="/{{ url }}">' ~
       '{{ _highlightResult.title.value }}' ~
     '</a>' ~
