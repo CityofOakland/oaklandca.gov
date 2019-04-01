@@ -1,5 +1,5 @@
 {
-  "name": "oakland",
+  "name": "oaklandca.gov",
   "version": "1.0.0",
   "description": "Website for oaklandca.gov",
   "main": "gulpfile.js",
@@ -134,7 +134,7 @@
     "laravel-mix-criticalcss": "^1.0.0",
     "laravel-mix-purgecss": "^4.1.0",
     "laravel-mix-tailwind": "^0.1.0",
-    "moment": "^2.22.2",
+    "moment": "^2.24.0",
     "postcss-easy-import": "^3.0.0",
     "postcss-preset-env": "^6.6.0",
     "purgecss-webpack-plugin": "^1.4.0",

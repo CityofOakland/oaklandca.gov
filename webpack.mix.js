@@ -1,8 +1,12 @@
+// Grabs the package.json file to use our site’s environment/values
+var pkg = require("./package.json");
+
 const mix = require("laravel-mix");
 
 // Laravel Mix plugins for additional capabilities
 require("laravel-mix-purgecss");
 require("laravel-mix-criticalcss");
+require("laravel-mix-banner");
 
 // CSS Plugins
 const tailwindcss = require("tailwindcss");
@@ -32,6 +36,26 @@ mix
     processCssUrls: false,
   })
   .js("./src/js/app.js", "js/app.js")
+  .banner({
+    banner: (function () {
+      const moment = require("moment");
+      const gitRevSync = require("git-rev-sync");
+
+      return [
+        "/*!",
+        " * @project        " + pkg.name,
+        " * @author         " + pkg.author,
+        " * @build          " + moment().format("llll") + " GMT+1",
+        " * @release        " + gitRevSync.long() + " [" + gitRevSync.branch() + "]",
+        " * @copyright      Copyright (c) " + moment().format("YYYY") + "," + pkg.author,
+        " *",
+        " !*/",
+        "",
+      ].join("\n");
+    })(),
+    raw: true,
+    entryOnly: true,
+  })
   .extract()
   .setPublicPath("./web/assets/")
   .browserSync({

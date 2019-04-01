@@ -37,7 +37,7 @@
       {% block filters %}
         {% if section is defined and slug is defined %}
             {% set facetItem = craft.entries.section(section).slug(slug).one().title %}
-          filters: '{{ section }}:{{ facetItem }}',
+          filters: "{{ section }}:'{{ facetItem | replace({'%"%': '\\"', "%'%": "\'"}) }}'",
         {% endif %}
       {% endblock %}
       {% if dates is defined and dates == 'forward' %}
