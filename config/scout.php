@@ -508,7 +508,7 @@ return [
       'elementType' => \craft\elements\Entry::class,
       'criteria' => [
         'section' => 'staff',
-        'type' => 'staff'
+        'type' => 'newStaff'
       ],
       'transformer' => function(craft\elements\Entry $entry) {
         return [
