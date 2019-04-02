@@ -21,7 +21,7 @@ categoryGroups:
     structure:
       maxLevels: '1'
       uid: b4e9ab1c-aa42-46f9-a679-898119f39e8d
-dateModified: 1554159259
+dateModified: 1554230637
 email:
   fromEmail: digitalteam@oaklandnet.com
   fromName: 'City of Oakland'
@@ -3934,6 +3934,10 @@ plugins:
       publisherUserGroup: '9'
       selectedPublishers: '*'
   related:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  twigpack:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0

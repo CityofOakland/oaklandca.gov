@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "74a6d80f3261506b06c619c051ce5d6a",
+    "content-hash": "5ae38ae0884794637583ccd36ac4666b",
     "packages": [
         {
             "name": "99designs/phumbor",
@@ -3585,6 +3585,60 @@
                 "issues": "https://github.com/nystudio107/craft-seomatic/issues"
             },
             "time": "2019-03-15T15:06:11+00:00"
+        },
+        {
+            "name": "nystudio107/craft-twigpack",
+            "version": "1.1.5",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nystudio107/craft-twigpack/zipball/1bf0aa6b6c0787347259be0b96b1553ac5d5375e",
+                "reference": "1bf0aa6b6c0787347259be0b96b1553ac5d5375e",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Twigpack",
+                "handle": "twigpack",
+                "hasCpSettings": false,
+                "hasCpSection": false,
+                "changelogUrl": "https://raw.githubusercontent.com/craft-nystudio107/twigpack/v1/CHANGELOG.md",
+                "components": {
+                    "manifest": "nystudio107\\twigpack\\services\\Manifest"
+                },
+                "class": "nystudio107\\twigpack\\Twigpack"
+            },
+            "autoload": {
+                "psr-4": {
+                    "nystudio107\\twigpack\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "nystudio107",
+                    "homepage": "https://nystudio107.com/"
+                }
+            ],
+            "description": "Twigpack is a bridge between Twig and webpack, with manifest.json & webpack-dev-server HMR support",
+            "keywords": [
+                "craft-plugin",
+                "craftcms",
+                "hmr-support",
+                "manifest-json",
+                "twig",
+                "webpack",
+                "webpack-dev-server"
+            ],
+            "support": {
+                "docs": "https://github.com/nystudio107/craft-twigpack/blob/v1/README.md",
+                "issues": "https://github.com/nystudio107/craft-twigpack/issues"
+            },
+            "time": "2019-03-24T19:12:29+00:00"
         },
         {
             "name": "nystudio107/craft-typogrify",

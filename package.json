@@ -144,7 +144,8 @@
     "vue-template-compiler": "^2.6.10"
   },
   "dependencies": {
-    "hover.css": "^2.3.2"
+    "hover.css": "^2.3.2",
+    "instantsearch.js": "2.10.4"
   },
   "scripts": {
     "dev": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",

@@ -4,6 +4,7 @@ use craft\helpers\UrlHelper;
 use Solspace\Calendar\Elements\Event;
 use fruitstudios\linkit\Linkit;
 use League\Fractal\TransformerAbstract;
+use nystudio107\imageoptimize\imagetransforms\ImageTransform;
 
 class eventsTransform extends TransformerAbstract
 {
@@ -31,7 +32,8 @@ class eventsTransform extends TransformerAbstract
       'displayDate' => $event->startDate->format('F j, Y'),
       'body' => strip_tags($event->body),
       'contact' => (string) $event->eventContact,
-      'eventImage' => ! empty($event->eventImage->one()) ? (string) $event->eventImage->one()->getUrl('smallSquare') : null,
+      'eventImageSrc' => ! empty($event->eventImage->one()) ? $event->eventImage->one()->indexImage->src() : null,
+      'eventImage' => ! empty($event->eventImage->one()) ? $event->eventImage->one()->indexImage->toArray() : null,
       'boardsCommissions' => $boardsCommissions,
       'departments' => $departments,
       'officials' => $officials,
@@ -84,7 +86,8 @@ return [
         return [
           'title' => $entry->title,
           'url' => $entry->uri,
-          'newsImage' => ! empty($entry->newsImage->one()) ? (string) $entry->newsImage->one()->url : null,
+          'newsImageSrc' => ! empty($entry->newsImage->one()) ? $entry->newsImage->one()->indexImage->src() : null,
+          'newsImage' => ! empty($entry->newsImage->one()) ? $entry->newsImage->one()->indexImage->toArray() : null,
           'summary' => strip_tags($entry->summary),
           'body' => strip_tags($entry->body),
           'mediaContact' => (string) $entry->mediaContact,
@@ -508,17 +511,18 @@ return [
       'elementType' => \craft\elements\Entry::class,
       'criteria' => [
         'section' => 'staff',
-        'type' => 'newStaff'
+        'type' => 'newStaff',
+        'with' => ['portrait', 'department']
       ],
       'transformer' => function(craft\elements\Entry $entry) {
         return [
           'title' => $entry->title,
           'url' => $entry->uri,
-          'portrait' => ! empty($entry->portrait->one()) ? (string) $entry->portrait->one()->url : null,
+          'portrait' => ! empty($entry->portrait[0]) ? (string) $entry->portrait[0]->url : null,
           'jobTitle' => ! empty($entry->jobTitle) ? (string) $entry->jobTitle : (string) $entry->staffImportJobTitle,
           'bio' => (string) $entry->bio,
           'email' => ! empty($entry->emailAddress) ? (string) $entry->emailAddress : str_replace("@oaklandnet.com", "@oaklandca.gov", $entry->staffImportEmail),
-          'department' => ! empty($entry->departments->one()) ? (string) $entry->departments->one()->title : $entry->staffImportDepartment,
+          'department' => ! empty($entry->departments[0]) ? (string) $entry->departments[0]->title : $entry->staffImportDepartment,
           'employmentType' => (string) $entry->employmentType->label,
         ];
       },
