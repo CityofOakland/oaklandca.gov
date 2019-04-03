@@ -1,4 +1,4 @@
-{% set defaultButtonUrl = "/projects/related-to/" ~ entry.slug %}
+{% set defaultButtonUrl = "/projects/related-to/"  ~ entry.section.handle ~ "/" ~ entry.slug %}
 {% if entry.pageProjects | length %}
   <section class="bg-rotate">
     <a id="page-projects" class="anchor-link"></a>

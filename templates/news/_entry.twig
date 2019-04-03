@@ -14,17 +14,20 @@
     ],
   } %}
   <section class="bg-white relative z-0">
-    <div class="container mx-auto p-8 py-16 sm:flex">
-      <div class="sm:w-3/4 sm:mr-8">
+    <div class="container mx-auto p-8 py-16 md:flex">
+      <div class="md:w-3/4 md:mr-8">
         <h2 class="text-xl">Post Date: {{ entry.postDate | date() }}</h3>
         {% if entry.newsImage | length %}
           <figure class="max-w-full mb-8">
-            <img src="{{ entry.newsImage.one.url }}" alt="">
+            {% set optimizedImages = entry.newsImage.one().newsEntryImage %}
+            <img src="{{ optimizedImages.src() }}"
+                srcset="{{ optimizedImages.srcset() }}"
+                sizes="100vw" />
           </figure>
         {% endif %}
         {{ entry.body }}
       </div>
-      <div class="sm:flex-1">
+      <div class="md:flex-1">
         {% if entry.mediaContact | length %}
           <h3>Media Contact</h3>
           {{ entry.mediaContact }}

@@ -21,7 +21,7 @@ categoryGroups:
     structure:
       maxLevels: '1'
       uid: b4e9ab1c-aa42-46f9-a679-898119f39e8d
-dateModified: 1549930099
+dateModified: 1554312573
 email:
   fromEmail: digitalteam@oaklandnet.com
   fromName: 'City of Oakland'
@@ -776,7 +776,7 @@ fields:
     contentColumnType: string
     fieldGroup: 8e8ee56e-cdb8-4206-a3b5-c3aa0eb3a884
     handle: fundingLogos
-    instructions: ''
+    instructions: 'Add logos for any funders that are involved with this project. They will be placed in a grid at the bottom of the page.'
     name: 'Funding Logos'
     searchable: true
     settings:
@@ -1154,7 +1154,7 @@ fields:
     contentColumnType: string
     fieldGroup: 8e8ee56e-cdb8-4206-a3b5-c3aa0eb3a884
     handle: projectDocuments
-    instructions: ''
+    instructions: 'Add any documents or document packets that you wish to display on this page here.'
     name: 'Project Documents'
     searchable: true
     settings:
@@ -1273,7 +1273,7 @@ fields:
     contentColumnType: string
     fieldGroup: 8e8ee56e-cdb8-4206-a3b5-c3aa0eb3a884
     handle: projectBeforePhoto
-    instructions: ''
+    instructions: 'Use this photo to display the project site before work begins.'
     name: 'Project Before Photo'
     searchable: true
     settings:
@@ -1623,45 +1623,53 @@ fields:
     translationMethod: site
     type: craft\fields\Matrix
   bca7e819-7353-4b88-a1ba-1f0cd2ef15b5:
-    contentColumnType: string
-    fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521
+    name: Address
     handle: address
     instructions: 'To ensure your map is generated correctly on your page, make sure to pick an address the popup provides. If you haven''t received a popup, click **"Search Addresses"** and then choose from that list. If you have successfully chosen an address, you will see the **Latitude** and **Longitude** fields below filled out automatically.'
-    name: Address
     searchable: '1'
+    translationMethod: none
+    translationKeyFormat: null
+    type: doublesecretagency\smartmap\fields\Address
     settings:
+      layout:
+        street1:
+          width: 100
+          enable: 1
+          position: 1
+        street2:
+          width: 100
+          enable: 1
+          position: 2
+        city:
+          width: 50
+          enable: 1
+          position: 3
+        state:
+          width: 15
+          enable: 1
+          position: 4
+        zip:
+          width: 35
+          enable: 1
+          position: 5
+        country:
+          width: 100
+          enable: 0
+          position: 6
+        lat:
+          width: 50
+          enable: 1
+          position: 7
+        lng:
+          width: 50
+          enable: 1
+          position: 8
       dragPinDefault: ''
       dragPinLatitude: '37.8053514'
       dragPinLongitude: '-122.2730467'
       dragPinZoom: '4'
-      layout:
-        city:
-          enable: 1
-          width: 50
-        country:
-          enable: 0
-          width: 100
-        lat:
-          enable: 1
-          width: 50
-        lng:
-          enable: 1
-          width: 50
-        state:
-          enable: 1
-          width: 15
-        street1:
-          enable: 1
-          width: 100
-        street2:
-          enable: 1
-          width: 100
-        zip:
-          enable: 1
-          width: 35
-    translationKeyFormat: null
-    translationMethod: none
-    type: doublesecretagency\smartmap\fields\Address
+    contentColumnType: string
+    fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521
   bd28c3bb-d183-4caf-99bf-bff1b218c7a8:
     contentColumnType: string
     fieldGroup: 767a8f0b-6ea5-4855-a6f3-8c2a4a4aee78
@@ -1775,7 +1783,7 @@ fields:
     contentColumnType: string
     fieldGroup: 8e8ee56e-cdb8-4206-a3b5-c3aa0eb3a884
     handle: projectAfterPhoto
-    instructions: ''
+    instructions: 'This is the post-project photo OR the projected appearance.'
     name: 'Project After Photo'
     searchable: true
     settings:
@@ -2003,7 +2011,7 @@ fields:
     contentColumnType: string
     fieldGroup: 8e8ee56e-cdb8-4206-a3b5-c3aa0eb3a884
     handle: projectMapImage
-    instructions: ''
+    instructions: 'Add an image of the project map with any key points in a legend.'
     name: 'Project Map Image'
     searchable: true
     settings:
@@ -2231,7 +2239,7 @@ fields:
     contentColumnType: string
     fieldGroup: 8e8ee56e-cdb8-4206-a3b5-c3aa0eb3a884
     handle: relatedProjectEntries
-    instructions: ''
+    instructions: 'Choose any resources, services, or topics you wish to display on this page.'
     name: 'Related Project Entries'
     searchable: true
     settings:
@@ -2269,7 +2277,7 @@ fields:
     contentColumnType: string
     fieldGroup: 8e8ee56e-cdb8-4206-a3b5-c3aa0eb3a884
     handle: projectUpdates
-    instructions: ''
+    instructions: 'Include any news items you wish to display on this page.'
     name: 'Project Updates'
     searchable: true
     settings:
@@ -2477,7 +2485,7 @@ fields:
     contentColumnType: text
     fieldGroup: 8e8ee56e-cdb8-4206-a3b5-c3aa0eb3a884
     handle: externalPhotoGallery
-    instructions: ''
+    instructions: 'Use this link to point to a Flickr or SmugMug gallery'
     name: 'External Photo Gallery'
     searchable: true
     settings:
@@ -3706,7 +3714,7 @@ plugins:
   aws-s3:
     enabled: '1'
     licenseKey: null
-    schemaVersion: '1.1'
+    schemaVersion: '1.2'
     settings: null
   beam:
     enabled: '1'
@@ -3777,24 +3785,28 @@ plugins:
   feed-me:
     enabled: '1'
     licenseKey: null
-    schemaVersion: 1.0.2
+    schemaVersion: 2.1.1
     settings: null
   image-optimize:
     enabled: '1'
     licenseKey: F9IVKBV8GRMN7OBYF7R9THT5
     schemaVersion: 1.0.0
     settings:
-      allowUpScaledImageVariants: ''
-      autoSharpenScaledImages: '1'
+      transformClass: nystudio107\imageoptimizeimgix\imagetransforms\ImgixImageTransform
+      imageTransformTypeSettings:
+        nystudio107\imageoptimizeimgix\imagetransforms\ImgixImageTransform:
+          domain: $IMGOPT_IMGIX_SOURCE_DOMAIN
+          apiKey: $IMGOPT_IMGIX_API
+          securityToken: ''
+        nystudio107\imageoptimizethumbor\imagetransforms\ThumborImageTransform:
+          baseUrl: ''
+          securityKey: ''
+          includeBucketPrefix: ''
       createColorPalette: '1'
       createPlaceholderSilhouettes: '1'
-      imgixApiKey: BD8DMv9CrNYcu7bwWogLExe9R6MuSC8I
-      imgixDomain: city-of-oakland.imgix.net
-      imgixSecurityToken: ''
       lowerQualityRetinaImageVariants: '1'
-      thumborBaseUrl: ''
-      thumborSecurityKey: ''
-      transformMethod: imgix
+      allowUpScaledImageVariants: ''
+      autoSharpenScaledImages: '1'
   incognito-field:
     enabled: '1'
     licenseKey: null
@@ -3828,7 +3840,7 @@ plugins:
   redactor:
     enabled: '1'
     licenseKey: null
-    schemaVersion: 2.2.1
+    schemaVersion: 2.2.2
     settings: null
   redactor-tweaks:
     enabled: '1'
@@ -3861,12 +3873,12 @@ plugins:
   seomatic:
     enabled: '1'
     licenseKey: WE9YYSPHWC5CNFB2RL64YDJ6
-    schemaVersion: 3.0.6
+    schemaVersion: 3.0.7
     settings: null
   smart-map:
     enabled: '1'
     licenseKey: 8KND7ZM72H5RQY65UFT7QUH1
-    schemaVersion: 3.2.0
+    schemaVersion: 3.2.2
     settings:
       debugRoute: map/debug
       geolocation: none
@@ -3921,6 +3933,14 @@ plugins:
       publisherNotifications: ''
       publisherUserGroup: '9'
       selectedPublishers: '*'
+  related:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  twigpack:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
 sections:
   07faad04-9ec4-4f68-9fe8-0ca20f189f8a:
     enableVersioning: '1'
@@ -5159,7 +5179,7 @@ sections:
                 sortOrder: 4
         handle: legacyProjects
         hasTitleField: true
-        name: 'LEGACY - Projects'
+        name: 'LEGACY Projects'
         sortOrder: 1
         titleFormat: ''
         titleLabel: Title
@@ -5204,13 +5224,13 @@ sections:
                     sortOrder: 11
                   e3f23e85-4290-41f4-bff9-7d12b6e1b52c:
                     required: false
-                    sortOrder: 8
+                    sortOrder: 9
                   f62c85ae-2203-4d1a-8702-da515126a398:
                     required: false
                     sortOrder: 2
                   ffa38afc-e53d-4cb8-8c63-5422d8f647cd:
                     required: false
-                    sortOrder: 9
+                    sortOrder: 8
                 name: Content
                 sortOrder: 1
               -
@@ -5272,7 +5292,7 @@ sections:
                 sortOrder: 4
         handle: projects
         hasTitleField: true
-        name: Projects
+        name: 'Projects (New)'
         sortOrder: 2
         titleFormat: ''
         titleLabel: Title
@@ -6422,19 +6442,19 @@ siteGroups:
     name: 'City of Oakland'
 sites:
   c35d3a93-d7f4-4c37-ae3e-1b4d403311bb:
-    baseUrl: '@web/'
-    handle: default
-    hasUrls: '1'
-    language: en-US
-    name: 'City of Oakland'
-    primary: '1'
     siteGroup: 226351ad-9bcd-4a73-bd65-bf1ef65f710c
-    sortOrder: '1'
+    name: 'City of Oakland'
+    handle: default
+    language: en-US
+    hasUrls: true
+    baseUrl: 'https://www.oaklandca.cov'
+    sortOrder: 1
+    primary: true
 system:
   edition: pro
   live: true
   name: 'City of Oakland'
-  schemaVersion: 3.1.23
+  schemaVersion: 3.1.25
   timeZone: America/Los_Angeles
 tagGroups:
   56057193-b9d8-4ac0-9f31-d4a755c91447:

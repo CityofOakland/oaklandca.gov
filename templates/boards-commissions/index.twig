@@ -1,23 +1,4 @@
-{% extends '_layout' %}
+{% extends '_layouts/_instant-search-index' %}
 
-{% block content %}
-  {% include '_partials/_page-banners' with {
-    breadCrumbs: true,
-  } %}
-  {% include '_partials/_elements/_search-bar' with { searchSegment: "boards-commissions"} %}
-  <section class="bg-white relative z-0">
-    <div class="container mx-auto p-8 py-16">
-      {% paginate craft.entries.section('boardsCommissions').limit(10).orderBy('title asc') as pageInfo, pageEntries %}
-      {% include '_partials/_elements/_pagination' %}
-      {% for entry in pageEntries %}
-        <article class="py-8 sm:py-16 {% if not loop.last %} border-celeste border-b-2{% endif %}">
-          <h3 class="text-4xl mt-0"><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
-          <p class="text-shark my-4">
-            {{ entry.leadIn }}
-          </p>
-        </article>
-      {% endfor %}
-      {% include '_partials/_elements/_pagination' %}
-    </div>
-  </section>
-{% endblock %}
+{% set entry = craft.entries.section('boardsIndex').one %}
+{% set algoliaIndex =  'production_boards' %}

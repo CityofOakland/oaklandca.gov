@@ -19,17 +19,17 @@
  */
 
 return [
-  'boards-commissions/related-to/<slug>' => ['template' => 'boards-commissions'],
+  'boards-commissions/related-to/<section>/<slug>' => ['template' => 'boards-commissions'],
   'boards-commissions/<slug>/meetings' => ['template' => 'boards-commissions/_meetings'],
   'documents/related-to/<section>/<slug>' => ['template' => 'documents'],
   'events/related-to/<section>/<slug>' => ['template' => 'events'],
   'events/archive/related-to/<section>/<slug>' => ['template' => 'events/archive'],
   'meetings/related-to/<section>/<slug>' => ['template' => 'meetings'],
   'meetings/archive/related-to/<section>/<slug>' => ['template' => 'meetings/archive'],
-  'news/related-to/<slug>' => ['template' => 'news'],
-  'projects/related-to/<slug>' => ['template' => 'projects'],
-  'resources/related-to/<slug>' => ['template' => 'resources'],
-  'services/related-to/<slug>' => ['template' => 'services'],
-  'topics/related-to/<slug>' => ['template' => 'topics'],
+  'news/related-to/<section>/<slug>' => ['template' => 'news'],
+  'projects/related-to/<section>/<slug>' => ['template' => 'projects'],
+  'resources/related-to/<section>/<slug>' => ['template' => 'resources'],
+  'services/related-to/<section>/<slug>' => ['template' => 'services'],
+  'topics/related-to/<section>/<slug>' => ['template' => 'topics'],
   'search/<section>' => ['template' => 'search'],
 ];

@@ -8,8 +8,7 @@
     {# Calls in the SEOmatic tags, all handled through the CMS settings #}
     {% hook 'seomaticRender' %}
 
-    {# admin.cacheFlush is a global variable used to force a cache invalidation if we push a major change up. #}
-    <link rel="stylesheet" href="/assets/css/site.combined.min.css?ver={{ admin.cacheFlush }}">
+    {{ craft.twigpack.includeCssModule("/css/app.css") }}
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i" rel="stylesheet">
   </head>
 
@@ -41,6 +40,8 @@
       </main>
       {% include '_partials/_elements/_footer' %}
     </div>
+    {{ craft.twigpack.includeJsModule("/js/manifest.js") }}
+    {{ craft.twigpack.includeJsModule("/js/vendor.js") }}
+    {{ craft.twigpack.includeJsModule("/js/app.js") }}
   </body>
-
 </html>

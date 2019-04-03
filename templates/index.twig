@@ -51,7 +51,7 @@
         </article>
         <div class="other-news md:w-1/3">
           {% for entry in craft.entries.section('news').id('not ' ~ featuredNewsId).featureOnHomepage(true).limit(5).all() %}
-            <article class="py-6 border-b border-celeste{% if loop.last %} border-none{% endif %}">
+            <article class="py-6 border-b border-celeste {% if loop.last %} border-none {% endif %}">
               <h2 class="my-0 text-lg leading-normal"><a href="{{ entry.url }}">{{ entry.title }}</a></h2>
               <p class="mt-4 mb-0 text-sm text-camouflage-green">{{ entry.postDate | date('M j, Y') }}</p>
             </article>

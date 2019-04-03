@@ -1,27 +1,41 @@
-{% extends '_layout' %}
-{% set entry = craft.entries.section('projectsIndex').one %}
-{% set relatedEntry = null %}
-{% if craft.app.request.getSegment(2) == 'related-to' %}
-  {% set urlSlug = craft.app.request.getSegment(3) %}
-  {% set relatedEntry = craft.entries.slug(urlSlug).one %}
-{% endif %}
+{% extends '_layouts/_instant-search-index' %}
 
-{% block content %}
-  {% include '_partials/_page-banners' with {
-    bannerTitle: entry.title | replace(' Index', ''),
-    breadCrumbs: true,
-  } %}
-  {% include '_partials/_elements/_search-bar' with { searchSegment: "projects"} %}
-  <section class="bg-white relative z-0">
-    <div class="container mx-auto p-8 py-16">
-      {% paginate craft.entries.section('projects').relatedTo(relatedEntry).limit(25).orderBy('title') as pageInfo, pageEntries %}
-      {% include '_partials/_elements/_pagination' %}
-      {% for entry in pageEntries %}
-        <article>
-          <h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
-        </article>
-      {% endfor %}
-      {% include '_partials/_elements/_pagination' %}
-    </div>
-  </section>
-{% endblock %}
+{% set algoliaIndex =  'production_projects' %}
+{% set entry = craft.entries.section('projectsIndex').one %}
+
+{% set hitsTemplate = '<article class="py-8 sm:py-12 border-celeste border-b-2">' ~
+  '<h3 class="text-xl md:text-2xl my-0 {{#leadIn}} mt-0 mb-3 md:mb-6 {{/leadIn}}">' ~
+    '<a href="/{{ url }}">' ~
+      '{{ _highlightResult.title.value }}' ~
+    '</a>' ~
+  '</h3>' ~
+  '{{#leadIn}}' ~
+    '<p class="text-base text-shark md:text-lg my-2 md:my-4">' ~
+      '{{ _highlightResult.leadIn.value }}' ~
+    '</p>' ~
+  '{{/leadIn}}' ~
+  '{{^leadIn}}' ~
+    '<p class="text-base text-shark md:text-lg my-2 md:my-4">' ~
+      '{{ _snippetResult.about.value }}' ~
+    '</p>' ~
+  '{{/leadIn}}' ~
+'</article>' %}
+
+{% set facets = [
+  {
+    container: 'boardsCommissions',
+    attribute: 'boardsCommissions',
+    header: 'Boards & Commissions'
+  },
+  {
+    container: 'departments',
+    attribute: 'departments',
+    header: 'Departments'
+  },
+  {
+    container: 'projects',
+    attribute: 'projects',
+    header: 'Projects'
+  },
+
+] %}

@@ -18,7 +18,7 @@
       } %}
     {% endif %}
   </div>
-  <div class="relative container mx-auto p-8{% if not smallBanner ?? ''%} py-16{% endif %} z-10">
+  <div class="relative container mx-auto p-8 {% if not smallBanner ?? ''%} py-16 {% endif %} z-10">
     <div class="sm:flex">
       {% if navMenu is defined and not smallBanner ?? '' %}
         <div class="hidden pr-8 w-1/6 sm:block">

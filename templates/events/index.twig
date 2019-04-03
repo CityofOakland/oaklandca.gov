@@ -1,43 +1,24 @@
-{% extends '_layout' %}
+{% extends '_layouts/_instant-search-event-meetings' %}
+{% set dates = 'forward' %}
+
+{% set algoliaIndex =  'production_events' %}
 {% set entry = craft.entries.section('eventsIndex').one %}
-{% set relatedEntry = null %}
-{% set bannerTitle = entry.title | replace(' Index', '') %}
-{% set breadCrumbLinks = '' %}
 
-{% if craft.app.request.getSegment(2) == 'related-to' %}
-  {% set relatedEntry = craft.entries.section(section).slug(slug).one %}
-  {% set bannerTitle = entry.title | replace(' Index', '') ~ ' for ' ~ relatedEntry.title %}
-  {% set breadCrumbLinks = [
-    {
-      title: 'Events',
-      link: '/events'
-    }
-  ] %}
-{% endif %}
+{% set facets = [
+  {
+    container: 'boardsCommissions',
+    attribute: 'boardsCommissions',
+    header: 'Boards & Commissions'
+  },
+  {
+    container: 'departments',
+    attribute: 'departments',
+    header: 'Departments'
+  },
+  {
+    container: 'projects',
+    attribute: 'projects',
+    header: 'Projects'
+  },
 
-{% block content %}
-  {% include '_partials/_page-banners' with {
-    breadCrumbs: true,
-    bannerTitle: bannerTitle,
-    breadCrumbLinks: breadCrumbLinks,
-  } %}
-  {# {% include '_partials/_elements/_search-bar' with { searchSegment: "events"} %} #}
-  <section class="bg-white relative z-0">
-    <div class="container mx-auto p-8 py-16">
-      {% set eventOptions = {
-        calendarId: 2,
-        rangeStart: now | date('Y-m-d'),
-        rangeEnd: now | date_modify('+1 year') | date('Y-m-d'),
-        relatedTo: relatedEntry,
-        limit: 10
-      } %}
-      {% set events = craft.calendar.events(eventOptions) %}
-      {% if events | length %}
-        <div class="text-right">
-          <a href="/{{ craft.app.request.segments | array_splice(1, 0, 'archive') | join('/') }}" class="btn btn-sm px-4">View Past Events</a>
-        </div>
-      {% endif %}
-      {% include '_partials/_page-events-index' with {eventOptions: eventOptions} %}
-    </div>
-  </section>
-{% endblock %}
+] %}

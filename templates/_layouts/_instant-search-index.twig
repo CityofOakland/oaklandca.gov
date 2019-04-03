@@ -1,0 +1,156 @@
+{% extends '_layout' %}
+
+{% do view.registerJsFile("https://cdn.polyfill.io/v2/polyfill.min.js?features=default,Array.prototype.includes,Array.prototype.find") %}
+{% do view.registerCssFile("https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4/dist/instantsearch.min.css") %}
+{% do view.registerCssFile ("https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4/dist/instantsearch-theme-algolia.min.css") %}
+{% do view.registerJsFile("https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4") %}
+
+{% set defaultTemplate = '<article class="py-8 sm:py-12 border-celeste border-b-2">' ~
+  '{{#displayDate}}' ~
+  '<div class="text-base text-camouflage-green mb-4">' ~
+    'Publish Date: <b>{{ displayDate }}</b>' ~
+  '</div>' ~
+  '{{/displayDate}}' ~
+  '<h3 class="text-xl md:text-2xl my-0 {{#leadIn}} mt-0 mb-3 md:mb-6 {{/leadIn}}">' ~
+    '<a href="/{{ url }}">' ~
+      '{{{ _highlightResult.title.value }}}' ~
+    '</a>' ~
+  '</h3>' ~
+  '{{#leadIn}}' ~
+    '<p class="text-base text-shark md:text-lg my-2 md:my-4">' ~
+      '{{{ _highlightResult.leadIn.value }}}' ~
+    '</p>' ~
+  '{{/leadIn}}' ~
+'</article>' %}
+{% set hitsTemplate = hitsTemplate ?? defaultTemplate %}
+
+{% js %}
+  const ts = Math.round((new Date()).getTime() / 1000);
+  const search = instantsearch({
+    appId: "6V5VJO8ZG2",
+    apiKey: "9bded46d3070b2089499c70b2389708b",
+    indexName: "{{ algoliaIndex }}",
+    routing: true,
+    searchParameters: {
+      snippetEllipsisText: "…",
+
+      {% block filters %}
+        {% if section is defined and slug is defined %}
+            {% set facetItem = craft.entries.section(section).slug(slug).one().title %}
+          filters: "{{ section }}:'{{ facetItem | replace({'%"%': '\\"', "%'%": "\'"}) }}'",
+        {% endif %}
+      {% endblock %}
+      {% if dates is defined and dates == 'forward' %}
+        filters: 'date >= ' + ts,
+      {% elseif dates is defined and dates == 'backward' %}
+        filters: 'date <= ' + ts
+      {% endif %}
+    },
+  });
+
+  {% if facets is defined %}
+    {% for facet in facets %}
+      search.addWidget(
+        instantsearch.widgets.menuSelect({
+          container: '#{{ facet.container }}',
+          attributeName: '{{ facet.attribute }}',
+          operator: 'or',
+          limit: 10,
+          templates: {
+            header: '{{ facet.header }}'
+          }
+        })
+      );
+    {% endfor %}
+  {% endif %}
+
+  search.addWidget(
+    instantsearch.widgets.searchBox({
+      container: "#search-input",
+      placeholder: "{{ searchInputText ?? 'Search' }}"
+    })
+  );
+  {% css %}
+    .ais-search-box {
+      max-width: initial;
+    }
+    .ais-search-box--magnifier {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  {% endcss %}
+
+  search.addWidget(
+    instantsearch.widgets.configure({
+    })
+  );
+
+  search.addWidget(
+    instantsearch.widgets.hits({
+      container: "#hits",
+      cssClasses: {
+        root: "{{ hitsRootClass ?? 'block' }}"
+      },
+      templates: {
+        empty: "No results",
+        item: '{{ hitsTemplate | raw }}'
+      }
+    })
+  );
+  search.addWidget(
+    instantsearch.widgets.pagination({
+      container: "#bottom-pagination",
+      padding: {{ paddedResults ?? 5 }},
+      // default is to scroll to 'body', here we disable this behavior
+      scrollTo: {{ scrollTo ?? "false" }},
+      cssClasses: {
+        root: "p-0 inline-block",
+        disabled: "w-0"
+      }
+    })
+  );
+  search.start();
+{% endjs %}
+
+{% css %}
+  {% include "_css/algoliafilter.css" %}
+{% endcss %}
+
+{% js %}
+  {% include "_js/algoliafilter.js" %}
+{% endjs %}
+
+{% block content %}
+  {% block pageBanner %}
+    {% include '_partials/_page-banners' with {
+      bannerTitle: entry.title | replace(' Index', ''),
+      breadCrumbs: false,
+      smallBanner: true
+    } %}
+  {% endblock %}
+  <div class="bg-cararra" id="search-bar-container">
+    <div class="container mx-auto px-8 py-4 md:p-8 text-right">
+      <div class="flex flex-col sm:flex-row">
+        <input id="search-input" class="w-full p-2 md:py-4 md:px-8 rounded-none appearance-none" type="search" name="keywords" value="" required>
+      </div>
+      <a class="inline-block mt-4 text-right" href="#" id="filter-reveal">Show Filters</a>
+    </div>
+  </div>
+  <div id="algolia-filters" class="opacity-0 invisible h-0 overflow-hidden bg-shark text-white relative z-neg-10 trans trans-all">
+    <div id="facet-holder" class="mx-auto container p-8 flex-col -my-4">
+      {% if facets is defined %}
+        {% for facet in facets %}
+          <div id="{{ facet.container }}"></div>
+        {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+  <section class="bg-white relative z-0">
+    <div class="container mx-auto px-8 pt-4 pb-16">
+      <div class="w-full">
+        <div id="hits"></div>
+        <div class="text-2xl flex items-center"><div>Pages: </div><div class="inline-block" id="bottom-pagination"></div></div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

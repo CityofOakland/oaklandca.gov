@@ -1,31 +1,58 @@
-{% extends '_layout' %}
-{% set entry = craft.entries.section('newsIndex').one %}
-{% set relatedEntry = null %}
-{% if craft.app.request.getSegment(2) == 'related-to' %}
-  {% set urlSlug = craft.app.request.getSegment(3) %}
-  {% set relatedEntry = craft.entries.slug(urlSlug).one %}
-{% endif %}
+{% extends '_layouts/_instant-search-index' %}
 
-{% block content %}
-  {% include '_partials/_page-banners' with {
-    breadCrumbs: true,
-  } %}
-  {% include '_partials/_elements/_search-bar' with { searchSegment: "news"} %}
-  <section class="bg-white relative z-0">
-    <div class="container mx-auto p-8 py-16">
-      {% paginate craft.entries.section('news').relatedTo(relatedEntry).limit(25).orderBy('postDate desc') as pageInfo, pageEntries %}
-      {% include '_partials/_elements/_pagination' %}
-      {% for entry in pageEntries %}
-        {% include '_partials/_elements/_horizontal-cards' with {
-          title: entry.title,
-          url: entry.url,
-          icon: 'newspaper',
-          photo: entry.newsImage.one,
-          byline: entry.postDate.format("M d, Y"),
-          body: entry.summary
-        } %}
-      {% endfor %}
-      {% include '_partials/_elements/_pagination' %}
-    </div>
-  </section>
-{% endblock %}
+{% set entry = craft.entries.section('newsIndex').one %}
+{% set algoliaIndex =  'production_news' %}
+
+{% set facets = [
+  {
+    container: 'boardsCommissions',
+    attribute: 'boardsCommissions',
+    header: 'Boards & Commissions'
+  },
+  {
+    container: 'departments',
+    attribute: 'departments',
+    header: 'Departments'
+  },
+  {
+    container: 'projects',
+    attribute: 'projects',
+    header: 'Projects'
+  },
+
+] %}
+
+{% set hitsTemplate =
+'<article class="py-8 horizontal-card border-celeste border-b-2">' ~
+  '{{#newsImageSrc}}' ~
+    '<figure class="w-full h-48 sm:h-64 p-4 bg-celeste relative z-0 flex items-center justify-center mb-4 lg:mb-0">' ~
+      '<img src="{{ newsImageSrc }}" class="object-fit-cover absolute h-full w-full pin">' ~
+    '</figure>' ~
+  '{{/newsImageSrc}}' ~
+  '{{^newsImageSrc}}' ~
+    '<figure class="w-full h-48 sm:h-64 p-4 bg-celeste relative z-0 flex items-center justify-center mb-4 lg:mb-0">' ~
+      '<div class="text-camouflage-green opacity-75 fill-current h-full p-12">' ~
+        '<img src="/assets/img/icon-newspaper.svg" class="h-full">' ~
+      '</div>' ~
+    '</figure>' ~
+  '{{/newsImageSrc}}' ~
+  '<div>' ~
+    '<h3 class="text-2xl mt-4 sm:mt-0">' ~
+      '<a href="/{{ url }}">' ~
+        '{{{_highlightResult.title.value}}}' ~
+      '</a>' ~
+    '</h3>' ~
+    '<div class="text-shark my-4">' ~
+      '{{#summary}}' ~
+        '{{{_highlightResult.summary.value}}}' ~
+      '{{/summary}}' ~
+      '{{^summary}}' ~
+        '{{{_snippetResult.body.value}}}{{^_snippetResult.body}}…{{/_snippetResult.body}}' ~
+      '{{/summary}}' ~
+    '</div>' ~
+    '<div>' ~
+      '<a href="/{{ url }}">Read More »</a>' ~
+    '</div>' ~
+  '</div>' ~
+'</article>'
+%}
