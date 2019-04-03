@@ -21,7 +21,7 @@ categoryGroups:
     structure:
       maxLevels: '1'
       uid: b4e9ab1c-aa42-46f9-a679-898119f39e8d
-dateModified: 1554230637
+dateModified: 1554312573
 email:
   fromEmail: digitalteam@oaklandnet.com
   fromName: 'City of Oakland'
@@ -3873,7 +3873,7 @@ plugins:
   seomatic:
     enabled: '1'
     licenseKey: WE9YYSPHWC5CNFB2RL64YDJ6
-    schemaVersion: 3.0.6
+    schemaVersion: 3.0.7
     settings: null
   smart-map:
     enabled: '1'
