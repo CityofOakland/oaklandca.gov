@@ -21,20 +21,20 @@ categoryGroups:
     structure:
       maxLevels: '1'
       uid: b4e9ab1c-aa42-46f9-a679-898119f39e8d
-dateModified: 1554361368
+dateModified: 1554405243
 email:
-  fromEmail: digitalteam@oaklandnet.com
-  fromName: 'City of Oakland'
+  fromEmail: $EMAIL_ADDRESS
+  fromName: $EMAIL_SENDER_NAME
   template: ''
-  transportSettings:
-    encryptionMethod: ssl
-    host: smtp.sendgrid.net
-    password: 'base64:Y3J5cHQ6Iutxoe7qhScXIXwsJRkNLDUxN2JjNTYxNzRlYzgxMDBmZGZhMTQwNWQxNDAyNjM3ZTBkYmI1NjVlZWE3ODVmOGFlMGM0YmQxNzkzOGZkNGbJv5hjelcCRLnrLi/0evW+O6m0ogTqrlz5R362DZ2dFZppJOTWUgROZpQED8xEipWv5pmVDuMtQorIV+OvycmB9UJL6OnKrrs5eoTax8uIqz/3DYpQKDN2cmKukrrn9Ns='
-    port: '465'
-    timeout: '30'
-    useAuthentication: '1'
-    username: apikey
   transportType: craft\mail\transportadapters\Smtp
+  transportSettings:
+    host: $EMAIL_HOST_NAME
+    port: $EMAIL_PORT
+    useAuthentication: '1'
+    username: $EMAIL_USER
+    password: $EMAIL_PASS
+    encryptionMethod: ssl
+    timeout: '30'
 fieldGroups:
   112bec4a-44ab-4d8b-afab-679c5e8bfb5c:
     name: SEO
