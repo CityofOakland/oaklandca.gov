@@ -21,7 +21,7 @@ categoryGroups:
     structure:
       maxLevels: '1'
       uid: b4e9ab1c-aa42-46f9-a679-898119f39e8d
-dateModified: 1554358920
+dateModified: 1554361368
 email:
   fromEmail: digitalteam@oaklandnet.com
   fromName: 'City of Oakland'
@@ -7092,36 +7092,41 @@ volumes:
     type: craft\awss3\Volume
     url: 'https://cao-94612.s3.us-west-2.amazonaws.com'
   7c1a62cb-b02e-40b3-840f-7e78a3a9ebd0:
+    name: News
+    handle: news
+    type: craft\awss3\Volume
+    hasUrls: true
+    url: 'https://cao-94612.s3.us-west-2.amazonaws.com'
+    settings:
+      subfolder: news
+      keyId: $S3_API_KEY
+      secret: $S3_SECRET
+      bucketSelectionMode: choose
+      bucket: cao-94612
+      region: us-west-2
+      expires: ''
+      makeUploadsPublic: '1'
+      storageClass: ''
+      cfDistributionId: ''
+      cfPrefix: ''
+      autoFocalPoint: ''
+    sortOrder: '3'
     fieldLayouts:
       39a4d2c1-874c-4c00-ace6-772f69cd38bd:
         tabs:
           -
+            name: Content
+            sortOrder: 1
             fields:
+              fff5cf49-87e6-4751-9032-b4ca8136e237:
+                required: false
+                sortOrder: 1
               0d3707b0-0767-4404-9bce-6e70952210a0:
                 required: false
                 sortOrder: 2
               d762f03c-b672-4cb9-9887-5cd668d859de:
                 required: false
                 sortOrder: 3
-              fff5cf49-87e6-4751-9032-b4ca8136e237:
-                required: true
-                sortOrder: 1
-            name: Content
-            sortOrder: 1
-    handle: news
-    hasUrls: true
-    name: News
-    settings:
-      bucket: cao-94612
-      cfDistributionId: ''
-      expires: ''
-      keyId: $S3_API_KEY
-      region: us-west-2
-      secret: $S3_SECRET
-      subfolder: news
-    sortOrder: '3'
-    type: craft\awss3\Volume
-    url: 'https://cao-94612.s3.us-west-2.amazonaws.com'
   a31d23bf-e3ee-4942-95e0-3d14c29620bb:
     handle: projects
     hasUrls: true
