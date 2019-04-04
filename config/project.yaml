@@ -21,7 +21,7 @@ categoryGroups:
     structure:
       maxLevels: '1'
       uid: b4e9ab1c-aa42-46f9-a679-898119f39e8d
-dateModified: 1554313749
+dateModified: 1554358920
 email:
   fromEmail: digitalteam@oaklandnet.com
   fromName: 'City of Oakland'
@@ -3805,7 +3805,7 @@ plugins:
       createColorPalette: '1'
       createPlaceholderSilhouettes: '1'
       lowerQualityRetinaImageVariants: '1'
-      allowUpScaledImageVariants: ''
+      allowUpScaledImageVariants: '1'
       autoSharpenScaledImages: '1'
   incognito-field:
     enabled: '1'
