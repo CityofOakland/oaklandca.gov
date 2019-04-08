@@ -111,24 +111,24 @@
   {# End Events #}
 
   {# Begin Departments #}
-{!--  <section class="bg-rotate relative z-0">
-    <div class="container mx-auto p-8 py-12">
-      {% include '_partials/_elements/_module-header' with {
-        headerText: "Departments",
-        linkText: "All Departments",
-        linkUrl: "/departments"
-      } %}
-      <div class="card-grid card-department-grid grid-equal-height mt-8">
-        {% for entry in entry.highlightedDepartments.all() %}
-          {% include '_partials/_elements/_photo-cards' with {
-            title: entry.title,
-            photo: entry.banner.one,
-            url: entry.redirectUrl ?? entry.url ?? ''
-          } %}
-        {% endfor %}
-      </div>
-    </div>
-  </section>--}
+  {#<section class="bg-rotate relative z-0">#}
+    {#<div class="container mx-auto p-8 py-12">#}
+      {#{% include '_partials/_elements/_module-header' with {#}
+        {#headerText: "Departments",#}
+        {#linkText: "All Departments",#}
+        {#linkUrl: "/departments"#}
+      {#} %}#}
+      {#<div class="card-grid card-department-grid grid-equal-height mt-8">#}
+        {#{% for entry in entry.highlightedDepartments.all() %}#}
+          {#{% include '_partials/_elements/_photo-cards' with {#}
+            {#title: entry.title,#}
+            {#photo: entry.banner.one,#}
+            {#url: entry.redirectUrl ?? entry.url ?? ''#}
+          {#} %}#}
+        {#{% endfor %}#}
+      {#</div>#}
+    {#</div>#}
+  {#</section>#}
   {# End Departments #}
 
   {# Begin Officials #}
