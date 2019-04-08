@@ -21,7 +21,7 @@ categoryGroups:
     structure:
       maxLevels: '1'
       uid: b4e9ab1c-aa42-46f9-a679-898119f39e8d
-dateModified: 1554405243
+dateModified: 1554748304
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -702,25 +702,25 @@ fields:
     translationMethod: none
     type: mmikkel\incognitofield\fields\IncognitoFieldType
   55169274-4595-4ab0-a461-9b4600d07779:
-    contentColumnType: string
-    fieldGroup: 83c14444-efcf-4d13-a20a-56275fd18855
-    handle: pageDocuments
-    instructions: 'Choose up to 2 documents or document packets to show on this page.'
     name: 'Page Documents'
-    searchable: '1'
+    handle: pageDocuments
+    instructions: 'Choose up to six (6) documents or document packets to show on this page.'
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Entries
     settings:
-      limit: '2'
-      localizeRelations: false
-      selectionLabel: 'Add a document'
-      source: null
       sources:
         - 'section:9da43fd8-c505-4d19-9486-e0cb669c568a'
         - 'section:8b7c4e26-9aab-4c5d-874e-aee151107de3'
+      source: null
       targetSiteId: null
       viewMode: null
-    translationKeyFormat: null
-    translationMethod: site
-    type: craft\fields\Entries
+      limit: '6'
+      selectionLabel: 'Add a document'
+      localizeRelations: false
+    contentColumnType: string
+    fieldGroup: 83c14444-efcf-4d13-a20a-56275fd18855
   555efa28-a6b9-471d-8548-735eae07cb3c:
     contentColumnType: string
     fieldGroup: 767a8f0b-6ea5-4855-a6f3-8c2a4a4aee78
@@ -1398,24 +1398,24 @@ fields:
     translationMethod: none
     type: craft\fields\Dropdown
   a1b84d64-99d2-4d66-a914-6260fc55fe55:
-    contentColumnType: string
-    fieldGroup: 83c14444-efcf-4d13-a20a-56275fd18855
-    handle: pageBoardsCommissions
-    instructions: 'Choose up to (2) boards or commissions to show on this page.'
     name: 'Page Boards & Commissions'
-    searchable: '1'
+    handle: pageBoardsCommissions
+    instructions: 'Choose up to six (6) boards or commissions to show on this page.'
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Entries
     settings:
-      limit: '2'
-      localizeRelations: false
-      selectionLabel: 'Add a board or commission'
-      source: null
       sources:
         - 'section:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f'
+      source: null
       targetSiteId: null
       viewMode: null
-    translationKeyFormat: null
-    translationMethod: site
-    type: craft\fields\Entries
+      limit: '6'
+      selectionLabel: 'Add a board or commission'
+      localizeRelations: false
+    contentColumnType: string
+    fieldGroup: 83c14444-efcf-4d13-a20a-56275fd18855
   a25a56ba-bfb3-4e4d-a857-6d3cb4a5dcdc:
     contentColumnType: string
     fieldGroup: 83c14444-efcf-4d13-a20a-56275fd18855
@@ -1453,24 +1453,24 @@ fields:
     translationMethod: none
     type: craft\fields\PlainText
   a658ef46-5ee4-44f5-b775-9df0ea27df38:
-    contentColumnType: string
-    fieldGroup: 83c14444-efcf-4d13-a20a-56275fd18855
-    handle: pageProjects
-    instructions: 'Choose up to two (2) projects to show on this page.'
     name: 'Page Projects'
-    searchable: '1'
+    handle: pageProjects
+    instructions: 'Choose up to six (6) projects to show on this page.'
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Entries
     settings:
-      limit: '2'
-      localizeRelations: false
-      selectionLabel: 'Add a project'
-      source: null
       sources:
         - 'section:98d541ae-56ee-4c98-ba9c-37438dc485a0'
+      source: null
       targetSiteId: null
       viewMode: null
-    translationKeyFormat: null
-    translationMethod: site
-    type: craft\fields\Entries
+      limit: '6'
+      selectionLabel: 'Add a project'
+      localizeRelations: false
+    contentColumnType: string
+    fieldGroup: 83c14444-efcf-4d13-a20a-56275fd18855
   a7cd6f1e-a5c0-47fc-9080-1bc5ace85242:
     contentColumnType: text
     fieldGroup: 71fb693f-011b-4669-ba10-f1b379557bb9
