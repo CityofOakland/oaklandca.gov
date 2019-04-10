@@ -21,7 +21,7 @@ categoryGroups:
     structure:
       maxLevels: '1'
       uid: b4e9ab1c-aa42-46f9-a679-898119f39e8d
-dateModified: 1554748304
+dateModified: 1554923799
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -7188,19 +7188,22 @@ volumes:
     type: craft\awss3\Volume
     url: 'https://cao-94612.s3.us-west-2.amazonaws.com'
   f5dead8c-3e4c-4f97-8bea-2a3af1e34f67:
-    handle: resources
-    hasUrls: true
     name: Resources
-    settings:
-      autoFocalPoint: ''
-      bucket: cao-94612
-      cfDistributionId: ''
-      expires: ''
-      keyId: $S3_API_KEY
-      region: us-west-2
-      secret: $S3_SECRET
-      storageClass: ''
-      subfolder: resources
-    sortOrder: null
+    handle: resources
     type: craft\awss3\Volume
-    url: $S3_URL
+    hasUrls: true
+    url: 'https://cao-94612.s3.us-west-2.amazonaws.com'
+    settings:
+      subfolder: resources
+      keyId: $S3_API_KEY
+      secret: $S3_SECRET
+      bucketSelectionMode: choose
+      bucket: cao-94612
+      region: us-west-2
+      expires: ''
+      makeUploadsPublic: '1'
+      storageClass: ''
+      cfDistributionId: ''
+      cfPrefix: ''
+      autoFocalPoint: ''
+    sortOrder: null
