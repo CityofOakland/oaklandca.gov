@@ -20,14 +20,16 @@
       <div class="sm:w-2/3 sm:mr-8">
         {% set startDate = event.startDate %}
         {% set endDate = event.endDate %}
-        <div class="text-white bg-shark p-4 md:inline-flex md:items-center">
+        <div class="text-white bg-shark p-6 md:inline-flex md:items-start">
           <h3 class="my-0 md:mr-8">Event</h3>
           <time datetime="{{ startDate | atom }}">
-            <h4 class="font-bold my-0 text-4xl">
-              {{ startDate.format("F, j Y") }}
+            <h4 class="font-bold my-0 text-3xl">
+              {% for event in event.occurrences %}
+                <div>{{ event.startDate.format("F j, Y" )}}</div>
+              {% endfor %}
             </h4>
             {% if not event.allDay %}
-              <p class="my-0 text-xl">{{ startDate.format("g:ia") }} {% if endDate | length %} — {{ endDate.format("g:ia") }}{% endif %}
+              <p class="mb-0 text-xl">{{ startDate.format("g:ia") }} {% if endDate | length %} — {{ endDate.format("g:ia") }}{% endif %}
               </p>
             {% endif %}
           </time>
