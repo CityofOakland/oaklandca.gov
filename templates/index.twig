@@ -17,6 +17,25 @@
   </div>
   {% include '_partials/_elements/_page-alert' %}
 
+  {# Begin Services #}
+  {% if entry.highlightedServices | length %}
+    <section class="bg-rotate relative z-0">
+      <div class="container mx-auto p-8 py-12">
+        {% include '_partials/_elements/_module-header' with {
+          headerText: "Most Requested Services",
+          linkText: "Services A - Z",
+          linkUrl: "/services/"
+        } %}
+        <div class="card-grid grid-equal-height mt-8">
+          {% for entry in entry.highlightedServices.all() %}
+            {% include '_partials/_elements/_title-cards' %}
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+  {% endif %}
+  {# End Services #}
+
   {# Begin News #}
   <section class="bg-rotate">
     <div class="container mx-auto p-8 py-12">
@@ -60,25 +79,6 @@
       </div>
     </div>
   </section>
-
-  {% if entry.highlightedServices | length %}
-    {# Begin Services #}
-    <section class="bg-rotate relative z-0">
-      <div class="container mx-auto p-8 py-12">
-        {% include '_partials/_elements/_module-header' with {
-          headerText: "Most Requested Services",
-          linkText: "Services A - Z",
-          linkUrl: "/services/"
-        } %}
-        <div class="card-grid grid-equal-height mt-8">
-          {% for entry in entry.highlightedServices.all() %}
-            {% include '_partials/_elements/_title-cards' %}
-          {% endfor %}
-        </div>
-      </div>
-    </section>
-    {# End Services #}
-  {% endif %}
 
   {# Begin Events #}
   <section class="bg-rotate">
