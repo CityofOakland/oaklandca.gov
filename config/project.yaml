@@ -21,7 +21,7 @@ categoryGroups:
     structure:
       maxLevels: '1'
       uid: b4e9ab1c-aa42-46f9-a679-898119f39e8d
-dateModified: 1554924089
+dateModified: 1555353168
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -3785,7 +3785,7 @@ plugins:
   feed-me:
     enabled: '1'
     licenseKey: null
-    schemaVersion: 2.1.1
+    schemaVersion: 2.1.2
     settings: null
   image-optimize:
     enabled: '1'

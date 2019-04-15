@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "5bf171e36b63100ed0b9a70485b11398",
+    "content-hash": "db6961ec300733f0b3d39367f478ed33",
     "packages": [
         {
             "name": "99designs/phumbor",
@@ -224,11 +224,11 @@
         },
         {
             "name": "cakephp/core",
-            "version": "3.7.5",
+            "version": "3.7.6",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cakephp/core/zipball/9a70f1beb7fcc259e1f7050d19c54adcf43032b1",
-                "reference": "9a70f1beb7fcc259e1f7050d19c54adcf43032b1",
+                "url": "https://api.github.com/repos/cakephp/core/zipball/9742e7b325566df2e5ffcbdadc41049b9fa505fe",
+                "reference": "9742e7b325566df2e5ffcbdadc41049b9fa505fe",
                 "shasum": ""
             },
             "require": {
@@ -248,7 +248,6 @@
                     "functions.php"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -265,15 +264,15 @@
                 "core",
                 "framework"
             ],
-            "time": "2019-02-09T07:54:49+00:00"
+            "time": "2019-03-14T15:11:58+00:00"
         },
         {
             "name": "cakephp/utility",
-            "version": "3.7.5",
+            "version": "3.7.6",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cakephp/utility/zipball/1a4d271d9a3ad6e0096eabf5778342c8b5f81978",
-                "reference": "1a4d271d9a3ad6e0096eabf5778342c8b5f81978",
+                "url": "https://api.github.com/repos/cakephp/utility/zipball/329654495c4cf966ac75832e502ec939542928fb",
+                "reference": "329654495c4cf966ac75832e502ec939542928fb",
                 "shasum": ""
             },
             "require": {
@@ -293,7 +292,6 @@
                     "bootstrap.php"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -313,7 +311,7 @@
                 "string",
                 "utility"
             ],
-            "time": "2018-09-14T01:26:50+00:00"
+            "time": "2019-03-14T14:41:29+00:00"
         },
         {
             "name": "cebe/markdown",
@@ -658,11 +656,11 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "3.1.21",
+            "version": "3.1.22",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/38c1dbc42fa1ead35b18872adf8d5339894fc3d6",
-                "reference": "38c1dbc42fa1ead35b18872adf8d5339894fc3d6",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/868202831139e51b9d60d9738147ac9635bc760c",
+                "reference": "868202831139e51b9d60d9738147ac9635bc760c",
                 "shasum": ""
             },
             "require": {
@@ -738,7 +736,7 @@
                 "docs": "https://docs.craftcms.com/v3/",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2019-04-03T17:44:20+00:00"
+            "time": "2019-04-10T17:10:47+00:00"
         },
         {
             "name": "craftcms/element-api",
@@ -784,6 +782,68 @@
                 "yii2"
             ],
             "time": "2018-07-29T13:30:29+00:00"
+        },
+        {
+            "name": "craftcms/feed-me",
+            "version": "4.0.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/craftcms/feed-me/zipball/00bb35ae0b5d954e0ba9d0df95a17f4efa199109",
+                "reference": "00bb35ae0b5d954e0ba9d0df95a17f4efa199109",
+                "shasum": ""
+            },
+            "require": {
+                "cakephp/core": "^3.5",
+                "cakephp/utility": "^3.3.12",
+                "craftcms/cms": "^3.1.21",
+                "guzzlehttp/guzzle": "~6.3.0",
+                "jakeasmith/http_build_url": "^1.0",
+                "league/csv": "^8.2 || ^9.0",
+                "nesbot/carbon": "^1.22 || ^2.10",
+                "ralouphie/mimey": "^1.0",
+                "seld/jsonlint": "^1.7",
+                "vlucas/phpdotenv": "^2.4"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Feed Me",
+                "handle": "feed-me",
+                "documentationUrl": "https://docs.craftcms.com/feed-me/v4/"
+            },
+            "autoload": {
+                "psr-4": {
+                    "craft\\feedme\\": "src/"
+                }
+            },
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Pixel & Tonic",
+                    "homepage": "https://pixelandtonic.com/"
+                },
+                {
+                    "name": "Verbb",
+                    "homepage": "https://verbb.io"
+                }
+            ],
+            "description": "Import content from XML, RSS, CSV or JSON feeds into entries, categories, Craft Commerce products, and more.",
+            "keywords": [
+                "cms",
+                "craft",
+                "craft-plugin",
+                "craftcms",
+                "feed me"
+            ],
+            "support": {
+                "email": "support@craftcms.com",
+                "issues": "https://github.com/craftcms/feed-me/issues?state=open",
+                "source": "https://github.com/craftcms/feed-me",
+                "docs": "https://docs.craftcms.com/feed-me/v4/",
+                "rss": "https://github.com/craftcms/feed-me/commits/master.atom"
+            },
+            "time": "2019-04-09T16:54:32+00:00"
         },
         {
             "name": "craftcms/oauth2-craftid",
@@ -1412,11 +1472,11 @@
         },
         {
             "name": "doublesecretagency/craft-smartmap",
-            "version": "3.2.2",
+            "version": "3.2.2.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doublesecretagency/craft-smartmap/zipball/a6a3f5e71a53857c92aadda9368ba35d2f1b8378",
-                "reference": "a6a3f5e71a53857c92aadda9368ba35d2f1b8378",
+                "url": "https://api.github.com/repos/doublesecretagency/craft-smartmap/zipball/ec0b826a57d9ca4c762a130ce11456fab9c272e8",
+                "reference": "ec0b826a57d9ca4c762a130ce11456fab9c272e8",
                 "shasum": ""
             },
             "require": {
@@ -1460,7 +1520,7 @@
                 "docs": "https://www.doublesecretagency.com/plugins/smart-map/docs",
                 "issues": "https://github.com/doublesecretagency/craft-smartmap/issues"
             },
-            "time": "2019-03-16T05:04:17+00:00"
+            "time": "2019-04-09T03:40:19+00:00"
         },
         {
             "name": "egulias/email-validator",
@@ -3485,11 +3545,11 @@
         },
         {
             "name": "nystudio107/craft-retour",
-            "version": "3.1.8",
+            "version": "3.1.9",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-retour/zipball/0b775b969faa35f6857b55726eeed623f4d3e5b4",
-                "reference": "0b775b969faa35f6857b55726eeed623f4d3e5b4",
+                "url": "https://api.github.com/repos/nystudio107/craft-retour/zipball/fd6522b7a4fe05ccc54bb8283522ef6dbc3e17f0",
+                "reference": "fd6522b7a4fe05ccc54bb8283522ef6dbc3e17f0",
                 "shasum": ""
             },
             "require": {
@@ -3536,7 +3596,7 @@
                 "docs": "https://github.com/nystudio107/craft-retour/blob/v1/README.md",
                 "issues": "https://github.com/nystudio107/craft-retour/issues"
             },
-            "time": "2019-04-02T16:00:58+00:00"
+            "time": "2019-04-08T00:35:42+00:00"
         },
         {
             "name": "nystudio107/craft-seomatic",
@@ -4018,11 +4078,11 @@
         },
         {
             "name": "rias/craft-scout",
-            "version": "1.1.3",
+            "version": "1.1.4",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Rias500/craft-scout/zipball/9972228b101b465bbc5f7359e7d8ff2ea92a1172",
-                "reference": "9972228b101b465bbc5f7359e7d8ff2ea92a1172",
+                "url": "https://api.github.com/repos/Rias500/craft-scout/zipball/2ac5cd8be86b74686720a04161322c6e520a2d7c",
+                "reference": "2ac5cd8be86b74686720a04161322c6e520a2d7c",
                 "shasum": ""
             },
             "require": {
@@ -4069,7 +4129,7 @@
                 "docs": "https://github.com/Rias500/craft3-scout/blob/master/README.md",
                 "issues": "https://github.com/Rias500/craft3-scout/issues"
             },
-            "time": "2019-02-27T09:19:54+00:00"
+            "time": "2019-04-10T11:55:50+00:00"
         },
         {
             "name": "rlanvin/php-rrule",
@@ -4289,11 +4349,11 @@
         },
         {
             "name": "solspace/craft3-calendar",
-            "version": "2.0.17",
+            "version": "2.0.18",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/solspace/craft3-calendar/zipball/b3e6f75b7d9373f9fa7ced60545742b8845e36d6",
-                "reference": "b3e6f75b7d9373f9fa7ced60545742b8845e36d6",
+                "url": "https://api.github.com/repos/solspace/craft3-calendar/zipball/068d118ec35e1f8cf0ab735e142b156ba7791e35",
+                "reference": "068d118ec35e1f8cf0ab735e142b156ba7791e35",
                 "shasum": ""
             },
             "require": {
@@ -4313,7 +4373,7 @@
                 "class": "Solspace\\Calendar\\Calendar",
                 "name": "Calendar",
                 "developer": "Solspace",
-                "developerUrl": "https://solspace.com/craft/calendar",
+                "developerUrl": "http://docs.solspace.com/craft/calendar/v2/",
                 "documentationUrl": "http://docs.solspace.com/craft/calendar/v2/",
                 "changelogUrl": "https://raw.githubusercontent.com/solspace/craft3-calendar/master/CHANGELOG.md",
                 "hasSettings": true,
@@ -4331,15 +4391,15 @@
                 }
             ],
             "description": "The most powerful event management plugin for Craft.",
-            "time": "2019-03-13T18:49:50+00:00"
+            "time": "2019-04-05T19:17:57+00:00"
         },
         {
             "name": "solspace/craft3-commons",
-            "version": "1.0.17",
+            "version": "1.0.18",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/solspace/craft3-commons/zipball/9f5e1c60ce12fbded960bd772be640aefa6f56b0",
-                "reference": "9f5e1c60ce12fbded960bd772be640aefa6f56b0",
+                "url": "https://api.github.com/repos/solspace/craft3-commons/zipball/9bc69938f9f4112c9c67dee4eaf39e58961c8b98",
+                "reference": "9bc69938f9f4112c9c67dee4eaf39e58961c8b98",
                 "shasum": ""
             },
             "require": {
@@ -4351,12 +4411,11 @@
                     "Solspace\\Commons\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
             "description": "Solspace Commons Library for Craft CMS 3 plugins",
-            "time": "2018-11-14T16:31:16+00:00"
+            "time": "2019-04-05T16:42:29+00:00"
         },
         {
             "name": "sunra/php-simple-html-dom-parser",
@@ -5636,65 +5695,6 @@
                 "templating"
             ],
             "time": "2019-03-23T14:28:58+00:00"
-        },
-        {
-            "name": "verbb/feed-me",
-            "version": "3.1.16",
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/verbb/feed-me/zipball/a58b9b84c1a203f1c4384b850e75f5e6eafe1160",
-                "reference": "a58b9b84c1a203f1c4384b850e75f5e6eafe1160",
-                "shasum": ""
-            },
-            "require": {
-                "cakephp/core": "^3.5",
-                "cakephp/utility": "^3.3.12",
-                "craftcms/cms": "^3.1.0",
-                "guzzlehttp/guzzle": "~6.3.0",
-                "jakeasmith/http_build_url": "^1.0",
-                "league/csv": "^8.2 || ^9.0",
-                "nesbot/carbon": "^1.22 || ^2.10",
-                "ralouphie/mimey": "^1.0",
-                "seld/jsonlint": "^1.7",
-                "vlucas/phpdotenv": "^2.4"
-            },
-            "type": "craft-plugin",
-            "extra": {
-                "name": "Feed Me",
-                "handle": "feed-me",
-                "changelogUrl": "https://raw.githubusercontent.com/verbb/feed-me/craft-3/CHANGELOG.md",
-                "class": "verbb\\feedme\\FeedMe"
-            },
-            "autoload": {
-                "psr-4": {
-                    "verbb\\feedme\\": "src/"
-                }
-            },
-            "license": [
-                "proprietary"
-            ],
-            "authors": [
-                {
-                    "name": "Verbb",
-                    "homepage": "https://verbb.io"
-                }
-            ],
-            "description": "Import content from XML, RSS, CSV or JSON feeds into Entries, Categories, Craft Commerce Products (and variants), and more.",
-            "keywords": [
-                "cms",
-                "craft",
-                "craft-plugin",
-                "craftcms",
-                "feed me"
-            ],
-            "support": {
-                "email": "support@verbb.io",
-                "issues": "https://github.com/verbb/feed-me/issues?state=open",
-                "source": "https://github.com/verbb/feed-me",
-                "docs": "https://github.com/verbb/feed-me",
-                "rss": "https://github.com/verbb/feed-me/commits/v2.atom"
-            },
-            "time": "2019-03-22T01:35:45+00:00"
         },
         {
             "name": "verbb/redactor-tweaks",
