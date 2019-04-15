@@ -21,6 +21,7 @@ const imageminMozjpeg = require("imagemin-mozjpeg");
 
 mix
   .postCss("./src/css/app.css", "css/app.css")
+  .copyDirectory(pkg.paths.src.fonts, pkg.paths.dist.fonts)
   .options({
     postCss: [
       tailwindcss("tailwind.js"),

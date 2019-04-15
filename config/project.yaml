@@ -21,7 +21,7 @@ categoryGroups:
     structure:
       maxLevels: '1'
       uid: b4e9ab1c-aa42-46f9-a679-898119f39e8d
-dateModified: 1554923799
+dateModified: 1554924089
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -2117,31 +2117,31 @@ fields:
     translationMethod: none
     type: nystudio107\imageoptimize\fields\OptimizedImages
   d7d618a5-5819-44e0-bc30-5c685f47f039:
-    contentColumnType: string
-    fieldGroup: c964d82c-a4e7-4ec4-ad42-7c3e843193c0
+    name: 'Resource Image'
     handle: resourceImage
     instructions: 'Choose the image that you would like to upload.'
-    name: 'Resource Image'
-    searchable: '1'
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Assets
     settings:
-      allowedKinds:
-        - image
+      useSingleFolder: '1'
       defaultUploadLocationSource: 'volume:1e78d0ad-2af1-4556-ab43-7b6c110e75b8'
       defaultUploadLocationSubpath: ''
-      limit: '1'
-      localizeRelations: false
-      restrictFiles: '1'
-      selectionLabel: 'Add an image'
-      singleUploadLocationSource: 'volume:32467814-6006-4ec9-9dd1-3307d4edbb6b'
+      singleUploadLocationSource: 'volume:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67'
       singleUploadLocationSubpath: ''
-      source: null
+      restrictFiles: '1'
+      allowedKinds:
+        - image
       sources: '*'
+      source: null
       targetSiteId: null
-      useSingleFolder: '1'
       viewMode: list
-    translationKeyFormat: null
-    translationMethod: site
-    type: craft\fields\Assets
+      limit: '1'
+      selectionLabel: 'Add an image'
+      localizeRelations: false
+    contentColumnType: string
+    fieldGroup: c964d82c-a4e7-4ec4-ad42-7c3e843193c0
   d9a54ffb-26e9-4883-83bb-8e41650c8927:
     contentColumnType: string
     fieldGroup: 1fe293ad-52d9-4002-984e-b7a256d4b158
