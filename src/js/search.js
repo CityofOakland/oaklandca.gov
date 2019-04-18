@@ -25,13 +25,18 @@ const govSearch = instantsearch({
   routing: true,
   searchFunction: function(helper) {
     const query = govSearch.helper.state.query;
+    const page = govSearch.helper.state.page;
     publicSearch.helper.setQuery(query);
+    publicSearch.helper.setPage(page);
     publicSearch.helper.search();
     calSearch.helper.setQuery(query);
+    calSearch.helper.setPage(page);
     calSearch.helper.search();
     docSearch.helper.setQuery(query);
+    docSearch.helper.setPage(page);
     docSearch.helper.search();
     helper.search();
+    console.log(page);
   },
 });
 
@@ -50,17 +55,17 @@ govSearch.addWidget(
       item: `
         <h3 class="text-lg mb-2"><a href="{{ url }}">{{{_highlightResult.title.value}}}</a></h3>
         {{ #bio }}
-          <p class="my-0">
+          <p class="text-sm md:text-base my-0">
             {{{ _snippetResult.bio.value }}}
           </p>
         {{ /bio }}
         {{ #about }}
-          <p class="my-0">
+          <p class="text-sm md:text-base my-0">
             {{{ _snippetResult.about.value }}}
           </p>
         {{ /about }}
         {{ #leadIn }}
-          <p class="my-0">
+          <p class="text-sm md:text-base my-0">
             {{{ _snippetResult.leadIn.value }}}
           </p>
         {{ /leadIn }}
@@ -93,17 +98,17 @@ publicSearch.addWidget(
       item: `
         <h3 class="text-lg mb-2"><a href="{{ url }}">{{{_highlightResult.title.value}}}</a></h3>
         {{ #leadIn }}
-          <p class="mt-0 mb-2">
+          <p class="text-sm md:text-base mt-0 mb-2">
             {{{ _highlightResult.leadIn.value }}}
           </p>
         {{ /leadIn }}
         {{ #about }}
-          <p class="mt-0 mb-2">
+          <p class="text-sm md:text-base mt-0 mb-2">
             {{{ _snippetResult.about.value }}}
           </p>
         {{ /about }}
         {{ #body }}
-          <p class="mt-0 mb-2">
+          <p class="text-sm md:text-base mt-0 mb-2">
             {{{ _snippetResult.body.value }}}
           </p>
         {{ /body }}
@@ -123,7 +128,7 @@ calSearch.addWidget(
       item: `
         <h3 class="text-lg mb-2"><a href="{{ url }}">{{{_highlightResult.title.value}}}</a></h3>
         {{ #body }}
-          <p class="mt-0 mb-2">
+          <p class="text-sm md:text-base mt-0 mb-2">
             {{{ _snippetResult.body.value }}}
           </p>
         {{ /body }}
