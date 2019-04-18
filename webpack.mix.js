@@ -37,6 +37,7 @@ mix
     processCssUrls: false,
   })
   .js("./src/js/app.js", "js/app.js")
+  .js("./src/js/search.js", "js/search.js")
   .banner({
     banner: (function () {
       const moment = require("moment");

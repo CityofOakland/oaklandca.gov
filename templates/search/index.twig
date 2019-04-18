@@ -1,149 +1,71 @@
 {% extends '_layout' %}
 {% set entry = craft.entries.section('searchIndex').one %}
 
-{% set section = section ?? '' %}
-{% switch section %}
+{% do view.registerJsFile("https://cdn.polyfill.io/v2/polyfill.min.js?features=default,Array.prototype.includes,Array.prototype.find") %}
+{% do view.registerCssFile("https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4/dist/instantsearch.min.css") %}
+{% do view.registerCssFile ("https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4/dist/instantsearch-theme-algolia.min.css") %}
+{% do view.registerJsFile("https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4") %}
 
-  {% case "boards-commissions" %}
-    {% set sections = [
-      {
-        name:'Boards & Commissions',
-        handle:'boardsCommissions'
-      }
-    ] %}
+{% do view.registerJsFile(craft.twigpack.getModuleUri("/js/search.js")) %}
 
-  {% case "documents" %}
-    {% set sections = [
-      {
-        name: 'Documents',
-        handle: 'documents, documentPackets',
-      }
-    ] %}
-
-  {% case null %}
-  {% set sections = [
-    {
-      name: 'Services',
-      handle: 'services'
-    },
-    {
-      name: 'Resources',
-      handle: 'resources'
-    },
-    {
-      name: 'Departments',
-      handle: 'departments'
-    },
-    {
-      name: 'Boards & Commissions',
-      handle: 'boardsCommissions'
-    },
-    {
-      name: 'Index Pages',
-      handle: 'boardsCommissionsIndex, departmentsIndex, documentsIndex, eventsIndex, meetingsIndex, newsIndex, officialsIndex, processesIndex, projectsIndex, resourcesIndex, servicesIndex, staffIndex, teamsIndex, topicsIndex'
-    },
-    {
-      name: 'News',
-      handle: 'news'
-    },
-    {
-      name: 'Projects',
-      handle: 'projects'
-    },
-    {
-      name: 'Topics',
-      handle: 'topics'
-    },
-    {
-      name: 'Documents',
-      handle: 'documents, documentPackets',
-    },
-    {
-      name: 'Teams',
-      handle: 'teams'
-    },
-    {
-      name: 'Staff',
-      handle: 'staff'
-    }
-  ] %}
-
-  {% default %}
-    {% set sections = [
-      {
-        name: section | capitalize,
-        handle: section
-      }
-    ] %}
-
-{% endswitch %}
-
-{% set sectionsToSearch = [] %}
-{% for entry in entry.pageNews.ids() ?? '' %}
-  {% set idsToExclude = idsToExclude|merge([entry]) %}
-{% endfor %}
-
-{% for sec in sections %}
-  {% set sectionsToSearch = sectionsToSearch | merge([sec.handle]) %}
-{% endfor %}
-
-{% set query = craft.app.request.getParam('keywords') %}
-{% set entries = craft.entries.section(sectionsToSearch).search(query).orderBy('score') %}
+{% css %}
+  .ais-search-box {
+    max-width: initial;
+  }
+  .ais-search-box--magnifier {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+{% endcss %}
 
 {% block content %}
   {% include '_partials/_page-banners' with {
     smallBanner: true
   } %}
-  {% include '_partials/_elements/_search-bar' %}
+  <div class="bg-cararra">
+    <div class="container mx-auto p-8">
+      <form action="">
+        <label for="keywords">Search by Keyword</label>
+        <div class="flex flex-col sm:flex-row mt-4">
+          <input class="flex-1 py-4 px-8 mb-4 sm:mb-0 rounded-none appearance-none" type="search" name="keywords" id="search-input" value="" required>
+        </div>
+      </form>
+    </div>
+  </div>
   <section class="bg-white relative z-0">
     <div class="container mx-auto p-8 py-16">
-      <h2 class="mt-0 mb-16">{{ entries | length }}
-        {{"pages match your search for" }}
-        <span class="font-bold bg-cararra px-2">{{ query }}</span></h2>
-
-      {% if entries | length %}
-        {% if sections | length > 1 %}
-          {% set entry = entries.one %}
-          {% if entry.redirectUrl | length %}
-            {% set url = entry.redirectUrl %}
-          {% else %}
-            {% set url = entry.url %}
-          {% endif %}
-          <div class="md:flex">
-            <div class="md:w-1/4 md:pr-4">
-              <h3 class="text-xl my-0">Top Hit</h3>
-            </div>
-            <div class="flex-1">
-              <a class="block w-full sm:pl-2 hover:bg-curious-blue hover:text-white" href="{{ url }}">{{ entry.title }} (in {{ entry.section.name }})</a>
-            </div>
-          </div>
-        {% endif %}
-        {% for currentSection in sections %}
-          {% if entries.section(currentSection.handle).all() | length %}
-            <div class="md:flex mt-4">
-              <div class="md:w-1/4 md:pr-4">
-                <h3 class="text-xl my-0">{{ currentSection.name }}</h3>
-              </div>
-              <div class="flex-1">
-                {% for entry in entries.section(currentSection.handle).all() %}
-                  <article class="mb-3">
-                    {% if entry.redirectUrl | length %}
-                      {% set url = entry.redirectUrl %}
-                    {% else %}
-                      {% set url = entry.url %}
-                    {% endif %}
-                    <a class="block w-full sm:pl-2 hover:bg-curious-blue hover:text-white" href="{{ url }}">{{ entry.title }}</a>
-                  </article>
-                {% endfor %}
-              </div>
-            </div>
-          {% endif %}
-        {% endfor %}
-      {% else %}
-        <p>{{"Your search for" }}
-          “{{ query }}”
-          {{"didn’t return any results." }}</p>
-      {% endif %}
+      <div id="search-nav">
+        <ul class="list-reset">
+          <li class="inline-block mr-4">
+            <a href="#" data-holder="gov-holder" class="uppercase font-bold text-astronaut hover:text-shark text-lg border-b-2 pb-1 border-astronaut">Government</a>
+          </li>
+          <li class="inline-block mr-4">
+            <a href="#" data-holder="pub-holder" class="uppercase font-bold text-astronaut hover:text-shark text-lg border-b-2 pb-1 border-astronaut">Public Info</a>
+          </li>
+          <li class="inline-block">
+            <a href="#" data-holder="cal-holder" class="uppercase font-bold text-astronaut hover:text-shark text-lg border-b-2 pb-1 border-astronaut">Calendar</a>
+          </li>
+        </ul>
+      </div>
+      <div class="flex">
+        <div id="gov-holder" data-hits class="md:w-2/3">
+          <h2>Government</h2>
+          <div id="gov-hits"></div>
+        </div>
+        <div id="pub-holder" data-hits class="md:w-2/3 hidden">
+          <h2>Public Info</h2>
+          <div id="pub-hits"></div>
+        </div>
+        <div id="cal-holder" data-hits class="md:w-2/3 hidden">
+          <h2>Calendar</h2>
+          <div id="cal-hits"></div>
+        </div>
+        <div id="doc-holder" class="md:ml-8 md:w-1/3">
+          <h2>Documents</h2>
+          <div id="doc-hits"></div>
+        </div>
+      </div>
+      <div id="bottom-pagination"></div>
     </div>
   </section>
 {% endblock %}
