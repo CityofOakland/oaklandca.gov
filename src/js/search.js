@@ -4,30 +4,18 @@ const publicSearch = instantsearch({
   appId: "6V5VJO8ZG2",
   apiKey: "9bded46d3070b2089499c70b2389708b",
   indexName: "production_public",
-  routing: true,
-  searchParameters: {
-    snippetEllipsisText: "…",
-  },
 });
 
 const calSearch = instantsearch({
   appId: "6V5VJO8ZG2",
   apiKey: "9bded46d3070b2089499c70b2389708b",
   indexName: "production_calendars",
-  routing: true,
-  searchParameters: {
-    snippetEllipsisText: "…",
-  },
 });
 
 const docSearch = instantsearch({
   appId: "6V5VJO8ZG2",
   apiKey: "9bded46d3070b2089499c70b2389708b",
   indexName: "production_documents",
-  routing: true,
-  searchParameters: {
-    snippetEllipsisText: "…",
-  },
 });
 
 const govSearch = instantsearch({
@@ -35,9 +23,6 @@ const govSearch = instantsearch({
   apiKey: "9bded46d3070b2089499c70b2389708b",
   indexName: "production_government",
   routing: true,
-  searchParameters: {
-    snippetEllipsisText: "…",
-  },
   searchFunction: function(helper) {
     const query = govSearch.helper.state.query;
     publicSearch.helper.setQuery(query);
