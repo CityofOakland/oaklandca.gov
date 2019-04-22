@@ -100,9 +100,9 @@
   search.addWidget(
     instantsearch.widgets.pagination({
       container: "#bottom-pagination",
-      padding: {{ paddedResults ?? 5 }},
+      padding: 5,
       // default is to scroll to 'body', here we disable this behavior
-      scrollTo: {{ scrollTo ?? "false" }},
+      scrollTo: false,
       cssClasses: {
         root: "p-0 inline-block",
         disabled: "w-0"
