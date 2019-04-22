@@ -3,6 +3,8 @@
 {% set algoliaIndex =  'production_documents' %}
 {% set entry = craft.entries.section('documentsIndex').one %}
 
+{% set searchInputText = "Search for a specific document. E.g., “Permit Form”" %}
+
 {% set facets = [
   {
     container: 'boardsCommissions',

@@ -1,7 +1,9 @@
 {% extends '_layouts/_instant-search-index' %}
 
 {% set algoliaIndex =  'production_volunteers' %}
-{% set entry = craft.entries.section('volunteersIndex').one %}
+{% set entry = craft.entries.section('volunteerIndex').one %}
+
+{% set searchInputText = "Search for a specific person. E.g., “Lanese Vera”" %}
 
 {% set hitsRootClass = 'card-grid wide-cards mt-12' %}
 

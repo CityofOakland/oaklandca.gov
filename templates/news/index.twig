@@ -3,6 +3,8 @@
 {% set entry = craft.entries.section('newsIndex').one %}
 {% set algoliaIndex =  'production_news' %}
 
+{% set searchInputText = "Search for a news item. E.g., “Announcements”" %}
+
 {% set facets = [
   {
     container: 'boardsCommissions',

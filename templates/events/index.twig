@@ -4,6 +4,8 @@
 {% set algoliaIndex =  'production_events' %}
 {% set entry = craft.entries.section('eventsIndex').one %}
 
+{% set searchInputText = "Search for an event. E.g., “Walking Tour”" %}
+
 {% set facets = [
   {
     container: 'boardsCommissions',

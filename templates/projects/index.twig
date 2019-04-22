@@ -3,6 +3,8 @@
 {% set algoliaIndex =  'production_projects' %}
 {% set entry = craft.entries.section('projectsIndex').one %}
 
+{% set searchInputText = "Search for a project topic or title. E.g., “Renovation”" %}
+
 {% set hitsTemplate = '<article class="py-8 sm:py-12 border-celeste border-b-2">' ~
   '<h3 class="text-xl md:text-2xl my-0 {{#leadIn}} mt-0 mb-3 md:mb-6 {{/leadIn}}">' ~
     '<a href="/{{ url }}">' ~
@@ -11,7 +13,7 @@
   '</h3>' ~
   '{{#leadIn}}' ~
     '<p class="text-base text-shark md:text-lg my-2 md:my-4">' ~
-      '{{ _highlightResult.leadIn.value }}' ~
+      '{{{ _highlightResult.leadIn.value }}}' ~
     '</p>' ~
   '{{/leadIn}}' ~
   '{{^leadIn}}' ~
