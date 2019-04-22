@@ -37,10 +37,10 @@
       <div id="search-nav">
         <ul class="list-reset my-0">
           <li class="inline-block mr-4 mb-2">
-            <a href="#" data-holder="gov-holder" class="uppercase font-bold text-astronaut hover:text-shark text-lg border-b-2 pb-1 border-astronaut">Government</a>
+            <a href="#" data-holder="pub-holder" class="uppercase font-bold text-astronaut hover:text-shark text-lg border-b-2 pb-1 border-astronaut">Public Info</a>
           </li>
           <li class="inline-block mr-4 mb-2">
-            <a href="#" data-holder="pub-holder" class="uppercase font-bold text-astronaut hover:text-shark text-lg border-b-2 pb-1 border-astronaut">Public Info</a>
+            <a href="#" data-holder="gov-holder" class="uppercase font-bold text-astronaut hover:text-shark text-lg border-b-2 pb-1 border-astronaut">Government</a>
           </li>
           <li class="inline-block mb-2">
             <a href="#" data-holder="cal-holder" class="uppercase font-bold text-astronaut hover:text-shark text-lg border-b-2 pb-1 border-astronaut">Calendar</a>
@@ -48,12 +48,14 @@
         </ul>
       </div>
       <div class="md:flex">
-        <div id="gov-holder" data-hits class="md:w-2/3">
+        <div id="gov-holder" data-hits class="md:w-2/3 hidden">
           <h2>Government</h2>
+          <p class="text-sm">City officials, departments and boards, as well as our entire staff directory.</p>
           <div id="gov-hits"></div>
         </div>
-        <div id="pub-holder" data-hits class="md:w-2/3 hidden">
+        <div id="pub-holder" data-hits class="md:w-2/3">
           <h2>Public Info</h2>
+          <p class="text-sm">Services, Topics, and general information that is of public interest.</p>
           <div id="pub-hits"></div>
         </div>
         <div id="cal-holder" data-hits class="md:w-2/3 hidden">
