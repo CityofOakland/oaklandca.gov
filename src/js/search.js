@@ -170,8 +170,8 @@ calSearch.start();
 publicSearch.start();
 govSearch.start();
 
-const searchNav = document.querySelectorAll('a[data-holder]');
-const swapHits = document.querySelectorAll('[data-hits]');
+const searchNav = Array.from(document.querySelectorAll('a[data-holder]'));
+const swapHits = Array.from(document.querySelectorAll('[data-hits]'));
 
 searchNav.forEach(function(e) {
   switchHits(e);
