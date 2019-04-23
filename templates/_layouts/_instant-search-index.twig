@@ -133,7 +133,9 @@
       <div class="flex flex-col sm:flex-row">
         <input id="search-input" class="w-full p-2 md:py-4 md:px-8 rounded-none appearance-none" type="search" name="keywords" value="" required>
       </div>
-      <a class="inline-block mt-4 text-right" href="#" id="filter-reveal">Show Filters</a>
+      {% if facets is defined %}
+        <a class="inline-block mt-4 text-right" href="#" id="filter-reveal">Show Filters</a>
+      {% endif %}
     </div>
   </div>
   <div id="algolia-filters" class="opacity-0 invisible h-0 overflow-hidden bg-shark text-white relative z-neg-10 trans trans-all">
