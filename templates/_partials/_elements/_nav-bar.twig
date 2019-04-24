@@ -1,18 +1,5 @@
 {% if not craft.app.request.segments() %}
   {% set bgColor = 'bg-transparent' %}
-  {% js %}
-    window.onscroll = function changeClass(){
-      var navBar = document.getElementById('nav-bar');
-      var scrollPosY = window.pageYOffset | document.body.scrollTop;
-      if(scrollPosY > 1) {
-        navBar.classList.add('md:bg-shark');
-        navBar.classList.remove('md:bg-transparent');
-      } else if(scrollPosY <= 100) {
-        navBar.classList.add('md:bg-transparent');
-        navBar.classList.remove('md:bg-shark');
-      }
-    }
-  {% endjs %}
 {% else %}
   {% set bgColor = 'bg-shark' %}
   {% set searchNavButton %}
@@ -59,7 +46,3 @@
     </div>
   </div>
 </div>
-
-{% js %}
-  {% include '_js/navigation.js' %}
-{% endjs %}

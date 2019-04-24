@@ -229,6 +229,15 @@ main > .bg-rotate:nth-child(odd) {
  * @import "utilities/background-patterns";
  * @import "utilities/skew-transforms";
  */
+ 
+ /* Aspect Ratio Box */
+ .aspect-ratio {
+   @apply absolute pin w-full h-full;
+ }
+
+ .aspect-ratio-box {
+   @apply relative h-0 overflow-hidden;
+ }
 
 /* Object Fit */
 

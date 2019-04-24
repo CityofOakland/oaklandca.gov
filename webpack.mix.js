@@ -37,6 +37,7 @@ mix
     processCssUrls: false,
   })
   .js("./src/js/app.js", "js/app.js")
+  .js("./src/js/algoliafilter.js", "js/algoliafilter.js")
   .js("./src/js/search.js", "js/search.js")
   .banner({
     banner: (function () {
@@ -62,7 +63,7 @@ mix
   .setPublicPath("./web/assets/")
   .browserSync({
     proxy: "http://oakland.test",
-    files: ["templates/*.twig", "templates/**/*.twig", "web/assets/css/*.css", "web/assets/js/*.js"]
+    files: ["templates/*.twig", "templates/**/*.twig", "templates/*.js", "templates/**/*.js", "web/assets/css/*.css", "web/assets/js/*.js"]
   });
 
 mix.disableSuccessNotifications();

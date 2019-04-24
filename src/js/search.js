@@ -36,7 +36,6 @@ const govSearch = instantsearch({
     docSearch.helper.setPage(page);
     docSearch.helper.search();
     helper.search();
-    console.log(page);
   },
 });
 

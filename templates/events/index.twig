@@ -1,10 +1,6 @@
 {% extends '_layouts/_instant-search-event-meetings' %}
-{% set dates = 'forward' %}
 
-{% set algoliaIndex =  'production_events' %}
 {% set entry = craft.entries.section('eventsIndex').one %}
-
-{% set searchInputText = "Search for an event. E.g., “Walking Tour”" %}
 
 {% set facets = [
   {
@@ -24,3 +20,21 @@
   },
 
 ] %}
+
+{% js at head %}
+var algoliaIndex = 'production_events';
+var searchInputText = "Search for an event. E.g., “Walking Tour”";
+var hitsRootClass = 'card-grid vertical-cards';
+var facetFilters = [
+  {% for facet in facets %}
+  {
+    container: '#{{ facet.container }}',
+    attribute: '{{ facet.attribute }}',
+    header: '{{ facet.header }}'
+  },
+  {% endfor %}
+];
+
+{{ source('_js/algolia-templates/events.js') }}
+
+{% endjs %}

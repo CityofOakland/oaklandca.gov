@@ -1,6 +1,5 @@
 {% extends '_layouts/_instant-search-index' %}
 
-{% set algoliaIndex =  'production_resources' %}
 {% set entry = craft.entries.section('resourcesIndex').one %}
 
 {% set facets = [
@@ -21,3 +20,17 @@
   },
 
 ] %}
+
+{% js at head %}
+var algoliaIndex = 'production_resources';
+var searchInputText = "Search for a resource. E.g., “Park hours”";
+var facetFilters = [
+  {% for facet in facets %}
+  {
+    container: '#{{ facet.container }}',
+    attribute: '{{ facet.attribute }}',
+    header: '{{ facet.header }}'
+  },
+  {% endfor %}
+];
+{% endjs %}

@@ -4,8 +4,6 @@
 {% set algoliaIndex =  'production_meetings' %}
 {% set entry = craft.entries.section('meetingsIndex').one %}
 
-{% set searchInputText = "Search for a meeting. E.g., “Public Meeting”" %}
-
 {% set facets = [
   {
     container: 'boardsCommissions',
@@ -24,3 +22,21 @@
   },
 
 ] %}
+
+{% js at head %}
+var algoliaIndex = 'production_meetings';
+var searchInputText = "Search for a meeting. E.g., “Public Meeting”";
+var hitsRootClass = 'card-grid vertical-cards';
+var facetFilters = [
+  {% for facet in facets %}
+  {
+    container: '#{{ facet.container }}',
+    attribute: '{{ facet.attribute }}',
+    header: '{{ facet.header }}'
+  },
+  {% endfor %}
+];
+
+{{ source('_js/algolia-templates/events.js') }}
+
+{% endjs %}

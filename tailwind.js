@@ -874,6 +874,15 @@ module.exports = {
       // center: true,
       // padding: "1rem",
     }),
+    require('tailwindcss-aspect-ratio')({
+      variants: ['responsive'],
+      ratios: {
+        'square': [1, 1],
+        '16/9': [16, 9],
+        '4/3': [4, 3],
+        '21/9': [21, 9],
+      }
+    })
   ],
 
 

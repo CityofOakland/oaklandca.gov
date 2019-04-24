@@ -1,6 +1,25 @@
 {% extends '_layouts/_instant-search-index' %}
 
-{% set entry = craft.entries.section('boardsIndex').one %}
-{% set algoliaIndex =  'production_boards' %}
-
-{% set searchInputText = "Search for a specific person. E.g., “Public Ethics”" %}
+{% js at head %}
+{% verbatim %}
+var algoliaIndex = 'production_boards';
+var searchInputText = "Search for a specific person. E.g., “Public Ethics”";
+var facetFilters = [
+  {
+    container: '#boardsCommissions',
+    attribute: 'boardsCommissions',
+    header: 'Boards & Commissions'
+  },
+  {
+    container: '#departments',
+    attribute: 'departments',
+    header: 'Departments'
+  },
+  {
+    container: '#projects',
+    attribute: 'projects',
+    header: 'Projects'
+  },
+];
+{% endverbatim %}
+{% endjs %}
