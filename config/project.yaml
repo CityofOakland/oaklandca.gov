@@ -21,7 +21,7 @@ categoryGroups:
     structure:
       maxLevels: '1'
       uid: b4e9ab1c-aa42-46f9-a679-898119f39e8d
-dateModified: 1555447557
+dateModified: 1556132031
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -6716,8 +6716,8 @@ users:
         - 'editpeerentrydrafts:17d5d48d-2d75-4742-8820-cdce13764482'
         - 'editentries:17d5d48d-2d75-4742-8820-cdce13764482'
     6227b65d-17fc-4360-8a69-3e70afc30899:
-      handle: electedOfficialLeads
       name: 'Elected Official Leads'
+      handle: electedOfficialLeads
       permissions:
         - accessplugin-calendar
         - accesscp
@@ -6768,8 +6768,22 @@ users:
         - 'publishentries:17d5d48d-2d75-4742-8820-cdce13764482'
         - 'editpeerentries:17d5d48d-2d75-4742-8820-cdce13764482'
         - 'editentries:17d5d48d-2d75-4742-8820-cdce13764482'
+        - 'saveassetinvolume:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67'
+        - 'viewvolume:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67'
+        - 'saveassetinvolume:a31d23bf-e3ee-4942-95e0-3d14c29620bb'
+        - 'viewvolume:a31d23bf-e3ee-4942-95e0-3d14c29620bb'
+        - 'saveassetinvolume:1e78d0ad-2af1-4556-ab43-7b6c110e75b8'
+        - 'viewvolume:1e78d0ad-2af1-4556-ab43-7b6c110e75b8'
         - 'saveassetinvolume:7a12e399-b320-4d23-8abb-a79b5f303015'
         - 'viewvolume:7a12e399-b320-4d23-8abb-a79b5f303015'
+        - 'saveassetinvolume:7c1a62cb-b02e-40b3-840f-7e78a3a9ebd0'
+        - 'viewvolume:7c1a62cb-b02e-40b3-840f-7e78a3a9ebd0'
+        - 'saveassetinvolume:c27974b4-89ad-4504-abb1-e76e44ff4b5d'
+        - 'viewvolume:c27974b4-89ad-4504-abb1-e76e44ff4b5d'
+        - 'saveassetinvolume:c419ecb0-79c8-411d-b440-db5bdfa1f823'
+        - 'viewvolume:c419ecb0-79c8-411d-b440-db5bdfa1f823'
+        - 'saveassetinvolume:1a78695a-f041-4562-9ee4-5405711bd29c'
+        - 'viewvolume:1a78695a-f041-4562-9ee4-5405711bd29c'
         - calendar-editcalendars
         - calendar-managecalendars
     67bbdab6-8a94-441d-9c36-6d093274da43:
