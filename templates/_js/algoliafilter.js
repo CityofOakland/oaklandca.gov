@@ -7,12 +7,12 @@ filterReveal.addEventListener("click", function(e) {
   e.preventDefault();
 
   if (filters.classList.contains("opacity-0")) {
-    filters.classList.add(...openClasses);
-    filters.classList.remove(...closedClasses);
+    filters.classList.add(["opacity-100", "h-auto", "z-40", "visible"]);
+    filters.classList.remove(["opacity-0", "h-0", "z-neg-10", "invisible"]);
     filterReveal.innerHTML = "Hide Filters";
   } else {
-    filters.classList.add(...closedClasses);
-    filters.classList.remove(...openClasses);
+    filters.classList.add(["opacity-0", "h-0", "z-neg-10", "invisible"]);
+    filters.classList.remove(["opacity-100", "h-auto", "z-40", "visible"]);
     filterReveal.innerHTML = "Show Filters";
   }
 }, false);
