@@ -1,4 +1,65 @@
-{% extends '_layouts/_instant-search-index' %}
+{% extends '_layout' %}
 
 {% set hitsRootClass = 'card-grid vertical-cards' %}
- 
+
+{% do view.registerJsFile("https://cdn.polyfill.io/v2/polyfill.min.js?features=default,Array.prototype.includes,Array.prototype.find") %}
+{% do view.registerCssFile("https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4/dist/instantsearch.min.css") %}
+{% do view.registerCssFile ("https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4/dist/instantsearch-theme-algolia.min.css") %}
+{% do view.registerJsFile("https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4") %}
+{% do view.registerJsFile("https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js") %}
+{% do view.registerJsFile("https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js") %}
+{% do view.registerJsFile("https://unpkg.com/BaremetricsCalendar@1.0.12/public/js/Calendar.js") %}
+{% do view.registerCssFile("https://unpkg.com/BaremetricsCalendar@1.0.12/public/css/application.css") %}
+
+{% css %}
+  {% include "_css/algoliafilter.css" %}
+  .ais-search-box {
+    max-width: initial;
+  }
+  .ais-search-box--magnifier {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+{% endcss %}
+
+{% do view.registerJsFile(craft.twigpack.getModuleUri("/js/algoliafilter.js")) %}
+
+{% block content %}
+  {% block pageBanner %}
+    {% include '_partials/_page-banners' with {
+      bannerTitle: entry.title | replace(' Index', ''),
+      breadCrumbs: false,
+      smallBanner: true
+    } %}
+  {% endblock %}
+  <div class="bg-cararra" id="search-bar-container">
+    <div class="container mx-auto px-8 py-4 md:p-8 text-right">
+      <div class="flex flex-col sm:flex-row">
+        <input id="search-input" class="w-full p-2 md:py-4 md:px-8 rounded-none appearance-none" type="search" name="keywords" value="" required>
+      </div>
+      {% if facets is defined %}
+        <a class="inline-block mt-4 text-right" href="#" id="filter-reveal">Show Filters</a>
+      {% endif %}
+    </div>
+  </div>
+  <section class="bg-white relative z-0">
+    <div class="container mx-auto px-8 pt-4 pb-16 md:flex">
+      <div id="algolia-filters" class="opacity-0 md:w-1/3 invisible w-0 overflow-hidden relative z-neg-10 trans trans-all">
+        <div id="facet-holder" class="mx-auto container p-8 flex-col -my-4">
+          <div id="calendar" class="daterange"></div>
+          {% if facets is defined %}
+            {% for facet in facets %}
+              <div id="{{ facet.container }}"></div>
+            {% endfor %}
+          {% endif %}
+        </div>
+      </div>
+      <div class="flex-1">
+        <div id="hits"></div>
+        <div class="text-2xl flex items-center"><div class="inline-block" id="bottom-pagination"></div></div>
+      </div>
+    </div>
+  </section>
+{% endblock %}
+
+

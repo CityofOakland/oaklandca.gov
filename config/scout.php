@@ -28,7 +28,7 @@ class eventsTransform extends TransformerAbstract
     return [
       'title' => $event->title,
       'url' => $event->uri,
-      'date' => $event->startDate->timestamp,
+      'date' => $event->startDate->timestamp * 1000,
       'displayDate' => $event->startDate->format('F j, Y'),
       'body' => strip_tags($event->body),
       'contact' => (string) $event->eventContact,
@@ -86,7 +86,7 @@ class boardsTransform extends TransformerAbstract
     return [
       'title' => $entry->title,
       'url' => $entry->uri,
-      'date' => $entry->postDate,
+      'date' => $entry->postDate->getTimestamp() * 1000,
       'banner' => ! empty($entry->banner->one()) ? (string) $entry->banner->one()->url : null,
       'ctaButtonText' => ! empty($entry->ctaButton->text) ? (string) $entry->ctaButton->text : null,
       'leadIn' => (string) $entry->leadIn,
@@ -162,7 +162,7 @@ class documentsTransform extends TransformerAbstract
     return [
       'title' => $entry->title,
       'url' => $entry->uri,
-      'date' => $entry->postDate->getTimestamp(),
+      'date' => $entry->postDate->getTimestamp() * 1000,
       'displayDate' => $entry->postDate->format('F j, Y'),
       'summary' => strip_tags($entry->summary),
       'categories' => $types,
@@ -187,7 +187,7 @@ class documentPacketsTransform extends TransformerAbstract
     return [
       'title' => $entry->title,
       'url' => $entry->uri,
-      'date' => $entry->postDate->getTimestamp(),
+      'date' => $entry->postDate->getTimestamp() * 1000,
       'displayDate' => $entry->postDate->format('F j, Y'),
       'leadIn' => (string) $entry->leadIn,
       'summary' => strip_tags($entry->summary),

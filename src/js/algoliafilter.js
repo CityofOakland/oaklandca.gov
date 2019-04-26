@@ -34,31 +34,26 @@ const search = instantsearch({
     //     filters: "{{ section }}:'{{ facetItem | replace({'%"%': '\\"', "%'%": "\'"}) }}'",
     //   {% endif %}
     // {% endblock %}
-    // {% if dates is defined and dates == 'forward' %}
-    //   filters: 'date >= ' + ts,
-    // {% elseif dates is defined and dates == 'backward' %}
-    //   filters: 'date <= ' + ts
-    // {% endif %}
   },
 });
 
 const defaultTemplate = `<article class="py-8 sm:py-12 border-celeste border-b-2">
-      {{#displayDate}}
-      <div class="text-base text-camouflage-green mb-4">
-        Publish Date: <b>{{ displayDate }}</b>
-      </div>
-      {{/displayDate}}
-      <h3 class="text-xl md:text-2xl my-0 {{#leadIn}} mt-0 mb-3 md:mb-6 {{/leadIn}}">
-        <a href="/{{ url }}">
-          {{{ _highlightResult.title.value }}}
-        </a>
-      </h3>
-      {{#leadIn}}
-        <p class="text-base text-shark md:text-lg my-2 md:my-4">
-          {{{ _highlightResult.leadIn.value }}}
-        </p>
-      {{/leadIn}}
-    </article>`;
+  {{#displayDate}}
+  <div class="text-base text-camouflage-green mb-4">
+    Publish Date: <b>{{ displayDate }}</b>
+  </div>
+  {{/displayDate}}
+  <h3 class="text-xl md:text-2xl my-0 {{#leadIn}} mt-0 mb-3 md:mb-6 {{/leadIn}}">
+    <a href="/{{ url }}">
+      {{{ _highlightResult.title.value }}}
+    </a>
+  </h3>
+  {{#leadIn}}
+    <p class="text-base text-shark md:text-lg my-2 md:my-4">
+      {{{ _highlightResult.leadIn.value }}}
+    </p>
+  {{/leadIn}}
+</article>`;
 
 facetFilters.forEach(facet => {
   search.addWidget(
@@ -72,6 +67,45 @@ facetFilters.forEach(facet => {
       }
     })
   );    
+});
+
+if (typeof moment !== 'undefined') {
+  const ONE_DAY_IN_MS = 3600 * 24 * 1000;
+
+  const TODAY = moment().format('L'); 
+
+  const datePicker = instantsearch.connectors.connectRange(
+    (options, isFirstRendering) => {
+      if (!isFirstRendering) return;
+
+      const { refine } = options;
+
+      new Calendar({
+        element: $('#calendar'),
+        same_day_range: true,
+        presets: false,
+        callback: function() {
+          const start = new Date(this.start_date).getTime();
+          const end = new Date(this.end_date).getTime();
+          const actualEnd = start === end ? end + ONE_DAY_IN_MS - 1 : end;
+
+          refine([start, actualEnd]);
+        },
+      });
+    }
+  );
+
+  const dateRangeWidget = datePicker({
+    attributeName: 'date',
+  });
+  
+  search.addWidget(dateRangeWidget);
+}
+
+search.addWidget({
+  render: function(data) {
+    console.log(data);
+  }
 });
 
 search.addWidget(
@@ -93,6 +127,7 @@ search.addWidget(
     }
   })
 );
+
 search.addWidget(
   instantsearch.widgets.pagination({
     container: "#bottom-pagination",
@@ -105,4 +140,5 @@ search.addWidget(
     }
   })
 );
+
 search.start();
