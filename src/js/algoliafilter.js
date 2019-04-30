@@ -27,7 +27,7 @@ if (window.section && window.entryTitle) {
 }
 
 const ts = Math.round((new Date()).getTime() / 1000);
-instantsearch({
+const search = instantsearch({
   appId: "6V5VJO8ZG2",
   apiKey: "9bded46d3070b2089499c70b2389708b",
   indexName: window.algoliaIndex,
