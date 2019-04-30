@@ -39,6 +39,7 @@ mix
   .js("./src/js/app.js", "js/app.js")
   .js("./src/js/algoliafilter.js", "js/algoliafilter.js")
   .js("./src/js/search.js", "js/search.js")
+  .extract()
   .banner({
     banner: (function () {
       const moment = require("moment");
@@ -59,7 +60,6 @@ mix
     raw: true,
     entryOnly: true,
   })
-  .extract()
   .setPublicPath("./web/assets/")
   .browserSync({
     proxy: "http://oakland.test",

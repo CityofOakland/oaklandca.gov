@@ -61,3 +61,10 @@
     {% endif %}
   </body>
 </html>
+{% if section is defined and slug is defined %}
+{% set facetItem = craft.entries.section(section).slug(slug).one().title %}
+  {% js at head %}
+    var section = "{{ section }}";
+    var entryTitle = "{{ facetItem }}";
+  {% endjs %}
+{% endif %}
