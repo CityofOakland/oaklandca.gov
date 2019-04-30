@@ -1,7 +1,3 @@
-import "es6-promise";
-// import instantsearch from "instantsearch.js";
-const instantsearch = require("instantsearch.js");
-
 const filterReveal = document.getElementById("filter-reveal");
 const filters = document.getElementById("algolia-filters");
 const openClasses = ["opacity-100", "h-auto", "z-40", "visible"];
@@ -86,7 +82,19 @@ if (typeof moment !== 'undefined') {
       new Calendar({
         element: $('#calendar'),
         same_day_range: true,
-        presets: false,
+        presets: [{
+          label: 'Next month',
+          start: moment().add(1, 'month').startOf('month'),
+          end: moment().add(1, 'month').endOf('month')
+        },{
+          label: 'Last month',
+          start: moment().subtract(1, 'month').startOf('month'),
+          end: moment().subtract(1, 'month').endOf('month')
+        },{
+          label: 'Last year',
+          start: moment().subtract(1, 'year').startOf('year'),
+          end: moment().subtract(1, 'year').endOf('year')
+        }],
         callback: function() {
           const start = new Date(this.start_date).getTime();
           const end = new Date(this.end_date).getTime();
@@ -104,12 +112,6 @@ if (typeof moment !== 'undefined') {
   
   search.addWidget(dateRangeWidget);
 }
-
-search.addWidget({
-  render: function(data) {
-    console.log("Data", data);
-  }
-});
 
 search.addWidget(
   instantsearch.widgets.searchBox({

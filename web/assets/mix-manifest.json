@@ -1,8 +1,8 @@
 {
-    "/js/algoliafilter.js": "/js/algoliafilter.js",
-    "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css",
-    "/js/manifest.js": "/js/manifest.js",
-    "/js/search.js": "/js/search.js",
-    "/js/vendor.js": "/js/vendor.js"
+    "/js/manifest.js": "/js/manifest.js?id=01c8731923a46c30aaed",
+    "/js/vendor.js": "/js/vendor.js?id=6b33df8cc7184f06cea1",
+    "/js/algoliafilter.js": "/js/algoliafilter.js?id=d045f74befbed1e8d2be",
+    "/js/app.js": "/js/app.js?id=fb463d10693c016661d6",
+    "/css/app.css": "/css/app.css?id=7f296abba1044db96735",
+    "/js/search.js": "/js/search.js?id=dde1352c5ebfac532f07"
 }

@@ -179,6 +179,10 @@ searchNav.forEach(function(e) {
 function switchHits(e) {
   e.addEventListener("click", function(e) {
     e.preventDefault();
+    searchNav.forEach(function(e) {
+      e.classList.remove('active');
+    });
+    e.target.classList.add('active');
     let holderOn = e.target.dataset.holder;
     swapHits.forEach(function(h) {
       if (h.id == holderOn) {
@@ -186,6 +190,6 @@ function switchHits(e) {
       } else {
         h.classList.add('hidden');
       }  
-    })
+    });
   })
 }

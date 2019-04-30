@@ -19,51 +19,48 @@
 {% endcss %}
 
 {% block content %}
-  {% include '_partials/_page-banners' with {
-    smallBanner: true
-  } %}
-  <div class="bg-cararra">
-    <div class="container mx-auto p-8">
-      <form action="">
-        <label for="keywords">Search by Keyword</label>
-        <div class="flex flex-col sm:flex-row mt-4">
-          <input class="flex-1 py-4 px-8 mb-4 sm:mb-0 rounded-none appearance-none" type="search" name="query" id="search-input" value="" required>
+  <div class="banner leading-normal">
+    <div class="relative container mx-auto p-8 z-10 flex flex-col sm:flex-row">
+      <h1 class="text-3xl md:text-4xl font-bold mb-0 sm:w-1/4">{{ entry.title }}</h1>
+      <form action="" class="flex-1 my-4 sm:my-0">
+        <input class="flex-1 py-4 px-8 rounded-none appearance-none" type="search" name="query" id="search-input" value="" required>
+        <div id="search-nav" class="text-sm sm:text-base">
+          <ul class="list-reset mb-0">
+            <li class="inline-block mr-4">
+              <a href="#" data-holder="pub-holder" class="search-filter-button active">General</a>
+            </li>
+            <li class="inline-block mr-4">
+              <a href="#" data-holder="gov-holder" class="search-filter-button">Offices & People</a>
+            </li>
+            <li class="inline-block">
+              <a href="#" data-holder="cal-holder" class="search-filter-button">Calendar</a>
+            </li>
+          </ul>
         </div>
       </form>
     </div>
   </div>
   <section class="bg-white relative z-0">
     <div class="container mx-auto p-8">
-      <div id="search-nav">
-        <ul class="list-reset my-0">
-          <li class="inline-block mr-4 mb-2">
-            <a href="#" data-holder="pub-holder" class="uppercase font-bold text-astronaut hover:text-shark text-lg border-b-2 pb-1 border-astronaut">Public Info</a>
-          </li>
-          <li class="inline-block mr-4 mb-2">
-            <a href="#" data-holder="gov-holder" class="uppercase font-bold text-astronaut hover:text-shark text-lg border-b-2 pb-1 border-astronaut">Government</a>
-          </li>
-          <li class="inline-block mb-2">
-            <a href="#" data-holder="cal-holder" class="uppercase font-bold text-astronaut hover:text-shark text-lg border-b-2 pb-1 border-astronaut">Calendar</a>
-          </li>
-        </ul>
-      </div>
       <div class="md:flex">
         <div id="gov-holder" data-hits class="md:w-2/3 hidden">
-          <h2>Government</h2>
-          <p class="text-sm">City officials, departments and boards, as well as our entire staff directory.</p>
+          <h2 class="mb-0">Offices & People</h2>
+          <p class="mt-0 text-sm">City officials, departments and boards, as well as our entire staff directory.</p>
           <div id="gov-hits"></div>
         </div>
         <div id="pub-holder" data-hits class="md:w-2/3">
-          <h2>Public Info</h2>
-          <p class="text-sm">Services, Topics, and general information that is of public interest.</p>
+          <h2 class="mb-0">General</h2>
+          <p class="mt-0 text-sm">Services, Topics, and general information that is of public interest.</p>
           <div id="pub-hits"></div>
         </div>
         <div id="cal-holder" data-hits class="md:w-2/3 hidden">
-          <h2>Calendar</h2>
+          <h2 class="mb-0">Calendar</h2>
+          <p class="mt-0 text-sm">Public meetings and community calendar events held in the City of Oakland</p>
           <div id="cal-hits"></div>
         </div>
         <div id="doc-holder" class="md:ml-8 md:w-1/3">
-          <h2>Documents</h2>
+          <h2 class="mb-0">Documents</h2>
+          <p class="mt-0 text-sm">Documents and files hosted on <a href="https://www.oaklandca.gov">oaklandca.gov</a>.</p>
           <div id="doc-hits"></div>
         </div>
       </div>

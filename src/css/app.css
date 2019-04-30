@@ -412,3 +412,15 @@ body.open .page-holder {
   padding-left: 50px;
   padding-bottom: 20px;
 }
+
+.search-filter-button {
+  @apply p-2 inline-block uppercase font-bold text-white border-b-2 pb-1 border-white;
+}
+
+.search-filter-button:hover {
+  @apply rounded bg-white text-shark shadow;
+}
+
+.search-filter-button.active {
+  @apply rounded bg-white text-shark shadow;
+}

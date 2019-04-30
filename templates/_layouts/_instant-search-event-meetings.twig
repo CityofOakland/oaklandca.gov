@@ -43,16 +43,16 @@
     </div>
   </div>
   <section class="bg-white relative z-0">
-    <div id="calendar" class="daterange container mx-auto px-8 mt-8 md:w-1/3"></div>
-    <div id="algolia-filters" class="opacity-0 h-0 z-neg-10 invisible overflow-hidden relative trans trans-all">
-      <div id="facet-holder" class="mx-auto container p-8 pb-0 mb-8 flex-col -my-4">
+    <div id="algolia-filters" class="opacity-0 invisible h-0 overflow-hidden bg-shark text-white relative z-neg-10 trans trans-all">
+      <div id="facet-holder" class="mx-auto container p-8 flex-col -my-4">
         {% if facets is defined %}
           {% for facet in facets %}
-            <div id="{{ facet.container }}"></div>
+            <div id="{{ facet.container }}" class="max-w-sm"></div>
           {% endfor %}
         {% endif %}
       </div>
     </div>
+    <div id="calendar" class="daterange mx-auto px-8 mt-8 max-w-sm"></div>
     <div class="container mx-auto px-8 mt-4 pb-16 md:flex">
       <div class="flex-1">
         <div id="hits"></div>
