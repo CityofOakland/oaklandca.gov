@@ -13,6 +13,7 @@ const tailwindcss = require("tailwindcss");
 const autoprefixer = require("autoprefixer");
 const presetenv = require("postcss-preset-env");
 const mqpacker = require("css-mqpacker");
+const pfm = require('postcss-font-magician');
 
 // Image plugins for compression from src folder
 const ImageminPlugin = require("imagemin-webpack-plugin").default;
@@ -24,6 +25,9 @@ mix
   .copyDirectory(pkg.paths.src.fonts, pkg.paths.dist.fonts)
   .options({
     postCss: [
+      pfm({
+        foundries: 'google',
+      }),
       tailwindcss("tailwind.js"),
       autoprefixer({
         browsers: ["> .5% or last 2 versions"],

@@ -6,39 +6,119 @@ use fruitstudios\linkit\Linkit;
 use League\Fractal\TransformerAbstract;
 use nystudio107\imageoptimize\imagetransforms\ImageTransform;
 
+function enumEntries($section, $element) {
+  $sectionArray = [];
+  if (! empty($element->$section)) {
+    foreach($element->$section as $value) {
+      $sectionArray[] = $value->title;
+    }
+  }
+  return $sectionArray;
+}
+
+function entryUrl($entry) {
+  return empty($entry->redirectUrl) ? $entry->uri : $entry->redirectUrl;
+}
+
+function entryDate($entry) {
+  return $entry->postDate->getTimestamp() * 1000;
+}
+
+function entryPrettyDate($entry) {
+  return $entry->postDate->format('F j, Y');
+}
+
+function ctaButtonText($element) {
+  return ! empty($element->ctaButton->text) ? $element->ctaButton->text : null;
+}
+
+function banner($element) {
+  if (! empty($element->banner)) {
+    if (! empty($element->banner->one())) {
+      return $element->banner->one()->url;
+    }
+  }
+  return null;
+}
+
+function portrait($element) {
+  ! empty($entry->portrait) ? $entry->portrait->one()->url : null;
+}
+
+function sectionPriority($element) {
+  $handle = $element->section->handle;
+  switch ($handle) {
+    case 'services':
+      return 1;
+    case 'resources':
+      return 2;
+    case 'departments':
+      return 3;
+    case 'boardsCommissions':
+      return 4;
+    case 'projects':
+      return 5;
+    default:
+      return '';
+  }
+}
+
+function searchFilter($element) {
+  $handle = ! empty($element->section) ? $element->section->handle : $element->calendar->handle;
+  switch ($handle) {
+    case 'news':
+    case 'processes':
+    case 'projects':
+    case 'news':
+    case 'resources':
+    case 'services':
+    case 'topics':
+     return 'general';
+    
+    case 'boardsCommissions':
+    case 'departments':
+    case 'officials':
+    case 'staff':
+    case 'teams':
+    case 'volunteers':
+      return 'officialsPeople';
+    
+    case 'meetings':
+    case 'events':
+      return 'calendars';
+  
+    case 'documents':
+    case 'documentPackets':
+      return 'documents';
+
+    default:
+      break;
+  }
+}
+
 class eventsTransform extends TransformerAbstract
 {
   public function transform(Solspace\Calendar\Elements\Event $event)
   {
-    $boardsCommissions = [];
-    foreach($event->boardsCommissions as $value)
-      $boardsCommissions[] = $value->title;
-    $departments = [];
-    foreach($event->departments as $value)
-      $departments[] = $value->title;
-    $officials = [];
-    foreach($event->officials as $value)
-      $officials[] = $value->title;
-    $projects = [];
-    foreach($event->projects as $value)
-      $projects[] = $value->title;
-    $topics = [];
-    foreach($event->topics as $value)
-      $topics[] = $value->title;
+    $boardsCommissions = enumEntries("boardsCommissions", $event);
+    $departments = enumEntries("departments", $event);
+    $officials = enumEntries("officials", $event);
+    $projects = enumEntries("projects", $event);
+    $topics = enumEntries("topics", $event);
     return [
       'title' => $event->title,
       'url' => $event->uri,
       'date' => $event->startDate->timestamp * 1000,
       'displayDate' => $event->startDate->format('F j, Y'),
       'body' => strip_tags($event->body),
-      'contact' => (string) $event->eventContact,
+      'contact' => $event->eventContact,
       'eventImageSrc' => ! empty($event->eventImage->one()) ? $event->eventImage->one()->indexImage->src() : null,
-      'eventImage' => ! empty($event->eventImage->one()) ? $event->eventImage->one()->indexImage->toArray() : null,
       'boardsCommissions' => $boardsCommissions,
       'departments' => $departments,
       'officials' => $officials,
       'projects' => $projects,
       'topics' => $topics,
+      'searchFilter' => searchFilter($event),
     ];
   }
 }
@@ -47,29 +127,20 @@ class newsTransform extends TransformerAbstract
 {
   public function transform(craft\elements\Entry $entry)
   {
-    $boardsCommissions = [];
-    foreach($entry->boardsCommissions->all() as $value)
-      $boardsCommissions[] = $value->title;
-    $departments = [];
-    foreach($entry->departments->all() as $value)
-      $departments[] = $value->title;
-    $officials = [];
-    foreach($entry->officials->all() as $value)
-      $officials[] = $value->title;
-    $projects = [];
-    foreach($entry->projects->all() as $value)
-      $projects[] = $value->title;
-    $topics = [];
-    foreach($entry->topics->all() as $value)
-      $topics[] = $value->title;
+    $boardsCommissions = enumEntries("boardsCommissions", $entry);
+    $departments = enumEntries("departments", $entry);
+    $officials = enumEntries("officials", $entry);
+    $projects = enumEntries("projects", $entry);
+    $topics = enumEntries("topics", $entry);
     return [
       'title' => $entry->title,
-      'url' => $entry->uri,
+      'url' => entryUrl($entry),
+      'date' => entryDate($entry),
+      'displayDate' => entryPrettyDate($entry),
       'newsImageSrc' => ! empty($entry->newsImage->one()) ? $entry->newsImage->one()->indexImage->src() : null,
-      'newsImage' => ! empty($entry->newsImage->one()) ? $entry->newsImage->one()->indexImage->toArray() : null,
       'summary' => strip_tags($entry->summary),
       'body' => strip_tags($entry->body),
-      'mediaContact' => (string) $entry->mediaContact,
+      'mediaContact' => $entry->mediaContact,
       'boardsCommissions' => $boardsCommissions,
       'departments' => $departments,
       'projects' => $projects,
@@ -85,12 +156,13 @@ class boardsTransform extends TransformerAbstract
   {
     return [
       'title' => $entry->title,
-      'url' => $entry->uri,
-      'date' => $entry->postDate->getTimestamp() * 1000,
-      'banner' => ! empty($entry->banner->one()) ? (string) $entry->banner->one()->url : null,
-      'ctaButtonText' => ! empty($entry->ctaButton->text) ? (string) $entry->ctaButton->text : null,
-      'leadIn' => (string) $entry->leadIn,
-      'about' => (string) $entry->about,
+      'url' => entryUrl($entry),
+      'date' => entryDate($entry),
+      'displayDate' => entryPrettyDate($entry),
+      'banner' => banner($entry),
+      'ctaButtonText' => ctaButtonText($entry),
+      'leadIn' => $entry->leadIn,
+      'about' => $entry->about,
     ];
   }
 }
@@ -99,33 +171,18 @@ class departmentsTransform extends TransformerAbstract
 {
   public function transform(craft\elements\Entry $entry)
   {
+    $officials = enumEntries("officials", $entry);
     return [
       'title' => $entry->title,
-      'url' => $entry->uri,
-      'banner' => ! empty($entry->banner->one()) ? (string) $entry->banner->one()->url : null,
-      'ctaButtonText' => ! empty($entry->ctaButton->text) ? (string) $entry->ctaButton->text : null,
-      'leadIn' => (string) $entry->leadIn,
-      'groupHeadName' => (string) $entry->groupHeadName,
-      'groupHeadTitle' => (string) $entry->groupHeadTitle,
-      'groupHeadBio' => (string) $entry->groupHeadBio,
-      'groupHeadPortrait' => ! empty($entry->portrait->one()) ? (string) $entry->portrait->one()->url : null,
-    ];
-  }
-}
-
-class cityCouncilTransform extends TransformerAbstract
-{
-  public function transform(craft\elements\Entry $entry)
-  {
-    $officials = [];
-    foreach($entry->pageOfficials->all() as $value)
-      $officials[] = [$value->title, $value->groupHeadName];
-    return [
-      'title' => $entry->title,
-      'url' => $entry->uri,
-      'banner' => ! empty($entry->banner->one()) ? (string) $entry->banner->one()->url : null,
-      'ctaButtonText' => ! empty($entry->ctaButton->text) ? (string) $entry->ctaButton->text : null,
+      'url' => entryUrl($entry),
+      'date' => entryDate($entry),
+      'displayDate' => entryPrettyDate($entry),
       'leadIn' => $entry->leadIn,
+      'banner' => banner($entry),
+      'ctaButtonText' => ctaButtonText($entry),
+      'groupHeadBio' => $entry->groupHeadBio,
+      'groupHeadName' => $entry->groupHeadName,
+      'groupHeadTitle' => $entry->groupHeadTitle,
       'officials' => $officials,
     ];
   }
@@ -135,35 +192,23 @@ class documentsTransform extends TransformerAbstract
 {
   public function transform(craft\elements\Entry $entry)
   {
-    $boardsCommissions = [];
-    foreach($entry->boardsCommissions as $value)
-      $boardsCommissions[] = $value->title;
-    $departments = [];
-    foreach($entry->departments as $value)
-      $departments[] = $value->title;
-    $officials = [];
-    foreach($entry->officials as $value)
-      $officials[] = $value->title;
-    $projects = [];
-    foreach($entry->projects as $value)
-      $projects[] = $value->title;
-    $resources = [];
-    foreach($entry->resources as $value)
-      $resources[] = $value->title;
-    $services = [];
-    foreach($entry->services as $value)
-      $services[] = $value->title;
-    $topics = [];
-    foreach($entry->topics as $value)
-      $topics[] = $value->title;
+    $boardsCommissions = enumEntries("boardsCommissions", $entry);
+    $departments = enumEntries("departments", $entry);
+    $officials = enumEntries("officials", $entry);
+    $projects = enumEntries("projects", $entry);
+    $resources = enumEntries("resources", $entry);
+    $services = enumEntries("services", $entry);
+    $topics = enumEntries("topics", $entry);
+    $documents = enumEntries("documents", $entry);
     $types = [];
     foreach($entry->documentType as $value)
       $types[] = $value->title;
     return [
       'title' => $entry->title,
-      'url' => $entry->uri,
-      'date' => $entry->postDate->getTimestamp() * 1000,
-      'displayDate' => $entry->postDate->format('F j, Y'),
+      'url' => entryUrl($entry),
+      'date' => entryDate($entry),
+      'displayDate' => entryPrettyDate($entry),
+      'leadIn' => $entry->leadIn,
       'summary' => strip_tags($entry->summary),
       'categories' => $types,
       'boardsCommissions' => $boardsCommissions,
@@ -172,26 +217,8 @@ class documentsTransform extends TransformerAbstract
       'projects' => $projects,
       'resources' => $resources,
       'services' => $services,
-      'topics' => $topics,
-    ];
-  }
-}
-
-class documentPacketsTransform extends TransformerAbstract
-{
-  public function transform(craft\elements\Entry $entry)
-  {
-    $documents = [];
-    foreach($entry->documents as $value)
-      $documents[] = $value->title;
-    return [
-      'title' => $entry->title,
-      'url' => $entry->uri,
-      'date' => $entry->postDate->getTimestamp() * 1000,
-      'displayDate' => $entry->postDate->format('F j, Y'),
-      'leadIn' => (string) $entry->leadIn,
-      'summary' => strip_tags($entry->summary),
       'documents' => $documents,
+      'topics' => $topics,
     ];
   }
 }
@@ -203,28 +230,22 @@ class projectsTransform extends TransformerAbstract
     $milestones = [];
     foreach ($entry->timeline->all() as $block) {
       $milestones[] = [
-        'name' => (string) $block->milestoneName,
-        'dates' => (string) $block->milestoneDates
+        'name' => $block->milestoneName,
+        'dates' => $block->milestoneDates
       ];
     }
-    $boardsCommissions = [];
-    foreach($entry->boardsCommissions->all() as $value)
-      $boardsCommissions[] = $value->title;
-    $departments = [];
-    foreach($entry->departments->all() as $value)
-      $departments[] = $value->title;
-    $officials = [];
-    foreach($entry->officials->all() as $value)
-      $officials[] = $value->title;
-    $topics = [];
-    foreach($entry->topics->all() as $value)
-      $topics[] = $value->title;
+    $boardsCommissions = enumEntries("boardsCommissions", $entry);
+    $departments = enumEntries("departments", $entry);
+    $officials = enumEntries("officials", $entry);
+    $topics = enumEntries("topics", $entry);
     return [
       'title' => $entry->title,
-      'url' => $entry->uri,
-      'banner' => ! empty($entry->banner->one()) ? (string) $entry->banner->one()->url : null,
-      'leadIn' => (string) $entry->leadIn,
-      'about' => (string) $entry->about,
+      'url' => entryUrl($entry),
+      'date' => entryDate($entry),
+      'displayDate' => entryPrettyDate($entry),
+      'banner' => banner($entry),
+      'leadIn' => $entry->leadIn,
+      'about' => $entry->about,
       'boardsCommissions' => $boardsCommissions,
       'departments' => $departments,
       'officials' => $officials,
@@ -237,67 +258,21 @@ class resourcesTransform extends TransformerAbstract
 {
   public function transform(craft\elements\Entry $entry)
   {
-    $boardsCommissions = [];
-    foreach($entry->boardsCommissions as $value)
-      $boardsCommissions[] = $value->title;
-    $departments = [];
-    foreach($entry->departments as $value)
-      $departments[] = $value->title;
-    $officials = [];
-    foreach($entry->officials as $value)
-      $officials[] = $value->title;
-    $projects = [];
-    foreach($entry->projects as $value)
-      $projects[] = $value->title;
-    $topics = [];
-    foreach($entry->topics as $value)
-      $topics[] = $value->title;
+    $boardsCommissions = enumEntries("boardsCommissions", $entry);
+    $departments = enumEntries("departments", $entry);
+    $officials = enumEntries("officials", $entry);
+    $projects = enumEntries("projects", $entry);
+    $topics = enumEntries("topics", $entry);
     $body = [];
     foreach ($entry->transactionBody as $block) {
       $body[] = strip_tags($block->text);
     }
     return [
       'title' => $entry->title,
-      'url' => $entry->uri,
-      'resourceImage' => ! empty($entry->resourceImage->one()) ? (string) $entry->resourceImage->one()->url : null,
-      'leadIn' => (string) $entry->leadIn,
-      'boardsCommissions' => $boardsCommissions,
-      'departments' => $departments,
-      'officials' => $officials,
-      'projects' => $projects,
-      'topics' => $topics,
-      'body' => $body,
-    ];
-  }
-}
-
-class videosTransform extends TransformerAbstract
-{
-  public function transform(craft\elements\Entry $entry)
-  {
-    $boardsCommissions = [];
-    foreach($entry->boardsCommissions as $value)
-      $boardsCommissions[] = $value->title;
-    $departments = [];
-    foreach($entry->departments as $value)
-      $departments[] = $value->title;
-    $officials = [];
-    foreach($entry->officials as $value)
-      $officials[] = $value->title;
-    $projects = [];
-    foreach($entry->projects as $value)
-      $projects[] = $value->title;
-    $topics = [];
-    foreach($entry->topics as $value)
-      $topics[] = $value->title;
-    $body = [];
-    foreach ($entry->transactionBody as $block) {
-      $body[] = strip_tags($block->text);
-    }
-    return [
-      'title' => $entry->title,
-      'url' => $entry->uri,
-      'leadIn' => (string) $entry->leadIn,
+      'url' => entryUrl($entry),
+      'date' => entryDate($entry),
+      'displayDate' => entryPrettyDate($entry),
+      'leadIn' => $entry->leadIn,
       'boardsCommissions' => $boardsCommissions,
       'departments' => $departments,
       'officials' => $officials,
@@ -312,51 +287,29 @@ class servicesTransform extends TransformerAbstract
 {
   public function transform(craft\elements\Entry $entry)
   {
-    $boardsCommissions = [];
-    foreach($entry->boardsCommissions as $value)
-      $boardsCommissions[] = $value->title;
-    $departments = [];
-    foreach($entry->departments as $value)
-      $departments[] = $value->title;
-    $officials = [];
-    foreach($entry->officials as $value)
-      $officials[] = $value->title;
-    $projects = [];
-    foreach($entry->projects as $value)
-      $projects[] = $value->title;
-    $topics = [];
-    foreach($entry->topics as $value)
-      $topics[] = $value->title;
+    $boardsCommissions = enumEntries("boardsCommissions", $entry);
+    $departments = enumEntries("departments", $entry);
+    $officials = enumEntries("officials", $entry);
+    $projects = enumEntries("projects", $entry);
+    $topics = enumEntries("topics", $entry);
     $body = [];
     foreach ($entry->transactionBody as $block) {
       $body[] = strip_tags($block->text);
     }
     return [
       'title' => $entry->title,
-      'url' => $entry->uri,
-      'leadIn' => (string) $entry->leadIn,
+      'url' => entryUrl($entry),
+      'date' => entryDate($entry),
+      'displayDate' => entryPrettyDate($entry),
+      'leadIn' => $entry->leadIn,
       'boardsCommissions' => $boardsCommissions,
       'departments' => $departments,
       'officials' => $officials,
       'projects' => $projects,
       'topics' => $topics,
       'body' => $body,
-    ];
-  }
-}
-
-class three11Transform extends TransformerAbstract
-{
-  public function transform(craft\elements\Entry $entry)
-  {
-    return [
-      'title' => $entry->title,
-      'url' => $entry->uri,
-      'banner' => ! empty($entry->banner->one()) ? (string) $entry->banner->one()->url : null,
-      'leadIn' => (string) $entry->leadIn,
-      'body' => (string) $entry->body,
-      'urgentIssuesDescription' => (string) $entry->urgentIssuesDescription,
-      'nonUrgentIssuesDescription' => (string) $entry->nonUrgentIssuesDescription,
+      'urgentIssuesDescription' => $entry->urgentIssuesDescription,
+      'nonUrgentIssuesDescription' => $entry->nonUrgentIssuesDescription,
     ];
   }
 }
@@ -365,26 +318,18 @@ class topicsTransform extends TransformerAbstract
 {
   public function transform(craft\elements\Entry $entry)
   {
-    $boardsCommissions = [];
-    foreach($entry->boardsCommissions->all() as $value)
-      $boardsCommissions[] = $value->title;
-    $departments = [];
-    foreach($entry->departments->all() as $value)
-      $departments[] = $value->title;
-    $officials = [];
-    foreach($entry->officials->all() as $value)
-      $officials[] = $value->title;
-    $projects = [];
-    foreach($entry->projects->all() as $value)
-      $projects[] = $value->title;
-    $topics = [];
-    foreach($entry->topics->all() as $value)
-      $topics[] = $value->title;
+    $boardsCommissions = enumEntries("boardsCommissions", $entry);
+    $departments = enumEntries("departments", $entry);
+    $officials = enumEntries("officials", $entry);
+    $projects = enumEntries("projects", $entry);
+    $topics = enumEntries("topics", $entry);
     return [
       'title' => $entry->title,
-      'url' => $entry->uri,
-      'banner' => ! empty($entry->banner->one()) ? (string) $entry->banner->one()->url : null,
-      'leadIn' => (string) $entry->leadIn,
+      'url' => entryUrl($entry),
+      'date' => entryDate($entry),
+      'displayDate' => entryPrettyDate($entry),
+      'banner' => banner($entry),
+      'leadIn' => $entry->leadIn,
       'about' => strip_tags($entry->about),
       'boardsCommissions' => $boardsCommissions,
       'departments' => $departments,
@@ -401,13 +346,15 @@ class staffTransform extends TransformerAbstract
   {
     return [
       'title' => $entry->title,
-      'url' => $entry->uri,
-      'portrait' => ! empty($entry->portrait[0]) ? (string) $entry->portrait[0]->url : null,
-      'jobTitle' => ! empty($entry->jobTitle) ? (string) $entry->jobTitle : (string) $entry->staffImportJobTitle,
-      'bio' => (string) $entry->bio,
-      'email' => ! empty($entry->emailAddress) ? (string) $entry->emailAddress : str_replace("@oaklandnet.com", "@oaklandca.gov", $entry->staffImportEmail),
-      'department' => ! empty($entry->departments[0]) ? (string) $entry->departments[0]->title : $entry->staffImportDepartment,
-      'employmentType' => (string) $entry->employmentType->label,
+      'url' => entryUrl($entry),
+      'date' => entryDate($entry),
+      'displayDate' => entryPrettyDate($entry),
+      'portrait' => portrait($entry),
+      'jobTitle' => ! empty($entry->jobTitle) ? $entry->jobTitle : $entry->staffImportJobTitle,
+      'bio' => $entry->bio,
+      'email' => ! empty($entry->emailAddress) ? $entry->emailAddress : str_replace("@oaklandnet.com", "@oaklandca.gov", $entry->staffImportEmail),
+      'department' => ! empty($entry->departments[0]) ? $entry->departments[0]->title : $entry->staffImportDepartment,
+      'employmentType' => $entry->employmentType->label,
     ];
   }
 }
@@ -418,12 +365,14 @@ class volunteersTransform extends TransformerAbstract
   {
     return [
       'title' => $entry->title,
-      'url' => $entry->uri,
-      'portrait' => ! empty($entry->portrait->one()) ? (string) $entry->portrait->one()->url : null,
-      'jobTitle' => ! empty($entry->jobTitle) ? (string) $entry->jobTitle : null,
-      'bio' => (string) $entry->bio,
-      'email' => ! empty($entry->emailAddress) ? (string) $entry->emailAddress : null,
-      'department' => ! empty($entry->departmentOfficialBoardCommission->one()) ? (string) $entry->departmentOfficialBoardCommission->one()->title : null,
+      'url' => entryUrl($entry),
+      'date' => entryDate($entry),
+      'displayDate' => entryPrettyDate($entry),
+      'portrait' => portrait($entry),
+      'jobTitle' => ! empty($entry->jobTitle) ? $entry->jobTitle : null,
+      'bio' => $entry->bio,
+      'email' => ! empty($entry->emailAddress) ? $entry->emailAddress : null,
+      'department' => ! empty($entry->departmentOfficialBoardCommission->one()) ? $entry->departmentOfficialBoardCommission->one()->title : null,
     ];
   }
 }
@@ -438,8 +387,61 @@ class teamsTransform extends TransformerAbstract
         $teamMembers[] = $teamMember->title;
     return [
       'title' => $entry->title,
-      'url' => $entry->uri,
+      'url' => entryUrl($entry),
+      'date' => entryDate($entry),
+      'displayDate' => entryPrettyDate($entry),
       'teamMembers' => $teamMembers,
+    ];
+  }
+}
+
+class allTransform extends TransformerAbstract
+{
+  public function transform(craft\elements\Entry $entry)
+  {
+    $boardsCommissions = enumEntries("boardsCommissions", $entry);
+    $departments = enumEntries("departments", $entry);
+    $officials = enumEntries("officials", $entry);
+    $projects = enumEntries("projects", $entry);
+    $resources = enumEntries("resources", $entry);
+    $services = enumEntries("services", $entry);
+    $topics = enumEntries("topics", $entry);
+    $documents = enumEntries("documents", $entry);
+    $bodyMatrix = [];
+    if (! empty($entry->transactionBody)) {
+      foreach ($entry->transactionBody as $block) {
+        $bodyMatrix[] = strip_tags($block->text);
+      }
+    }
+    return [
+      'title' => $entry->title,
+      'url' => entryUrl($entry),
+      'section' => $entry->section->handle,
+      'date' => entryDate($entry),
+      'displayDate' => entryPrettyDate($entry),
+      'summary' => strip_tags($entry->summary),
+      'leadIn' => $entry->leadIn,
+      'about' => strip_tags($entry->about),
+      'bio' => $entry->bio,
+      'boardsCommissions' => $boardsCommissions,
+      'body' => strip_tags($entry->body),
+      'bodyMatrix' => $bodyMatrix,
+      'ctaButtonText' => ctaButtonText($entry),
+      'groupHeadBio' => $entry->groupHeadBio,
+      'groupHeadName' => $entry->groupHeadName,
+      'groupHeadTitle' => $entry->groupHeadTitle,
+      'mediaContact' => $entry->mediaContact,
+      'urgentIssuesDescription' => $entry->urgentIssuesDescription,
+      'nonUrgentIssuesDescription' => $entry->nonUrgentIssuesDescription,
+      'departments' => $departments,
+      'documents' => $documents,
+      'officials' => $officials,
+      'projects' => $projects,
+      'resources' => $resources,
+      'services' => $services,
+      'topics' => $topics,
+      'sectionPriority' => sectionPriority($entry),
+      'searchFilter' => searchFilter($entry),
     ];
   }
 }
@@ -487,19 +489,9 @@ return [
       'indexName' => getenv('ENVIRONMENT') . '_departments',
       'elementType' => \craft\elements\Entry::class,
       'criteria' => [
-        'section' => 'departments',
-        'type' => 'departments'
+        'section' => 'departments'
       ],
       'transformer' => new departmentsTransform(),
-    ],
-    [
-      'indexName' => getenv('ENVIRONMENT') . '_departments',
-      'elementType' => \craft\elements\Entry::class,
-      'criteria' => [
-        'section' => 'departments',
-        'type' => 'cityCouncil'
-      ],
-      'transformer' => new cityCouncilTransform(),
     ],
     // END DEPARTEMNTS INDEX
     // BEGIN DOCUMENTS INDEX
@@ -507,19 +499,10 @@ return [
       'indexName' => getenv('ENVIRONMENT') . '_documents',
       'elementType' => \craft\elements\Entry::class,
       'criteria' => [
-        'section' => 'documents',
-        'with' => ['boardsCommissions', 'departments', 'officials', 'projects', 'resources', 'services', 'topics', 'documentType']
+        'section' => ['documents', 'documentPackets'],
+        'with' => ['boardsCommissions', 'departments', 'officials', 'projects', 'resources', 'services', 'topics', 'documentType', 'documents']
       ],
       'transformer' => new documentsTransform(),
-    ],
-    [
-      'indexName' => getenv('ENVIRONMENT') . '_documents',
-      'elementType' => \craft\elements\Entry::class,
-      'criteria' => [
-        'section' => 'documentPackets',
-        'with' => 'documents'
-      ],
-      'transformer' => new documentPacketsTransform(),
     ],
     // END DOCUMENTS INDEX
     // BEGIN PROJECTS INDEX
@@ -538,41 +521,19 @@ return [
       'elementType' => \craft\elements\Entry::class,
       'criteria' => [
         'section' => 'resources',
-        'type' => 'resources',
         'with' => ['boardsCommissions', 'departments', 'officials', 'projects', 'topics', 'transactionBody']
       ],
       'transformer' => new resourcesTransform(),
     ],
-    [
-      'indexName' => getenv('ENVIRONMENT') . '_resources',
-      'elementType' => \craft\elements\Entry::class,
-      'criteria' => [
-        'section' => 'resources',
-        'type' => 'videos',
-        'with' => ['boardsCommissions', 'departments', 'officials', 'projects', 'topics', 'transactionBody']
-      ],
-      'transformer' => new videosTransform(),
-    ],
-    // END RESOURCES INDEX
     // BEGIN SERVICES INDEX
     [
       'indexName' => getenv('ENVIRONMENT') . '_services',
       'elementType' => \craft\elements\Entry::class,
       'criteria' => [
         'section' => 'services',
-        'type' => 'services',
         'with' => ['boardsCommissions', 'departments', 'officials', 'projects', 'topics', 'transactionBody']
       ],
       'transformer' => new servicesTransform(),
-    ],
-    [
-      'indexName' => getenv('ENVIRONMENT') . '_services',
-      'elementType' => \craft\elements\Entry::class,
-      'criteria' => [
-        'section' => 'services',
-        'type' => 'services311'
-      ],
-      'transformer' => new three11Transform(),
     ],
     // END SERVICES INDEX
     // BEGIN TOPICS INDEX
@@ -641,199 +602,48 @@ return [
       'transformer' => new teamsTransform(),
     ],
     // END TEAMS INDEX
-    // BEGIN GOVERNMENT INDEX
-    [
-      'indexName' => getenv('ENVIRONMENT') . '_government',
-      'elementType' => \craft\elements\Entry::class,
-      'criteria' => [
-        'section' => 'officials',
-        'type' => 'officials'
-      ],
-      'transformer' => function(craft\elements\Entry $entry) {
-        return [
-          'title' => $entry->title,
-          'sectionRank' => 1,
-          'url' => $entry->uri,
-          'name' => $entry->groupHeadName,
-          'portrait' => ! empty($entry->portrait[0]) ? (string) $entry->portrait[0]->url : null,
-          'bio' => strip_tags($entry->groupHeadBio),
-        ];
-      },
-    ],
-    [
-      'indexName' => getenv('ENVIRONMENT') . '_government',
-      'elementType' => \craft\elements\Entry::class,
-      'criteria' => [
-        'section' => 'officials',
-        'type' => 'officialsRedirect'
-      ],
-      'transformer' => function(craft\elements\Entry $entry) {
-        return [
-          'title' => $entry->title,
-          'sectionRank' => 1,
-          'url' => $entry->redirectUrl,
-          'portrait' => ! empty($entry->portrait[0]) ? (string) $entry->portrait[0]->url : null,
-          'name' => $entry->groupHeadName,
-        ];
-      },
-    ],
-    [
-      'indexName' => getenv('ENVIRONMENT') . '_government',
-      'elementType' => \craft\elements\Entry::class,
-      'criteria' => [
-        'section' => 'departments',
-        'type' => 'departments'
-      ],
-      'transformer' => new departmentsTransform(),
-    ],
-    [
-      'indexName' => getenv('ENVIRONMENT') . '_government',
-      'elementType' => \craft\elements\Entry::class,
-      'criteria' => [
-        'section' => 'departments',
-        'type' => 'departmentRedirect'
-      ],
-      'transformer' => function(craft\elements\Entry $entry) {
-        return [
-          'title' => $entry->title,
-          'sectionRank' => 2,
-          'url' => $entry->redirectUrl,
-        ];
-      },
-    ],
-    [
-      'indexName' => getenv('ENVIRONMENT') . '_government',
-      'elementType' => \craft\elements\Entry::class,
-      'criteria' => [
-        'section' => 'departments',
-        'type' => 'cityCouncil'
-      ],
-      'transformer' => new cityCouncilTransform(),
-    ],
-    [
-      'indexName' => getenv('ENVIRONMENT') . '_government',
-      'elementType' => \craft\elements\Entry::class,
-      'criteria' => [
-        'section' => 'boardsCommissions',
-        'type' => 'boardsCommissions'
-      ],
-      'transformer' => new boardsTransform(),
-    ],
-    [
-      'indexName' => getenv('ENVIRONMENT') . '_government',
-      'elementType' => \craft\elements\Entry::class,
-      'criteria' => [
-        'section' => 'staff',
-        'type' => 'newStaff',
-        'with' => ['portrait', 'department']
-      ],
-      'transformer' => new staffTransform(),
-    ],
-    [
-      'indexName' => getenv('ENVIRONMENT') . '_government',
-      'elementType' => \craft\elements\Entry::class,
-      'criteria' => [
-        'section' => 'volunteers',
-        'type' => 'volunteers'
-      ],
-      'transformer' => new volunteersTransform(),
-    ],
-    // END GOVERNMENT INDEX
-    // BEGIN PUBLIC INDEX
-    [
-      'indexName' => getenv('ENVIRONMENT') . '_public',
-      'elementType' => \craft\elements\Entry::class,
-      'criteria' => [
-        'section' => 'services',
-        'type' => 'services',
-        'with' => ['boardsCommissions', 'departments', 'officials', 'projects', 'topics', 'transactionBody']
-      ],
-      'transformer' => new servicesTransform(),
-    ],
-    [
-      'indexName' => getenv('ENVIRONMENT') . '_public',
-      'elementType' => \craft\elements\Entry::class,
-      'criteria' => [
-        'section' => 'services',
-        'type' => 'services311'
-      ],
-      'transformer' => new three11Transform(),
-    ],
-    [
-      'indexName' => getenv('ENVIRONMENT') . '_public',
-      'elementType' => \craft\elements\Entry::class,
-      'criteria' => [
-        'section' => 'resources',
-        'type' => 'resources',
-        'with' => ['boardsCommissions', 'departments', 'officials', 'projects', 'topics', 'transactionBody']
-      ],
-      'transformer' => new resourcesTransform(),
-    ],
-    [
-      'indexName' => getenv('ENVIRONMENT') . '_public',
-      'elementType' => \craft\elements\Entry::class,
-      'criteria' => [
-        'section' => 'resources',
-        'type' => 'videos',
-        'with' => ['boardsCommissions', 'departments', 'officials', 'projects', 'topics', 'transactionBody']
-      ],
-      'transformer' => new videosTransform(),
-    ],
-    [
-      'indexName' => getenv('ENVIRONMENT') . '_public',
-      'elementType' => \craft\elements\Entry::class,
-      'criteria' => [
-        'section' => 'topics'
-      ],
-      'transformer' => new topicsTransform(),
-    ],
-    [
-      'indexName' => getenv('ENVIRONMENT') . '_public',
-      'elementType' => \craft\elements\Entry::class,
-      'criteria' => [
-        'section' => 'projects'
-      ],
-      'transformer' => new projectsTransform(),
-    ],
-    [
-      'indexName' => getenv('ENVIRONMENT') . '_public',
-      'indexSettings' => [
-        'settings' => [
-            'attributesForFaceting' => [
-              'boardsCommissions',
-              'departments',
-              'projects',
-              'officials',
-              'topics'
-            ],
-        ],
-        'forwardToReplicas' => 'true',
-      ],
-      'elementType' => \craft\elements\Entry::class,
-      'criteria' => [
-        'section' => 'news'
-      ],
-      'transformer' => new newsTransform(),
-    ],
-    // END PUBLIC INDEX
     // BEGIN CALENDAR INDEX
     [
       'indexName' => getenv('ENVIRONMENT') . '_calendars',
       'elementType' => \Solspace\Calendar\Elements\Event::class,
       'criteria' => [
-        'calendar' => 'events',
+        'calendar' => ['events', 'meetings'],
         'with' => ['boardsCommissions', 'departments', 'officials', 'projects', 'topics']
       ],
       'transformer' => new eventsTransform(),
     ],
-    [
-      'indexName' => getenv('ENVIRONMENT') . '_calendars',
-      'elementType' => \Solspace\Calendar\Elements\Event::class,
-      'criteria' => [
-        'calendar' => 'meetings',
-      ],
-      'transformer' => new eventsTransform(),
-    ],
     // END CALENDAR INDEX
+    [
+      'indexName' => getenv('ENVIRONMENT') . '_all',
+      'elementType' => \craft\elements\Entry::class,
+      'criteria' => [
+        'section' => [
+          'news', 
+          'processes', 
+          'projects', 
+          'resources', 
+          'services',
+          'topics',
+          'departments',
+          'officials',
+          'staff',
+          'teams',
+          'volunteers'
+        ],
+        'with' => [
+          'boardsCommissions', 
+          'departments', 
+          'officials', 
+          'projects', 
+          'resources', 
+          'services', 
+          'topics', 
+          'documentType', 
+          'documents',
+          'transactionBody'
+        ]
+      ],
+      'transformer' => new allTransform(),
+    ]
   ],
 ];

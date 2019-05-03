@@ -414,7 +414,7 @@ body.open .page-holder {
 }
 
 .search-filter-button {
-  @apply p-2 inline-block uppercase font-bold text-white border-b-2 pb-1 border-white;
+  @apply p-2 inline-block uppercase text-white pb-1;
 }
 
 .search-filter-button:hover {
@@ -422,5 +422,5 @@ body.open .page-holder {
 }
 
 .search-filter-button.active {
-  @apply rounded bg-white text-shark shadow;
+  @apply font-bold border-b-2 border-white;
 }

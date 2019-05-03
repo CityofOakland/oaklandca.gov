@@ -21,7 +21,7 @@ categoryGroups:
     structure:
       maxLevels: '1'
       uid: b4e9ab1c-aa42-46f9-a679-898119f39e8d
-dateModified: 1556132031
+dateModified: 1556752265
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -91,11 +91,13 @@ fields:
     settings:
       availableTransforms: '*'
       availableVolumes: ''
-      cleanupHtml: '1'
       columnType: text
       purifierConfig: ''
       purifyHtml: '1'
       redactorConfig: Standard.json
+      removeInlineStyles: '1'
+      removeEmptyTags: '1'
+      removeNbsp: '1'
     translationKeyFormat: null
     translationMethod: none
     type: craft\redactor\Field
@@ -126,11 +128,13 @@ fields:
     settings:
       availableTransforms: '*'
       availableVolumes: ''
-      cleanupHtml: '1'
       columnType: text
       purifierConfig: ''
       purifyHtml: '1'
       redactorConfig: 'Simple with Links.json'
+      removeInlineStyles: '1'
+      removeEmptyTags: '1'
+      removeNbsp: '1'
     translationKeyFormat: null
     translationMethod: none
     type: craft\redactor\Field
@@ -429,11 +433,13 @@ fields:
     settings:
       availableTransforms: '*'
       availableVolumes: ''
-      cleanupHtml: '1'
       columnType: text
       purifierConfig: ''
       purifyHtml: '1'
       redactorConfig: Basic.json
+      removeInlineStyles: '1'
+      removeEmptyTags: '1'
+      removeNbsp: '1'
     translationKeyFormat: null
     translationMethod: none
     type: craft\redactor\Field
@@ -498,11 +504,13 @@ fields:
     settings:
       availableTransforms: '*'
       availableVolumes: ''
-      cleanupHtml: '1'
       columnType: text
       purifierConfig: ''
       purifyHtml: '1'
       redactorConfig: Basic.json
+      removeInlineStyles: '1'
+      removeEmptyTags: '1'
+      removeNbsp: '1'
     translationKeyFormat: null
     translationMethod: none
     type: craft\redactor\Field
@@ -746,11 +754,13 @@ fields:
     settings:
       availableTransforms: '*'
       availableVolumes: ''
-      cleanupHtml: '1'
       columnType: text
       purifierConfig: ''
       purifyHtml: '1'
       redactorConfig: Simple.json
+      removeInlineStyles: '1'
+      removeEmptyTags: '1'
+      removeNbsp: '1'
     translationKeyFormat: null
     translationMethod: none
     type: craft\redactor\Field
@@ -825,11 +835,13 @@ fields:
     settings:
       availableTransforms: ''
       availableVolumes: ''
-      cleanupHtml: '1'
       columnType: text
       purifierConfig: ''
       purifyHtml: '1'
       redactorConfig: Standard.json
+      removeInlineStyles: '1'
+      removeEmptyTags: '1'
+      removeNbsp: '1'
     translationKeyFormat: null
     translationMethod: none
     type: craft\redactor\Field
@@ -853,11 +865,13 @@ fields:
     settings:
       availableTransforms: ''
       availableVolumes: ''
-      cleanupHtml: '1'
       columnType: text
       purifierConfig: ''
       purifyHtml: '1'
       redactorConfig: 'Simple with Links.json'
+      removeInlineStyles: '1'
+      removeEmptyTags: '1'
+      removeNbsp: '1'
     translationKeyFormat: null
     translationMethod: none
     type: craft\redactor\Field
@@ -989,11 +1003,13 @@ fields:
     settings:
       availableTransforms: '*'
       availableVolumes: ''
-      cleanupHtml: '1'
       columnType: text
       purifierConfig: ''
       purifyHtml: '1'
       redactorConfig: 'Simple with Links.json'
+      removeInlineStyles: '1'
+      removeEmptyTags: '1'
+      removeNbsp: '1'
     translationKeyFormat: null
     translationMethod: none
     type: craft\redactor\Field
@@ -1847,11 +1863,13 @@ fields:
     settings:
       availableTransforms: '*'
       availableVolumes: '*'
-      cleanupHtml: '1'
       columnType: text
       purifierConfig: ''
       purifyHtml: '1'
       redactorConfig: ''
+      removeInlineStyles: '1'
+      removeEmptyTags: '1'
+      removeNbsp: '1'
     translationKeyFormat: null
     translationMethod: none
     type: craft\redactor\Field
@@ -1884,11 +1902,13 @@ fields:
     settings:
       availableTransforms: '*'
       availableVolumes: ''
-      cleanupHtml: '1'
       columnType: text
       purifierConfig: Standard.json
       purifyHtml: '1'
       redactorConfig: Standard.json
+      removeInlineStyles: '1'
+      removeEmptyTags: '1'
+      removeNbsp: '1'
     translationKeyFormat: null
     translationMethod: none
     type: craft\redactor\Field
@@ -3069,11 +3089,13 @@ matrixBlockTypes:
         settings:
           availableTransforms: '*'
           availableVolumes: ''
-          cleanupHtml: '1'
           columnType: text
           purifierConfig: ''
           purifyHtml: '1'
           redactorConfig: Simple.json
+          removeInlineStyles: '1'
+          removeEmptyTags: '1'
+          removeNbsp: '1'
         translationKeyFormat: null
         translationMethod: none
         type: craft\redactor\Field
@@ -3143,11 +3165,13 @@ matrixBlockTypes:
         settings:
           availableTransforms: '*'
           availableVolumes: '*'
-          cleanupHtml: '1'
           columnType: text
           purifierConfig: ''
           purifyHtml: '1'
           redactorConfig: Simple.json
+          removeInlineStyles: '1'
+          removeEmptyTags: '1'
+          removeNbsp: '1'
         translationKeyFormat: null
         translationMethod: none
         type: craft\redactor\Field
@@ -3840,7 +3864,7 @@ plugins:
   redactor:
     enabled: '1'
     licenseKey: null
-    schemaVersion: 2.2.2
+    schemaVersion: 2.3.0
     settings: null
   redactor-tweaks:
     enabled: '1'
@@ -3850,12 +3874,12 @@ plugins:
   redirect:
     enabled: '1'
     licenseKey: null
-    schemaVersion: 1.0.4
+    schemaVersion: 1.0.5
     settings: null
   retour:
     enabled: '1'
     licenseKey: 5DC6J57ZUDZKVM1WI3TONGUK
-    schemaVersion: 3.0.6
+    schemaVersion: 3.0.7
     settings:
       alwaysStripQueryString: ''
       createUriChangeRedirects: '1'
@@ -6454,7 +6478,7 @@ system:
   edition: pro
   live: true
   name: 'City of Oakland'
-  schemaVersion: 3.1.26
+  schemaVersion: 3.1.27
   timeZone: America/Los_Angeles
 tagGroups:
   56057193-b9d8-4ac0-9f31-d4a755c91447:
