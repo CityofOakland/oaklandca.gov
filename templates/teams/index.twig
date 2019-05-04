@@ -1,4 +1,7 @@
 {% extends '_layouts/_instant-search-index' %}
 
-{% set algoliaIndex =  'production_teams' %}
-{% set entry = craft.entries.section('teamsIndex').one %}
+{% js at head %}
+var algoliaIndex = 'production_teams';
+var searchInputText = "Search for a team. E.g., “Digital Service Team”";
+var facetFilters = [];
+{% endjs %}
