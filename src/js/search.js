@@ -4,6 +4,10 @@ const publicSearch = instantsearch({
   appId: "6V5VJO8ZG2",
   apiKey: "9bded46d3070b2089499c70b2389708b",
   indexName: "production_public",
+  searchParameters: {
+    highlightPreTag: '<b class="font-bold"><em>',
+    highlightPostTag: '</em></b>',
+  },
 });
 
 const calSearch = instantsearch({
@@ -11,7 +15,8 @@ const calSearch = instantsearch({
   apiKey: "9bded46d3070b2089499c70b2389708b",
   indexName: "production_calendars",
   searchParameters: {
-    hitsPerPage: 8,
+    highlightPreTag: '<b class="font-bold"><em>',
+    highlightPostTag: '</em></b>',
   },
 });
 
@@ -20,7 +25,9 @@ const docSearch = instantsearch({
   apiKey: "9bded46d3070b2089499c70b2389708b",
   indexName: "production_documents",
   searchParameters: {
-    hitsPerPage: 8,
+    highlightPreTag: '<b class="font-bold"><em>',
+    highlightPostTag: '</em></b>',
+    hitsPerPage: 10,
   },
 });
 
@@ -28,12 +35,20 @@ const govSearch = instantsearch({
   appId: "6V5VJO8ZG2",
   apiKey: "9bded46d3070b2089499c70b2389708b",
   indexName: "production_government",
+  searchParameters: {
+    highlightPreTag: '<b class="font-bold"><em>',
+    highlightPostTag: '</em></b>',
+  },
 });
 
 const allSearch = instantsearch({
   appId: "6V5VJO8ZG2",
   apiKey: "9bded46d3070b2089499c70b2389708b",
   indexName: "production_all",
+  searchParameters: {
+    highlightPreTag: '<b class="font-bold"><em>',
+    highlightPostTag: '</em></b>',
+  },
   routing: true,
   searchFunction: function(helper) {
     const query = allSearch.helper.state.query;
