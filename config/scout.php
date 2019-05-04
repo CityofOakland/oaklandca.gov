@@ -1,4 +1,5 @@
 <?php
+
 use craft\elements\Entry;
 use craft\helpers\UrlHelper;
 use Solspace\Calendar\Elements\Event;
@@ -59,7 +60,7 @@ function sectionPriority($element) {
     case 'projects':
       return 5;
     default:
-      return '';
+      return null;
   }
 }
 
