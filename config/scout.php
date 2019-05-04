@@ -542,7 +542,8 @@ return [
       'indexName' => getenv('ENVIRONMENT') . '_topics',
       'elementType' => \craft\elements\Entry::class,
       'criteria' => [
-        'section' => 'topics'
+        'section' => 'topics',
+        'with' => ['boardsCommissions', 'departments', 'officials', 'projects', 'topics'], 
       ],
       'transformer' => new topicsTransform(),
     ],
