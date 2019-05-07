@@ -21,7 +21,7 @@ categoryGroups:
     structure:
       maxLevels: '1'
       uid: b4e9ab1c-aa42-46f9-a679-898119f39e8d
-dateModified: 1556752265
+dateModified: 1557258472
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -3965,6 +3965,18 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
+  venveo-bulk-edit:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.1
+  assetusage:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.0.0
+  preparse-field:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.5
 sections:
   07faad04-9ec4-4f68-9fe8-0ca20f189f8a:
     enableVersioning: '1'

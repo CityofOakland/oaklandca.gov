@@ -64,15 +64,15 @@
               <img class="block" src="{{ featuredNews.newsImage.one.url }}">
             </figure>
           {% endif %}
-          <p class="my-4 text-camouflage-green">{{ featuredNews.postDate | date('M j, Y') }}</p>
+          <p class="my-4 text-sm tracking-wide font-sans uppercase text-camouflage-green">{{ featuredNews.postDate | date('M j, Y') }}</p>
           <h2 class="my-0 leading-tight text-xl md:text-2xl"><a href="{{ featuredNews.url }}">{{ featuredNews.title }}</a></h2>
           {{ featuredNews.summary | md }}
         </article>
         <div class="other-news md:w-1/2">
           {% for entry in craft.entries.section('news').id('not ' ~ featuredNewsId).featureOnHomepage(true).limit(4).all() %}
             <article class="py-6 border-b border-celeste {% if loop.last %} border-none {% endif %}">
-              <h2 class="my-0 text-lg leading-normal"><a href="{{ entry.url }}">{{ entry.title }}</a></h2>
-              <p class="mt-4 mb-0 text-sm text-camouflage-green">{{ entry.postDate | date('M j, Y') }}</p>
+              <p class="my-0 text-sm tracking-wide font-sans uppercase text-camouflage-green">{{ entry.postDate | date('M j, Y') }}</p>
+              <h2 class="mt-4 mb-0 text-lg leading-normal"><a href="{{ entry.url }}">{{ entry.title }}</a></h2>
             </article>
           {% endfor %}
         </div>

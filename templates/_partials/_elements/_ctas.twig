@@ -1,6 +1,6 @@
 {% macro buttonTemplate(descriptorText, url, buttonText) %}
   <div>
-    <p class="font-bold">{{ descriptorText }}</p>
+    <p class="text-sm font-sans uppercase tracking-wide">{{ descriptorText }}</p>
     <a href="{{ url }}" class="btn w-full">{{ buttonText | raw }}</a>
   </div>
 {% endmacro %}
@@ -22,7 +22,7 @@
         {% case "physicalAddress" %}
           <div>
             {% set location = cta.streetAddress %}
-            <p class="font-bold">{{ cta.addressTitle }}</p>
+            <p class="text-sm font-sans uppercase tracking-wide">{{ cta.addressTitle }}</p>
             <p>
               {{ location.street1 }}<br>
               {% if location.street2 | length %}{{ location.street2 }}<br>{% endif %}

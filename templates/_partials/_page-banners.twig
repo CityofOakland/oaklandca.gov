@@ -6,7 +6,7 @@
 <div class="banner leading-normal">
   <div class="container mx-auto px-8">
     {% if bannerImage | length %}
-      <figure class="absolute bg-shark pin z-0">
+      <figure class="absolute bg-tundora pin z-0">
         <img class="banner-image opacity-50 z-0 image-blur-{{ bannerImageBlur ?? 'none' }}" src="{{ bannerImage.one.url }}" style="object-position:{{ bannerImage.one.getFocalPoint('asCss') }};" alt="{{ bannerImage.one.title }}">
       </figure>
     {% endif %}

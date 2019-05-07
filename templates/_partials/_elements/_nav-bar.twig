@@ -4,7 +4,7 @@
   {% set bgColor = 'bg-catalina-blue' %}
   {% set searchNavButton %}
     <li class="ml-4">
-      <a id="search-menu-toggle" href="/search" class="block text-white hover:text-apple fill-current trans-fast">
+      <a id="search-menu-toggle" href="/search" class="block text-white hover:text-fun-green fill-current trans-fast">
       {{ craft.inlin.er('/assets/img/icon-magnifier.svg') | replace('<svg ', '<svg class="h-4" ') | raw }}
       </a>
     </li>
@@ -16,15 +16,15 @@
   <div class="px-8">
     <nav class="flex items-center justify-between">
       <div>
-        <a href="/" class="block py-4 md:py-8 text-white hover:text-apple fill-current trans-fast">
+        <a href="/" class="block py-4 md:py-8 text-white hover:text-fun-green fill-current trans-fast">
           {{ craft.inlin.er('/assets/img/logo-oakland.svg') | replace('<svg ', '<svg class="h-12 md:h-16" ') | raw }}
         </a>
       </div>
-      <button id="menu-toggle" class="btn p-4 text-sm sm:text-base sm:px-8 fixed flex pin-r hover:bg-apple z-40 md:relative md:-mr-8 lg:hidden">Menu</button>
+      <button id="menu-toggle" class="btn p-4 text-sm sm:text-base sm:px-8 fixed flex pin-r hover:bg-fun-green z-40 md:relative md:-mr-8 lg:hidden">Menu</button>
       <ul class="list-reset hidden uppercase w-full justify-end flex-1 text-base lg:flex">
         {% for nav in mainNav.navBuilder.all() %}
           {% set link = nav.navLink %}
-          <li class="ml-4"><a href="{{ link.url }}"{% if link.target | length %} target="{{ link.target }}"{% endif %} class="text-white hover:text-apple trans-fast">{{ link.text }}</a></li>
+          <li class="ml-4"><a href="{{ link.url }}"{% if link.target | length %} target="{{ link.target }}"{% endif %} class="text-white hover:text-fun-green trans-fast">{{ link.text }}</a></li>
         {% endfor %}
         {{ searchNavButton ?? '' }}
       </ul>
