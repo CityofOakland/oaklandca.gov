@@ -1,3 +1,4 @@
+{% set query = craft.app.request.getParam('query') %}
 {% extends '_layout' %}
 {% set entry = craft.entries.section('searchIndex').one %}
 
@@ -42,6 +43,7 @@
   </div>
   <section class="bg-white relative z-0">
     <div class="container mx-auto p-8">
+      <p class="text-sm">Search not working? <a href="/search/legacy/?query={{ query }}">Try using our legacy search feature.</a></p>
       <div class="md:flex">
         <div id="all-holder" data-hits class="md:w-2/3">
           <h2 class="my-0">General</h2>
