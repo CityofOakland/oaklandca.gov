@@ -82,7 +82,7 @@ a:hover {
 /* Button Styles */
 
 .btn {
-  @apply inline-block bg-astronaut py-4 px-8 text-white no-underline trans trans-fast font-sans font-bold uppercase tracking-wide shadow rounded-sm;
+  @apply inline-block bg-catalina-blue py-4 px-8 text-white no-underline trans trans-fast font-sans font-bold uppercase tracking-wide shadow rounded-sm;
 }
 
 .btn:hover {
@@ -159,19 +159,11 @@ main, footer {
 /* Service Styles */
 
 .card-grid-button {
-  @apply bg-white border-l-4 text-shark no-underline text-xl border-apple p-8 trans trans-fast;
-}
-
-main > .bg-rotate:nth-child(odd) .card-grid-button {
-  @apply bg-alabaster;
+  @apply bg-wild-sand border-t-2 border-white text-shark no-underline text-lg font-bold font-sans shadow p-8 trans trans-fast;
 }
 
 .card-grid-button:hover {
-  @apply bg-apple underline text-white;
-}
-
-main > .bg-rotate:nth-child(odd) .card-grid-button:hover {
-  @apply bg-apple;
+  @apply bg-catalina-blue underline text-white;
 }
 
 /* Department Styles (modifies Service Styles) */

@@ -99,7 +99,7 @@
       <form action="{{ url('search/legacy') }}">
         <label for="keywords">Search by Keyword</label>
         <div class="flex flex-col sm:flex-row mt-4">
-          <input class="flex-1 py-4 px-8 mb-4 sm:mb-0 rounded-none appearance-none" type="search" name="query" value="" required>
+          <input class="flex-1 py-4 px-8 mb-4 sm:mb-0 rounded-none appearance-none" type="search" name="query" value="{{ query }}" required>
           <button class="btn" type="submit">Search</button>
         </div>
       </form>

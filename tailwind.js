@@ -48,6 +48,7 @@ let colors = {
   "shark": "#212529",
   "shark-transparent": "rgba(33, 37, 41, .33)",
   "tundora": "#404040",
+  "wild-sand": "#f5f5f5",
   "celeste": "#cfd0ce",
   "cararra": "#e9eae7",
   "alabaster": "#f9f9f9",

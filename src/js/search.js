@@ -89,65 +89,25 @@ allSearch.addWidget(
       empty: "No results",
       item: `
       <h3 class="font-serif-body text-lg mb-2"><a href="{{ url }}">{{{_highlightResult.title.value}}}</a></h3>
-        {{ #servicesSection }}
-          <p class="text-sm md:text-base my-0">
-            {{{ _snippetResult.leadIn.value }}}
-          </p>
-        {{ /servicesSection }}
-        {{ #resourcesSection }}
-          <p class="text-sm md:text-base my-0">
-            {{{ _snippetResult.leadIn.value }}}
-          </p>
-        {{ /resourcesSection }}
-        {{ #topicsSection }}
-          <p class="text-sm md:text-base my-0">
-            {{{ _snippetResult.leadIn.value }}}
-          </p>
-        {{ /topicsSection }}
-        {{ #projectsSection }}
-          <p class="text-sm md:text-base my-0">
-            {{{ _snippetResult.leadIn.value }}}
-          </p>
-        {{ /projectsSection }}
-        {{ #processesSection }}
-        {{ /processesSection }}
-        {{ #newsSection }}
-          {{ #summary }}
-            <p class="text-sm md:text-base my-0">
-              {{{ _snippetResult.summary.value }}}
-            </p>
-          {{ /summary }}
-          {{ !summary }}
-            <p class="text-sm md:text-base my-0">
-              {{{ _snippetResult.body.value }}}
-            </p>
-          {{ /summary }}
-        {{ /newsSection }}
-        {{ #boardsCommissions }}
-          <p class="text-sm md:text-base my-0">
-            {{{ _snippetResult.leadIn.value }}}
-          </p>
-        {{ /boardsCommissions }}
-        {{ #departments }}
-          <p class="text-sm md:text-base my-0">
-            {{{ _snippetResult.leadIn.value }}}
-          </p>
-        {{ /departments }}
-        {{ #officials }}
-          <p class="text-sm md:text-base my-0">
-            {{{ _snippetResult.bio.value }}}
-          </p>
-        {{ /officials }}
-        {{ #staff}}
-          <p class="text-sm md:text-base my-0">
-            {{{ _snippetResult.bio.value }}}
-          </p>
-        {{ /staff}}
-        {{ #volunteers }}
-          <p class="text-sm md:text-base my-0">
-            {{{ _snippetResult.bio.value }}}
-          </p>
-        {{ /volunteers }}
+
+      <p class="text-sm md:text-base my-0">
+        {{{ _snippetResult.leadIn.value }}}
+      </p>
+
+      {{{ #summary }}}
+        <p class="text-sm md:text-base my-0">
+          {{{ _snippetResult.summary.value }}}
+        </p>
+      {{{ /summary }}}
+      {{ ^summary }}
+        <p class="text-sm md:text-base my-0">
+          {{{ _snippetResult.body.value }}}
+        </p>
+      {{{ /summary }}}
+
+      <p class="text-sm md:text-base my-0">
+        {{{ _snippetResult.bio.value }}}
+      </p>
       `
     },
     cssClasses: {
@@ -163,21 +123,21 @@ govSearch.addWidget(
       empty: "No results",
       item: `
         <h3 class="font-serif-body text-lg mb-2"><a href="{{ url }}">{{{_highlightResult.title.value}}}</a></h3>
-        {{ #bio }}
+        {{{ #bio }}}
           <p class="text-sm md:text-base my-0">
             {{{ _snippetResult.bio.value }}}
           </p>
-        {{ /bio }}
-        {{ #about }}
+        {{{ /bio }}}
+        {{{ #about }}}
           <p class="text-sm md:text-base my-0">
             {{{ _snippetResult.about.value }}}
           </p>
-        {{ /about }}
-        {{ #leadIn }}
+        {{{ /about }}}
+        {{{ #leadIn }}}
           <p class="text-sm md:text-base my-0">
             {{{ _snippetResult.leadIn.value }}}
           </p>
-        {{ /leadIn }}
+        {{{ /leadIn }}}
       `
     },
     cssClasses: {
@@ -194,16 +154,16 @@ docSearch.addWidget(
       item: `
       <article class="text-sm">
         <h3 class="font-serif-body text-base my-2"><a href="{{ url }}">{{{_highlightResult.title.value}}}</a></h3>
-        {{ !leadIn }}
+        {{ ^leadIn }}
           <p class="mt-0 mb-2">
             {{{ _snippetResult.leadIn.value }}}
           </p>
-        {{ /leadIn }}
-        {{ !documents }}
+        {{{ /summary }}}
+        {{ ^documents }}
           <p class="mt-0 mb-2">
             {{{ _snippetResult.summary.value }}}
           </p>
-        {{ /documents }}
+        {{{ /documents }}}
       </article>
       `
     },
@@ -221,11 +181,11 @@ calSearch.addWidget(
       item: `
         <article class="text-xs md:text-sm">
           <h3 class="font-serif-body text-base my-2"><a href="{{ url }}">{{{_highlightResult.title.value}}}</a></h3>
-          {{ #body }}
+          {{{ #body }}}
             <p class="mt-0 mb-2">
               {{{ _snippetResult.body.value }}}
             </p>
-          {{ /body }}
+          {{{ /body }}}
         </article>
       `
     },
