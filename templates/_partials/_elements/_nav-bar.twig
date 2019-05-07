@@ -1,7 +1,7 @@
 {% if not craft.app.request.segments() %}
   {% set bgColor = 'bg-transparent' %}
 {% else %}
-  {% set bgColor = 'bg-shark' %}
+  {% set bgColor = 'bg-catalina-blue' %}
   {% set searchNavButton %}
     <li class="ml-4">
       <a id="search-menu-toggle" href="/search" class="block text-white hover:text-apple fill-current trans-fast">
@@ -12,7 +12,7 @@
 {% endif %}
 {% set mainNav = craft.entries.section('navigation').slug('main-nav').one() %}
 
-<div class="bg-shark relative text-white block w-full z-50 trans trans-fast nav-bar md:{{ bgColor }} md:fixed" id="nav-bar">
+<div class="bg-catalina-blue relative text-white block w-full z-50 trans trans-fast font-sans nav-bar md:{{ bgColor }} md:fixed" id="nav-bar">
   <div class="px-8">
     <nav class="flex items-center justify-between">
       <div>
@@ -35,7 +35,7 @@
     }
     </script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
   </div>
-  <div id="global-search-bar" class="hidden bg-shark text-white absolute items-center w-full pin-r pin-b text-base" style="transform: translateY(100%);">
+  <div id="global-search-bar" class="hidden bg-catalina-blue text-white absolute items-center w-full pin-r pin-b text-base" style="transform: translateY(100%);">
     <div class="container mx-auto px-8 py-4">
       <form action="{{ url('search') }}" class="w-full">
         <div class="flex w-full h-full">

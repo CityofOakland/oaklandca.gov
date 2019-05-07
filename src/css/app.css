@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply font-sans text-lg leading-normal;
+  @apply font-serif-body text-lg leading-normal;
 }
 
 h1,
@@ -12,7 +12,7 @@ h3,
 h4,
 h5,
 h6 {
-  @apply font-light leading-tight;
+  @apply font-light leading-tight font-serif-heading;
 }
 
 h2 {
@@ -82,7 +82,7 @@ a:hover {
 /* Button Styles */
 
 .btn {
-  @apply inline-block bg-astronaut py-4 px-8 text-white no-underline trans trans-fast;
+  @apply inline-block bg-astronaut py-4 px-8 text-white no-underline trans trans-fast font-sans font-bold uppercase tracking-wide shadow rounded-sm;
 }
 
 .btn:hover {
@@ -163,7 +163,7 @@ main, footer {
 }
 
 main > .bg-rotate:nth-child(odd) .card-grid-button {
-  @apply bg-cararra;
+  @apply bg-alabaster;
 }
 
 .card-grid-button:hover {
@@ -199,7 +199,7 @@ main > .bg-rotate:nth-child(odd) .card-grid-button:hover {
 /* Background Section Color Rotations */
 
 main > .bg-rotate:nth-child(even) {
-  @apply bg-cararra;
+  @apply bg-alabaster;
 }
 
 main > .bg-rotate:nth-child(odd) {

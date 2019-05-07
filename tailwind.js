@@ -50,13 +50,15 @@ let colors = {
   "tundora": "#404040",
   "celeste": "#cfd0ce",
   "cararra": "#e9eae7",
+  "alabaster": "#f9f9f9",
   "white": "#ffffff",
   "apple": "#6db943",
-  "alert-red": "#F31431",
+  "alert-red": "#f31431",
   "warning-yellow": "#ffae42",
   "camouflage-green": "#757773",
   "parsley": "#1e4a18",
   "curious-blue": "#398cd3",
+  "catalina-blue": "#031a7a",
   "cerulean": "#008dd9",
   "atoll": "#0e5478",
   "astronaut": "#255375"
@@ -141,7 +143,21 @@ module.exports = {
       "Helvetica Neue",
       "sans-serif",
     ],
-    "serif": [
+    "serif-heading": [
+      "Domine",
+      "Constantia",
+      "Lucida Bright",
+      "Lucidabright",
+      "Lucida Serif",
+      "Lucida",
+      "DejaVu Serif",
+      "Bitstream Vera Serif",
+      "Liberation Serif",
+      "Georgia",
+      "serif",
+    ],
+    "serif-body": [
+      "Merriweather",
       "Constantia",
       "Lucida Bright",
       "Lucidabright",
@@ -192,7 +208,7 @@ module.exports = {
     "2xl": "1.5rem",    // 24px
     "3xl": "1.875rem",  // 30px
     "4xl": "2.25rem",   // 36px
-    "5xl": "3rem",      // 48px
+    "5xl": "2.625rem",  // 42px
   },
 
 
@@ -685,7 +701,7 @@ module.exports = {
   */
 
   shadows: {
-    default: "0 2px 4px 0 rgba(0,0,0,0.10)",
+    default: "0 1px 2px 0 rgba(0,0,0,0.325)",
     "md": "0 4px 8px 0 rgba(0,0,0,0.12), 0 2px 4px 0 rgba(0,0,0,0.08)",
     "lg": "0 15px 30px 0 rgba(0,0,0,0.11), 0 5px 15px 0 rgba(0,0,0,0.08)",
     "inner": "inset 0 2px 4px 0 rgba(0,0,0,0.06)",

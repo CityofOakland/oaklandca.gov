@@ -58,7 +58,7 @@
         {% endif %}
 
         {% set featuredNewsId = featuredNews.id ?? '' %}
-        <article class="featured-news md:w-2/3 md:mr-8">
+        <article class="featured-news md:w-1/2 md:mr-8">
           {% if featuredNews.newsImage | length %}
             <figure>
               <img class="block" src="{{ featuredNews.newsImage.one.url }}">
@@ -68,8 +68,8 @@
           <h2 class="my-0 leading-tight text-xl md:text-2xl"><a href="{{ featuredNews.url }}">{{ featuredNews.title }}</a></h2>
           {{ featuredNews.summary | md }}
         </article>
-        <div class="other-news md:w-1/3">
-          {% for entry in craft.entries.section('news').id('not ' ~ featuredNewsId).featureOnHomepage(true).limit(5).all() %}
+        <div class="other-news md:w-1/2">
+          {% for entry in craft.entries.section('news').id('not ' ~ featuredNewsId).featureOnHomepage(true).limit(4).all() %}
             <article class="py-6 border-b border-celeste {% if loop.last %} border-none {% endif %}">
               <h2 class="my-0 text-lg leading-normal"><a href="{{ entry.url }}">{{ entry.title }}</a></h2>
               <p class="mt-4 mb-0 text-sm text-camouflage-green">{{ entry.postDate | date('M j, Y') }}</p>
@@ -88,24 +88,27 @@
         linkText: "All Meetings & Events",
         linkUrl: "/events"
       } %}
-      <div class="card-grid vertical-cards mt-8">
-        {% set options = {
-          calendar: "events",
-          limit: 3,
-          featureOnHomepage: true,
-          rangeStart: now | date('Y-m-d'),
-        } %}
-        {% for entry in craft.calendar.events(options).all() %}
-          {% include '_partials/_elements/_vertical-cards' with {
-            title: entry.title,
-            url: entry.url,
-            icon: 'calendar',
-            photo: entry.eventImage.one,
-            byline: entry.startDate.format("M d, Y"),
-            body: entry.body | chop(limit=50, unit='w', append='…')
-          } %}
-        {% endfor %}
-      </div>
+      {% set options = {
+        calendar: "events",
+        limit: 3,
+        featureOnHomepage: true,
+        rangeStart: now | date('Y-m-d'),
+      } %}
+      {% set homeEvents = craft.calendar.events(options).all() %}
+      {% if homeEvents | length %}
+        <div class="card-grid vertical-cards mt-8">
+          {% for entry in homeEvents %}
+            {% include '_partials/_elements/_vertical-cards' with {
+              title: entry.title,
+              url: entry.url,
+              icon: 'calendar',
+              photo: entry.eventImage.one,
+              byline: entry.startDate.format("M d, Y"),
+              body: entry.body | chop(limit=50, unit='w', append='…')
+            } %}
+          {% endfor %}
+        </div>
+      {% endif %}
     </div>
   </section>
   {# End Events #}

@@ -3,11 +3,11 @@ if (window.location.pathname == '/') {
     const navBar = document.getElementById('nav-bar');
     const scrollPosY = window.pageYOffset | document.body.scrollTop;
     if(scrollPosY > 1) {
-      navBar.classList.add('md:bg-shark');
+      navBar.classList.add('md:bg-catalina-blue');
       navBar.classList.remove('md:bg-transparent');
     } else if(scrollPosY <= 100) {
       navBar.classList.add('md:bg-transparent');
-      navBar.classList.remove('md:bg-shark');
+      navBar.classList.remove('md:bg-catalina-blue');
     }
   }
 }

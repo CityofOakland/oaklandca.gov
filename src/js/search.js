@@ -1,15 +1,5 @@
 import { publicDecrypt } from "crypto";
 
-const publicSearch = instantsearch({
-  appId: "6V5VJO8ZG2",
-  apiKey: "9bded46d3070b2089499c70b2389708b",
-  indexName: "production_public",
-  searchParameters: {
-    highlightPreTag: '<b class="font-bold"><em>',
-    highlightPostTag: '</em></b>',
-  },
-});
-
 const calSearch = instantsearch({
   appId: "6V5VJO8ZG2",
   apiKey: "9bded46d3070b2089499c70b2389708b",
@@ -56,9 +46,6 @@ const allSearch = instantsearch({
     govSearch.helper.setQuery(query);
     govSearch.helper.setPage(page);
     govSearch.helper.search();
-    publicSearch.helper.setQuery(query);
-    publicSearch.helper.setPage(page);
-    publicSearch.helper.search();
     calSearch.helper.setQuery(query);
     calSearch.helper.setPage(page);
     calSearch.helper.search();
@@ -89,28 +76,78 @@ allSearch.addWidget(
   })
 );
 
+// boardsCommissions
+// departments
+// officials
+// staff
+// teams
+// volunteers
 allSearch.addWidget(
   instantsearch.widgets.hits({
     container: "#all-hits",
     templates: {
       empty: "No results",
       item: `
-        <h3 class="text-lg mb-2"><a href="{{ url }}">{{{_highlightResult.title.value}}}</a></h3>
-        {{ #bio }}
-          <p class="text-sm md:text-base my-0">
-            {{{ _snippetResult.bio.value }}}
-          </p>
-        {{ /bio }}
-        {{ #about }}
-          <p class="text-sm md:text-base my-0">
-            {{{ _snippetResult.about.value }}}
-          </p>
-        {{ /about }}
-        {{ #leadIn }}
+      <h3 class="font-serif-body text-lg mb-2"><a href="{{ url }}">{{{_highlightResult.title.value}}}</a></h3>
+        {{ #servicesSection }}
           <p class="text-sm md:text-base my-0">
             {{{ _snippetResult.leadIn.value }}}
           </p>
-        {{ /leadIn }}
+        {{ /servicesSection }}
+        {{ #resourcesSection }}
+          <p class="text-sm md:text-base my-0">
+            {{{ _snippetResult.leadIn.value }}}
+          </p>
+        {{ /resourcesSection }}
+        {{ #topicsSection }}
+          <p class="text-sm md:text-base my-0">
+            {{{ _snippetResult.leadIn.value }}}
+          </p>
+        {{ /topicsSection }}
+        {{ #projectsSection }}
+          <p class="text-sm md:text-base my-0">
+            {{{ _snippetResult.leadIn.value }}}
+          </p>
+        {{ /projectsSection }}
+        {{ #processesSection }}
+        {{ /processesSection }}
+        {{ #newsSection }}
+          {{ #summary }}
+            <p class="text-sm md:text-base my-0">
+              {{{ _snippetResult.summary.value }}}
+            </p>
+          {{ /summary }}
+          {{ !summary }}
+            <p class="text-sm md:text-base my-0">
+              {{{ _snippetResult.body.value }}}
+            </p>
+          {{ /summary }}
+        {{ /newsSection }}
+        {{ #boardsCommissions }}
+          <p class="text-sm md:text-base my-0">
+            {{{ _snippetResult.leadIn.value }}}
+          </p>
+        {{ /boardsCommissions }}
+        {{ #departments }}
+          <p class="text-sm md:text-base my-0">
+            {{{ _snippetResult.leadIn.value }}}
+          </p>
+        {{ /departments }}
+        {{ #officials }}
+          <p class="text-sm md:text-base my-0">
+            {{{ _snippetResult.bio.value }}}
+          </p>
+        {{ /officials }}
+        {{ #staff}}
+          <p class="text-sm md:text-base my-0">
+            {{{ _snippetResult.bio.value }}}
+          </p>
+        {{ /staff}}
+        {{ #volunteers }}
+          <p class="text-sm md:text-base my-0">
+            {{{ _snippetResult.bio.value }}}
+          </p>
+        {{ /volunteers }}
       `
     },
     cssClasses: {
@@ -125,7 +162,7 @@ govSearch.addWidget(
     templates: {
       empty: "No results",
       item: `
-        <h3 class="text-lg mb-2"><a href="{{ url }}">{{{_highlightResult.title.value}}}</a></h3>
+        <h3 class="font-serif-body text-lg mb-2"><a href="{{ url }}">{{{_highlightResult.title.value}}}</a></h3>
         {{ #bio }}
           <p class="text-sm md:text-base my-0">
             {{{ _snippetResult.bio.value }}}
@@ -149,44 +186,14 @@ govSearch.addWidget(
   })
 );
 
-publicSearch.addWidget(
-  instantsearch.widgets.hits({
-    container: "#pub-hits",
-    templates: {
-      empty: "No results",
-      item: `
-        <h3 class="text-lg mb-2"><a href="{{ url }}">{{{_highlightResult.title.value}}}</a></h3>
-        {{ #leadIn }}
-          <p class="text-sm md:text-base mt-0 mb-2">
-            {{{ _highlightResult.leadIn.value }}}
-          </p>
-        {{ /leadIn }}
-        {{ #about }}
-          <p class="text-sm md:text-base mt-0 mb-2">
-            {{{ _snippetResult.about.value }}}
-          </p>
-        {{ /about }}
-        {{ #body }}
-          <p class="text-sm md:text-base mt-0 mb-2">
-            {{{ _snippetResult.body.value }}}
-          </p>
-        {{ /body }}
-      `
-    },
-    cssClasses: {
-      root: "block"
-    },
-  })
-);
-
 docSearch.addWidget(
   instantsearch.widgets.hits({
     container: "#doc-hits",
     templates: {
       empty: "No results",
       item: `
-      <article class="text-xs md:text-sm">
-        <h3 class="text-base my-2"><a href="{{ url }}">{{{_highlightResult.title.value}}}</a></h3>
+      <article class="text-sm">
+        <h3 class="font-serif-body text-base my-2"><a href="{{ url }}">{{{_highlightResult.title.value}}}</a></h3>
         {{ !leadIn }}
           <p class="mt-0 mb-2">
             {{{ _snippetResult.leadIn.value }}}
@@ -213,7 +220,7 @@ calSearch.addWidget(
       empty: "No results",
       item: `
         <article class="text-xs md:text-sm">
-          <h3 class="text-base my-2"><a href="{{ url }}">{{{_highlightResult.title.value}}}</a></h3>
+          <h3 class="font-serif-body text-base my-2"><a href="{{ url }}">{{{_highlightResult.title.value}}}</a></h3>
           {{ #body }}
             <p class="mt-0 mb-2">
               {{{ _snippetResult.body.value }}}
@@ -230,7 +237,6 @@ calSearch.addWidget(
 
 docSearch.start();
 calSearch.start();
-publicSearch.start();
 govSearch.start();
 allSearch.start();
 

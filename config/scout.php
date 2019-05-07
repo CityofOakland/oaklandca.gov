@@ -417,7 +417,7 @@ class allTransform extends TransformerAbstract
     return [
       'title' => $entry->title,
       'url' => entryUrl($entry),
-      'section' => $entry->section->handle,
+      $entry->section->handle . "Section" => true,
       'date' => entryDate($entry),
       'displayDate' => entryPrettyDate($entry),
       'summary' => strip_tags($entry->summary),
@@ -621,12 +621,40 @@ return [
       'criteria' => [
         'section' => [
           'news', 
+          'boardsCommissions',
           'processes', 
           'projects', 
           'resources', 
           'services',
           'topics',
           'departments',
+          'officials',
+          'staff',
+          'teams',
+          'volunteers'
+        ],
+        'with' => [
+          'boardsCommissions', 
+          'departments', 
+          'officials', 
+          'projects', 
+          'resources', 
+          'services', 
+          'topics', 
+          'documentType', 
+          'documents',
+          'transactionBody'
+        ]
+      ],
+      'transformer' => new allTransform(),
+    ],
+    [
+      'indexName' => getenv('ENVIRONMENT') . '_government',
+      'elementType' => \craft\elements\Entry::class,
+      'criteria' => [
+        'section' => [
+          'departments',
+          'boardsCommissions',
           'officials',
           'staff',
           'teams',
