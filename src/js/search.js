@@ -154,15 +154,15 @@ docSearch.addWidget(
     templates: {
       empty: "No results",
       item: `
-      <article class="text-sm">
-        <h3 class="font-serif-body text-base my-2"><a class="block hover:bg-fun-green hover:text-white" href="{{ url }}">{{{_highlightResult.title.value}}}</a></h3>
+      <article class="text-sm mb-6">
+        <h3 class="font-serif-body text-base my-0 leading-normal"><a class="block hover:bg-fun-green hover:text-white" href="{{ url }}">{{{_highlightResult.title.value}}}</a></h3>
         {{ ^leadIn }}
-          <p class="mt-0 mb-2">
+          <p class="my-0">
             {{{ _snippetResult.leadIn.value }}}
           </p>
         {{{ /summary }}}
         {{ ^documents }}
-          <p class="mt-0 mb-2">
+          <p class="my-0">
             {{{ _snippetResult.summary.value }}}
           </p>
         {{{ /documents }}}

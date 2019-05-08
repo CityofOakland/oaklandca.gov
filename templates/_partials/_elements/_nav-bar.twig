@@ -21,7 +21,7 @@
         </a>
       </div>
       <button id="menu-toggle" class="btn p-4 text-sm sm:text-base sm:px-8 fixed flex pin-r hover:bg-fun-green z-40 md:relative md:-mr-8 lg:hidden">Menu</button>
-      <ul class="list-reset hidden uppercase w-full justify-end flex-1 text-base lg:flex">
+      <ul class="list-reset hidden uppercase font-bold w-full justify-end flex-1 text-base lg:flex">
         {% for nav in mainNav.navBuilder.all() %}
           {% set link = nav.navLink %}
           <li class="ml-4"><a href="{{ link.url }}"{% if link.target | length %} target="{{ link.target }}"{% endif %} class="text-white hover:text-fun-green trans-fast">{{ link.text }}</a></li>
