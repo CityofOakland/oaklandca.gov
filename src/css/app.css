@@ -82,7 +82,7 @@ a:hover {
 /* Button Styles */
 
 .btn {
-  @apply inline-block bg-fun-green py-4 px-8 text-white no-underline trans trans-fast font-sans font-bold uppercase tracking-wide shadow rounded-sm;
+  @apply inline-block bg-fun-green py-4 px-8 text-base text-white no-underline trans trans-fast font-sans font-bold uppercase tracking-wide shadow rounded-sm;
 }
 
 .btn:hover {
