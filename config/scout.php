@@ -202,8 +202,11 @@ class documentsTransform extends TransformerAbstract
     $topics = enumEntries("topics", $entry);
     $documents = enumEntries("documents", $entry);
     $types = [];
-    foreach($entry->documentType as $value)
-      $types[] = $value->title;
+    if (! empty($entry->documentType)) {
+      foreach($entry->documentType as $value) {
+        $types[] = $value->title;
+      }
+    }
     return [
       'title' => $entry->title,
       'url' => entryUrl($entry),
@@ -473,7 +476,6 @@ return [
       ],
       'transformer' => new newsTransform(),
     ],
-    // END NEWS INDEX
     // BEGIN BOARDS INDEX
     [
       'indexName' => getenv('ENVIRONMENT') . '_boards',
@@ -484,7 +486,6 @@ return [
       ],
       'transformer' => new boardsTransform(),
     ],
-    // END BOARDS INDEX
     // BEGIN DEPARTMENTS INDEX
     [
       'indexName' => getenv('ENVIRONMENT') . '_departments',
@@ -494,7 +495,6 @@ return [
       ],
       'transformer' => new departmentsTransform(),
     ],
-    // END DEPARTEMNTS INDEX
     // BEGIN DOCUMENTS INDEX
     [
       'indexName' => getenv('ENVIRONMENT') . '_documents',
@@ -505,7 +505,6 @@ return [
       ],
       'transformer' => new documentsTransform(),
     ],
-    // END DOCUMENTS INDEX
     // BEGIN PROJECTS INDEX
     [
       'indexName' => getenv('ENVIRONMENT') . '_projects',
@@ -515,7 +514,6 @@ return [
       ],
       'transformer' => new projectsTransform(),
     ],
-    // END PROJECTS INDEX
     // BEGIN RESOURCES INDEX
     [
       'indexName' => getenv('ENVIRONMENT') . '_resources',
@@ -536,7 +534,6 @@ return [
       ],
       'transformer' => new servicesTransform(),
     ],
-    // END SERVICES INDEX
     // BEGIN TOPICS INDEX
     [
       'indexName' => getenv('ENVIRONMENT') . '_topics',
@@ -547,7 +544,6 @@ return [
       ],
       'transformer' => new topicsTransform(),
     ],
-    // END TOPICS INDEX
     // BEGIN EVENTS INDEX
     [
       'indexName' => getenv('ENVIRONMENT') . '_events',
@@ -558,7 +554,6 @@ return [
       ],
       'transformer' => new eventsTransform(),
     ],
-    // END EVENTS INDEX
     // BEGIN MEETINGS INDEX
     [
       'indexName' => getenv('ENVIRONMENT') . '_meetings',
@@ -569,7 +564,6 @@ return [
       ],
       'transformer' => new eventsTransform(),
     ],
-    // END MEETINGS INDEX
     // BEGIN STAFF INDEX
     [
       'indexName' => getenv('ENVIRONMENT') . '_staff',
@@ -581,7 +575,6 @@ return [
       ],
       'transformer' => new staffTransform(),
     ],
-    // END STAFF INDEX
     // BEGIN VOLUNTEERS INDEX
     [
       'indexName' => getenv('ENVIRONMENT') . '_volunteers',
@@ -592,7 +585,6 @@ return [
       ],
       'transformer' => new volunteersTransform(),
     ],
-    // END VOLUNTEERS INDEX
     // BEGIN TEAMS INDEX
     [
       'indexName' => getenv('ENVIRONMENT') . '_teams',
@@ -603,7 +595,6 @@ return [
       ],
       'transformer' => new teamsTransform(),
     ],
-    // END TEAMS INDEX
     // BEGIN CALENDAR INDEX
     [
       'indexName' => getenv('ENVIRONMENT') . '_calendars',
@@ -614,7 +605,7 @@ return [
       ],
       'transformer' => new eventsTransform(),
     ],
-    // END CALENDAR INDEX
+    // BEGIN ALL INDEX
     [
       'indexName' => getenv('ENVIRONMENT') . '_all',
       'elementType' => \craft\elements\Entry::class,
@@ -648,6 +639,7 @@ return [
       ],
       'transformer' => new allTransform(),
     ],
+    // BEGIN GOVERNMENT INDEX
     [
       'indexName' => getenv('ENVIRONMENT') . '_government',
       'elementType' => \craft\elements\Entry::class,
