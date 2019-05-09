@@ -10,7 +10,7 @@ use nystudio107\imageoptimize\imagetransforms\ImageTransform;
 function enumEntries($section, $element) {
   $sectionArray = [];
   if (! empty($element->$section)) {
-    foreach($element->$section as $value) {
+    foreach($element->$section->all() as $value) {
       $sectionArray[] = $value->title;
     }
   }
@@ -203,7 +203,7 @@ class documentsTransform extends TransformerAbstract
     $documents = enumEntries("documents", $entry);
     $types = [];
     if (! empty($entry->documentType)) {
-      foreach($entry->documentType as $value) {
+      foreach($entry->documentType->all() as $value) {
         $types[] = $value->title;
       }
     }
@@ -268,7 +268,7 @@ class resourcesTransform extends TransformerAbstract
     $projects = enumEntries("projects", $entry);
     $topics = enumEntries("topics", $entry);
     $body = [];
-    foreach ($entry->transactionBody as $block) {
+    foreach ($entry->transactionBody->all() as $block) {
       $body[] = strip_tags($block->text);
     }
     return [
@@ -297,7 +297,7 @@ class servicesTransform extends TransformerAbstract
     $projects = enumEntries("projects", $entry);
     $topics = enumEntries("topics", $entry);
     $body = [];
-    foreach ($entry->transactionBody as $block) {
+    foreach ($entry->transactionBody->all() as $block) {
       $body[] = strip_tags($block->text);
     }
     return [
@@ -413,7 +413,7 @@ class allTransform extends TransformerAbstract
     $documents = enumEntries("documents", $entry);
     $bodyMatrix = [];
     if (! empty($entry->transactionBody)) {
-      foreach ($entry->transactionBody as $block) {
+      foreach ($entry->transactionBody->all() as $block) {
         $bodyMatrix[] = strip_tags($block->text);
       }
     }
