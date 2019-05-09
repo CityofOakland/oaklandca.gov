@@ -21,7 +21,7 @@ categoryGroups:
     structure:
       maxLevels: '1'
       uid: b4e9ab1c-aa42-46f9-a679-898119f39e8d
-dateModified: 1557429407
+dateModified: 1557438057
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -515,24 +515,25 @@ fields:
     translationMethod: none
     type: craft\redactor\Field
   3ff802bf-48ac-4e96-8e64-c7988d029bc1:
-    contentColumnType: string
-    fieldGroup: 83c14444-efcf-4d13-a20a-56275fd18855
+    name: Documents
     handle: documents
     instructions: "Choose the documents to relate to this entry. Examples may include agenda, meeting minutes, and reports. Relationships help content surface in search. Relationships also help documents surface on index pages. \r\n"
-    name: Documents
-    searchable: '1'
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Entries
     settings:
-      limit: ''
-      localizeRelations: false
-      selectionLabel: 'Add a document'
-      source: null
       sources:
+        - 'section:9da43fd8-c505-4d19-9486-e0cb669c568a'
         - 'section:8b7c4e26-9aab-4c5d-874e-aee151107de3'
+      source: null
       targetSiteId: null
       viewMode: null
-    translationKeyFormat: null
-    translationMethod: site
-    type: craft\fields\Entries
+      limit: ''
+      selectionLabel: 'Add a document'
+      localizeRelations: false
+    contentColumnType: string
+    fieldGroup: 83c14444-efcf-4d13-a20a-56275fd18855
   4047207e-c317-47cc-825b-7e751cc4ad38:
     contentColumnType: string
     fieldGroup: 767a8f0b-6ea5-4855-a6f3-8c2a4a4aee78
