@@ -89,7 +89,7 @@ allSearch.addWidget(
       empty: "No results",
       item: `
       <div>
-        <h3 class="font-serif-body text-lg mb-2"><a class="hover:bg-fun-green hover:text-white" href="{{ url }}">{{{_highlightResult.title.value}}}</a></h3>
+        <h3 class="text-lg mb-2"><a class="hover:bg-fun-green hover:text-white" href="{{ url }}">{{{_highlightResult.title.value}}}</a></h3>
 
         <p class="text-sm md:text-base my-0">
           {{{ _snippetResult.leadIn.value }}}
@@ -124,7 +124,7 @@ govSearch.addWidget(
     templates: {
       empty: "No results",
       item: `
-        <h3 class="font-serif-body text-lg mb-2"><a class="block hover:bg-fun-green hover:text-white" href="{{ url }}">{{{_highlightResult.title.value}}}</a></h3>
+        <h3 class="text-lg mb-2"><a class="block hover:bg-fun-green hover:text-white" href="{{ url }}">{{{_highlightResult.title.value}}}</a></h3>
         {{{ #bio }}}
           <p class="text-sm md:text-base my-0">
             {{{ _snippetResult.bio.value }}}
@@ -155,7 +155,7 @@ docSearch.addWidget(
       empty: "No results",
       item: `
       <article class="text-sm mb-6">
-        <h3 class="font-serif-body text-base my-0 leading-normal"><a class="block hover:bg-fun-green hover:text-white" href="{{ url }}">{{{_highlightResult.title.value}}}</a></h3>
+        <h3 class="text-base my-0 leading-normal"><a class="block hover:bg-fun-green hover:text-white" href="{{ url }}">{{{_highlightResult.title.value}}}</a></h3>
         {{ ^leadIn }}
           <p class="my-0">
             {{{ _snippetResult.leadIn.value }}}
@@ -182,7 +182,7 @@ calSearch.addWidget(
       empty: "No results",
       item: `
         <article class="text-xs md:text-sm">
-          <h3 class="font-serif-body text-base my-2"><a class="block hover:bg-fun-green hover:text-white" href="{{ url }}">{{{_highlightResult.title.value}}}</a></h3>
+          <h3 class="text-base my-2"><a class="block hover:bg-fun-green hover:text-white" href="{{ url }}">{{{_highlightResult.title.value}}}</a></h3>
           {{{ #body }}}
             <p class="mt-0 mb-2">
               {{{ _snippetResult.body.value }}}
