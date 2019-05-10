@@ -89,6 +89,32 @@ a:hover {
   @apply text-white underline bg-parsley;
 }
 
+@responsive {
+  .btn-flat {
+    @apply rounded-none;
+  }
+
+  .btn-rounded {
+    @apply rounded-sm;
+  }
+
+  .btn-flat-r {
+    @apply rounded-r-none;
+  }
+
+  .btn-flat-t {
+    @apply rounded-t-none;
+  }
+
+  .btn-flat-b {
+    @apply rounded-b-none;
+  }
+
+  .btn-flat-l {
+    @apply rounded-l-none;
+  }
+}
+
 .btn-bright {
   @apply bg-apple;
 }
