@@ -63,6 +63,7 @@ let colors = {
   "wild-sand": "#f5f5f5",
   "catalina-blue": "#031a7a",
   "fun-green": "#008943",
+  "reef": "#b7ffa4",
 };
 
 module.exports = {
@@ -210,6 +211,7 @@ module.exports = {
     "3xl": "1.875rem",  // 30px
     "4xl": "2.25rem",   // 36px
     "5xl": "2.625rem",  // 42px
+    "mega": "5.625rem", // 90px
   },
 
 
