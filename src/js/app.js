@@ -4,9 +4,9 @@ if (window.location.pathname == '/') {
     const scrollPosY = window.pageYOffset | document.body.scrollTop;
     if(scrollPosY > 1) {
       navBar.classList.add('md:bg-catalina-blue');
-      navBar.classList.remove('md:bg-transparent');
+      navBar.classList.remove('md:bg-catalina-blue-transparent');
     } else if(scrollPosY <= 100) {
-      navBar.classList.add('md:bg-transparent');
+      navBar.classList.add('md:bg-catalina-blue-transparent');
       navBar.classList.remove('md:bg-catalina-blue');
     }
   }
