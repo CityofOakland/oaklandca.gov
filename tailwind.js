@@ -47,7 +47,7 @@ let colors = {
   "transparent": "transparent",
   "shark": "#212529",
   "shark-transparent": "rgba(33, 37, 41, .33)",
-  "tundora": "#404040",
+  "catalina-blue-transparent": "rgba(3, 26, 122, .33)",
   "celeste": "#cfd0ce",
   "cararra": "#e9eae7",
   "white": "#ffffff",
@@ -64,6 +64,7 @@ let colors = {
   "catalina-blue": "#031a7a",
   "fun-green": "#008943",
   "reef": "#b7ffa4",
+  "tundora": "#404040",
 };
 
 module.exports = {

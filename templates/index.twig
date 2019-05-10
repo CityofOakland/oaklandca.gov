@@ -3,12 +3,12 @@
 
 {% block content %}
   <div class="banner banner-home md:pt-32 lg:pt-32">
-    <div class="container mx-auto p-8 py-16 text-center">
+    <div class="container mx-auto p-8 py-16">
       <img class="banner-image opacity-50 z-0 image-blur-{{ bannerImageBlur ?? 'none' }}" src="{{ bannerImage.one.url }}" style="object-position:{{ bannerImage.one.getFocalPoint('asCss') }};" alt="{{ bannerImage.one.title }}">
       <h1 class="font-bold text-2xl sm:text-5xl md:text-mega mb-0">OaklandCA.gov</h1>
       <p class="font-bold text-sm font-sans uppercase mt-0 mb-4 md:mb-8">The official website for the City of Oakland. <b><a class="text-reef hover:text-fun-green" href="/topics/oaklandlovelife">#OaklandLoveLife</a></b></p>
       <form action="{{ url('search') }}">
-        <div class="max-w-lg sm:flex mx-auto shadow relative text-tundora">
+        <div class="max-w-lg sm:flex shadow relative text-tundora">
           {{ craft.inlin.er('/assets/img/icon-magnifier.svg') | replace('<svg ', '<svg class="absolute pin-l p-3 absolute w-12 h-half sm:h-full fill-current" ') | raw }}
           <input type="search" class="w-full mb-0 p-4 pl-12 rounded-none rounded-t-sm appearance-none sm:flex-1 sm:rounded-sm sm:rounded-r-none" name="query" placeholder="How can we help?" value="">
           <button type="submit" class="w-full btn border-l-0 sm:w-auto btn-flat-t sm:btn-rounded sm:btn-flat-l">Search</button>
