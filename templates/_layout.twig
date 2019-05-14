@@ -10,8 +10,8 @@
     {# Calls in the SEOmatic tags, all handled through the CMS settings #}
     {% hook 'seomaticRender' %}
 
+    <link href="https://fonts.googleapis.com/css?family=Domine:400,700|Merriweather:300,300i,900,900i|Montserrat:400,400i,600" rel="stylesheet">
     {{ craft.twigpack.includeCssModule("/css/app.css") }}
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i" rel="stylesheet">
   </head>
 
   {# Checks if the URI is empty and if not, adds the class of “home” to the page body. #}
@@ -61,3 +61,10 @@
     {% endif %}
   </body>
 </html>
+{% if section is defined and slug is defined %}
+{% set facetItem = craft.entries.section(section).slug(slug).one().title %}
+  {% js at head %}
+    var section = "{{ section }}";
+    var entryTitle = "{{ facetItem }}";
+  {% endjs %}
+{% endif %}

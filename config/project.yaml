@@ -21,7 +21,7 @@ categoryGroups:
     structure:
       maxLevels: '1'
       uid: b4e9ab1c-aa42-46f9-a679-898119f39e8d
-dateModified: 1555447557
+dateModified: 1557438057
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -91,11 +91,13 @@ fields:
     settings:
       availableTransforms: '*'
       availableVolumes: ''
-      cleanupHtml: '1'
       columnType: text
       purifierConfig: ''
       purifyHtml: '1'
       redactorConfig: Standard.json
+      removeInlineStyles: '1'
+      removeEmptyTags: '1'
+      removeNbsp: '1'
     translationKeyFormat: null
     translationMethod: none
     type: craft\redactor\Field
@@ -126,11 +128,13 @@ fields:
     settings:
       availableTransforms: '*'
       availableVolumes: ''
-      cleanupHtml: '1'
       columnType: text
       purifierConfig: ''
       purifyHtml: '1'
       redactorConfig: 'Simple with Links.json'
+      removeInlineStyles: '1'
+      removeEmptyTags: '1'
+      removeNbsp: '1'
     translationKeyFormat: null
     translationMethod: none
     type: craft\redactor\Field
@@ -429,11 +433,13 @@ fields:
     settings:
       availableTransforms: '*'
       availableVolumes: ''
-      cleanupHtml: '1'
       columnType: text
       purifierConfig: ''
       purifyHtml: '1'
       redactorConfig: Basic.json
+      removeInlineStyles: '1'
+      removeEmptyTags: '1'
+      removeNbsp: '1'
     translationKeyFormat: null
     translationMethod: none
     type: craft\redactor\Field
@@ -498,33 +504,36 @@ fields:
     settings:
       availableTransforms: '*'
       availableVolumes: ''
-      cleanupHtml: '1'
       columnType: text
       purifierConfig: ''
       purifyHtml: '1'
       redactorConfig: Basic.json
+      removeInlineStyles: '1'
+      removeEmptyTags: '1'
+      removeNbsp: '1'
     translationKeyFormat: null
     translationMethod: none
     type: craft\redactor\Field
   3ff802bf-48ac-4e96-8e64-c7988d029bc1:
-    contentColumnType: string
-    fieldGroup: 83c14444-efcf-4d13-a20a-56275fd18855
+    name: Documents
     handle: documents
     instructions: "Choose the documents to relate to this entry. Examples may include agenda, meeting minutes, and reports. Relationships help content surface in search. Relationships also help documents surface on index pages. \r\n"
-    name: Documents
-    searchable: '1'
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Entries
     settings:
-      limit: ''
-      localizeRelations: false
-      selectionLabel: 'Add a document'
-      source: null
       sources:
+        - 'section:9da43fd8-c505-4d19-9486-e0cb669c568a'
         - 'section:8b7c4e26-9aab-4c5d-874e-aee151107de3'
+      source: null
       targetSiteId: null
       viewMode: null
-    translationKeyFormat: null
-    translationMethod: site
-    type: craft\fields\Entries
+      limit: ''
+      selectionLabel: 'Add a document'
+      localizeRelations: false
+    contentColumnType: string
+    fieldGroup: 83c14444-efcf-4d13-a20a-56275fd18855
   4047207e-c317-47cc-825b-7e751cc4ad38:
     contentColumnType: string
     fieldGroup: 767a8f0b-6ea5-4855-a6f3-8c2a4a4aee78
@@ -746,11 +755,13 @@ fields:
     settings:
       availableTransforms: '*'
       availableVolumes: ''
-      cleanupHtml: '1'
       columnType: text
       purifierConfig: ''
       purifyHtml: '1'
       redactorConfig: Simple.json
+      removeInlineStyles: '1'
+      removeEmptyTags: '1'
+      removeNbsp: '1'
     translationKeyFormat: null
     translationMethod: none
     type: craft\redactor\Field
@@ -825,11 +836,13 @@ fields:
     settings:
       availableTransforms: ''
       availableVolumes: ''
-      cleanupHtml: '1'
       columnType: text
       purifierConfig: ''
       purifyHtml: '1'
       redactorConfig: Standard.json
+      removeInlineStyles: '1'
+      removeEmptyTags: '1'
+      removeNbsp: '1'
     translationKeyFormat: null
     translationMethod: none
     type: craft\redactor\Field
@@ -853,11 +866,13 @@ fields:
     settings:
       availableTransforms: ''
       availableVolumes: ''
-      cleanupHtml: '1'
       columnType: text
       purifierConfig: ''
       purifyHtml: '1'
       redactorConfig: 'Simple with Links.json'
+      removeInlineStyles: '1'
+      removeEmptyTags: '1'
+      removeNbsp: '1'
     translationKeyFormat: null
     translationMethod: none
     type: craft\redactor\Field
@@ -989,11 +1004,13 @@ fields:
     settings:
       availableTransforms: '*'
       availableVolumes: ''
-      cleanupHtml: '1'
       columnType: text
       purifierConfig: ''
       purifyHtml: '1'
       redactorConfig: 'Simple with Links.json'
+      removeInlineStyles: '1'
+      removeEmptyTags: '1'
+      removeNbsp: '1'
     translationKeyFormat: null
     translationMethod: none
     type: craft\redactor\Field
@@ -1847,11 +1864,13 @@ fields:
     settings:
       availableTransforms: '*'
       availableVolumes: '*'
-      cleanupHtml: '1'
       columnType: text
       purifierConfig: ''
       purifyHtml: '1'
       redactorConfig: ''
+      removeInlineStyles: '1'
+      removeEmptyTags: '1'
+      removeNbsp: '1'
     translationKeyFormat: null
     translationMethod: none
     type: craft\redactor\Field
@@ -1884,11 +1903,13 @@ fields:
     settings:
       availableTransforms: '*'
       availableVolumes: ''
-      cleanupHtml: '1'
       columnType: text
       purifierConfig: Standard.json
       purifyHtml: '1'
       redactorConfig: Standard.json
+      removeInlineStyles: '1'
+      removeEmptyTags: '1'
+      removeNbsp: '1'
     translationKeyFormat: null
     translationMethod: none
     type: craft\redactor\Field
@@ -3069,11 +3090,13 @@ matrixBlockTypes:
         settings:
           availableTransforms: '*'
           availableVolumes: ''
-          cleanupHtml: '1'
           columnType: text
           purifierConfig: ''
           purifyHtml: '1'
           redactorConfig: Simple.json
+          removeInlineStyles: '1'
+          removeEmptyTags: '1'
+          removeNbsp: '1'
         translationKeyFormat: null
         translationMethod: none
         type: craft\redactor\Field
@@ -3143,11 +3166,13 @@ matrixBlockTypes:
         settings:
           availableTransforms: '*'
           availableVolumes: '*'
-          cleanupHtml: '1'
           columnType: text
           purifierConfig: ''
           purifyHtml: '1'
           redactorConfig: Simple.json
+          removeInlineStyles: '1'
+          removeEmptyTags: '1'
+          removeNbsp: '1'
         translationKeyFormat: null
         translationMethod: none
         type: craft\redactor\Field
@@ -3840,7 +3865,7 @@ plugins:
   redactor:
     enabled: '1'
     licenseKey: null
-    schemaVersion: 2.2.2
+    schemaVersion: 2.3.0
     settings: null
   redactor-tweaks:
     enabled: '1'
@@ -3850,12 +3875,12 @@ plugins:
   redirect:
     enabled: '1'
     licenseKey: null
-    schemaVersion: 1.0.4
+    schemaVersion: 1.0.5
     settings: null
   retour:
     enabled: '1'
     licenseKey: 5DC6J57ZUDZKVM1WI3TONGUK
-    schemaVersion: 3.0.6
+    schemaVersion: 3.0.7
     settings:
       alwaysStripQueryString: ''
       createUriChangeRedirects: '1'
@@ -3941,6 +3966,18 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
+  venveo-bulk-edit:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.1
+  assetusage:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.0.0
+  preparse-field:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.5
 sections:
   07faad04-9ec4-4f68-9fe8-0ca20f189f8a:
     enableVersioning: '1'
@@ -6454,7 +6491,7 @@ system:
   edition: pro
   live: true
   name: 'City of Oakland'
-  schemaVersion: 3.1.26
+  schemaVersion: 3.1.28
   timeZone: America/Los_Angeles
 tagGroups:
   56057193-b9d8-4ac0-9f31-d4a755c91447:
@@ -6716,8 +6753,8 @@ users:
         - 'editpeerentrydrafts:17d5d48d-2d75-4742-8820-cdce13764482'
         - 'editentries:17d5d48d-2d75-4742-8820-cdce13764482'
     6227b65d-17fc-4360-8a69-3e70afc30899:
-      handle: electedOfficialLeads
       name: 'Elected Official Leads'
+      handle: electedOfficialLeads
       permissions:
         - accessplugin-calendar
         - accesscp
@@ -6768,8 +6805,22 @@ users:
         - 'publishentries:17d5d48d-2d75-4742-8820-cdce13764482'
         - 'editpeerentries:17d5d48d-2d75-4742-8820-cdce13764482'
         - 'editentries:17d5d48d-2d75-4742-8820-cdce13764482'
+        - 'saveassetinvolume:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67'
+        - 'viewvolume:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67'
+        - 'saveassetinvolume:a31d23bf-e3ee-4942-95e0-3d14c29620bb'
+        - 'viewvolume:a31d23bf-e3ee-4942-95e0-3d14c29620bb'
+        - 'saveassetinvolume:1e78d0ad-2af1-4556-ab43-7b6c110e75b8'
+        - 'viewvolume:1e78d0ad-2af1-4556-ab43-7b6c110e75b8'
         - 'saveassetinvolume:7a12e399-b320-4d23-8abb-a79b5f303015'
         - 'viewvolume:7a12e399-b320-4d23-8abb-a79b5f303015'
+        - 'saveassetinvolume:7c1a62cb-b02e-40b3-840f-7e78a3a9ebd0'
+        - 'viewvolume:7c1a62cb-b02e-40b3-840f-7e78a3a9ebd0'
+        - 'saveassetinvolume:c27974b4-89ad-4504-abb1-e76e44ff4b5d'
+        - 'viewvolume:c27974b4-89ad-4504-abb1-e76e44ff4b5d'
+        - 'saveassetinvolume:c419ecb0-79c8-411d-b440-db5bdfa1f823'
+        - 'viewvolume:c419ecb0-79c8-411d-b440-db5bdfa1f823'
+        - 'saveassetinvolume:1a78695a-f041-4562-9ee4-5405711bd29c'
+        - 'viewvolume:1a78695a-f041-4562-9ee4-5405711bd29c'
         - calendar-editcalendars
         - calendar-managecalendars
     67bbdab6-8a94-441d-9c36-6d093274da43:

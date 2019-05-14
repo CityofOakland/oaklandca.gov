@@ -1,23 +1,10 @@
 {% if not craft.app.request.segments() %}
-  {% set bgColor = 'bg-transparent' %}
-  {% js %}
-    window.onscroll = function changeClass(){
-      var navBar = document.getElementById('nav-bar');
-      var scrollPosY = window.pageYOffset | document.body.scrollTop;
-      if(scrollPosY > 1) {
-        navBar.classList.add('md:bg-shark');
-        navBar.classList.remove('md:bg-transparent');
-      } else if(scrollPosY <= 100) {
-        navBar.classList.add('md:bg-transparent');
-        navBar.classList.remove('md:bg-shark');
-      }
-    }
-  {% endjs %}
+  {% set bgColor = 'bg-catalina-blue-transparent' %}
 {% else %}
-  {% set bgColor = 'bg-shark' %}
+  {% set bgColor = 'bg-catalina-blue' %}
   {% set searchNavButton %}
     <li class="ml-4">
-      <a id="search-menu-toggle" href="/search" class="block text-white hover:text-apple fill-current trans-fast">
+      <a id="search-menu-toggle" href="/search" class="block text-white hover:text-reef fill-current trans trans-fast">
       {{ craft.inlin.er('/assets/img/icon-magnifier.svg') | replace('<svg ', '<svg class="h-4" ') | raw }}
       </a>
     </li>
@@ -25,19 +12,19 @@
 {% endif %}
 {% set mainNav = craft.entries.section('navigation').slug('main-nav').one() %}
 
-<div class="bg-shark relative text-white block w-full z-50 trans trans-fast nav-bar md:{{ bgColor }} md:fixed" id="nav-bar">
+<div class="bg-catalina-blue relative text-white block w-full z-50 trans trans-fast font-sans nav-bar md:{{ bgColor }} md:fixed" id="nav-bar">
   <div class="px-8">
     <nav class="flex items-center justify-between">
       <div>
-        <a href="/" class="block py-4 md:py-8 text-white hover:text-apple fill-current trans-fast">
+        <a href="/" class="block py-4 md:py-8 text-white hover:text-reef fill-current trans-fast">
           {{ craft.inlin.er('/assets/img/logo-oakland.svg') | replace('<svg ', '<svg class="h-12 md:h-16" ') | raw }}
         </a>
       </div>
-      <button id="menu-toggle" class="btn p-4 text-sm sm:text-base sm:px-8 fixed flex pin-r hover:bg-apple z-40 md:relative md:-mr-8 lg:hidden">Menu</button>
-      <ul class="list-reset hidden uppercase w-full justify-end flex-1 text-base lg:flex">
+      <button id="menu-toggle" class="btn p-4 text-sm sm:text-base sm:px-8 fixed flex pin-r hover:bg-fun-green z-40 md:relative md:-mr-8 lg:hidden btn-flat-r">Menu</button>
+      <ul class="list-reset hidden uppercase font-bold w-full justify-end flex-1 text-base lg:flex xl:text-xl">
         {% for nav in mainNav.navBuilder.all() %}
           {% set link = nav.navLink %}
-          <li class="ml-4"><a href="{{ link.url }}"{% if link.target | length %} target="{{ link.target }}"{% endif %} class="text-white hover:text-apple trans-fast">{{ link.text }}</a></li>
+          <li class="{% if not loop.first %}ml-4 lg:ml-6 xl:ml-8{% endif %}"><a href="{{ link.url }}"{% if link.target | length %} target="{{ link.target }}"{% endif %} class="text-white hover:text-reef trans-fast">{{ link.text }}</a></li>
         {% endfor %}
         {{ searchNavButton ?? '' }}
       </ul>
@@ -48,18 +35,14 @@
     }
     </script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
   </div>
-  <div id="global-search-bar" class="hidden bg-shark text-white absolute items-center w-full pin-r pin-b text-base" style="transform: translateY(100%);">
+  <div id="global-search-bar" class="hidden bg-catalina-blue text-white absolute items-center w-full pin-r pin-b text-base" style="transform: translateY(100%);">
     <div class="container mx-auto px-8 py-4">
       <form action="{{ url('search') }}" class="w-full">
         <div class="flex w-full h-full">
-          <input type="search" class="w-full mb-0 px-3 border-shark border rounded-none appearance-none" name="keywords" placeholder="Enter your search phrase (e.g. “Pay a Parking Ticket” here." value="">
+          <input type="search" class="w-full mb-0 px-3 border-shark border rounded-none appearance-none" name="query" placeholder="Enter your search phrase (e.g. “Pay a Parking Ticket” here." value="">
           <button type="submit" class="flex-1 btn border-l-0 border-shark border hover:bg-apple">Search</button>
         </div>
       </form>
     </div>
   </div>
 </div>
-
-{% js %}
-  {% include '_js/navigation.js' %}
-{% endjs %}

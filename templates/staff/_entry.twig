@@ -35,7 +35,7 @@
           </figure>
           {% set dobc = entry.departmentOfficialBoardCommission %}
           {% if dobc.exists() %}
-            <h3 class="text-lg font-bold flex items-center"><span class="w-16">Team: </span><a href="{{ dobc.one.url }}" class="flex-1 btn btn-bright btn-sm inline-block text-center">{{ dobc.one.title }}</a></h3>
+            <h3 class="text-lg font-bold flex items-center"><span class="w-16">Team: </span><a href="{{ dobc.one.url }}" class="flex-1 btn btn-sm inline-block text-center">{{ dobc.one.title }}</a></h3>
           {% elseif entry.staffImportDepartment | length %}
             <h3 class="text-lg font-bold flex items-center">{{ entry.staffImportDepartment }}</h3>
           {% endif %}

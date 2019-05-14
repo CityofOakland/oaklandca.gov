@@ -13,6 +13,7 @@ const tailwindcss = require("tailwindcss");
 const autoprefixer = require("autoprefixer");
 const presetenv = require("postcss-preset-env");
 const mqpacker = require("css-mqpacker");
+const pfm = require('postcss-font-magician');
 
 // Image plugins for compression from src folder
 const ImageminPlugin = require("imagemin-webpack-plugin").default;
@@ -24,6 +25,9 @@ mix
   .copyDirectory(pkg.paths.src.fonts, pkg.paths.dist.fonts)
   .options({
     postCss: [
+      pfm({
+        foundries: 'google',
+      }),
       tailwindcss("tailwind.js"),
       autoprefixer({
         browsers: ["> .5% or last 2 versions"],
@@ -37,6 +41,9 @@ mix
     processCssUrls: false,
   })
   .js("./src/js/app.js", "js/app.js")
+  .js("./src/js/algoliafilter.js", "js/algoliafilter.js")
+  .js("./src/js/search.js", "js/search.js")
+  .extract()
   .banner({
     banner: (function () {
       const moment = require("moment");
@@ -57,11 +64,10 @@ mix
     raw: true,
     entryOnly: true,
   })
-  .extract()
   .setPublicPath("./web/assets/")
   .browserSync({
     proxy: "http://oakland.test",
-    files: ["templates/*.twig", "templates/**/*.twig", "web/assets/css/*.css", "web/assets/js/*.js"]
+    files: ["templates/*.twig", "templates/**/*.twig", "templates/*.js", "templates/**/*.js", "web/assets/css/*.css", "web/assets/js/*.js"]
   });
 
 mix.disableSuccessNotifications();

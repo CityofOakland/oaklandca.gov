@@ -1,39 +1,65 @@
-{% extends '_layouts/_instant-search-index' %}
+{% extends '_layout' %}
 
 {% set hitsRootClass = 'card-grid vertical-cards' %}
 
-{% set hitsTemplate =
-'<article class="sm:py-8 vertical-card border-celeste border-b-2 h-full">' ~
-  '{{#eventImageSrc}}' ~
-    '<figure class="hidden w-full h-48 sm:h-64 bg-white relative z-0 sm:flex items-start justify-center">' ~
-      '<img src="{{ eventImageSrc }}" class="object-fit-cover absolute h-full w-full pin">' ~
-    '</figure>' ~
-  '{{/eventImageSrc}}' ~
-  '{{^eventImageSrc}}' ~
-    '<figure class="hidden w-full h-48 sm:h-64 p-4 bg-celeste relative z-0 sm:flex items-center justify-center">' ~
-      '<div class="text-camouflage-green opacity-75 fill-current h-full p-12">' ~
-        '<img src="/assets/img/icon-newspaper.svg" class="h-full">' ~
-      '</div>' ~
-    '</figure>' ~
-  '{{/eventImageSrc}}' ~
-  '<div>' ~
-  '<div class="text-base text-camouflage-green mb-4 sm:mt-4">' ~
-    '{{ displayDate }}' ~
-  '</div>' ~
-  '<h3 class="text-2xl mt-4 sm:mt-0">' ~
-    '<a href="/{{ url }}">' ~
-      '{{{_highlightResult.title.value}}}' ~
-    '</a>' ~
-  '</h3>' ~
-  '<div class="text-shark my-4 hidden sm:block">' ~
-    '{{{ _snippetResult.body.value }}}' ~
-  '</div>' ~
-  '<div class="hidden sm:block">' ~
-    '<a href="/{{ url }}">Read More »</a>' ~
-  '</div>' ~
-'</article>'
-%}
+{% do view.registerJsFile("https://cdn.polyfill.io/v2/polyfill.min.js?features=default,Array.prototype.includes,Array.prototype.find") %}
+{% do view.registerCssFile("https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4/dist/instantsearch.min.css") %}
+{% do view.registerCssFile ("https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4/dist/instantsearch-theme-algolia.min.css") %}
+{% do view.registerJsFile("https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4") %}
+{% do view.registerJsFile("https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js") %}
+{% do view.registerJsFile("https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js") %}
+{% do view.registerJsFile("https://unpkg.com/BaremetricsCalendar@1.0.12/public/js/Calendar.js") %}
+{% do view.registerCssFile("https://unpkg.com/BaremetricsCalendar@1.0.12/public/css/application.css") %}
 
-{% if dates == 'forward' %}
-{% elseif dates == 'backward' %}
-{% endif %}
+{% css %}
+  {% include "_css/algoliafilter.css" %}
+  .ais-search-box {
+    max-width: initial;
+  }
+  .ais-search-box--magnifier {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+{% endcss %}
+
+{% do view.registerJsFile(craft.twigpack.getModuleUri("/js/algoliafilter.js")) %}
+
+{% block content %}
+  {% block pageBanner %}
+    {% include '_partials/_page-banners' with {
+      bannerTitle: entry.title | replace(' Index', ''),
+      breadCrumbs: false,
+      smallBanner: true
+    } %}
+  {% endblock %}
+  <div class="bg-cararra" id="search-bar-container">
+    <div class="container mx-auto px-8 py-4 md:p-8 text-right">
+      <div class="flex flex-col sm:flex-row">
+        <input id="search-input" class="w-full p-2 md:py-4 md:px-8 rounded-none appearance-none" type="search" name="keywords" value="" required>
+      </div>
+      {% if facets is defined %}
+        <a class="inline-block mt-4 text-right" href="#" id="filter-reveal">Show Filters</a>
+      {% endif %}
+    </div>
+  </div>
+  <section class="bg-white relative z-0">
+    <div id="algolia-filters" class="opacity-0 invisible h-0 overflow-hidden bg-shark text-white relative z-neg-10 trans trans-all">
+      <div id="facet-holder" class="mx-auto container p-8 flex-col -my-4">
+        {% if facets is defined %}
+          {% for facet in facets %}
+            <div id="{{ facet.container }}" class="max-w-sm"></div>
+          {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+    <div id="calendar" class="daterange mx-auto px-8 mt-8 max-w-sm"></div>
+    <div class="container mx-auto px-8 mt-4 pb-16 md:flex">
+      <div class="flex-1">
+        <div id="hits"></div>
+        <div class="text-2xl flex items-center"><div class="inline-block" id="bottom-pagination"></div></div>
+      </div>
+    </div>
+  </section>
+{% endblock %}
+
+

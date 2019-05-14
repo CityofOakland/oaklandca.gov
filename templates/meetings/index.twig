@@ -22,3 +22,21 @@
   },
 
 ] %}
+
+{% js at head %}
+var algoliaIndex = 'production_meetings';
+var searchInputText = "Search for a meeting. E.g., “Public Meeting”";
+var hitsRootClass = 'card-grid vertical-cards';
+var facetFilters = [
+  {% for facet in facets %}
+  {
+    container: '#{{ facet.container }}',
+    attribute: '{{ facet.attribute }}',
+    header: '{{ facet.header }}'
+  },
+  {% endfor %}
+];
+
+{{ source('_js/algolia-templates/events.js') }}
+
+{% endjs %}

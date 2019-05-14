@@ -35,11 +35,11 @@ p {
 }
 
 a {
-  @apply no-underline text-curious-blue trans trans-fast;
+  @apply no-underline text-fun-green trans trans-fast;
 }
 
 a:hover {
-  @apply text-astronaut;
+  @apply text-tundora;
 }
 
 .anchor-link {
@@ -82,11 +82,37 @@ a:hover {
 /* Button Styles */
 
 .btn {
-  @apply inline-block bg-astronaut py-4 px-8 text-white no-underline trans trans-fast;
+  @apply inline-block bg-fun-green py-4 px-8 text-base text-white no-underline trans trans-fast font-sans font-bold uppercase tracking-wide shadow rounded-sm;
 }
 
 .btn:hover {
-  @apply text-white underline bg-shark;
+  @apply text-white underline bg-parsley;
+}
+
+@responsive {
+  .btn-flat {
+    @apply rounded-none;
+  }
+
+  .btn-rounded {
+    @apply rounded-sm;
+  }
+
+  .btn-flat-r {
+    @apply rounded-r-none;
+  }
+
+  .btn-flat-t {
+    @apply rounded-t-none;
+  }
+
+  .btn-flat-b {
+    @apply rounded-b-none;
+  }
+
+  .btn-flat-l {
+    @apply rounded-l-none;
+  }
 }
 
 .btn-bright {
@@ -94,7 +120,7 @@ a:hover {
 }
 
 .btn-bright:hover {
-  @apply bg-parsley text-white;
+  @apply bg-fun-green text-white;
 }
 
 .btn-sm {
@@ -120,11 +146,11 @@ main, footer {
 /* Banner Styles */
 
 .banner {
-  @apply relative text-white text-xl leading-loose bg-astronaut z-0;
+  @apply relative text-white text-xl leading-loose bg-tundora z-0;
 }
 
 .banner-home {
-  @apply bg-shark;
+  @apply bg-catalina-blue;
 }
 
 .banner-image {
@@ -159,19 +185,11 @@ main, footer {
 /* Service Styles */
 
 .card-grid-button {
-  @apply bg-white border-l-4 text-shark no-underline text-xl border-apple p-8 trans trans-fast;
-}
-
-main > .bg-rotate:nth-child(odd) .card-grid-button {
-  @apply bg-cararra;
+  @apply bg-white rounded-sm text-shark no-underline text-lg font-bold font-sans shadow p-8 trans trans-fast;
 }
 
 .card-grid-button:hover {
-  @apply bg-apple underline text-white;
-}
-
-main > .bg-rotate:nth-child(odd) .card-grid-button:hover {
-  @apply bg-apple;
+  @apply bg-fun-green underline text-white;
 }
 
 /* Department Styles (modifies Service Styles) */
@@ -229,6 +247,15 @@ main > .bg-rotate:nth-child(odd) {
  * @import "utilities/background-patterns";
  * @import "utilities/skew-transforms";
  */
+ 
+ /* Aspect Ratio Box */
+ .aspect-ratio {
+   @apply absolute pin w-full h-full;
+ }
+
+ .aspect-ratio-box {
+   @apply relative h-0 overflow-hidden;
+ }
 
 /* Object Fit */
 
@@ -298,6 +325,7 @@ main > .bg-rotate:nth-child(odd) {
 }
 
 .card-grid > * {
+  width: 100%;
   margin: 16px;
 }
 
@@ -401,4 +429,16 @@ body.open .page-holder {
   font-size: 16px;
   padding-left: 50px;
   padding-bottom: 20px;
+}
+
+.search-filter-button {
+  @apply p-2 inline-block uppercase text-white pb-1;
+}
+
+.search-filter-button:hover {
+  @apply rounded bg-white text-shark shadow;
+}
+
+.search-filter-button.active {
+  @apply font-bold border-b-2 border-white;
 }

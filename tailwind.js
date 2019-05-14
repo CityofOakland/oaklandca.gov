@@ -47,19 +47,24 @@ let colors = {
   "transparent": "transparent",
   "shark": "#212529",
   "shark-transparent": "rgba(33, 37, 41, .33)",
-  "tundora": "#404040",
+  "catalina-blue-transparent": "rgba(3, 26, 122, .33)",
   "celeste": "#cfd0ce",
   "cararra": "#e9eae7",
   "white": "#ffffff",
   "apple": "#6db943",
-  "alert-red": "#F31431",
+  "alert-red": "#f31431",
   "warning-yellow": "#ffae42",
   "camouflage-green": "#757773",
   "parsley": "#1e4a18",
   "curious-blue": "#398cd3",
-  "cerulean": "#008dd9",
-  "atoll": "#0e5478",
-  "astronaut": "#255375"
+  "astronaut": "#255375",
+
+  "alabaster": "#f9f9f9",
+  "wild-sand": "#f5f5f5",
+  "catalina-blue": "#031a7a",
+  "fun-green": "#008943",
+  "reef": "#b7ffa4",
+  "tundora": "#404040",
 };
 
 module.exports = {
@@ -141,7 +146,21 @@ module.exports = {
       "Helvetica Neue",
       "sans-serif",
     ],
-    "serif": [
+    "serif-heading": [
+      "Domine",
+      "Constantia",
+      "Lucida Bright",
+      "Lucidabright",
+      "Lucida Serif",
+      "Lucida",
+      "DejaVu Serif",
+      "Bitstream Vera Serif",
+      "Liberation Serif",
+      "Georgia",
+      "serif",
+    ],
+    "serif-body": [
+      "Merriweather",
       "Constantia",
       "Lucida Bright",
       "Lucidabright",
@@ -192,7 +211,8 @@ module.exports = {
     "2xl": "1.5rem",    // 24px
     "3xl": "1.875rem",  // 30px
     "4xl": "2.25rem",   // 36px
-    "5xl": "3rem",      // 48px
+    "5xl": "2.625rem",  // 42px
+    "6xl": "4rem",      // 64px
   },
 
 
@@ -468,6 +488,7 @@ module.exports = {
     "40": "10rem",
     "48": "12rem",
     "64": "16rem",
+    "half": "50%",
     "full": "100%",
     "screen": "100vh"
   },
@@ -685,7 +706,7 @@ module.exports = {
   */
 
   shadows: {
-    default: "0 2px 4px 0 rgba(0,0,0,0.10)",
+    default: "0 1px 2px 0 rgba(0,0,0,0.325)",
     "md": "0 4px 8px 0 rgba(0,0,0,0.12), 0 2px 4px 0 rgba(0,0,0,0.08)",
     "lg": "0 15px 30px 0 rgba(0,0,0,0.11), 0 5px 15px 0 rgba(0,0,0,0.08)",
     "inner": "inset 0 2px 4px 0 rgba(0,0,0,0.06)",
@@ -806,13 +827,13 @@ module.exports = {
   modules: {
     appearance: ["responsive"],
     backgroundAttachment: ["responsive"],
-    backgroundColors: ["responsive", "hover", "focus"],
+    backgroundColors: ["responsive", "hover", "group-hover", "focus"],
     backgroundPosition: ["responsive"],
     backgroundRepeat: ["responsive"],
     backgroundSize: ["responsive"],
     borderCollapse: [],
-    borderColors: ["responsive", "hover", "focus"],
-    borderRadius: ["responsive"],
+    borderColors: ["responsive", "hover", "group-hover", "focus"],
+    borderRadius: ["responsive", "hover", "group-hover"],
     borderStyle: ["responsive"],
     borderWidths: ["responsive"],
     cursor: ["responsive"],
@@ -820,7 +841,7 @@ module.exports = {
     flexbox: ["responsive"],
     float: ["responsive"],
     fonts: ["responsive"],
-    fontWeights: ["responsive", "hover", "focus"],
+    fontWeights: ["responsive", "hover", "group-hover", "focus"],
     height: ["responsive"],
     leading: ["responsive"],
     lists: ["responsive"],
@@ -830,21 +851,21 @@ module.exports = {
     minHeight: ["responsive"],
     minWidth: ["responsive"],
     negativeMargin: ["responsive"],
-    opacity: ["responsive", "hover"],
+    opacity: ["responsive", "hover", "group-hover"],
     outline: ["focus"],
     overflow: ["responsive"],
     padding: ["responsive"],
     pointerEvents: ["responsive"],
     position: ["responsive"],
     resize: ["responsive"],
-    shadows: ["responsive", "hover", "focus"],
+    shadows: ["responsive", "hover", "group-hover", "focus"],
     svgFill: [],
     svgStroke: [],
     tableLayout: ["responsive"],
     textAlign: ["responsive"],
-    textColors: ["responsive", "hover", "focus"],
+    textColors: ["responsive", "hover", "group-hover", "focus"],
     textSizes: ["responsive"],
-    textStyle: ["responsive", "hover", "focus"],
+    textStyle: ["responsive", "hover", "group-hover", "focus"],
     tracking: ["responsive"],
     userSelect: ["responsive"],
     verticalAlign: ["responsive"],
@@ -874,6 +895,15 @@ module.exports = {
       // center: true,
       // padding: "1rem",
     }),
+    require('tailwindcss-aspect-ratio')({
+      variants: ['responsive'],
+      ratios: {
+        'square': [1, 1],
+        '16/9': [16, 9],
+        '4/3': [4, 3],
+        '21/9': [21, 9],
+      }
+    })
   ],
 
 
