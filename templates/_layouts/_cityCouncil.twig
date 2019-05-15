@@ -3,6 +3,8 @@
 {% set relatedEvents = craft.calendar.events.relatedTo(entry) %}
 {% set relatedNews = craft.entries.section('news').relatedTo(entry) %}
 
+{% set contactState = entry.addresses | length or not entry.address.isEmpty or entry.phoneNumbers | length or entry.emailAddress | length or entry.openHours | length %}
+
 {% block content %}
   {% include '_partials/_page-banners' with {
     breadCrumbs: true,
@@ -19,7 +21,7 @@
       'minutesAgendas': entry.pageDocuments.exists(),
       'services': entry.pageServices.exists(),
       'resources': entry.pageResources.exists(),
-      'contact': true
+      'contact': contactState
     }
   } %}
   {% include '_partials/_page-events' %}

@@ -7,6 +7,8 @@
   calendar: "meetings"
 } %}
 
+{% set contactState = entry.addresses | length or (entry.address | length and not entry.address.isEmpty) or entry.phoneNumbers | length or entry.emailAddress | length or entry.openHours | length %}
+
 {% set relatedEvents = craft.calendar.events(eventOptions).relatedTo(entry) %}
 {% set relatedMeetings = craft.calendar.events(meetingOptions).relatedTo(entry) %}
 {% set relatedNews = craft.entries.section('news').relatedTo(entry) %}
@@ -33,7 +35,7 @@
       'documents': entry.pageDocuments.exists(),
       'boards': entry.pageBoardsCommissions.exists(),
       'leadership': true,
-      'contact': true
+      'contact': contactState
     }
   } %}
   {% include '_partials/_page-events' %}

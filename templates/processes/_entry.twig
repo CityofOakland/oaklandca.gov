@@ -1,7 +1,8 @@
 {% extends '_layouts/_banner-with-nav' %}
 
 {% set relatedNews = craft.entries.section('news').relatedTo(entry) %}
-{% set location = entry.addresses | length or entry.phoneNumbers | length or entry.emailAddress | length or entry.openHours | length %}
+
+{% set contactState = entry.addresses | length or entry.phoneNumbers | length or entry.emailAddress | length or entry.openHours | length %}
 
 {% block content %}
   {% include '_partials/_page-banners' with {
@@ -16,7 +17,7 @@
       'timeline': entry.timeline.exists(),
       'steps': entry.processSteps.exists(),
       'news': relatedNews.exists(),
-      'contact': location
+      'contact': contactState
     }
   } %}
 
