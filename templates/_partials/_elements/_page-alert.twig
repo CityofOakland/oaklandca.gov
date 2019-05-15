@@ -11,11 +11,11 @@
 
 {% if sitewideAlert.alertShowHide == "show" %}
 <div class="relative bg-{{ alertBg }} z-0 text-white">
-  <img src="/assets/img/oaklandroots.svg" class="absolute pin object-fit-cover w-full h-full opacity-3.125" alt="">
-  <div class="py-4 px-8 container mx-auto">
+  <img src="/assets/img/oaklandroots.svg" class="absolute pin object-fit-cover w-full h-full opacity-3" alt="">
+  <div class="text-sm py-4 px-8 container mx-auto">
     <div class="sm:flex content-start items-center">
       <div class="mb-6 sm:mb-0 sm:mr-8 flex-1">
-        <p class="text-lg m-0">
+        <p class="m-0">
           {% if alertType != "Information" %}
             <span class="font-bold">{{ alertType }}</span>:
           {% endif %}
