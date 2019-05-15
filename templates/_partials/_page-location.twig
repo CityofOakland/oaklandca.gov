@@ -1,4 +1,4 @@
-{% if entry.addresses | length or entry.address | length or entry.phoneNumbers | length or entry.emailAddress | length or entry.openHours | length %}
+{% if entry.addresses | length or not entry.address.isEmpty or entry.phoneNumbers | length or entry.emailAddress | length or entry.openHours | length %}
   <section class="bg-white">
     <a id="page-contact" class="anchor-link"></a>
     <div class="container section-container">
@@ -10,7 +10,7 @@
           <div class="lg:w-1/2 lg:pr-8">
             {% if entry.addresses | length and not entry.addresses.one.locationName | length %}
               <h3 class="text-2xl mb-0">Addresses</h3>
-            {% elseif entry.address | length %}
+            {% elseif not entry.address.isEmpty %}
               <h3 class="text-2xl mb-0">Address</h3>
             {% endif %}
             {% for location in entry.addresses.all() ?? '' %}
