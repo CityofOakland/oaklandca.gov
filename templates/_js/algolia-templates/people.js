@@ -1,29 +1,3 @@
-var indexTemplate = `<div class="block">
-  <div class="text-shark md:flex items-start">
-    <figure class="block h-12 w-12 md:w-1/4">
-      <a class="block" href="/{{ url }}">
-        {{#portrait}}
-          <figure class="aspect-ratio-box aspect-ratio-square">
-            <img
-              src="{{ portrait }}"
-              alt="Portrait of {{ jobTitle }}, {{ title }}"
-              class="aspect-ratio rounded-full object-fit-cover">
-            </figure>
-        {{/portrait}}
-        {{^portrait}}
-          <div class="text-camouflage-green opacity-75 fill-current h-full  bg-celeste rounded-full">
-            <img src="/assets/img/icon-user.svg" class="h-full block">
-          </div>
-        {{/portrait}}
-      </a>
-    </figure>
-    <div class="pt-4 md:pt-0 md:pl-6 md:w-3/4">
-      <h3 class="m-0 text-2xl"><a href="/{{ url }}">{{ title }}</a></h3>
-      <p class="mt-2">
-        {{ jobTitle }}
-        {{#department}}<br>{{ department }}{{/department}}
-        {{#email}}<br><a href="mailto:{{ email }}">Email</a>{{/email}}
-      </p>
-    </div>
-  </div>
-</div>`;
+"use strict";
+
+var indexTemplate = "<div class=\"block\">\n  <div class=\"text-shark md:flex items-start\">\n    <figure class=\"block h-12 w-12 md:w-1/4\">\n      <a class=\"block\" href=\"/{{ url }}\">\n        {{#portrait}}\n          <figure class=\"aspect-ratio-box aspect-ratio-square\">\n            <img\n              src=\"{{ portrait }}\"\n              alt=\"Portrait of {{ jobTitle }}, {{ title }}\"\n              class=\"aspect-ratio rounded-full object-fit-cover\">\n            </figure>\n        {{/portrait}}\n        {{^portrait}}\n          <div class=\"text-camouflage-green opacity-75 fill-current h-full  bg-celeste rounded-full\">\n            <img src=\"/assets/img/icon-user.svg\" class=\"h-full block\">\n          </div>\n        {{/portrait}}\n      </a>\n    </figure>\n    <div class=\"pt-4 md:pt-0 md:pl-6 md:w-3/4\">\n      <h3 class=\"m-0 text-2xl\"><a href=\"/{{ url }}\">{{ title }}</a></h3>\n      <p class=\"mt-2\">\n        {{ jobTitle }}\n        {{#department}}<br>{{ department }}{{/department}}\n        {{#email}}<br><a href=\"mailto:{{ email }}\">Email</a>{{/email}}\n      </p>\n    </div>\n  </div>\n</div>";
