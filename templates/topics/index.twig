@@ -22,25 +22,15 @@
 ] %}
 
 {% js at head %}
-{% verbatim %}
-var algoliaIndex = 'production_services';
+var algoliaIndex = 'production_topics';
 var searchInputText = "Search for a specific topic. E.g., “Parking ticket”";
 var facetFilters = [
+  {% for facet in facets %}
   {
-    container: 'boardsCommissions',
-    attribute: 'boardsCommissions',
-    header: 'Boards & Commissions'
+    container: '#{{ facet.container }}',
+    attribute: '{{ facet.attribute }}',
+    header: '{{ facet.header }}'
   },
-  {
-    container: 'departments',
-    attribute: 'departments',
-    header: 'Departments'
-  },
-  {
-    container: 'projects',
-    attribute: 'projects',
-    header: 'Projects'
-  },
+  {% endfor %}
 ];
-{% endverbatim %}
 {% endjs %}
