@@ -5,8 +5,10 @@
   <div class="banner banner-home md:pt-32 lg:pt-32">
     <div class="container mx-auto p-8 py-16">
       <img class="banner-image opacity-50 z-0 image-blur-{{ bannerImageBlur ?? 'none' }}" src="{{ bannerImage.one.url }}" style="object-position:{{ bannerImage.one.getFocalPoint('asCss') }};" alt="{{ bannerImage.one.title }}">
-      <h1 class="font-bold text-2xl sm:text-5xl md:text-6xl mb-0">Welcome to Oakland</h1>
-      <p class="font-bold text-sm font-sans uppercase mt-0 mb-4 md:mb-8">The official website for the City of Oakland. <b><a class="text-reef hover:text-fun-green" href="/topics/oaklandlovelife">#OaklandLoveLife</a></b></p>
+      <div class=""> {# inline-block bg-shark -m-4 p-4  mb-4 md:mb-8 #}
+        <h1 class="font-bold text-2xl sm:text-5xl md:text-6xl mb-0">Welcome to Oakland</h1>
+        <p class="font-bold text-sm font-sans uppercase mt-0">The official website for the City of Oakland. <b><a class="text-reef hover:text-fun-green" href="/topics/oaklandlovelife">#OaklandLoveLife</a></b></p>
+      </div>
       <form action="{{ url('search') }}">
         <div class="max-w-lg sm:flex shadow relative text-tundora">
           {{ craft.inlin.er('/assets/img/icon-magnifier.svg') | replace('<svg ', '<svg class="absolute pin-l p-3 absolute w-12 h-half sm:h-full fill-current" ') | raw }}
@@ -113,27 +115,6 @@
     </div>
   </section>
   {# End Events #}
-
-  {# Begin Departments #}
-  {#<section class="bg-rotate relative z-0">#}
-    {#<div class="container mx-auto p-8 py-12">#}
-      {#{% include '_partials/_elements/_module-header' with {#}
-        {#headerText: "Departments",#}
-        {#linkText: "All Departments",#}
-        {#linkUrl: "/departments"#}
-      {#} %}#}
-      {#<div class="card-grid card-department-grid grid-equal-height mt-8">#}
-        {#{% for entry in entry.highlightedDepartments.all() %}#}
-          {#{% include '_partials/_elements/_photo-cards' with {#}
-            {#title: entry.title,#}
-            {#photo: entry.banner.one,#}
-            {#url: entry.redirectUrl ?? entry.url ?? ''#}
-          {#} %}#}
-        {#{% endfor %}#}
-      {#</div>#}
-    {#</div>#}
-  {#</section>#}
-  {# End Departments #}
 
   {# Begin Officials #}
   <section class="bg-rotate">
