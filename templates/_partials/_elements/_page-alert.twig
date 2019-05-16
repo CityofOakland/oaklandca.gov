@@ -5,19 +5,19 @@
   {% case "Warning" %}
     {% set alertBg = "warning-yellow" %}
   {% default %}
-    {% set alertBg = "apple" %}
+    {% set alertBg = "fun-green" %}
 {% endswitch %}
 
 
 {% if sitewideAlert.alertShowHide == "show" %}
 <div class="relative bg-{{ alertBg }} z-0 text-white">
-  <img src="/assets/img/oaklandroots.svg" class="absolute pin object-fit-cover w-full h-full opacity-3" alt="">
-  <div class="text-sm py-4 px-8 container mx-auto">
+  <img src="/assets/img/oaklandroots.svg" class="absolute pin object-fit-cover w-full h-full opacity-3" alt="" role="presentation">
+  <div class="text-base py-4 px-8 container mx-auto">
     <div class="sm:flex content-start items-center">
       <div class="mb-6 sm:mb-0 sm:mr-8 flex-1">
-        <p class="m-0">
+        <p class="m-0 font-bold uppercase">
           {% if alertType != "Information" %}
-            <span class="font-bold">{{ alertType }}</span>:
+            {{ alertType }}:
           {% endif %}
           {{ sitewideAlert.alertMessage }}</p>
       </div>
