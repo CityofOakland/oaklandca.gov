@@ -216,11 +216,11 @@ main, footer {
 
 /* Background Section Color Rotations */
 
-main > .bg-rotate:nth-child(even) {
+main > .bg-rotate:nth-of-type(odd) {
   @apply bg-cararra;
 }
 
-main > .bg-rotate:nth-child(odd) {
+main > .bg-rotate:nth-of-type(even) {
   @apply bg-white;
 }
 
