@@ -50,20 +50,25 @@
       <div class="sm:w-1/3">
         <a href="/" class="block pt-4 md:pt-8 text-white hover:text-apple fill-current trans-fast">
           {{ craft.inlin.er('/assets/img/logo-oakland.svg') | replace('<svg ', '<svg class="h-12 md:h-16" ') | raw }}
+          <span class="hidden-visually">Home</span>
         </a>
       </div>
       <div class="sm:w-1/3 flex items-center justify-around">
         <a href="{{ seomatic.site.sameAsLinks.facebook.url }}" class="block rounded-full h-12 w-12 flex items-center justify-center bg-white hover:bg-apple fill-current trans-fast text-shark hover:text-shark">
           {{ craft.inlin.er('/assets/img/logo-facebook.svg') | replace('<svg ', '<svg class="h-6" ') | raw }}
+          <span class="hidden-visually">Oakland Facebook Page</span>
         </a>
         <a href="{{ seomatic.site.sameAsLinks.twitter.url }}" class="block rounded-full h-12 w-12 flex items-center justify-center bg-white hover:bg-apple fill-current trans-fast text-shark hover:text-shark">
           {{ craft.inlin.er('/assets/img/logo-twitter.svg') | replace('<svg ', '<svg class="h-6" ') | raw }}
+          <span class="hidden-visually">Oakland Twitter Page</span>
         </a>
         <a href="{{ seomatic.site.sameAsLinks.instagram.url }}" class="block rounded-full h-12 w-12 flex items-center justify-center bg-white hover:bg-apple fill-current trans-fast text-shark hover:text-shark">
           {{ craft.inlin.er('/assets/img/logo-instagram.svg') | replace('<svg ', '<svg class="h-6" ') | raw }}
+          <span class="hidden-visually">Oakland Instagram Page</span>
         </a>
         <a href="{{ seomatic.site.sameAsLinks.medium.url }}" class="block rounded-full h-12 w-12 flex items-center justify-center bg-white hover:bg-apple fill-current trans-fast text-shark hover:text-shark">
           {{ craft.inlin.er('/assets/img/logo-medium.svg') | replace('<svg ', '<svg class="h-6" ') | raw }}
+          <span class="hidden-visually">Oakland Medium Page</span>
         </a>
       </div>
       <div class="sm:w-1/3 flex justify-end items-end text-sm">
