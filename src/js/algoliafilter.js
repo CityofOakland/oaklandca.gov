@@ -83,6 +83,10 @@ if (typeof moment !== 'undefined') {
         element: $('#calendar'),
         same_day_range: true,
         presets: [{
+          label: 'This month',
+          start: moment().startOf('month'),
+          end: moment().endOf('month')
+        },{
           label: 'Next month',
           start: moment().add(1, 'month').startOf('month'),
           end: moment().add(1, 'month').endOf('month')

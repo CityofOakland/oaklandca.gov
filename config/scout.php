@@ -10,7 +10,7 @@ use nystudio107\imageoptimize\imagetransforms\ImageTransform;
 function enumEntries($section, $element) {
   $sectionArray = [];
   if (! empty($element->$section)) {
-    foreach($element->$section->all() as $value) {
+    foreach($element->$section as $value) {
       $sectionArray[] = $value->title;
     }
   }
@@ -203,7 +203,7 @@ class documentsTransform extends TransformerAbstract
     $documents = enumEntries("documents", $entry);
     $types = [];
     if (! empty($entry->documentType)) {
-      foreach($entry->documentType->all() as $value) {
+      foreach($entry->documentType as $value) {
         $types[] = $value->title;
       }
     }
@@ -232,7 +232,7 @@ class projectsTransform extends TransformerAbstract
   public function transform(craft\elements\Entry $entry)
   {
     $milestones = [];
-    foreach ($entry->timeline->all() as $block) {
+    foreach ($entry->timeline as $block) {
       $milestones[] = [
         'name' => $block->milestoneName,
         'dates' => $block->milestoneDates
@@ -268,7 +268,7 @@ class resourcesTransform extends TransformerAbstract
     $projects = enumEntries("projects", $entry);
     $topics = enumEntries("topics", $entry);
     $body = [];
-    foreach ($entry->transactionBody->all() as $block) {
+    foreach ($entry->transactionBody as $block) {
       $body[] = strip_tags($block->text);
     }
     return [
@@ -297,7 +297,7 @@ class servicesTransform extends TransformerAbstract
     $projects = enumEntries("projects", $entry);
     $topics = enumEntries("topics", $entry);
     $body = [];
-    foreach ($entry->transactionBody->all() as $block) {
+    foreach ($entry->transactionBody as $block) {
       $body[] = strip_tags($block->text);
     }
     return [
@@ -386,8 +386,8 @@ class teamsTransform extends TransformerAbstract
   public function transform(craft\elements\Entry $entry)
   {
     $teamMembers = [];
-    foreach($entry->teamMembers->all() as $value)
-      foreach($value->staff->all() as $teamMember)
+    foreach($entry->teamMembers as $value)
+      foreach($value->staff as $teamMember)
         $teamMembers[] = $teamMember->title;
     return [
       'title' => $entry->title,
@@ -413,7 +413,7 @@ class allTransform extends TransformerAbstract
     $documents = enumEntries("documents", $entry);
     $bodyMatrix = [];
     if (! empty($entry->transactionBody)) {
-      foreach ($entry->transactionBody->all() as $block) {
+      foreach ($entry->transactionBody as $block) {
         $bodyMatrix[] = strip_tags($block->text);
       }
     }
