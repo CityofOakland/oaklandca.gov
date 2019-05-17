@@ -15,7 +15,9 @@
     <div class="container mx-auto p-8 py-16">
     {% for team in entry.teamMembers.all() %}
       {% if team.staffHeading | length %}
-        <h3 class="mb-0">{{ team.staffHeading }}</h3>
+        <h2 class="mb-0">{{ team.staffHeading }}</h2>
+      {% else %}
+        <h2 class="mb-0">Team</h2>
       {% endif %}
       <div class="card-grid grid-equal-height profile-cards mt-12">
       {% for entry in team.staff.all() %}
@@ -27,7 +29,7 @@
           {% if department | length %}{{ department }}{% endif %}
           {% if email | length %}
             {% set e = email | replace({'@oaklandnet.com': '@oaklandca.gov'}) %}
-            <br><a href="mailto:{{ e }}">Email</a>
+            <br><a href="mailto:{{ e }}" aria-label="Email {{ entry.title }}">Email</a>
           {% endif %}
           {% if phone | length %}
             <br><a href="tel:{{ phone }}">{{ phone }}</a>
