@@ -42,11 +42,11 @@ const defaultTemplate =
     Publish Date: <b>{{ displayDate }}</b>
   </div>
   {{/displayDate}}
-  <h3 class="text-xl md:text-2xl my-0 {{#leadIn}} mt-0 mb-3 md:mb-6 {{/leadIn}}">
+  <h2 class="text-xl md:text-2xl my-0 {{#leadIn}} mt-0 mb-3 md:mb-6 {{/leadIn}}">
     <a href="/{{ url }}">
       {{{ _highlightResult.title.value }}}
     </a>
-  </h3>
+  </h2>
   {{#leadIn}}
     <p class="text-base text-shark md:text-lg my-2 md:my-4">
       {{{ _highlightResult.leadIn.value }}}

@@ -5,7 +5,7 @@
 <div class="block">
   <div class="text-shark flex items-start">
     <figure class="block w-1/4">
-      <a href="{{ url }}">
+      <a href="{{ url }}" name="{{ name }}" aria-label="{{ name }}">
         {% if photo | length %}
           <img
             src="{{ photo.getUrl('smallSquare') }}"

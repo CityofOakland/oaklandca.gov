@@ -4,8 +4,9 @@
   {% set bgColor = 'bg-catalina-blue' %}
   {% set searchNavButton %}
     <li class="ml-4">
-      <a id="search-menu-toggle" href="/search" class="block text-white hover:text-reef fill-current trans trans-fast">
+      <a id="search-menu-toggle" href="/search" class="block text-white hover:text-reef fill-current trans trans-fast" name="Search Toggle">
       {{ craft.inlin.er('/assets/img/icon-magnifier.svg') | replace('<svg ', '<svg class="h-4" ') | raw }}
+      <span class="hidden-visually">Search Toggle</span>
       </a>
     </li>
   {% endset %}

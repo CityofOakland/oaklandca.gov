@@ -1,7 +1,7 @@
 <article>
   <figure class="w-full h-48 sm:h-64 p-4 bg-celeste relative z-0 flex items-center justify-center">
     {% if photo | length %}
-      <img src="{{ photo.url }}" class="absolute pin object-fit-cover w-full h-full">
+      <img src="{{ photo.url }}" class="absolute pin object-fit-cover w-full h-full" alt="{{ photo.altText ?? ''}}">
     {% elseif icon is defined %}
       <div class="text-camouflage-green opacity-75 fill-current h-full p-12">
         {{ craft.inlin.er('/assets/img/icon-' ~ icon ~ '.svg') | replace('<svg ', '<svg class="h-full" ') | raw }}
