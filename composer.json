@@ -1,9 +1,9 @@
 {
   "require": {
-    "craftcms/cms": "3.1.26",
+    "craftcms/cms": "3.1.27",
     "vlucas/phpdotenv": "^2.4.0",
     "nystudio107/craft-typogrify": "1.1.18",
-    "solspace/craft3-calendar": "2.0.19",
+    "solspace/craft3-calendar": "2.0.20",
     "nystudio107/craft-seomatic": "3.1.50",
     "craftcms/store-hours": "2.1.1.1",
     "craftcms/redactor": "2.3.3.2",
@@ -22,7 +22,7 @@
     "superbig/craft-audit": "1.0.4",
     "nystudio107/craft-retour": "3.1.14",
     "dolphiq/redirect": "1.0.23",
-    "rias/craft-scout": "1.2.0",
+    "rias/craft-scout": "1.2.1",
     "craftcms/element-api": "2.5.4",
     "nystudio107/craft-emptycoalesce": "1.0.5",
     "nystudio107/craft-imageoptimize": "1.5.5",

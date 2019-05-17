@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "bcad9221a6c6291d8e9fff602e043325",
+    "content-hash": "063a96f5afc99ad4414f52c91f4a21a2",
     "packages": [
         {
             "name": "99designs/phumbor",
@@ -150,11 +150,11 @@
         },
         {
             "name": "algolia/algoliasearch-client-php",
-            "version": "2.2.3",
+            "version": "2.2.6",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/algolia/algoliasearch-client-php/zipball/7423057ca904f676307eddf300e08a26e2d194e0",
-                "reference": "7423057ca904f676307eddf300e08a26e2d194e0",
+                "url": "https://api.github.com/repos/algolia/algoliasearch-client-php/zipball/55f1a7e2549ac1865d94ff00e8ec6d4aeee952e6",
+                "reference": "55f1a7e2549ac1865d94ff00e8ec6d4aeee952e6",
                 "shasum": ""
             },
             "require": {
@@ -204,7 +204,7 @@
                 "php",
                 "search"
             ],
-            "time": "2019-02-26T15:58:17+00:00"
+            "time": "2019-05-15T09:16:37+00:00"
         },
         {
             "name": "aws/aws-sdk-php",
@@ -765,11 +765,11 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "3.1.26",
+            "version": "3.1.27",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/64297dc7367bd6faf2ec8139096344f66b219bb1",
-                "reference": "64297dc7367bd6faf2ec8139096344f66b219bb1",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/d5b2aa25fa2e7bb7527fca807b5229e99ea42218",
+                "reference": "d5b2aa25fa2e7bb7527fca807b5229e99ea42218",
                 "shasum": ""
             },
             "require": {
@@ -845,7 +845,7 @@
                 "docs": "https://docs.craftcms.com/v3/",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2019-05-08T17:55:55+00:00"
+            "time": "2019-05-14T18:43:31+00:00"
         },
         {
             "name": "craftcms/element-api",
@@ -3446,19 +3446,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "1.36.2",
+            "version": "1.37.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/cd324b98bc30290f233dd0e75e6ce49f7ab2a6c9",
-                "reference": "cd324b98bc30290f233dd0e75e6ce49f7ab2a6c9",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/5be4fdf97076a685b23efdedfc2b73ad0c5eab70",
+                "reference": "5be4fdf97076a685b23efdedfc2b73ad0c5eab70",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.9",
                 "symfony/translation": "~2.6 || ~3.0 || ~4.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^4.8.35 || ^5.7"
             },
             "suggest": {
                 "friendsofphp/php-cs-fixer": "Needed for the `composer phpcs` command. Allow to automatically fix code style.",
@@ -3477,7 +3474,6 @@
                     "": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -3495,7 +3491,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2018-12-28T10:07:33+00:00"
+            "time": "2019-04-19T10:27:42+00:00"
         },
         {
             "name": "nystudio107/craft-emptycoalesce",
@@ -4273,11 +4269,11 @@
         },
         {
             "name": "rias/craft-scout",
-            "version": "1.2.0",
+            "version": "1.2.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Rias500/craft-scout/zipball/5af3c9ccc7fa5e786807306aa4508e522187e5f7",
-                "reference": "5af3c9ccc7fa5e786807306aa4508e522187e5f7",
+                "url": "https://api.github.com/repos/Rias500/craft-scout/zipball/d18c3a5e5edd0f0cd015db1d4d51890615a42cb7",
+                "reference": "d18c3a5e5edd0f0cd015db1d4d51890615a42cb7",
                 "shasum": ""
             },
             "require": {
@@ -4292,7 +4288,7 @@
                 "schemaVersion": "0.1.0",
                 "hasCpSettings": true,
                 "hasCpSection": false,
-                "changelogUrl": "https://raw.githubusercontent.com/Rias500/craft3-scout/master/CHANGELOG.md",
+                "changelogUrl": "https://raw.githubusercontent.com/riasvdv/craft3-scout/master/CHANGELOG.md",
                 "components": {
                     "scoutService": "rias\\scout\\services\\ScoutService"
                 },
@@ -4321,10 +4317,10 @@
                 "scout"
             ],
             "support": {
-                "docs": "https://github.com/Rias500/craft3-scout/blob/master/README.md",
-                "issues": "https://github.com/Rias500/craft3-scout/issues"
+                "docs": "https://github.com/riasvdv/craft3-scout/blob/master/README.md",
+                "issues": "https://github.com/riasvdv/craft3-scout/issues"
             },
-            "time": "2019-05-01T10:29:34+00:00"
+            "time": "2019-05-17T07:04:14+00:00"
         },
         {
             "name": "rlanvin/php-rrule",
@@ -4544,11 +4540,11 @@
         },
         {
             "name": "solspace/craft3-calendar",
-            "version": "2.0.19",
+            "version": "2.0.20",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/solspace/craft3-calendar/zipball/a1b7e1f400540aac051791146c5221f54a11b987",
-                "reference": "a1b7e1f400540aac051791146c5221f54a11b987",
+                "url": "https://api.github.com/repos/solspace/craft3-calendar/zipball/a064d9307ccd7a4a459e25762704e81d1b00b73e",
+                "reference": "a064d9307ccd7a4a459e25762704e81d1b00b73e",
                 "shasum": ""
             },
             "require": {
@@ -4586,15 +4582,15 @@
                 }
             ],
             "description": "The most powerful event management plugin for Craft.",
-            "time": "2019-04-15T20:01:30+00:00"
+            "time": "2019-05-14T19:42:13+00:00"
         },
         {
             "name": "solspace/craft3-commons",
-            "version": "1.0.19",
+            "version": "1.0.20",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/solspace/craft3-commons/zipball/8f2dd12606fd485cd52aec058a2d8bfe4976715f",
-                "reference": "8f2dd12606fd485cd52aec058a2d8bfe4976715f",
+                "url": "https://api.github.com/repos/solspace/craft3-commons/zipball/2de20a76e83efe3ed615a2a102dfef18e2295420",
+                "reference": "2de20a76e83efe3ed615a2a102dfef18e2295420",
                 "shasum": ""
             },
             "require": {
@@ -4610,7 +4606,7 @@
                 "MIT"
             ],
             "description": "Solspace Commons Library for Craft CMS 3 plugins",
-            "time": "2019-04-23T12:19:19+00:00"
+            "time": "2019-05-01T15:04:11+00:00"
         },
         {
             "name": "sunra/php-simple-html-dom-parser",
@@ -5009,7 +5005,7 @@
         },
         {
             "name": "symfony/inflector",
-            "version": "v3.4.26",
+            "version": "v3.4.27",
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/inflector/zipball/4a7d5c4ad3edeba3fe4a27d26ece6a012eee46b1",
@@ -5426,7 +5422,7 @@
         },
         {
             "name": "symfony/property-access",
-            "version": "v3.4.26",
+            "version": "v3.4.27",
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/property-access/zipball/9b1c9df96a00c14445bef4cf37ad85e7239d8a4a",
@@ -5485,11 +5481,11 @@
         },
         {
             "name": "symfony/translation",
-            "version": "v3.4.26",
+            "version": "v3.4.27",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/translation/zipball/aae26f143da71adc8707eb489f1dc86aef7d376b",
-                "reference": "aae26f143da71adc8707eb489f1dc86aef7d376b",
+                "url": "https://api.github.com/repos/symfony/translation/zipball/301a5d627220a1c4ee522813b0028653af6c4f54",
+                "reference": "301a5d627220a1c4ee522813b0028653af6c4f54",
                 "shasum": ""
             },
             "require": {
@@ -5535,7 +5531,7 @@
             ],
             "description": "Symfony Translation Component",
             "homepage": "https://symfony.com",
-            "time": "2019-04-10T16:00:48+00:00"
+            "time": "2019-05-01T11:10:09+00:00"
         },
         {
             "name": "symfony/yaml",
@@ -6234,11 +6230,11 @@
         },
         {
             "name": "yiisoft/yii2-debug",
-            "version": "2.1.3",
+            "version": "2.1.4",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-debug/zipball/27e36a045069e6e195a28cd4314b6e125ddcc0f9",
-                "reference": "27e36a045069e6e195a28cd4314b6e125ddcc0f9",
+                "url": "https://api.github.com/repos/yiisoft/yii2-debug/zipball/4cc407f34fd90e410d806ea3264781a9fb4fd1ef",
+                "reference": "4cc407f34fd90e410d806ea3264781a9fb4fd1ef",
                 "shasum": ""
             },
             "require": {
@@ -6276,7 +6272,7 @@
                 "debugger",
                 "yii2"
             ],
-            "time": "2019-04-30T15:21:32+00:00"
+            "time": "2019-05-14T13:39:56+00:00"
         },
         {
             "name": "yiisoft/yii2-queue",
