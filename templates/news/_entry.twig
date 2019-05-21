@@ -21,6 +21,7 @@
           <figure class="max-w-full mb-8">
             {% set optimizedImages = entry.newsImage.one().newsEntryImage %}
             <img src="{{ optimizedImages.src() }}"
+                alt="{{ entry.newsImage.one().altText ?? ''}}"
                 srcset="{{ optimizedImages.srcset() }}"
                 sizes="100vw" />
           </figure>

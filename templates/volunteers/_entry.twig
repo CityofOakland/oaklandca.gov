@@ -20,24 +20,7 @@
   } %}
   <section class="bg-white">
     <div class="container section-container">
-      <div class="sm:flex">
-        <div class="sm:w-1/4 sm:mr-8">
-          <figure class="w-full">
-            {% if entry.portrait | length %}
-              <img src="{{ entry.portrait.one.url }}" alt="Portrait of {{ entry.title }}">
-            {% else %}
-              <div class="bg-cararra text-camouflage-green opacity-75 fill-current h-full p-12">
-                {{ craft.inlin.er('/assets/img/icon-user.svg') | replace('<svg ', '<svg class="h-full w-full" ') | raw }}
-              </div>
-            {% endif %}
-          </figure>
-          {% set dobc = entry.departmentOfficialBoardCommission %}
-          {% if dobc.exists() %}
-            <h3 class="text-lg font-bold flex items-center"><span class="w-16">Team: </span><a href="{{ dobc.one.url }}" class="flex-1 btn btn-bright btn-sm inline-block text-center">{{ dobc.one.title }}</a></h3>
-          {% elseif entry.staffImportDepartment | length %}
-            <h3 class="text-lg font-bold flex items-center">{{ entry.staffImportDepartment }}</h3>
-          {% endif %}
-        </div>
+      <div class="sm:flex sm:flex-row-reverse">
         <div class="sm:flex-1">
           <h2 class="text-3xl sm:mt-0 mb-0">{{ entry.title }}</h2>
           <p class="text-xl mt-2">
@@ -57,6 +40,23 @@
           {% endif %}
           {% if entry.termEnd | length %}
             <p><b>Term End Date</b>: {{ entry.termEnd | date() }}</p>
+          {% endif %}
+        </div>
+        <div class="sm:w-1/4 sm:mr-8">
+          <figure class="w-full">
+            {% if entry.portrait | length %}
+              <img src="{{ entry.portrait.one.url }}" alt="Portrait of {{ entry.title }}">
+            {% else %}
+              <div class="bg-cararra text-camouflage-green opacity-75 fill-current h-full p-12">
+                {{ craft.inlin.er('/assets/img/icon-user.svg') | replace('<svg ', '<svg class="h-full w-full" ') | raw }}
+              </div>
+            {% endif %}
+          </figure>
+          {% set dobc = entry.departmentOfficialBoardCommission %}
+          {% if dobc.exists() %}
+            <h3 class="text-lg font-bold flex items-center"><span class="w-16">Team: </span><a href="{{ dobc.one.url }}" class="flex-1 btn btn-sm inline-block text-center">{{ dobc.one.title }}</a></h3>
+          {% elseif entry.staffImportDepartment | length %}
+            <h3 class="text-lg font-bold flex items-center">{{ entry.staffImportDepartment }}</h3>
           {% endif %}
         </div>
       </div>

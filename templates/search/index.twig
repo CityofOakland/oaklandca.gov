@@ -24,7 +24,9 @@
     <div class="relative container mx-auto p-8 z-10 flex flex-col sm:flex-row">
       <h1 class="text-3xl md:text-4xl font-bold mb-0 sm:w-1/4">{{ entry.title }}</h1>
       <form action="" class="flex-1 my-4 sm:my-0">
+        <label for="search-input" class="hidden-visually">Search Term(s)</label>
         <input class="flex-1 py-4 px-8 rounded-none appearance-none" type="search" name="query" id="search-input" value="" required>
+        <button class="btn hidden-visually" type="submit">Submit</button>
         <div id="search-nav" class="text-sm sm:text-base">
           <ul class="list-reset mb-0">
             <li class="inline-block mr-4">
