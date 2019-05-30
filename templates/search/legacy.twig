@@ -5,7 +5,7 @@
 {% switch section %}
 
   {% case "boards-commissions" %}
-    {% set sections = [
+  {% set sections = [
       {
         name:'Boards & Commissions',
         handle:'boardsCommissions'
@@ -13,7 +13,7 @@
     ] %}
 
   {% case "documents" %}
-    {% set sections = [
+  {% set sections = [
       {
         name: 'Documents',
         handle: 'documents, documentPackets',
@@ -69,7 +69,7 @@
   ] %}
 
   {% default %}
-    {% set sections = [
+  {% set sections = [
       {
         name: section | capitalize,
         handle: section
@@ -109,47 +109,52 @@
     <div class="container mx-auto p-8 py-16">
       <h2 class="mt-0 mb-16">{{ entries | length }}
         {{"pages match your search for" }}
-        <span class="font-bold bg-cararra px-2">{{ query }}</span></h2>
-        {% if entries | length %}
-          {% if sections | length > 1 %}
-            {% set entry = entries.one %}
-            {% if entry.redirectUrl | length %}
-              {% set url = entry.redirectUrl %}
-            {% else %}
-              {% set url = entry.url %}
-            {% endif %}
-            <div class="md:flex">
+        <span class="font-bold bg-cararra px-2">{{ query }}</span>
+      </h2>
+      {% if entries | length %}
+        {% if sections | length > 1 %}
+          {% set entry = entries.one %}
+          {% if entry.redirectUrl | length %}
+            {% set url = entry.redirectUrl %}
+          {% else %}
+            {% set url = entry.url %}
+          {% endif %}
+          <div class="md:flex">
+            <div class="md:w-1/4 md:pr-4">
+              <h3 class="text-xl my-0">Top Hit</h3>
+            </div>
+            <div class="flex-1">
+              <a class="block w-full sm:pl-2 hover:bg-curious-blue hover:text-white" href="{{ url }}">{{ entry.title }}
+                (in
+                {{ entry.section.name }})</a>
+            </div>
+          </div>
+        {% endif %}
+        {% for currentSection in sections %}
+          {% if entries.section(currentSection.handle).all() | length %}
+            <div class="md:flex mt-4">
               <div class="md:w-1/4 md:pr-4">
-                <h3 class="text-xl my-0">Top Hit</h3>
+                <h3 class="text-xl my-0">{{ currentSection.name }}</h3>
               </div>
               <div class="flex-1">
-                <a class="block w-full sm:pl-2 hover:bg-curious-blue hover:text-white" href="{{ url }}">{{ entry.title }} (in {{ entry.section.name }})</a>
+                {% for entry in entries.section(currentSection.handle).all() %}
+                  <article class="mb-3">
+                    {% if entry.redirectUrl | length %}
+                      {% set url = entry.redirectUrl %}
+                    {% else %}
+                      {% set url = entry.url %}
+                    {% endif %}
+                    <a class="block w-full sm:pl-2 hover:bg-curious-blue hover:text-white" href="{{ url }}">{{ entry.title }}</a>
+                  </article>
+                {% endfor %}
               </div>
             </div>
           {% endif %}
-          {% for currentSection in sections %}
-            {% if entries.section(currentSection.handle).all() | length %}
-              <div class="md:flex mt-4">
-                <div class="md:w-1/4 md:pr-4">
-                  <h3 class="text-xl my-0">{{ currentSection.name }}</h3>
-                </div>
-                <div class="flex-1">
-                  {% for entry in entries.section(currentSection.handle).all() %}
-                    <article class="mb-3">
-                      {% if entry.redirectUrl | length %}
-                        {% set url = entry.redirectUrl %}
-                      {% else %}
-                        {% set url = entry.url %}
-                      {% endif %}
-                      <a class="block w-full sm:pl-2 hover:bg-curious-blue hover:text-white" href="{{ url }}">{{ entry.title }}</a>
-                    </article>
-                  {% endfor %}
-                </div>
-              </div>
-            {% endif %}
-          {% endfor %}
-        {% else %}
-          <p>{{"Your search for" }} “{{ query }}” {{"didn’t return any results." }}</p>
+        {% endfor %}
+      {% else %}
+        <p>{{"Your search for" }}
+          “{{ query }}”
+          {{"didn’t return any results." }}</p>
       {% endif %}
     </div>
   </section>

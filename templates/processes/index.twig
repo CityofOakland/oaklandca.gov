@@ -9,13 +9,15 @@
   <section class="bg-white relative z-0">
     <div class="container mx-auto p-8 py-16">
       {% paginate craft.entries.section('processes').limit(25).orderBy('title') as pageInfo, pageEntries %}
-      {% include '_partials/_elements/_pagination' %}
-      {% for entry in pageEntries %}
-        <article>
-          <h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
-        </article>
-      {% endfor %}
-      {% include '_partials/_elements/_pagination' %}
-    </div>
-  </section>
-{% endblock %}
+        {% include '_partials/_elements/_pagination' %}
+        {% for entry in pageEntries %}
+          <article>
+            <h3>
+              <a href="{{ entry.url }}">{{ entry.title }}</a>
+            </h3>
+          </article>
+        {% endfor %}
+        {% include '_partials/_elements/_pagination' %}
+      </div>
+    </section>
+  {% endblock %}

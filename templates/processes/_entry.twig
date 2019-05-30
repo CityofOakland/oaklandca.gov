@@ -25,7 +25,7 @@
 
   {% if entry.processSteps.exists() %}
     <section class="bg-rotate">
-      <a id="page-steps" class="anchor-link"></a>
+      <a class="anchor-link" id="page-steps"></a>
       <div class="container mx-auto p-8 py-16">
         {% include '_partials/_elements/_module-header' with {
           headerText: "Steps"
@@ -35,15 +35,17 @@
             <dt class="step-number text-xl p-4 bg-celeste text-center">
               <p class="font-bold text-3xl my-0">{{ block.stepNumber }}</p>
               <p class="my-0">
-              {% if block.stepRequired %}
-                Required
-              {% else %}
-                Optional
-              {% endif %}
+                {% if block.stepRequired %}
+                  Required
+                {% else %}
+                  Optional
+                {% endif %}
               </p>
             </dt>
             <dd class="step-description bg-celeste p-4">
-              <h3 class="text-3xl"><a href="{{ block.stepAction.one.url }}">{{ block.stepAction.one.type.name ~ ' - ' ~ block.stepAction.one.title }}</a></h3>
+              <h3 class="text-3xl">
+                <a href="{{ block.stepAction.one.url }}">{{ block.stepAction.one.type.name ~ ' - ' ~ block.stepAction.one.title }}</a>
+              </h3>
             </dd>
           {% endfor %}
         </dl>

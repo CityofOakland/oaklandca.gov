@@ -25,7 +25,9 @@
           <ul class="list-reset text-sm">
             {% for key,value in navMenu %}
               {% if value %}
-                <li class="my-2"><a aria-label="Featured {{ fullNavMenu[key]['title'] }}" class="text-white hover:text-white" href="#page-{{ fullNavMenu[key]['url'] }}">{{ fullNavMenu[key]['title'] }}</a></li>
+                <li class="my-2">
+                  <a aria-label="Featured {{ fullNavMenu[key]['title'] }}" class="text-white hover:text-white" href="#page-{{ fullNavMenu[key]['url'] }}">{{ fullNavMenu[key]['title'] }}</a>
+                </li>
               {% endif %}
             {% endfor %}
           </ul>

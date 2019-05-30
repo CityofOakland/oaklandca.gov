@@ -1,7 +1,7 @@
 {% set defaultButtonUrl = "/boards-commissions/related-to/"  ~ entry.section.handle ~ "/" ~ entry.slug %}
 {% if entry.pageBoardsCommissions | length %}
   <section class="bg-rotate">
-    <a id="page-boards" class="anchor-link"></a>
+    <a class="anchor-link" id="page-boards"></a>
     <div class="container mx-auto p-8 py-16">
       {% include '_partials/_elements/_module-header' with {
         headerText: pageBoardsHeaderText ?? "Related Boards & Commissions",

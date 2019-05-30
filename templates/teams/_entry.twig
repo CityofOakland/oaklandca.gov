@@ -13,43 +13,47 @@
   } %}
   <section class="bg-white relative z-0">
     <div class="container mx-auto p-8 py-16">
-    {% for team in entry.teamMembers.all() %}
-      {% if team.staffHeading | length %}
-        <h2 class="mb-0">{{ team.staffHeading }}</h2>
-      {% else %}
-        <h2 class="mb-0">Team</h2>
-      {% endif %}
-      <div class="card-grid grid-equal-height profile-cards mt-12">
-      {% for entry in team.staff.all() %}
-        {% set department = entry.departments.one.title ?? entry.staffImportDepartment ?? '' %}
-        {% set organization = entry.staffImportOrganization ?? '' %}
-        {% set email = entry.emailAddress ??? entry.staffImportEmail %}
-        {% set phone = entry.phoneNumber ??? entry.staffImportPhoneNumber %}
-        {% set extraContent %}
-          {% if department | length %}{{ department }}{% endif %}
-          {% if email | length %}
-            {% set e = email | replace({'@oaklandnet.com': '@oaklandca.gov'}) %}
-            <br><a href="mailto:{{ e }}" aria-label="Email {{ entry.title }}">Email</a>
-          {% endif %}
-          {% if phone | length %}
-            <br><a href="tel:{{ phone }}">{{ phone }}</a>
-          {% endif %}
-          {% if entry.termStart | length and entry.termEnd | length %}
-            <br>{{ entry.termStart | date() }} – {{ entry.termEnd | date() }}
-          {% endif %}
-        {% endset %}
+      {% for team in entry.teamMembers.all() %}
+        {% if team.staffHeading | length %}
+          <h2 class="mb-0">{{ team.staffHeading }}</h2>
+        {% else %}
+          <h2 class="mb-0">Team</h2>
+        {% endif %}
+        <div class="card-grid grid-equal-height profile-cards mt-12">
+          {% for entry in team.staff.all() %}
+            {% set department = entry.departments.one.title ?? entry.staffImportDepartment ?? '' %}
+            {% set organization = entry.staffImportOrganization ?? '' %}
+            {% set email = entry.emailAddress ??? entry.staffImportEmail %}
+            {% set phone = entry.phoneNumber ??? entry.staffImportPhoneNumber %}
+            {% set extraContent %}
+              {% if department | length %}
+                {{ department }}
+              {% endif %}
+              {% if email | length %}
+                {% set e = email | replace({'@oaklandnet.com': '@oaklandca.gov'}) %}
+                <br><a aria-label="Email {{ entry.title }}" href="mailto:{{ e }}">Email</a>
+              {% endif %}
+              {% if phone | length %}
+                <br><a href="tel:{{ phone }}">{{ phone }}</a>
+              {% endif %}
+              {% if entry.termStart | length and entry.termEnd | length %}
+                <br>{{ entry.termStart | date() }}
+                –
+                {{ entry.termEnd | date() }}
+              {% endif %}
+            {% endset %}
 
-        {% include '_partials/_elements/_profile-cards' with {
-          photo: entry.portrait.one,
-          name: entry.title,
-          jobTitle: entry.jobTitle ?? '',
-          url: entry.redirectUrl ?? entry.url ?? '',
-          extraContent: extraContent,
-          icon: 'user'
-        } %}
+            {% include '_partials/_elements/_profile-cards' with {
+              photo: entry.portrait.one,
+              name: entry.title,
+              jobTitle: entry.jobTitle ?? '',
+              url: entry.redirectUrl ?? entry.url ?? '',
+              extraContent: extraContent,
+              icon: 'user'
+            } %}
+          {% endfor %}
+        </div>
       {% endfor %}
-      </div>
-    {% endfor %}
     </div>
   </section>
 {% endblock %}

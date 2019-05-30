@@ -3,21 +3,27 @@
 {% do view.registerJsFile("https://api.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.js") %}
 {% do view.registerCssFile("https://api.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.css") %}
 
-<div id='map-{{ location.id }}' class="mt-4 w-full h-64"></div>
+<div class="mt-4 w-full h-64" id='map-{{ location.id }}'></div>
 {% js %}
-  mapboxgl.accessToken = 'pk.eyJ1Ijoib2FrbGFuZGRpZ2l0YWwiLCJhIjoiY2pudXBsb2Q5MTcyejNwcGFiMXI3djlvMiJ9.eWDu3rz5mBaZvBzMQtZGlQ';
+mapboxgl.accessToken = 'pk.eyJ1Ijoib2FrbGFuZGRpZ2l0YWwiLCJhIjoiY2pudXBsb2Q5MTcyejNwcGFiMXI3djlvMiJ9.eWDu3rz5mBaZvBzMQtZGlQ';
   var map = new mapboxgl.Map({
     container: 'map-{{ location.id }}',
-    center: [{{ location.address.lng }}, {{ location.address.lat }}],
+    center: [{{ location.address.lng }},
+{{ location.address.lat }}],
     zoom: 15,
     style: 'mapbox://styles/mapbox/streets-v10'
   });
   var marker = new mapboxgl.Marker()
-  .setLngLat([{{ location.address.lng }}, {{ location.address.lat }}])
+  .setLngLat([{{ location.address.lng }},
+{{ location.address.lat }}])
   .addTo(map);
 {% endjs %}
 <div class="mt-4 mb-8">
   {{ location.address.street1 }}<br>
-  {% if location.address.street2 | length %}{{ location.address.street2 }}<br>{% endif %}
-  {{ location.address.city }}, {{ location.address.state }} {{ location.address.zip }}
+  {% if location.address.street2 | length %}
+    {{ location.address.street2 }}<br>
+  {% endif %}
+  {{ location.address.city }},
+  {{ location.address.state }}
+  {{ location.address.zip }}
 </div>

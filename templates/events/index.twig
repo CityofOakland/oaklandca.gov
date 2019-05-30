@@ -27,11 +27,11 @@ var searchInputText = "Search for an event. E.g., “Walking Tour”";
 var hitsRootClass = 'card-grid vertical-cards';
 var facetFilters = [
   {% for facet in facets %}
-  {
-    container: '#{{ facet.container }}',
-    attribute: '{{ facet.attribute }}',
-    header: '{{ facet.header }}'
-  },
+    {
+      container: '#{{ facet.container }}',
+      attribute: '{{ facet.attribute }}',
+      header: '{{ facet.header }}'
+    },
   {% endfor %}
 ];
 

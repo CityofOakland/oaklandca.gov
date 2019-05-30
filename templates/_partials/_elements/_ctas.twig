@@ -25,8 +25,12 @@
             <p class="text-sm font-sans uppercase tracking-wide">{{ cta.addressTitle }}</p>
             <p>
               {{ location.street1 }}<br>
-              {% if location.street2 | length %}{{ location.street2 }}<br>{% endif %}
-              {{ location.city }}, {{ location.state }} {{ location.zip }}
+              {% if location.street2 | length %}
+                {{ location.street2 }}<br>
+              {% endif %}
+              {{ location.city }},
+              {{ location.state }}
+              {{ location.zip }}
             </p>
             {{ cta.additionalAddressInfo }}
           </div>

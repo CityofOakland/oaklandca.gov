@@ -26,11 +26,11 @@ var algoliaIndex = 'production_topics';
 var searchInputText = "Search for a specific topic. E.g., “Parking ticket”";
 var facetFilters = [
   {% for facet in facets %}
-  {
-    container: '#{{ facet.container }}',
-    attribute: '{{ facet.attribute }}',
-    header: '{{ facet.header }}'
-  },
+    {
+      container: '#{{ facet.container }}',
+      attribute: '{{ facet.attribute }}',
+      header: '{{ facet.header }}'
+    },
   {% endfor %}
 ];
 {% endjs %}

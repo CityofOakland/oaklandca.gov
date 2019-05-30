@@ -1,7 +1,7 @@
 {% set addresses = entry.addresses | length %}
 {% if addresses or (entry.address | length and not entry.address.isEmpty) or entry.phoneNumbers | length or entry.emailAddress | length or entry.openHours | length %}
   <section class="bg-white">
-    <a id="page-contact" class="anchor-link"></a>
+    <a class="anchor-link" id="page-contact"></a>
     <div class="container section-container">
       {% include '_partials/_elements/_module-header' with {
         headerText: pageLocationHeaderText ?? "Contact Us",
@@ -39,13 +39,18 @@
             <h3 class="text-2xl mb-0">Phone Numbers</h3>
             <ul class="list-reset mb-8">
               {% if entry.phoneNumber | length %}
-                <li>Phone Number: <a href="tel:{{ entry.phoneNumber }}">{{ entry.phoneNumber }}</a></li>
+                <li>Phone Number:
+                  <a href="tel:{{ entry.phoneNumber }}">{{ entry.phoneNumber }}</a>
+                </li>
               {% endif %}
               {% if entry.faxNumber | length %}
-                <li>Fax Number: <a href="tel:{{ entry.faxNumber }}">{{ entry.faxNumber }}</a></li>
+                <li>Fax Number:
+                  <a href="tel:{{ entry.faxNumber }}">{{ entry.faxNumber }}</a>
+                </li>
               {% endif %}
               {% if entry.ttyNumber | length %}
-                <li>TTY Number: {{ entry.ttyNumber }}</li>
+                <li>TTY Number:
+                  {{ entry.ttyNumber }}</li>
               {% endif %}
             </ul>
           {% endif %}

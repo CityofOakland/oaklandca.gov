@@ -10,7 +10,7 @@
 {% do view.registerJsFile(craft.twigpack.getModuleUri("/js/search.js")) %}
 
 {% css %}
-  .ais-search-box {
+.ais-search-box {
     max-width: initial;
   }
   .ais-search-box--magnifier {
@@ -24,19 +24,19 @@
     <div class="relative container mx-auto p-8 z-10 flex flex-col sm:flex-row">
       <h1 class="text-3xl md:text-4xl font-bold mb-0 sm:w-1/4">{{ entry.title }}</h1>
       <form action="" class="flex-1 my-4 sm:my-0">
-        <label for="search-input" class="hidden-visually">Search Term(s)</label>
-        <input class="flex-1 py-4 px-8 rounded-none appearance-none" type="search" name="query" id="search-input" value="" required>
+        <label class="hidden-visually" for="search-input">Search Term(s)</label>
+        <input class="flex-1 py-4 px-8 rounded-none appearance-none" id="search-input" name="query" required type="search" value="">
         <button class="btn hidden-visually" type="submit">Submit</button>
-        <div id="search-nav" class="text-sm sm:text-base">
+        <div class="text-sm sm:text-base" id="search-nav">
           <ul class="list-reset mb-0">
             <li class="inline-block mr-4">
-              <a href="#" data-holder="all-holder" class="search-filter-button active">General</a>
+              <a class="search-filter-button active" data-holder="all-holder" href="#">General</a>
             </li>
             <li class="inline-block mr-4">
-              <a href="#" data-holder="gov-holder" class="search-filter-button">Offices & People</a>
+              <a class="search-filter-button" data-holder="gov-holder" href="#">Offices & People</a>
             </li>
             <li class="inline-block">
-              <a href="#" data-holder="cal-holder" class="search-filter-button">Calendar</a>
+              <a class="search-filter-button" data-holder="cal-holder" href="#">Calendar</a>
             </li>
           </ul>
         </div>
@@ -45,21 +45,23 @@
   </div>
   <section class="bg-white relative z-0">
     <div class="container mx-auto p-8">
-      <p class="text-sm text- font-sans uppercase">Problems using our new search? <a href="/search/legacy/?query={{ query }}">Try using our legacy search feature.</a></p>
+      <p class="text-sm text- font-sans uppercase">Problems using our new search?
+        <a href="/search/legacy/?query={{ query }}">Try using our legacy search feature.</a>
+      </p>
       <div class="md:flex">
-        <div id="all-holder" data-hits class="md:w-2/3">
+        <div class="md:w-2/3" data-hits id="all-holder">
           <h2 class="my-0">General</h2>
           <div id="all-hits"></div>
         </div>
-        <div id="gov-holder" data-hits class="md:w-2/3 hidden">
+        <div class="md:w-2/3 hidden" data-hits id="gov-holder">
           <h2 class="my-0">Offices & People</h2>
           <div id="gov-hits"></div>
         </div>
-        <div id="cal-holder" data-hits class="md:w-2/3 hidden">
+        <div class="md:w-2/3 hidden" data-hits id="cal-holder">
           <h2 class="my-0">Calendar</h2>
           <div id="cal-hits"></div>
         </div>
-        <div id="doc-holder" class="md:ml-8 md:w-1/3">
+        <div class="md:ml-8 md:w-1/3" id="doc-holder">
           <h2 class="my-4 sm:mt-0">Documents</h2>
           <div id="doc-hits"></div>
         </div>

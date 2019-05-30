@@ -27,7 +27,11 @@
               {{ startDate.format("F, j Y") }}
             </h4>
             {% if not event.allDay %}
-              <p class="my-0 text-xl">{{ startDate.format("g:ia") }} {% if endDate | length %} — {{ endDate.format("g:ia") }}{% endif %}
+              <p class="my-0 text-xl">{{ startDate.format("g:ia") }}
+                {% if endDate | length %}
+                  —
+                  {{ endDate.format("g:ia") }}
+                {% endif %}
               </p>
             {% endif %}
           </time>
@@ -116,7 +120,9 @@
               <iframe src='{{ embed }}' frameborder='0' allowfullscreen="allowfullscreen"></iframe>
             </div>
           {% else %}
-            <p><a href="{{ entry.videoLink }}" target="_blank">Meeting Video ({{ entry.videoLink }})</a></p>
+            <p>
+              <a href="{{ entry.videoLink }}" target="_blank">Meeting Video ({{ entry.videoLink }})</a>
+            </p>
           {% endif %}
         {% endif %}
         {% if entry.eventContact | length %}

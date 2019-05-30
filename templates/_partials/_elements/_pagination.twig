@@ -2,7 +2,9 @@
   {% spaceless %}
     <div class="pagination text-base">
       <a class="mr-2" href="{{ pageInfo.firstUrl }}">«</a>
-      {% if pageInfo.prevUrl %}<a class="mx-2" href="{{ pageInfo.prevUrl }}">‹</a>{% endif %}
+      {% if pageInfo.prevUrl %}
+        <a class="mx-2" href="{{ pageInfo.prevUrl }}">‹</a>
+      {% endif %}
 
       <span class="hidden sm:inline">
         {% for page, url in pageInfo.getPrevUrls(5) %}
@@ -16,7 +18,9 @@
         {% endfor %}
       </span>
 
-      {% if pageInfo.nextUrl %}<a class="mx-2" href="{{ pageInfo.nextUrl }}">›</a>{% endif %}
+      {% if pageInfo.nextUrl %}
+        <a class="mx-2" href="{{ pageInfo.nextUrl }}">›</a>
+      {% endif %}
       <a class="ml-2" href="{{ pageInfo.lastUrl }}">»</a>
     </div>
   {% endspaceless %}

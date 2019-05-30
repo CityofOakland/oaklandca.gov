@@ -22,7 +22,7 @@ function toggleSearch(e) {
 }
 
 //Prevent the function to run before the document is loaded
-document.addEventListener("readystatechange", function () {
+document.addEventListener("readystatechange", function() {
   if (document.readyState === "complete") {
     init();
   }

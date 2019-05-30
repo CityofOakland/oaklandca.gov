@@ -23,14 +23,14 @@
     }
   } %}
   {% css %}
-    {% include "_css/timeline.css" %}
+  {% include "_css/timeline.css" %}
   {% endcss %}
   {% js %}
     {% include "_js/timeline.js" %}
     timeline(document.querySelectorAll('.timeline'));
   {% endjs %}
   <section>
-    <a id="page-timeline" class="anchor-link"></a>
+    <a class="anchor-link" id="page-timeline"></a>
     <div class="container mx-auto p-8 py-16">
       <div class="md:flex md:flex-row">
         <div class="md:pr-4 md:w-1/2">
@@ -65,7 +65,7 @@
   </section>
   {% if entry.projectBeforePhoto.exists() and entry.projectAfterPhoto.exists() %}
     <section>
-      <a id="page-project-photos" class="anchor-link"></a>
+      <a class="anchor-link" id="page-project-photos"></a>
       <div class="container mx-auto p-8 py-16">
         <div class="md:flex md:flex-row">
           <div class="md:pr-4 md:w-1/2">
@@ -93,7 +93,7 @@
     </section>
   {% endif %}
   <section>
-    <a id="page-about" class="anchor-link"></a>
+    <a class="anchor-link" id="page-about"></a>
     <div class="container mx-auto p-8 py-16 md:flex md:flex-row">
       <div class="md:pr-4 md:w-2/3">
         <h3 class-"mb-4">About</h3>
@@ -102,7 +102,10 @@
       <div class="md:pl-4 md:w-1/3">
         <h3 class="mb-4">Project Updates</h3>
         {% for entry in craft.entries.section('news').relatedTo(entry).all() %}
-          <a href="{{ entry.url }}" class="block mb-4 p-4 bg-celeste hover:bg-apple text-shark hover:text-white"><h4 class="mt-0 mb-2 text-sm">{{ entry.title }}</h4> <p class="my-0 text-xs">{{ entry.postDate | date() }}</p></a>
+          <a href="{{ entry.url }}" class="block mb-4 p-4 bg-celeste hover:bg-apple text-shark hover:text-white">
+            <h4 class="mt-0 mb-2 text-sm">{{ entry.title }}</h4>
+            <p class="my-0 text-xs">{{ entry.postDate | date() }}</p>
+          </a>
         {% else %}
           <h4 class="mt-0 mb-2 text-sm">No updates, yet! Check back soon!</h4>
         {% endfor %}
@@ -110,27 +113,29 @@
     </div>
   </section>
   <section>
-    <a id="page-resources" class="anchor-link"></a>
+    <a class="anchor-link" id="page-resources"></a>
     <div class="container mx-auto p-8 py-16 md:flex md:flex-row">
       {% set relProj = entry.relatedProjectEntries %}
       {% set projDocs = entry.projectDocuments %}
       {% if relProj | length %}
-      <div{% if projDocs %} class="md:pr-4 md:w-2/3"{% endif %}>
-        <h3>Related Pages</h3>
-        <div class="card-grid">
-          {% for entry in relProj.all() %}
-            {% include "_partials/_elements/_title-cards" with { cardColor: 'bg-cararra'} %}
-          {% endfor %}
+        <div {% if projDocs %} class="md:pr-4 md:w-2/3" {% endif %}>
+          <h3>Related Pages</h3>
+          <div class="card-grid">
+            {% for entry in relProj.all() %}
+              {% include "_partials/_elements/_title-cards" with { cardColor: 'bg-cararra'} %}
+            {% endfor %}
+          </div>
         </div>
-      </div>
       {% endif %}
       {% if projDocs | length %}
-      <div{% if relProj %} class="md:pl-4 md:w-1/3"{% endif %}>
-        <h3 class="mb-10">Project Documents</h3>
-        {% for entry in projDocs.all() %}
-          <a href="{{ entry.url }}" class="block mt-4 p-4 bg-cararra hover:bg-apple text-shark hover:text-white"><h4 class="my-0 text-sm">{{ entry.title }}</h4></a>
-        {% endfor %}
-      </div>
+        <div {% if relProj %} class="md:pl-4 md:w-1/3" {% endif %}>
+          <h3 class="mb-10">Project Documents</h3>
+          {% for entry in projDocs.all() %}
+            <a href="{{ entry.url }}" class="block mt-4 p-4 bg-cararra hover:bg-apple text-shark hover:text-white">
+              <h4 class="my-0 text-sm">{{ entry.title }}</h4>
+            </a>
+          {% endfor %}
+        </div>
       {% endif %}
     </div>
   </section>
@@ -138,7 +143,7 @@
   {% include '_partials/_page-location' %}
   {% if entry.fundingLogos.exists() %}
     <section>
-      <a id="page-funding" class="anchor-link"></a>
+      <a class="anchor-link" id="page-funding"></a>
       <div class="container mx-auto p-8 py-16">
         <h3 class="mb-4 text-center">Project Funding</h3>
         <div class="flex flex-wrap items-center justify-center -mx-4">

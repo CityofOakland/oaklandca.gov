@@ -29,7 +29,11 @@
               {% endfor %}
             </h4>
             {% if not event.allDay %}
-              <p class="mb-0 text-xl">{{ startDate.format("g:ia") }} {% if endDate | length %} — {{ endDate.format("g:ia") }}{% endif %}
+              <p class="mb-0 text-xl">{{ startDate.format("g:ia") }}
+                {% if endDate | length %}
+                  —
+                  {{ endDate.format("g:ia") }}
+                {% endif %}
               </p>
             {% endif %}
           </time>

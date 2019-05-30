@@ -1,6 +1,6 @@
 {% if entry.groupHeadName | length %}
   <section class="bg-white">
-    <a id="page-leadership" class="anchor-link"></a>
+    <a class="anchor-link" id="page-leadership"></a>
     <div class="container section-container">
       {% include '_partials/_elements/_module-header' with {
         headerText: pageLeadershipHeaderText ?? "Leadership",
@@ -24,7 +24,9 @@
         </div>
         <div class="sm:flex-1">
           <h2 class="text-3xl sm:mt-0 mb-0">{{ entry.groupHeadName }}</h2>
-          {% if pageLeadershipHeaderText is not defined %}<p class="text-xl mt-2">{{ entry.groupHeadTitle }}</p>{% endif %}
+          {% if pageLeadershipHeaderText is not defined %}
+            <p class="text-xl mt-2">{{ entry.groupHeadTitle }}</p>
+          {% endif %}
           <div class="text-xl mt-8">{{ entry.groupHeadBio | raw }}</div>
         </div>
       </div>

@@ -1,7 +1,7 @@
 {% set defaultButtonUrl = "/documents/related-to/" ~ entry.section.handle ~ "/" ~ entry.slug %}
 {% if entry.pageDocuments | length %}
   <section class="bg-rotate">
-    <a id="page-documents" class="anchor-link"></a>
+    <a class="anchor-link" id="page-documents"></a>
     <div class="container mx-auto p-8">
       {% include '_partials/_elements/_module-header' with {
         headerText: pageDocumentsHeaderText ?? "Documents",

@@ -26,11 +26,11 @@ var algoliaIndex = 'production_projects';
 var searchInputText = "Search for a project topic or title. E.g., “Renovation”";
 var facetFilters = [
   {% for facet in facets %}
-  {
-    container: '#{{ facet.container }}',
-    attribute: '{{ facet.attribute }}',
-    header: '{{ facet.header }}'
-  },
+    {
+      container: '#{{ facet.container }}',
+      attribute: '{{ facet.attribute }}',
+      header: '{{ facet.header }}'
+    },
   {% endfor %}
 ];
 {% endjs %}

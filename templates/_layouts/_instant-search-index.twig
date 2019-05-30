@@ -6,8 +6,8 @@
 {% do view.registerJsFile("https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4") %}
 
 {% css %}
-  {% include "_css/algoliafilter.css" %}
-  .ais-search-box {
+{% include "_css/algoliafilter.css" %}
+.ais-search-box {
     max-width: initial;
   }
   .ais-search-box--magnifier {
@@ -29,16 +29,16 @@
   <div class="bg-cararra" id="search-bar-container">
     <div class="container mx-auto px-8 py-4 md:p-8 text-right">
       <div class="flex flex-col sm:flex-row">
-        <label for="search-input" class="hidden-visually">{{ searchInputText ?? 'Search this Index' }}</label>
-        <input id="search-input" class="w-full p-2 md:py-4 md:px-8 rounded-none appearance-none" type="search" name="keywords" value="" required>
+        <label class="hidden-visually" for="search-input">{{ searchInputText ?? 'Search this Index' }}</label>
+        <input class="w-full p-2 md:py-4 md:px-8 rounded-none appearance-none" id="search-input" name="keywords" required type="search" value="">
       </div>
       {% if facets is defined %}
         <a class="inline-block mt-4 text-right" href="#" id="filter-reveal">Show Filters</a>
       {% endif %}
     </div>
   </div>
-  <div id="algolia-filters" class="opacity-0 invisible h-0 overflow-hidden bg-shark text-white relative z-neg-10 trans trans-all">
-    <div id="facet-holder" class="mx-auto container p-8 flex-col -my-4">
+  <div class="opacity-0 invisible h-0 overflow-hidden bg-shark text-white relative z-neg-10 trans trans-all" id="algolia-filters">
+    <div class="mx-auto container p-8 flex-col -my-4" id="facet-holder">
       {% if facets is defined %}
         {% for facet in facets %}
           <div id="{{ facet.container }}"></div>
@@ -50,7 +50,9 @@
     <div class="container mx-auto px-8 pt-4 pb-16">
       <div class="w-full">
         <div id="hits"></div>
-        <div class="text-2xl flex items-center"><div class="inline-block" id="bottom-pagination"></div></div>
+        <div class="text-2xl flex items-center">
+          <div class="inline-block" id="bottom-pagination"></div>
+        </div>
       </div>
     </div>
   </section>

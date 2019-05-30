@@ -35,7 +35,11 @@
           </figure>
           {% set dobc = entry.departmentOfficialBoardCommission %}
           {% if dobc.exists() %}
-            <h3 class="text-lg font-bold flex items-center"><span class="w-16">Team: </span><a href="{{ dobc.one.url }}" class="flex-1 btn btn-sm inline-block text-center">{{ dobc.one.title }}</a></h3>
+            <h3 class="text-lg font-bold flex items-center">
+              <span class="w-16">Team:
+              </span>
+              <a href="{{ dobc.one.url }}" class="flex-1 btn btn-sm inline-block text-center">{{ dobc.one.title }}</a>
+            </h3>
           {% elseif entry.staffImportDepartment | length %}
             <h3 class="text-lg font-bold flex items-center">{{ entry.staffImportDepartment }}</h3>
           {% endif %}
@@ -49,10 +53,16 @@
             <div class="text-xl mt-8">{{ entry.bio }}</div>
           {% endif %}
           {% if email | length %}
-            <p class="my-0"><span class="font-bold">Email Address:</span> <a href="mailto:{{ email }}">{{ email }}</a></p>
+            <p class="my-0">
+              <span class="font-bold">Email Address:</span>
+              <a href="mailto:{{ email }}">{{ email }}</a>
+            </p>
           {% endif %}
           {% if phone | length %}
-            <p class="my-0"><span class="font-bold">Phone Number:</span> <a href="tel:{{ phone }}">{{ phone }}</a></p>
+            <p class="my-0">
+              <span class="font-bold">Phone Number:</span>
+              <a href="tel:{{ phone }}">{{ phone }}</a>
+            </p>
           {% endif %}
         </div>
       </div>

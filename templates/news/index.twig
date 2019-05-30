@@ -26,11 +26,11 @@ var algoliaIndex = 'production_news';
 var searchInputText = "Search for a news item. E.g., “Announcements”";
 var facetFilters = [
   {% for facet in facets %}
-  {
-    container: '#{{ facet.container }}',
-    attribute: '{{ facet.attribute }}',
-    header: '{{ facet.header }}'
-  },
+    {
+      container: '#{{ facet.container }}',
+      attribute: '{{ facet.attribute }}',
+      header: '{{ facet.header }}'
+    },
   {% endfor %}
 ];
 

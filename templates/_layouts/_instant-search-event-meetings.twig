@@ -12,8 +12,9 @@
 {% do view.registerCssFile("https://unpkg.com/BaremetricsCalendar@1.0.12/public/css/application.css") %}
 
 {% css %}
-  {% include "_css/algoliafilter.css" %}
-  .ais-search-box {
+{% include "_css/algoliafilter.css" %}
+
+.ais-search-box {
     max-width: initial;
   }
   .ais-search-box--magnifier {
@@ -35,8 +36,8 @@
   <div class="bg-cararra" id="search-bar-container">
     <div class="container mx-auto px-8 py-4 md:p-8 text-right">
       <div class="flex flex-col sm:flex-row">
-        <label for="search-input" class="hidden-visually">How can we help?</label>
-        <input id="search-input" class="w-full p-2 md:py-4 md:px-8 rounded-none appearance-none" type="search" name="keywords" value="" required>
+        <label class="hidden-visually" for="search-input">How can we help?</label>
+        <input class="w-full p-2 md:py-4 md:px-8 rounded-none appearance-none" id="search-input" name="keywords" required type="search" value="">
       </div>
       {% if facets is defined %}
         <a class="inline-block mt-4 text-right" href="#" id="filter-reveal">Show Filters</a>
@@ -44,8 +45,8 @@
     </div>
   </div>
   <section class="bg-white relative z-0">
-    <div id="algolia-filters" class="opacity-0 invisible h-0 overflow-hidden bg-shark text-white relative z-neg-10 trans trans-all">
-      <div id="facet-holder" class="mx-auto container p-8 flex-col -my-4">
+    <div class="opacity-0 invisible h-0 overflow-hidden bg-shark text-white relative z-neg-10 trans trans-all" id="algolia-filters">
+      <div class="mx-auto container p-8 flex-col -my-4" id="facet-holder">
         {% if facets is defined %}
           {% for facet in facets %}
             <div id="{{ facet.container }}" class="max-w-sm"></div>
@@ -53,14 +54,14 @@
         {% endif %}
       </div>
     </div>
-    <div id="calendar" class="daterange mx-auto px-8 mt-8 max-w-sm"></div>
+    <div class="daterange mx-auto px-8 mt-8 max-w-sm" id="calendar"></div>
     <div class="container mx-auto px-8 mt-4 pb-16 md:flex">
       <div class="flex-1">
         <div id="hits"></div>
-        <div class="text-2xl flex items-center"><div class="inline-block" id="bottom-pagination"></div></div>
+        <div class="text-2xl flex items-center">
+          <div class="inline-block" id="bottom-pagination"></div>
+        </div>
       </div>
     </div>
   </section>
 {% endblock %}
-
-

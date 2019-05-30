@@ -3,36 +3,69 @@
     <div class="sm:flex flex-wrap">
       <div class="w-full my-4 sm:w-1/2 md:w-1/4">
         <ul class="list-reset my-0">
-          <li><a href="/officials" class="text-white">City Officials</a></li>
-          <li><a href="/departments" class="text-white">Departments</a></li>
-          <li><a href="/boards-commissions" class="text-white">Boards & Commissions</a></li>
-          <li><a href="/staff" class="text-white">Staff Directory</a></li>
-          <li><a href="/services/apply-for-city-of-oakland-and-port-of-oakland-jobs" class="text-white">City Jobs</a></li>
-          <li><a href="/documents" class="text-white">Documents</a></li>
+          <li>
+            <a class="text-white" href="/officials">City Officials</a>
+          </li>
+          <li>
+            <a class="text-white" href="/departments">Departments</a>
+          </li>
+          <li>
+            <a class="text-white" href="/boards-commissions">Boards & Commissions</a>
+          </li>
+          <li>
+            <a class="text-white" href="/staff">Staff Directory</a>
+          </li>
+          <li>
+            <a class="text-white" href="/services/apply-for-city-of-oakland-and-port-of-oakland-jobs">City Jobs</a>
+          </li>
+          <li>
+            <a class="text-white" href="/documents">Documents</a>
+          </li>
         </ul>
       </div>
       <div class="w-full my-4 sm:w-1/2 md:w-1/4">
         <ul class="list-reset my-0">
-          <li><a href="/services" class="text-white">Services</a></li>
-          <li><a href="/resources" class="text-white">Resources</a></li>
-          <li><a href="/departments/media-center" class="text-white">News & Updates</a></li>
-          <li><a href="/events" class="text-white">Events</a></li>
-          <li><a href="/meetings" class="text-white">Meetings</a></li>
-          <li><a href="/topics/civil-rights-access" class="text-white">Civil Rights Policies & Procedures</a></li>
+          <li>
+            <a class="text-white" href="/services">Services</a>
+          </li>
+          <li>
+            <a class="text-white" href="/resources">Resources</a>
+          </li>
+          <li>
+            <a class="text-white" href="/departments/media-center">News & Updates</a>
+          </li>
+          <li>
+            <a class="text-white" href="/events">Events</a>
+          </li>
+          <li>
+            <a class="text-white" href="/meetings">Meetings</a>
+          </li>
+          <li>
+            <a class="text-white" href="/topics/civil-rights-access">Civil Rights Policies & Procedures</a>
+          </li>
         </ul>
       </div>
       <div class="w-full my-4 sm:w-1/2 md:w-1/4">
         <ul class="list-reset my-0">
-          <li><a href="/topics/oaklandlovelife" class="text-white">#OaklandLoveLife</a></li>
-          <li><a href="https://www.oaklandlibrary.org/" class="text-white">Oakland Library</a></li>
-          <li><a href="https://www.visitoakland.com/" class="text-white">Visit Oakland</a></li>
-          <li><a href="http://museumca.org/" class="text-white">Oakland Museum</a></li>
+          <li>
+            <a class="text-white" href="/topics/oaklandlovelife">#OaklandLoveLife</a>
+          </li>
+          <li>
+            <a class="text-white" href="https://www.oaklandlibrary.org/">Oakland Library</a>
+          </li>
+          <li>
+            <a class="text-white" href="https://www.visitoakland.com/">Visit Oakland</a>
+          </li>
+          <li>
+            <a class="text-white" href="http://museumca.org/">Oakland Museum</a>
+          </li>
         </ul>
       </div>
       <div class="w-full my-4 sm:w-1/2 md:w-1/4 leading-normal">
         <div class="mb-4">
           <b>For Maintenance Requests</b><br>
-          311 or <a class="text-white" href="tel:510-615-5566">510-615-5566</a><br>
+          311 or
+          <a class="text-white" href="tel:510-615-5566">510-615-5566</a><br>
           Relay Service 711
         </div>
         <div class="mb-4">
@@ -48,7 +81,7 @@
     </div>
     <div class="sm:flex flex-wrap mt-4 border-t border-white-2">
       <div class="sm:w-1/3">
-        <a href="/" class="block pt-4 md:pt-8 text-white hover:text-apple fill-current trans-fast">
+        <a class="block pt-4 md:pt-8 text-white hover:text-apple fill-current trans-fast" href="/">
           {{ craft.inlin.er('/assets/img/logo-oakland.svg') | replace('<svg ', '<svg class="h-12 md:h-16" ') | raw }}
           <span class="hidden-visually">Home</span>
         </a>
@@ -72,7 +105,9 @@
         </a>
       </div>
       <div class="sm:w-1/3 flex justify-end items-end text-sm">
-        © {{ now.date | date('Y') }} City of Oakland
+        ©
+        {{ now.date | date('Y') }}
+        City of Oakland
       </div>
     </div>
   </div>

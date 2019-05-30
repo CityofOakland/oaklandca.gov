@@ -3,48 +3,58 @@
 {% else %}
   {% set bgColor = 'bg-catalina-blue' %}
   {% set searchNavButton %}
-    <li class="ml-4">
-      <a id="search-menu-toggle" href="/search" class="block text-white hover:text-reef fill-current trans trans-fast" name="Search Toggle">
+  <li class="ml-4">
+    <a class="block text-white hover:text-reef fill-current trans trans-fast" href="/search" id="search-menu-toggle" name="Search Toggle">
       {{ craft.inlin.er('/assets/img/icon-magnifier.svg') | replace('<svg ', '<svg class="h-4" ') | raw }}
       <span class="hidden-visually">Search Toggle</span>
-      </a>
-    </li>
+    </a>
+  </li>
   {% endset %}
 {% endif %}
 {% set mainNav = craft.entries.section('navigation').slug('main-nav').one() %}
 
 <div class="bg-catalina-blue relative text-white block w-full z-50 trans trans-fast font-sans nav-bar md:{{ bgColor }} md:fixed" id="nav-bar">
   <div class="px-8">
-    <nav class="flex items-center justify-between" name="Main Navigation"  role="navigation" aria-labelledby="nav1">
+    <nav aria-labelledby="nav1" class="flex items-center justify-between" name="Main Navigation" role="navigation">
       <div>
-        <a href="/" class="block py-4 md:py-8 text-white hover:text-reef fill-current trans-fast" name="Home">
+        <a class="block py-4 md:py-8 text-white hover:text-reef fill-current trans-fast" href="/" name="Home">
           {{ craft.inlin.er('/assets/img/logo-oakland.svg') | replace('<svg ', '<svg class="h-12 md:h-16" ') | raw }}
           <span class="hidden-visually">Home</span>
         </a>
       </div>
-      <button id="menu-toggle" class="btn p-4 text-sm sm:text-base sm:px-8 fixed flex pin-r hover:bg-fun-green z-40 md:relative md:-mr-8 lg:hidden btn-flat-r">Menu</button>
+      <button class="btn p-4 text-sm sm:text-base sm:px-8 fixed flex pin-r hover:bg-fun-green z-40 md:relative md:-mr-8 lg:hidden btn-flat-r" id="menu-toggle">Menu</button>
       <ul class="list-reset hidden uppercase font-bold w-full justify-end flex-1 text-base lg:flex xl:text-xl">
         {% for nav in mainNav.navBuilder.all() %}
           {% set link = nav.navLink %}
-          <li class="{% if not loop.first %}ml-4 lg:ml-6 xl:ml-8{% endif %}"><a href="{{ link.url }}"{% if link.target | length %} target="{{ link.target }}"{% endif %} class="text-white hover:text-reef trans-fast">{{ link.text }}</a></li>
+          <li class="{% if not loop.first %}ml-4 lg:ml-6 xl:ml-8{% endif %}">
+            <a href="{{ link.url }}" {% if link.target | length %} target="{{ link.target }}" {% endif %} class="text-white hover:text-reef trans-fast">{{ link.text }}</a>
+          </li>
         {% endfor %}
         {{ searchNavButton ?? '' }}
       </ul>
     </nav>
-    <div id="google_translate_element" class="hidden absolute pin-b pin-r pb-4 lg:block lg:pr-8"></div><script type="text/javascript">
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'ceb,en,es,hmn,ja,km,ko,mn,tl,vi,zh-TW', layout: google.translate.TranslateElement.FloatPosition.TOP_RIGHT}, 'google_translate_element');
-    }
-    </script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <div class="hidden absolute pin-b pin-r pb-4 lg:block lg:pr-8" id="google_translate_element"></div>
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+          pageLanguage: 'en',
+          includedLanguages: 'ceb,en,es,hmn,ja,km,ko,mn,tl,vi,zh-TW',
+          layout: google.translate.TranslateElement.FloatPosition.TOP_RIGHT
+        }, 'google_translate_element');
+      }
+    </script>
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" type="text/javascript"></script>
   </div>
-  <div id="global-search-bar" class="hidden bg-catalina-blue text-white absolute items-center w-full pin-r pin-b text-base" style="transform: translateY(100%);">
-    <div class="container mx-auto px-8 py-4">
-      <form action="{{ url('search') }}" class="w-full">
-        <div class="flex w-full h-full">
-          <input type="search" class="w-full mb-0 px-3 border-shark border rounded-none appearance-none" name="query" placeholder="Enter your search phrase (e.g. “Pay a Parking Ticket” here." value="">
-          <button type="submit" class="flex-1 btn border-l-0 border-shark border hover:bg-apple">Search</button>
-        </div>
-      </form>
+  {% if craft.app.request.segments() %}
+    <div class="hidden bg-catalina-blue text-white absolute items-center w-full pin-r pin-b text-base" id="global-search-bar" style="transform: translateY(100%);">
+      <div class="container mx-auto px-8 py-4">
+        <form action="{{ url('search') }}" class="w-full">
+          <div class="flex w-full h-full">
+            <input class="w-full mb-0 px-3 border-shark border rounded-none appearance-none" name="query" placeholder="Enter your search phrase (e.g. “Pay a Parking Ticket” here." type="search" value="">
+            <button class="flex-1 btn border-l-0 border-shark border hover:bg-apple" type="submit">Search</button>
+          </div>
+        </form>
+      </div>
     </div>
-  </div>
+  {% endif %}
 </div>

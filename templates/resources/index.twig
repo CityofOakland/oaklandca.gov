@@ -26,11 +26,11 @@ var algoliaIndex = 'production_resources';
 var searchInputText = "Search for a resource. E.g., “Park hours”";
 var facetFilters = [
   {% for facet in facets %}
-  {
-    container: '#{{ facet.container }}',
-    attribute: '{{ facet.attribute }}',
-    header: '{{ facet.header }}'
-  },
+    {
+      container: '#{{ facet.container }}',
+      attribute: '{{ facet.attribute }}',
+      header: '{{ facet.header }}'
+    },
   {% endfor %}
 ];
 {% endjs %}
