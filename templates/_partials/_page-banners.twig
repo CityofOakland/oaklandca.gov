@@ -7,7 +7,7 @@
   <div class="container mx-auto px-8">
     {% if bannerImage | length %}
       <figure class="absolute bg-catalina-blue pin z-0">
-        <img class="banner-image opacity-50 z-0 image-blur-{{ bannerImageBlur ?? 'none' }}" src="{{ bannerImage.one.url }}" style="object-position:{{ bannerImage.one.getFocalPoint('asCss') }};" alt="{{ bannerImage.one.title }}">
+        <img class="banner-image image-blur-{{ bannerImageBlur ?? 'none' }}" src="{{ bannerImage.one.url }}" style="object-position:{{ bannerImage.one.getFocalPoint('asCss') }};" alt="{{ bannerImage.one.title }}">
       </figure>
     {% endif %}
     {% if breadCrumbs is defined and breadCrumbs %}

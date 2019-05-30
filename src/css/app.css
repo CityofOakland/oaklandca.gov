@@ -120,7 +120,7 @@ footer {
 
 /* Banner Styles */
 .banner {
-  @apply relative text-white text-xl leading-loose bg-tundora z-0;
+  @apply relative text-white text-xl leading-loose bg-tundora;
 }
 
 .banner-home {
@@ -128,31 +128,12 @@ footer {
 }
 
 .banner-image {
-  @apply absolute pin object-fit-cover w-full h-full;
+  @apply absolute pin object-fit-cover w-full h-full opacity-75 z-0 ;
 }
 
 /* Section Containers */
 .section-container {
   @apply mx-auto px-8 py-16;
-}
-
-/* Image Blur */
-@responsive {
-  .image-blur-none {
-    filter: blur(0);
-  }
-  .image-blur-base {
-    filter: blur(10px);
-  }
-  .image-blur-small {
-    filter: blur(5px);
-  }
-  .image-blur-large {
-    filter: blur(25px);
-  }
-  .image-blur-xlarge {
-    filter: blur(75px);
-  }
 }
 
 /* Service Styles */
@@ -194,101 +175,6 @@ main > .bg-rotate:nth-of-type(even) {
   @apply bg-white;
 }
 
-/* Aspect Ratio Box */
-.aspect-ratio {
-  @apply absolute pin w-full h-full;
-}
-
-.aspect-ratio-box {
-  @apply relative h-0 overflow-hidden;
-}
-
-/* Object Fit */
-.object-fit-cover {
-  z-index: -1;
-  object-fit: cover;
-}
-
-/* Transition Helpers */
-/* Default */
-.trans {
-  @apply trans-regular trans-ease-in-out trans-all;
-}
-
-/* Delays */
-.trans-delay-slow {
-  transition-delay: 1s;
-}
-.trans-delay {
-  transition-delay: 0.5s;
-}
-.trans-delay-fast {
-  transition-delay: 0.25s;
-}
-
-/* Duration */
-.trans-slower {
-  transition-duration: 0.75s;
-}
-.trans-slow {
-  transition-duration: 0.5s;
-}
-.trans-regular {
-  transition-duration: 0.25s;
-}
-.trans-fast {
-  transition-duration: 0.15s;
-}
-.trans-faster {
-  transition-duration: 0.075s;
-}
-
-/* Properties */
-.trans-all {
-  transition-property: all;
-}
-.trans-none {
-  transition-property: none;
-}
-.trans-bg {
-  transition-property: background;
-}
-.trans-opacity {
-  transition-property: opacity;
-}
-.trans-color {
-  transition-property: color;
-}
-.trans-shadow {
-  transition-property: box-shadow;
-}
-.trans-height {
-  transition-property: height;
-}
-
-/* Timing Function */
-.trans-linear {
-  transition-timing-function: linear;
-}
-.trans-ease {
-  transition-timing-function: ease;
-}
-.trans-ease-in {
-  transition-timing-function: ease-in;
-}
-.trans-ease-out {
-  transition-timing-function: ease-out;
-}
-.trans-ease-in-out {
-  transition-timing-function: ease-in-out;
-}
-
-/* Use this utility to hide text only meant for screen readers */
-.hide-text {
-  text-indent: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-}
 
 .iframe-holder iframe {
   max-width: 100% !important;
@@ -438,3 +324,117 @@ body.open .page-holder {
 }
 
 @tailwind utilities;
+
+/* Image Blur */
+@responsive {
+  .image-blur-none {
+    filter: blur(0);
+  }
+  .image-blur-base {
+    filter: blur(10px);
+  }
+  .image-blur-small {
+    filter: blur(5px);
+  }
+  .image-blur-large {
+    filter: blur(25px);
+  }
+  .image-blur-xlarge {
+    filter: blur(75px);
+  }
+}
+
+/* Aspect Ratio Box */
+.aspect-ratio {
+  @apply absolute pin w-full h-full;
+}
+
+.aspect-ratio-box {
+  @apply relative h-0 overflow-hidden;
+}
+
+/* Object Fit */
+.object-fit-cover {
+  object-fit: cover;
+}
+
+/* Transition Helpers */
+/* Default */
+.trans {
+  @apply trans-regular trans-ease-in-out trans-all;
+}
+
+/* Delays */
+.trans-delay-slow {
+  transition-delay: 1s;
+}
+.trans-delay {
+  transition-delay: 0.5s;
+}
+.trans-delay-fast {
+  transition-delay: 0.25s;
+}
+
+/* Duration */
+.trans-slower {
+  transition-duration: 0.75s;
+}
+.trans-slow {
+  transition-duration: 0.5s;
+}
+.trans-regular {
+  transition-duration: 0.25s;
+}
+.trans-fast {
+  transition-duration: 0.15s;
+}
+.trans-faster {
+  transition-duration: 0.075s;
+}
+
+/* Properties */
+.trans-all {
+  transition-property: all;
+}
+.trans-none {
+  transition-property: none;
+}
+.trans-bg {
+  transition-property: background;
+}
+.trans-opacity {
+  transition-property: opacity;
+}
+.trans-color {
+  transition-property: color;
+}
+.trans-shadow {
+  transition-property: box-shadow;
+}
+.trans-height {
+  transition-property: height;
+}
+
+/* Timing Function */
+.trans-linear {
+  transition-timing-function: linear;
+}
+.trans-ease {
+  transition-timing-function: ease;
+}
+.trans-ease-in {
+  transition-timing-function: ease-in;
+}
+.trans-ease-out {
+  transition-timing-function: ease-out;
+}
+.trans-ease-in-out {
+  transition-timing-function: ease-in-out;
+}
+
+/* Use this utility to hide text only meant for screen readers */
+.hide-text {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
