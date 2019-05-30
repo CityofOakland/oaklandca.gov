@@ -46,7 +46,6 @@ View the full documentation at https://tailwindcss.com.
 let colors = {
   "transparent": "transparent",
   "shark": "#212529",
-  "shark-transparent": "rgba(33, 37, 41, .33)",
   "catalina-blue-transparent": "rgba(3, 26, 122, .33)",
   "celeste": "#cfd0ce",
   "cararra": "#e9eae7",

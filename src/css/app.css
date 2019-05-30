@@ -1,6 +1,5 @@
 @tailwind preflight;
 @tailwind components;
-@tailwind utilities;
 
 body {
   @apply font-sans text-lg leading-normal;
@@ -51,36 +50,11 @@ a:hover {
   }
 }
 
- /**
- * This injects any component classes registered by plugins.
- *
- * If using `postcss-import`, use this import instead:
- *
- * @import "tailwindcss/components";
- */
-
-/**
- * Here you would add any of your custom component classes; stuff that you'd
- * want loaded *before* the utilities so that the utilities could still
- * override them.
- *
- * Example:
- *
- * .btn { ... }
- * .form-input { ... }
- *
- * Or if using a preprocessor or `postcss-import`:
- *
- * @import "components/buttons";
- * @import "components/forms";
- */
-
 .logo {
   fill: #ffffff;
 }
 
 /* Button Styles */
-
 .btn {
   @apply inline-block bg-fun-green py-4 px-8 text-base text-white no-underline trans trans-fast font-sans font-bold uppercase tracking-wide shadow rounded-sm;
 }
@@ -127,7 +101,8 @@ a:hover {
   @apply px-2 py-2;
 }
 
-main, footer {
+main,
+footer {
   position: relative;
 }
 
@@ -144,7 +119,6 @@ main, footer {
 }
 
 /* Banner Styles */
-
 .banner {
   @apply relative text-white text-xl leading-loose bg-tundora z-0;
 }
@@ -158,7 +132,6 @@ main, footer {
 }
 
 /* Section Containers */
-
 .section-container {
   @apply mx-auto px-8 py-16;
 }
@@ -183,7 +156,6 @@ main, footer {
 }
 
 /* Service Styles */
-
 .card-grid-button {
   @apply bg-white rounded-sm text-shark no-underline text-lg font-bold font-sans shadow p-8 trans trans-fast;
 }
@@ -193,7 +165,6 @@ main, footer {
 }
 
 /* Department Styles (modifies Service Styles) */
-
 .card-department {
   @apply bg-shark border-astronaut text-white;
 }
@@ -215,7 +186,6 @@ main, footer {
 }
 
 /* Background Section Color Rotations */
-
 main > .bg-rotate:nth-of-type(odd) {
   @apply bg-cararra;
 }
@@ -224,41 +194,16 @@ main > .bg-rotate:nth-of-type(even) {
   @apply bg-white;
 }
 
-/**
- * This injects all of Tailwind's utility classes, generated based on your
- * config file.
- *
- * If using `postcss-import`, use this import instead:
- *
- * @import "tailwindcss/utilities";
- */
+/* Aspect Ratio Box */
+.aspect-ratio {
+  @apply absolute pin w-full h-full;
+}
 
-/**
- * Here you would add any custom utilities you need that don't come out of the
- * box with Tailwind.
- *
- * Example :
- *
- * .bg-pattern-graph-paper { ... }
- * .skew-45 { ... }
- *
- * Or if using a preprocessor or `postcss-import`:
- *
- * @import "utilities/background-patterns";
- * @import "utilities/skew-transforms";
- */
- 
- /* Aspect Ratio Box */
- .aspect-ratio {
-   @apply absolute pin w-full h-full;
- }
-
- .aspect-ratio-box {
-   @apply relative h-0 overflow-hidden;
- }
+.aspect-ratio-box {
+  @apply relative h-0 overflow-hidden;
+}
 
 /* Object Fit */
-
 .object-fit-cover {
   z-index: -1;
   object-fit: cover;
@@ -267,41 +212,79 @@ main > .bg-rotate:nth-of-type(even) {
 /* Transition Helpers */
 /* Default */
 .trans {
-  transition-duration: .25s;
-  transition-property: all;
-  transition-timing-function: ease-in-out;
+  @apply trans-regular trans-ease-in-out trans-all;
 }
 
 /* Delays */
-.trans-delay-slow  { transition-delay: 1s; }
-.trans-delay       { transition-delay: .5s; }
-.trans-delay-fast  { transition-delay: .25s; }
+.trans-delay-slow {
+  transition-delay: 1s;
+}
+.trans-delay {
+  transition-delay: 0.5s;
+}
+.trans-delay-fast {
+  transition-delay: 0.25s;
+}
 
 /* Duration */
-.trans-slower      { transition-duration: .75s; }
-.trans-slow        { transition-duration: .5s; }
-.trans-regular     { transition-duration: .25s; }
-.trans-fast        { transition-duration: .15s; }
-.trans-faster      { transition-duration: .075s; }
+.trans-slower {
+  transition-duration: 0.75s;
+}
+.trans-slow {
+  transition-duration: 0.5s;
+}
+.trans-regular {
+  transition-duration: 0.25s;
+}
+.trans-fast {
+  transition-duration: 0.15s;
+}
+.trans-faster {
+  transition-duration: 0.075s;
+}
 
 /* Properties */
-.trans-all         { transition-property: all; }
-.trans-none        { transition-property: none; }
-.trans-bg          { transition-property: background; }
-.trans-opacity     { transition-property: opacity; }
-.trans-color       { transition-property: color; }
-.trans-shadow      { transition-property: box-shadow; }
-.trans-height      { transition-property: height; }
+.trans-all {
+  transition-property: all;
+}
+.trans-none {
+  transition-property: none;
+}
+.trans-bg {
+  transition-property: background;
+}
+.trans-opacity {
+  transition-property: opacity;
+}
+.trans-color {
+  transition-property: color;
+}
+.trans-shadow {
+  transition-property: box-shadow;
+}
+.trans-height {
+  transition-property: height;
+}
 
 /* Timing Function */
-.trans-linear      { transition-timing-function: linear; }
-.trans-ease        { transition-timing-function: ease; }
-.trans-ease-in     { transition-timing-function: ease-in; }
-.trans-ease-out    { transition-timing-function: ease-out; }
-.trans-ease-in-out { transition-timing-function: ease-in-out; }
+.trans-linear {
+  transition-timing-function: linear;
+}
+.trans-ease {
+  transition-timing-function: ease;
+}
+.trans-ease-in {
+  transition-timing-function: ease-in;
+}
+.trans-ease-out {
+  transition-timing-function: ease-out;
+}
+.trans-ease-in-out {
+  transition-timing-function: ease-in-out;
+}
 
- /* Use this utility to hide text only meant for screen readers */
- .hide-text {
+/* Use this utility to hide text only meant for screen readers */
+.hide-text {
   text-indent: 100%;
   white-space: nowrap;
   overflow: hidden;
@@ -352,12 +335,13 @@ main > .bg-rotate:nth-of-type(even) {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+
     & > figure {
-      width: calc((100% / 3)  - 24px);
+      width: calc((100% / 3) - 24px);
     }
 
     & > div {
-      width: calc((100% / 3 * 2)  - 24px);
+      width: calc((100% / 3 * 2) - 24px);
     }
   }
 }
@@ -395,7 +379,7 @@ td {
   top: 0;
   right: -300px;
   width: 300px;
-  transition: right .5s ease-out;
+  transition: right 0.5s ease-out;
 }
 
 body.open #menu {
@@ -405,7 +389,7 @@ body.open #menu {
 .page-holder {
   position: relative;
   right: 0;
-  transition: right .5s ease-out;
+  transition: right 0.5s ease-out;
 }
 
 body.open .page-holder {
@@ -413,13 +397,10 @@ body.open .page-holder {
   overflow: hidden;
 }
 
-.timeline-grid {
-}
-
 .timeline-grid dt {
   font-size: 24px;
   padding-left: 50px;
-  background-image: url('/assets/img/icon-timeline-point.svg');
+  background-image: url("/assets/img/icon-timeline-point.svg");
   background-size: 36px 36px;
   background-repeat: no-repeat;
   background-position: top left;
@@ -445,10 +426,15 @@ body.open .page-holder {
 
 @responsive {
   .hidden-visually {
-    position: absolute; 
-    overflow: hidden; 
-    clip: rect(0 0 0 0); 
-    height: 1px; width: 1px; 
-    margin: -1px; padding: 0; border: 0; 
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
   }
 }
+
+@tailwind utilities;
