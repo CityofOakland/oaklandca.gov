@@ -21,14 +21,14 @@
 
 {% block content %}
   <div class="banner leading-normal">
-    <div class="relative container mx-auto p-8 z-10 flex flex-col sm:flex-row">
+    <div class="relative container p-8 z-10 flex flex-col sm:flex-row">
       <h1 class="text-3xl md:text-4xl font-bold mb-0 sm:w-1/4">{{ entry.title }}</h1>
       <form action="" class="flex-1 my-4 sm:my-0">
         <label class="hidden-visually" for="search-input">Search Term(s)</label>
         <input class="flex-1 py-4 px-8 rounded-none appearance-none" id="search-input" name="query" required type="search" value="">
         <button class="btn hidden-visually" type="submit">Submit</button>
         <div class="text-sm sm:text-base" id="search-nav">
-          <ul class="list-reset mb-0">
+          <ul class="mb-0">
             <li class="inline-block mr-4">
               <a class="search-filter-button active" data-holder="all-holder" href="#">General</a>
             </li>
@@ -44,7 +44,7 @@
     </div>
   </div>
   <section class="bg-white relative z-0">
-    <div class="container mx-auto p-8">
+    <div class="container p-8">
       <p class="text-sm text- font-sans uppercase">Problems using our new search?
         <a href="/search/legacy/?query={{ query }}">Try using our legacy search feature.</a>
       </p>

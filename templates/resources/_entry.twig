@@ -13,7 +13,7 @@
     ],
   } %}
   <section class="bg-white relative z-0">
-    <div class="container mx-auto p-8 py-16">
+    <div class="container p-8 py-16">
       {% switch entry.type %}
         {% case "videos" %}
         {% set embed = craft.videoEmbedder.getEmbedUrl(entry.videoLink) %}

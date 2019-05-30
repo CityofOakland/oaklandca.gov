@@ -9,9 +9,9 @@
 {% endswitch %}
 
 {% if sitewideAlert.alertShowHide == "show" %}
-  <div class="relative bg- {{ alertBg }} z-0 text-white">
-    <img alt="" class="absolute pin object-fit-cover w-full h-full opacity-3" role="presentation" src="/assets/img/oaklandroots.svg">
-    <div class="text-base py-4 px-8 container mx-auto">
+  <div class="relative {{ alertBg }} z-0 text-white">
+    <img alt="" class="absolute inset-0 object-fit-cover w-full h-full opacity-3" role="presentation" src="/assets/img/oaklandroots.svg">
+    <div class="text-base py-4 px-8 container relative z-20">
       <div class="sm:flex content-start items-center">
         <div class="mb-6 sm:mb-0 sm:mr-8 flex-1">
           <p class="m-0 font-bold uppercase">

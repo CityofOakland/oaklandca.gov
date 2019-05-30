@@ -22,8 +22,8 @@
           <span class="hidden-visually">Home</span>
         </a>
       </div>
-      <button class="btn p-4 text-sm sm:text-base sm:px-8 fixed flex pin-r hover:bg-fun-green z-40 md:relative md:-mr-8 lg:hidden btn-flat-r" id="menu-toggle">Menu</button>
-      <ul class="list-reset hidden uppercase font-bold w-full justify-end flex-1 text-base lg:flex xl:text-xl">
+      <button class="btn p-4 text-sm sm:text-base sm:px-8 fixed flex right-0 hover:bg-fun-green z-40 md:relative md:-mr-8 lg:hidden btn-flat-r" id="menu-toggle">Menu</button>
+      <ul class="hidden uppercase font-bold w-full justify-end flex-1 text-base lg:flex xl:text-xl">
         {% for nav in mainNav.navBuilder.all() %}
           {% set link = nav.navLink %}
           <li class="{% if not loop.first %}ml-4 lg:ml-6 xl:ml-8{% endif %}">
@@ -33,7 +33,7 @@
         {{ searchNavButton ?? '' }}
       </ul>
     </nav>
-    <div class="hidden absolute pin-b pin-r pb-4 lg:block lg:pr-8" id="google_translate_element"></div>
+    <div class="hidden absolute bottom-0 right-0 pb-4 lg:block lg:pr-8 leading-none" id="google_translate_element"></div>
     <script type="text/javascript">
       function googleTranslateElementInit() {
         new google.translate.TranslateElement({
@@ -46,8 +46,8 @@
     <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" type="text/javascript"></script>
   </div>
   {% if craft.app.request.segments() %}
-    <div class="hidden bg-catalina-blue text-white absolute items-center w-full pin-r pin-b text-base" id="global-search-bar" style="transform: translateY(100%);">
-      <div class="container mx-auto px-8 py-4">
+    <div class="hidden bg-catalina-blue text-white absolute items-center w-full right-0 bottom-0 text-base" id="global-search-bar" style="transform: translateY(100%);">
+      <div class="container px-8 py-4">
         <form action="{{ url('search') }}" class="w-full">
           <div class="flex w-full h-full">
             <input class="w-full mb-0 px-3 border-shark border rounded-none appearance-none" name="query" placeholder="Enter your search phrase (e.g. “Pay a Parking Ticket” here." type="search" value="">

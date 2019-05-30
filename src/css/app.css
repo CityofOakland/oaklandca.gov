@@ -1,4 +1,4 @@
-@tailwind preflight;
+@tailwind base;
 @tailwind components;
 
 body {
@@ -11,7 +11,7 @@ h3,
 h4,
 h5,
 h6 {
-  @apply font-light leading-tight;
+  @apply font-bold leading-tight;
 }
 
 h2 {
@@ -52,6 +52,10 @@ a:hover {
 
 .logo {
   fill: #ffffff;
+}
+
+#google_translate_element img {
+  @apply inline;
 }
 
 /* Button Styles */
@@ -128,7 +132,7 @@ footer {
 }
 
 .banner-image {
-  @apply absolute pin object-fit-cover w-full h-full opacity-75 z-0 ;
+  @apply absolute inset-0 object-fit-cover w-full h-full opacity-75 z-0 ;
 }
 
 /* Section Containers */
@@ -346,7 +350,7 @@ body.open .page-holder {
 
 /* Aspect Ratio Box */
 .aspect-ratio {
-  @apply absolute pin w-full h-full;
+  @apply absolute inset-0 w-full h-full;
 }
 
 .aspect-ratio-box {

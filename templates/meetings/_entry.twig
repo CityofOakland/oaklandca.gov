@@ -16,7 +16,7 @@
     } %}
   {% endblock %}
   <section class="bg-white relative z-0">
-    <div class="container mx-auto p-8 py-16 sm:flex">
+    <div class="container p-8 py-16 sm:flex">
       <div class="sm:w-2/3 sm:mr-8">
         {% set startDate = event.startDate %}
         {% set endDate = event.endDate %}
@@ -55,7 +55,7 @@
 
         {% if minutes | length %}
           <h3>Minutes</h3>
-          <ul class="list-reset">
+          <ul>
             {% for entry in minutes %}
               {% set file = entry.documentFile.one %}
               <li class="mb-4">
@@ -67,7 +67,7 @@
 
         {% if agendas | length %}
           <h3>Agendas</h3>
-          <ul class="list-reset">
+          <ul>
             {% for entry in agendas %}
               {% set file = entry.documentFile.one %}
               <li class="mb-4">
@@ -79,7 +79,7 @@
 
         {% if documents | length %}
           <h3>Documents</h3>
-          <ul class="list-reset">
+          <ul>
             {% for entry in documents %}
               {% set file = entry.documentFile.one %}
               <li class="mb-4">

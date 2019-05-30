@@ -26,11 +26,11 @@
   {% if entry.processSteps.exists() %}
     <section class="bg-rotate">
       <a class="anchor-link" id="page-steps"></a>
-      <div class="container mx-auto p-8 py-16">
+      <div class="container p-8 py-16">
         {% include '_partials/_elements/_module-header' with {
           headerText: "Steps"
         } %}
-        <dl class="list-reset step-grid">
+        <dl class="step-grid">
           {% for block in entry.processSteps.all() %}
             <dt class="step-number text-xl p-4 bg-celeste text-center">
               <p class="font-bold text-3xl my-0">{{ block.stepNumber }}</p>

@@ -28,7 +28,7 @@ mix
       pfm({
         foundries: 'google',
       }),
-      tailwindcss("tailwind.js"),
+      tailwindcss(),
       autoprefixer({
         browsers: ["> .5% or last 2 versions"],
         cascade: false

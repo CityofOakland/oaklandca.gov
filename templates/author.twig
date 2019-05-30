@@ -17,11 +17,11 @@
         margin: 0 10px;
       }
     </style>
-    <div class="container mx-auto">
+    <div class="container">
       <h1 class="my-4 text-3xl uppercase font-bold">All entries owned by {{ currentUser.username }}</h1>
       <div id="entries">
         <input type="text" class="search inline-block p-4 border border-astronaut" placeholder="Search Titles" />
-        <ul class="pagination pagination-top flex list-reset"></ul>
+        <ul class="pagination pagination-top flex"></ul>
         <table class="text-sm w-full">
           <thead>
             <tr class="bg-astronaut text-white cursor-pointer">
@@ -48,7 +48,7 @@
             {% endfor %}
           </tbody>
         </table>
-        <ul class="pagination pagination-bottom flex list-reset"></ul>
+        <ul class="pagination pagination-bottom flex"></ul>
       </div>
     </div>
     <script>

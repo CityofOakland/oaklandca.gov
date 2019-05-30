@@ -30,14 +30,14 @@
           {% set phonesTrue = entry.phoneNumber ?? entry.faxNumber ?? entry.ttyNumber ?? false %}
           {% if entry.phoneNumbers | length %}
             <h3 class="text-2xl mb-0">Phone Numbers</h3>
-            <ul class="list-reset mb-8">
+            <ul class="mb-8">
               {% for phone in entry.phoneNumbers.all() %}
                 {% include '_partials/_elements/_phone-numbers' %}
               {% endfor %}
             </ul>
           {% elseif phonesTrue %}
             <h3 class="text-2xl mb-0">Phone Numbers</h3>
-            <ul class="list-reset mb-8">
+            <ul class="mb-8">
               {% if entry.phoneNumber | length %}
                 <li>Phone Number:
                   <a href="tel:{{ entry.phoneNumber }}">{{ entry.phoneNumber }}</a>
