@@ -21,7 +21,7 @@ categoryGroups:
     structure:
       maxLevels: '1'
       uid: b4e9ab1c-aa42-46f9-a679-898119f39e8d
-dateModified: 1557438057
+dateModified: 1559161293
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -3898,7 +3898,7 @@ plugins:
   seomatic:
     enabled: '1'
     licenseKey: WE9YYSPHWC5CNFB2RL64YDJ6
-    schemaVersion: 3.0.7
+    schemaVersion: 3.0.8
     settings: null
   smart-map:
     enabled: '1'
@@ -3978,6 +3978,10 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.0.5
+  craftql:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.1.0
 sections:
   07faad04-9ec4-4f68-9fe8-0ca20f189f8a:
     enableVersioning: '1'
