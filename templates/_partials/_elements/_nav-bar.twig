@@ -15,9 +15,9 @@
 
 <div class="bg-catalina-blue relative text-white block w-full z-50 trans trans-fast font-sans nav-bar md:{{ bgColor }} md:fixed" id="nav-bar">
   <div class="px-8">
-    <nav aria-labelledby="nav1" class="flex items-center justify-between" name="Main Navigation" role="navigation">
+    <nav id="main-navigation" class="flex items-center justify-between" name="Main Navigation" role="navigation">
       <div>
-        <a class="block py-4 md:py-8 text-white hover:text-reef fill-current trans-fast" href="/" name="Home">
+        <a id="home-link" class="block py-4 md:py-8 text-white hover:text-reef fill-current trans-fast" href="/" name="Home">
           {{ craft.inlin.er('/assets/img/logo-oakland.svg') | replace('<svg ', '<svg class="h-12 md:h-16" ') | raw }}
           <span class="hidden-visually">Home</span>
         </a>

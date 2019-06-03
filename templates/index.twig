@@ -13,7 +13,7 @@
         <label for="home-search" class=" text- hidden-visually">How can we help?</label>
         <div class="max-w-lg sm:flex shadow relative text-tundora">
           {{ craft.inlin.er('/assets/img/icon-magnifier.svg') | replace('<svg ', '<svg class="absolute left-0 p-3 absolute w-12 h-half sm:h-full fill-current" ') | raw }}
-          <input type="search" id="home-search" class="w-full mb-0 p-4 pl-12 rounded-none rounded-t-sm appearance-none sm:flex-1 sm:rounded-sm sm:rounded-r-none" name="query" placeholder="How can we help?" value="">
+          <input type="search" id="home-search" class="w-full mb-0 p-4 pl-12 rounded-none rounded-t-sm appearance-none sm:flex-1 sm:rounded-sm sm:rounded-r-none" aria-label="Site Search" name="query" placeholder="How can we help?" value="">
           <button type="submit" class="w-full btn border-l-0 sm:w-auto btn-flat-t sm:btn-rounded sm:btn-flat-l">Search</button>
         </div>
       </form>
