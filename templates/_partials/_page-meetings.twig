@@ -17,7 +17,7 @@
 {% if pastEvents | length or relatedEvents | length %}
   <section class="bg-rotate">
     <a class="anchor-link" id="page-meetings"></a>
-    <div class="container p-8 py-16">
+    <div class="container">
       {% include '_partials/_elements/_module-header' with {
         headerText: pageMeetingsHeaderText ?? "Meetings",
         linkText: pageMeetingsLinkText ?? "All Meetings",

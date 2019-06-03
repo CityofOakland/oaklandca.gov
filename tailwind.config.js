@@ -16,7 +16,7 @@ module.exports = {
       astronaut: "#255375",
 
       alabaster: "#f9f9f9",
-      "wild-sand": "#f5f5f5",
+      "porcelain": "#f1f4f4",
       "catalina-blue": "#031a7a",
       "fun-green": "#008943",
       reef: "#b7ffa4",
@@ -273,9 +273,9 @@ module.exports = {
     stroke: {
       current: "currentColor",
     },
-    container: {
+    container: theme => ({
       center: true,
-    },
+    }),
   },
   variants: {
     appearance: ["responsive"],

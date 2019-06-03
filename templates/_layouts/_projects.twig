@@ -31,7 +31,7 @@
   {% endjs %}
   <section>
     <a class="anchor-link" id="page-timeline"></a>
-    <div class="container p-8 py-16">
+    <div class="container">
       <div class="md:flex md:flex-row">
         <div class="md:pr-4 md:w-1/2">
           {% if entry.timeline.exists() %}
@@ -66,7 +66,7 @@
   {% if entry.projectBeforePhoto.exists() and entry.projectAfterPhoto.exists() %}
     <section>
       <a class="anchor-link" id="page-project-photos"></a>
-      <div class="container p-8 py-16">
+      <div class="container">
         <div class="md:flex md:flex-row">
           <div class="md:pr-4 md:w-1/2">
             <h3>Current</h3>
@@ -94,7 +94,7 @@
   {% endif %}
   <section>
     <a class="anchor-link" id="page-about"></a>
-    <div class="container p-8 py-16 md:flex md:flex-row">
+    <div class="container md:flex md:flex-row">
       <div class="md:pr-4 md:w-2/3">
         <h3 class-"mb-4">About</h3>
         {{ entry.about }}
@@ -114,7 +114,7 @@
   </section>
   <section>
     <a class="anchor-link" id="page-resources"></a>
-    <div class="container p-8 py-16 md:flex md:flex-row">
+    <div class="container md:flex md:flex-row">
       {% set relProj = entry.relatedProjectEntries %}
       {% set projDocs = entry.projectDocuments %}
       {% if relProj | length %}
@@ -144,7 +144,7 @@
   {% if entry.fundingLogos.exists() %}
     <section>
       <a class="anchor-link" id="page-funding"></a>
-      <div class="container p-8 py-16">
+      <div class="container">
         <h3 class="mb-4 text-center">Project Funding</h3>
         <div class="flex flex-wrap items-center justify-center -mx-4">
           {% for logo in entry.fundingLogos.all() %}

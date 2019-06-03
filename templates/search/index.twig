@@ -21,7 +21,7 @@
 
 {% block content %}
   <div class="banner leading-normal">
-    <div class="relative container p-8 z-10 flex flex-col sm:flex-row">
+    <div class="relative container z-10 flex flex-col sm:flex-row">
       <h1 class="text-3xl md:text-4xl font-bold mb-0 sm:w-1/4">{{ entry.title }}</h1>
       <form action="" class="flex-1 my-4 sm:my-0">
         <label class="hidden-visually" for="search-input">Search Term(s)</label>
@@ -44,7 +44,7 @@
     </div>
   </div>
   <section class="bg-white relative z-0">
-    <div class="container p-8">
+    <div class="container">
       <p class="text-sm text- font-sans uppercase">Problems using our new search?
         <a href="/search/legacy/?query={{ query }}">Try using our legacy search feature.</a>
       </p>

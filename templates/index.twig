@@ -3,7 +3,7 @@
 
 {% block content %}
   <div class="banner banner-home md:pt-32 lg:pt-32">
-    <div class="container p-8 py-16">
+    <div class="container">
       <img class="banner-image image-blur-{{ bannerImageBlur ?? 'none' }}" src="{{ bannerImage.one.url }}" style="object-position:{{ bannerImage.one.getFocalPoint('asCss') }};" alt="{{ bannerImage.one.title }}">
       <div class="relative z-20">
         <h1 class="font-bold text-2xl sm:text-5xl md:text-6xl mb-0">Welcome to Oakland</h1>
@@ -15,7 +15,7 @@
           {{ craft.inlin.er('/assets/img/icon-magnifier.svg') | replace('<svg ', '<svg class="absolute left-0 p-3 absolute w-12 h-half sm:h-full fill-current" ') | raw }}
           <input type="search" id="home-search" class="w-full mb-0 p-4 pl-12 rounded-none rounded-t-sm appearance-none sm:flex-1 sm:rounded-sm sm:rounded-r-none" aria-label="Site Search" name="query" placeholder="How can we help?" value="">
           <button type="submit" class="w-full btn border-l-0 sm:w-auto btn-flat-t sm:btn-rounded sm:btn-flat-l">Search</button>
-        </div>
+      </div>
       </form>
     </div>
   </div>
@@ -23,16 +23,16 @@
 
   {# Begin Services #}
   {% if entry.highlightedServices | length %}
-    <section class="bg-rotate relative z-0">
-      <div class="container p-8 py-12">
+    <section class="bg-rotate">
+      <div class="container">
         {% include '_partials/_elements/_module-header' with {
           headerText: "Most Requested Services",
           linkText: "Services A - Z",
           linkUrl: "/services/"
         } %}
-        <div class="card-grid grid-equal-height mt-8">
+        <div>
           {% for entry in entry.highlightedServices.all() %}
-            {% include '_partials/_elements/_title-cards' %}
+            <a href="{{ entry.url }}" class="">{{ entry.title | raw }}</a>
           {% endfor %}
         </div>
       </div>
@@ -42,7 +42,7 @@
 
   {# Begin News #}
   <section class="bg-rotate">
-    <div class="container p-8 py-12">
+    <div class="container">
       {% include '_partials/_elements/_module-header' with {
         headerText: "News & Updates",
         linkText: "Newsroom",
@@ -86,7 +86,7 @@
 
   {# Begin Events #}
   <section class="bg-rotate">
-    <div class="container p-8">
+    <div class="container">
       {% include '_partials/_elements/_module-header' with {
         headerText: "Upcoming Events",
         linkText: "All Meetings & Events",
@@ -119,7 +119,7 @@
 
   {# Begin Officials #}
   <section class="bg-rotate">
-    <div class="container p-8">
+    <div class="container">
       {% include '_partials/_elements/_module-header' with {
         headerText: "City Officials",
         linkText: "Find Your Council District",

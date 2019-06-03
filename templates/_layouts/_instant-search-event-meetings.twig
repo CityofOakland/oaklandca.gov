@@ -34,7 +34,7 @@
     } %}
   {% endblock %}
   <div class="bg-cararra" id="search-bar-container">
-    <div class="container px-8 py-4 md:p-8 text-right">
+    <div class="container text-right">
       <div class="flex flex-col sm:flex-row">
         <label class="hidden-visually" for="search-input">How can we help?</label>
         <input class="w-full p-2 md:py-4 md:px-8 rounded-none appearance-none" id="search-input" name="keywords" required type="search" value="">
@@ -46,7 +46,7 @@
   </div>
   <section class="bg-white relative z-0">
     <div class="opacity-0 invisible h-0 overflow-hidden bg-shark text-white relative z-neg-10 trans trans-all" id="algolia-filters">
-      <div class="mx-auto container p-8 flex-col -my-4" id="facet-holder">
+      <div class="container flex-col -my-4" id="facet-holder">
         {% if facets is defined %}
           {% for facet in facets %}
             <div id="{{ facet.container }}" class="max-w-sm"></div>
@@ -54,8 +54,8 @@
         {% endif %}
       </div>
     </div>
-    <div class="daterange mx-auto px-8 mt-8 max-w-sm" id="calendar"></div>
-    <div class="container px-8 mt-4 pb-16 md:flex">
+    <div class="container py-0 daterange mt-8 max-w-sm" id="calendar"></div>
+    <div class="container mt-4 md:flex">
       <div class="flex-1">
         <div id="hits"></div>
         <div class="text-2xl flex items-center">

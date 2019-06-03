@@ -95,7 +95,7 @@
     smallBanner: true
   } %}
   <div class="bg-cararra">
-    <div class="container p-8">
+    <div class="container">
       <form action="{{ url('search/legacy') }}">
         <label for="legacy-search-input">Search by Keyword</label>
         <div class="flex flex-col sm:flex-row mt-4">
@@ -106,7 +106,7 @@
     </div>
   </div>
   <section class="bg-white relative z-0">
-    <div class="container p-8 py-16">
+    <div class="container">
       <h2 class="mt-0 mb-16">{{ entries | length }}
         {{"pages match your search for" }}
         <span class="font-bold bg-cararra px-2">{{ query }}</span>
