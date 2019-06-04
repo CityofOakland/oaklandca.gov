@@ -30,9 +30,9 @@
           linkText: "Services A - Z",
           linkUrl: "/services/"
         } %}
-        <div>
+        <div class="card-grid">
           {% for entry in entry.highlightedServices.all() %}
-            <a href="{{ entry.url }}" class="">{{ entry.title | raw }}</a>
+            <a href="{{ entry.url }}" class="card-grid-button">{{ entry.title | raw }}</a>
           {% endfor %}
         </div>
       </div>
