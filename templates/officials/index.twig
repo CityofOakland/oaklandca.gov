@@ -2,8 +2,8 @@
 
 {% block content %}
   <div class="banner leading-normal">
-    <div class="container p-8 py-16">
-      <h1 class="font-bold mb-0">{{ entry.title | replace({' Index': ''}) }}</h1>
+    <div class="container">
+      <h1 class="text-3xl md:text-4xl font-bold mb-0">{{ entry.title | replace({' Index': ''}) }}</h1>
       {% if entry.leadIn %}
         <p class="mt-8 mb-0">{{ entry.leadIn }}</p>
       {% endif %}

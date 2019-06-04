@@ -1,52 +1,32 @@
 module.exports = {
   theme: {
-    colors: {
-      transparent: "transparent",
-      shark: "#212529",
-      "catalina-blue-transparent": "rgba(3, 26, 122, .33)",
-      celeste: "#cfd0ce",
-      cararra: "#e9eae7",
-      white: "#ffffff",
-      apple: "#6db943",
-      "alert-red": "#f31431",
-      "warning-yellow": "#ffae42",
-      "camouflage-green": "#757773",
-      parsley: "#1e4a18",
-      "curious-blue": "#398cd3",
-      astronaut: "#255375",
+    extend: {
+      colors: {
+        transparent: "transparent",
+        shark: "#212529",
+        "catalina-blue-transparent": "rgba(3, 26, 122, .33)",
+        celeste: "#cfd0ce",
+        cararra: "#e9eae7",
+        white: "#ffffff",
+        apple: "#6db943",
+        "alert-red": "#f31431",
+        "warning-yellow": "#ffae42",
+        "camouflage-green": "#757773",
+        parsley: "#1e4a18",
+        "curious-blue": "#398cd3",
+        astronaut: "#255375",
 
-      alabaster: "#f9f9f9",
-      "porcelain": "#f1f4f4",
-      "catalina-blue": "#031a7a",
-      "fun-green": "#008943",
-      reef: "#b7ffa4",
-      tundora: "#404040",
-    },
-    screens: {
-      sm: "576px",
-      md: "768px",
-      lg: "992px",
-      xl: "1200px",
+        alabaster: "#f9f9f9",
+        "porcelain": "#f1f4f4",
+        "catalina-blue": "#031a7a",
+        "fun-green": "#008943",
+        reef: "#b7ffa4",
+        tundora: "#404040",
+      },
     },
     fontFamily: {
-      sans: [
-        "Montserrat",
-        "system-ui",
-        "BlinkMacSystemFont",
-        "-apple-system",
-        "Helvetica Neue",
-        "sans-serif",
-      ],
-      "serif-heading": ["Domine", "Constantia", "Georgia", "serif"],
-      "serif-body": ["Merriweather", "Georgia", "serif"],
-      mono: [
-        "Menlo",
-        "Monaco",
-        "Consolas",
-        "Liberation Mono",
-        "Courier New",
-        "monospace",
-      ],
+      sans: ["Montserrat", "system-ui", "-apple-system", "sans-serif",],
+      mono: ["Menlo", "Monaco", "Consolas", "Courier New", "monospace", ],
     },
     fontSize: {
       xs: ".75rem", // 12px
@@ -60,52 +40,12 @@ module.exports = {
       "5xl": "2.625rem", // 42px
       "6xl": "4rem", // 64px
     },
-    fontWeight: {
-      hairline: 100,
-      thin: 200,
-      light: 300,
-      normal: 400,
-      medium: 500,
-      semibold: 600,
-      bold: 700,
-      extrabold: 800,
-      black: 900,
-    },
-    lineHeight: {
-      none: 1,
-      tight: 1.25,
-      normal: 1.5,
-      loose: 2,
-    },
-    letterSpacing: {
-      tight: "-0.05em",
-      normal: "0",
-      wide: "0.05em",
-    },
-    textColor: theme => theme("colors"),
-    backgroundColor: theme => theme("colors"),
-    backgroundSize: {
-      auto: "auto",
-      cover: "cover",
-      contain: "contain",
-    },
     borderWidth: {
       default: "1px",
       "0": "0",
       "2": "2px",
       "4": "4px",
       "8": "8px",
-    },
-    borderColor: theme => ({
-      default: theme("colors.cararra"),
-      ...theme("colors"),
-    }),
-    borderRadius: {
-      none: "0",
-      sm: ".125rem",
-      default: ".25rem",
-      lg: ".5rem",
-      full: "9999px",
     },
     width: {
       auto: "auto",
@@ -158,15 +98,6 @@ module.exports = {
       "48": "12rem",
       "64": "16rem",
       half: "50%",
-      full: "100%",
-      screen: "100vh",
-    },
-    minWidth: {
-      "0": "0",
-      full: "100%",
-    },
-    minHeight: {
-      "0": "0",
       full: "100%",
       screen: "100vh",
     },
@@ -266,12 +197,6 @@ module.exports = {
       "50": ".5",
       "75": ".75",
       "100": "1",
-    },
-    fill: {
-      current: "currentColor",
-    },
-    stroke: {
-      current: "currentColor",
     },
     container: theme => ({
       center: true,
