@@ -32,6 +32,11 @@
                   {{ entry.title }}
                   ({{ file.kind | upper }})</a>
               </h3>
+              {% if entry.summary %}
+                <div class="mt-0 o-4 pl-8">
+                  {{ entry.summary }}
+                </div>
+              {% endif %}
               <p class="text-sm mt-0 pl-8">
                 <a class="text-astronaut hover:text-camouflage-grey" href="{{ entry.url }}">Permalink</a>
               </p>

@@ -267,6 +267,7 @@ module.exports = {
     zIndex: ["responsive"],
   },
   plugins: [
+    require('tailwindcss-owl'),
     require("tailwindcss-aspect-ratio")({
       variants: ["responsive"],
       ratios: {

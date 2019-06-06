@@ -9692,6 +9692,11 @@ tailwindcss-aspect-ratio@^1.0.3:
   dependencies:
     lodash "^4.17.11"
 
+tailwindcss-owl@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/tailwindcss-owl/-/tailwindcss-owl-2.0.0.tgz#edcf192908967db6c49649820c85045ba52dac74"
+  integrity sha512-Lzotqn6hn8Q8n1mZC5XXUlvmZqogDk+U9YUoL39sweICtEA3FrTxhBhnUem9JiskYtqEPciDC2GaTyVvBGGkuA==
+
 tailwindcss@^1.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-1.0.2.tgz#1df9caf88e0b194a5debf3c3b3aa6b64ea92c9a8"

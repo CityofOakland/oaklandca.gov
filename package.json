@@ -140,6 +140,7 @@
     "stylelint-config-recommended": "^2.1.0",
     "tailwindcss": "^1.0",
     "tailwindcss-aspect-ratio": "^1.0.3",
+    "tailwindcss-owl": "^2.0.0",
     "vue-template-compiler": "^2.6.10"
   },
   "dependencies": {
