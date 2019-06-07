@@ -32,7 +32,7 @@ categoryGroups:
         hasUrls: true
         uriFormat: 'services/category/{slug}'
         template: services/_category
-dateModified: 1559677919
+dateModified: 1559942184
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -6517,7 +6517,7 @@ sites:
     handle: default
     language: en-US
     hasUrls: true
-    baseUrl: 'https://www.oaklandca.cov'
+    baseUrl: '@web'
     sortOrder: 1
     primary: true
 system:

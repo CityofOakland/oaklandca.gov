@@ -14,7 +14,7 @@
     // Public server config
     'server' => [
       'manifestPath' => '@webroot/assets/',
-      'publicPath' => '/assets/',
+      'publicPath' => '@web/assets/',
     ],
     // webpack-dev-server config
     'devServer' => [

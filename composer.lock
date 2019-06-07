@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "4b2276d0d29f4ec04b67bc5d6bbab75c",
+    "content-hash": "e1e5dcdc2da21934ba365e8ecab9754c",
     "packages": [
         {
             "name": "99designs/phumbor",
@@ -765,11 +765,11 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "3.1.28",
+            "version": "3.1.29",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/310a7d295eabe7b3691cb328efd9099d5dca29f5",
-                "reference": "310a7d295eabe7b3691cb328efd9099d5dca29f5",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/cb6e3054dd4351653329da508616c15dd0e69874",
+                "reference": "cb6e3054dd4351653329da508616c15dd0e69874",
                 "shasum": ""
             },
             "require": {
@@ -798,7 +798,7 @@
                 "seld/cli-prompt": "^1.0.3",
                 "symfony/yaml": "^3.2|^4.0",
                 "true/punycode": "^2.1.0",
-                "twig/twig": "~2.8.1",
+                "twig/twig": "~2.11.0",
                 "yii2tech/ar-softdelete": "^1.0.2",
                 "yiisoft/yii2": "~2.0.19.0",
                 "yiisoft/yii2-debug": "^2.0.10",
@@ -845,7 +845,7 @@
                 "docs": "https://docs.craftcms.com/v3/",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2019-05-21T19:09:25+00:00"
+            "time": "2019-06-04T17:37:55+00:00"
         },
         {
             "name": "craftcms/element-api",
@@ -3839,11 +3839,11 @@
         },
         {
             "name": "nystudio107/craft-twigpack",
-            "version": "1.1.6",
+            "version": "1.1.7",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-twigpack/zipball/4c5a1f6ace6c89b6a17026ee21ab5f04940f05de",
-                "reference": "4c5a1f6ace6c89b6a17026ee21ab5f04940f05de",
+                "url": "https://api.github.com/repos/nystudio107/craft-twigpack/zipball/22fd55a9636e86fd1cc95e2f4d7bb7d7f6443331",
+                "reference": "22fd55a9636e86fd1cc95e2f4d7bb7d7f6443331",
                 "shasum": ""
             },
             "require": {
@@ -3889,7 +3889,7 @@
                 "docs": "https://github.com/nystudio107/craft-twigpack/blob/v1/README.md",
                 "issues": "https://github.com/nystudio107/craft-twigpack/issues"
             },
-            "time": "2019-05-06T14:24:28+00:00"
+            "time": "2019-06-05T14:56:39+00:00"
         },
         {
             "name": "nystudio107/craft-typogrify",
@@ -5064,11 +5064,11 @@
         },
         {
             "name": "superbig/craft3-beam",
-            "version": "2.1.3",
+            "version": "2.1.4",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sjelfull/craft3-beam/zipball/ba565dd04dfcae9abe07935fb6943db0d5294bc0",
-                "reference": "ba565dd04dfcae9abe07935fb6943db0d5294bc0",
+                "url": "https://api.github.com/repos/sjelfull/craft3-beam/zipball/0415c44368a83e03724a88be04e20cb6d23ac577",
+                "reference": "0415c44368a83e03724a88be04e20cb6d23ac577",
                 "shasum": ""
             },
             "require": {
@@ -5115,7 +5115,7 @@
                 "docs": "https://github.com/sjelfull/craft3-beam/blob/master/README.md",
                 "issues": "https://github.com/sjelfull/craft3-beam/issues"
             },
-            "time": "2019-02-02T14:50:56+00:00"
+            "time": "2019-06-06T09:10:47+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -6149,11 +6149,11 @@
         },
         {
             "name": "twig/twig",
-            "version": "v2.8.1",
+            "version": "v2.11.2",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/91cc2594d3143761ce0399c1caffd0b500ffe5b9",
-                "reference": "91cc2594d3143761ce0399c1caffd0b500ffe5b9",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/84a463403da1c81afbcedda8f0e788c78bd25a79",
+                "reference": "84a463403da1c81afbcedda8f0e788c78bd25a79",
                 "shasum": ""
             },
             "require": {
@@ -6164,7 +6164,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.8-dev"
+                    "dev-master": "2.11-dev"
                 }
             },
             "autoload": {
@@ -6201,7 +6201,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2019-04-16T17:14:24+00:00"
+            "time": "2019-06-05T11:17:07+00:00"
         },
         {
             "name": "venveo/craft-bulkedit",
@@ -6628,11 +6628,11 @@
         },
         {
             "name": "yiisoft/yii2-debug",
-            "version": "2.1.4",
+            "version": "2.1.5",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-debug/zipball/4cc407f34fd90e410d806ea3264781a9fb4fd1ef",
-                "reference": "4cc407f34fd90e410d806ea3264781a9fb4fd1ef",
+                "url": "https://api.github.com/repos/yiisoft/yii2-debug/zipball/a6bbf55093e154e2eeb2c778af8717989495270e",
+                "reference": "a6bbf55093e154e2eeb2c778af8717989495270e",
                 "shasum": ""
             },
             "require": {
@@ -6670,7 +6670,7 @@
                 "debugger",
                 "yii2"
             ],
-            "time": "2019-05-14T13:39:56+00:00"
+            "time": "2019-06-04T14:21:49+00:00"
         },
         {
             "name": "yiisoft/yii2-queue",
