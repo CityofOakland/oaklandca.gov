@@ -30,7 +30,6 @@ mix
       }),
       tailwindcss(),
       autoprefixer({
-        browsers: ["> .5% or last 2 versions"],
         cascade: false
       }),
       presetenv({

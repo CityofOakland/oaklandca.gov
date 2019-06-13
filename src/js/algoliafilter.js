@@ -73,15 +73,23 @@ if (typeof moment !== 'undefined') {
 
   const TODAY = moment().format('L'); 
 
+
   const datePicker = instantsearch.connectors.connectRange(
     (options, isFirstRendering) => {
       if (!isFirstRendering) return;
 
       const { refine } = options;
 
+      const MONTHSTART = new Date(moment().startOf('month')).getTime();
+      const MONTHEND = new Date(moment().endOf('month')).getTime();
+
+      refine([MONTHSTART, MONTHEND]);
+
       new Calendar({
         element: $('#calendar'),
         same_day_range: true,
+        start_date: MONTHSTART,
+        end_date: MONTHEND,
         presets: [{
           label: 'This month',
           start: moment().startOf('month'),
