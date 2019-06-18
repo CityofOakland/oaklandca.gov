@@ -98,7 +98,7 @@ a:hover {
 }
 
 .btn-bright {
-  @apply bg-apple;
+  @apply bg-fun-green;
 }
 
 .btn-bright:hover {

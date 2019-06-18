@@ -128,7 +128,6 @@ if (mix.inProduction()) {
       "md:bg-transparent",
       "bg-alert-red",
       "bg-warning-yellow",
-      "bg-apple",
       "image-blur-none",
       "image-blur-base",
       "image-blur-small",
