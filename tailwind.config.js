@@ -4,7 +4,6 @@ module.exports = {
       colors: {
         transparent: "transparent",
         shark: "#212529",
-        "catalina-blue-transparent": "rgba(3, 26, 122, .33)",
         celeste: "#cfd0ce",
         cararra: "#e9eae7",
         white: "#ffffff",
@@ -16,19 +15,25 @@ module.exports = {
         "curious-blue": "#398cd3",
         astronaut: "#255375",
 
-        alabaster: "#f9f9f9",
-        "porcelain": "#f1f4f4",
-        "catalina-blue": "#031a7a",
-        "fun-green": "#008943",
-        reef: "#b7ffa4",
-        tundora: "#404040",
+        "bright-gray":  "#f1f4f4",
+        "medium-gray":  "#8c9d96",
+        "dark-gray":    "#4a4a4a",
+        "light-green":  "#dbf8eb",
+        "bright-green": "#008943",
+        "dark-green":   "#006632",
+        "deep-green":   "#003d1e",
       },
     },
+    minHeight: {
+      "4": "16rem",
+      "5-1/2": "21.5rem",
+    },
     fontFamily: {
-      sans: ["Montserrat", "system-ui", "-apple-system", "sans-serif",],
-      mono: ["Menlo", "Monaco", "Consolas", "Courier New", "monospace", ],
+      heading: ["Montserrat", "system-ui", "-apple-system", "sans-serif",],
+      body: ["Noto Sans", "system-ui", "-apple-system", "sans-serif",],
     },
     fontSize: {
+      xxs: ".625rem", // 10px
       xs: ".75rem", // 12px
       sm: ".875rem", // 14px
       base: "1rem", // 16px
@@ -129,6 +134,7 @@ module.exports = {
       "8": "2rem",
       "10": "2.5rem",
       "12": "3rem",
+      "14": "3.5rem",
       "16": "4rem",
       "20": "5rem",
       "24": "6rem",
@@ -172,6 +178,7 @@ module.exports = {
       default: "0 1px 2px 0 rgba(0,0,0,0.325)",
       md: "0 4px 8px 0 rgba(0,0,0,0.12), 0 2px 4px 0 rgba(0,0,0,0.08)",
       lg: "0 15px 30px 0 rgba(0,0,0,0.11), 0 5px 15px 0 rgba(0,0,0,0.08)",
+      btn: "0 2px 6px 2px #E4E6E3, 0 3px 7px 1px #DBF8EB",
       inner: "inset 0 2px 4px 0 rgba(0,0,0,0.06)",
       outline: "0 0 0 3px rgba(52,144,220,0.5)",
       none: "none",

@@ -1,60 +1,74 @@
-{% if not craft.app.request.segments() %}
-  {% set bgColor = 'bg-catalina-blue-transparent' %}
-{% else %}
-  {% set bgColor = 'bg-catalina-blue' %}
+{% if craft.app.request.segments() %}
   {% set searchNavButton %}
-  <li class="ml-4">
-    <a class="block text-white hover:text-reef fill-current trans trans-fast" href="/search" id="search-menu-toggle" name="Search Toggle">
-      {{ craft.inlin.er('/assets/img/icon-magnifier.svg') | replace('<svg ', '<svg class="h-4" ') | raw }}
-      <span class="hidden-visually">Search Toggle</span>
-    </a>
-  </li>
+    <li class="ml-4">
+      <a class="block text-white hover:text-bright-green fill-current trans trans-fast" href="/search" id="search-menu-toggle" name="Search Toggle">
+        {{ craft.inlin.er('/assets/img/icon-magnifier.svg') | replace('<svg ', '<svg class="h-4" ') | raw }}
+        <span class="hidden-visually">Search Toggle</span>
+      </a>
+    </li>
   {% endset %}
 {% endif %}
 {% set mainNav = craft.entries.section('navigation').slug('main-nav').one() %}
 
-<div class="bg-catalina-blue relative text-white block w-full z-50 trans trans-fast font-sans nav-bar md:{{ bgColor }} md:fixed" id="nav-bar">
-  <div class="px-8">
-    <nav id="main-navigation" class="flex items-center justify-between" name="Main Navigation" role="navigation">
-      <div>
-        <a id="home-link" class="block py-4 md:py-8 text-white hover:text-reef fill-current trans-fast" href="/" name="Home">
-          {{ craft.inlin.er('/assets/img/logo-oakland.svg') | replace('<svg ', '<svg class="h-12 md:h-16" ') | raw }}
-          <span class="hidden-visually">Home</span>
-        </a>
-      </div>
-      <button class="btn p-4 text-sm sm:text-base sm:px-8 fixed flex right-0 hover:bg-fun-green z-40 md:relative md:-mr-8 lg:hidden btn-flat-r" id="menu-toggle">Menu</button>
-      <ul class="hidden uppercase font-bold w-full justify-end flex-1 text-base lg:flex xl:text-xl">
-        {% for nav in mainNav.navBuilder.all() %}
-          {% set link = nav.navLink %}
-          <li class="{% if not loop.first %}ml-4 lg:ml-6 xl:ml-8{% endif %}">
-            <a href="{{ link.url }}" {% if link.target | length %} target="{{ link.target }}" {% endif %} class="text-white hover:text-reef trans-fast">{{ link.text }}</a>
-          </li>
-        {% endfor %}
-        {{ searchNavButton ?? '' }}
-      </ul>
-    </nav>
-    <div class="hidden absolute bottom-0 right-0 pb-4 lg:block lg:pr-8 leading-none" id="google_translate_element"></div>
-    <script type="text/javascript">
-      function googleTranslateElementInit() {
-        new google.translate.TranslateElement({
-          pageLanguage: 'en',
-          includedLanguages: 'ceb,en,es,hmn,ja,km,ko,mn,tl,vi,zh-TW',
-          layout: google.translate.TranslateElement.FloatPosition.TOP_RIGHT
-        }, 'google_translate_element');
-      }
-    </script>
-    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" type="text/javascript"></script>
+<div id="nav-wrapper" class="fixed w-full z-40">
+  <div class="hidden md:block bg-white z-40 py-2 px-4">
+    <ul class="flex w-full font-bold my-0">
+      <li class="flex-1">
+        <a href="/" class="text-dark-green hover:text-deep-green">Mayor Libby Schaaf</a>
+      </li>
+      <li class="relative">
+        <div class="bottom-0 right-0 lg:block lg:pr-8 leading-none" id="google_translate_element"></div>
+      </li>
+      <li>
+        <a href="https://311.oaklandca.gov">311</a>
+      </li>
+    </ul>
   </div>
-  {% if craft.app.request.segments() %}
-    <div class="hidden bg-catalina-blue text-white absolute items-center w-full right-0 bottom-0 text-base" id="global-search-bar" style="transform: translateY(100%);">
-      <div class="container">
-        <form action="{{ url('search') }}" class="w-full">
-          <div class="flex w-full h-full">
-            <input class="w-full mb-0 px-3 border-shark border rounded-none appearance-none text-shark" name="query" placeholder="Enter your search phrase (e.g. “Pay a Parking Ticket” here." type="search" value="">
-            <button class="flex-1 btn border-l-0 border-shark border hover:bg-fun-green" type="submit">Search</button>
-          </div>
-        </form>
-      </div>
+  <div class="bg-deep-green z-40 text-white block w-full z-50 trans trans-fast nav-bar" id="nav-bar">
+    <div class="px-4">
+      <nav id="main-navigation" class="relative flex items-center justify-between" name="Main Navigation" role="navigation">
+        <div>
+          <a id="home-link" class="block py-3 md:py-8 text-white hover:text-bright-green fill-current trans-fast" href="/" name="Home">
+            {{ craft.inlin.er('/assets/img/logo-oakland.svg') | replace('<svg ', '<svg class="h-8 md:h-10" ') | raw }}
+            <span class="hidden-visually">Home</span>
+          </a>
+        </div>
+        <button class="text-xxs font-semibold sm:text-base sm:px-8 absolute flex flex-col flex-wrap items-center tracking-wider right-0 uppercase lg:hidden" id="menu-toggle">
+          <svg enable-background="new 0 0 32 32" height="32" viewBox="0 0 32 32" width="32" class="w-5 h-5 inline-block" xmlns="http://www.w3.org/2000/svg" fill="#FFF"><path d="m4 10h24c1.104 0 2-.896 2-2s-.896-2-2-2h-24c-1.104 0-2 .896-2 2s.896 2 2 2zm24 4h-24c-1.104 0-2 .896-2 2s.896 2 2 2h24c1.104 0 2-.896 2-2s-.896-2-2-2zm0 8h-24c-1.104 0-2 .896-2 2s.896 2 2 2h24c1.104 0 2-.896 2-2s-.896-2-2-2z"/></svg>
+          Menu
+        </button>
+        <ul class="hidden uppercase font-bold w-full justify-end flex-1 tracking-wide text-sm lg:flex">
+          {% for nav in mainNav.navBuilder.all() %}
+            {% set link = nav.navLink %}
+            <li class="{% if not loop.first %}ml-4 lg:ml-6 xl:ml-8{% endif %}">
+              <a href="{{ link.url }}" {% if link.target | length %} target="{{ link.target }}" {% endif %} class="text-white hover:text-bright-green trans-fast">{{ link.text }}</a>
+            </li>
+          {% endfor %}
+          {{ searchNavButton ?? '' }}
+        </ul>
+      </nav>
+      <script type="text/javascript">
+        function googleTranslateElementInit() {
+          new google.translate.TranslateElement({
+            pageLanguage: 'en',
+            includedLanguages: 'ceb,en,es,hmn,ja,km,ko,mn,tl,vi,zh-TW',
+            layout: google.translate.TranslateElement.FloatPosition.TOP_RIGHT
+          }, 'google_translate_element');
+        }
+      </script>
+      <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" type="text/javascript"></script>
     </div>
-  {% endif %}
+    {% if craft.app.request.segments() %}
+      <div class="hidden bg-catalina-blue text-white absolute items-center w-full right-0 bottom-0 text-base" id="global-search-bar" style="transform: translateY(100%);">
+        <div class="container">
+          <form action="{{ url('search') }}" class="w-full">
+            <div class="flex w-full h-full">
+              <input class="w-full mb-0 px-3 border-shark border rounded-none appearance-none text-shark" name="query" placeholder="Enter your search phrase (e.g. “Pay a Parking Ticket” here." type="search" value="">
+              <button class="flex-1 btn border-l-0 border-shark border hover:bg-bright-green" type="submit">Search</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    {% endif %}
+  </div>
 </div>

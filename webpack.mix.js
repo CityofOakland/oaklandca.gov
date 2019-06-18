@@ -12,8 +12,6 @@ require("laravel-mix-banner");
 const tailwindcss = require("tailwindcss");
 const autoprefixer = require("autoprefixer");
 const presetenv = require("postcss-preset-env");
-const mqpacker = require("css-mqpacker");
-const pfm = require('postcss-font-magician');
 
 // Image plugins for compression from src folder
 const ImageminPlugin = require("imagemin-webpack-plugin").default;
@@ -22,20 +20,15 @@ const imageminMozjpeg = require("imagemin-mozjpeg");
 
 mix
   .postCss("./src/css/app.css", "css/app.css")
-  .copyDirectory(pkg.paths.src.fonts, pkg.paths.dist.fonts)
   .options({
     postCss: [
-      pfm({
-        foundries: 'google',
-      }),
       tailwindcss(),
       autoprefixer({
         cascade: false
       }),
       presetenv({
         stage: 0
-      }),
-      mqpacker()
+      })
     ],
     processCssUrls: false,
   })
@@ -66,6 +59,12 @@ mix
   .setPublicPath("./web/assets/")
   .browserSync({
     proxy: "http://oakland.test",
+    notify: {
+      styles: {
+        top: 'auto',
+        bottom: '20px'
+      }
+    },
     files: ["templates/*.twig", "templates/**/*.twig", "templates/*.js", "templates/**/*.js", "web/assets/css/*.css", "web/assets/js/*.js"]
   });
 

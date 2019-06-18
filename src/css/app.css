@@ -2,7 +2,7 @@
 @tailwind components;
 
 body {
-  @apply font-sans text-lg leading-normal;
+  @apply font-body text-lg leading-normal text-dark-gray;
 }
 
 h1,
@@ -11,7 +11,7 @@ h3,
 h4,
 h5,
 h6 {
-  @apply font-bold leading-tight;
+  @apply leading-tight;
 }
 
 h2 {
@@ -26,6 +26,12 @@ h4 {
   @apply text-2xl my-6;
 }
 
+h1,
+h2,
+h3 {
+  @apply font-medium font-heading;
+}
+
 ol,
 ul,
 dl,
@@ -34,16 +40,17 @@ p {
 }
 
 a {
-  @apply no-underline text-fun-green trans trans-fast;
+  @apply no-underline text-dark-green trans trans-fast;
 }
 
 a:hover {
-  @apply text-tundora;
+  @apply text-deep-green;
 }
 
 .anchor-link {
   @apply relative block invisible;
 }
+
 @media (min-width: 768px) {
   .anchor-link {
     top: -10rem;
@@ -51,7 +58,17 @@ a:hover {
 }
 
 .container {
-  @apply p-8;
+  @apply px-4 py-6;
+}
+
+@media (min-width: theme('screens.sm')) {
+  .container {
+    @apply px-8 py-12;
+  }
+}
+
+.container-flat {
+  @apply py-0;
 }
 
 .logo {
@@ -64,45 +81,11 @@ a:hover {
 
 /* Button Styles */
 .btn {
-  @apply inline-block bg-fun-green py-4 px-8 text-base text-white no-underline trans trans-fast font-sans font-bold uppercase tracking-wide shadow rounded-sm;
+  @apply inline-block bg-dark-green py-4 px-8 text-base text-white no-underline trans trans-fast font-bold tracking-wide shadow rounded-sm;
 }
 
 .btn:hover {
-  @apply text-white underline bg-parsley;
-}
-
-@responsive {
-  .btn-flat {
-    @apply rounded-none;
-  }
-
-  .btn-rounded {
-    @apply rounded-sm;
-  }
-
-  .btn-flat-r {
-    @apply rounded-r-none;
-  }
-
-  .btn-flat-t {
-    @apply rounded-t-none;
-  }
-
-  .btn-flat-b {
-    @apply rounded-b-none;
-  }
-
-  .btn-flat-l {
-    @apply rounded-l-none;
-  }
-}
-
-.btn-bright {
-  @apply bg-fun-green;
-}
-
-.btn-bright:hover {
-  @apply bg-fun-green text-white;
+  @apply text-white underline bg-deep-green shadow-none;
 }
 
 .btn-sm {
@@ -114,25 +97,19 @@ footer {
   position: relative;
 }
 
-@media (min-width: 768px) {
-  main {
-    padding-top: 8.025rem;
-  }
+main {
+  padding-top: 3.5rem;
 }
 
-.home main,
-.home footer {
-  top: 0;
-  padding-top: 0;
+@media (min-width: 768px) {
+  main {
+    padding-top: 8.70rem;
+  }
 }
 
 /* Banner Styles */
 .banner  {
-  @apply relative text-white text-xl leading-loose bg-tundora;
-}
-
-.banner-home {
-  @apply bg-catalina-blue;
+  @apply relative text-white text-xl leading-loose bg-dark-gray;
 }
 
 .banner-image {
@@ -141,11 +118,11 @@ footer {
 
 /* Service Styles */
 .card-grid-button {
-  @apply bg-white rounded-sm text-shark no-underline text-lg font-bold font-sans shadow p-8 trans trans-fast;
+  @apply bg-white rounded-sm text-shark no-underline text-lg font-bold shadow-btn p-8 trans trans-fast;
 }
 
 .card-grid-button:hover {
-  @apply bg-fun-green underline text-white;
+  @apply bg-bright-green underline text-white;
 }
 
 /* Department Styles (modifies Service Styles) */
@@ -171,7 +148,7 @@ footer {
 
 /* Background Section Color Rotations */
 main > .bg-rotate:nth-of-type(odd) {
-  @apply bg-cararra;
+  @apply bg-bright-gray;
 }
 
 main > .bg-rotate:nth-of-type(even) {
@@ -203,14 +180,11 @@ main > .bg-rotate:nth-of-type(even) {
 
 @media (min-width: 576px) {
   .card-grid > * {
-    width: calc(50% - 32px);
+    width: calc(33.3333% - 32px);
     align-self: stretch;
   }
-}
-
-@media (min-width: 992px) {
-  .card-grid > * {
-    width: calc(33.3333% - 32px);
+  .card-grid-2up > * {
+    width: calc(50% - 32px);
   }
 }
 

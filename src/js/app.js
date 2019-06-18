@@ -1,16 +1,3 @@
-if (window.location.pathname == '/') {
-  window.onscroll = function changeClass(){
-    const navBar = document.getElementById('nav-bar');
-    const scrollPosY = window.pageYOffset | document.body.scrollTop;
-    if(scrollPosY > 1) {
-      navBar.classList.add('md:bg-catalina-blue');
-      navBar.classList.remove('md:bg-catalina-blue-transparent');
-    } else if(scrollPosY <= 100) {
-      navBar.classList.add('md:bg-catalina-blue-transparent');
-      navBar.classList.remove('md:bg-catalina-blue');
-    }
-  }
-}
 function init() {
   const menuToggle = document.getElementById("menu-toggle");
   const closeMenu = document.getElementById("close-menu");

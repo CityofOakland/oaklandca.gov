@@ -14,7 +14,7 @@
 {% set linkColor = colors.linkColor %}
 {% set barColor = colors.barColor %}
 
-<div class="container relative z-10 text-sm -mt-8 pt-4 pb-3 px-8 border-{{ barColor }} border-l-2 text-{{ barColor }}">
+<div class="container py-0 relative z-10 text-sm mx-8 px-8 border-{{ barColor }} border-l-2 text-{{ barColor }}">
   <a class="text-{{ linkColor }} hover:text-{{ barColor }} hover:underline" href="/">Oakland</a> →
   {% for link in links if links is defined %}
     <a class="text-{{ linkColor }} hover:text-{{ barColor }} hover:underline" href="{{ link.link }}">{{ link.title }}</a> →

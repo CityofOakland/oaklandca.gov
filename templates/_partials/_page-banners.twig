@@ -4,47 +4,51 @@
 {% set ctaButton = ctaButton ?? entry.ctaButton ?? '' %}
 
 <div class="banner leading-normal">
-  <div class="container">
-    {% if bannerImage | length %}
-      <figure class="absolute bg-catalina-blue inset-0 z-0">
-        <img class="banner-image image-blur-{{ bannerImageBlur ?? 'none' }}" src="{{ bannerImage.one.url }}" style="object-position:{{ bannerImage.one.getFocalPoint('asCss') }};" alt="{{ bannerImage.one.title }}">
-      </figure>
-    {% endif %}
-    {% if breadCrumbs is defined and breadCrumbs %}
-      {% include '_partials/_elements/_breadcrumbs' with {
-        title: bannerTitle,
-        breadCrumbColorScheme: breadCrumbColorScheme ?? 'light',
-        links: breadCrumbLinks ?? null
-      } %}
-    {% endif %}
-  </div>
-  <div class="relative container {% if not smallBanner ?? ''%} py-16 {% endif %} z-10">
-    <div class="sm:flex">
-      {% if navMenu is defined and not smallBanner ?? '' %}
-        <div class="hidden pr-8 w-1/6 sm:block">
-          <ul class="text-sm">
-            {% for key,value in navMenu %}
-              {% if value %}
-                <li class="my-2">
-                  <a aria-label="Featured {{ fullNavMenu[key]['title'] }}" class="text-white hover:text-white" href="#page-{{ fullNavMenu[key]['url'] }}">{{ fullNavMenu[key]['title'] }}</a>
-                </li>
-              {% endif %}
-            {% endfor %}
-          </ul>
+  <div class="container {% if not smallBanner ?? '' %}container-flat{% endif %}">
+    {% if not smallBanner ?? '' %}
+      {% if bannerImage | length %}
+        <figure class="absolute bg-catalina-blue inset-0 z-0">
+          <img class="banner-image image-blur-{{ bannerImageBlur ?? 'none' }}" src="{{ bannerImage.one.url }}" style="object-position:{{ bannerImage.one.getFocalPoint('asCss') }};" alt="{{ bannerImage.one.title }}">
+        </figure>
+      {% endif %}
+      {% if breadCrumbs is defined and breadCrumbs %}
+        <div class="relative z-10 text-sm py-3 px-8 border-white border-l-2 text-white">
+          <a class="text-white hover:text-white hover:underline" href="/">Oakland</a> →
+          {% for link in breadCrumbLinks ?? '' %}
+            <a class="text-white hover:text-white hover:underline" href="{{ link.link }}">{{ link.title }}</a> →
+          {% endfor %}
+          <span class="font-bold">{{ bannerTitle }}</span>
         </div>
       {% endif %}
-      <div class="flex-1">
-        <h1 class="text-3xl md:text-4xl font-bold mb-0">{{ bannerTitle }}</h1>
-        {% if leadIn %}
-          <p class="mb-0">{{ leadIn | raw }}</p>
+    {% endif %}
+    <div class="relative {% if not smallBanner ?? ''%} py-16 {% endif %} z-10">
+      <div class="sm:flex">
+        {% if navMenu is defined and not smallBanner ?? '' %}
+          <div class="hidden pr-8 w-1/6 sm:block">
+            <ul class="text-sm">
+              {% for key,value in navMenu %}
+                {% if value %}
+                  <li class="my-2">
+                    <a aria-label="Featured {{ fullNavMenu[key]['title'] }}" class="text-white hover:text-white" href="#page-{{ fullNavMenu[key]['url'] }}">{{ fullNavMenu[key]['title'] }}</a>
+                  </li>
+                {% endif %}
+              {% endfor %}
+            </ul>
+          </div>
         {% endif %}
-        {% if ctaButton | length %}
-          {% set attributes = {
-              class: 'btn px-8 py-2 mt-4 text-sm',
-              "data-custom": 'custom-data-attribute'
-          } %}
-          {{ ctaButton.link(attributes) }}
-        {% endif %}
+        <div class="flex-1">
+          <h1 class="text-3xl md:text-4xl font-bold mb-0">{{ bannerTitle }}</h1>
+          {% if leadIn %}
+            <p class="mb-0">{{ leadIn | raw }}</p>
+          {% endif %}
+          {% if ctaButton | length %}
+            {% set attributes = {
+                class: 'btn px-8 py-2 mt-4 text-sm',
+                "data-custom": 'custom-data-attribute'
+            } %}
+            {{ ctaButton.link(attributes) }}
+          {% endif %}
+        </div>
       </div>
     </div>
   </div>

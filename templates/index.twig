@@ -2,39 +2,38 @@
 {% set bannerImage = entry.banner %}
 
 {% block content %}
-  <div class="banner banner-home md:pt-32 lg:pt-32">
+  <div class="banner banner-home min-h-4 md:min-h-5-1/2 flex items-end">
     <div class="container">
       <img class="banner-image image-blur-{{ bannerImageBlur ?? 'none' }}" src="{{ bannerImage.one.url }}" style="object-position:{{ bannerImage.one.getFocalPoint('asCss') }};" alt="{{ bannerImage.one.title }}">
-      <div class="relative z-20">
-        <h1 class="font-bold text-2xl sm:text-5xl md:text-6xl mb-0">Welcome to Oakland</h1>
-        <p class="font-bold text-sm font-sans uppercase mt-0">The official website for the City of Oakland. <b><a class="text-reef hover:text-fun-green" href="/topics/oaklandlovelife">#OaklandLoveLife</a></b></p>
-      </div>
       <form action="{{ url('search') }}">
-        <label for="home-search" class=" text- hidden-visually">How can we help?</label>
-        <div class="max-w-lg sm:flex shadow relative text-tundora">
-          {{ craft.inlin.er('/assets/img/icon-magnifier.svg') | replace('<svg ', '<svg class="absolute left-0 p-3 absolute w-12 h-half sm:h-full fill-current" ') | raw }}
-          <input type="search" id="home-search" class="w-full mb-0 p-4 pl-12 rounded-none rounded-t-sm appearance-none sm:flex-1 sm:rounded-sm sm:rounded-r-none" aria-label="Site Search" name="query" placeholder="How can we help?" value="">
-          <button type="submit" class="w-full btn border-l-0 sm:w-auto btn-flat-t sm:btn-rounded sm:btn-flat-l">Search</button>
-      </div>
+        <label for="home-search" class="text- hidden-visually">How can we help?</label>
+        <div class="flex shadow relative text-bright-green z-0">
+          {{ craft.inlin.er('/assets/img/icon-magnifier.svg') | replace('<svg ', '<svg class="left-0 h-full p-3 absolute w-12 z-20 fill-current" ') | raw }}
+          <input type="search" id="home-search" class="w-full mb-0 text-sm rounded-sm rounded-r-none appearance-none pl-12 pr-4 py-5 leading-none flex-1 z-10 text-dark-gray md:text-lg" aria-label="Site Search" name="query" placeholder="How can we help?" value="">
+          <button type="submit" class="btn bg-bright-green px-6 rounded-l-none py-4 z-10">
+            Search
+          </button>
+        </div>
       </form>
     </div>
   </div>
   {% include '_partials/_elements/_page-alert' %}
+  <div class="container text-center sm:flex sm:items-end md:justify-center">
+    <h1 class="text-2xl md:text-3xl mt-0">Welcome to Oakland,&nbsp;California</h1>
+    <p class="font-bold text-base mt-2 mb-0 md:ml-2"><b><a href="/topics/oaklandlovelife">#OaklandLoveLife</a></b></p>
+  </div>
 
   {# Begin Services #}
   {% if entry.highlightedServices | length %}
     <section class="bg-rotate">
       <div class="container">
-        {% include '_partials/_elements/_module-header' with {
-          headerText: "Most Requested Services",
-          linkText: "Services A - Z",
-          linkUrl: "/services/"
-        } %}
+        <h2 class="mt-0 mb-4 sm:flex-1 text-2xl sm:text-3xl">Services</h2>
         <div class="card-grid">
           {% for entry in entry.highlightedServices.all() %}
-            <a href="{{ entry.url }}" class="card-grid-button">{{ entry.title | raw }}</a>
+            <a href="{{ entry.url }}" class="card-grid-button py-5 text-dark-green hover:text-white hover:bg-deep-green shadow-btn">{{ entry.title | raw }}</a>
           {% endfor %}
         </div>
+        <p class="text-lg font-bold mb-0"><a href="/services" class="border-b-2 border-dark-green">All Services »</a></p>
       </div>
     </section>
   {% endif %}
@@ -43,88 +42,89 @@
   {# Begin News #}
   <section class="bg-rotate">
     <div class="container">
-      {% include '_partials/_elements/_module-header' with {
-        headerText: "News & Updates",
-        linkText: "Newsroom",
-        linkUrl: "/departments/media-center"
-      } %}
-      <div class="news-grid md:flex mt-8">
-        {% if entry.highlightedNews.exists() %}
-          {% set featuredNews = entry.highlightedNews.one() %}
-        {% else %}
-          {% set featuredNews = craft.entries()
-            .section('news')
-            .search('featureOnHomepage:1')
-            .newsImage(':notempty:')
-            .after('2017-10-01')
-            .orderBy('RAND()')
-            .one() %}
-        {% endif %}
-
-        {% set featuredNewsId = featuredNews.id ?? '' %}
-        <article class="featured-news md:w-1/2 md:mr-8">
-          {% if featuredNews.newsImage | length %}
-            <figure>
-              <img class="block" src="{{ featuredNews.newsImage.one.url }}" alt="{{ featuredNews.newsImage.title }}">
-            </figure>
-          {% endif %}
-          <p class="my-4 text-sm tracking-wide font-sans uppercase text-camouflage-green">{{ featuredNews.postDate | date('M j, Y') }}</p>
-          <h2 class="my-0 leading-tight text-xl md:text-2xl"><a href="{{ featuredNews.url }}">{{ featuredNews.title }}</a></h2>
-          {{ featuredNews.summary | md }}
-        </article>
-        <div class="other-news md:w-1/2">
-          {% for entry in craft.entries.section('news').id('not ' ~ featuredNewsId).featureOnHomepage(true).limit(4).all() %}
-            <article class="py-6 border-b border-celeste {% if loop.last %} border-none {% endif %}">
-              <p class="my-0 text-sm tracking-wide font-sans uppercase text-camouflage-green">{{ entry.postDate | date('M j, Y') }}</p>
-              <h2 class="mt-4 mb-0 text-lg leading-normal"><a href="{{ entry.url }}">{{ entry.title }}</a></h2>
+      <div class="md:flex">
+        <div class="md:border-medium-gray md:border-r md:pr-10 md:w-1/2 lg:w-2/3">
+          <h2 class="mt-0 mb-4 sm:flex-1 text-2xl sm:text-3xl">News & Updates</h2>
+          <div class="lg:flex lg:flex-col mt-8">
+            {% for entry in entry.highlightedNews.all() %}
+              <article class="{{ cycle(['', 'hidden lg:block'], loop.index0) }} lg:flex lg:flex-row">
+                <figure class="lg:w-2/5 h-48 p-4 bg-celeste relative z-0 flex items-center justify-center">
+                  {% if entry.newsImage | length %}
+                    <img class="absolute inset-0 object-fit-cover w-full h-full" src="{{ entry.newsImage.one.url }}" alt="{{ entry.newsImage.title }}"> 
+                  {% else %}
+                    <div class="text-camouflage-green opacity-75 fill-current h-full w-full py-6 px-12">
+                      {{ craft.inlin.er('/assets/img/icon-newspaper.svg') | replace('<svg ', '<svg class="h-32 w-32" ') | raw }}
+                    </div>
+                  {% endif %}
+                </figure>
+                <div class="flex-1 lg:pl-12">
+                  <p class="my-4 lg:mt-0 text-sm tracking-widest uppercase text-camouflage-green">{{ entry.postDate | date('M j, Y') }}</p>
+                  <h3 class="my-0 leading-tight text-xl md:text-2xl"><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
+                  {{ entry.summary | md }}
+                </div>
+              </article>
+            {% endfor %}
+          </div>
+          <p class="text-lg font-bold mb-0"><a href="/departments/media-center" class="border-b-2 border-dark-green">Newsroom »</a></p>
+        </div>
+        <div class="mt-8 md:mt-0 md:border-medium-gray md:border-l md:pl-10 md:w-1/2 lg:w-1/3">
+          <h2 class="mt-0 mb-4 sm:flex-1 text-2xl sm:text-3xl">Upcoming Events</h2>
+          {% set options = {
+            calendar: "events",
+            limit: 1,
+            featureOnHomepage: true,
+            rangeStart: now | date('Y-m-d'),
+          } %}
+          {% set event = craft.calendar.events(options).one() %}
+          {% if event | length %}
+            {% set title = event.title %}
+            {% set url = event.url %}
+            {% set icon = 'calendar' %}
+            {% set photo = event.eventImage.one ?? '' %}
+            {% set byline = event.startDate.format("M d, Y") %}
+            {% set body = event.body | chop(limit=25, unit='w', append='…') %}
+            <article class="mt-8">
+              <figure class="w-full h-48 p-4 bg-celeste relative z-0 flex items-center justify-center">
+                {% if photo | length %}
+                  <img src="{{ photo.url }}" class="absolute inset-0 object-fit-cover w-full h-full" alt="{{ photo.altText ?? ''}}">
+                {% elseif icon is defined %}
+                  <div class="text-camouflage-green opacity-75 fill-current h-full p-12">
+                    {{ craft.inlin.er('/assets/img/icon-' ~ icon ~ '.svg') | replace('<svg ', '<svg class="h-full" ') | raw }}
+                  </div>
+                {% endif %}
+              </figure>
+              <div class="mt-4 text-base text-camouflage-green">{{ byline }}</div>
+              <h3 class="text-xl md:text-2xl mt-4">
+                <a href="{{ url }}">{{ title }}</a>
+              </h3>
+              <div class="text-shark mt-4">
+                {{ body }}
+              </div>
             </article>
-          {% endfor %}
+          {% endif %}
+          <p class="text-lg font-bold mb-0"><a href="/events" class="border-b-2 border-dark-green">All Events »</a></p>
         </div>
       </div>
     </div>
   </section>
 
-  {# Begin Events #}
-  <section class="bg-rotate">
-    <div class="container">
-      {% include '_partials/_elements/_module-header' with {
-        headerText: "Upcoming Events",
-        linkText: "All Meetings & Events",
-        linkUrl: "/events"
-      } %}
-      {% set options = {
-        calendar: "events",
-        limit: 3,
-        featureOnHomepage: true,
-        rangeStart: now | date('Y-m-d'),
-      } %}
-      {% set homeEvents = craft.calendar.events(options).all() %}
-      {% if homeEvents | length %}
-        <div class="card-grid vertical-cards mt-8">
-          {% for entry in homeEvents %}
-            {% include '_partials/_elements/_vertical-cards' with {
-              title: entry.title,
-              url: entry.url,
-              icon: 'calendar',
-              photo: entry.eventImage.one,
-              byline: entry.startDate.format("M d, Y"),
-              body: entry.body | chop(limit=50, unit='w', append='…')
-            } %}
+  {% if entry.learnMoreAbout | length %}
+    <section class="bg-rotate">
+      <div class="container">
+        <h2 class="mt-0 mb-4 sm:flex-1 text-2xl sm:text-3xl">Learn More About</h2>
+        <div class="card-grid card-grid-2up">
+          {% for entry in entry.learnMoreAbout.all() %}
+            <a href="{{ entry.url }}" class="border-l-4 border-bright-green card-grid-button py-5 text-dark-green hover:text-white hover:bg-deep-green shadow-btn">{{ entry.title | raw }}</a>
           {% endfor %}
         </div>
-      {% endif %}
-    </div>
-  </section>
-  {# End Events #}
+      </div>
+    </section>
+  {% endif %}
 
   {# Begin Officials #}
   <section class="bg-rotate">
     <div class="container">
-      {% include '_partials/_elements/_module-header' with {
-        headerText: "City Officials",
-        linkText: "Find Your Council District",
-        linkUrl: "http://gisapps.mapoakland.com/councildistricts/",
-      } %}
+      <h2 class="mt-0 mb-4 sm:flex-1 text-2xl sm:text-3xl">City Officials</h2>
       <div class="card-grid grid-equal-height profile-cards mt-12">
         {% for entry in craft.entries.section('officials').all() %}
           {% include '_partials/_elements/_profile-cards' with {
@@ -135,6 +135,7 @@
           } %}
         {% endfor %}
       </div>
+      <p class="text-lg font-bold mb-0"><a href="http://gisapps.mapoakland.com/councildistricts" class="border-b-2 border-dark-green">Find your council district »</a></p>
     </div>
   </section>
   {# End Officials #}
