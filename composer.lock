@@ -4,46 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "e1e5dcdc2da21934ba365e8ecab9754c",
+    "content-hash": "24a15a033b4fa2de944331ec26ce1a71",
     "packages": [
-        {
-            "name": "99designs/phumbor",
-            "version": "1.2.2",
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/99designs/phumbor/zipball/7b32a4bc0a247b07490dc57399aaaa06b5b32632",
-                "reference": "7b32a4bc0a247b07490dc57399aaaa06b5b32632",
-                "shasum": ""
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~3.7.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Thumbor": "lib"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Stuart Campbell",
-                    "email": "stuart.campbell@99designs.com"
-                }
-            ],
-            "description": "A minimal Thumbor library for PHP",
-            "homepage": "https://github.com/99designs/phumbor",
-            "keywords": [
-                "99designs",
-                "Thumbnails",
-                "php",
-                "thumbor"
-            ],
-            "time": "2017-01-23T02:27:47+00:00"
-        },
         {
             "name": "aelvan/inlin",
             "version": "2.1.1",
@@ -208,11 +170,11 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.91.1",
+            "version": "3.100.4",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/808a8cde13d5ba458d6365828385fead955c933e",
-                "reference": "808a8cde13d5ba458d6365828385fead955c933e",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/803f3cdc37f42112c4df1af0a77e25130b9448d3",
+                "reference": "803f3cdc37f42112c4df1af0a77e25130b9448d3",
                 "shasum": ""
             },
             "require": {
@@ -224,19 +186,6 @@
                 "guzzlehttp/psr7": "^1.4.1",
                 "mtdowling/jmespath.php": "~2.2",
                 "php": ">=5.5"
-            },
-            "require-dev": {
-                "andrewsville/php-token-reflection": "^1.4",
-                "aws/aws-php-sns-message-validator": "~1.0",
-                "behat/behat": "~3.0",
-                "doctrine/cache": "~1.4",
-                "ext-dom": "*",
-                "ext-openssl": "*",
-                "ext-pcntl": "*",
-                "ext-sockets": "*",
-                "nette/neon": "^2.3",
-                "phpunit/phpunit": "^4.8.35|^5.4.3",
-                "psr/cache": "^1.0"
             },
             "suggest": {
                 "aws/aws-php-sns-message-validator": "To validate incoming SNS notifications",
@@ -259,7 +208,6 @@
                     "src/functions.php"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "Apache-2.0"
             ],
@@ -281,7 +229,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2019-04-02T18:07:41+00:00"
+            "time": "2019-06-14T18:12:13+00:00"
         },
         {
             "name": "born05/craft-assetusage",
@@ -714,11 +662,11 @@
         },
         {
             "name": "craftcms/aws-s3",
-            "version": "1.2.2",
+            "version": "1.2.3",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/aws-s3/zipball/6c38b988d759d8b0af70b27dde74e3a1f0d78353",
-                "reference": "6c38b988d759d8b0af70b27dde74e3a1f0d78353",
+                "url": "https://api.github.com/repos/craftcms/aws-s3/zipball/5e6b6c7d38564530393f124a80a5e3e7a82d93fc",
+                "reference": "5e6b6c7d38564530393f124a80a5e3e7a82d93fc",
                 "shasum": ""
             },
             "require": {
@@ -761,15 +709,15 @@
                 "docs": "https://github.com/craftcms/aws-s3/blob/master/README.md",
                 "rss": "https://github.com/craftcms/aws-s3/commits/master.atom"
             },
-            "time": "2019-03-27T09:29:56+00:00"
+            "time": "2019-06-14T08:47:07+00:00"
         },
         {
             "name": "craftcms/cms",
-            "version": "3.1.29",
+            "version": "3.1.30",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/cb6e3054dd4351653329da508616c15dd0e69874",
-                "reference": "cb6e3054dd4351653329da508616c15dd0e69874",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/de7d4488c065e42ff549d466b215ce392b395559",
+                "reference": "de7d4488c065e42ff549d466b215ce392b395559",
                 "shasum": ""
             },
             "require": {
@@ -845,7 +793,7 @@
                 "docs": "https://docs.craftcms.com/v3/",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2019-06-04T17:37:55+00:00"
+            "time": "2019-06-11T17:04:05+00:00"
         },
         {
             "name": "craftcms/element-api",
@@ -1294,11 +1242,11 @@
         },
         {
             "name": "doctrine/lexer",
-            "version": "v1.0.1",
+            "version": "1.0.2",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/lexer/zipball/83893c552fd2045dd78aef794c31e694c37c0b8c",
-                "reference": "83893c552fd2045dd78aef794c31e694c37c0b8c",
+                "url": "https://api.github.com/repos/doctrine/lexer/zipball/1febd6c3ef84253d7c815bed85fc622ad207a9f8",
+                "reference": "1febd6c3ef84253d7c815bed85fc622ad207a9f8",
                 "shasum": ""
             },
             "require": {
@@ -1311,11 +1259,10 @@
                 }
             },
             "autoload": {
-                "psr-0": {
-                    "Doctrine\\Common\\Lexer\\": "lib/"
+                "psr-4": {
+                    "Doctrine\\Common\\Lexer\\": "lib/Doctrine/Common/Lexer"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1333,13 +1280,16 @@
                     "email": "schmittjoh@gmail.com"
                 }
             ],
-            "description": "Base library for a lexer that can be used in Top-Down, Recursive Descent Parsers.",
-            "homepage": "http://www.doctrine-project.org",
+            "description": "PHP Doctrine Lexer parser library that can be used in Top-Down, Recursive Descent Parsers.",
+            "homepage": "https://www.doctrine-project.org/projects/lexer.html",
             "keywords": [
+                "annotations",
+                "docblock",
                 "lexer",
-                "parser"
+                "parser",
+                "php"
             ],
-            "time": "2014-09-09T13:34:57+00:00"
+            "time": "2019-06-08T11:03:04+00:00"
         },
         {
             "name": "dolphiq/redirect",
@@ -1539,11 +1489,11 @@
         },
         {
             "name": "doublesecretagency/craft-inventory",
-            "version": "2.0.2",
+            "version": "2.0.3",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doublesecretagency/craft-inventory/zipball/0dd1b3a62e4bece3832fa127c1c9d178ed49d742",
-                "reference": "0dd1b3a62e4bece3832fa127c1c9d178ed49d742",
+                "url": "https://api.github.com/repos/doublesecretagency/craft-inventory/zipball/4dcc19e8b1e9527f3b32877cae2e31b55619d85a",
+                "reference": "4dcc19e8b1e9527f3b32877cae2e31b55619d85a",
                 "shasum": ""
             },
             "require": {
@@ -1562,7 +1512,6 @@
                     "doublesecretagency\\inventory\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1574,14 +1523,18 @@
             ],
             "description": "Take stock of your field usage.",
             "keywords": [
-                "Craft",
                 "cms",
+                "craft",
                 "craft-plugin",
                 "craftcms",
                 "fields",
                 "inventory"
             ],
-            "time": "2018-07-17T04:50:36+00:00"
+            "support": {
+                "docs": "https://github.com/doublesecretagency/craft-inventory/blob/v2/README.md",
+                "issues": "https://github.com/doublesecretagency/craft-inventory/issues"
+            },
+            "time": "2019-06-07T22:25:35+00:00"
         },
         {
             "name": "doublesecretagency/craft-smartmap",
@@ -2679,21 +2632,17 @@
         },
         {
             "name": "league/flysystem-aws-s3-v3",
-            "version": "1.0.22",
+            "version": "1.0.23",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem-aws-s3-v3/zipball/883b02c80ca9cd68cf58a9b4b2185beef24b836b",
-                "reference": "883b02c80ca9cd68cf58a9b4b2185beef24b836b",
+                "url": "https://api.github.com/repos/thephpleague/flysystem-aws-s3-v3/zipball/15b0cdeab7240bf8e8bffa85ae5275bbc3692bf4",
+                "reference": "15b0cdeab7240bf8e8bffa85ae5275bbc3692bf4",
                 "shasum": ""
             },
             "require": {
                 "aws/aws-sdk-php": "^3.0.0",
                 "league/flysystem": "^1.0.40",
                 "php": ">=5.5.0"
-            },
-            "require-dev": {
-                "henrikbjorn/phpspec-code-coverage": "~1.0.1",
-                "phpspec/phpspec": "^2.0.0"
             },
             "type": "library",
             "extra": {
@@ -2706,7 +2655,6 @@
                     "League\\Flysystem\\AwsS3v3\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -2717,7 +2665,7 @@
                 }
             ],
             "description": "Flysystem adapter for the AWS S3 SDK v3.x",
-            "time": "2019-01-31T15:07:25+00:00"
+            "time": "2019-06-05T17:18:29+00:00"
         },
         {
             "name": "league/fractal",
@@ -2842,15 +2790,15 @@
         },
         {
             "name": "marionnewlevant/twig-perversion",
-            "version": "2.0.7",
+            "version": "2.1.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/marionnewlevant/craft-twig_perversion/zipball/8644b70ab9de13c4f604694067e01cc49f2735e3",
-                "reference": "8644b70ab9de13c4f604694067e01cc49f2735e3",
+                "url": "https://api.github.com/repos/marionnewlevant/craft-twig_perversion/zipball/d201d177a892f64bf0de541a3d291b227b973b0d",
+                "reference": "d201d177a892f64bf0de541a3d291b227b973b0d",
                 "shasum": ""
             },
             "require": {
-                "craftcms/cms": "^3.0.0-RC1"
+                "craftcms/cms": "^3.1.29"
             },
             "type": "craft-plugin",
             "extra": {
@@ -2867,7 +2815,6 @@
                     "marionnewlevant\\twigperversion\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -2879,12 +2826,12 @@
             ],
             "description": "Making twig do things it really shouldn't",
             "keywords": [
-                "Craft",
+                "craft",
                 "craftcms",
                 "plugin",
                 "twigperversion"
             ],
-            "time": "2019-02-03T05:56:49+00:00"
+            "time": "2019-06-09T22:12:28+00:00"
         },
         {
             "name": "masterminds/html5",
@@ -3571,11 +3518,11 @@
         },
         {
             "name": "nystudio107/craft-imageoptimize",
-            "version": "1.5.6",
+            "version": "1.5.7",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-imageoptimize/zipball/0196fc0437e35e0cfc7960555999752d5e4e00ed",
-                "reference": "0196fc0437e35e0cfc7960555999752d5e4e00ed",
+                "url": "https://api.github.com/repos/nystudio107/craft-imageoptimize/zipball/2a9b385fb2ba38a601b4a04d21f62a62d8594396",
+                "reference": "2a9b385fb2ba38a601b4a04d21f62a62d8594396",
                 "shasum": ""
             },
             "require": {
@@ -3630,7 +3577,7 @@
                 "docs": "https://nystudio107.com/plugins/imageoptimize/documentation",
                 "issues": "https://nystudio107.com/plugins/imageoptimize/support"
             },
-            "time": "2019-05-21T16:49:21+00:00"
+            "time": "2019-06-13T16:45:22+00:00"
         },
         {
             "name": "nystudio107/craft-imageoptimize-imgix",
@@ -3673,17 +3620,17 @@
         },
         {
             "name": "nystudio107/craft-imageoptimize-thumbor",
-            "version": "1.2.1",
+            "version": "1.2.2",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-imageoptimize-thumbor/zipball/5a9e385fd4e122b84703c0d57b811ccb9af4ff6a",
-                "reference": "5a9e385fd4e122b84703c0d57b811ccb9af4ff6a",
+                "url": "https://api.github.com/repos/nystudio107/craft-imageoptimize-thumbor/zipball/f9622ef2cd86a0483ee1f9eac7221ffd606b468b",
+                "reference": "f9622ef2cd86a0483ee1f9eac7221ffd606b468b",
                 "shasum": ""
             },
             "require": {
-                "99designs/phumbor": "^1.2",
                 "craftcms/cms": "^3.0.0",
-                "nystudio107/craft-imageoptimize": "^1.5.2"
+                "nystudio107/craft-imageoptimize": "^1.5.2",
+                "webfactory/phumbor": "^1.2"
             },
             "type": "image-transform",
             "autoload": {
@@ -3691,7 +3638,6 @@
                     "nystudio107\\imageoptimizethumbor\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "proprietary"
             ],
@@ -3708,15 +3654,19 @@
                 "image-transform",
                 "thumbor"
             ],
-            "time": "2019-03-11T12:43:56+00:00"
+            "support": {
+                "docs": "https://github.com/nystudio107/craft-imageoptimize-thumbor/blob/v1/README.md",
+                "issues": "https://github.com/nystudio107/craft-imageoptimize-thumbor/issues"
+            },
+            "time": "2019-06-05T20:17:50+00:00"
         },
         {
             "name": "nystudio107/craft-retour",
-            "version": "3.1.15",
+            "version": "3.1.16",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-retour/zipball/c1f1d2796b0c949e80111087cdd806d57efa9eec",
-                "reference": "c1f1d2796b0c949e80111087cdd806d57efa9eec",
+                "url": "https://api.github.com/repos/nystudio107/craft-retour/zipball/0890b89a51bddb46bbb7cd2f632999b26ec4edcb",
+                "reference": "0890b89a51bddb46bbb7cd2f632999b26ec4edcb",
                 "shasum": ""
             },
             "require": {
@@ -3763,15 +3713,15 @@
                 "docs": "https://nystudio107.com/plugins/retour/documentation",
                 "issues": "https://nystudio107.com/plugins/retour/support"
             },
-            "time": "2019-05-21T23:44:42+00:00"
+            "time": "2019-06-12T21:38:19+00:00"
         },
         {
             "name": "nystudio107/craft-seomatic",
-            "version": "3.2.7",
+            "version": "3.2.9",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/1ffe6b820df3c317f7ff007b9d262aceb206658e",
-                "reference": "1ffe6b820df3c317f7ff007b9d262aceb206658e",
+                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/aa496d365c1310e8514616d64928050681506989",
+                "reference": "aa496d365c1310e8514616d64928050681506989",
                 "shasum": ""
             },
             "require": {
@@ -3835,7 +3785,7 @@
                 "docs": "https://nystudio107.com/plugins/seomatic/documentation",
                 "issues": "https://nystudio107.com/plugins/seomatic/support"
             },
-            "time": "2019-06-03T18:31:29+00:00"
+            "time": "2019-06-13T18:50:58+00:00"
         },
         {
             "name": "nystudio107/craft-twigpack",
@@ -6348,6 +6298,47 @@
                 "environment"
             ],
             "time": "2019-01-29T11:11:52+00:00"
+        },
+        {
+            "name": "webfactory/phumbor",
+            "version": "1.2.3",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/webfactory/phumbor/zipball/77c2d3a0e6ee6f4a806cc0282bd1ec4b72656933",
+                "reference": "77c2d3a0e6ee6f4a806cc0282bd1ec4b72656933",
+                "shasum": ""
+            },
+            "replace": {
+                "99designs/phumbor": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Thumbor": "lib"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Stuart Campbell",
+                    "email": "stuart.campbell@99designs.com"
+                },
+                {
+                    "name": "webfactory GmbH",
+                    "email": "info@webfactory.de"
+                }
+            ],
+            "description": "A minimal Thumbor library for PHP",
+            "homepage": "https://github.com/webfactory/phumbor",
+            "keywords": [
+                "Thumbnails",
+                "php",
+                "thumbor",
+                "webfactory"
+            ],
+            "time": "2018-12-05T08:28:01+00:00"
         },
         {
             "name": "webonyx/graphql-php",

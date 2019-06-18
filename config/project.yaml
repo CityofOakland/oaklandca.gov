@@ -32,7 +32,7 @@ categoryGroups:
         hasUrls: true
         uriFormat: 'services/category/{slug}'
         template: services/_category
-dateModified: 1560541345
+dateModified: 1560831371
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -1259,25 +1259,6 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Url
-  9579abf9-ee21-41b9-842e-645c97def174:
-    contentColumnType: string
-    fieldGroup: 8ac349fa-f382-4bc4-9f01-25e04abf073c
-    handle: highlightedDepartments
-    instructions: 'Choose up to 6 departments that will appear on the homepage'
-    name: 'Highlighted Departments'
-    searchable: '1'
-    settings:
-      limit: '6'
-      localizeRelations: false
-      selectionLabel: 'Add a department'
-      source: null
-      sources:
-        - 'section:b3411cb1-e860-46ed-9cd6-58cf9b8daacb'
-      targetSiteId: null
-      viewMode: null
-    translationKeyFormat: null
-    translationMethod: site
-    type: craft\fields\Entries
   9723e73e-bf9d-4785-809e-fa94b4b85e14:
     contentColumnType: string
     fieldGroup: 83c14444-efcf-4d13-a20a-56275fd18855
@@ -2239,24 +2220,24 @@ fields:
     translationMethod: none
     type: craft\fields\PlainText
   de273878-3929-4764-b4ab-a670a2987d39:
-    contentColumnType: string
-    fieldGroup: 8ac349fa-f382-4bc4-9f01-25e04abf073c
-    handle: highlightedNews
-    instructions: 'Choose the news item to feature on the homepage'
     name: 'Highlighted News'
-    searchable: '1'
+    handle: highlightedNews
+    instructions: 'Choose the news item(s) to feature on the homepage'
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Entries
     settings:
-      limit: '1'
-      localizeRelations: false
-      selectionLabel: 'Add a news item'
-      source: null
       sources:
         - 'section:983c9f6f-9251-4fd3-91e1-b598eccc6a1a'
+      source: null
       targetSiteId: null
       viewMode: null
-    translationKeyFormat: null
-    translationMethod: site
-    type: craft\fields\Entries
+      limit: '2'
+      selectionLabel: 'Add a news item'
+      localizeRelations: false
+    contentColumnType: string
+    fieldGroup: 8ac349fa-f382-4bc4-9f01-25e04abf073c
   e14bc4b5-a350-404b-8960-15fa4ae134c4:
     contentColumnType: string
     fieldGroup: ed709c7c-0c3a-4457-ae2d-38a3ccb797e4
@@ -2618,6 +2599,36 @@ fields:
       localizeRelations: false
     contentColumnType: string
     fieldGroup: 5bc46e53-a87c-4584-89aa-808cacedf461
+  f528b37c-8b15-43b8-8da0-d1b161fbf629:
+    name: 'Learn More About'
+    handle: learnMoreAbout
+    instructions: 'Select two (2) entries you wish to highlight above the City Officials section'
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Entries
+    settings:
+      sources:
+        - 'section:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f'
+        - 'section:b3411cb1-e860-46ed-9cd6-58cf9b8daacb'
+        - 'section:9da43fd8-c505-4d19-9486-e0cb669c568a'
+        - 'section:8b7c4e26-9aab-4c5d-874e-aee151107de3'
+        - 'section:983c9f6f-9251-4fd3-91e1-b598eccc6a1a'
+        - 'section:28881fc8-3e61-4fdb-a5ee-cce1bab725bf'
+        - 'section:92f0f749-ed5b-4acc-aa15-6340f6e25791'
+        - 'section:98d541ae-56ee-4c98-ba9c-37438dc485a0'
+        - 'section:24fa116b-8516-4626-84f3-86b685e71071'
+        - 'section:b7e437e1-239f-4c5c-8c62-5f0323f9d22c'
+        - 'section:fbf8b9b0-8875-4e08-819a-d62603676dc4'
+        - 'section:70778563-6dac-453d-a4b0-5121f3a614b7'
+      source: null
+      targetSiteId: null
+      viewMode: null
+      limit: '4'
+      selectionLabel: ''
+      localizeRelations: false
+    contentColumnType: string
+    fieldGroup: 8ac349fa-f382-4bc4-9f01-25e04abf073c
 globalSets:
   085a36c4-9ad9-4e30-9866-af01ecff820e:
     fieldLayouts:
@@ -6199,38 +6210,38 @@ sections:
     enableVersioning: '1'
     entryTypes:
       196f68cc-36a4-42b0-9605-feeef72fa330:
+        name: Homepage
+        handle: homepage
+        hasTitleField: false
+        titleLabel: ''
+        titleFormat: '{section.name|raw}'
+        sortOrder: 1
         fieldLayouts:
           b9b0e832-3088-4f30-9766-f28ef4f30493:
             tabs:
               -
-                fields:
-                  18fa95ee-449e-4c22-9d88-b0fb8918a38b:
-                    required: '0'
-                    sortOrder: '4'
-                  9579abf9-ee21-41b9-842e-645c97def174:
-                    required: '0'
-                    sortOrder: '2'
-                  de273878-3929-4764-b4ab-a670a2987d39:
-                    required: '0'
-                    sortOrder: '3'
-                  f62c85ae-2203-4d1a-8702-da515126a398:
-                    required: '0'
-                    sortOrder: '1'
                 name: Homepage
-                sortOrder: '1'
+                sortOrder: 1
+                fields:
+                  f62c85ae-2203-4d1a-8702-da515126a398:
+                    required: false
+                    sortOrder: 1
+                  18fa95ee-449e-4c22-9d88-b0fb8918a38b:
+                    required: false
+                    sortOrder: 2
+                  de273878-3929-4764-b4ab-a670a2987d39:
+                    required: false
+                    sortOrder: 3
+                  f528b37c-8b15-43b8-8da0-d1b161fbf629:
+                    required: false
+                    sortOrder: 4
               -
+                name: SEO
+                sortOrder: 2
                 fields:
                   ecc31df6-640f-4fa6-a2e6-caea757e379d:
-                    required: '0'
-                    sortOrder: '1'
-                name: SEO
-                sortOrder: '2'
-        handle: homepage
-        hasTitleField: '0'
-        name: Homepage
-        sortOrder: '1'
-        titleFormat: '{section.name|raw}'
-        titleLabel: null
+                    required: false
+                    sortOrder: 1
     handle: homepage
     name: Homepage
     propagateEntries: '1'
