@@ -1,7 +1,7 @@
 {% if craft.app.request.segments() %}
   {% set searchNavButton %}
     <li class="ml-4">
-      <a class="block text-white hover:text-bright-green fill-current trans trans-fast" href="/search" id="search-menu-toggle" name="Search Toggle">
+      <a class="block text-white hover:text-light-green hover:underline fill-current trans trans-fast" href="/search" id="search-menu-toggle" name="Search Toggle">
         {{ craft.inlin.er('/assets/img/icon-magnifier.svg') | replace('<svg ', '<svg class="h-4" ') | raw }}
         <span class="hidden-visually">Search Toggle</span>
       </a>
@@ -11,7 +11,7 @@
 {% set mainNav = craft.entries.section('navigation').slug('main-nav').one() %}
 
 <div id="nav-wrapper" class="fixed w-full z-40">
-  <div class="hidden md:block bg-white z-40 py-2 px-4">
+  <div class="hidden md:block bg-white z-40 py-2 px-4 text-sm">
     <ul class="flex w-full font-bold my-0">
       <li class="flex-1">
         <a href="/" class="text-dark-green hover:text-deep-green">Mayor Libby Schaaf</a>
@@ -28,12 +28,12 @@
     <div class="px-4">
       <nav id="main-navigation" class="relative flex items-center justify-between" name="Main Navigation" role="navigation">
         <div>
-          <a id="home-link" class="block py-3 md:py-8 text-white hover:text-bright-green fill-current trans-fast" href="/" name="Home">
+          <a id="home-link" class="block py-3 md:py-6 text-white hover:text-bright-green fill-current trans-fast" href="/" name="Home">
             {{ craft.inlin.er('/assets/img/logo-oakland.svg') | replace('<svg ', '<svg class="h-8 md:h-10" ') | raw }}
             <span class="hidden-visually">Home</span>
           </a>
         </div>
-        <button class="text-xxs font-semibold sm:text-base sm:px-8 absolute flex flex-col flex-wrap items-center tracking-wider right-0 uppercase lg:hidden" id="menu-toggle">
+        <button class="text-xxs font-semibold sm:text-base sm:px-8 absolute flex flex-col flex-wrap items-center tracking-widest right-0 uppercase lg:hidden" id="menu-toggle">
           <svg enable-background="new 0 0 32 32" height="32" viewBox="0 0 32 32" width="32" class="w-5 h-5 inline-block" xmlns="http://www.w3.org/2000/svg" fill="#FFF"><path d="m4 10h24c1.104 0 2-.896 2-2s-.896-2-2-2h-24c-1.104 0-2 .896-2 2s.896 2 2 2zm24 4h-24c-1.104 0-2 .896-2 2s.896 2 2 2h24c1.104 0 2-.896 2-2s-.896-2-2-2zm0 8h-24c-1.104 0-2 .896-2 2s.896 2 2 2h24c1.104 0 2-.896 2-2s-.896-2-2-2z"/></svg>
           Menu
         </button>
@@ -41,7 +41,7 @@
           {% for nav in mainNav.navBuilder.all() %}
             {% set link = nav.navLink %}
             <li class="{% if not loop.first %}ml-4 lg:ml-6 xl:ml-8{% endif %}">
-              <a href="{{ link.url }}" {% if link.target | length %} target="{{ link.target }}" {% endif %} class="text-white hover:text-bright-green trans-fast">{{ link.text }}</a>
+              <a href="{{ link.url }}" {% if link.target | length %} target="{{ link.target }}" {% endif %} class="text-white hover:text-light-green hover:underline trans-fast">{{ link.text }}</a>
             </li>
           {% endfor %}
           {{ searchNavButton ?? '' }}
