@@ -10,17 +10,6 @@ categoryGroups:
     structure:
       maxLevels: '1'
       uid: 79a4e890-1384-45a7-adb9-7b0059b1c736
-  947de11d-3d94-45c2-8565-04542ce0e737:
-    handle: eventTypes
-    name: 'Event Types'
-    siteSettings:
-      c35d3a93-d7f4-4c37-ae3e-1b4d403311bb:
-        hasUrls: '0'
-        template: null
-        uriFormat: null
-    structure:
-      maxLevels: '1'
-      uid: b4e9ab1c-aa42-46f9-a679-898119f39e8d
   8bcf4697-1dd2-47b2-91e2-8ad9b4b86741:
     name: 'Service Types'
     handle: serviceTypes
@@ -32,7 +21,18 @@ categoryGroups:
         hasUrls: true
         uriFormat: 'services/category/{slug}'
         template: services/_category
-dateModified: 1561749218
+  947de11d-3d94-45c2-8565-04542ce0e737:
+    handle: eventTypes
+    name: 'Event Types'
+    siteSettings:
+      c35d3a93-d7f4-4c37-ae3e-1b4d403311bb:
+        hasUrls: '0'
+        template: null
+        uriFormat: null
+    structure:
+      maxLevels: '1'
+      uid: b4e9ab1c-aa42-46f9-a679-898119f39e8d
+dateModified: 1561758997
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -1064,6 +1064,25 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\RadioButtons
+  7594e9ae-f194-47c8-9a6b-076789f1087b:
+    name: 'Service Types'
+    handle: serviceTypes
+    instructions: ''
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Categories
+    settings:
+      branchLimit: ''
+      sources: '*'
+      source: 'group:8bcf4697-1dd2-47b2-91e2-8ad9b4b86741'
+      targetSiteId: null
+      viewMode: null
+      limit: null
+      selectionLabel: 'Add a type'
+      localizeRelations: false
+    contentColumnType: string
+    fieldGroup: 5bc46e53-a87c-4584-89aa-808cacedf461
   770f79c9-6a08-4685-94fa-2dfd804f3758:
     contentColumnType: text
     fieldGroup: 71fb693f-011b-4669-ba10-f1b379557bb9
@@ -2222,7 +2241,7 @@ fields:
   de273878-3929-4764-b4ab-a670a2987d39:
     name: 'Highlighted News'
     handle: highlightedNews
-    instructions: 'Choose the news item(s) to feature on the homepage. The first in the list will take visual priority, while the remainder will be simple text links.'
+    instructions: 'Choose the news item to feature on the homepage.'
     searchable: true
     translationMethod: site
     translationKeyFormat: null
@@ -2233,7 +2252,7 @@ fields:
       source: null
       targetSiteId: null
       viewMode: null
-      limit: '6'
+      limit: '1'
       selectionLabel: 'Add a news item'
       localizeRelations: false
     contentColumnType: string
@@ -2407,6 +2426,36 @@ fields:
     translationKeyFormat: null
     translationMethod: site
     type: craft\fields\Entries
+  f528b37c-8b15-43b8-8da0-d1b161fbf629:
+    name: 'Learn More About'
+    handle: learnMoreAbout
+    instructions: 'Select two (2) entries you wish to highlight above the City Officials section'
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Entries
+    settings:
+      sources:
+        - 'section:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f'
+        - 'section:b3411cb1-e860-46ed-9cd6-58cf9b8daacb'
+        - 'section:9da43fd8-c505-4d19-9486-e0cb669c568a'
+        - 'section:8b7c4e26-9aab-4c5d-874e-aee151107de3'
+        - 'section:983c9f6f-9251-4fd3-91e1-b598eccc6a1a'
+        - 'section:28881fc8-3e61-4fdb-a5ee-cce1bab725bf'
+        - 'section:92f0f749-ed5b-4acc-aa15-6340f6e25791'
+        - 'section:98d541ae-56ee-4c98-ba9c-37438dc485a0'
+        - 'section:24fa116b-8516-4626-84f3-86b685e71071'
+        - 'section:b7e437e1-239f-4c5c-8c62-5f0323f9d22c'
+        - 'section:fbf8b9b0-8875-4e08-819a-d62603676dc4'
+        - 'section:70778563-6dac-453d-a4b0-5121f3a614b7'
+      source: null
+      targetSiteId: null
+      viewMode: null
+      limit: '4'
+      selectionLabel: ''
+      localizeRelations: false
+    contentColumnType: string
+    fieldGroup: 8ac349fa-f382-4bc4-9f01-25e04abf073c
   f5cb9193-58e9-4612-a6b1-68e318ea2aae:
     contentColumnType: string
     fieldGroup: 83c14444-efcf-4d13-a20a-56275fd18855
@@ -2580,55 +2629,6 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-  7594e9ae-f194-47c8-9a6b-076789f1087b:
-    name: 'Service Types'
-    handle: serviceTypes
-    instructions: ''
-    searchable: true
-    translationMethod: site
-    translationKeyFormat: null
-    type: craft\fields\Categories
-    settings:
-      branchLimit: ''
-      sources: '*'
-      source: 'group:8bcf4697-1dd2-47b2-91e2-8ad9b4b86741'
-      targetSiteId: null
-      viewMode: null
-      limit: null
-      selectionLabel: 'Add a type'
-      localizeRelations: false
-    contentColumnType: string
-    fieldGroup: 5bc46e53-a87c-4584-89aa-808cacedf461
-  f528b37c-8b15-43b8-8da0-d1b161fbf629:
-    name: 'Learn More About'
-    handle: learnMoreAbout
-    instructions: 'Select two (2) entries you wish to highlight above the City Officials section'
-    searchable: true
-    translationMethod: site
-    translationKeyFormat: null
-    type: craft\fields\Entries
-    settings:
-      sources:
-        - 'section:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f'
-        - 'section:b3411cb1-e860-46ed-9cd6-58cf9b8daacb'
-        - 'section:9da43fd8-c505-4d19-9486-e0cb669c568a'
-        - 'section:8b7c4e26-9aab-4c5d-874e-aee151107de3'
-        - 'section:983c9f6f-9251-4fd3-91e1-b598eccc6a1a'
-        - 'section:28881fc8-3e61-4fdb-a5ee-cce1bab725bf'
-        - 'section:92f0f749-ed5b-4acc-aa15-6340f6e25791'
-        - 'section:98d541ae-56ee-4c98-ba9c-37438dc485a0'
-        - 'section:24fa116b-8516-4626-84f3-86b685e71071'
-        - 'section:b7e437e1-239f-4c5c-8c62-5f0323f9d22c'
-        - 'section:fbf8b9b0-8875-4e08-819a-d62603676dc4'
-        - 'section:70778563-6dac-453d-a4b0-5121f3a614b7'
-      source: null
-      targetSiteId: null
-      viewMode: null
-      limit: '4'
-      selectionLabel: ''
-      localizeRelations: false
-    contentColumnType: string
-    fieldGroup: 8ac349fa-f382-4bc4-9f01-25e04abf073c
 globalSets:
   085a36c4-9ad9-4e30-9866-af01ecff820e:
     fieldLayouts:
@@ -4473,18 +4473,18 @@ sections:
                 name: Content
                 sortOrder: 1
                 fields:
-                  ddb61f35-83f1-46d4-904b-da525acf9e7c:
-                    required: false
-                    sortOrder: 1
-                  211069ad-7abf-4b4d-a040-1b26ddb7a816:
-                    required: false
-                    sortOrder: 2
                   1b7fc839-7de9-4717-b41d-d74bfa40b5c8:
                     required: false
                     sortOrder: 3
+                  211069ad-7abf-4b4d-a040-1b26ddb7a816:
+                    required: false
+                    sortOrder: 2
                   93eaa329-904e-4a23-9047-4decf3d47cac:
                     required: false
                     sortOrder: 4
+                  ddb61f35-83f1-46d4-904b-da525acf9e7c:
+                    required: false
+                    sortOrder: 1
               -
                 name: SEO
                 sortOrder: 2
@@ -4506,83 +4506,83 @@ sections:
                 name: Content
                 sortOrder: 1
                 fields:
-                  f62c85ae-2203-4d1a-8702-da515126a398:
-                    required: false
-                    sortOrder: 1
-                  c2ad07dc-05e7-4ef4-89b6-2e1eaccee210:
-                    required: false
-                    sortOrder: 2
-                  bef74be8-b22d-4dd0-9217-9707bb43d888:
-                    required: false
-                    sortOrder: 3
-                  f5cb9193-58e9-4612-a6b1-68e318ea2aae:
-                    required: false
-                    sortOrder: 4
-                  d9f6b182-7186-4e99-909f-9112985467b8:
-                    required: false
-                    sortOrder: 5
-                  ca2e4145-9289-482b-b1f1-c2843b4b4d60:
-                    required: false
-                    sortOrder: 6
-                  89fc1206-d81a-4ef4-b8fd-3431852a9db7:
-                    required: false
-                    sortOrder: 7
-                  a658ef46-5ee4-44f5-b775-9df0ea27df38:
-                    required: false
-                    sortOrder: 8
                   55169274-4595-4ab0-a461-9b4600d07779:
                     required: false
                     sortOrder: 9
                   86a3f1a5-a708-49b5-bac4-ff225f556ae1:
                     required: false
                     sortOrder: 10
+                  89fc1206-d81a-4ef4-b8fd-3431852a9db7:
+                    required: false
+                    sortOrder: 7
+                  a658ef46-5ee4-44f5-b775-9df0ea27df38:
+                    required: false
+                    sortOrder: 8
+                  bef74be8-b22d-4dd0-9217-9707bb43d888:
+                    required: false
+                    sortOrder: 3
+                  c2ad07dc-05e7-4ef4-89b6-2e1eaccee210:
+                    required: false
+                    sortOrder: 2
+                  ca2e4145-9289-482b-b1f1-c2843b4b4d60:
+                    required: false
+                    sortOrder: 6
+                  d9f6b182-7186-4e99-909f-9112985467b8:
+                    required: false
+                    sortOrder: 5
+                  f5cb9193-58e9-4612-a6b1-68e318ea2aae:
+                    required: false
+                    sortOrder: 4
+                  f62c85ae-2203-4d1a-8702-da515126a398:
+                    required: false
+                    sortOrder: 1
               -
                 name: Departments
                 sortOrder: 2
                 fields:
-                  ddb61f35-83f1-46d4-904b-da525acf9e7c:
-                    required: false
-                    sortOrder: 1
-                  211069ad-7abf-4b4d-a040-1b26ddb7a816:
-                    required: false
-                    sortOrder: 2
                   1b7fc839-7de9-4717-b41d-d74bfa40b5c8:
                     required: false
                     sortOrder: 3
+                  211069ad-7abf-4b4d-a040-1b26ddb7a816:
+                    required: false
+                    sortOrder: 2
                   6982234e-dc9c-4165-a2a0-4d6edfcbea52:
                     required: false
                     sortOrder: 4
+                  ddb61f35-83f1-46d4-904b-da525acf9e7c:
+                    required: false
+                    sortOrder: 1
               -
                 name: Contact
                 sortOrder: 3
                 fields:
-                  bca7e819-7353-4b88-a1ba-1f0cd2ef15b5:
-                    required: false
-                    sortOrder: 1
-                  c9d86e3f-9738-4d97-a271-5331264c10b8:
-                    required: false
-                    sortOrder: 2
                   2fb76e53-8619-4e29-b609-c984c390de9a:
                     required: false
                     sortOrder: 3
                   555efa28-a6b9-471d-8548-735eae07cb3c:
                     required: false
                     sortOrder: 4
-                  dc60bd1b-5618-4b28-9455-bb06946164d8:
-                    required: false
-                    sortOrder: 5
-                  d9a54ffb-26e9-4883-83bb-8e41650c8927:
-                    required: false
-                    sortOrder: 6
                   80554222-e44d-4971-b6db-30843c2f3a7d:
                     required: false
                     sortOrder: 7
-                  d71c1375-6cf3-4873-9c42-fde00a9b766b:
-                    required: false
-                    sortOrder: 8
                   85af3974-efa6-4a79-a433-1fa8e5b4d404:
                     required: false
                     sortOrder: 9
+                  bca7e819-7353-4b88-a1ba-1f0cd2ef15b5:
+                    required: false
+                    sortOrder: 1
+                  c9d86e3f-9738-4d97-a271-5331264c10b8:
+                    required: false
+                    sortOrder: 2
+                  d71c1375-6cf3-4873-9c42-fde00a9b766b:
+                    required: false
+                    sortOrder: 8
+                  d9a54ffb-26e9-4883-83bb-8e41650c8927:
+                    required: false
+                    sortOrder: 6
+                  dc60bd1b-5618-4b28-9455-bb06946164d8:
+                    required: false
+                    sortOrder: 5
               -
                 name: SEO
                 sortOrder: 4
@@ -5834,43 +5834,43 @@ sections:
                 name: Content
                 sortOrder: 1
                 fields:
-                  c2ad07dc-05e7-4ef4-89b6-2e1eaccee210:
-                    required: false
-                    sortOrder: 1
                   4047207e-c317-47cc-825b-7e751cc4ad38:
                     required: false
                     sortOrder: 2
-                  fd0c8e02-99b4-4ce5-ab89-b29cd0efc581:
+                  c2ad07dc-05e7-4ef4-89b6-2e1eaccee210:
                     required: false
-                    sortOrder: 3
+                    sortOrder: 1
                   cc787c11-2a78-41cd-8a90-eddcfddaa89f:
                     required: false
                     sortOrder: 4
+                  fd0c8e02-99b4-4ce5-ab89-b29cd0efc581:
+                    required: false
+                    sortOrder: 3
               -
                 name: Relationships
                 sortOrder: 2
                 fields:
+                  41124ab0-0e88-44c6-b4f2-f002669d8133:
+                    required: false
+                    sortOrder: 3
+                  44b00870-0842-4c4e-838f-dcd688fb5b05:
+                    required: false
+                    sortOrder: 7
+                  73b7b0c7-bff1-4c55-97aa-fc62042f0347:
+                    required: false
+                    sortOrder: 4
                   7594e9ae-f194-47c8-9a6b-076789f1087b:
                     required: false
                     sortOrder: 1
                   a25a56ba-bfb3-4e4d-a857-6d3cb4a5dcdc:
                     required: false
                     sortOrder: 2
-                  41124ab0-0e88-44c6-b4f2-f002669d8133:
-                    required: false
-                    sortOrder: 3
-                  73b7b0c7-bff1-4c55-97aa-fc62042f0347:
-                    required: false
-                    sortOrder: 4
                   d624c5c7-9cce-4088-92ba-02e1f2024c6a:
                     required: false
                     sortOrder: 5
                   e67ec759-ea3a-4568-bfa6-a314ff3d1036:
                     required: false
                     sortOrder: 6
-                  44b00870-0842-4c4e-838f-dcd688fb5b05:
-                    required: false
-                    sortOrder: 7
               -
                 name: SEO
                 sortOrder: 3
@@ -6223,9 +6223,6 @@ sections:
                 name: Homepage
                 sortOrder: 1
                 fields:
-                  f62c85ae-2203-4d1a-8702-da515126a398:
-                    required: false
-                    sortOrder: 1
                   18fa95ee-449e-4c22-9d88-b0fb8918a38b:
                     required: false
                     sortOrder: 2
@@ -6235,6 +6232,9 @@ sections:
                   f528b37c-8b15-43b8-8da0-d1b161fbf629:
                     required: false
                     sortOrder: 4
+                  f62c85ae-2203-4d1a-8702-da515126a398:
+                    required: false
+                    sortOrder: 1
               -
                 name: SEO
                 sortOrder: 2
@@ -7223,15 +7223,15 @@ volumes:
             name: Content
             sortOrder: 1
             fields:
-              fff5cf49-87e6-4751-9032-b4ca8136e237:
-                required: false
-                sortOrder: 1
               0d3707b0-0767-4404-9bce-6e70952210a0:
                 required: false
                 sortOrder: 2
               d762f03c-b672-4cb9-9887-5cd668d859de:
                 required: false
                 sortOrder: 3
+              fff5cf49-87e6-4751-9032-b4ca8136e237:
+                required: false
+                sortOrder: 1
   a31d23bf-e3ee-4942-95e0-3d14c29620bb:
     handle: projects
     hasUrls: true
