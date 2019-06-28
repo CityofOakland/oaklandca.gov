@@ -138,6 +138,7 @@ module.exports = {
       "16": "4rem",
       "20": "5rem",
       "24": "6rem",
+      "30": "7.5rem",
       "32": "8rem",
       "40": "10rem",
       "52": "13rem",
@@ -158,6 +159,7 @@ module.exports = {
       "16": "4rem",
       "20": "5rem",
       "24": "6rem",
+      "30": "7.5rem",
       "32": "8rem",
       "-px": "-1px",
       "-1": "-0.25rem",
@@ -172,6 +174,7 @@ module.exports = {
       "-16": "-4rem",
       "-20": "-5rem",
       "-24": "-6rem",
+      "-30": "-7.5rem",
       "-32": "-8rem",
     },
     boxShadow: {
@@ -274,15 +277,6 @@ module.exports = {
     zIndex: ["responsive"],
   },
   plugins: [
-    require('tailwindcss-owl'),
-    require("tailwindcss-aspect-ratio")({
-      variants: ["responsive"],
-      ratios: {
-        square: [1, 1],
-        "16/9": [16, 9],
-        "4/3": [4, 3],
-        "21/9": [21, 9],
-      },
-    }),
+    require('tailwindcss-multi-column')(), // no options to configure
   ],
 };

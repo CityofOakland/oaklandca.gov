@@ -1,10 +1,10 @@
 {
   "require": {
-    "craftcms/cms": "3.1.30",
+    "craftcms/cms": "3.1.32.1",
     "vlucas/phpdotenv": "^2.4.0",
     "nystudio107/craft-typogrify": "1.1.18",
     "solspace/craft3-calendar": "2.0.20",
-    "nystudio107/craft-seomatic": "3.2.9",
+    "nystudio107/craft-seomatic": "3.2.10",
     "craftcms/store-hours": "2.1.1.1",
     "craftcms/redactor": "2.3.3.2",
     "verbb/redactor-tweaks": "2.0.2",
@@ -12,7 +12,7 @@
     "topshelfcraft/wordsmith": "3.0.5",
     "topshelfcraft/environment-label": "3.1.5",
     "doublesecretagency/craft-smartmap": "3.2.2.1",
-    "doublesecretagency/craft-cpcss": "2.1.0",
+    "doublesecretagency/craft-cpcss": "2.2.0",
     "fruitstudios/linkit": "1.1.11",
     "doublesecretagency/craft-cpbodyclasses": "2.1.0",
     "doublesecretagency/craft-inventory": "2.0.3",

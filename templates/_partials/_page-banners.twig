@@ -4,7 +4,7 @@
 {% set ctaButton = ctaButton ?? entry.ctaButton ?? '' %}
 
 <div class="banner leading-normal">
-  <div class="container {% if not smallBanner ?? '' %}container-flat{% endif %}">
+  <div class="container{% if not smallBanner ?? '' %} py-0{% endif %}">
     {% if not smallBanner ?? '' %}
       {% if bannerImage | length %}
         <figure class="absolute bg-catalina-blue inset-0 z-0">

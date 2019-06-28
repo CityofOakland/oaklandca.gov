@@ -7,13 +7,6 @@
 
 {% css %}
 {% include "_css/algoliafilter.css" %}
-.ais-search-box {
-    max-width: initial;
-  }
-  .ais-search-box--magnifier {
-    top: 50%;
-    transform: translateY(-50%);
-  }
 {% endcss %}
 
 {% do view.registerJsFile(craft.twigpack.getModuleUri("/js/algoliafilter.js")) %}

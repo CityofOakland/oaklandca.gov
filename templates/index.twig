@@ -2,29 +2,30 @@
 {% set bannerImage = entry.banner %}
 
 {% block content %}
-  <div class="banner banner-home min-h-4 md:min-h-5-1/2 flex items-end">
-    <div class="container">
+  <div class="banner banner-home">
+    <div class="container text-deep-green">
+      <div class="z-10 o-1 relative mb-32 bg-white font-heading p-6 max-w-xs rounded-sm">
+        <h1 class="font-extrabold text-4xl leading-tight"><span class="text-xl block">Welcome to</span> Oakland, California</h1>
+        <p class="my-0">
+          <b><a class="text-bright-green" href="/topics/oaklandlovelife" class="">#OaklandLoveLife</a></b>
+        </p>
+      </div>
       <img class="banner-image image-blur-{{ bannerImageBlur ?? 'none' }}" src="{{ bannerImage.one.url }}" style="object-position:{{ bannerImage.one.getFocalPoint('asCss') }};" alt="{{ bannerImage.one.title }}">
       <form action="{{ url('search') }}">
-        <label for="home-search" class="text- hidden-visually">How can we help?</label>
+        <label for="home-search" class="hidden-visually">How can we help you today?</label>
         <div class="flex shadow relative text-bright-green z-0">
-          {{ craft.inlin.er('/assets/img/icon-magnifier.svg') | replace('<svg ', '<svg class="left-0 h-full p-3 absolute w-12 z-20 fill-current" ') | raw }}
-          <input type="search" id="home-search" class="w-full mb-0 text-sm rounded-sm rounded-r-none appearance-none pl-12 pr-4 py-5 leading-none flex-1 z-10 text-dark-gray md:text-lg" aria-label="Site Search" name="query" placeholder="How can we help?" value="">
-          <button type="submit" class="btn bg-bright-green px-6 rounded-l-none py-4 z-10">
-            Search
+          <input type="search" id="home-search" class="w-full mb-0 text-sm rounded-sm rounded-r-none appearance-none p-4 leading-none flex-1 z-10 text-dark-gray md:text-lg" aria-label="Site Search" name="query" placeholder="How can we help you?" value="">
+          <button type="submit" class="btn bg-bright-green text-white p-4 rounded-l-none z-10 relative flex items-center justify-center">
+            <span class="hidden-visually">
+              Search
+            </span>
+            {{ craft.inlin.er('/assets/img/icon-magnifier.svg') | replace('<svg ', '<svg class="h-auto w-auto z-20 fill-current" ') | raw }}
           </button>
         </div>
       </form>
     </div>
   </div>
   {% include '_partials/_elements/_page-alert' %}
-  <div class="z-0 relative">
-    {# <img alt="" class="absolute inset-0 object-fit-cover w-full h-full z-0 opacity-3" role="presentation" src="/assets/img/oaklandroots.svg"> #}
-    <div class="container container-flat py-6 text-center sm:flex sm:items-end md:justify-center relative z-10">
-      <h1 class="text-2xl md:text-3xl mt-0 font-semibold">Welcome to Oakland,&nbsp;California</h1>
-      <p class="font-bold text-base mt-2 mb-0 md:ml-4"><b><a href="/topics/oaklandlovelife" class="">#OaklandLoveLife</a></b></p>
-    </div>
-  </div>
 
   {# Begin Services #}
   {% if entry.highlightedServices | length %}
@@ -33,7 +34,7 @@
         <h2 class="mt-0 mb-4 sm:flex-1 text-2xl sm:text-3xl">Services</h2>
         <div class="card-grid card-grid-tight">
           {% for entry in entry.highlightedServices.all() %}
-            <a href="{{ entry.url }}" class="card-grid-button py-5 text-dark-green hover:text-white hover:bg-deep-green shadow-btn">{{ entry.title | raw }}</a>
+            <a href="{{ entry.url }}" class="border-l-4 border-bright-green card-grid-button py-5 text-dark-green hover:text-white hover:bg-deep-green shadow-btn">{{ entry.title | raw }}</a>
           {% endfor %}
         </div>
         <p class="text-lg font-bold mb-0"><a href="/services" class="border-b-2 border-dark-green">All Services »</a></p>
@@ -50,22 +51,30 @@
           <h2 class="mt-0 mb-4 sm:flex-1 text-2xl sm:text-3xl">News & Updates</h2>
           <div class="lg:flex lg:flex-col mt-8">
             {% for entry in entry.highlightedNews.all() %}
-              <article class="{{ cycle(['', 'hidden lg:block'], loop.index0) }} lg:flex lg:flex-row">
-                <figure class="lg:w-2/5 h-48 p-4 bg-celeste relative z-0 flex items-center justify-center">
-                  {% if entry.newsImage | length %}
-                    <img class="absolute inset-0 object-fit-cover w-full h-full" src="{{ entry.newsImage.one.url }}" alt="{{ entry.newsImage.title }}"> 
-                  {% else %}
-                    <div class="text-camouflage-green opacity-75 fill-current h-full w-full py-6 px-12">
-                      {{ craft.inlin.er('/assets/img/icon-newspaper.svg') | replace('<svg ', '<svg class="h-32 w-32" ') | raw }}
-                    </div>
-                  {% endif %}
-                </figure>
-                <div class="flex-1 lg:pl-12">
-                  <p class="my-4 lg:mt-0 text-sm tracking-widest uppercase text-camouflage-green">{{ entry.postDate | date('M j, Y') }}</p>
-                  <h3 class="my-0 leading-tight text-xl md:text-2xl"><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
-                  {{ entry.summary | md }}
-                </div>
-              </article>
+              {% if loop.first %}
+                <article class="lg:flex lg:flex-row">
+                  <figure class="lg:w-2/5 h-48 p-4 bg-celeste relative z-0 flex items-center justify-center">
+                    {% if entry.newsImage | length %}
+                      <img class="absolute inset-0 object-fit-cover w-full h-full" src="{{ entry.newsImage.one.url }}" alt="{{ entry.newsImage.title }}"> 
+                    {% else %}
+                      <div class="text-camouflage-green opacity-75 fill-current h-full w-full py-6 px-12">
+                        {{ craft.inlin.er('/assets/img/icon-newspaper.svg') | replace('<svg ', '<svg class="h-32 w-32" ') | raw }}
+                      </div>
+                    {% endif %}
+                  </figure>
+                  <div class="flex-1 lg:pl-12">
+                    <date class="my-4 lg:mt-0 block text-sm tracking-widest uppercase text-camouflage-green">{{ entry.postDate | date('M j, Y') }}</date>
+                    <h3 class="my-0 leading-tight text-xl md:text-2xl"><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
+                    {{ entry.summary | md }}
+                  </div>
+                </article>
+              {% else %}
+                <article class="my-2">
+                  <h3 class="my-0 font-normal text-base font-body">
+                    <a class="flex-1 hover:underline" href="{{ entry.url }}">{{ entry.title }}</a>
+                  </h3>
+                </article>
+              {% endif %}
             {% endfor %}
           </div>
           <p class="text-lg font-bold mb-0"><a href="/departments/media-center" class="border-b-2 border-dark-green">Newsroom »</a></p>
@@ -100,7 +109,7 @@
               <h3 class="text-xl md:text-2xl mt-4">
                 <a href="{{ url }}">{{ title }}</a>
               </h3>
-              <div class="text-shark mt-4">
+              <div class="text-shark mt-4 overflow-x-hidden">
                 {{ body }}
               </div>
             </article>

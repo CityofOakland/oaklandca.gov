@@ -27,3 +27,12 @@ select.ais-sort-by-selector {
   font-size: 1rem;
   width: 100%;
 }
+
+.ais-search-box {
+  max-width: initial;
+}
+
+.ais-search-box--magnifier {
+  top: 50%;
+  transform: translateY(-50%);
+}

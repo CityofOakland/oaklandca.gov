@@ -8,19 +8,11 @@
 {% do view.registerJsFile("https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4") %}
 {% do view.registerJsFile("https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js") %}
 {% do view.registerJsFile("https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js") %}
-{% do view.registerJsFile("https://unpkg.com/BaremetricsCalendar@1.0.12/public/js/Calendar.js") %}
-{% do view.registerCssFile("https://unpkg.com/BaremetricsCalendar@1.0.12/public/css/application.css") %}
+{% do view.registerJsFile("https://unpkg.com/baremetrics-calendar@1.0.14/public/js/Calendar.js") %}
+{% do view.registerCssFile("https://unpkg.com/baremetrics-calendar@1.0.14/public/css/application.css") %}
 
 {% css %}
 {% include "_css/algoliafilter.css" %}
-
-.ais-search-box {
-    max-width: initial;
-  }
-  .ais-search-box--magnifier {
-    top: 50%;
-    transform: translateY(-50%);
-  }
 {% endcss %}
 
 {% do view.registerJsFile(craft.twigpack.getModuleUri("/js/algoliafilter.js")) %}

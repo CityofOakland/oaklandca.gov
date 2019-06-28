@@ -1,22 +1,25 @@
-<nav aria-label="Mobile Navigation" class="bg-deep-green h-full p-8 flex flex-col z-60" id="menu" role="navigation">
-  <button class="btn btn-sm text-sm hover:bg-bright-green" id="close-menu">Close Menu</button>
-  <a aria-labelledby="home-link" class="block my-4 text-white hover:text-apple fill-current trans-fast" href="/">
-    {{ craft.inlin.er('/assets/img/logo-oakland.svg') | replace('<svg ', '<svg class="h-8" ') | raw }}<span class="hidden">Home</span>
-  </a>
-  <ul class="mt-0 flex-1 overflow-y-scroll">
-    <li>
-      <form action="{{ url('search') }}" class="w-full">
-        <div class="flex w-full h-full">
-          <input aria-label="Mobile Search" class="w-3/4 mb-0 p-3 border-shark border rounded-none appearance-none" id="mobile-search" name="query" placeholder="Search" type="search" value="">
-          <button class="flex-1 btn border-l-0 border-shark border hover:bg-bright-green p-2" type="submit">Go</button>
-        </div>
-      </form>
-    </li>
-    {% for nav in mainNav.navBuilder.all() %}
-      {% set link = nav.navLink %}
-      <li {% if not loop.last %} class="border-b border-white" {% endif %}>
-        <a href="{{ link.url }}" {% if link.target | length %} target="{{ link.target }}" {% endif %} class="block text-white hover:text-apple trans-fast py-4">{{ link.text }}</a>
+<nav aria-label="Mobile Navigation" class="bg-deep-green h-full p-8 flex flex-col z-60 relative" id="menu" role="navigation">
+  <img alt="" class="absolute inset-0 object-fit-cover w-full h-full opacity-25" role="presentation" src="/assets/img/oaklandroots-green.svg">
+  <div class="relative z-70">
+    <button class="btn btn-sm text-sm hover:bg-bright-green" id="close-menu">Close Menu</button>
+    <a aria-labelledby="home-link" class="block my-4 text-white hover:text-apple fill-current trans-fast" href="/">
+      {{ craft.inlin.er('/assets/img/logo-oakland.svg') | replace('<svg ', '<svg class="h-8" ') | raw }}<span class="hidden">Home</span>
+    </a>
+    <ul class="mt-0 flex-1 overflow-y-scroll">
+      <li>
+        <form action="{{ url('search') }}" class="w-full">
+          <div class="flex w-full h-full">
+            <input aria-label="Mobile Search" class="w-3/4 mb-0 p-3 border-shark border rounded-none appearance-none" id="mobile-search" name="query" placeholder="Search" type="search" value="">
+            <button class="flex-1 btn border-l-0 border-shark border hover:bg-bright-green p-2" type="submit">Go</button>
+          </div>
+        </form>
       </li>
-    {% endfor %}
-  </ul>
+      {% for nav in mainNav.navBuilder.all() %}
+        {% set link = nav.navLink %}
+        <li {% if not loop.last %} class="border-b border-white" {% endif %}>
+          <a href="{{ link.url }}" {% if link.target | length %} target="{{ link.target }}" {% endif %} class="block text-white hover:text-apple trans-fast py-4">{{ link.text }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
 </nav>

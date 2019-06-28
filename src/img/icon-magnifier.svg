@@ -1,9 +1,15 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg width="100%" height="100%" viewBox="0 0 486 486" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
-    <g>
-        <path d="M471.882,407.567L360.567,296.243C343.981,322.038 322.031,343.977 296.236,360.564L407.56,471.888C425.332,489.656 454.147,489.656 471.881,471.888C489.654,454.149 489.654,425.334 471.882,407.567Z" style="fill-rule:nonzero;"/>
-        <path d="M363.909,181.955C363.909,81.473 282.44,0 181.956,0C81.474,0 0.001,81.473 0.001,181.955C0.001,282.437 81.474,363.906 181.956,363.906C282.44,363.906 363.909,282.437 363.909,181.955ZM181.956,318.416C106.704,318.416 45.491,257.208 45.491,181.956C45.491,106.704 106.704,45.491 181.956,45.491C257.206,45.491 318.424,106.704 318.424,181.956C318.424,257.208 257.206,318.416 181.956,318.416Z" style="fill-rule:nonzero;"/>
-        <path d="M75.817,181.955L106.139,181.955C106.139,140.152 140.153,106.141 181.955,106.141L181.955,75.816C123.438,75.816 75.817,123.437 75.817,181.955Z" style="fill-rule:nonzero;"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="19px" height="19px" viewBox="0 0 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>search icon</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Mobile-/-Search-button" transform="translate(-15.000000, -15.000000)" fill="#FFFFFF" fill-rule="nonzero">
+            <g id="Search-button">
+                <g id="search-icon" transform="translate(15.000000, 15.000000)">
+                    <path d="M13.43825,7.427375 L12.64425,7.427375 L12.36825,7.701375 C13.34325,8.838375 13.93625,10.312375 13.93625,11.927375 C13.93625,15.517375 11.02625,18.427375 7.43625,18.427375 C3.84625,18.427375 0.93625,15.517375 0.93625,11.927375 C0.93625,8.337375 3.84625,5.427375 7.43625,5.427375 C9.05125,5.427375 10.52425,6.019375 11.66125,6.993375 L11.93725,6.719375 L11.93725,5.927375 L16.93525,0.936375 L18.42625,2.427375 L13.43825,7.427375 L13.43825,7.427375 Z M7.43625,7.427375 C4.95025,7.427375 2.93625,9.441375 2.93625,11.927375 C2.93625,14.412375 4.95025,16.427375 7.43625,16.427375 C9.92125,16.427375 11.93625,14.412375 11.93625,11.927375 C11.93625,9.441375 9.92125,7.427375 7.43625,7.427375 L7.43625,7.427375 Z" id="Shape" transform="translate(9.681250, 9.681875) scale(1, -1) translate(-9.681250, -9.681875) "></path>
+                </g>
+            </g>
+        </g>
     </g>
 </svg>

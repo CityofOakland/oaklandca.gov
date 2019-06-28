@@ -32,7 +32,7 @@ categoryGroups:
         hasUrls: true
         uriFormat: 'services/category/{slug}'
         template: services/_category
-dateModified: 1560831371
+dateModified: 1561749218
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -2222,7 +2222,7 @@ fields:
   de273878-3929-4764-b4ab-a670a2987d39:
     name: 'Highlighted News'
     handle: highlightedNews
-    instructions: 'Choose the news item(s) to feature on the homepage'
+    instructions: 'Choose the news item(s) to feature on the homepage. The first in the list will take visual priority, while the remainder will be simple text links.'
     searchable: true
     translationMethod: site
     translationKeyFormat: null
@@ -2233,7 +2233,7 @@ fields:
       source: null
       targetSiteId: null
       viewMode: null
-      limit: '2'
+      limit: '6'
       selectionLabel: 'Add a news item'
       localizeRelations: false
     contentColumnType: string
