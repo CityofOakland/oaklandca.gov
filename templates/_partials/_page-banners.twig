@@ -63,7 +63,7 @@
   <div class="flex-1">
     <h1 class="text-3xl md:text-4xl font-bold mb-0">{{ bannerTitle }}</h1>
     {% if leadIn %}
-      <p class="mb-0 max-w-md leading-loose">{{ leadIn | raw }}</p>
+      <p class="mb-0 max-w-md md:leading-loose">{{ leadIn | raw }}</p>
     {% endif %}
     {% if ctaButton | length %}
       {% set attributes = {
