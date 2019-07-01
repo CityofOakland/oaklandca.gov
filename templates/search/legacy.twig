@@ -91,9 +91,7 @@
 {% set entries = craft.entries.section(sectionsToSearch).search(query).orderBy('score') %}
 
 {% block content %}
-  {% include '_partials/_page-banners' with {
-    smallBanner: true
-  } %}
+  {% include '_partials/_page-banners' %}
   <div class="bg-cararra">
     <div class="container">
       <form action="{{ url('search/legacy') }}">

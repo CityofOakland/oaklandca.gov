@@ -21,8 +21,6 @@
   {% block pageBanner %}
     {% include '_partials/_page-banners' with {
       bannerTitle: entry.title | replace(' Index', ''),
-      breadCrumbs: false,
-      smallBanner: true
     } %}
   {% endblock %}
   <div class="bg-cararra" id="search-bar-container">

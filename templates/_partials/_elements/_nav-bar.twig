@@ -10,8 +10,8 @@
 {% endif %}
 {% set mainNav = craft.entries.section('navigation').slug('main-nav').one() %}
 
-<div id="nav-wrapper" class="fixed w-full z-40 bg-deep-green">
-  <div class="hidden md:block py-1 z-40 container text-sm">
+<div id="nav-wrapper" class="fixed w-full z-40 bg-deep-green h-8">
+  <div class="hidden md:block py-1 z-40 container text-sm h-8">
     <ul class="flex w-full font-bold my-0">
       <li class="flex-1">
         <a href="/" class="text-white hover:text-white hover:underline">Mayor Libby Schaaf</a>
@@ -33,7 +33,7 @@
             <span class="hidden-visually">Home</span>
           </a>
         </div>
-        <button class="text-xxs font-semibold sm:text-base absolute flex flex-col flex-wrap items-center tracking-widest right-0 uppercase lg:hidden" id="menu-toggle">
+        <button class="text-2xs font-semibold sm:text-base absolute flex flex-col flex-wrap items-center tracking-widest right-0 uppercase lg:hidden" id="menu-toggle">
           <svg enable-background="new 0 0 32 32" height="32" viewBox="0 0 32 32" width="32" class="w-5 h-5 inline-block" xmlns="http://www.w3.org/2000/svg" fill="#FFF"><path d="m4 10h24c1.104 0 2-.896 2-2s-.896-2-2-2h-24c-1.104 0-2 .896-2 2s.896 2 2 2zm24 4h-24c-1.104 0-2 .896-2 2s.896 2 2 2h24c1.104 0 2-.896 2-2s-.896-2-2-2zm0 8h-24c-1.104 0-2 .896-2 2s.896 2 2 2h24c1.104 0 2-.896 2-2s-.896-2-2-2z"/></svg>
           Menu
         </button>

@@ -25,6 +25,7 @@ module.exports = {
       },
     },
     minHeight: {
+      "2-1/2": "10rem",
       "4": "16rem",
       "5-1/2": "21.5rem",
     },
@@ -33,7 +34,7 @@ module.exports = {
       body: ["Noto Sans", "system-ui", "-apple-system", "sans-serif",],
     },
     fontSize: {
-      xxs: ".625rem", // 10px
+      "2xs": ".625rem", // 10px
       xs: ".75rem", // 12px
       sm: ".875rem", // 14px
       base: "1rem", // 16px

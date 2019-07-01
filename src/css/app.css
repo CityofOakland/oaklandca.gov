@@ -1,6 +1,13 @@
 @tailwind base;
 @tailwind components;
 
+/* Use this utility to hide text only meant for screen readers */
+.hide-text {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
 body {
   @apply font-body text-lg leading-normal text-dark-gray;
 }
@@ -14,22 +21,22 @@ h6 {
   @apply leading-tight;
 }
 
+h1,
+h2,
+h3 {
+  @apply font-extrabold font-heading;
+}
+
 h2 {
   @apply text-4xl my-8;
 }
 
 h3 {
-  @apply text-3xl my-6;
+  @apply text-3xl my-6 font-semibold;
 }
 
 h4 {
   @apply text-2xl my-6;
-}
-
-h1,
-h2,
-h3 {
-  @apply font-extrabold font-heading;
 }
 
 ol,
@@ -40,7 +47,7 @@ p {
 }
 
 a {
-  @apply no-underline text-dark-green trans trans-fast;
+  @apply no-underline text-dark-green;
 }
 
 a:hover {
@@ -77,11 +84,11 @@ a:hover {
 
 /* Button Styles */
 .btn {
-  @apply inline-block bg-dark-green py-4 px-8 text-base text-white no-underline trans trans-fast font-bold tracking-wide shadow rounded-sm;
+  @apply inline-block bg-bright-green py-4 px-8 text-base text-white no-underline trans trans-fast font-bold tracking-wide shadow rounded-sm;
 }
 
 .btn:hover {
-  @apply text-white underline bg-deep-green shadow-none;
+  @apply text-white underline bg-dark-green shadow-none;
 }
 
 .btn-sm {
@@ -105,11 +112,7 @@ main {
 
 /* Banner Styles */
 .banner  {
-  @apply relative text-white text-xl leading-loose bg-dark-gray;
-}
-
-.banner-image {
-  @apply absolute inset-0 object-fit-cover w-full h-full z-0 ;
+  @apply relative text-white text-xl leading-loose bg-white;
 }
 
 /* Service Styles */
@@ -460,7 +463,9 @@ body.open .page-holder {
 /* Transition Helpers */
 /* Default */
 .trans {
-  @apply trans-regular trans-ease-in-out trans-all;
+  transition-duration: 0.25s;
+  transition-property: all;
+  transition-timing-function: ease-in-out;
 }
 
 /* Delays */
@@ -482,7 +487,6 @@ body.open .page-holder {
   transition-duration: 0.5s;
 }
 .trans-regular {
-  transition-duration: 0.25s;
 }
 .trans-fast {
   transition-duration: 0.15s;
@@ -492,9 +496,6 @@ body.open .page-holder {
 }
 
 /* Properties */
-.trans-all {
-  transition-property: all;
-}
 .trans-none {
   transition-property: none;
 }
@@ -526,14 +527,4 @@ body.open .page-holder {
 }
 .trans-ease-out {
   transition-timing-function: ease-out;
-}
-.trans-ease-in-out {
-  transition-timing-function: ease-in-out;
-}
-
-/* Use this utility to hide text only meant for screen readers */
-.hide-text {
-  text-indent: 100%;
-  white-space: nowrap;
-  overflow: hidden;
 }

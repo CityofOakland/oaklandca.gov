@@ -10,7 +10,11 @@
           <b><a class="text-bright-green" href="/topics/oaklandlovelife" class="">#OaklandLoveLife</a></b>
         </p>
       </div>
-      <img class="banner-image image-blur-{{ bannerImageBlur ?? 'none' }}" src="{{ bannerImage.one.url }}" style="object-position:{{ bannerImage.one.getFocalPoint('asCss') }};" alt="{{ bannerImage.one.title }}">
+      <img 
+        class="absolute inset-0 object-fit-cover w-full h-full z-0" 
+        src="{{ bannerImage.one.url }}" 
+        style="object-position:{{ bannerImage.one.getFocalPoint('asCss') }};" 
+        alt="{{ bannerImage.one.title }}">
       <form action="{{ url('search') }}">
         <label for="home-search" class="hidden-visually">How can we help you today?</label>
         <div class="flex shadow relative text-bright-green z-0">
