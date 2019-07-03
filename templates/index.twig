@@ -35,13 +35,18 @@
   {% if entry.highlightedServices | length %}
     <section class="bg-rotate">
       <div class="container">
-        <h2 class="mt-0 mb-4 sm:flex-1 text-2xl sm:text-3xl">Services</h2>
+        {% include '_partials/_elements/_module-header' with {
+          headerText: "Services",
+        } %}
         <div class="card-grid card-grid-tight">
           {% for entry in entry.highlightedServices.all() %}
             <a href="{{ entry.url }}" class="border-l-4 border-bright-green card-grid-button py-5 text-dark-green hover:text-white hover:bg-deep-green shadow-btn">{{ entry.title | raw }}</a>
           {% endfor %}
         </div>
-        <p class="text-lg font-bold mb-0"><a href="/services" class="border-b-2 border-dark-green">All Services »</a></p>
+        {% include "_partials/_elements/_module-readmore.twig" with {
+          linkUrl: "/services",
+          linkText: "All Services"
+        } %}
       </div>
     </section>
   {% endif %}
@@ -52,7 +57,9 @@
     <div class="container">
       <div class="md:flex">
         <div class="md:border-medium-gray md:border-r md:pr-10 md:w-1/2 lg:w-2/3">
-          <h2 class="mt-0 mb-4 sm:flex-1 text-2xl sm:text-3xl">News & Updates</h2>
+          {% include '_partials/_elements/_module-header' with {
+            headerText: "News & Updates",
+          } %}
           <div class="lg:flex lg:flex-col mt-8">
             {% if entry.highlightedNews.exists() %}
               {% set featuredNews = entry.highlightedNews.one() %}
@@ -94,10 +101,15 @@
               </article>
             {% endfor %}
           </div>
-          <p class="text-lg font-bold mb-0"><a href="/departments/media-center" class="border-b-2 border-dark-green">Newsroom »</a></p>
+          {% include "_partials/_elements/_module-readmore.twig" with {
+            linkUrl: "/departments/media-center",
+            linkText: "Newsroom"
+          } %}
         </div>
         <div class="mt-8 md:mt-0 md:border-medium-gray md:border-l md:pl-10 md:w-1/2 lg:w-1/3">
-          <h2 class="mt-0 mb-4 sm:flex-1 text-2xl sm:text-3xl">Upcoming Events</h2>
+          {% include '_partials/_elements/_module-header' with {
+            headerText: "Upcoming Events",
+          } %}
           {% set options = {
             calendar: "events",
             limit: 1,
@@ -138,7 +150,10 @@
               <p>There are no upcoming events at this time.</p>
             </div>
           {% endif %}
-          <p class="text-lg font-bold mb-0"><a href="/events" class="border-b-2 border-dark-green">All Events »</a></p>
+          {% include "_partials/_elements/_module-readmore.twig" with {
+            linkUrl: "/events",
+            linkText: "All Events"
+          } %}
         </div>
       </div>
     </div>
@@ -147,7 +162,9 @@
   {% if entry.learnMoreAbout | length %}
     <section class="bg-rotate">
       <div class="container">
-        <h2 class="mt-0 mb-4 sm:flex-1 text-2xl sm:text-3xl">Learn More About</h2>
+        {% include '_partials/_elements/_module-header' with {
+          headerText: "Learn More About",
+        } %}
         <div class="card-grid card-grid-2up">
           {% for entry in entry.learnMoreAbout.all() %}
             <a href="{{ entry.url }}" class="border-l-4 border-bright-green card-grid-button py-5 text-dark-green hover:text-white hover:bg-deep-green shadow-btn">{{ entry.title | raw }}</a>
@@ -160,7 +177,9 @@
   {# Begin Officials #}
   <section class="bg-rotate">
     <div class="container">
-      <h2 class="mt-0 mb-4 sm:flex-1 text-2xl sm:text-3xl">City Officials</h2>
+      {% include '_partials/_elements/_module-header' with {
+        headerText: "City Officials",
+      } %}
       <div class="card-grid grid-equal-height profile-cards mt-12">
         {% for entry in craft.entries.section('officials').all() %}
           {% include '_partials/_elements/_profile-cards' with {
@@ -171,7 +190,10 @@
           } %}
         {% endfor %}
       </div>
-      <p class="text-lg font-bold mb-0"><a href="http://gisapps.mapoakland.com/councildistricts" class="border-b-2 border-dark-green">Find your council district »</a></p>
+      {% include "_partials/_elements/_module-readmore.twig" with {
+        linkUrl: "http://gisapps.mapoakland.com/councildistricts",
+        linkText: "Find your council district"
+      } %}
     </div>
   </section>
   {# End Officials #}

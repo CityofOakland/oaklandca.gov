@@ -11,8 +11,6 @@
     <div class="container">
       {% include '_partials/_elements/_module-header' with {
         headerText: pageEventsHeaderText ?? "Events",
-        linkText: pageEventsLinkText ?? "Related Events",
-        linkUrl: pageEventsLinkUrl ?? defaultButtonUrl
       } %}
       <div class="card-grid vertical-cards mt-8">
         {% for entry in events %}
@@ -26,6 +24,10 @@
           } %}
         {% endfor %}
       </div>
+      {% include "_partials/_elements/_module-readmore.twig" with {
+        linkText: pageEventsLinkText ?? "Related Events",
+        linkUrl: pageEventsLinkUrl ?? defaultButtonUrl
+      } %}
     </div>
   </section>
 {% endif %}

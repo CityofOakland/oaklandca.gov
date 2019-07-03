@@ -5,14 +5,16 @@
     <div class="container">
       {% include '_partials/_elements/_module-header' with {
         headerText: pageResourcesHeaderText ?? "Featured Resources",
-        linkText: pageResourcesLinkText ?? "Related Resources",
-        linkUrl: pageResourcesLinkUrl ?? defaultButtonUrl
       } %}
       <div class="card-grid grid-equal-height mt-8">
         {% for entry in entry.pageResources.all() %}
           {% include '_partials/_elements/_title-cards' %}
         {% endfor %}
       </div>
+      {% include "_partials/_elements/_module-readmore.twig" with {
+        linkText: pageResourcesLinkText ?? "Related Resources",
+        linkUrl: pageResourcesLinkUrl ?? defaultButtonUrl
+      } %}
     </div>
   </section>
 {% endif %}

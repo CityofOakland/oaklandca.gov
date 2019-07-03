@@ -18,8 +18,6 @@
     <div class="container">
       {% include '_partials/_elements/_module-header' with {
         headerText: pageNewsHeaderText ?? "News",
-        linkText: pageNewsLinkText ?? "Related News",
-        linkUrl: pageNewsLinkUrl ?? defaultButtonUrl
       } %}
       <div class="card-grid vertical-cards mt-8">
         {% for entry in entry.pageNews.all() %}
@@ -33,6 +31,10 @@
           } %}
         {% endfor %}
       </div>
+      {% include "_partials/_elements/_module-readmore.twig" with {
+        linkText: pageNewsLinkText ?? "Related News",
+        linkUrl: pageNewsLinkUrl ?? defaultButtonUrl
+      } %}
     </div>
   </section>
 {% endif %}
