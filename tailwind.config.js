@@ -279,5 +279,6 @@ module.exports = {
   },
   plugins: [
     require('tailwindcss-multi-column')(), // no options to configure
+    require('tailwindcss-owl')
   ],
 };
