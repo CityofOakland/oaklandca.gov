@@ -2,7 +2,7 @@
   "name": "oaklandca.gov",
   "version": "1.0.0",
   "description": "Website for oaklandca.gov",
-  "main": "gulpfile.js",
+  "main": "webpack.mix.js",
   "author": "Christopher Kennedy, onebrightlight <chris@onebrightlight.com>",
   "copyright": "onebrightlight",
   "license": "UNLICENSED",
