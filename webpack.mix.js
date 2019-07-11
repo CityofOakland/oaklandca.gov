@@ -59,10 +59,11 @@ mix
   .setPublicPath("./web/assets/")
   .browserSync({
     proxy: "http://oakland.test",
+    ghostMode: false,
     notify: {
       styles: {
         top: 'auto',
-        bottom: '20px'
+        bottom: '1rem'
       }
     },
     files: ["templates/*.twig", "templates/**/*.twig", "templates/*.js", "templates/**/*.js", "web/assets/css/*.css", "web/assets/js/*.js"]

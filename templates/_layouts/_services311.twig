@@ -24,7 +24,9 @@
         </div>
       </div>
       <h3 class="border-t border-celeste pt-8">Report a Problem</h3>
-      {{ entry.body }}
+      <div class="body-text">
+        {{ entry.body }}
+      </div>
       {% if entry.androidDownloadLink | length or entry.appStoreDownloadLink | length %}
         <div class="my-8">
           <a href="{{ entry.appStoreDownloadLink }}">

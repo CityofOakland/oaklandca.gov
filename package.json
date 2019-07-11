@@ -120,7 +120,6 @@
     "browser-sync-webpack-plugin": "^2.2.2",
     "copy-webpack-plugin": "^5.0.2",
     "cross-env": "^5.2.0",
-    "css-mqpacker": "^7.0.0",
     "cssnano": "^4.1.10",
     "git-rev-sync": "^1.12.0",
     "glob-all": "^3.1.0",

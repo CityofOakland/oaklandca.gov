@@ -20,7 +20,23 @@
 {% endcss %}
 
 {% block content %}
-  <div class="banner leading-normal">
+  <div class="banner leading-none">
+    <div class="container pt-2 pb-8 md:pt-4 md:pb-6">
+      <figure class="absolute inset-0 z-0">
+        <img 
+          class="absolute inset-0 object-fit-cover w-full h-full z-0 opacity-12" 
+          src="/assets/img/oaklandroots-green.svg"
+          alt="">
+      </figure>
+      <div class="relative z-10 bg-white text-dark-green text-2xs md:text-xs rounded-sm px-2 py-1 inline-block shadow">
+        <a class="text-dark-green hover:text-dark-green hover:underline" href="/">
+          Oakland
+        </a> →
+        <span class="font-bold">Search</span>
+      </div>
+    </div>
+  </div>
+  <div class="leading-normal">
     <div class="relative container z-10 flex flex-col sm:flex-row">
       <h1 class="text-3xl md:text-4xl font-bold mb-0 sm:w-1/4">{{ entry.title }}</h1>
       <form action="" class="flex-1 my-4 sm:my-0">
@@ -30,13 +46,13 @@
         <div class="text-sm sm:text-base" id="search-nav">
           <ul class="mb-0">
             <li class="inline-block mr-4">
-              <a class="search-filter-button active" data-holder="all-holder" href="#">General</a>
+              <a class="search-filter-button active text-dark-gray" data-holder="all-holder" href="#">General</a>
             </li>
             <li class="inline-block mr-4">
-              <a class="search-filter-button" data-holder="gov-holder" href="#">Offices & People</a>
+              <a class="search-filter-button text-dark-gray" data-holder="gov-holder" href="#">Offices & People</a>
             </li>
             <li class="inline-block">
-              <a class="search-filter-button" data-holder="cal-holder" href="#">Calendar</a>
+              <a class="search-filter-button text-dark-gray" data-holder="cal-holder" href="#">Calendar</a>
             </li>
           </ul>
         </div>
