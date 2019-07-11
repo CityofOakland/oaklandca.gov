@@ -238,6 +238,12 @@ main > .bg-rotate:nth-of-type(even) {
   grid-template-columns: 150px 1fr;
 }
 
+.body-text {
+  & ul {
+    @apply list-disc list-inside;
+  }
+}
+
 a,
 input,
 textarea,

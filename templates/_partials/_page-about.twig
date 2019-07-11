@@ -15,9 +15,13 @@
       <div class="sm:flex-1">
         <div class="text-xl">
           {% if entry.about | length %}
-            {{ entry.about }}
+            <div class="body-text">
+              {{ entry.about }}
+            </div>
           {% else %}
-            {{ entry.leadIn }}
+            <div class="body-text">
+              {{ entry.leadIn }}
+            </div>
           {% endif %}
         </div>
       </div>

@@ -39,7 +39,9 @@
         </div>
         {% if entry.body | length %}
           <h3>Details</h3>
-          {{ entry.body }}
+          <div class="body-text">
+            {{ entry.body }}
+          </div>
         {% endif %}
         {% if entry.documents.exists() %}
           <h3>Documents</h3>

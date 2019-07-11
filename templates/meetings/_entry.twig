@@ -37,7 +37,9 @@
         </div>
         {% if entry.body | length %}
           <h3>Details</h3>
-          {{ entry.body }}
+          <div class="body-text">
+            {{ entry.body }}
+          </div>
         {% endif %}
         {# .relatedTo('and', 'not ' ~ minutes ~ ', not ' ~ agendas).all() #}
         {% set minuteCat = craft.categories.group('documentTypes').id(12).one %}
