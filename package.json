@@ -125,7 +125,7 @@
     "glob-all": "^3.1.0",
     "imagemin-mozjpeg": "^8.0.0",
     "imagemin-webpack-plugin": "^2.4.2",
-    "laravel-mix": "^4.0.15",
+    "laravel-mix": "^4.1.2",
     "laravel-mix-banner": "^0.1.4",
     "laravel-mix-criticalcss": "^1.0.0",
     "laravel-mix-purgecss": "^4.1.0",

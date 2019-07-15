@@ -32,7 +32,7 @@ categoryGroups:
         hasUrls: false
         uriFormat: null
         template: null
-dateModified: 1562885403
+dateModified: 1563223347
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -1166,8 +1166,9 @@ fields:
       limit: '1'
       selectionLabel: 'Add an image'
       localizeRelations: false
-    fieldGroup: c964d82c-a4e7-4ec4-ad42-7c3e843193c0
+      validateRelatedElements: '1'
     contentColumnType: string
+    fieldGroup: c964d82c-a4e7-4ec4-ad42-7c3e843193c0
   85af3974-efa6-4a79-a433-1fa8e5b4d404:
     name: Medium
     handle: medium
@@ -1941,8 +1942,9 @@ fields:
       limit: '2'
       selectionLabel: 'Add news'
       localizeRelations: false
-    fieldGroup: 83c14444-efcf-4d13-a20a-56275fd18855
+      validateRelatedElements: '1'
     contentColumnType: string
+    fieldGroup: 83c14444-efcf-4d13-a20a-56275fd18855
   cc787c11-2a78-41cd-8a90-eddcfddaa89f:
     name: 'Embedded Content'
     handle: embeddedContent
@@ -3852,7 +3854,7 @@ plugins:
     schemaVersion: 2.1.2
     settings: null
   image-optimize:
-    enabled: '1'
+    enabled: true
     licenseKey: F9IVKBV8GRMN7OBYF7R9THT5
     schemaVersion: 1.0.0
     settings:
@@ -3877,11 +3879,6 @@ plugins:
     schemaVersion: 1.1.1
     settings: null
   inlin:
-    enabled: '1'
-    licenseKey: null
-    schemaVersion: 2.0.0
-    settings: null
-  inventory:
     enabled: '1'
     licenseKey: null
     schemaVersion: 2.0.0
@@ -3929,11 +3926,6 @@ plugins:
       statsDisplayLimit: 1000
       statsStoredLimit: '15000'
       stripQueryStringFromStats: '1'
-  scout:
-    enabled: true
-    licenseKey: null
-    schemaVersion: 0.1.0
-    settings: null
   seomatic:
     enabled: '1'
     licenseKey: WE9YYSPHWC5CNFB2RL64YDJ6
@@ -3986,17 +3978,6 @@ plugins:
     licenseKey: null
     schemaVersion: 0.0.0.0
     settings: null
-  workflow:
-    enabled: '0'
-    licenseKey: 2WB604K477I8QSMPA1DIIVGV
-    schemaVersion: 2.0.0
-    settings:
-      editorNotifications: ''
-      editorUserGroup: '8'
-      enabledSections: ''
-      publisherNotifications: ''
-      publisherUserGroup: '9'
-      selectedPublishers: '*'
   related:
     edition: standard
     enabled: true
@@ -4005,25 +3986,25 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
-  venveo-bulk-edit:
-    edition: standard
-    enabled: true
-    schemaVersion: 1.0.1
   assetusage:
     edition: standard
     enabled: true
     schemaVersion: 2.0.0
-  preparse-field:
+  workflow:
     edition: standard
     enabled: true
-    schemaVersion: 1.0.5
+    schemaVersion: 2.1.1
+    licenseKey: 2WB604K477I8QSMPA1DIIVGV
+  scout:
+    edition: standard
+    enabled: true
+    schemaVersion: 0.1.0
 sections:
   07faad04-9ec4-4f68-9fe8-0ca20f189f8a:
     name: Staff
     handle: staff
     type: channel
     enableVersioning: true
-    propagateEntries: true
     entryTypes:
       3f29603b-dede-4258-8ae1-fc01c48f372d:
         name: 'New Staff'
@@ -4119,12 +4100,12 @@ sections:
         hasUrls: true
         uriFormat: 'staff/{slug}'
         template: staff/_entry
+    propagationMethod: all
   1300d573-d7c2-4d30-b840-2b94165d5d4f:
     name: 'Volunteer Index'
     handle: volunteerIndex
     type: single
     enableVersioning: true
-    propagateEntries: true
     entryTypes:
       42daf001-6cda-4eab-a3a2-3dd24077d76c:
         name: 'Volunteer Index'
@@ -4162,12 +4143,12 @@ sections:
         hasUrls: true
         uriFormat: volunteers
         template: volunteers
+    propagationMethod: all
   17d5d48d-2d75-4742-8820-cdce13764482:
     name: Volunteers
     handle: volunteers
     type: channel
     enableVersioning: true
-    propagateEntries: true
     entryTypes:
       1edc2029-9228-45ca-808d-a3ff860f31cc:
         name: Volunteers
@@ -4229,12 +4210,12 @@ sections:
         hasUrls: true
         uriFormat: 'volunteers/{slug}'
         template: volunteers/_entry
+    propagationMethod: all
   20567858-8423-4c20-9004-d0b02150fa2a:
     name: 'Meetings Index'
     handle: meetingsIndex
     type: single
     enableVersioning: true
-    propagateEntries: true
     entryTypes:
       88a32feb-2474-4af8-b9af-e6a409b21bae:
         name: 'Meetings Index'
@@ -4272,12 +4253,12 @@ sections:
         hasUrls: true
         uriFormat: meetings
         template: meetings
+    propagationMethod: all
   210f35e9-172e-4116-9382-05774c79d1ff:
     name: 'Topics Index'
     handle: topicsIndex
     type: single
     enableVersioning: true
-    propagateEntries: true
     entryTypes:
       0dc3860c-3cc0-48db-908d-86a1eedb1953:
         name: 'Topics Index'
@@ -4315,12 +4296,12 @@ sections:
         hasUrls: true
         uriFormat: topics
         template: topics
+    propagationMethod: all
   24fa116b-8516-4626-84f3-86b685e71071:
     name: Resources
     handle: resources
     type: channel
     enableVersioning: true
-    propagateEntries: true
     entryTypes:
       be64571a-7223-48e4-abb7-f4bac604a6d9:
         name: Videos
@@ -4454,12 +4435,12 @@ sections:
         hasUrls: true
         uriFormat: 'resources/{slug}'
         template: resources/_entry
+    propagationMethod: all
   28881fc8-3e61-4fdb-a5ee-cce1bab725bf:
     name: Officials
     handle: officials
     type: structure
     enableVersioning: true
-    propagateEntries: true
     structure:
       uid: de7efad5-fbc3-4053-9912-ae7d6746659c
       maxLevels: 1
@@ -4601,12 +4582,12 @@ sections:
         hasUrls: true
         uriFormat: 'officials/{slug}'
         template: officials/_entry
+    propagationMethod: all
   5e4e2c33-9bc3-4620-a00b-7ca3fb5d8688:
     name: 'Departments Index'
     handle: departmentsIndex
     type: single
     enableVersioning: true
-    propagateEntries: true
     entryTypes:
       e7dc9a6e-abdf-4824-ad86-bf0c994fc760:
         name: 'Departments Index'
@@ -4644,12 +4625,12 @@ sections:
         hasUrls: true
         uriFormat: departments
         template: departments
+    propagationMethod: all
   70778563-6dac-453d-a4b0-5121f3a614b7:
     name: Topics
     handle: topics
     type: channel
     enableVersioning: true
-    propagateEntries: true
     entryTypes:
       e15c8c84-5b0b-4e80-9746-1e3d7990ac49:
         name: Topics
@@ -4786,12 +4767,12 @@ sections:
         hasUrls: true
         uriFormat: 'topics/{slug}'
         template: topics/_entry
+    propagationMethod: all
   74ecde2f-b254-4f3e-b889-1affac6f5999:
     name: 'Embeddable Content'
     handle: embeddableContent
     type: channel
     enableVersioning: true
-    propagateEntries: true
     entryTypes:
       7f8c9e2d-df90-4839-9c1c-7776984a43df:
         name: 'Embeddable Content'
@@ -4816,12 +4797,12 @@ sections:
         hasUrls: false
         uriFormat: null
         template: null
+    propagationMethod: all
   89cda626-6500-4ace-b9f4-0f8a54a9ad02:
     name: 'Services Index'
     handle: servicesIndex
     type: single
     enableVersioning: true
-    propagateEntries: true
     entryTypes:
       a0ebc1aa-769e-4adc-a633-87b0e2c2626c:
         name: 'Services Index'
@@ -4859,12 +4840,12 @@ sections:
         hasUrls: true
         uriFormat: services
         template: services
+    propagationMethod: all
   8b7c4e26-9aab-4c5d-874e-aee151107de3:
     name: Documents
     handle: documents
     type: channel
     enableVersioning: true
-    propagateEntries: true
     entryTypes:
       533b0b0b-75c9-448e-b616-7a084efd01d4:
         name: Documents
@@ -4939,12 +4920,12 @@ sections:
         hasUrls: true
         uriFormat: 'documents/{slug}'
         template: documents/_entry
+    propagationMethod: all
   92f0f749-ed5b-4acc-aa15-6340f6e25791:
     name: Processes
     handle: processes
     type: channel
     enableVersioning: true
-    propagateEntries: true
     entryTypes:
       c8564909-16c9-436e-b422-2651c7940456:
         name: Processes
@@ -5038,12 +5019,12 @@ sections:
         hasUrls: true
         uriFormat: 'processes/{slug}'
         template: processes/_entry
+    propagationMethod: all
   983c9f6f-9251-4fd3-91e1-b598eccc6a1a:
     name: News
     handle: news
     type: channel
     enableVersioning: true
-    propagateEntries: true
     entryTypes:
       71390558-d90c-4764-9b4c-3193ce8c1c0f:
         name: News
@@ -5115,12 +5096,12 @@ sections:
         hasUrls: true
         uriFormat: 'news/{postDate.year}/{slug}'
         template: news/_entry
+    propagationMethod: all
   98c4abc4-7360-4759-a926-a7673c124809:
     name: 'Staff Index'
     handle: staffIndex
     type: single
     enableVersioning: true
-    propagateEntries: true
     entryTypes:
       fe1bbd87-c5e4-420c-b80f-11bdeabb907e:
         name: 'Staff Index'
@@ -5158,12 +5139,12 @@ sections:
         hasUrls: true
         uriFormat: staff
         template: staff
+    propagationMethod: all
   98d541ae-56ee-4c98-ba9c-37438dc485a0:
     name: Projects
     handle: projects
     type: channel
     enableVersioning: true
-    propagateEntries: true
     entryTypes:
       3d2f9fee-52c3-44bb-86c1-f3c77e26b450:
         name: 'LEGACY Projects'
@@ -5382,12 +5363,12 @@ sections:
         hasUrls: true
         uriFormat: 'projects/{slug}'
         template: projects/_entry
+    propagationMethod: all
   9a9e5725-12f9-4f36-81cc-7762a4912de0:
     name: 'Events Index'
     handle: eventsIndex
     type: single
     enableVersioning: true
-    propagateEntries: true
     entryTypes:
       238f1120-16b5-4780-b3e0-3c7e68c58b9c:
         name: 'Events Index'
@@ -5425,12 +5406,12 @@ sections:
         hasUrls: true
         uriFormat: events
         template: events
+    propagationMethod: all
   9da43fd8-c505-4d19-9486-e0cb669c568a:
     name: 'Document Packets'
     handle: documentPackets
     type: channel
     enableVersioning: true
-    propagateEntries: true
     entryTypes:
       3c58f775-5156-4705-9405-472e014a359d:
         name: 'Document Packets'
@@ -5505,12 +5486,12 @@ sections:
         hasUrls: true
         uriFormat: 'documents/{slug}'
         template: documents/_packet-entry
+    propagationMethod: all
   a209b7c0-0c31-4671-a56c-f77990a377f3:
     name: 'Officials Index'
     handle: officialsIndex
     type: single
     enableVersioning: true
-    propagateEntries: true
     entryTypes:
       7b84b01f-d365-4d29-8d43-64c42a1adc83:
         name: 'Officials Index'
@@ -5548,12 +5529,12 @@ sections:
         hasUrls: true
         uriFormat: officials
         template: officials
+    propagationMethod: all
   ae05e014-38d0-4bcf-904d-e0ef291e71db:
     name: 'Documents Index'
     handle: documentsIndex
     type: single
     enableVersioning: true
-    propagateEntries: true
     entryTypes:
       c193b5ef-2a3f-44d0-92cd-78e49c9a2fec:
         name: 'Documents Index'
@@ -5591,12 +5572,12 @@ sections:
         hasUrls: true
         uriFormat: documents
         template: documents
+    propagationMethod: all
   b3411cb1-e860-46ed-9cd6-58cf9b8daacb:
     name: Departments
     handle: departments
     type: channel
     enableVersioning: true
-    propagateEntries: true
     entryTypes:
       62026d94-4213-4ab2-9a58-ff780a972c67:
         name: 'Department Redirect'
@@ -5815,12 +5796,12 @@ sections:
         hasUrls: true
         uriFormat: 'departments/{slug}'
         template: departments/_entry
+    propagationMethod: all
   b7e437e1-239f-4c5c-8c62-5f0323f9d22c:
     name: Services
     handle: services
     type: channel
     enableVersioning: true
-    propagateEntries: true
     entryTypes:
       85f10314-7c48-4f3e-8edb-8fa58b270abc:
         name: Services
@@ -5959,12 +5940,12 @@ sections:
         hasUrls: true
         uriFormat: 'services/{slug}'
         template: services/_entry
+    propagationMethod: all
   bc354abe-c941-47fa-aebc-0eb5897e7f7c:
     name: Navigation
     handle: navigation
     type: channel
     enableVersioning: true
-    propagateEntries: true
     entryTypes:
       0f61c3c6-65c4-4272-bb25-5a3a72921bc9:
         name: Navigation
@@ -5989,12 +5970,12 @@ sections:
         hasUrls: false
         uriFormat: null
         template: null
+    propagationMethod: all
   c1969337-e50a-48d2-8823-fbb68bd3776b:
     name: 'Resources Index'
     handle: resourcesIndex
     type: single
     enableVersioning: true
-    propagateEntries: true
     entryTypes:
       48ddc90c-a4ab-4105-a260-d578e44efe13:
         name: 'Resources Index'
@@ -6032,12 +6013,12 @@ sections:
         hasUrls: true
         uriFormat: resources
         template: resources
+    propagationMethod: all
   ce969731-41e7-42b9-aad7-a6bff2089c57:
     name: 'News Index'
     handle: newsIndex
     type: single
     enableVersioning: true
-    propagateEntries: true
     entryTypes:
       13e500aa-11c8-438b-bb77-28adfae9f1a5:
         name: 'News Index'
@@ -6075,12 +6056,12 @@ sections:
         hasUrls: true
         uriFormat: news
         template: news
+    propagationMethod: all
   d9164a86-877a-49bd-bc75-148e28d51df2:
     name: 'Projects Index'
     handle: projectsIndex
     type: single
     enableVersioning: true
-    propagateEntries: true
     entryTypes:
       3c47182a-0520-4bca-921f-65dce2849cb5:
         name: 'Projects Index'
@@ -6118,12 +6099,12 @@ sections:
         hasUrls: true
         uriFormat: projects
         template: projects
+    propagationMethod: all
   e0be1e19-d6d8-4d1d-849e-14d179664811:
     name: 'Teams Index'
     handle: teamsIndex
     type: single
     enableVersioning: true
-    propagateEntries: true
     entryTypes:
       8e550712-d313-4f60-a6dd-50a0f79aaef2:
         name: 'Teams Index'
@@ -6161,12 +6142,12 @@ sections:
         hasUrls: true
         uriFormat: teams
         template: teams
+    propagationMethod: all
   e2d205a9-08ac-4ffc-8e63-3b78cbc33fa8:
     name: 'Search Index'
     handle: searchIndex
     type: single
     enableVersioning: true
-    propagateEntries: true
     entryTypes:
       97e68bc8-2f0b-4421-91bf-681c31d1af59:
         name: 'Search Index'
@@ -6204,12 +6185,12 @@ sections:
         hasUrls: true
         uriFormat: search
         template: search
+    propagationMethod: all
   e9fe0cb3-2838-43d4-b0a2-7da05a8fedd5:
     name: Homepage
     handle: homepage
     type: single
     enableVersioning: true
-    propagateEntries: true
     entryTypes:
       196f68cc-36a4-42b0-9605-feeef72fa330:
         name: Homepage
@@ -6250,12 +6231,12 @@ sections:
         hasUrls: true
         uriFormat: __home__
         template: index
+    propagationMethod: all
   ea100822-9881-41cb-b2ed-e147268773d2:
     name: 'Processes Index'
     handle: processesIndex
     type: single
     enableVersioning: true
-    propagateEntries: true
     entryTypes:
       2917f381-ed75-4c1c-9462-c606088ac0de:
         name: 'Processes Index'
@@ -6293,12 +6274,12 @@ sections:
         hasUrls: true
         uriFormat: processes
         template: processes
+    propagationMethod: all
   fadc5ca1-39bb-4d67-bfc1-1ca01b10a44c:
     name: 'Boards & Commissions Index'
     handle: boardsCommissionsIndex
     type: single
     enableVersioning: true
-    propagateEntries: true
     entryTypes:
       62b6620d-66f1-4499-abb2-35960313b3dd:
         name: 'Boards & Commissions Index'
@@ -6336,12 +6317,12 @@ sections:
         hasUrls: true
         uriFormat: boards-commissions
         template: boards-commissions
+    propagationMethod: all
   fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f:
     name: 'Boards & Commissions'
     handle: boardsCommissions
     type: channel
     enableVersioning: true
-    propagateEntries: true
     entryTypes:
       451349f6-f11d-40c2-ae6e-47c1e78f32c7:
         name: 'Boards & Commissions Redirect'
@@ -6457,12 +6438,12 @@ sections:
         hasUrls: true
         uriFormat: 'boards-commissions/{slug}'
         template: boards-commissions/_entry
+    propagationMethod: all
   fbf8b9b0-8875-4e08-819a-d62603676dc4:
     name: Teams
     handle: teams
     type: channel
     enableVersioning: true
-    propagateEntries: true
     entryTypes:
       c2c1cf6a-786c-44cd-84f6-518e8c48b024:
         name: Teams
@@ -6516,6 +6497,7 @@ sections:
         hasUrls: true
         uriFormat: 'teams/{slug}'
         template: teams/_entry
+    propagationMethod: all
 siteGroups:
   226351ad-9bcd-4a73-bd65-bf1ef65f710c:
     name: 'City of Oakland'
@@ -6533,7 +6515,7 @@ system:
   edition: pro
   live: true
   name: 'City of Oakland'
-  schemaVersion: 3.1.28
+  schemaVersion: 3.2.15
   timeZone: America/Los_Angeles
 tagGroups:
   56057193-b9d8-4ac0-9f31-d4a755c91447:
@@ -6791,6 +6773,13 @@ users:
         - 'deletepeerentrydrafts:17d5d48d-2d75-4742-8820-cdce13764482'
         - 'editpeerentrydrafts:17d5d48d-2d75-4742-8820-cdce13764482'
         - 'editentries:17d5d48d-2d75-4742-8820-cdce13764482'
+        - 'editimagesinvolume:1a78695a-f041-4562-9ee4-5405711bd29c'
+        - 'editimagesinvolume:1e78d0ad-2af1-4556-ab43-7b6c110e75b8'
+        - 'editimagesinvolume:58c3bf22-aa23-441f-bd65-acf677638ae6'
+        - 'editimagesinvolume:7a12e399-b320-4d23-8abb-a79b5f303015'
+        - 'editimagesinvolume:7c1a62cb-b02e-40b3-840f-7e78a3a9ebd0'
+        - 'editimagesinvolume:c27974b4-89ad-4504-abb1-e76e44ff4b5d'
+        - 'editimagesinvolume:c419ecb0-79c8-411d-b440-db5bdfa1f823'
     6227b65d-17fc-4360-8a69-3e70afc30899:
       name: 'Elected Official Leads'
       handle: electedOfficialLeads
@@ -7048,6 +7037,12 @@ users:
         - 'saveassetinvolume:32467814-6006-4ec9-9dd1-3307d4edbb6b'
         - 'deletefilesandfoldersinvolume:32467814-6006-4ec9-9dd1-3307d4edbb6b'
         - 'viewvolume:32467814-6006-4ec9-9dd1-3307d4edbb6b'
+        - 'editimagesinvolume:1a78695a-f041-4562-9ee4-5405711bd29c'
+        - 'editimagesinvolume:1e78d0ad-2af1-4556-ab43-7b6c110e75b8'
+        - 'editimagesinvolume:58c3bf22-aa23-441f-bd65-acf677638ae6'
+        - 'editimagesinvolume:7c1a62cb-b02e-40b3-840f-7e78a3a9ebd0'
+        - 'editimagesinvolume:c27974b4-89ad-4504-abb1-e76e44ff4b5d'
+        - 'editimagesinvolume:c419ecb0-79c8-411d-b440-db5bdfa1f823'
     cd008cb1-3f5b-4444-a259-bf905f9c6f96:
       name: Contributors
       handle: contributors
@@ -7121,13 +7116,18 @@ volumes:
     hasUrls: true
     url: 'https://cao-94612.s3.amazonaws.com/'
     settings:
-      bucket: cao-94612
-      cfDistributionId: ''
-      expires: ''
-      keyId: $S3_API_KEY
-      region: us-west-2
-      secret: $S3_SECRET
       subfolder: headers
+      keyId: $S3_API_KEY
+      secret: $S3_SECRET
+      bucketSelectionMode: choose
+      bucket: cao-94612
+      region: us-west-2
+      expires: ''
+      makeUploadsPublic: '1'
+      storageClass: ''
+      cfDistributionId: ''
+      cfPrefix: ''
+      autoFocalPoint: ''
     sortOrder: 1
     fieldLayouts:
       ec980d66-163d-4a97-be21-f1626a2370e4:
@@ -7223,7 +7223,7 @@ volumes:
                 required: false
                 sortOrder: 3
               fff5cf49-87e6-4751-9032-b4ca8136e237:
-                required: false
+                required: true
                 sortOrder: 1
   a31d23bf-e3ee-4942-95e0-3d14c29620bb:
     name: Projects
