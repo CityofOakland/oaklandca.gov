@@ -91,6 +91,6 @@
   </div>
 {% endif %}
 <div class="container sm:flex">
-  {{ sideNav }}
-  {{ headerContent }}
+  {{ custSideNav ?? sideNav }}
+  {{ custHeaderContent ?? headerContent }}
 </div>

@@ -1,5 +1,29 @@
 {% extends '_layout' %}
 
+{% set custSideNav %}
+<figure class="w-48 pr-12 mb-8 md:mb-0 md:w-1/4">
+  <img class="w-full h-auto block" src="/assets/img/logo-311.png" alt="Logo for OAK 311">
+</figure>
+{% endset %}
+
+{% set custHeaderContent %}
+<div class="flex-1 flex flex-col justify-between">
+  <div>
+    <h1 class="text-3xl md:text-4xl font-bold mb-0">OAK 311</h1>
+    <p class="mb-0 max-w-md text-xl">OAK 311 is here to help you with requests for routine maintenance and urgent infrastructure issues.</p>
+  </div>
+  <div class="flex w-full mt-8">
+    <div class="md:w-1/2 md:mr-4">
+      <a href="https://seeclickfix.com/web_portal/wTMihVsatbiDau5Fw66m6HFD/issues/map" class="block card-grid-button py-5 bg-bright-green text-white hover:text-white hover:bg-deep-green shadow-none"><img src="/assets/img/icon-cursor.svg" class="inline h-6 w-auto mr-4">Report Online</a>
+    </div>
+    <div class="md:w-1/2 md:ml-4">
+      <a href="tel:311" class="block card-grid-button py-5 bg-bright-green text-white hover:text-white hover:bg-deep-green shadow-none"><img src="/assets/img/icon-phone.svg" class="inline h-6 w-auto mr-4">Call 311</a>
+      <div class="mt-2 text-sm font-bold md:text-base md:font-normal">For urgent issues, call us.</div>
+    </div>
+  </div>
+</div>
+{% endset %}
+
 {% block content %}
   {% include '_partials/_page-banners' with {
     breadCrumbLinks: [
@@ -8,82 +32,75 @@
         link: '/services'
       }
     ],
+    custSideNav: custSideNav,
+    custHeaderContent: custHeaderContent
   } %}
-  <section class="bg-white relative z-0">
-    <div class="container">
-      <div class="md:flex">
-        <div class="md:pr-4 flex-1">
-          <p class="mt-0">For urgent issues</p>
-          <a class="btn block text-center" href="tel:311">Call 311</a>
-          {{ entry.urgentIssuesDescription }}
-        </div>
-        <div class="md:pl-4 flex-1">
-          <p class="mt-0">For non-urgent issues</p>
-          <a href="{{ entry.nonUrgentIssueReportLink.url }}" class="btn block text-center">Report Online</a>
-          {{ entry.nonUrgentIssuesDescription }}
-        </div>
+  <section class="bg-bright-gray">
+    <div class="container md:flex">
+      <div class="md:w-1/2 md:pr-4">
+        <h2 class="text-2xl">Most Common Requests</h2>
+        <ul class="font-bold leading-loose">
+          <li><a href="https://seeclickfix.com/web_portal/wTMihVsatbiDau5Fw66m6HFD/report/category/20978/location">Illegal dumping</a></li>
+          <li><a href="https://seeclickfix.com/web_portal/wTMihVsatbiDau5Fw66m6HFD/report/category/20961/location">Potholes</a></li>
+          <li><a href="https://seeclickfix.com/web_portal/wTMihVsatbiDau5Fw66m6HFD/report/category/23975/location">Abandoned Vehicles</a></li>
+        </ul>
       </div>
-      <h3 class="border-t border-celeste pt-8">Report a Problem</h3>
-      <div class="body-text">
-        {{ entry.body }}
-      </div>
-      {% if entry.androidDownloadLink | length or entry.appStoreDownloadLink | length %}
-        <div class="my-8">
-          <a href="{{ entry.appStoreDownloadLink }}">
-            {{ craft.inlin.er('/assets/img/badge-apple-store.svg') | replace('<svg ', '<svg class="h-8 sm:h-16" ') | raw }}
-          </a>
-          <a href="{{ entry.androidDownloadLink }}">
-            {{ craft.inlin.er('/assets/img/badge-google-play.svg') | replace('<svg ', '<svg class="h-8 sm:h-16" ') | raw }}
-          </a>
-        </div>
-      {% endif %}
-      <div class="my-8 overflow-x-hidden max-w-full iframe-holder">
-        {{ entry.codeInsertion | raw }}
+      <div class="md:w-1/2 md:pl-4">
+        <h2 class="text-2xl">Urgent Infrastructure Issues</h2>
+        <ul class="font-bold leading-loose">
+          <li>Downed sign</li>
+          <li>Traffic signal outage</li>
+          <li>Flooding</li>
+          <li>Sewer overflow</li>
+          <li>Fallen trees or branches</li>
+        </ul>
       </div>
     </div>
   </section>
   <section class="bg-white">
-    <div class="container py-16">
-      {% include '_partials/_elements/_module-header' with {
-        headerText: pageLocationHeaderText ?? "Contact Us",
-      } %}
-      <div class="lg:flex mt-4">
-        <div class="flex-1">
-          {% if entry.emailAddress | length %}
-            <h3 class="text-2xl mb-0">Email Address</h3>
-            <p>
-              <a href="mailto:{{ entry.emailAddress }}">{{ entry.emailAddress }}</a>
-            </p>
-          {% endif %}
-          {% if entry.phoneNumbers | length %}
-            <h3 class="text-2xl mb-0">Phone Numbers</h3>
-            <ul class="mb-8">
-              {% for phone in entry.phoneNumbers.all() %}
-                {% include '_partials/_elements/_phone-numbers' %}
-              {% endfor %}
-            </ul>
-          {% endif %}
-          {% include '_partials/_elements/_social-media' %}
+    <div class="container">
+      <h2 class="text-2xl">How It Works</h2>
+      <ol class="md:flex flex-row text-center md:mt-16">
+        <li class="how-it-works-block">
+          <img src="/assets/img/icon-report.svg" class="h-12 w-auto inline-block">
+          <h3 class="font-semibold text-base mb-0 md:text-xl">Report</h3>
+          <p class="text-sm mt-2 mb-0 md:px-2 md:text-lg lg:px-8">You report the issue by phone, website, app, or email.</p>
+        </li>
+        <li class="how-it-works-block">
+          <img src="/assets/img/icon-review.svg" class="h-12 w-auto inline-block">
+          <h3 class="font-semibold text-base mb-0 md:text-xl">Review</h3>
+          <p class="text-sm mt-2 mb-0 md:px-2 md:text-lg lg:px-8">We review your request and provide a tracking number.</p>
+        </li>
+        <li class="how-it-works-block">
+          <img src="/assets/img/icon-assign.svg" class="h-12 w-auto inline-block">
+          <h3 class="font-semibold text-base mb-0 md:text-xl">Assign</h3>
+          <p class="text-sm mt-2 mb-0 md:px-2 md:text-lg lg:px-8">We assign your request to the appropriate work group.</p>
+        </li>
+        <li class="how-it-works-block">
+          <img src="/assets/img/icon-work.svg" class="h-12 w-auto inline-block">
+          <h3 class="font-semibold text-base mb-0 md:text-xl">Work</h3>
+          <p class="text-sm mt-2 mb-0 md:px-2 md:text-lg lg:px-8">You report the issue by phone, website, app, or email.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+  <section class="bg-bright-gray">
+    <div class="container">
+      <h2 class="text-2xl">Get the OAK 311 app on:</h2>
+        <div class="card-grid">
+          <a href="https://play.google.com/store/apps/details?id=com.seeclickfix.oak311.app" class="border-l-4 border-bright-green card-grid-button py-5 text-dark-green hover:text-white hover:bg-deep-green shadow-btn">Google Play</a>
+          <a href="https://apps.apple.com/us/app/oak-311/id1316091489" class="border-l-4 border-bright-green card-grid-button py-5 text-dark-green hover:text-white hover:bg-deep-green shadow-btn">Apple Store</a>
         </div>
-        <div class="flex-1">
-          {% if entry.androidDownloadLink | length or entry.appStoreDownloadLink | length %}
-            <h3 class="text-2xl mb-0">Mobile</h3>
-            <p>Use the OAK311 App:</p>
-            <div class="mb-8">
-              <a href="{{ entry.appStoreDownloadLink }}">
-                {{ craft.inlin.er('/assets/img/badge-apple-store.svg') | replace('<svg ', '<svg class="h-8 sm:h-12" ') | raw }}
-              </a>
-              <a href="{{ entry.androidDownloadLink }}">
-                {{ craft.inlin.er('/assets/img/badge-google-play.svg') | replace('<svg ', '<svg class="h-8 sm:h-12" ') | raw }}
-              </a>
-            </div>
-          {% endif %}
-          <h3 class="text-2xl mb-0">Online</h3>
-          <p>
-            <a href="https://311.oaklandca.gov">https://311.oaklandca.gov</a>
-          </p>
+    </div>
+  </section>
+  <section class="bg-white">
+    <div class="container">
+      <h2 class="text-2xl">View OAK 311 Service Request Information</h2>
+        <div class="card-grid">
+          <a href="https://app.powerbigov.us/view?r=eyJrIjoiODE1NDg4MGYtMmJjYy00MTc1LWIyMmEtNzhkNDNlMjM0MDZlIiwidCI6Ijk4OWEyMTgwLTZmYmMtNDdmMS04MDMyLTFhOWVlOTY5YzU4ZCJ9" class="border-l-4 border-bright-green card-grid-button py-5 text-dark-green hover:text-white hover:bg-deep-green shadow-btn">Interactive 311 Chart</a>
+          <a href="https://seeclickfix.com/web_portal/wTMihVsatbiDau5Fw66m6HFD/issues/map?lat=37.769629187677&lng=-122.22453117370607&max_lat=37.79486412183907&max_lng=-122.18676567077638&min_lat=37.744385638880516&min_lng=-122.26229667663576&zoom=14" class="border-l-4 border-bright-green card-grid-button py-5 text-dark-green hover:text-white hover:bg-deep-green shadow-btn">Service Request Map</a>
+          <a href="https://data.oaklandnet.com/Infrastructure/Service-requests-received-by-the-Oakland-Call-Cent/quth-gb8e" class="border-l-4 border-bright-green card-grid-button py-5 text-dark-green hover:text-white hover:bg-deep-green shadow-btn">View 311 Data</a>
         </div>
-      </div>
     </div>
   </section>
 {% endblock %}

@@ -284,6 +284,37 @@ body.open #menu {
   transition: right 0.5s ease-out;
 }
 
+.how-it-works-block {
+  background-image: url("/assets/img/icon-down-arrow.svg");
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  @apply pb-10 px-24 mb-4 relative;
+}
+@media (min-width: 768px) {
+  .how-it-works-block {
+    background-image: none;
+    @apply w-1/4 px-8 mb-0;
+
+    &:after {
+      background-image: url("/assets/img/icon-right-arrow.svg");
+      background-repeat: no-repeat;
+      content: '';
+      position: absolute;
+      top: 10px;
+      right: -30px;
+      width: 59px;
+      height: 16px;
+    }
+
+    &:last-of-type {
+      &:after {
+        background-image: none;
+      }
+    }
+  }
+}
+
+
 body.open .page-holder {
   right: 300px;
   overflow: hidden;

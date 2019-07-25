@@ -297,8 +297,10 @@ class servicesTransform extends TransformerAbstract
     $projects = enumEntries("projects", $entry);
     $topics = enumEntries("topics", $entry);
     $body = [];
-    foreach ($entry->transactionBody as $block) {
-      $body[] = strip_tags($block->text);
+    if (! empty($entry->transactionBody)) {
+      foreach ($entry->transactionBody as $block) {
+        $body[] = strip_tags($block->text);
+      }
     }
     return [
       'title' => $entry->title,
