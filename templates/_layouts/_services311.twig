@@ -24,6 +24,43 @@
 </div>
 {% endset %}
 
+{% macro seeClickFixLink(title, id) %}
+  <option value="https://seeclickfix.com/web_portal/wTMihVsatbiDau5Fw66m6HFD/report/category/{{ id }}/location">{{ title }}</option>
+{% endmacro %}
+{% import _self as macro %}
+
+{% set dumping = [
+  { "title": "Debris, appliances, etc.", "id": 20978},
+  { "title": "Green waste", "id": 20998},
+  { "title": "Mattress/boxspring", "id": 20986}
+] %}
+
+{% set graffiti = [
+  {"title": "Advertising (posters, signs, etc.)","id": 20983},
+  {"title": "City building (library, rec center)","id": 20964},
+  {"title": "Park","id": 20970},
+  {"title": "Street litter container","id": 21005},
+  {"title": "Street, street light, traffic signal","id": 20967},
+  {"title": "Traffic sign(s)","id": 20982},
+  {"title": "Private Property","id": 20958},
+  {"title": "OTHER","id": 20977}
+] %}
+
+{% set building = [
+  { "title": "Alarms", "id": 21007 },
+  { "title": "Appliance Issue", "id": 21006 },
+  { "title": "Clean / Custodial", "id": 20995 },
+  { "title": "Electrical Inside/Outside", "id": 20968 },
+  { "title": "Fence", "id": 20992 },
+  { "title": "Heating, Ventilation, and Cooling", "id": 20959 },
+  { "title": "Key / Lock Management", "id": 20955 },
+  { "title": "Painting", "id": 20996 },
+  { "title": "Pest", "id": 21000 },
+  { "title": "Plumbing", "id": 20973 },
+  { "title": "Sign", "id": 20993 },
+  { "title": "Structural Issue", "id": 20969 }
+] %}
+
 {% block content %}
   {% include '_partials/_page-banners' with {
     breadCrumbLinks: [
@@ -40,8 +77,31 @@
       <div class="md:w-1/2 md:pr-4">
         <h2 class="text-2xl">Most Common Requests</h2>
         <ul class="font-bold leading-loose">
-          <li><a href="https://seeclickfix.com/web_portal/wTMihVsatbiDau5Fw66m6HFD/report/category/20978/location">Illegal dumping</a></li>
+          <li>
+            <select id="illegalDumping" class="js-select-nav inline bg-transparent appearance-none rounded-none font-body font-bold text-dark-green">
+              <option value="">Illegal Dumping</option>
+              {% for item in dumping %}
+                {{ macro.seeClickFixLink(item.title, item.id) }}
+              {% endfor %}
+            </select>
+          </li>
           <li><a href="https://seeclickfix.com/web_portal/wTMihVsatbiDau5Fw66m6HFD/report/category/20961/location">Potholes</a></li>
+          <li>
+            <select id="graffiti" class="js-select-nav inline bg-transparent appearance-none rounded-none font-body font-bold text-dark-green">
+              <option value="">Graffiti</option>
+              {% for item in graffiti %}
+                {{ macro.seeClickFixLink(item.title, item.id) }}
+              {% endfor %}
+            </select>
+          </li>
+          <li>
+            <select id="buildingMaintenance" class="js-select-nav inline bg-transparent appearance-none rounded-none font-body font-bold text-dark-green">
+              <option value="" class="px-0">City Building Maintenance</option>
+              {% for item in building %}
+                {{ macro.seeClickFixLink(item.title, item.id) }}
+              {% endfor %}
+            </select>
+          </li>            
           <li><a href="https://seeclickfix.com/web_portal/wTMihVsatbiDau5Fw66m6HFD/report/category/23975/location">Abandoned Vehicles</a></li>
         </ul>
       </div>

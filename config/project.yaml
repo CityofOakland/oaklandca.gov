@@ -32,7 +32,7 @@ categoryGroups:
         hasUrls: false
         uriFormat: null
         template: null
-dateModified: 1564174896
+dateModified: 1564411339
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -163,25 +163,6 @@ fields:
       showTime: false
     fieldGroup: a8c82666-3295-4f90-b50b-67f2299847db
     contentColumnType: datetime
-  06d63ca1-a8c3-49e7-ba9c-82d5389119ae:
-    name: 'Page Meetings'
-    handle: pageMeetings
-    instructions: 'Choose up to three (3) public meetings to show on this page.'
-    searchable: true
-    translationMethod: site
-    translationKeyFormat: null
-    type: Solspace\Calendar\FieldTypes\EventFieldType
-    settings:
-      limit: '3'
-      localizeRelations: false
-      selectionLabel: 'Add a meeting'
-      source: null
-      sources:
-        - 'calendar:3'
-      targetSiteId: null
-      viewMode: null
-    fieldGroup: 83c14444-efcf-4d13-a20a-56275fd18855
-    contentColumnType: string
   0d3707b0-0767-4404-9bce-6e70952210a0:
     name: 'Index Image'
     handle: indexImage
@@ -263,23 +244,6 @@ fields:
       multiline: '1'
       placeholder: ''
     fieldGroup: ed709c7c-0c3a-4457-ae2d-38a3ccb797e4
-    contentColumnType: text
-  1299f93a-f9bd-42d5-85b8-073f179afb47:
-    name: 'Staff Import Department Hook'
-    handle: staffImportDepartmentHook
-    instructions: ''
-    searchable: true
-    translationMethod: none
-    translationKeyFormat: null
-    type: craft\fields\PlainText
-    settings:
-      charLimit: ''
-      code: ''
-      columnType: text
-      initialRows: '4'
-      multiline: ''
-      placeholder: ''
-    fieldGroup: d7390b6f-686c-4324-a1fa-7a38508eee7b
     contentColumnType: text
   170c83d8-2386-4459-a750-5a892a434e17:
     name: 'Legacy Addresses'
@@ -1100,23 +1064,6 @@ fields:
       columnType: text
     fieldGroup: 71fb693f-011b-4669-ba10-f1b379557bb9
     contentColumnType: text
-  78428518-7192-49e6-bee2-9656aa64d6a4:
-    name: 'Staff Import Organization Hook'
-    handle: staffImportOrganizationHook
-    instructions: ''
-    searchable: true
-    translationMethod: none
-    translationKeyFormat: null
-    type: craft\fields\PlainText
-    settings:
-      placeholder: ''
-      code: ''
-      multiline: ''
-      initialRows: '4'
-      charLimit: ''
-      columnType: text
-    fieldGroup: d7390b6f-686c-4324-a1fa-7a38508eee7b
-    contentColumnType: text
   78894bca-c6ce-4518-bb6f-fa94d7e7050e:
     name: Timeline
     handle: timeline
@@ -1851,21 +1798,6 @@ fields:
       columnType: text
     fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521
     contentColumnType: text
-  c96906ab-d5a3-4364-a4ae-fd8798a85843:
-    name: 'Call to Action Links'
-    handle: callToActionLinks
-    instructions: ''
-    searchable: true
-    translationMethod: site
-    translationKeyFormat: null
-    type: craft\fields\Matrix
-    settings:
-      minBlocks: ''
-      maxBlocks: '3'
-      localizeBlocks: false
-      contentTable: '{{%matrixcontent_calltoactionlinks}}'
-    fieldGroup: 767a8f0b-6ea5-4855-a6f3-8c2a4a4aee78
-    contentColumnType: string
   c9d86e3f-9738-4d97-a271-5331264c10b8:
     name: 'Address Extended'
     handle: addressExtended
@@ -3574,80 +3506,6 @@ matrixBlockTypes:
           columnType: text
         fieldGroup: null
         contentColumnType: text
-  c5abcb4a-0f28-4a7c-8cb1-1889cb223bcb:
-    name: 'Online Link'
-    handle: onlineLink
-    sortOrder: 1
-    field: c96906ab-d5a3-4364-a4ae-fd8798a85843
-    fieldLayouts:
-      7de73dde-1c66-44a3-8b70-76c5f51b4212:
-        tabs:
-          -
-            name: Content
-            sortOrder: 1
-            fields:
-              1fa9d80c-f12b-4431-8389-b82a7fd73915:
-                required: true
-                sortOrder: 1
-    fields:
-      1fa9d80c-f12b-4431-8389-b82a7fd73915:
-        name: Link
-        handle: ctaLink
-        instructions: ''
-        searchable: true
-        translationMethod: none
-        translationKeyFormat: null
-        type: fruitstudios\linkit\fields\LinkitField
-        settings:
-          selectLinkText: ''
-          types:
-            fruitstudios\linkit\models\Email:
-              enabled: ''
-              customLabel: ''
-            fruitstudios\linkit\models\Phone:
-              enabled: ''
-              customLabel: ''
-            fruitstudios\linkit\models\Url:
-              enabled: '1'
-              customLabel: ''
-            fruitstudios\linkit\models\Twitter:
-              enabled: ''
-              customLabel: ''
-            fruitstudios\linkit\models\Facebook:
-              enabled: ''
-              customLabel: ''
-            fruitstudios\linkit\models\Instagram:
-              enabled: ''
-              customLabel: ''
-            fruitstudios\linkit\models\LinkedIn:
-              enabled: ''
-              customLabel: ''
-            fruitstudios\linkit\models\Entry:
-              enabled: '1'
-              customLabel: ''
-              sources: '*'
-              customSelectionLabel: ''
-            fruitstudios\linkit\models\Category:
-              enabled: ''
-              customLabel: ''
-              sources: '*'
-              customSelectionLabel: ''
-            fruitstudios\linkit\models\Asset:
-              enabled: ''
-              customLabel: ''
-              sources: '*'
-              customSelectionLabel: ''
-            fruitstudios\linkit\models\User:
-              enabled: ''
-              customLabel: ''
-              sources: '*'
-              customSelectionLabel: ''
-              userPath: ''
-          allowCustomText: '1'
-          defaultText: ''
-          allowTarget: '1'
-        fieldGroup: null
-        contentColumnType: text
   d57b57bd-12a3-4c78-86c3-df137e9e99f8:
     name: 'Email Address'
     handle: emailAddress
@@ -3999,6 +3857,10 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 0.1.0
+  inventory:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.0.0
 sections:
   07faad04-9ec4-4f68-9fe8-0ca20f189f8a:
     name: Staff
@@ -5160,9 +5022,6 @@ sections:
                 name: Content
                 sortOrder: 1
                 fields:
-                  06d63ca1-a8c3-49e7-ba9c-82d5389119ae:
-                    required: false
-                    sortOrder: 5
                   55169274-4595-4ab0-a461-9b4600d07779:
                     required: false
                     sortOrder: 7
@@ -5258,9 +5117,6 @@ sections:
                 name: Content
                 sortOrder: 1
                 fields:
-                  06d63ca1-a8c3-49e7-ba9c-82d5389119ae:
-                    required: false
-                    sortOrder: 12
                   5cde5e79-0560-492c-b592-dd86cbde33c3:
                     required: false
                     sortOrder: 14
@@ -5696,10 +5552,6 @@ sections:
               -
                 name: Admin
                 sortOrder: 4
-                fields:
-                  1299f93a-f9bd-42d5-85b8-073f179afb47:
-                    required: false
-                    sortOrder: 1
               -
                 name: SEO
                 sortOrder: 5
@@ -5721,9 +5573,6 @@ sections:
                 name: Content
                 sortOrder: 1
                 fields:
-                  06d63ca1-a8c3-49e7-ba9c-82d5389119ae:
-                    required: false
-                    sortOrder: 5
                   55169274-4595-4ab0-a461-9b4600d07779:
                     required: false
                     sortOrder: 6
@@ -5779,10 +5628,6 @@ sections:
               -
                 name: Admin
                 sortOrder: 3
-                fields:
-                  1299f93a-f9bd-42d5-85b8-073f179afb47:
-                    required: false
-                    sortOrder: 1
               -
                 name: SEO
                 sortOrder: 4
