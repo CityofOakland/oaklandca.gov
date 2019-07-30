@@ -52,7 +52,7 @@ return [
     // Staging environment settings
     'staging' => [
         // Base site URL
-        'siteUrl' => 'https://oak-staging.frb.io',
+        'siteUrl' => 'https://staging.oaklandca.dev',
         // Prevents changes to settings in control panel
         'allowAdminChanges' => false,
     ],
