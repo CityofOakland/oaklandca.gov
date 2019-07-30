@@ -395,6 +395,11 @@ body.open .page-holder {
   }
 }
 
+.bg-transparent-oakland-roots {
+  background-image: url(/assets/img/oaklandroots-transparent-green.png);
+  background-size: cover;
+}
+
 /* Aspect Ratio Box */
 .aspect-ratio {
   @apply absolute inset-0 w-full h-full;

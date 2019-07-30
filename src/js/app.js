@@ -1,4 +1,5 @@
 function init() {
+  
   const menuToggle = document.getElementById("menu-toggle");
   const closeMenu = document.getElementById("close-menu");
   const searchMenuToggle = document.getElementById("search-menu-toggle");

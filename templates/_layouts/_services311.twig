@@ -122,22 +122,30 @@
       <h2 class="text-2xl">How It Works</h2>
       <ol class="md:flex flex-row text-center md:mt-16">
         <li class="how-it-works-block">
-          <img src="/assets/img/icon-report.svg" class="h-12 w-auto inline-block">
+          <figure class="flex items-center justify-center">
+            {{ craft.inlin.er('/assets/img/icon-report.svg') | replace('<svg ', '<svg class="h-12 w-12" ') | raw }}
+          </figure>
           <h3 class="font-semibold text-base mb-0 md:text-xl">Report</h3>
           <p class="text-sm mt-2 mb-0 md:px-2 md:text-lg lg:px-8">You report the issue by phone, website, app, or email.</p>
         </li>
         <li class="how-it-works-block">
-          <img src="/assets/img/icon-review.svg" class="h-12 w-auto inline-block">
+          <figure class="flex items-center justify-center">
+            {{ craft.inlin.er('/assets/img/icon-review.svg') | replace('<svg ', '<svg class="h-12 w-12" ') | raw }}
+          </figure>
           <h3 class="font-semibold text-base mb-0 md:text-xl">Review</h3>
           <p class="text-sm mt-2 mb-0 md:px-2 md:text-lg lg:px-8">We review your request and provide a tracking number.</p>
         </li>
         <li class="how-it-works-block">
-          <img src="/assets/img/icon-assign.svg" class="h-12 w-auto inline-block">
+          <figure class="flex items-center justify-center">
+            {{ craft.inlin.er('/assets/img/icon-assign.svg') | replace('<svg ', '<svg class="h-12 w-12" ') | raw }}
+          </figure>
           <h3 class="font-semibold text-base mb-0 md:text-xl">Assign</h3>
           <p class="text-sm mt-2 mb-0 md:px-2 md:text-lg lg:px-8">We assign your request to the appropriate work group.</p>
         </li>
         <li class="how-it-works-block">
-          <img src="/assets/img/icon-work.svg" class="h-12 w-auto inline-block">
+          <figure class="flex items-center justify-center">
+            {{ craft.inlin.er('/assets/img/icon-work.svg') | replace('<svg ', '<svg class="h-12 w-12" ') | raw }}
+          </figure>
           <h3 class="font-semibold text-base mb-0 md:text-xl">Work</h3>
           <p class="text-sm mt-2 mb-0 md:px-2 md:text-lg lg:px-8">Service is provided. Completion times vary.</p>
         </li>
