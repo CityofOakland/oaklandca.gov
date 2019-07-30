@@ -35,6 +35,15 @@ const search = instantsearch({
   },
 });
 
+search.addWidget(
+  instantsearch.widgets.analytics({
+    pushFunction(formattedParameters, state, results) {
+      window.ga('set', 'page', window.location.pathname + window.location.search);
+      window.ga('send', 'pageView');
+    },
+  })
+);
+
 const defaultTemplate = 
 `<article class="py-8 sm:py-12 border-celeste border-b-2">
   {{#displayDate}}
