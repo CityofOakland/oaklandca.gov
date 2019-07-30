@@ -32,7 +32,7 @@ categoryGroups:
         hasUrls: false
         uriFormat: null
         template: null
-dateModified: 1564411339
+dateModified: 1564522996
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -6348,14 +6348,14 @@ siteGroups:
     name: 'City of Oakland'
 sites:
   c35d3a93-d7f4-4c37-ae3e-1b4d403311bb:
+    siteGroup: 226351ad-9bcd-4a73-bd65-bf1ef65f710c
     name: 'City of Oakland'
     handle: default
     language: en-US
     hasUrls: true
-    baseUrl: '@web'
+    baseUrl: $SITE_URL
     sortOrder: 1
     primary: true
-    siteGroup: 226351ad-9bcd-4a73-bd65-bf1ef65f710c
 system:
   edition: pro
   live: true
