@@ -1,8 +1,10 @@
 {
     "/js/manifest.js": "/js/manifest.js?id=01c8731923a46c30aaed",
     "/js/vendor.js": "/js/vendor.js?id=782971e24598f3ea3859",
-    "/js/algoliafilter.js": "/js/algoliafilter.js?id=30a00a9c0aad04fa935b",
-    "/js/app.js": "/js/app.js?id=91494ebbc6f905594809",
-    "/css/app.css": "/css/app.css?id=b19197a7bdf2f18e1551",
-    "/js/search.js": "/js/search.js?id=1e91d58eddacd3fc5db0"
+    "/js/algoliafilter.js": "/js/algoliafilter.js?id=e0567c697f140a30619a",
+    "/js/app.js": "/js/app.js?id=a009726b781d4a81edd1",
+    "/css/app.css": "/css/app.css?id=e4e134e20480a8c68b64",
+    "/js/photoswipe.js": "/js/photoswipe.js?id=b30863865ba2455e96dd",
+    "/js/photoswipe-ui-default.js": "/js/photoswipe-ui-default.js?id=f7aa98059728df317945",
+    "/js/search.js": "/js/search.js?id=9c57911e154eea6a3eec"
 }

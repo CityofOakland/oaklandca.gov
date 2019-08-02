@@ -1,12 +1,24 @@
 function init() {
+  
   const menuToggle = document.getElementById("menu-toggle");
   const closeMenu = document.getElementById("close-menu");
   const searchMenuToggle = document.getElementById("search-menu-toggle");
+  const selectNavs = document.getElementsByClassName('js-select-nav');
+
   menuToggle.addEventListener("click", toggleMenu);
   closeMenu.addEventListener("click", toggleMenu);
   if (searchMenuToggle) {
     searchMenuToggle.addEventListener("click", toggleSearch);
   }
+  if (selectNavs) {
+    Array.from(selectNavs).forEach(select => {
+      select.addEventListener("change", selectNav);
+    });
+  }
+}
+
+function selectNav(e) {
+  window.location.href = e.target.value;
 }
 
 function toggleMenu(e) {
