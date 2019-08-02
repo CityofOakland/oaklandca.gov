@@ -32,7 +32,7 @@ categoryGroups:
         hasUrls: false
         uriFormat: null
         template: null
-dateModified: 1564522996
+dateModified: 1564592212
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -92,6 +92,20 @@ fieldGroups:
   ed709c7c-0c3a-4457-ae2d-38a3ccb797e4:
     name: '311'
 fields:
+  003ce16b-5d20-4821-93ae-516c70778291:
+    name: 'Project Start Date'
+    handle: projectStartDate
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\Date
+    settings:
+      showDate: true
+      showTime: false
+      minuteIncrement: '30'
+    contentColumnType: datetime
+    fieldGroup: 8e8ee56e-cdb8-4206-a3b5-c3aa0eb3a884
   00ccf4ec-25d9-4bce-864a-4d06468adb36:
     name: Body
     handle: body
@@ -163,6 +177,39 @@ fields:
       showTime: false
     fieldGroup: a8c82666-3295-4f90-b50b-67f2299847db
     contentColumnType: datetime
+  09e3ac15-7089-4e7f-9f6b-33267bfebc94:
+    name: 'Project Status'
+    handle: projectStatus
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\Dropdown
+    settings:
+      optgroups: true
+      options:
+        -
+          label: Planned
+          value: planned
+          default: ''
+        -
+          label: Started
+          value: started
+          default: ''
+        -
+          label: Hiatus
+          value: hiatus
+          default: ''
+        -
+          label: Completed
+          value: completed
+          default: ''
+        -
+          label: Canceled
+          value: canceled
+          default: ''
+    contentColumnType: string
+    fieldGroup: 8e8ee56e-cdb8-4206-a3b5-c3aa0eb3a884
   0d3707b0-0767-4404-9bce-6e70952210a0:
     name: 'Index Image'
     handle: indexImage
@@ -767,23 +814,24 @@ fields:
     translationKeyFormat: null
     type: craft\fields\Assets
     settings:
-      allowedKinds:
-        - image
+      useSingleFolder: '1'
       defaultUploadLocationSource: 'volume:a31d23bf-e3ee-4942-95e0-3d14c29620bb'
       defaultUploadLocationSubpath: ''
-      limit: ''
-      localizeRelations: false
-      restrictFiles: '1'
-      selectionLabel: 'Add a logo'
-      singleUploadLocationSource: 'volume:a31d23bf-e3ee-4942-95e0-3d14c29620bb'
+      singleUploadLocationSource: 'volume:4494beaa-9c1f-44ae-b040-36f60f3d055d'
       singleUploadLocationSubpath: ''
-      source: null
+      restrictFiles: '1'
+      allowedKinds:
+        - image
       sources: '*'
+      source: null
       targetSiteId: null
-      useSingleFolder: '1'
       viewMode: list
-    fieldGroup: 8e8ee56e-cdb8-4206-a3b5-c3aa0eb3a884
+      limit: ''
+      selectionLabel: 'Add a logo'
+      localizeRelations: false
+      validateRelatedElements: ''
     contentColumnType: string
+    fieldGroup: 8e8ee56e-cdb8-4206-a3b5-c3aa0eb3a884
   5e5aad16-6bdc-4d3e-adfd-75147a323b78:
     name: 'Phone Number'
     handle: phoneNumber
@@ -1495,6 +1543,33 @@ fields:
       columnType: text
     fieldGroup: 71fb693f-011b-4669-ba10-f1b379557bb9
     contentColumnType: text
+  af0e38e2-c040-47dc-a4f5-a2364d160a8f:
+    name: 'Photo Gallery'
+    handle: photoGallery
+    instructions: 'When adding your photos, be sure they have their "alt" attribute filled out. To do this, double click on each image and fill out the required "Alt Text" field. This is a requirement for adding images to our website in order to keep the content accessible and meet WCAG 2.0 standards. The Alt Text field will also provide captions for the image gallery.'
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Assets
+    settings:
+      useSingleFolder: '1'
+      defaultUploadLocationSource: 'volume:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67'
+      defaultUploadLocationSubpath: ''
+      singleUploadLocationSource: 'volume:56ad4140-da85-43ea-8292-3fac04cbefc1'
+      singleUploadLocationSubpath: ''
+      restrictFiles: '1'
+      allowedKinds:
+        - image
+      sources: '*'
+      source: null
+      targetSiteId: null
+      viewMode: large
+      limit: ''
+      selectionLabel: 'Add a photo'
+      localizeRelations: false
+      validateRelatedElements: '1'
+    contentColumnType: string
+    fieldGroup: c964d82c-a4e7-4ec4-ad42-7c3e843193c0
   b0a28612-04bc-4669-a6d1-816c9c768a29:
     name: 'Official Department'
     handle: officialDepartment
@@ -1798,6 +1873,21 @@ fields:
       columnType: text
     fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521
     contentColumnType: text
+  c7c1aa87-0003-4cdf-a925-11ae2f05ec24:
+    name: 'Project Locations'
+    handle: projectLocations
+    instructions: ''
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Matrix
+    settings:
+      minBlocks: ''
+      maxBlocks: ''
+      contentTable: '{{%matrixcontent_projectlocations}}'
+      propagationMethod: all
+    contentColumnType: string
+    fieldGroup: 8e8ee56e-cdb8-4206-a3b5-c3aa0eb3a884
   c9d86e3f-9738-4d97-a271-5331264c10b8:
     name: 'Address Extended'
     handle: addressExtended
@@ -1896,6 +1986,20 @@ fields:
       localizeRelations: false
     fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521
     contentColumnType: string
+  cccbcd50-864f-49a8-bbde-d44e04005272:
+    name: 'Project End Date'
+    handle: projectEndDate
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\Date
+    settings:
+      showDate: true
+      showTime: false
+      minuteIncrement: '30'
+    contentColumnType: datetime
+    fieldGroup: 8e8ee56e-cdb8-4206-a3b5-c3aa0eb3a884
   cfe09f9c-1b0b-49d8-aa1a-c75cd32aa94c:
     name: 'Sort Documents by Date?'
     handle: sortDocumentsByDate
@@ -3316,6 +3420,90 @@ matrixBlockTypes:
           columnType: text
         fieldGroup: null
         contentColumnType: text
+  7f40da34-211c-4ece-a025-8611e9442ec7:
+    field: c7c1aa87-0003-4cdf-a925-11ae2f05ec24
+    name: Location
+    handle: location
+    sortOrder: 1
+    fields:
+      4c0f9e7c-fe6a-47d0-b8c9-17e8a34a39f2:
+        name: Address
+        handle: address
+        instructions: ''
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: doublesecretagency\smartmap\fields\Address
+        settings:
+          layout:
+            street1:
+              width: 100
+              enable: 1
+              position: 1
+            street2:
+              width: 100
+              enable: 1
+              position: 2
+            city:
+              width: 50
+              enable: 1
+              position: 3
+            state:
+              width: 15
+              enable: 1
+              position: 4
+            zip:
+              width: 35
+              enable: 1
+              position: 5
+            country:
+              width: 100
+              enable: 1
+              position: 6
+            lat:
+              width: 50
+              enable: 1
+              position: 7
+            lng:
+              width: 50
+              enable: 1
+              position: 8
+          dragPinDefault: '1'
+          dragPinLatitude: '37.80527735793168'
+          dragPinLongitude: '-122.27239626522066'
+          dragPinZoom: '18'
+        contentColumnType: string
+        fieldGroup: null
+      7e17b706-c00f-4f94-84df-b0e91247051f:
+        name: Description
+        handle: description
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+    fieldLayouts:
+      99496d84-73a6-4699-8070-1945a27235f1:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              4c0f9e7c-fe6a-47d0-b8c9-17e8a34a39f2:
+                required: true
+                sortOrder: 1
+              7e17b706-c00f-4f94-84df-b0e91247051f:
+                required: false
+                sortOrder: 2
   8f34ad32-e01b-4c4f-8ae1-57e94e5b415f:
     name: Location
     handle: location
@@ -3722,15 +3910,17 @@ plugins:
           domain: $IMGOPT_IMGIX_SOURCE_DOMAIN
           apiKey: $IMGOPT_IMGIX_API
           securityToken: ''
+        nystudio107\imageoptimizesharp\imagetransforms\SharpImageTransform:
+          baseUrl: ''
         nystudio107\imageoptimizethumbor\imagetransforms\ThumborImageTransform:
           baseUrl: ''
           securityKey: ''
           includeBucketPrefix: ''
-      createColorPalette: '1'
-      createPlaceholderSilhouettes: '1'
-      lowerQualityRetinaImageVariants: '1'
-      allowUpScaledImageVariants: '1'
-      autoSharpenScaledImages: '1'
+      createColorPalette: true
+      createPlaceholderSilhouettes: true
+      lowerQualityRetinaImageVariants: true
+      allowUpScaledImageVariants: false
+      autoSharpenScaledImages: true
   incognito-field:
     enabled: '1'
     licenseKey: null
@@ -5008,13 +5198,133 @@ sections:
     type: channel
     enableVersioning: true
     entryTypes:
+      35ad8ea4-2989-47d3-820b-d5cf1d398bc9:
+        name: 'Projects Beta'
+        handle: projectsBeta
+        hasTitleField: true
+        titleLabel: Title
+        titleFormat: ''
+        sortOrder: 3
+        fieldLayouts:
+          21db3772-d66c-42ec-a85b-aaa3775ca0a3:
+            tabs:
+              -
+                name: Content
+                sortOrder: 1
+                fields:
+                  003ce16b-5d20-4821-93ae-516c70778291:
+                    required: false
+                    sortOrder: 4
+                  09e3ac15-7089-4e7f-9f6b-33267bfebc94:
+                    required: false
+                    sortOrder: 6
+                  78894bca-c6ce-4518-bb6f-fa94d7e7050e:
+                    required: false
+                    sortOrder: 10
+                  af0e38e2-c040-47dc-a4f5-a2364d160a8f:
+                    required: false
+                    sortOrder: 11
+                  bef74be8-b22d-4dd0-9217-9707bb43d888:
+                    required: false
+                    sortOrder: 3
+                  c2ad07dc-05e7-4ef4-89b6-2e1eaccee210:
+                    required: false
+                    sortOrder: 1
+                  c7c1aa87-0003-4cdf-a925-11ae2f05ec24:
+                    required: false
+                    sortOrder: 9
+                  caf0bc06-3f8b-4152-ab45-8e9289767860:
+                    required: false
+                    sortOrder: 7
+                  cccbcd50-864f-49a8-bbde-d44e04005272:
+                    required: false
+                    sortOrder: 5
+                  e1abe78e-92f3-4d83-890e-7f67fd2db4e0:
+                    required: false
+                    sortOrder: 12
+                  e3f23e85-4290-41f4-bff9-7d12b6e1b52c:
+                    required: false
+                    sortOrder: 8
+                  f62c85ae-2203-4d1a-8702-da515126a398:
+                    required: false
+                    sortOrder: 2
+              -
+                name: Projects
+                sortOrder: 2
+                fields:
+                  5cde5e79-0560-492c-b592-dd86cbde33c3:
+                    required: false
+                    sortOrder: 2
+                  899b11d8-2bd0-43d6-b39b-31e362b7534f:
+                    required: false
+                    sortOrder: 5
+                  97dc40f6-b307-4035-bc39-a8985cc4649a:
+                    required: false
+                    sortOrder: 4
+                  c18e25ad-bdd5-4629-a5d4-daf8579db08f:
+                    required: false
+                    sortOrder: 3
+                  d2528b2a-d63a-477c-9c22-431796381707:
+                    required: false
+                    sortOrder: 6
+                  ffa38afc-e53d-4cb8-8c63-5422d8f647cd:
+                    required: false
+                    sortOrder: 1
+              -
+                name: Relationships
+                sortOrder: 3
+                fields:
+                  41124ab0-0e88-44c6-b4f2-f002669d8133:
+                    required: false
+                    sortOrder: 2
+                  44b00870-0842-4c4e-838f-dcd688fb5b05:
+                    required: false
+                    sortOrder: 5
+                  73b7b0c7-bff1-4c55-97aa-fc62042f0347:
+                    required: false
+                    sortOrder: 3
+                  a25a56ba-bfb3-4e4d-a857-6d3cb4a5dcdc:
+                    required: false
+                    sortOrder: 1
+                  d624c5c7-9cce-4088-92ba-02e1f2024c6a:
+                    required: false
+                    sortOrder: 4
+              -
+                name: Contact
+                sortOrder: 4
+                fields:
+                  2fb76e53-8619-4e29-b609-c984c390de9a:
+                    required: false
+                    sortOrder: 1
+                  80554222-e44d-4971-b6db-30843c2f3a7d:
+                    required: false
+                    sortOrder: 2
+                  85af3974-efa6-4a79-a433-1fa8e5b4d404:
+                    required: false
+                    sortOrder: 4
+                  c01a4b08-11e1-42c3-97c4-e3de1bd7974e:
+                    required: false
+                    sortOrder: 6
+                  d71c1375-6cf3-4873-9c42-fde00a9b766b:
+                    required: false
+                    sortOrder: 3
+                  d9a54ffb-26e9-4883-83bb-8e41650c8927:
+                    required: false
+                    sortOrder: 5
+              -
+                name: SEO
+                sortOrder: 5
+                fields:
+                  ecc31df6-640f-4fa6-a2e6-caea757e379d:
+                    required: false
+                    sortOrder: 1
       3d2f9fee-52c3-44bb-86c1-f3c77e26b450:
         name: 'LEGACY Projects'
         handle: legacyProjects
         hasTitleField: true
         titleLabel: Title
         titleFormat: ''
-        sortOrder: 1
+        sortOrder: 2
         fieldLayouts:
           56ecda0c-259a-4836-b0c7-f60cd0906c90:
             tabs:
@@ -5104,12 +5414,12 @@ sections:
                     required: false
                     sortOrder: 1
       4448ff2b-e958-4a61-8e36-0dab9831c66f:
-        name: 'Projects (New)'
+        name: Projects
         handle: projects
         hasTitleField: true
         titleLabel: Title
         titleFormat: ''
-        sortOrder: 2
+        sortOrder: 1
         fieldLayouts:
           b60719dd-2fa9-440b-bf52-6b8b194d5e31:
             tabs:
@@ -5119,13 +5429,13 @@ sections:
                 fields:
                   5cde5e79-0560-492c-b592-dd86cbde33c3:
                     required: false
-                    sortOrder: 14
+                    sortOrder: 13
                   78894bca-c6ce-4518-bb6f-fa94d7e7050e:
                     required: false
                     sortOrder: 4
                   899b11d8-2bd0-43d6-b39b-31e362b7534f:
                     required: false
-                    sortOrder: 13
+                    sortOrder: 12
                   97dc40f6-b307-4035-bc39-a8985cc4649a:
                     required: false
                     sortOrder: 6
@@ -6984,6 +7294,56 @@ volumes:
               fff5cf49-87e6-4751-9032-b4ca8136e237:
                 required: true
                 sortOrder: 1
+  4494beaa-9c1f-44ae-b040-36f60f3d055d:
+    name: Logos
+    handle: logos
+    type: craft\awss3\Volume
+    hasUrls: true
+    url: 'https://s3.us-west-2.amazonaws.com/cao-94612/'
+    settings:
+      subfolder: logos
+      keyId: $S3_API_KEY
+      secret: $S3_SECRET
+      bucketSelectionMode: choose
+      bucket: cao-94612
+      region: us-west-2
+      expires: ''
+      makeUploadsPublic: '1'
+      storageClass: ''
+      cfDistributionId: ''
+      cfPrefix: ''
+      autoFocalPoint: ''
+    sortOrder: 9
+  56ad4140-da85-43ea-8292-3fac04cbefc1:
+    name: Galleries
+    handle: galleries
+    type: craft\awss3\Volume
+    hasUrls: true
+    url: 'https://s3.us-west-2.amazonaws.com/cao-94612/'
+    settings:
+      subfolder: galleries
+      keyId: $S3_API_KEY
+      secret: $S3_SECRET
+      bucketSelectionMode: choose
+      bucket: cao-94612
+      region: us-west-2
+      expires: ''
+      makeUploadsPublic: '1'
+      storageClass: ''
+      cfDistributionId: ''
+      cfPrefix: ''
+      autoFocalPoint: ''
+    sortOrder: 8
+    fieldLayouts:
+      22f6b433-ddd4-4b02-83da-3eb46af9359a:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              fff5cf49-87e6-4751-9032-b4ca8136e237:
+                required: false
+                sortOrder: 1
   58c3bf22-aa23-441f-bd65-acf677638ae6:
     name: Data
     handle: data
@@ -7135,7 +7495,7 @@ volumes:
     handle: resources
     type: craft\awss3\Volume
     hasUrls: true
-    url: 'https://cao-94612.s3.us-west-2.amazonaws.com'
+    url: $S3_URL
     settings:
       subfolder: resources
       keyId: $S3_API_KEY

@@ -95,6 +95,14 @@ a:hover {
   @apply px-2 py-2;
 }
 
+.section-box {
+  @apply border-l-4 border-bright-green rounded-sm font-semibold block p-5 text-dark-green bg-white shadow-btn;
+}
+
+.section-box:hover {
+  @apply text-white bg-deep-green
+}
+
 main,
 footer {
   position: relative;
@@ -377,21 +385,6 @@ body.open .page-holder {
 
   .aspect-ratio-21\/9 {
     padding-top: 42.86%;
-  }
-  .image-blur-none {
-    filter: blur(0);
-  }
-  .image-blur-base {
-    filter: blur(10px);
-  }
-  .image-blur-small {
-    filter: blur(5px);
-  }
-  .image-blur-large {
-    filter: blur(25px);
-  }
-  .image-blur-xlarge {
-    filter: blur(75px);
   }
 }
 

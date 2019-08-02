@@ -35,6 +35,8 @@ mix
   .js("./src/js/app.js", "js/app.js")
   .js("./src/js/algoliafilter.js", "js/algoliafilter.js")
   .js("./src/js/search.js", "js/search.js")
+  .js("./src/js/photoswipe.js", "js/photoswipe.js")
+  .js("./src/js/photoswipe-ui-default.js", "js/photoswipe-ui-default.js")
   .extract()
   .banner({
     banner: (function () {
