@@ -32,6 +32,9 @@ return [
       // The secure key Craft will use for hashing and encrypting data
       'securityKey' => getenv('SECURITY_KEY'),
 
+      // Enables Project Config file
+      'useProjectConfigFile' => true,
+
       'aliases' => [
         '@algoliaAppId' => getenv('ALGOLIA_APP_ID'),
         '@algoliaAdminApi' => getenv('ALGOLIA_ADMIN_API'),
@@ -53,15 +56,13 @@ return [
     'staging' => [
         // Base site URL
         'siteUrl' => 'https://staging.oaklandca.dev',
-        // Prevents changes to settings in control panel
-        'allowAdminChanges' => false,
-    ],
+        // Disable project config changes on staging
+        'allowAdminChanges' => false,    ],
 
     // Production environment settings
     'production' => [
         // Base site URL
         'siteUrl' => 'https://www.oaklandca.gov',
-        // Prevents changes to settings in control panel
-        'allowAdminChanges' => false,
-    ],
+        // Disable project config changes on production
+        'allowAdminChanges' => false,    ],
 ];
