@@ -32,7 +32,7 @@ categoryGroups:
         hasUrls: false
         uriFormat: null
         template: null
-dateModified: 1564592212
+dateModified: 1565285989
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -210,71 +210,6 @@ fields:
           default: ''
     contentColumnType: string
     fieldGroup: 8e8ee56e-cdb8-4206-a3b5-c3aa0eb3a884
-  0d3707b0-0767-4404-9bce-6e70952210a0:
-    name: 'Index Image'
-    handle: indexImage
-    instructions: ''
-    searchable: true
-    translationMethod: none
-    translationKeyFormat: null
-    type: nystudio107\imageoptimize\fields\OptimizedImages
-    settings:
-      displayDominantColorPalette: '1'
-      displayLazyLoadPlaceholderImages: '1'
-      displayOptimizedImageVariants: '1'
-      variants:
-        -
-          aspectRatioX: '8'
-          aspectRatioY: '5'
-          format: jpg
-          quality: '82'
-          retinaSizes:
-            - '1'
-            - '2'
-          useAspectRatio: '1'
-          width: '1200'
-        -
-          aspectRatioX: '8'
-          aspectRatioY: '5'
-          format: jpg
-          quality: '82'
-          retinaSizes:
-            - '1'
-            - '2'
-          useAspectRatio: '1'
-          width: '992'
-        -
-          aspectRatioX: '4'
-          aspectRatioY: '3'
-          format: jpg
-          quality: '60'
-          retinaSizes:
-            - '1'
-            - '2'
-          useAspectRatio: '1'
-          width: '768'
-        -
-          aspectRatioX: '4'
-          aspectRatioY: '3'
-          format: jpg
-          quality: '60'
-          retinaSizes:
-            - '1'
-            - '2'
-          useAspectRatio: '1'
-          width: '576'
-        -
-          aspectRatioX: '4'
-          aspectRatioY: '3'
-          format: jpg
-          quality: '82'
-          retinaSizes:
-            - '1'
-            - '2'
-          useAspectRatio: '1'
-          width: '320'
-    fieldGroup: baa859d6-a861-4617-bb79-73d0982ee25c
-    contentColumnType: text
   1160308b-03c0-43ad-9f4b-35e26c016c89:
     name: 'Code Insertion'
     handle: codeInsertion
@@ -349,7 +284,7 @@ fields:
   1b7fc839-7de9-4717-b41d-d74bfa40b5c8:
     name: Portrait
     handle: portrait
-    instructions: 'Add a headshot of this person.'
+    instructions: 'Add a headshot of this person. Be sure to double click the image after uploading it and assigning the ALT TEXT, as this is an ADA requirement.'
     searchable: true
     translationMethod: site
     translationKeyFormat: null
@@ -370,8 +305,9 @@ fields:
       limit: '1'
       selectionLabel: 'Add a portrait'
       localizeRelations: false
-    fieldGroup: c964d82c-a4e7-4ec4-ad42-7c3e843193c0
+      validateRelatedElements: ''
     contentColumnType: string
+    fieldGroup: c964d82c-a4e7-4ec4-ad42-7c3e843193c0
   1f6c0b74-c954-4e91-a513-8cd9aad771c4:
     name: 'Board Hours'
     handle: boardHours
@@ -994,7 +930,7 @@ fields:
   7084b5f1-19ef-4812-97fc-927d55c98c93:
     name: 'Event Image'
     handle: eventImage
-    instructions: ''
+    instructions: 'Be sure to double click the image after uploading it and assigning the ALT TEXT, as this is an ADA requirement.'
     searchable: true
     translationMethod: site
     translationKeyFormat: null
@@ -1015,8 +951,9 @@ fields:
       limit: '1'
       selectionLabel: 'Add an image'
       localizeRelations: false
-    fieldGroup: c964d82c-a4e7-4ec4-ad42-7c3e843193c0
+      validateRelatedElements: ''
     contentColumnType: string
+    fieldGroup: c964d82c-a4e7-4ec4-ad42-7c3e843193c0
   736bfdbe-8ec1-4b3d-bd17-6dc825c56855:
     name: Bio
     handle: bio
@@ -1140,7 +1077,7 @@ fields:
   8233f0e9-3e71-4804-a485-fec6b8560185:
     name: 'News Image'
     handle: newsImage
-    instructions: ''
+    instructions: 'Be sure to double click the image after uploading it and assigning the ALT TEXT, as this is an ADA requirement.'
     searchable: true
     translationMethod: site
     translationKeyFormat: null
@@ -2132,64 +2069,10 @@ fields:
     type: craft\fields\Url
     fieldGroup: 1fe293ad-52d9-4002-984e-b7a256d4b158
     contentColumnType: string(255)
-  d762f03c-b672-4cb9-9887-5cd668d859de:
-    name: 'News Entry Image'
-    handle: newsEntryImage
-    instructions: ''
-    searchable: true
-    translationMethod: none
-    translationKeyFormat: null
-    type: nystudio107\imageoptimize\fields\OptimizedImages
-    settings:
-      displayOptimizedImageVariants: '1'
-      displayDominantColorPalette: '1'
-      displayLazyLoadPlaceholderImages: '1'
-      variants:
-        -
-          width: '852'
-          useAspectRatio: ''
-          aspectRatioX: '16'
-          aspectRatioY: '9'
-          retinaSizes:
-            - '1'
-            - '2'
-          quality: '82'
-          format: jpg
-        -
-          width: '662'
-          useAspectRatio: ''
-          aspectRatioX: '16'
-          aspectRatioY: '9'
-          retinaSizes:
-            - '1'
-            - '2'
-          quality: '82'
-          format: jpg
-        -
-          width: '438'
-          useAspectRatio: ''
-          aspectRatioX: '4'
-          aspectRatioY: '3'
-          retinaSizes:
-            - '1'
-            - '2'
-          quality: '60'
-          format: jpg
-        -
-          width: '576'
-          useAspectRatio: '1'
-          aspectRatioX: '4'
-          aspectRatioY: '3'
-          retinaSizes:
-            - '1'
-          quality: '60'
-          format: jpg
-    fieldGroup: baa859d6-a861-4617-bb79-73d0982ee25c
-    contentColumnType: text
   d7d618a5-5819-44e0-bc30-5c685f47f039:
     name: 'Resource Image'
     handle: resourceImage
-    instructions: 'Choose the image that you would like to upload.'
+    instructions: 'Choose the image that you would like to upload. Be sure to double click the image after uploading it and assigning the ALT TEXT, as this is an ADA requirement.'
     searchable: true
     translationMethod: site
     translationKeyFormat: null
@@ -2210,8 +2093,9 @@ fields:
       limit: '1'
       selectionLabel: 'Add an image'
       localizeRelations: false
-    fieldGroup: c964d82c-a4e7-4ec4-ad42-7c3e843193c0
+      validateRelatedElements: ''
     contentColumnType: string
+    fieldGroup: c964d82c-a4e7-4ec4-ad42-7c3e843193c0
   d9a54ffb-26e9-4883-83bb-8e41650c8927:
     name: Twitter
     handle: twitter
@@ -2516,7 +2400,7 @@ fields:
   f62c85ae-2203-4d1a-8702-da515126a398:
     name: Banner
     handle: banner
-    instructions: 'Choose images that will rotate in the background of the hero banner.'
+    instructions: 'Choose images that will rotate in the background of the hero banner. Be sure to double click the image after uploading it and assigning the ALT TEXT, as this is an ADA requirement.'
     searchable: true
     translationMethod: site
     translationKeyFormat: null
@@ -2537,8 +2421,9 @@ fields:
       limit: '1'
       selectionLabel: 'Add a banner image'
       localizeRelations: false
-    fieldGroup: c964d82c-a4e7-4ec4-ad42-7c3e843193c0
+      validateRelatedElements: ''
     contentColumnType: string
+    fieldGroup: c964d82c-a4e7-4ec4-ad42-7c3e843193c0
   f73a45bb-5e6b-4a27-8f19-edd0e6bbc507:
     name: 'Video Link'
     handle: videoLink
@@ -7421,12 +7306,6 @@ volumes:
             name: Content
             sortOrder: 1
             fields:
-              0d3707b0-0767-4404-9bce-6e70952210a0:
-                required: false
-                sortOrder: 2
-              d762f03c-b672-4cb9-9887-5cd668d859de:
-                required: false
-                sortOrder: 3
               fff5cf49-87e6-4751-9032-b4ca8136e237:
                 required: true
                 sortOrder: 1
@@ -7469,9 +7348,6 @@ volumes:
             name: Content
             sortOrder: 1
             fields:
-              0d3707b0-0767-4404-9bce-6e70952210a0:
-                required: false
-                sortOrder: 2
               fff5cf49-87e6-4751-9032-b4ca8136e237:
                 required: true
                 sortOrder: 1
