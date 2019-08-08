@@ -6,7 +6,7 @@
   {# Begin Departments #}
   <section class="bg-white relative z-0">
     <div class="container">
-      {% set departmentsGrouped = craft.entries.section('departments').officialDepartment(true).order('title').all() | group('title | first') %}
+      {% set departmentsGrouped = craft.entries.section('departments').officialDepartment(true).orderBy('title').all() | group('title | first') %}
 
       {% for letter, entries in departmentsGrouped %}
         <div class="pt-12 mb-12 border-light-grey border-t">
