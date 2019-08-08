@@ -113,7 +113,7 @@ class eventsTransform extends TransformerAbstract
       'displayDate' => $event->startDate->format('F j, Y'),
       'body' => strip_tags($event->body),
       'contact' => $event->eventContact,
-      'eventImage' => $empty($event->eventImage->one()) ? $event->eventImage->one()->url : null,
+      'eventImage' => $event->eventImage->one()->url ?? null,
       'boardsCommissions' => $boardsCommissions,
       'departments' => $departments,
       'officials' => $officials,

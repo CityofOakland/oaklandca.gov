@@ -1,3 +1,3 @@
-{% for entry in craft.entries.section('departments, boardsCommissions').order('title asc').all() %}
+{% for entry in craft.entries.section('departments, boardsCommissions').orderBy('title asc').all() %}
   {{ entry.title }}<br>
 {% endfor %}
