@@ -31,7 +31,8 @@
     "craftcms/feed-me": "4.1.1",
     "mmikkel/incognito-field": "1.1.1.1",
     "born05/craft-assetusage": "2.0.1",
-    "rias/craft-scout": "1.3.0"
+    "rias/craft-scout": "1.3.0",
+    "aelvan/imager": "v2.1.10"
   },
   "autoload": {
     "psr-4": {
