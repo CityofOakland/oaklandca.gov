@@ -32,7 +32,7 @@ categoryGroups:
         hasUrls: false
         uriFormat: null
         template: null
-dateModified: 1565724091
+dateModified: 1565805041
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -5107,12 +5107,18 @@ sections:
                   09e3ac15-7089-4e7f-9f6b-33267bfebc94:
                     required: false
                     sortOrder: 6
+                  5cde5e79-0560-492c-b592-dd86cbde33c3:
+                    required: false
+                    sortOrder: 14
                   78894bca-c6ce-4518-bb6f-fa94d7e7050e:
                     required: false
-                    sortOrder: 10
-                  af0e38e2-c040-47dc-a4f5-a2364d160a8f:
+                    sortOrder: 8
+                  899b11d8-2bd0-43d6-b39b-31e362b7534f:
                     required: false
                     sortOrder: 11
+                  af0e38e2-c040-47dc-a4f5-a2364d160a8f:
+                    required: false
+                    sortOrder: 13
                   bef74be8-b22d-4dd0-9217-9707bb43d888:
                     required: false
                     sortOrder: 3
@@ -5121,7 +5127,7 @@ sections:
                     sortOrder: 1
                   c7c1aa87-0003-4cdf-a925-11ae2f05ec24:
                     required: false
-                    sortOrder: 9
+                    sortOrder: 10
                   caf0bc06-3f8b-4152-ab45-8e9289767860:
                     required: false
                     sortOrder: 7
@@ -5133,35 +5139,13 @@ sections:
                     sortOrder: 12
                   e3f23e85-4290-41f4-bff9-7d12b6e1b52c:
                     required: false
-                    sortOrder: 8
+                    sortOrder: 9
                   f62c85ae-2203-4d1a-8702-da515126a398:
                     required: false
                     sortOrder: 2
               -
-                name: Projects
-                sortOrder: 2
-                fields:
-                  5cde5e79-0560-492c-b592-dd86cbde33c3:
-                    required: false
-                    sortOrder: 2
-                  899b11d8-2bd0-43d6-b39b-31e362b7534f:
-                    required: false
-                    sortOrder: 5
-                  97dc40f6-b307-4035-bc39-a8985cc4649a:
-                    required: false
-                    sortOrder: 4
-                  c18e25ad-bdd5-4629-a5d4-daf8579db08f:
-                    required: false
-                    sortOrder: 3
-                  d2528b2a-d63a-477c-9c22-431796381707:
-                    required: false
-                    sortOrder: 6
-                  ffa38afc-e53d-4cb8-8c63-5422d8f647cd:
-                    required: false
-                    sortOrder: 1
-              -
                 name: Relationships
-                sortOrder: 3
+                sortOrder: 2
                 fields:
                   41124ab0-0e88-44c6-b4f2-f002669d8133:
                     required: false
@@ -5180,7 +5164,7 @@ sections:
                     sortOrder: 4
               -
                 name: Contact
-                sortOrder: 4
+                sortOrder: 3
                 fields:
                   2fb76e53-8619-4e29-b609-c984c390de9a:
                     required: false
@@ -5202,11 +5186,24 @@ sections:
                     sortOrder: 5
               -
                 name: SEO
-                sortOrder: 5
+                sortOrder: 4
                 fields:
                   ecc31df6-640f-4fa6-a2e6-caea757e379d:
                     required: false
                     sortOrder: 1
+              -
+                name: Legacy
+                sortOrder: 5
+                fields:
+                  97dc40f6-b307-4035-bc39-a8985cc4649a:
+                    required: false
+                    sortOrder: 2
+                  c18e25ad-bdd5-4629-a5d4-daf8579db08f:
+                    required: false
+                    sortOrder: 1
+                  d2528b2a-d63a-477c-9c22-431796381707:
+                    required: false
+                    sortOrder: 3
       3d2f9fee-52c3-44bb-86c1-f3c77e26b450:
         name: 'LEGACY Projects'
         handle: legacyProjects
