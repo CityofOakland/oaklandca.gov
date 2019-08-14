@@ -93,11 +93,11 @@ function toggleLinks(toggleId) {
               <a class="section-box project-documents" {{ loop.first ? '' : 'data-toggle="off"' }} href="{{ entry.url }}">{{ entry.title }}</a>
             {% endfor %}
           </div>
-          <p class="font-bold font-heading mt-4 border-dark-green border-b-2 inline-block"><a href="" id="project-documents-toggle" data-class="project-documents">Toggle all related documents</a></p>
+          {% if entry.projectDocuments | length > 1 %}
+            <p class="font-bold font-heading mt-4 border-dark-green border-b-2 inline-block"><a href="" id="project-documents-toggle" data-class="project-documents">Toggle all related documents</a></p>
+            {% js %}toggleLinks('project-documents-toggle');{% endjs %}
+          {% endif %}
         </section>
-        {% if entry.projectDocuments | length > 1 %}
-          {% js %}toggleLinks('project-documents-toggle');{% endjs %}
-        {% endif %}
       {% endif %}
       {% if meetingsTrue %}
         <section>
@@ -116,8 +116,8 @@ function toggleLinks(toggleId) {
               <a class="section-box project-updates" {{ loop.first ? '' : 'data-toggle="off"' }} href="{{ entry.url }}">{{ entry.title }}</a>
             {% endfor %}
           </div>
-          <p class="font-bold font-heading mt-4 border-dark-green border-b-2 inline-block"><a href="" id="project-updates-toggle" data-class="project-updates">Toggle all project updates</a></p>
           {% if entry.projectUpdates | length > 1 %}
+           <p class="font-bold font-heading mt-4 border-dark-green border-b-2 inline-block"><a href="" id="project-updates-toggle" data-class="project-updates">Toggle all project updates</a></p>
             {% js %}toggleLinks('project-updates-toggle');{% endjs %}
           {% endif %}
         </section>
@@ -160,8 +160,8 @@ function toggleLinks(toggleId) {
               </p>
             </div>
           {% endfor %}
-          <p class="font-bold font-heading mt-4 border-dark-green border-b-2 inline-block"><a href="" id="project-timeline-toggle" data-class="project-timeline">See all timeline</a></p>
           {% if entry.timeline | length > 4 %}
+            <p class="font-bold font-heading mt-4 border-dark-green border-b-2 inline-block"><a href="" id="project-timeline-toggle" data-class="project-timeline">See all timeline</a></p>
             {% js %}toggleLinks('project-timeline-toggle');{% endjs %}
           {% endif %}
         </section>
@@ -175,8 +175,10 @@ function toggleLinks(toggleId) {
               <a class="section-box project-related" {{ loop.first ? '' : 'data-toggle="off"' }} href="{{ entry.url }}">{{ entry.title }}</a>
             {% endfor %}
           </div>
-          <p class="font-bold font-heading mt-4 border-dark-green border-b-2 inline-block"><a href="" id="project-related-toggle" data-class="project-related">Toggle all related pages</a></p>
-          {% js %}toggleLinks('project-related-toggle');{% endjs %}
+          {% if entry.relatedProjectEntries | length > 1 %}
+            <p class="font-bold font-heading mt-4 border-dark-green border-b-2 inline-block"><a href="" id="project-related-toggle" data-class="project-related">Toggle all related pages</a></p>
+            {% js %}toggleLinks('project-related-toggle');{% endjs %}          
+          {% endif %}
         </section>
       {% endif %}
       {% if fundingTrue %}
