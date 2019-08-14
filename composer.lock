@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "ca3fd37aa47920553c79bb17e220171f",
+    "content-hash": "544548ee275536527b0a09787898b037",
     "packages": [
         {
             "name": "aelvan/imager",
@@ -122,11 +122,11 @@
         },
         {
             "name": "algolia/algoliasearch-client-php",
-            "version": "2.2.6",
+            "version": "2.3.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/algolia/algoliasearch-client-php/zipball/55f1a7e2549ac1865d94ff00e8ec6d4aeee952e6",
-                "reference": "55f1a7e2549ac1865d94ff00e8ec6d4aeee952e6",
+                "url": "https://api.github.com/repos/algolia/algoliasearch-client-php/zipball/823dc934f1ad82cb43988e474a4597c7e660104b",
+                "reference": "823dc934f1ad82cb43988e474a4597c7e660104b",
                 "shasum": ""
             },
             "require": {
@@ -137,12 +137,6 @@
                 "psr/http-message": "^1.0",
                 "psr/log": "^1.0",
                 "psr/simple-cache": "^1.0"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "^2.0",
-                "fzaninotto/faker": "^1.8",
-                "phpunit/phpunit": "^4.8",
-                "symfony/yaml": "^2.0 || ^4.0"
             },
             "suggest": {
                 "guzzlehttp/guzzle": "If you prefer to use Guzzle HTTP client instead of the Http Client implementation provided by the package"
@@ -165,7 +159,6 @@
                     "src/functions.php"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -183,7 +176,7 @@
                 "php",
                 "search"
             ],
-            "time": "2019-05-15T09:16:37+00:00"
+            "time": "2019-07-18T18:05:23+00:00"
         },
         {
             "name": "aws/aws-sdk-php",
@@ -298,11 +291,11 @@
         },
         {
             "name": "cakephp/core",
-            "version": "3.8.1",
+            "version": "3.8.2",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cakephp/core/zipball/4f9762ce1cdfbe153c676cf3ae1e2d62ac328301",
-                "reference": "4f9762ce1cdfbe153c676cf3ae1e2d62ac328301",
+                "url": "https://api.github.com/repos/cakephp/core/zipball/856ebb75e3cef6068444185e3dd54e98dfe888b3",
+                "reference": "856ebb75e3cef6068444185e3dd54e98dfe888b3",
                 "shasum": ""
             },
             "require": {
@@ -322,7 +315,6 @@
                     "functions.php"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -339,15 +331,15 @@
                 "core",
                 "framework"
             ],
-            "time": "2019-05-22T01:06:42+00:00"
+            "time": "2019-08-06T03:36:04+00:00"
         },
         {
             "name": "cakephp/utility",
-            "version": "3.8.1",
+            "version": "3.8.2",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cakephp/utility/zipball/329654495c4cf966ac75832e502ec939542928fb",
-                "reference": "329654495c4cf966ac75832e502ec939542928fb",
+                "url": "https://api.github.com/repos/cakephp/utility/zipball/1b9d956aa81c2db720bd2cd9fa05079f44ad923c",
+                "reference": "1b9d956aa81c2db720bd2cd9fa05079f44ad923c",
                 "shasum": ""
             },
             "require": {
@@ -367,7 +359,6 @@
                     "bootstrap.php"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -387,7 +378,7 @@
                 "string",
                 "utility"
             ],
-            "time": "2019-03-14T14:41:29+00:00"
+            "time": "2019-08-08T09:05:06+00:00"
         },
         {
             "name": "cebe/markdown",
@@ -722,11 +713,11 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "3.2.9",
+            "version": "3.2.10",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/678ec9a876561152a74e5b3e07ebe0d2ca989c22",
-                "reference": "678ec9a876561152a74e5b3e07ebe0d2ca989c22",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/620fa9e16ae1d6d205868754959c459f55128da2",
+                "reference": "620fa9e16ae1d6d205868754959c459f55128da2",
                 "shasum": ""
             },
             "require": {
@@ -802,28 +793,25 @@
                 "docs": "https://docs.craftcms.com/v3/",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2019-08-06T17:08:35+00:00"
+            "time": "2019-08-13T15:50:41+00:00"
         },
         {
             "name": "craftcms/feed-me",
-            "version": "4.1.1",
+            "version": "4.1.2",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/feed-me/zipball/af0d4ebe8b43c0d33e05f9bec1364e1531488795",
-                "reference": "af0d4ebe8b43c0d33e05f9bec1364e1531488795",
+                "url": "https://api.github.com/repos/craftcms/feed-me/zipball/38a4a02ab4ca0cfd21736a7156cb8a54c7d3001e",
+                "reference": "38a4a02ab4ca0cfd21736a7156cb8a54c7d3001e",
                 "shasum": ""
             },
             "require": {
-                "cakephp/core": "^3.5",
                 "cakephp/utility": "^3.3.12",
                 "craftcms/cms": "^3.1.21",
-                "guzzlehttp/guzzle": "~6.3.0",
                 "jakeasmith/http_build_url": "^1.0",
                 "league/csv": "^8.2 || ^9.0",
                 "nesbot/carbon": "^1.22 || ^2.10",
                 "ralouphie/mimey": "^1.0",
-                "seld/jsonlint": "^1.7",
-                "vlucas/phpdotenv": "^2.4"
+                "seld/jsonlint": "^1.7"
             },
             "type": "craft-plugin",
             "extra": {
@@ -864,7 +852,7 @@
                 "docs": "https://docs.craftcms.com/feed-me/v4/",
                 "rss": "https://github.com/craftcms/feed-me/commits/master.atom"
             },
-            "time": "2019-07-06T14:14:12+00:00"
+            "time": "2019-08-11T16:41:38+00:00"
         },
         {
             "name": "craftcms/oauth2-craftid",
@@ -1560,11 +1548,11 @@
         },
         {
             "name": "egulias/email-validator",
-            "version": "2.1.10",
+            "version": "2.1.11",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/a6c8d7101b19a451c1707b1b79bbbc56e4bdb7ec",
-                "reference": "a6c8d7101b19a451c1707b1b79bbbc56e4bdb7ec",
+                "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/92dd169c32f6f55ba570c309d83f5209cefb5e23",
+                "reference": "92dd169c32f6f55ba570c309d83f5209cefb5e23",
                 "shasum": ""
             },
             "require": {
@@ -1577,7 +1565,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.0.x-dev"
+                    "dev-master": "2.1.x-dev"
                 }
             },
             "autoload": {
@@ -1602,7 +1590,7 @@
                 "validation",
                 "validator"
             ],
-            "time": "2019-07-19T20:52:08+00:00"
+            "time": "2019-08-13T17:33:27+00:00"
         },
         {
             "name": "elvanto/litemoji",
@@ -4033,11 +4021,11 @@
         },
         {
             "name": "nystudio107/craft-imageoptimize",
-            "version": "1.6.0",
+            "version": "1.6.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-imageoptimize/zipball/a39fa9ca772a36244ff2c720f3c1b130dab78b29",
-                "reference": "a39fa9ca772a36244ff2c720f3c1b130dab78b29",
+                "url": "https://api.github.com/repos/nystudio107/craft-imageoptimize/zipball/93d8dc7d0541d6148562aa0152841f9bad786289",
+                "reference": "93d8dc7d0541d6148562aa0152841f9bad786289",
                 "shasum": ""
             },
             "require": {
@@ -4093,7 +4081,7 @@
                 "docs": "https://nystudio107.com/plugins/imageoptimize/documentation",
                 "issues": "https://nystudio107.com/plugins/imageoptimize/support"
             },
-            "time": "2019-07-05T15:38:32+00:00"
+            "time": "2019-08-13T15:43:37+00:00"
         },
         {
             "name": "nystudio107/craft-imageoptimize-imgix",
@@ -4139,11 +4127,11 @@
         },
         {
             "name": "nystudio107/craft-imageoptimize-sharp",
-            "version": "1.0.1",
+            "version": "1.0.2",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-imageoptimize-sharp/zipball/95c444c29607a9943f1624739a81f00fca3ead8f",
-                "reference": "95c444c29607a9943f1624739a81f00fca3ead8f",
+                "url": "https://api.github.com/repos/nystudio107/craft-imageoptimize-sharp/zipball/a6eda72ebbf4eeb3f36c84d2ab8c533e3b334938",
+                "reference": "a6eda72ebbf4eeb3f36c84d2ab8c533e3b334938",
                 "shasum": ""
             },
             "require": {
@@ -4172,7 +4160,7 @@
                 "image-transform",
                 "sharp"
             ],
-            "time": "2019-07-06T21:16:17+00:00"
+            "time": "2019-08-13T15:41:30+00:00"
         },
         {
             "name": "nystudio107/craft-imageoptimize-thumbor",
@@ -4940,11 +4928,11 @@
         },
         {
             "name": "rias/craft-scout",
-            "version": "1.3.0",
+            "version": "1.3.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/riasvdv/craft-scout/zipball/10424f18d624d2337d40a92bacebc8f7fe0d62ba",
-                "reference": "10424f18d624d2337d40a92bacebc8f7fe0d62ba",
+                "url": "https://api.github.com/repos/riasvdv/craft-scout/zipball/c63103237f6a34e7f736e046c8f0908489d111b2",
+                "reference": "c63103237f6a34e7f736e046c8f0908489d111b2",
                 "shasum": ""
             },
             "require": {
@@ -4970,7 +4958,6 @@
                     "rias\\scout\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -4982,13 +4969,17 @@
             ],
             "description": "Craft Scout provides a simple solution for adding full-text search to your entries. Scout will automatically keep your search indexes in sync with your entries.",
             "keywords": [
-                "Craft",
                 "cms",
+                "craft",
                 "craft-plugin",
                 "craftcms",
                 "scout"
             ],
-            "time": "2019-07-12T07:28:50+00:00"
+            "support": {
+                "docs": "https://github.com/riasvdv/craft3-scout/blob/master/README.md",
+                "issues": "https://github.com/riasvdv/craft3-scout/issues"
+            },
+            "time": "2019-08-09T07:15:57+00:00"
         },
         {
             "name": "rize/uri-template",
@@ -5243,11 +5234,11 @@
         },
         {
             "name": "solspace/craft3-calendar",
-            "version": "2.0.22",
+            "version": "2.0.24",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/solspace/craft3-calendar/zipball/01e28ca53e685a294726ea42772adaf130020ad4",
-                "reference": "01e28ca53e685a294726ea42772adaf130020ad4",
+                "url": "https://api.github.com/repos/solspace/craft3-calendar/zipball/fb137becea73c4cdb8bfa917d39694b82ba7c15a",
+                "reference": "fb137becea73c4cdb8bfa917d39694b82ba7c15a",
                 "shasum": ""
             },
             "require": {
@@ -5285,7 +5276,7 @@
                 }
             ],
             "description": "The most powerful event management plugin for Craft.",
-            "time": "2019-08-01T02:37:45+00:00"
+            "time": "2019-08-14T20:03:57+00:00"
         },
         {
             "name": "solspace/craft3-commons",
