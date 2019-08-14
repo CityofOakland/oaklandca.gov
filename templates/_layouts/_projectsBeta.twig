@@ -95,7 +95,9 @@ function toggleLinks(toggleId) {
           </div>
           <p class="font-bold font-heading mt-4 border-dark-green border-b-2 inline-block"><a href="" id="project-documents-toggle" data-class="project-documents">Toggle all related documents</a></p>
         </section>
-        {% js %}toggleLinks('project-documents-toggle');{% endjs %}
+        {% if entry.projectDocuments | length > 1 %}
+          {% js %}toggleLinks('project-documents-toggle');{% endjs %}
+        {% endif %}
       {% endif %}
       {% if meetingsTrue %}
         <section>
@@ -115,7 +117,9 @@ function toggleLinks(toggleId) {
             {% endfor %}
           </div>
           <p class="font-bold font-heading mt-4 border-dark-green border-b-2 inline-block"><a href="" id="project-updates-toggle" data-class="project-updates">Toggle all project updates</a></p>
-          {% js %}toggleLinks('project-updates-toggle');{% endjs %}
+          {% if entry.projectUpdates | length > 1 %}
+            {% js %}toggleLinks('project-updates-toggle');{% endjs %}
+          {% endif %}
         </section>
       {% endif %}
       {% if mapTrue %}
@@ -157,7 +161,9 @@ function toggleLinks(toggleId) {
             </div>
           {% endfor %}
           <p class="font-bold font-heading mt-4 border-dark-green border-b-2 inline-block"><a href="" id="project-timeline-toggle" data-class="project-timeline">See all timeline</a></p>
-          {% js %}toggleLinks('project-timeline-toggle');{% endjs %}
+          {% if entry.timeline | length > 4 %}
+            {% js %}toggleLinks('project-timeline-toggle');{% endjs %}
+          {% endif %}
         </section>
       {% endif %}
       {% if relatedTrue %}
