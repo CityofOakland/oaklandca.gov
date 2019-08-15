@@ -355,6 +355,10 @@ body.open .page-holder {
   @apply font-bold border-b-2 border-white;
 }
 
+[data-toggle="off"] {
+  @apply hidden;
+}
+
 @responsive {
   .hidden-visually {
     position: absolute;

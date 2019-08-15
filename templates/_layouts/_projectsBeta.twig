@@ -11,8 +11,28 @@
 {% set timelineTrue = entry.timeline.exists() %}
 {% set relatedTrue = entry.relatedProjectEntries.exists() %}
 {% set fundingTrue = entry.fundingLogos.exists() %}
+{% set emailTrue = entry.emailAddress %}
+{% set socialMediaTrue = entry.facebook or entry.twitter or entry.medium or entry.instagram or entry.youtube %}
 
-{% set contactTrue = entry.emailAddress or entry.facebook or entry.twitter or entry.medium or entry.instagram or entry.youtube %}
+{% set contactTrue = emailTrue or socialMediaTrue %}
+{% js %}
+function toggleLinks(toggleId) {
+    var toggle = document.getElementById(toggleId);
+    toggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      var toggleClass = e.target.dataset.class;
+      var toggleLinks = document.querySelectorAll('.' + toggleClass + '[data-toggle]');
+      console.log(toggleLinks);
+      toggleLinks.forEach(function(e) {
+        if (e.getAttribute('data-toggle') == 'off') {
+          e.setAttribute('data-toggle', 'on');
+        } else {
+          e.setAttribute('data-toggle', 'off');
+        }
+      });
+    });
+}
+{% endjs %}
 
 {% block content %}
   {% include '_partials/_page-banners' with {
@@ -35,10 +55,10 @@
       'contact': contactTrue,
     }
   } %}
-  <div class="container md:flex">
-    <div class="md:w-2/3 md:mr-8">
+  <div class="container md:flex pt-0">
+    <div class="md:w-2/3 md:pr-8 md:mr-8">
       {% if entry.about %}
-        <section>
+        <section class="mb-16 border-b border-medium-gray pb-16">
           <a class="anchor-link" id="page-about"></a>
           <h2 class="text-2xl">About</h2>
           {{ entry.about }}
@@ -47,23 +67,36 @@
       {% if photosTrue %}
         {% do view.registerJsFile(craft.twigpack.getModuleUri("/js/photoswipe.js")) %}
         {% do view.registerJsFile(craft.twigpack.getModuleUri("/js/photoswipe-ui-default.js")) %}
-        <section>
+        <section class="mb-16 border-b border-medium-gray pb-16">
           <a class="anchor-link" id="page-photos"></a>
           <h2 class="text-2xl">Photos</h2>
-          {% for photo in entry.photoGallery.all() %}
-            <img src="{{ photo.url }}" height="{{ photo.height }}" width="{{ photo.width }}">
-          {% endfor %}
+          <div class="flex flex-row flex-wrap">
+            {% for photo in entry.photoGallery.all() %}
+              <figure class="w-1/3">
+                {% set transformedImage = craft.imager.transformImage(photo, { width: 400}, {
+                  ratio: 1/1, position: photo.getFocalPoint()
+                }, {
+                  fillTransforms: true
+                }) %}
+                <img src="{{ transformedImage.url }}">
+              </figure>
+            {% endfor %}
+          </div>
         </section>
       {% endif %}
       {% if documentsTrue %}
-        <section>
+        <section class="mb-16 border-b border-medium-gray pb-16">
           <a class="anchor-link" id="page-documents"></a>
           <h2 class="text-2xl">Documents</h2>
           <div class="o-6">
             {% for entry in entry.projectDocuments.all() %}
-              <a class="section-box" href="{{ entry.url }}">{{ entry.title }}</a>
+              <a class="section-box project-documents" {{ loop.first ? '' : 'data-toggle="off"' }} href="{{ entry.url }}">{{ entry.title }}</a>
             {% endfor %}
           </div>
+          {% if entry.projectDocuments | length > 1 %}
+            <p class="font-bold font-heading mt-4 border-dark-green border-b-2 inline-block"><a href="" id="project-documents-toggle" data-class="project-documents">Toggle all related documents</a></p>
+            {% js %}toggleLinks('project-documents-toggle');{% endjs %}
+          {% endif %}
         </section>
       {% endif %}
       {% if meetingsTrue %}
@@ -75,165 +108,83 @@
     </div>
     <div class="md:w-1/3">
       {% if updatesTrue %}
-        <section>
+        <section class="mb-16 border-b border-medium-gray pb-16">
           <a class="anchor-link" id="page-updates"></a>
           <h2 class="text-2xl">Updates</h2>
           <div class="o-6">
             {% for entry in entry.projectUpdates.all() %}
-              <a class="section-box" href="{{ entry.url }}">{{ entry.title }}</a>
+              <a class="section-box project-updates" {{ loop.first ? '' : 'data-toggle="off"' }} href="{{ entry.url }}">{{ entry.title }}</a>
             {% endfor %}
           </div>
+          {% if entry.projectUpdates | length > 1 %}
+           <p class="font-bold font-heading mt-4 border-dark-green border-b-2 inline-block"><a href="" id="project-updates-toggle" data-class="project-updates">Toggle all project updates</a></p>
+            {% js %}toggleLinks('project-updates-toggle');{% endjs %}
+          {% endif %}
         </section>
       {% endif %}
       {% if mapTrue %}
-        <section>
+        <section class="mb-16 border-b border-medium-gray pb-16">
           <a class="anchor-link" id="page-map"></a>
           <h2 class="text-2xl">Map</h2>
+
+          {% do view.registerJsFile("https://api.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.js") %}
+          {% do view.registerCssFile("https://api.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.css") %}
+
+          {% set maps = '' %}
+
+          {% for location in entry.projectLocations.all() %}
+            {% set last = not loop.last ? ', ' %}
+            {% set loc = location.address %}
+            {% set lat = loc.lat %}
+            {% set lon = loc.lng %}
+            {% set maps = maps ~ 'pin-m-marker+285A98(' ~ lon ~',' ~ lat ~ ')' ~ last | trim %}
+          {% endfor %}
+
+          <figure class="mt-4 w-full" id='map'>
+            <img src="https://api.mapbox.com/v4/mapbox.emerald/{{ maps }}/auto/600x400@2x.png?access_token=pk.eyJ1Ijoib2FrbGFuZGRpZ2l0YWwiLCJhIjoiY2pudXBsb2Q5MTcyejNwcGFiMXI3djlvMiJ9.eWDu3rz5mBaZvBzMQtZGlQ" alt="Map of Project: {{ entry.title }}">
+          </figure>
+
+        </section>
+      {% endif %}
+      {% if timelineTrue %}
+        <section class="mb-16 border-b border-medium-gray pb-16">
+          <a class="anchor-link" id="page-timeline"></a>
+          <h2 class="text-2xl">Timeline</h2>
+          {% for milestone in entry.timeline.all() %}
+            <div class="project-timeline pl-8 pb-4" {{ loop.index < 4 ? '' : 'data-toggle="off"' }}>
+              <p class="my-0 text-dark-gray">
+                {{ milestone.milestoneName }}
+                {% if milestone.milestoneDates %}
+                  <br><span class="text-sm text-black font-bold">{{ milestone.milestoneDates }}</span>
+                {% endif %}
+              </p>
+            </div>
+          {% endfor %}
+          {% if entry.timeline | length > 4 %}
+            <p class="font-bold font-heading mt-4 border-dark-green border-b-2 inline-block"><a href="" id="project-timeline-toggle" data-class="project-timeline">See all timeline</a></p>
+            {% js %}toggleLinks('project-timeline-toggle');{% endjs %}
+          {% endif %}
         </section>
       {% endif %}
       {% if relatedTrue %}
-        <section>
+        <section class="mb-16 border-b border-medium-gray pb-16">
           <a class="anchor-link" id="page-related"></a>
           <h2 class="text-2xl">Related pages</h2>
           <div class="o-6">
             {% for entry in entry.relatedProjectEntries.all() %}
-              <a class="section-box" href="{{ entry.url }}">{{ entry.title }}</a>
+              <a class="section-box project-related" {{ loop.first ? '' : 'data-toggle="off"' }} href="{{ entry.url }}">{{ entry.title }}</a>
             {% endfor %}
           </div>
+          {% if entry.relatedProjectEntries | length > 1 %}
+            <p class="font-bold font-heading mt-4 border-dark-green border-b-2 inline-block"><a href="" id="project-related-toggle" data-class="project-related">Toggle all related pages</a></p>
+            {% js %}toggleLinks('project-related-toggle');{% endjs %}          
+          {% endif %}
         </section>
       {% endif %}
       {% if fundingTrue %}
-        <section>
+        <section class="mb-16 border-b border-medium-gray pb-16">
           <a class="anchor-link" id="page-funding"></a>
           <h2 class="text-2xl">Funding partners</h2>
-        </section>
-      {% endif %}
-      {% if contactTrue %}
-        <section>
-          <a class="anchor-link" id="page-contact"></a>
-          <h2 class="text-2xl">Contact</h2>
-        </section>
-      {% endif %}
-      
-    </div>
-  </div>
-  {# <section>
-      <a class="anchor-link" id="page-timeline"></a>
-      <div class="container">
-        <div class="md:flex md:flex-row">
-          <div class="md:pr-4 md:w-1/2">
-            {% if entry.timeline.exists() %}
-              <h2 class="text-2xl">Timeline</h2>
-              <div class="timeline" data-vertical-start-position="right">
-                <div class="timeline__wrap">
-                  <div class="timeline__items">
-                    {% for block in entry.timeline.all() %}
-                      <div class="timeline__item">
-                        <div class="timeline__content">
-                          <h3 class="font-bold text-xl my-0">{{ block.milestoneName }}</h3>
-                          <p>{{ block.milestoneDates }}</p>
-                        </div>
-                      </div>
-                    {% endfor %}
-                  </div>
-                </div>
-              </div>
-            {% endif %}
-          </div>
-          <div class="md:pl-4 md:w-1/2">
-            {% if entry.projectMapImage.exists() %}
-              <h2 class="text-2xl">Project Location</h2>
-              <figure class="block w-full">
-                <img src="{{ entry.projectMapImage.one.getUrl('medium43') }}" class="block">
-              </figure>
-            {% endif %}
-          </div>
-        </div>
-      </div>
-    </section>
-    {% if entry.projectBeforePhoto.exists() and entry.projectAfterPhoto.exists() %}
-      <section>
-        <a class="anchor-link" id="page-project-photos"></a>
-        <div class="container">
-          <div class="md:flex md:flex-row">
-            <div class="md:pr-4 md:w-1/2">
-              <h3>Current</h3>
-              <figure class="block w-full">
-                <img src="{{ entry.projectBeforePhoto.one.getUrl('medium43') }}" class="block">
-              </figure>
-            </div>
-            <div class="md:pl-4 md:w-1/2">
-              <h3>Projected/After</h3>
-              <figure class="block w-full">
-                <img src="{{ entry.projectAfterPhoto.one.getUrl('medium43') }}" class="block">
-              </figure>
-            </div>
-          </div>
-          <div>
-            {% set attributes = {
-              class: 'btn px-8 py-2 mt-4 text-sm',
-              "data-custom": 'custom-data-attribute'
-            } %}
-            {{ entry.externalPhotoGallery.link(attributes) }}
-  
-          </div>
-        </div>
-      </section>
-    {% endif %}
-    <section>
-      <a class="anchor-link" id="page-about"></a>
-      <div class="container md:flex md:flex-row">
-        <div class="md:pr-4 md:w-2/3">
-          <h3 class-"mb-4">About</h3>
-          <div class="body-text">
-            {{ entry.about }}
-          </div>
-        </div>
-        <div class="md:pl-4 md:w-1/3">
-          <h3 class="mb-4">Project Updates</h3>
-          {% for entry in craft.entries.section('news').relatedTo(entry).all() %}
-            <a href="{{ entry.url }}" class="block mb-4 p-4 bg-celeste hover:bg-bright-green text-shark hover:text-white">
-              <h4 class="mt-0 mb-2 text-sm">{{ entry.title }}</h4>
-              <p class="my-0 text-xs">{{ entry.postDate | date() }}</p>
-            </a>
-          {% else %}
-            <h4 class="mt-0 mb-2 text-sm">No updates, yet! Check back soon!</h4>
-          {% endfor %}
-        </div>
-      </div>
-    </section>
-    <section>
-      <a class="anchor-link" id="page-resources"></a>
-      <div class="container md:flex md:flex-row">
-        {% set relProj = entry.relatedProjectEntries %}
-        {% set projDocs = entry.projectDocuments %}
-        {% if relProj | length %}
-          <div {% if projDocs %} class="md:pr-4 md:w-2/3" {% endif %}>
-            <h3>Related Pages</h3>
-            <div class="card-grid">
-              {% for entry in relProj.all() %}
-                {% include "_partials/_elements/_title-cards" with { cardColor: 'bg-cararra'} %}
-              {% endfor %}
-            </div>
-          </div>
-        {% endif %}
-        {% if projDocs | length %}
-          <div {% if relProj %} class="md:pl-4 md:w-1/3" {% endif %}>
-            <h3 class="mb-10">Project Documents</h3>
-            {% for entry in projDocs.all() %}
-              <a href="{{ entry.url }}" class="block mt-4 p-4 bg-cararra hover:bg-bright-green text-shark hover:text-white">
-                <h4 class="my-0 text-sm">{{ entry.title }}</h4>
-              </a>
-            {% endfor %}
-          </div>
-        {% endif %}
-      </div>
-    </section>
-    {% if entry.fundingLogos.exists() %}
-      <section>
-        <a class="anchor-link" id="page-funding"></a>
-        <div class="container">
-          <h3 class="mb-4 text-center">Project Funding</h3>
           <div class="flex flex-wrap items-center justify-center -mx-4">
             {% for logo in entry.fundingLogos.all() %}
               <figure class="w-full sm:w-1/2 md:w-1/3 lg:w-1/5 mb-4 md:mb-8 mx-4">
@@ -241,7 +192,23 @@
               </figure>
             {% endfor %}
           </div>
-        </div>
-      </section>
-    {% endif %} #}
+        </section>
+      {% endif %}
+      {% if contactTrue %}
+        <section>
+          <a class="anchor-link" id="page-contact"></a>
+          <h2 class="text-2xl">Contact</h2>
+          {% if emailTrue %}
+            <h3 class="text-xl mb-2">Email</h3>
+            <p class="mt-0">
+              <a href="mailto:{{ entry.emailAddress }}">{{ entry.emailAddress }}</a>
+            </p>
+          {% endif %}
+          {% if socialMediaTrue %}
+            {% include "_partials/_elements/_social-media" %}
+          {% endif %}
+        </section>
+      {% endif %}
+    </div>
+  </div>
 {% endblock %}
