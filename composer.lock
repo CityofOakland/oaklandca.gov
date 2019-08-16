@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "544548ee275536527b0a09787898b037",
+    "content-hash": "a48335d04f3ad910008872b2806ed7b4",
     "packages": [
         {
             "name": "aelvan/imager",
@@ -177,6 +177,64 @@
                 "search"
             ],
             "time": "2019-07-18T18:05:23+00:00"
+        },
+        {
+            "name": "angellco/spoon",
+            "version": "3.3.7",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/angell-co/Spoon/zipball/1ca40c79d70426d3df6acd78de6cc2d6530f19ad",
+                "reference": "1ca40c79d70426d3df6acd78de6cc2d6530f19ad",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.1.0"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Spoon",
+                "handle": "spoon",
+                "hasCpSettings": false,
+                "hasCpSection": true,
+                "changelogUrl": "https://raw.githubusercontent.com/angell-co/spoon/master/CHANGELOG.md",
+                "components": {
+                    "fields": "angellco\\spoon\\services\\Fields",
+                    "blockTypes": "angellco\\spoon\\services\\BlockTypes",
+                    "loader": "angellco\\spoon\\services\\Loader"
+                },
+                "class": "angellco\\spoon\\Spoon",
+                "branch-alias": {
+                    "dev-master": "3.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "angellco\\spoon\\": "src/"
+                }
+            },
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Angell & Co",
+                    "homepage": "https://angell.io"
+                }
+            ],
+            "description": "A plugin for Craft to enhance your Matrix fields with groups, tabs and more!",
+            "keywords": [
+                "cms",
+                "craft",
+                "craft-plugin",
+                "craftcms",
+                "matrix",
+                "spoon"
+            ],
+            "support": {
+                "docs": "https://github.com/angell-co/spoon/blob/master/README.md",
+                "issues": "https://github.com/angell-co/spoon/issues"
+            },
+            "time": "2019-04-25T12:07:09+00:00"
         },
         {
             "name": "aws/aws-sdk-php",
@@ -5508,6 +5566,58 @@
             "time": "2019-06-06T09:10:47+00:00"
         },
         {
+            "name": "supercool/tablemaker",
+            "version": "2.0.1",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/supercool/tablemaker/zipball/4828fbda2df619a03e232b2c302637b5dcb49f6b",
+                "reference": "4828fbda2df619a03e232b2c302637b5dcb49f6b",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0-RC1"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Table Maker",
+                "handle": "tablemaker",
+                "schemaVersion": "1.0.0",
+                "hasCpSettings": false,
+                "hasCpSection": false,
+                "changelogUrl": "https://raw.githubusercontent.com/supercool/tablemaker/master/CHANGELOG.md",
+                "class": "supercool\\tablemaker\\TableMaker"
+            },
+            "autoload": {
+                "psr-4": {
+                    "supercool\\tablemaker\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Supercool Ltd",
+                    "homepage": "http://www.supercooldesign.co.uk/"
+                }
+            ],
+            "description": "A user-definable table field type for Craft CMS",
+            "keywords": [
+                "cms",
+                "craft",
+                "craft-plugin",
+                "craftcms",
+                "craftcms3",
+                "supercool",
+                "table maker"
+            ],
+            "support": {
+                "docs": "https://github.com/supercool/tablemaker/blob/master/README.md",
+                "issues": "https://github.com/supercool/tablemaker/issues"
+            },
+            "time": "2018-07-06T16:49:13+00:00"
+        },
+        {
             "name": "swiftmailer/swiftmailer",
             "version": "v6.2.1",
             "dist": {
@@ -6680,6 +6790,58 @@
                 "craftcms"
             ],
             "time": "2018-07-10T03:53:00+00:00"
+        },
+        {
+            "name": "verbb/super-table",
+            "version": "2.2.1",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/verbb/super-table/zipball/64376fd147dbced22c457561fc4bd034074a1ead",
+                "reference": "64376fd147dbced22c457561fc4bd034074a1ead",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.2.0"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Super Table",
+                "handle": "super-table",
+                "description": "Super-charge your Craft workflow with Super Table. Use it to group fields together or build complex Matrix-in-Matrix solutions.",
+                "documentationUrl": "https://github.com/verbb/super-table",
+                "changelogUrl": "https://raw.githubusercontent.com/verbb/super-table/craft-3/CHANGELOG.md",
+                "class": "verbb\\supertable\\SuperTable"
+            },
+            "autoload": {
+                "psr-4": {
+                    "verbb\\supertable\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Verbb",
+                    "homepage": "https://verbb.io"
+                }
+            ],
+            "description": "Super-charge your Craft workflow with Super Table. Use it to group fields together or build complex Matrix-in-Matrix solutions.",
+            "keywords": [
+                "cms",
+                "craft",
+                "craft-plugin",
+                "craftcms",
+                "super table"
+            ],
+            "support": {
+                "email": "support@verbb.io",
+                "issues": "https://github.com/verbb/super-table/issues?state=open",
+                "source": "https://github.com/verbb/super-table",
+                "docs": "https://github.com/verbb/super-table",
+                "rss": "https://github.com/verbb/super-table/commits/v2.atom"
+            },
+            "time": "2019-07-14T12:17:02+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
