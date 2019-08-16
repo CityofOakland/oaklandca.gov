@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>All entries owned by {{ currentUser.username }}</title>
-    <link rel="stylesheet" href="/assets/css/site.combined.min.css">
+    {{ craft.twigpack.includeCssModule("/css/app.css") }}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
   </head>
