@@ -8,6 +8,11 @@
   overflow: hidden;
 }
 
+.o-override > * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 body {
   @apply font-body text-lg leading-normal text-dark-gray;
 }
@@ -296,8 +301,9 @@ body.open #menu {
   background-image: url("/assets/img/icon-down-arrow.svg");
   background-repeat: no-repeat;
   background-position: bottom center;
-  @apply pb-10 px-24 mb-4 relative;
+  @apply px-24 mb-4 relative;
 }
+
 @media (min-width: 768px) {
   .how-it-works-block {
     background-image: none;

@@ -74,11 +74,11 @@
   } %}
   <section class="bg-bright-gray">
     <div class="container md:flex">
-      <div class="md:w-1/2 md:pr-4">
+      <div class="md:w-1/2 md:pr-4 o-override o-4">
         <h2 class="text-2xl">Most Common Requests</h2>
         <ul class="font-bold leading-loose">
           <li>
-            <select id="illegalDumping" class="js-select-nav inline bg-transparent appearance-none rounded-none font-body font-bold text-dark-green">
+            <select id="illegalDumping" class="cursor-pointer js-select-nav inline bg-transparent appearance-none rounded-none font-body font-bold text-dark-green">
               <option value="">Illegal Dumping</option>
               {% for item in dumping %}
                 {{ macro.seeClickFixLink(item.title, item.id) }}
@@ -87,7 +87,7 @@
           </li>
           <li><a href="https://seeclickfix.com/web_portal/wTMihVsatbiDau5Fw66m6HFD/report/category/20961/location">Potholes</a></li>
           <li>
-            <select id="graffiti" class="js-select-nav inline bg-transparent appearance-none rounded-none font-body font-bold text-dark-green">
+            <select id="graffiti" class="cursor-pointer js-select-nav inline bg-transparent appearance-none rounded-none font-body font-bold text-dark-green">
               <option value="">Graffiti</option>
               {% for item in graffiti %}
                 {{ macro.seeClickFixLink(item.title, item.id) }}
@@ -95,7 +95,7 @@
             </select>
           </li>
           <li>
-            <select id="buildingMaintenance" class="js-select-nav inline bg-transparent appearance-none rounded-none font-body font-bold text-dark-green">
+            <select id="buildingMaintenance" class="cursor-pointer js-select-nav inline bg-transparent appearance-none rounded-none font-body font-bold text-dark-green">
               <option value="" class="px-0">City Building Maintenance</option>
               {% for item in building %}
                 {{ macro.seeClickFixLink(item.title, item.id) }}
@@ -105,7 +105,7 @@
           <li><a href="https://seeclickfix.com/web_portal/wTMihVsatbiDau5Fw66m6HFD/report/category/23975/location">Abandoned Vehicles</a></li>
         </ul>
       </div>
-      <div class="md:w-1/2 md:pl-4">
+      <div class="md:w-1/2 md:pl-4 o-override o-4">
         <h2 class="text-2xl">Urgent Infrastructure Issues</h2>
         <ul class="font-bold leading-loose">
           <li>Downed sign</li>
@@ -118,9 +118,9 @@
     </div>
   </section>
   <section class="bg-white">
-    <div class="container">
+    <div class="container o-override o-12">
       <h2 class="text-2xl">How It Works</h2>
-      <ol class="md:flex flex-row text-center md:mt-16">
+      <ol class="md:flex flex-row text-center">
         <li class="how-it-works-block">
           <figure class="flex items-center justify-center h-12">
             <img src="/assets/img/icon-report.png" alt="An icon of an inbox with an arrow pointing into it." class="h-auto w-12">
@@ -153,7 +153,7 @@
     </div>
   </section>
   <section class="bg-bright-gray">
-    <div class="container">
+    <div class="container o-override o-4">
       <h2 class="text-2xl">Get the OAK 311 app on:</h2>
         <div class="card-grid">
           <a href="https://play.google.com/store/apps/details?id=com.seeclickfix.oak311.app" class="border-l-4 border-bright-green card-grid-button py-5 text-dark-green hover:text-white hover:bg-deep-green shadow-btn">Google Play</a>
@@ -162,7 +162,7 @@
     </div>
   </section>
   <section class="bg-white">
-    <div class="container">
+    <div class="container o-override o-4">
       <h2 class="text-2xl">View OAK 311 Service Request Information</h2>
         <div class="card-grid">
           <a href="https://app.powerbigov.us/view?r=eyJrIjoiODE1NDg4MGYtMmJjYy00MTc1LWIyMmEtNzhkNDNlMjM0MDZlIiwidCI6Ijk4OWEyMTgwLTZmYmMtNDdmMS04MDMyLTFhOWVlOTY5YzU4ZCJ9" class="border-l-4 border-bright-green card-grid-button py-5 text-dark-green hover:text-white hover:bg-deep-green shadow-btn">Interactive 311 Chart</a>
