@@ -65,20 +65,23 @@ function toggleLinks(toggleId) {
         </section>
       {% endif %}
       {% if photosTrue %}
-        {% do view.registerJsFile(craft.twigpack.getModuleUri("/js/photoswipe.js")) %}
-        {% do view.registerJsFile(craft.twigpack.getModuleUri("/js/photoswipe-ui-default.js")) %}
+        {% do view.registerJsFile(craft.twigpack.getModuleUri("/js/lightgallery.js")) %}
+        {% do view.registerCssFile(craft.twigpack.getModuleUri("/css/lightgallery.css")) %}
+        {% js %}lightGallery(document.querySelector('#js-photoGallery'));{% endjs %}
         <section class="mb-16 border-b border-medium-gray pb-16">
           <a class="anchor-link" id="page-photos"></a>
           <h2 class="text-2xl">Photos</h2>
-          <div class="flex flex-row flex-wrap">
+          <div class="flex flex-row flex-wrap" id="js-photoGallery">
             {% for photo in entry.photoGallery.all() %}
-              <figure class="w-1/3">
-                {% set transformedImage = craft.imager.transformImage(photo, { width: 400}, {
-                  ratio: 1/1, position: photo.getFocalPoint()
-                }, {
-                  fillTransforms: true
-                }) %}
-                <img src="{{ transformedImage.url }}">
+              <figure class="w-1/3" data-src="{{ photo.url }}" data-sub-html="<p class='font-bold'>{{ photo.title }}</p><p>{{ photo.altText }}</p>">
+                <a href="{{ photo.url }}">
+                  {% set transformedImage = craft.imager.transformImage(photo, { width: 400}, {
+                    ratio: 1/1, position: photo.getFocalPoint()
+                  }, {
+                    fillTransforms: true
+                  }) %}
+                  <img src="{{ transformedImage.url }}">
+                </a>
               </figure>
             {% endfor %}
           </div>
