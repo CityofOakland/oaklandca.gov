@@ -12,7 +12,9 @@
   <section class="bg-white relative z-0">
     <div class="container">
       {% include '_partials/_elements/_ctas' %}
-      {% include '_partials/_elements/_transaction-body' %}
+      <div class="o-6">
+        {% include '_partials/_elements/_transaction-body' %}
+      </div>
       {% if entry.embeddedContent.exists() %}
         {{ entry.embeddedContent.one.codeInsertion | raw }}
       {% endif %}

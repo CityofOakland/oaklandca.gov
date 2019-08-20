@@ -35,7 +35,8 @@
     "aelvan/imager": "v2.1.10",
     "supercool/tablemaker": "2.0.1",
     "verbb/super-table": "2.2.1",
-    "angellco/spoon": "3.3.7"
+    "angellco/spoon": "3.3.7",
+    "verbb/smith": "1.0.0"
   },
   "autoload": {
     "psr-4": {

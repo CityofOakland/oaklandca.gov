@@ -10,7 +10,7 @@ use nystudio107\imageoptimize\imagetransforms\ImageTransform;
 function enumEntries($section, $element) {
   $sectionArray = [];
   if (! empty($element->$section)) {
-    foreach($element->$section->all() as $value) {
+    foreach($element->$section as $value) {
       $sectionArray[] = $value->title;
     }
   }
@@ -65,7 +65,7 @@ function sectionPriority($element) {
 }
 
 function searchFilter($element) {
-  $handle = ! empty($element->section->all()) ? $element->section->handle : $element->calendar->handle;
+  $handle = ! empty($element->section) ? $element->section->handle : $element->calendar->handle;
   switch ($handle) {
     case 'news':
     case 'processes':
