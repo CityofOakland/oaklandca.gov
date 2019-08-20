@@ -19,7 +19,9 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 const imageminMozjpeg = require("imagemin-mozjpeg");
 
 mix
+  .setPublicPath("./web/assets/")
   .postCss("./src/css/app.css", "css/app.css")
+  .styles(["./src/css/lightgallery.css", "./src/css/lg-transitions.css", "./src/css/lg-fb-comment-box.css"], "./web/assets/css/lightgallery.css")
   .options({
     postCss: [
       tailwindcss(),
@@ -35,8 +37,8 @@ mix
   .js("./src/js/app.js", "js/app.js")
   .js("./src/js/algoliafilter.js", "js/algoliafilter.js")
   .js("./src/js/search.js", "js/search.js")
-  .js("./src/js/photoswipe.js", "js/photoswipe.js")
-  .js("./src/js/photoswipe-ui-default.js", "js/photoswipe-ui-default.js")
+  .js("./src/js/lightgallery.js", "js/lightgallery.js")
+  .sourceMaps()
   .extract()
   .banner({
     banner: (function () {
@@ -58,7 +60,6 @@ mix
     raw: true,
     entryOnly: true,
   })
-  .setPublicPath("./web/assets/")
   .browserSync({
     proxy: "http://oakland.test",
     ghostMode: false,
@@ -95,22 +96,25 @@ if (mix.inProduction()) {
         ]
       })
     ],
-  }).criticalCss({
-    enabled: mix.inProduction(),
-    paths: {
-      base: "http://oakland.test/",
-      templates: "./templates/"
-    },
-    urls: [
-      {
-        url: "/",
-        template: "index"
-      }
-    ],
-    options: {
-      minify: true,
-    },
-  }).purgeCss({
+  })
+  .copyDirectory('src/fonts', 'web/assets/fonts')
+  // .criticalCss({
+  //   enabled: mix.inProduction(),
+  //   paths: {
+  //     base: "http://oakland.test/",
+  //     templates: "./templates/"
+  //   },
+  //   urls: [
+  //     {
+  //       url: "/",
+  //       template: "index"
+  //     }
+  //   ],
+  //   options: {
+  //     minify: true,
+  //   },
+  // })
+  .purgeCss({
     enabled: true,
     globs: [
       path.join(__dirname, "templates/*.twig"),
