@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "a48335d04f3ad910008872b2806ed7b4",
+    "content-hash": "34d360f723717308b294d5529d943daa",
     "packages": [
         {
             "name": "aelvan/imager",
@@ -492,6 +492,61 @@
                 "markdown-extra"
             ],
             "time": "2018-03-26T11:24:36+00:00"
+        },
+        {
+            "name": "charliedev/blockonomicon",
+            "version": "1.1.5",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/charliedevelopment/craft3-blockonomicon/zipball/b9c0976b91febb5cf96f9aed6628228275490cff",
+                "reference": "b9c0976b91febb5cf96f9aed6628228275490cff",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0-RC6"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Blockonomicon",
+                "handle": "blockonomicon",
+                "changelogUrl": "https://raw.githubusercontent.com/charliedevelopment/craft3-blockonomicon/master/CHANGELOG.md",
+                "downloadUrl": "https://github.com/charliedevelopment/craft3-blockonomicon/archive/master.zip",
+                "schemaVersion": "1.0.0",
+                "hasCpSettings": true,
+                "hasCpSection": true,
+                "class": "charliedev\\blockonomicon\\Blockonomicon"
+            },
+            "autoload": {
+                "psr-4": {
+                    "charliedev\\blockonomicon\\": "src/"
+                }
+            },
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Charlie Development",
+                    "email": "support@charliedev.com",
+                    "homepage": "http://charliedev.com/"
+                }
+            ],
+            "description": "Export and import entire matrix blocks and manage/render their views.",
+            "keywords": [
+                "cms",
+                "craft",
+                "craftcms",
+                "export",
+                "import",
+                "matrix",
+                "templating"
+            ],
+            "support": {
+                "issues": "https://github.com/charliedevelopment/craft3-blockonomicon/issues?state=open",
+                "source": "https://github.com/charliedevelopment/craft3-blockonomicon",
+                "email": "support@charliedev.com"
+            },
+            "time": "2019-02-27T00:02:30+00:00"
         },
         {
             "name": "composer/ca-bundle",
@@ -6790,6 +6845,56 @@
                 "craftcms"
             ],
             "time": "2018-07-10T03:53:00+00:00"
+        },
+        {
+            "name": "verbb/smith",
+            "version": "1.0.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/verbb/smith/zipball/d2c10ab00b88df5dabf89b71b88caa3fc545a414",
+                "reference": "d2c10ab00b88df5dabf89b71b88caa3fc545a414",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Smith",
+                "handle": "smith",
+                "changelogUrl": "https://raw.githubusercontent.com/verbb/smith/craft-3/CHANGELOG.md",
+                "class": "verbb\\smith\\Smith"
+            },
+            "autoload": {
+                "psr-4": {
+                    "verbb\\smith\\": "src/"
+                }
+            },
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Verbb",
+                    "homepage": "https://verbb.io"
+                }
+            ],
+            "description": "Add copy, paste and clone functionality to Matrix blocks.",
+            "keywords": [
+                "cms",
+                "craft",
+                "craft-plugin",
+                "craftcms",
+                "smith"
+            ],
+            "support": {
+                "email": "support@verbb.io",
+                "issues": "https://github.com/verbb/smith/issues?state=open",
+                "source": "https://github.com/verbb/smith",
+                "docs": "https://github.com/verbb/smith",
+                "rss": "https://github.com/verbb/smith/commits/v2.atom"
+            },
+            "time": "2019-04-14T09:09:32+00:00"
         },
         {
             "name": "verbb/super-table",

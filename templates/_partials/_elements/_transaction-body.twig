@@ -1,6 +1,54 @@
+{% set heading = heading ?? 'h2' %}
+{% set subheading = subheading ?? 'h3' %}
+{% set headingClass = headingClass ?? 'text-2xl' %}
+{% set subheadingClass = subheadingClass ?? 'text-xl' %}
+
+{# 
+  Table builder macro which takes the matrix block element, as well as the number of columns.
+  ===================================
+  NOTE: Each row heading element must be named as such: `column${n}Heading`, where `${n}` is the column number.
+  ===================================
+  NOTE: Each table body column element must be named as such: `column${n}Cell`, where `${n}` is the column number.
+  ===================================
+  Further additions (like column widths and optional classes for styling) should follow a similar naming convention.
+#}
+{% macro tableBuilder(object, columns) %}
+  <table class="w-full">
+    <thead class="bg-dark-green text-white font-bold">
+      <tr>
+        {% for col in 1..columns %}
+          {% set colAttrib = 'column' ~ col ~ 'Heading' %}
+          <th class="border-dark-green">{{ attribute(object.tableHeadings, colAttrib) }}</th>
+        {% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in object.table.all() %}
+        <tr>
+          {% for col in 1..columns %}
+            {% set colAttrib = 'column' ~ col ~ 'Cell' %}
+            <td class="border-dark-green">{{ attribute(row, colAttrib) }}</td>
+          {% endfor %}
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endmacro %}
+{% import _self as macro %}
+
 {% for block in entry.transactionBody.all() %}
   {% switch block.type %}
+    {% case "heading" %}
+      <{{ heading }} class="{{ headingClass }}">{{ block.text }}</{{ heading }}>
+    {% case "subheading" %}
+      <{{ subheading }} class="{{ subheadingClass }}">{{ block.text }}</{{ subheading }}>
     {% case "text" %}
-    {{ block.text }}
+      {{ block.text }}
+    {% case "table2Columns" %}
+      {{ macro.tableBuilder(block, 2)}}
+    {% case "table3Columns" %}
+      {{ macro.tableBuilder(block, 3)}}
+    {% case "table4Columns" %}
+      {{ macro.tableBuilder(block, 4)}}
   {% endswitch %}
 {% endfor %}
