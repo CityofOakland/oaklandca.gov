@@ -11,7 +11,6 @@ module.exports = {
         "alert-red": "#f31431",
         "warning-yellow": "#ffae42",
         "camouflage-green": "#757773",
-        parsley: "#1e4a18",
         "curious-blue": "#398cd3",
         astronaut: "#255375",
 
@@ -279,6 +278,6 @@ module.exports = {
   },
   plugins: [
     require('tailwindcss-multi-column')(), // no options to configure
-    require('tailwindcss-owl')
+    require('tailwindcss-owl')()
   ],
 };
