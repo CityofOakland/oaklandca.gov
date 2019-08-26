@@ -1,7 +1,12 @@
 {% set bannerImage = bannerImage ?? entry.banner ?? '' %}
-{% set bannerTitle = bannerTitle ?? entry.title ?? '' %}
 {% set leadIn = leadIn ?? entry.leadIn ?? '' %}
 {% set ctaButton = ctaButton ?? entry.ctaButton ?? '' %}
+
+{% if bannerTitle is defined %}
+  {% do seomatic.meta.seoTitle(bannerTitle) %}
+{% else %}
+  {% set bannerTitle = entry.title ?? '' %}
+{% endif %}
 
 {# BANNER IMAGE #}
 {% if bannerImage | length %}
