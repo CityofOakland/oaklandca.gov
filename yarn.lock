@@ -9996,10 +9996,9 @@ tailwindcss-multi-column@^1.0.1:
     flat "^4.1.0"
     lodash "^4.17.11"
 
-tailwindcss-owl@^2.0.0:
+"tailwindcss-owl@https://github.com/onebrightlight/tailwindcss-owl/#variants":
   version "2.0.0"
-  resolved "https://registry.yarnpkg.com/tailwindcss-owl/-/tailwindcss-owl-2.0.0.tgz#edcf192908967db6c49649820c85045ba52dac74"
-  integrity sha512-Lzotqn6hn8Q8n1mZC5XXUlvmZqogDk+U9YUoL39sweICtEA3FrTxhBhnUem9JiskYtqEPciDC2GaTyVvBGGkuA==
+  resolved "https://github.com/onebrightlight/tailwindcss-owl/#9726729c38579400d462ce8e1eeaa4c5a4cedbee"
 
 tailwindcss@^1.0:
   version "1.0.4"
