@@ -11,10 +11,15 @@
 
 {% do view.registerJsFile(craft.twigpack.getModuleUri("/js/algoliafilter.js")) %}
 
+{% if section is defined %}
+  {% set relation = craft.entries.section(section).slug(slug).one() %}
+  {% set bannerTitleSuffix = " for " ~ relation.title %}
+{% endif %}
+
 {% block content %}
   {% block pageBanner %}
     {% include '_partials/_page-banners' with {
-      bannerTitle: entry.title | replace(' Index', ''),
+      bannerTitle: entry.title | replace(' Index', '') ~ bannerTitleSuffix ?? '',
     } %}
   {% endblock %}
   <div class="bg-cararra" id="search-bar-container">
