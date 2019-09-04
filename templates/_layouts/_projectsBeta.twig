@@ -13,10 +13,10 @@
 {% set fundingTrue = entry.fundingLogos.exists() %}
 {% set emailTrue = entry.emailAddress %}
 {% set socialMediaTrue = entry.facebook or entry.twitter or entry.medium or entry.instagram or entry.youtube %}
-
 {% set contactTrue = emailTrue or socialMediaTrue %}
+
 {% js %}
-function toggleLinks(toggleId) {
+  function toggleLinks(toggleId) {
     var toggle = document.getElementById(toggleId);
     toggle.addEventListener('click', function(e) {
       e.preventDefault();
@@ -31,10 +31,32 @@ function toggleLinks(toggleId) {
         }
       });
     });
-}
+  }
 {% endjs %}
 
 {% block content %}
+  {%- set headerSubContent -%}
+    <div class="o-4 mt-4 md:mt-0">
+    {% if entry.projectStatus %}
+      <div class="text-sm">
+        <strong>Status:</strong><br>
+        {{ entry.projectStatus.label }}
+      </div>
+    {% endif %}
+    {% if entry.projectStartDate %}
+      <div class="text-sm">
+        <strong>Start date:</strong><br>
+        {{ entry.projectStartDate | date() }}
+      </div>
+    {% endif %}
+    {% if entry.projectEndDate %}
+      <div class="text-sm">
+        <strong>Completion date:</strong><br>
+        {{ entry.projectEndDate | date() }}
+      </div>
+    {% endif %}
+    </div>
+  {%- endset -%}
   {% include '_partials/_page-banners' with {
     breadCrumbLinks: [
       {
@@ -53,7 +75,8 @@ function toggleLinks(toggleId) {
       'relatedpages': relatedTrue,
       'funding': fundingTrue,
       'contact': contactTrue,
-    }
+    },
+    headerSubContent: headerSubContent
   } %}
   <div class="container md:flex pt-0">
     <div class="md:w-2/3 md:pr-8 md:mr-8">
@@ -149,20 +172,45 @@ function toggleLinks(toggleId) {
 
         </section>
       {% endif %}
+      {% css %}
+        .milestone-name {
+          position: relative;
+        }
+
+        .milestone-name:before {
+          position: absolute;
+          width: 20px;
+          height: 20px;
+          border-width: 2px;
+          background-color: #f1f4f4;
+          border-color: #8c9d96;
+          border-radius: 50%;
+          content: '';
+          left: calc(-2rem - 11px);
+          top: 0;
+        }
+
+        .project-timeline > project-timeline-item:last-of-type {
+
+        }
+      {% endcss %}
+      
       {% if timelineTrue %}
         <section class="mb-16 border-b border-medium-gray pb-16">
           <a class="anchor-link" id="page-timeline"></a>
           <h2 class="text-2xl">Timeline</h2>
-          {% for milestone in entry.timeline.all() %}
-            <div class="project-timeline pl-8 pb-4" {{ loop.index < 4 ? '' : 'data-toggle="off"' }}>
-              <p class="my-0 text-dark-gray">
-                {{ milestone.milestoneName }}
-                {% if milestone.milestoneDates %}
-                  <br><span class="text-sm text-black font-bold">{{ milestone.milestoneDates }}</span>
-                {% endif %}
-              </p>
-            </div>
-          {% endfor %}
+          <div class="project-timeline">
+            {% for milestone in entry.timeline.all() %}
+              <div class="project-timeline-item pl-8 border-l-2 {% if not loop.last %}pb-4 border-medium-gray{% else %}border-white{% endif %}" {{ loop.index < 4 ? '' : 'data-toggle="off"' }}>
+                <div class="text-dark-gray">
+                  <div class="milestone-name leading-none">{{ milestone.milestoneName }}</div>
+                  {% if milestone.milestoneDates %}
+                    <span class="text-sm text-black font-bold">{{ milestone.milestoneDates }}</span>
+                  {% endif %}
+                </div>
+              </div>
+            {% endfor %}
+          </div>
           {% if entry.timeline | length > 4 %}
             <p class="font-bold font-heading mt-4 border-dark-green border-b-2 inline-block"><a href="" id="project-timeline-toggle" data-class="project-timeline">See all timeline</a></p>
             {% js %}toggleLinks('project-timeline-toggle');{% endjs %}
