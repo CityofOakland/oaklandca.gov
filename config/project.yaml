@@ -32,7 +32,7 @@ categoryGroups:
         hasUrls: false
         uriFormat: null
         template: null
-dateModified: 1567623296
+dateModified: 1567706851
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -305,7 +305,7 @@ fields:
       limit: '1'
       selectionLabel: 'Add a portrait'
       localizeRelations: false
-      validateRelatedElements: ''
+      validateRelatedElements: '1'
     contentColumnType: string
     fieldGroup: c964d82c-a4e7-4ec4-ad42-7c3e843193c0
   1f6c0b74-c954-4e91-a513-8cd9aad771c4:
@@ -951,7 +951,7 @@ fields:
       limit: '1'
       selectionLabel: 'Add an image'
       localizeRelations: false
-      validateRelatedElements: ''
+      validateRelatedElements: '1'
     contentColumnType: string
     fieldGroup: c964d82c-a4e7-4ec4-ad42-7c3e843193c0
   736bfdbe-8ec1-4b3d-bd17-6dc825c56855:
@@ -2093,7 +2093,7 @@ fields:
       limit: '1'
       selectionLabel: 'Add an image'
       localizeRelations: false
-      validateRelatedElements: ''
+      validateRelatedElements: '1'
     contentColumnType: string
     fieldGroup: c964d82c-a4e7-4ec4-ad42-7c3e843193c0
   d9a54ffb-26e9-4883-83bb-8e41650c8927:
@@ -2421,7 +2421,7 @@ fields:
       limit: '1'
       selectionLabel: 'Add a banner image'
       localizeRelations: false
-      validateRelatedElements: ''
+      validateRelatedElements: '1'
     contentColumnType: string
     fieldGroup: c964d82c-a4e7-4ec4-ad42-7c3e843193c0
   f73a45bb-5e6b-4a27-8f19-edd0e6bbc507:
@@ -7972,7 +7972,7 @@ volumes:
             sortOrder: 1
             fields:
               fff5cf49-87e6-4751-9032-b4ca8136e237:
-                required: false
+                required: true
                 sortOrder: 1
   58c3bf22-aa23-441f-bd65-acf677638ae6:
     name: Data
@@ -8061,16 +8061,29 @@ volumes:
     hasUrls: true
     url: 'https://cao-94612.s3.us-west-2.amazonaws.com'
     settings:
-      autoFocalPoint: ''
-      bucket: cao-94612
-      cfDistributionId: ''
-      expires: ''
-      keyId: $S3_API_KEY
-      region: us-west-2
-      secret: $S3_SECRET
-      storageClass: ''
       subfolder: projects
+      keyId: $S3_API_KEY
+      secret: $S3_SECRET
+      bucketSelectionMode: choose
+      bucket: cao-94612
+      region: us-west-2
+      expires: ''
+      makeUploadsPublic: '1'
+      storageClass: ''
+      cfDistributionId: ''
+      cfPrefix: ''
+      autoFocalPoint: ''
     sortOrder: 0
+    fieldLayouts:
+      db8d627c-2a6c-45d7-bed9-1e889f21cb61:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              fff5cf49-87e6-4751-9032-b4ca8136e237:
+                required: true
+                sortOrder: 1
   c27974b4-89ad-4504-abb1-e76e44ff4b5d:
     name: Events
     handle: events
