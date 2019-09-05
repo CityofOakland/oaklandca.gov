@@ -22,7 +22,6 @@
       e.preventDefault();
       var toggleClass = e.target.dataset.class;
       var toggleLinks = document.querySelectorAll('.' + toggleClass + '[data-toggle]');
-      console.log(toggleLinks);
       toggleLinks.forEach(function(e) {
         if (e.getAttribute('data-toggle') == 'off') {
           e.setAttribute('data-toggle', 'on');
@@ -212,7 +211,7 @@
             {% endfor %}
           </div>
           {% if entry.timeline | length > 4 %}
-            <p class="font-bold font-heading mt-4 border-dark-green border-b-2 inline-block"><a href="" id="project-timeline-toggle" data-class="project-timeline">See all timeline</a></p>
+            <p class="font-bold font-heading mt-4 border-dark-green border-b-2 inline-block"><a href="" id="project-timeline-toggle" data-class="project-timeline-item">See all timeline</a></p>
             {% js %}toggleLinks('project-timeline-toggle');{% endjs %}
           {% endif %}
         </section>
