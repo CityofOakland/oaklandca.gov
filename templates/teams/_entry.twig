@@ -24,7 +24,7 @@
             {% set organization = entry.staffImportOrganization ?? '' %}
             {% set email = entry.emailAddress ??? entry.staffImportEmail %}
             {% set phone = entry.phoneNumber ??? entry.staffImportPhoneNumber %}
-            {% set extraContent %}
+            {%- set extraContent -%}
               {% if department | length %}
                 {{ department }}
               {% endif %}
@@ -40,7 +40,7 @@
                 –
                 {{ entry.termEnd | date() }}
               {% endif %}
-            {% endset %}
+            {%- endset -%}
 
             {% include '_partials/_elements/_profile-cards' with {
               photo: entry.portrait.one,
