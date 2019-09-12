@@ -1,6 +1,6 @@
 {
   "require": {
-    "craftcms/cms": "dev-develop#cd3c3e5c48aecdb22c1f373184e88785cc1a5dc6 as 3.3.0.1",
+    "craftcms/cms": "3.3.3",
     "vlucas/phpdotenv": "^2.4.0",
     "nystudio107/craft-typogrify": "1.1.18",
     "solspace/craft3-calendar": "2.0.24",
@@ -31,10 +31,10 @@
     "craftcms/feed-me": "4.1.2",
     "mmikkel/incognito-field": "1.1.1.1",
     "born05/craft-assetusage": "2.0.1",
-    "rias/craft-scout": "1.3.1",
+    "rias/craft-scout": "1.3.2",
     "aelvan/imager": "v2.1.10",
     "supercool/tablemaker": "2.0.1",
-    "verbb/super-table": "2.2.1",
+    "verbb/super-table": "2.3.0",
     "angellco/spoon": "3.3.7",
     "verbb/smith": "1.0.0"
   },
