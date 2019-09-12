@@ -1,12 +1,12 @@
 {% if craft.app.request.segments() %}
-  {% set searchNavButton %}
+  {%- set searchNavButton -%}
     <li class="ml-4">
       <a class="block text-white hover:text-light-green hover:underline fill-current trans trans-fast" href="/search" id="search-menu-toggle" name="Search Toggle">
         {{ craft.inlin.er('/assets/img/icon-magnifier.svg') | replace('<svg ', '<svg class="h-4" ') | raw }}
         <span class="hidden-visually">Search Toggle</span>
       </a>
     </li>
-  {% endset %}
+  {%- endset -%}
 {% endif %}
 {% set mainNav = craft.entries.section('navigation').slug('main-nav').one() %}
 

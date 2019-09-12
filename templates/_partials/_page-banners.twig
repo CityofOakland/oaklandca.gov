@@ -10,7 +10,7 @@
 
 {# BANNER IMAGE #}
 {% if bannerImage | length %}
-  {% set banner %}
+  {%- set banner -%}
     <figure class="absolute inset-0 z-0">
       <img 
         class="absolute inset-0 object-fit-cover w-full h-full z-0" 
@@ -18,16 +18,16 @@
         src="{{ bannerImage.one.url }}"
         alt="{{ bannerImage.one.title }}">
     </figure>
-  {% endset %}
+  {%- endset -%}
 {% else %}
-  {% set banner %}
+  {%- set banner -%}
     <div class="absolute inset-0 z-0 bg-transparent-oakland-roots">
     </div>
-  {% endset %}
+  {%- endset -%}
 {% endif %}
 
 {# BREADCRUMBS #}
-{% set breadCrumbs %}
+{%- set breadCrumbs -%}
   <div class="relative z-10 bg-white text-dark-green text-2xs md:text-xs rounded-sm px-2 py-1 inline-block shadow">
     <a class="text-dark-green hover:text-dark-green hover:underline" href="/">
       Oakland
@@ -37,10 +37,10 @@
     {% endfor %}
     <span class="font-bold">{{ bannerTitle }}</span>
   </div>
-{% endset %}
+{%- endset -%}
 
 {# SIDEBAR NAV #}
-{% set sideNav %}
+{%- set sideNav -%}
   {% if navMenu is defined %}
     <div class="hidden mr-10 w-1/6 sm:block font-heading font-bold">
       <ul class="text-sm my-0 o-2">
@@ -57,10 +57,10 @@
       </ul>
     </div>
   {% endif %}
-{% endset %}
+{%- endset -%}
 
 {# HEADER CONTENT #}
-{% set headerContent %}
+{%- set headerContent -%}
   <div class="flex-1 flex flex-col md:flex-row">
     <div class="w-full md:w-2/3">
       <h1 class="text-3xl md:text-4xl font-bold mb-0">{{ bannerTitle }}</h1>
@@ -79,7 +79,7 @@
       {{ headerSubContent ?? '' }}
     </div>
   </div>
-{% endset %}
+{%- endset -%}
 
 {% if bannerImage | length %}
   <div class="banner leading-normal">

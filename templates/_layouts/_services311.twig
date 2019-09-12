@@ -1,12 +1,12 @@
 {% extends '_layout' %}
 
-{% set custSideNav %}
+{%- set custSideNav -%}
 <figure class="w-48 pr-12 mb-8 md:mb-0 md:w-1/4">
   <img class="w-full h-auto block" src="/assets/img/logo-311.png" alt="Logo for OAK 311">
 </figure>
-{% endset %}
+{%- endset -%}
 
-{% set custHeaderContent %}
+{%- set custHeaderContent -%}
 <div class="flex-1 flex flex-col justify-between">
   <div>
     <h1 class="text-3xl md:text-4xl font-bold mb-0">OAK 311</h1>
@@ -22,7 +22,7 @@
     </div>
   </div>
 </div>
-{% endset %}
+{%- endset -%}
 
 {% macro seeClickFixLink(title, id) %}
   <option value="https://seeclickfix.com/web_portal/wTMihVsatbiDau5Fw66m6HFD/report/category/{{ id }}/location">{{ title }}</option>
