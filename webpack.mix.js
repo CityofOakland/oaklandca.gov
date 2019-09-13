@@ -12,6 +12,7 @@ require("laravel-mix-banner");
 const tailwindcss = require("tailwindcss");
 const autoprefixer = require("autoprefixer");
 const presetenv = require("postcss-preset-env");
+const hexrgba = require('postcss-hexrgba');
 
 // Image plugins for compression from src folder
 const ImageminPlugin = require("imagemin-webpack-plugin").default;
@@ -30,7 +31,8 @@ mix
       }),
       presetenv({
         stage: 0
-      })
+      }),
+      hexrgba
     ],
     processCssUrls: false,
   })

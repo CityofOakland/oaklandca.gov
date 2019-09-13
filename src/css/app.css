@@ -114,12 +114,12 @@ footer {
 }
 
 main {
-  padding-top: 3.5rem;
+  @apply pt-14;
 }
 
 @media (min-width: theme('screens.md')) {
   main {
-    padding-top: 7.5rem;
+    @apply pt-30;
   }
 }
 
@@ -179,75 +179,65 @@ main > .bg-rotate:nth-of-type(even) {
 }
 
 .card-grid {
-  display: flex;
-  margin-left: -16px;
-  margin-right: -16px;
-  flex-flow: row wrap;
+  @apply flex -mx-4 flex-row flex-wrap;
   & > * {
-    width: 100%;
-    margin: 16px;
+    @apply w-full m-4;
   }
 }
 
 .card-grid-tight {
-  margin-left: 0;
-  margin-right: 0;
+  @apply mx-0;
   & > * {
-    margin: 8px 0;
+    @apply my-2 mx-0;
   }
 }
 
 @media (min-width: theme('screens.sm')) {
   .card-grid > * {
-    width: calc(33.3333% - 32px);
-    align-self: stretch;
+    @apply self-stretch;
+    width: calc(theme('width.1/3') - theme(margin.8));
   }
   .card-grid-2up > * {
-    width: calc(50% - 32px);
+    width: calc(theme('width.1/2') - theme(margin.8));
   }
   .card-grid-tight {
-    margin-left: -8px;
-    margin-right: -8px;
+    @apply -mx-2;
     & > * {
-      width: calc(33.3333% - 16px);
-      margin: 8px;
+      @apply m-2;
+      width: calc(theme('width.1/3') - theme(margin.4));
     }
   }
   .profile-cards > * {
-    width: calc(50% - 32px);
+    width: calc(theme('width.1/2') - theme(margin.4));
   }
 }
 
 @media (min-width: theme('screens.md')) {
   .profile-cards > * {
-    width: calc(33.3333% - 32px);
+    width: calc(theme('width.1/3') - theme(margin.8));
   }
 }
 
 .horizontal-card {
-  display: flex;
-  flex-direction: column;
+  @apply flex flex-col;
 }
 
 @media (min-width: 1024px) {
   .horizontal-card {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-
+    @apply flex-row justify-between;
     & > figure {
-      width: calc((100% / 3) - 24px);
+      width: calc(theme('width.1/3') - theme(margin.6));
     }
 
     & > div {
-      width: calc((100% / 3 * 2) - 24px);
+      width: calc(theme('width.2/3') - theme(margin.6));
     }
   }
 }
 
 .step-grid {
   display: grid;
-  grid-gap: 16px;
+  grid-gap: theme('spacing.4');
   grid-template-columns: 150px 1fr;
 }
 
@@ -268,52 +258,46 @@ button {
   }
 }
 
-table {
-  border: 1px solid #ccc;
+table, th, td {
+  @apply border border-solid border-medium-gray;
 }
 
 th,
 td {
-  border: 1px solid #aaa;
-  padding: 8px;
+  @apply p-2;
 }
 
 /* PUSH MENU */
 #menu {
-  position: fixed;
-  top: 0;
+  @apply fixed top-0;
   right: -300px;
   width: 300px;
   transition: right 0.5s ease-out;
 }
 
 body.open #menu {
-  right: 0;
+  @apply right-0;
 }
 
 .page-holder {
-  position: relative;
-  right: 0;
+  @apply relative right-0 trans-slow trans-ease-out;
   transition: right 0.5s ease-out;
 }
 
 .how-it-works-block {
+  @apply px-24 mb-4 relative bg-no-repeat;
   background-image: url("/assets/img/icon-down-arrow.svg");
-  background-repeat: no-repeat;
   background-position: bottom center;
-  @apply px-24 mb-4 relative;
 }
 
 @media (min-width: 768px) {
   .how-it-works-block {
-    background-image: none;
     @apply w-1/4 px-8 mb-0;
-
+    background-image: none;
     &:after {
+      @apply bg-no-repeat absolute;
       background-image: url("/assets/img/icon-right-arrow.svg");
-      background-repeat: no-repeat;
       content: '';
-      position: absolute;
       top: 10px;
       right: -30px;
       width: 59px;
@@ -328,25 +312,19 @@ body.open #menu {
   }
 }
 
-
 body.open .page-holder {
+  @apply overflow-hidden;
   right: 300px;
-  overflow: hidden;
 }
 
 .timeline-grid dt {
-  font-size: 24px;
-  padding-left: 50px;
+  @apply text-2xl bg-no-repeat bg-left-top pl-12;
   background-image: url("/assets/img/icon-timeline-point.svg");
-  background-size: 36px 36px;
-  background-repeat: no-repeat;
-  background-position: top left;
+  background-size: theme(spacing.9);
 }
 
 .timeline-grid dd {
-  font-size: 16px;
-  padding-left: 50px;
-  padding-bottom: 20px;
+  @apply text-base pl-12 pb-5;
 }
 
 .search-filter-button {
@@ -367,14 +345,8 @@ body.open .page-holder {
 
 @responsive {
   .hidden-visually {
-    position: absolute;
-    overflow: hidden;
+    @apply absolute overflow-hidden border-none p-0 -mx-px h-px w-px;
     clip: rect(0 0 0 0);
-    height: 1px;
-    width: 1px;
-    margin: -1px;
-    padding: 0;
-    border: 0;
   }
 }
 
@@ -399,8 +371,8 @@ body.open .page-holder {
 }
 
 .bg-transparent-oakland-roots {
+  @apply bg-cover;
   background-image: url(/assets/img/oaklandroots-transparent-green.png);
-  background-size: cover;
 }
 
 /* Aspect Ratio Box */
@@ -410,11 +382,6 @@ body.open .page-holder {
 
 .aspect-ratio-box {
   @apply relative h-0 overflow-hidden;
-}
-
-/* Object Fit */
-.object-fit-cover {
-  object-fit: cover;
 }
 
 /* Transition Helpers */
