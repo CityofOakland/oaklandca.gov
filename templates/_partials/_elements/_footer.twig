@@ -1,77 +1,38 @@
+{% set footerNav = [
+  ['/departments/media-center', 'News & Updates'],
+  ['/events', 'Events'],
+  ['/departments/media-center', 'News & Updates'],
+  ['/events', 'Events'],
+  ['/meetings', 'Meetings'],
+  ['/officials', 'City Officials'],
+  ['/boards-commissions', 'Boards & Commissions'],
+  ['/staff', 'Staff Directory'],
+  ['/departments', 'Departments'],
+  ['/services', 'Services'],
+  ['/resources', 'Resources'],
+  ['/documents', 'Documents'],
+  ['/topics', 'Topics'],
+  ['/projects', 'Projects'],
+  ['/topics/oaklandlovelife', '#OaklandLoveLife'],
+  ['https://www.oaklandlibrary.org/', 'Oakland Library'],
+  ['https://www.visitoakland.com/', 'Visit Oakland'],
+  ['http://museumca.org/', 'Oakland Museum'],
+  ['https://apps.oaklandca.gov/oakapps/', 'OAK Apps'],
+  ['http://data.oaklandnet.com/', 'City of Oakland Open Data'],
+  ['/resources/city-of-oakland-americans-with-disabilities-act-ada-policies', 'AADA Policies in the City of Oakland'],
+  ['/topics/civil-rights-access', 'Civil Rights Policies & Procedures'],
+  ['/topics/civil-rights-access', 'Políticas de derechos civiles y Procedimientos'],
+  ['/topics/civil-rights-access', '民權政策與程序'],
+  ['/services/apply-for-city-of-oakland-and-port-of-oakland-jobs', 'City Jobs']
+] %}
 <footer class="bg-deep-green bg-transparent-oakland-roots leading-loose text-base relative text-bright-green overflow-hidden">
   <div class="container relative z-20">
     <div class="sm:flex flex-wrap">
       <div class="sm:flex-1 my-4">
         <ul class="my-0 col-count-2 md:col-count-3">
-          <li>
-            <a class="text-white hover:text-white hover:underline" href="/departments/media-center">News & Updates</a>
-          </li>
-          <li>
-            <a class="text-white hover:text-white hover:underline" href="/events">Events</a>
-          </li>
-          <li>
-            <a class="text-white hover:text-white hover:underline" href="/meetings">Meetings</a>
-          </li>
-          <li>
-            <a class="text-white hover:text-white hover:underline" href="/officials">City Officials</a>
-          </li>
-          <li>
-            <a class="text-white hover:text-white hover:underline" href="/boards-commissions">Boards & Commissions</a>
-          </li>
-          <li>
-            <a class="text-white hover:text-white hover:underline" href="/staff">Staff Directory</a>
-          </li>
-          <li>
-            <a class="text-white hover:text-white hover:underline" href="/departments">Departments</a>
-          </li>
-          <li>
-            <a class="text-white hover:text-white hover:underline" href="/services">Services</a>
-          </li>
-          <li>
-            <a class="text-white hover:text-white hover:underline" href="/resources">Resources</a>
-          </li>
-          <li>
-            <a class="text-white hover:text-white hover:underline" href="/documents">Documents</a>
-          </li>
-          <li>
-            <a class="text-white hover:text-white hover:underline" href="/topics">Topics</a>
-          </li>
-          <li>
-            <a class="text-white hover:text-white hover:underline" href="/projects">Projects</a>
-          </li>
-          <li>
-            <a class="text-white hover:text-white hover:underline" href="/topics/oaklandlovelife">#OaklandLoveLife</a>
-          </li>
-          <li>
-            <a class="text-white hover:text-white hover:underline" href="https://www.oaklandlibrary.org/">Oakland Library</a>
-          </li>
-          <li>
-            <a class="text-white hover:text-white hover:underline" href="https://www.visitoakland.com/">Visit Oakland</a>
-          </li>
-          <li>
-            <a class="text-white hover:text-white hover:underline" href="http://museumca.org/">Oakland Museum</a>
-          </li>
-          <li>
-            <a href="https://apps.oaklandca.gov/oakapps/" class="text-white hover:text-white hover:underline">OAK Apps</a>
-          </li>
-          <li>
-            <a href="http://data.oaklandnet.com/" class="text-white hover:text-white hover:underline">City of Oakland Open Data</a>
-          </li>
-          <li>
-            <a href="/resources/city-of-oakland-americans-with-disabilities-act-ada-policies" class="text-white hover:text-white hover:underline">AADA Policies in the City of Oakland</a>
-          </li>
-          <li>
-            <a class="text-white hover:text-white hover:underline" href="/topics/civil-rights-access">Civil Rights Policies & Procedures</a>
-          </li>
-          <li>
-            <a class="text-white hover:text-white hover:underline" href="/topics/civil-rights-access">Políticas de derechos civiles y Procedimientos</a>
-          </li>
-          <li>
-            <a class="text-white hover:text-white hover:underline" href="/topics/civil-rights-access">民權政策與程序</a>
-          </li>
-          <li>
-            <a class="text-white hover:text-white hover:underline" href="/services/apply-for-city-of-oakland-and-port-of-oakland-jobs">City Jobs</a>
-          </li>
+          {% for navItem in footerNav %}
+            <li><a class="text-white hover:text-white hover:underline" href="{{ navItem[0] }}">{{ navItem[1] }}</a></li>
+          {% endfor %}
         </ul>
       </div>
       <div class="my-4 sm:w-1/4 leading-normal text-white">
