@@ -3,11 +3,11 @@
 
 {% block content %}
   <div class="banner banner-home">
-    <div class="container text-deep-green">
+    <div class="container text-green-600">
       <div class="z-10 o-1 relative mb-32 md:mt-12 md:mb-24 bg-white font-heading p-6 max-w-xs rounded-sm">
-        <h1 class="font-extrabold text-4xl leading-tight"><span class="text-xl block">Welcome to</span> Oakland, California</h1>
+        <h1 class="font-extrabold text-xxxxl leading-tight"><span class="text-xl block">Welcome to</span> Oakland, California</h1>
         <p class="my-0">
-          <b><a class="text-bright-green" href="/topics/oaklandlovelife" class="">#OaklandLoveLife</a></b>
+          <b><a class="text-green-300" href="/topics/oaklandlovelife" class="">#OaklandLoveLife</a></b>
         </p>
       </div>
       <img 
@@ -17,8 +17,8 @@
         alt="{{ bannerImage.one.title }}">
       <form action="{{ url('search') }}">
         <label for="home-search" class="hidden-visually">How can we help you today?</label>
-        <div class="flex shadow relative text-bright-green z-0">
-          <input type="search" id="home-search" class="w-full mb-0 text-sm rounded-sm rounded-r-none appearance-none p-4 leading-none flex-1 z-10 text-dark-gray md:text-lg" aria-label="Site Search" name="query" placeholder="How can we help you?" value="">
+        <div class="flex shadow relative text-green-300 z-0">
+          <input type="search" id="home-search" class="w-full mb-0 text-sm rounded-sm rounded-r-none appearance-none p-4 leading-none flex-1 z-10 text-gray-500 md:text-lg" aria-label="Site Search" name="query" placeholder="How can we help you?" value="">
           <button type="submit" class="btn px-4 rounded-l-none z-10 relative flex items-center justify-center">
             <span class="hidden-visually">
               Search
@@ -56,7 +56,7 @@
   <section class="bg-rotate">
     <div class="container">
       <div class="md:flex">
-        <div class="md:border-medium-gray md:border-r md:pr-10 md:w-1/2 lg:w-2/3">
+        <div class="md:border-gray-400 md:border-r md:pr-10 md:w-1/2 lg:w-2/3">
           {% include '_partials/_elements/_module-header' with {
             headerText: "News & Updates",
           } %}
@@ -73,18 +73,18 @@
                 .one() %}
             {% endif %}
             <article class="lg:flex lg:flex-row">
-              <figure class="lg:w-2/5 h-48 p-4 bg-celeste relative z-0 flex items-center justify-center">
+              <figure class="lg:w-2/5 h-48 p-4 bg-gray-300 relative z-0 flex items-center justify-center">
                 {% if featuredNews.newsImage | length %}
                   <img class="absolute inset-0 object-cover w-full h-full" src="{{ featuredNews.newsImage.one.url }}" alt="{{ featuredNews.newsImage.title }}"> 
                 {% else %}
-                  <div class="text-camouflage-green opacity-75 fill-current h-full w-full py-6 px-12">
+                  <div class="text-gray-400 opacity-75 fill-current h-full w-full py-6 px-12">
                     {{ craft.inlin.er('/assets/img/icon-newspaper.svg') | replace('<svg ', '<svg class="h-32 w-32" ') | raw }}
                   </div>
                 {% endif %}
               </figure>
               <div class="flex-1 lg:pl-12 o-3">
-                <date class="my-4 lg:mt-0 block text-sm tracking-widest uppercase text-camouflage-green">{{ featuredNews.postDate | date('M j, Y') }}</date>
-                <h3 class="my-0 leading-tight font-semibold text-xl md:text-2xl"><a href="{{ featuredNews.url }}">{{ featuredNews.title }}</a></h3>
+                <date class="my-4 lg:mt-0 block text-sm tracking-widest uppercase text-gray-400">{{ featuredNews.postDate | date('M j, Y') }}</date>
+                <h3 class="my-0 leading-tight font-semibold text-xl md:text-xxl"><a href="{{ featuredNews.url }}">{{ featuredNews.title }}</a></h3>
                 {{ featuredNews.summary | md }}
               </div>
             </article>
@@ -106,7 +106,7 @@
             linkText: "Newsroom"
           } %}
         </div>
-        <div class="mt-8 md:mt-0 md:border-medium-gray md:border-l md:pl-10 md:w-1/2 lg:w-1/3">
+        <div class="mt-8 md:mt-0 md:border-gray-400 md:border-l md:pl-10 md:w-1/2 lg:w-1/3">
           {% include '_partials/_elements/_module-header' with {
             headerText: "Upcoming Events",
           } %}
@@ -125,28 +125,28 @@
             {% set byline = event.startDate.format("M d, Y") %}
             {% set body = event.body | chop(limit=25, unit='w', append='…') %}
             <article class="mt-8">
-              <figure class="w-full h-48 p-4 bg-celeste relative z-0 flex items-center justify-center">
+              <figure class="w-full h-48 p-4 bg-gray-300 relative z-0 flex items-center justify-center">
                 {% if photo | length %}
                   <img src="{{ photo.url }}" class="absolute inset-0 object-cover w-full h-full" alt="{{ photo.altText ?? ''}}">
                 {% elseif icon is defined %}
-                  <div class="text-camouflage-green opacity-75 fill-current h-full p-12">
+                  <div class="text-gray-400 opacity-75 fill-current h-full p-12">
                     {{ craft.inlin.er('/assets/img/icon-' ~ icon ~ '.svg') | replace('<svg ', '<svg class="h-full" ') | raw }}
                   </div>
                 {% endif %}
               </figure>
-              <div class="mt-4 text-base text-camouflage-green">{{ byline }}</div>
-              <h3 class="text-xl md:text-2xl mt-4 font-semibold">
+              <div class="mt-4 text-base text-gray-400">{{ byline }}</div>
+              <h3 class="text-xl md:text-xxl mt-4 font-semibold">
                 <a href="{{ url }}">{{ title }}</a>
               </h3>
-              <div class="text-shark mt-4 overflow-x-hidden">
+              <div class="text-gray-700 mt-4 overflow-x-hidden">
                 {{ body }}
               </div>
             </article>
           {% else %}
-            <h3 class="text-xl md:text-2xl mt-4">
+            <h3 class="text-xl md:text-xxl mt-4">
               Stay tuned
             </h3>
-            <div class="text-shark mt-4">
+            <div class="text-gray-700 mt-4">
               <p>There are no upcoming events at this time.</p>
             </div>
           {% endif %}

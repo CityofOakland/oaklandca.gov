@@ -11,7 +11,7 @@
             {% if entry.portrait | length %}
               <img src="{{ entry.portrait.one.url }}" alt="Portrait of {{ entry.groupHeadName }}">
             {% else %}
-              <div class="bg-cararra text-camouflage-green opacity-75 fill-current h-full p-12">
+              <div class="bg-gray-300 text-gray-400 opacity-75 fill-current h-full p-12">
                 {{ craft.inlin.er('/assets/img/icon-user.svg') | replace('<svg ', '<svg class="h-full w-full" ') | raw }}
               </div>
             {% endif %}
@@ -23,7 +23,7 @@
           {% endif %}
         </div>
         <div class="sm:flex-1">
-          <h2 class="text-3xl sm:mt-0 mb-0">{{ entry.groupHeadName }}</h2>
+          <h2 class="text-xxxl sm:mt-0 mb-0">{{ entry.groupHeadName }}</h2>
           {% if pageLeadershipHeaderText is not defined %}
             <p class="text-xl mt-2">{{ entry.groupHeadTitle }}</p>
           {% endif %}

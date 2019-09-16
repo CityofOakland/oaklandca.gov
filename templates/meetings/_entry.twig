@@ -19,10 +19,10 @@
       <div class="sm:w-2/3 sm:mr-8">
         {% set startDate = event.startDate %}
         {% set endDate = event.endDate %}
-        <div class="text-white bg-shark p-4 md:inline-flex md:items-center">
+        <div class="text-white bg-gray-700 p-4 md:inline-flex md:items-center">
           <h3 class="my-0 md:mr-8">Meeting</h3>
           <time datetime="{{ startDate | atom }}">
-            <h4 class="font-bold my-0 text-4xl">
+            <h4 class="font-bold my-0 text-xxxxl">
               {{ startDate.format("F j, Y") }}
             </h4>
             {% if not event.allDay %}

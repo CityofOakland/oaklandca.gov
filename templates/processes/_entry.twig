@@ -31,8 +31,8 @@
         } %}
         <dl class="step-grid">
           {% for block in entry.processSteps.all() %}
-            <dt class="step-number text-xl p-4 bg-celeste text-center">
-              <p class="font-bold text-3xl my-0">{{ block.stepNumber }}</p>
+            <dt class="step-number text-xl p-4 bg-gray-300 text-center">
+              <p class="font-bold text-xxxl my-0">{{ block.stepNumber }}</p>
               <p class="my-0">
                 {% if block.stepRequired %}
                   Required
@@ -41,8 +41,8 @@
                 {% endif %}
               </p>
             </dt>
-            <dd class="step-description bg-celeste p-4">
-              <h3 class="text-3xl">
+            <dd class="step-description bg-gray-300 p-4">
+              <h3 class="text-xxxl">
                 <a href="{{ block.stepAction.one.url }}">{{ block.stepAction.one.type.name ~ ' - ' ~ block.stepAction.one.title }}</a>
               </h3>
             </dd>

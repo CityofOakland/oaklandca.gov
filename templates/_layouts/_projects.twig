@@ -103,7 +103,7 @@
       <div class="md:pl-4 md:w-1/3">
         <h3 class="mb-4">Project Updates</h3>
         {% for entry in craft.entries.section('news').relatedTo(entry).all() %}
-          <a href="{{ entry.url }}" class="block mb-4 p-4 bg-celeste hover:bg-bright-green text-shark hover:text-white">
+          <a href="{{ entry.url }}" class="block mb-4 p-4 bg-gray-300 hover:bg-green-300 text-gray-700 hover:text-white">
             <h4 class="mt-0 mb-2 text-sm">{{ entry.title }}</h4>
             <p class="my-0 text-xs">{{ entry.postDate | date() }}</p>
           </a>
@@ -123,7 +123,7 @@
           <h3>Related Pages</h3>
           <div class="card-grid">
             {% for entry in relProj.all() %}
-              {% include "_partials/_elements/_title-cards" with { cardColor: 'bg-cararra'} %}
+              {% include "_partials/_elements/_title-cards" with { cardColor: 'bg-gray-300'} %}
             {% endfor %}
           </div>
         </div>
@@ -132,7 +132,7 @@
         <div {% if relProj %} class="md:pl-4 md:w-1/3" {% endif %}>
           <h3 class="mb-10">Project Documents</h3>
           {% for entry in projDocs.all() %}
-            <a href="{{ entry.url }}" class="block mt-4 p-4 bg-cararra hover:bg-bright-green text-shark hover:text-white">
+            <a href="{{ entry.url }}" class="block mt-4 p-4 bg-gray-300 hover:bg-green-300 text-gray-700 hover:text-white">
               <h4 class="my-0 text-sm">{{ entry.title }}</h4>
             </a>
           {% endfor %}

@@ -3,20 +3,20 @@
 {% set jobTitle = jobTitle ?? entry.jobTitle ?? entry.staffImportJobTitle ?? '' %}
 {% set name = name ?? entry.title %}
 <div class="block">
-  <div class="text-shark flex items-start">
+  <div class="text-gray-700 flex items-start">
     <figure class="block w-1/4 sm:w-1/3 md:w-1/4">
       <a href="{{ url }}" name="{{ name }}" aria-label="{{ name }}">
         {% if photo | length %}
           <img src="{{ photo.getUrl('smallSquare') }}" alt="Portrait of {{ jobTitle }}, {{ name }}" class="block rounded-full h-full w-full">
         {% else %}
-          <div class="text-camouflage-green opacity-75 fill-current h-full bg-celeste rounded-full">
+          <div class="text-gray-400 opacity-75 fill-current h-full bg-gray-300 rounded-full">
             {{ craft.inlin.er('/assets/img/icon-' ~ icon ~ '.svg') | replace('<svg ', '<svg class="h-full block" ') | raw }}
           </div>
         {% endif %}
       </a>
     </figure>
     <div class="pl-6 w-3/4 sm:w-2/3 md:w-3/4">
-      <h3 class="m-0 text-2xl font-semibold">
+      <h3 class="m-0 text-xxl font-semibold">
         <a href="{{ url }}">{{ name }}</a>
       </h3>
       <p class="mt-2">

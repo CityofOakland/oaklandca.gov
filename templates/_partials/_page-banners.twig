@@ -28,12 +28,12 @@
 
 {# BREADCRUMBS #}
 {%- set breadCrumbs -%}
-  <div class="relative z-10 bg-white text-dark-green text-2xs md:text-xs rounded-sm px-2 py-1 inline-block shadow">
-    <a class="text-dark-green hover:text-dark-green hover:underline" href="/">
+  <div class="relative z-10 bg-white text-green-400 text-xs md:text-xs rounded-sm px-2 py-1 inline-block shadow">
+    <a class="text-green-400 hover:text-green-400 hover:underline" href="/">
       Oakland
     </a> →
     {% for link in breadCrumbLinks ?? '' %}
-      <a class="text-dark-green hover:text-dark-green hover:underline" href="{{ link.link }}">{{ link.title }}</a> →
+      <a class="text-green-400 hover:text-green-400 hover:underline" href="{{ link.link }}">{{ link.title }}</a> →
     {% endfor %}
     <span class="font-bold">{{ bannerTitle }}</span>
   </div>
@@ -63,7 +63,7 @@
 {%- set headerContent -%}
   <div class="flex-1 flex flex-col md:flex-row">
     <div class="w-full md:w-2/3">
-      <h1 class="text-3xl md:text-4xl font-bold mb-0">{{ bannerTitle }}</h1>
+      <h1 class="text-xxxl md:text-xxxxl font-bold mb-0">{{ bannerTitle }}</h1>
       {% if leadIn %}
         <p class="mb-0 md:leading-loose">{{ leadIn | raw }}</p>
       {% endif %}

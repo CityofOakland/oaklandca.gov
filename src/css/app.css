@@ -14,7 +14,7 @@
 }
 
 body {
-  @apply font-body text-lg leading-normal text-dark-gray;
+  @apply font-body text-lg leading-normal text-gray-500;
 }
 
 h1,
@@ -33,15 +33,15 @@ h3 {
 }
 
 h2 {
-  @apply text-4xl my-8;
+  @apply text-xxxxl my-8;
 }
 
 h3 {
-  @apply text-3xl my-6 font-semibold;
+  @apply text-xxxl my-6 font-semibold;
 }
 
 h4 {
-  @apply text-2xl my-6;
+  @apply text-xxl my-6;
 }
 
 ol,
@@ -52,11 +52,11 @@ p {
 }
 
 a {
-  @apply no-underline text-dark-green;
+  @apply no-underline text-green-400;
 }
 
 a:hover {
-  @apply text-deep-green;
+  @apply text-green-600;
 }
 
 .anchor-link {
@@ -89,11 +89,11 @@ a:hover {
 
 /* Button Styles */
 .btn {
-  @apply inline-block bg-bright-green py-4 px-8 text-base text-white no-underline trans trans-fast font-bold tracking-wide shadow rounded-sm;
+  @apply inline-block bg-green-300 py-4 px-8 text-base text-white no-underline trans trans-fast font-bold tracking-wide shadow rounded-sm;
 }
 
 .btn:hover {
-  @apply text-white underline bg-dark-green shadow-none;
+  @apply text-white underline bg-green-400 shadow-none;
 }
 
 .btn-sm {
@@ -101,11 +101,11 @@ a:hover {
 }
 
 .section-box {
-  @apply border-l-4 border-bright-green rounded-sm font-semibold block p-5 text-dark-green bg-white shadow-btn;
+  @apply border-l-4 border-green-300 rounded-sm font-semibold block p-5 text-green-400 bg-white shadow-btn;
 }
 
 .section-box:hover {
-  @apply text-white bg-deep-green
+  @apply text-white bg-green-600
 }
 
 main,
@@ -130,37 +130,16 @@ main {
 
 /* Service Styles */
 .card-grid-button {
-  @apply bg-white rounded-sm text-shark no-underline text-lg font-bold shadow-btn p-8 trans trans-fast;
+  @apply bg-white rounded-sm text-gray-700 no-underline text-lg font-bold shadow-btn p-8 trans trans-fast;
 }
 
 .card-grid-button:hover {
-  @apply bg-bright-green underline text-white;
-}
-
-/* Department Styles (modifies Service Styles) */
-.card-department {
-  @apply bg-shark border-astronaut text-white;
-}
-
-.card-department img {
-  @apply opacity-25 trans trans-opacity;
-}
-
-.card-department:hover {
-  @apply bg-shark;
-}
-
-.card-department:hover img {
-  @apply opacity-75;
-}
-
-.card-department {
-  @apply bg-shark !important;
+  @apply bg-green-300 underline text-white;
 }
 
 /* Background Section Color Rotations */
 main > .bg-rotate:nth-of-type(odd) {
-  @apply bg-bright-gray;
+  @apply bg-gray-100;
 }
 
 main > .bg-rotate:nth-of-type(even) {
@@ -170,12 +149,6 @@ main > .bg-rotate:nth-of-type(even) {
 
 .iframe-holder iframe {
   max-width: 100% !important;
-}
-
-@media (min-width: theme('screens.md')) {
-  .card-department-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 
 .card-grid {
@@ -259,7 +232,7 @@ button {
 }
 
 table, th, td {
-  @apply border border-solid border-medium-gray;
+  @apply border border-solid border-gray-400;
 }
 
 th,
@@ -285,9 +258,8 @@ body.open #menu {
 }
 
 .how-it-works-block {
-  @apply px-24 mb-4 relative bg-no-repeat;
+  @apply px-24 mb-4 relative bg-no-repeat bg-bottom;
   background-image: url("/assets/img/icon-down-arrow.svg");
-  background-position: bottom center;
 }
 
 @media (min-width: 768px) {
@@ -318,7 +290,7 @@ body.open .page-holder {
 }
 
 .timeline-grid dt {
-  @apply text-2xl bg-no-repeat bg-left-top pl-12;
+  @apply text-xxl bg-no-repeat bg-left-top pl-12;
   background-image: url("/assets/img/icon-timeline-point.svg");
   background-size: theme(spacing.9);
 }
@@ -332,7 +304,7 @@ body.open .page-holder {
 }
 
 .search-filter-button:hover {
-  @apply rounded bg-white text-shark shadow;
+  @apply rounded bg-white text-gray-700 shadow;
 }
 
 .search-filter-button.active {

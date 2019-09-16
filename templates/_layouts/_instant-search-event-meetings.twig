@@ -28,7 +28,7 @@
       bannerTitle: entry.title | replace(' Index', '') ~ bannerTitleSuffix ?? '',
     } %}
   {% endblock %}
-  <div class="bg-cararra" id="search-bar-container">
+  <div class="bg-gray-300" id="search-bar-container">
     <div class="container text-right">
       <div class="flex flex-col sm:flex-row">
         <label class="hidden-visually" for="search-input">How can we help?</label>
@@ -40,7 +40,7 @@
     </div>
   </div>
   <section class="bg-white relative z-0">
-    <div class="opacity-0 invisible h-0 overflow-hidden bg-shark text-white relative z-neg-10 trans trans-all" id="algolia-filters">
+    <div class="opacity-0 invisible h-0 overflow-hidden bg-gray-700 text-white relative z-neg-10 trans trans-all" id="algolia-filters">
       <div class="container flex-col -my-4" id="facet-holder">
         {% if facets is defined %}
           {% for facet in facets %}
@@ -53,7 +53,7 @@
     <div class="container mt-4 md:flex">
       <div class="flex-1">
         <div id="hits"></div>
-        <div class="text-2xl flex items-center">
+        <div class="text-xxl flex items-center">
           <div class="inline-block" id="bottom-pagination"></div>
         </div>
       </div>

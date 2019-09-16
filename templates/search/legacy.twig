@@ -92,7 +92,7 @@
 
 {% block content %}
   {% include '_partials/_page-banners' %}
-  <div class="bg-cararra">
+  <div class="bg-gray-300">
     <div class="container">
       <form action="{{ url('search/legacy') }}">
         <label for="legacy-search-input">Search by Keyword</label>
@@ -107,7 +107,7 @@
     <div class="container">
       <h2 class="mt-0 mb-16">{{ entries | length }}
         {{"pages match your search for" }}
-        <span class="font-bold bg-cararra px-2">{{ query }}</span>
+        <span class="font-bold bg-gray-300 px-2">{{ query }}</span>
       </h2>
       {% if entries | length %}
         {% if sections | length > 1 %}
@@ -122,7 +122,7 @@
               <h3 class="text-xl my-0">Top Hit</h3>
             </div>
             <div class="flex-1">
-              <a class="block w-full sm:pl-2 hover:bg-curious-blue hover:text-white" href="{{ url }}">{{ entry.title }}
+              <a class="block w-full sm:pl-2 hover:bg-green-400 hover:text-white" href="{{ url }}">{{ entry.title }}
                 (in
                 {{ entry.section.name }})</a>
             </div>
@@ -142,7 +142,7 @@
                     {% else %}
                       {% set url = entry.url %}
                     {% endif %}
-                    <a class="block w-full sm:pl-2 hover:bg-curious-blue hover:text-white" href="{{ url }}">{{ entry.title }}</a>
+                    <a class="block w-full sm:pl-2 hover:bg-green-400 hover:text-white" href="{{ url }}">{{ entry.title }}</a>
                   </article>
                 {% endfor %}
               </div>
