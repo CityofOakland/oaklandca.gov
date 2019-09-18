@@ -5,7 +5,7 @@
 {% set aboutTrue = entry.about %}
 {% set photosTrue = entry.photoGallery.exists() %}
 {% set documentsTrue = entry.projectDocuments.exists() %}
-{% set meetingsTrue = relatedMeetings.exists() %}
+{% set meetingsTrue = relatedMeetings | length %}
 {% set updatesTrue = entry.projectUpdates.exists() %}
 {% set mapTrue = entry.projectLocations.exists() %}
 {% set timelineTrue = entry.timeline.exists() %}
