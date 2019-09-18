@@ -19,10 +19,10 @@
       <div class="sm:w-2/3 sm:mr-8">
         {% set startDate = event.startDate %}
         {% set endDate = event.endDate %}
-        <div class="text-white bg-shark p-6 md:inline-flex md:items-start">
+        <div class="text-white bg-gray-700 p-6 md:inline-flex md:items-start">
           <h3 class="my-0 md:mr-8">Event</h3>
           <time datetime="{{ startDate | atom }}">
-            <h4 class="font-bold my-0 text-3xl">
+            <h4 class="font-bold my-0 text-xxxl">
               {% for event in event.occurrences %}
                 <div>{{ event.startDate.format("F j, Y" )}}</div>
               {% endfor %}
@@ -48,7 +48,7 @@
           <div class="card-grid wide-cards mt-8">
             {% for entry in entry.documents.all() %}
               {% include '_partials/_elements/_title-cards' with {
-                cardColor: 'bg-cararra'
+                cardColor: 'bg-gray-300'
               } %}
             {% endfor %}
           </div>

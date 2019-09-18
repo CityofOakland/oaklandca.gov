@@ -134,6 +134,7 @@
     "moment": "^2.24.0",
     "postcss-easy-import": "^3.0.0",
     "postcss-font-magician": "^2.2.1",
+    "postcss-hexrgba": "^1.0.2",
     "postcss-preset-env": "^6.6.0",
     "purgecss-webpack-plugin": "^1.4.0",
     "resolve-url-loader": "^3.0.1",

@@ -1,7 +1,7 @@
 {% if craft.app.request.segments() %}
   {%- set searchNavButton -%}
     <li class="ml-4">
-      <a class="block text-white hover:text-light-green hover:underline fill-current trans trans-fast" href="/search" id="search-menu-toggle" name="Search Toggle">
+      <a class="block text-white hover:text-green-100 hover:underline fill-current trans trans-fast" href="/search" id="search-menu-toggle" name="Search Toggle">
         {{ craft.inlin.er('/assets/img/icon-magnifier.svg') | replace('<svg ', '<svg class="h-4" ') | raw }}
         <span class="hidden-visually">Search Toggle</span>
       </a>
@@ -10,7 +10,7 @@
 {% endif %}
 {% set mainNav = craft.entries.section('navigation').slug('main-nav').one() %}
 
-<div id="nav-wrapper" class="fixed w-full z-40 bg-deep-green h-8">
+<div id="nav-wrapper" class="fixed w-full z-40 bg-green-600 h-8">
   <div class="hidden md:block py-1 z-40 container text-sm h-8">
     <ul class="flex w-full font-bold my-0">
       <li class="flex-1">
@@ -24,7 +24,7 @@
       </li>
     </ul>
   </div>
-  <div class="bg-dark-green z-40 text-white block w-full z-50 trans trans-fast nav-bar relative" id="nav-bar">
+  <div class="bg-green-400 z-40 text-white block w-full z-50 trans trans-fast nav-bar relative" id="nav-bar">
     <div class="container py-0">
       <nav id="main-navigation" class="relative flex items-center justify-between" name="Main Navigation" role="navigation">
         <div>
@@ -33,7 +33,7 @@
             <span class="hidden-visually">Home</span>
           </a>
         </div>
-        <button class="text-2xs font-semibold sm:text-base absolute flex flex-col flex-wrap items-center tracking-widest right-0 uppercase lg:hidden" id="menu-toggle">
+        <button class="text-xs font-semibold sm:text-base absolute flex flex-col flex-wrap items-center tracking-widest right-0 uppercase lg:hidden" id="menu-toggle">
           <svg enable-background="new 0 0 32 32" height="32" viewBox="0 0 32 32" width="32" class="w-5 h-5 inline-block" xmlns="http://www.w3.org/2000/svg" fill="#FFF"><path d="m4 10h24c1.104 0 2-.896 2-2s-.896-2-2-2h-24c-1.104 0-2 .896-2 2s.896 2 2 2zm24 4h-24c-1.104 0-2 .896-2 2s.896 2 2 2h24c1.104 0 2-.896 2-2s-.896-2-2-2zm0 8h-24c-1.104 0-2 .896-2 2s.896 2 2 2h24c1.104 0 2-.896 2-2s-.896-2-2-2z"/></svg>
           Menu
         </button>
@@ -41,7 +41,7 @@
           {% for nav in mainNav.navBuilder.all() %}
             {% set link = nav.navLink %}
             <li class="{% if not loop.first %}ml-4 lg:ml-6 xl:ml-8{% endif %}">
-              <a href="{{ link.url }}" {% if link.target | length %} target="{{ link.target }}" {% endif %} class="text-white hover:text-light-green hover:underline trans-fast">{{ link.text }}</a>
+              <a href="{{ link.url }}" {% if link.target | length %} target="{{ link.target }}" {% endif %} class="text-white hover:text-green-100 hover:underline trans-fast">{{ link.text }}</a>
             </li>
           {% endfor %}
           {{ searchNavButton ?? '' }}
@@ -59,12 +59,12 @@
       <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" type="text/javascript"></script>
     </div>
     {% if craft.app.request.segments() %}
-      <div class="hidden bg-dark-green text-white absolute items-center w-full right-0 bottom-0 text-base" id="global-search-bar" style="transform: translateY(100%);">
+      <div class="hidden bg-green-400 text-white absolute items-center w-full right-0 bottom-0 text-base" id="global-search-bar" style="transform: translateY(100%);">
         <div class="container py-4">
           <form action="{{ url('search') }}" class="w-full">
             <div class="flex w-full h-full">
-              <input class="w-full mb-0 px-3 border-shark border rounded-none appearance-none text-shark" name="query" placeholder="Enter your search phrase (e.g. “Pay a Parking Ticket” here." type="search" value="">
-              <button class="flex-1 btn border-l-0 border-shark border hover:bg-bright-green" type="submit">Search</button>
+              <input class="w-full mb-0 px-3 border-gray-700 border rounded-none appearance-none text-gray-700" name="query" placeholder="Enter your search phrase (e.g. “Pay a Parking Ticket” here." type="search" value="">
+              <button class="flex-1 btn border-l-0 border-gray-700 border hover:bg-green-300" type="submit">Search</button>
             </div>
           </form>
         </div>

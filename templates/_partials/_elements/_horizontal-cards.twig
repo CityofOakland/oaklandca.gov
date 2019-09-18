@@ -1,21 +1,21 @@
-<article class="py-8 sm:py-16 horizontal-card {% if not loop.last %} border-celeste border-b-2 {% endif %}">
+<article class="py-8 sm:py-16 horizontal-card {% if not loop.last %} border-gray-300 border-b-2 {% endif %}">
   {% if photo | length %}
     <figure class="bg-white z-0">
       <img src="{{ photo.url }}" class="">
     </figure>
   {% elseif icon is defined %}
-    <figure class="h-48 sm:h-64 p-4 bg-celeste relative z-0 flex items-center justify-center">
-      <div class="text-camouflage-green opacity-75 fill-current h-full p-12">
+    <figure class="h-48 sm:h-64 p-4 bg-gray-300 relative z-0 flex items-center justify-center">
+      <div class="text-gray-400 opacity-75 fill-current h-full p-12">
         {{ craft.inlin.er('/assets/img/icon-' ~ icon ~ '.svg') | replace('<svg ', '<svg class="h-full" ') | raw }}
       </div>
     </figure>
   {% endif %}
   <div>
-    <div class="text-base text-camouflage-green mb-6">{{ byline }}</div>
-    <h3 class="text-4xl mt-4">
+    <div class="text-base text-gray-400 mb-6">{{ byline }}</div>
+    <h3 class="text-xxxxl mt-4">
       <a href="{{ url }}">{{ title }}</a>
     </h3>
-    <p class="text-shark my-4">
+    <p class="text-gray-700 my-4">
       {{ body }}
     </p>
     <div>

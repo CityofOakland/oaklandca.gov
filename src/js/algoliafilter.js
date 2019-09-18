@@ -45,19 +45,19 @@ search.addWidget(
 );
 
 const defaultTemplate = 
-`<article class="py-8 sm:py-12 border-celeste border-b-2">
+`<article class="py-8 sm:py-12 border-gray-300 border-b-2">
   {{#displayDate}}
-  <div class="text-base text-camouflage-green mb-4">
+  <div class="text-base text-gray-400 mb-4">
     Publish Date: <b>{{ displayDate }}</b>
   </div>
   {{/displayDate}}
-  <h2 class="text-xl md:text-2xl my-0 {{#leadIn}} mt-0 mb-3 md:mb-6 {{/leadIn}}">
+  <h2 class="text-xl md:text-xxl my-0 {{#leadIn}} mt-0 mb-3 md:mb-6 {{/leadIn}}">
     <a href="/{{ url }}">
       {{{ _highlightResult.title.value }}}
     </a>
   </h2>
   {{#leadIn}}
-    <p class="text-base text-shark md:text-lg my-2 md:my-4">
+    <p class="text-base text-gray-700 md:text-lg my-2 md:my-4">
       {{{ _highlightResult.leadIn.value }}}
     </p>
   {{/leadIn}}
