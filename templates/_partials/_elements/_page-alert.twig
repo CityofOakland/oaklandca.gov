@@ -1,11 +1,11 @@
 {% set alertType = sitewideAlert.alertType.label %}
 {% switch alertType %}
   {% case "Alert" %}
-  {% set alertBg = "bg-red-400" %}
+    {% set alertBg = "bg-red-400" %}
   {% case "Warning" %}
-  {% set alertBg = "bg-yellow-300" %}
+    {% set alertBg = "bg-yellow-300" %}
   {% default %}
-  {% set alertBg = "bg-green-300" %}
+    {% set alertBg = "bg-green-300" %}
 {% endswitch %}
 
 {% if sitewideAlert.alertShowHide == "show" %}
@@ -16,7 +16,7 @@
         <div class="mb-6 sm:mb-0 sm:mr-8 flex-1">
           <p class="m-0 font-bold uppercase">
             {% if alertType != "Information" %}
-              {{ alertType }}:
+              {{ alertLabel ?? alertType }}:
             {% endif %}
             {{ sitewideAlert.alertMessage }}</p>
         </div>
