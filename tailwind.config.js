@@ -86,8 +86,7 @@ module.exports = {
     },
     minHeight: {
       '2-1/2': '10rem',
-      '4': '16rem',
-      '5-1/2': '21.5rem',
+      '4': '16rem'
     },
     height: theme => ({
       auto: 'auto',
@@ -153,6 +152,14 @@ module.exports = {
     },
     zIndex: {
       auto: 'auto',
+      'neg-90': -90,
+      'neg-80': -80,
+      'neg-70': -70,
+      'neg-60': -60,
+      'neg-50': -50,
+      'neg-40': -40,
+      'neg-30': -30,
+      'neg-20': -20,
       'neg-10': -10,
       '0': 0,
       '10': 10,
@@ -162,6 +169,8 @@ module.exports = {
       '50': 50,
       '60': 60,
       '70': 70,
+      '80': 80,
+      '90': 90,
     },
     opacity: {
       '0': '0',
