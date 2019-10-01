@@ -1,4 +1,4 @@
-{% extends '_layout' %}
+{% extends '_layout.twig' %}
 
 {% set hitsRootClass = 'card-grid vertical-cards' %}
 
@@ -24,7 +24,7 @@
 
 {% block content %}
   {% block pageBanner %}
-    {% include '_partials/_page-banners' with {
+    {% include '_partials/_page-banners.twig' with {
       bannerTitle: entry.title | replace(' Index', '') ~ bannerTitleSuffix ?? '',
     } %}
   {% endblock %}

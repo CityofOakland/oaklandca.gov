@@ -3,7 +3,7 @@
 
 {% block content %}
   {% block banner %}
-    {% include '_partials/_page-banners' with {
+    {% include '_partials/_page-banners.twig' with {
       bannerImage: entry.eventImage,
       bannerImageBlur: 'large',
         breadCrumbLinks: [
@@ -47,7 +47,7 @@
           <h3>Documents</h3>
           <div class="card-grid wide-cards mt-8">
             {% for entry in entry.documents.all() %}
-              {% include '_partials/_elements/_title-cards' with {
+              {% include '_partials/_elements/_title-cards.twig' with {
                 cardColor: 'bg-gray-300'
               } %}
             {% endfor %}
@@ -93,7 +93,7 @@
         {% endif %}
         {% if entry.address | length %}
           <h3>Address</h3>
-          {% include '_partials/_elements/_address' %}
+          {% include '_partials/_elements/_address.twig' %}
         {% endif %}
       </div>
     </div>

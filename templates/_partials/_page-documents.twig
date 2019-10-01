@@ -3,12 +3,12 @@
   <section class="bg-rotate">
     <a class="anchor-link" id="page-documents"></a>
     <div class="container">
-      {% include '_partials/_elements/_module-header' with {
+      {% include '_partials/_elements/_module-header.twig' with {
         headerText: pageDocumentsHeaderText ?? "Documents",
       } %}
       <div class="card-grid wide-cards mt-8">
         {% for entry in entry.pageDocuments.all() %}
-          {% include '_partials/_elements/_title-cards' %}
+          {% include '_partials/_elements/_title-cards.twig' %}
         {% endfor %}
       </div>
       {% include "_partials/_elements/_module-readmore.twig" with {

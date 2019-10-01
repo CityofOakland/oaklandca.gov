@@ -56,7 +56,7 @@
     {% endif %}
     </div>
   {%- endset -%}
-  {% include '_partials/_page-banners' with {
+  {% include '_partials/_page-banners.twig' with {
     breadCrumbLinks: [
       {
         title: 'Projects',
@@ -129,7 +129,7 @@
           <a class="anchor-link" id="page-meetings"></a>
           <h2 class="text-xxl">Meetings</h2>
           {% for entry in relatedMeetings.all() %}
-            {% include '_partials/_elements/_vertical-cards' with {
+            {% include '_partials/_elements/_vertical-cards.twig' with {
               title: entry.title,
               url: entry.url,
               icon: 'calendar',

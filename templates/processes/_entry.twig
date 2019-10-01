@@ -5,7 +5,7 @@
 {% set contactState = entry.addresses | length or entry.phoneNumbers | length or entry.emailAddress | length or entry.openHours | length %}
 
 {% block content %}
-  {% include '_partials/_page-banners' with {
+  {% include '_partials/_page-banners.twig' with {
     breadCrumbLinks: [
       {
         title: 'City Officials',
@@ -20,13 +20,13 @@
     }
   } %}
 
-  {% include '_partials/_page-timeline' %}
+  {% include '_partials/_page-timeline.twig' %}
 
   {% if entry.processSteps.exists() %}
     <section class="bg-rotate">
       <a class="anchor-link" id="page-steps"></a>
       <div class="container">
-        {% include '_partials/_elements/_module-header' with {
+        {% include '_partials/_elements/_module-header.twig' with {
           headerText: "Steps"
         } %}
         <dl class="step-grid">
@@ -53,6 +53,6 @@
   {% endif %}
 
 
-  {% include '_partials/_page-news' %}
-  {% include '_partials/_page-location' %}
+  {% include '_partials/_page-news.twig' %}
+  {% include '_partials/_page-location.twig' %}
 {% endblock %}

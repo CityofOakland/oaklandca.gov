@@ -2,25 +2,25 @@
   <h3 class="text-xl">Social Media</h3>
   <div>
     {% if entry.facebook |length %}
-      {% include '_partials/_elements/_social-media-button' with {
+      {% include '_partials/_elements/_social-media-button.twig' with {
         network: "facebook",
         url: entry.facebook
       } %}
     {% endif %}
     {% if entry.twitter |length %}
-      {% include '_partials/_elements/_social-media-button' with {
+      {% include '_partials/_elements/_social-media-button.twig' with {
         network: "twitter",
         url: entry.twitter
       } %}
     {% endif %}
     {% if entry.instagram |length %}
-      {% include '_partials/_elements/_social-media-button' with {
+      {% include '_partials/_elements/_social-media-button.twig' with {
         network: "instagram",
         url: entry.instagram
       } %}
     {% endif %}
     {% if entry.medium |length %}
-      {% include '_partials/_elements/_social-media-button' with {
+      {% include '_partials/_elements/_social-media-button.twig' with {
         network: "medium",
         url: entry.medium
       } %}

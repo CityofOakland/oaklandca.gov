@@ -1,14 +1,14 @@
-{% extends '_layout' %}
+{% extends '_layout.twig' %}
 
 {% block content %}
-  {% include '_partials/_page-banners' with {
+  {% include '_partials/_page-banners.twig' with {
     bannerTitle: entry.title | replace(' Index', ''),
   } %}
-  {% include '_partials/_elements/_search-bar' with { searchSegment: "processes"} %}
+  {% include '_partials/_elements/_search-bar.twig' with { searchSegment: "processes"} %}
   <section class="bg-white relative z-0">
     <div class="container">
       {% paginate craft.entries.section('processes').limit(25).orderBy('title') as pageInfo, pageEntries %}
-        {% include '_partials/_elements/_pagination' %}
+        {% include '_partials/_elements/_pagination.twig' %}
         {% for entry in pageEntries %}
           <article>
             <h3>
@@ -16,7 +16,7 @@
             </h3>
           </article>
         {% endfor %}
-        {% include '_partials/_elements/_pagination' %}
+        {% include '_partials/_elements/_pagination.twig' %}
       </div>
     </section>
   {% endblock %}

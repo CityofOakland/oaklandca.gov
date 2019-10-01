@@ -16,12 +16,12 @@
   <section class="bg-rotate">
     <a class="anchor-link" id="page-news"></a>
     <div class="container">
-      {% include '_partials/_elements/_module-header' with {
+      {% include '_partials/_elements/_module-header.twig' with {
         headerText: pageNewsHeaderText ?? "News",
       } %}
       <div class="card-grid vertical-cards mt-8">
         {% for entry in entry.pageNews.all() %}
-          {% include '_partials/_elements/_vertical-cards' with {
+          {% include '_partials/_elements/_vertical-cards.twig' with {
             title: entry.title,
             url: entry.url,
             icon: 'newspaper',

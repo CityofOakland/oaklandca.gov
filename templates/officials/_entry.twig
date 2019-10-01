@@ -6,7 +6,7 @@
 {% set contactState = entry.addresses | length or not entry.address.isEmpty or entry.phoneNumbers | length or entry.emailAddress | length or entry.openHours | length %}
 
 {% block content %}
-  {% include '_partials/_page-banners' with {
+  {% include '_partials/_page-banners.twig' with {
     bannerTitle: entry.groupHeadTitle ~ ' ' ~ entry.groupHeadName,
     breadCrumbLinks: [
       {
@@ -25,14 +25,14 @@
       'contact': contactState
     }
   } %}
-  {% include '_partials/_page-events' %}
-  {% include '_partials/_page-news' %}
-  {% include '_partials/_page-services' %}
-  {% include '_partials/_page-topics' %}
-  {% include '_partials/_page-projects' %}
-  {% include '_partials/_page-documents' %}
-  {% include '_partials/_page-leadership' with {
+  {% include '_partials/_page-events.twig' %}
+  {% include '_partials/_page-news.twig' %}
+  {% include '_partials/_page-services.twig' %}
+  {% include '_partials/_page-topics.twig' %}
+  {% include '_partials/_page-projects.twig' %}
+  {% include '_partials/_page-documents.twig' %}
+  {% include '_partials/_page-leadership.twig' with {
     pageLeadershipHeaderText: 'About the ' ~ entry.title,
   } %}
-  {% include '_partials/_page-location' %}
+  {% include '_partials/_page-location.twig' %}
 {% endblock %}

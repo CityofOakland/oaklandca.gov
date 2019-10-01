@@ -26,7 +26,7 @@
 } %}
 
 {% block content %}
-  {% include '_partials/_page-banners' with {
+  {% include '_partials/_page-banners.twig' with {
     bannerTitle: 'Meetings for ' ~ entry.title,
     leadIn: 'The following is an exhaustive list of all meetings found on the <a class="font-bold hover:text-green-300" href="https://oaklandca.gov">oaklandca.gov</a> website related to ' ~ entry.title,
     breadCrumbLinks: [

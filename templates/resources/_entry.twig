@@ -1,7 +1,7 @@
-{% extends '_layout' %}
+{% extends '_layout.twig' %}
 
 {% block content %}
-  {% include '_partials/_page-banners' with {
+  {% include '_partials/_page-banners.twig' with {
     bannerImage: entry.resourceImage,
     bannerImageBlur: 'large',
     breadCrumbLinks: [
@@ -45,10 +45,10 @@
             <img class="w-full block" src="{{ entry.resourceImage.one.url }}" alt="{{ entry.title }} Image">
           </figure>
         {% endif %}
-        {% include '_partials/_elements/_ctas' %}
+        {% include '_partials/_elements/_ctas.twig' %}
         {% default %}
       {% endswitch %}
-      {% include '_partials/_elements/_transaction-body' %}
+      {% include '_partials/_elements/_transaction-body.twig' %}
     </div>
   </section>
 {% endblock %}

@@ -1,4 +1,4 @@
-{% extends '_layout' %}
+{% extends '_layout.twig' %}
 {# Sets any overrides for the staff imports #}
 {% set firstName = entry.firstName ??? entry.staffImportGivenName ?? '' %}
 {% set middleInitial = entry.middleInitial ??? entry.staffImportMiddleInitial ?? '' %}
@@ -9,7 +9,7 @@
 {% set phone = entry.phoneNumber ??? entry.staffImportPhoneNumber ?? '' %}
 
 {% block content %}
-  {% include '_partials/_page-banners' with {
+  {% include '_partials/_page-banners.twig' with {
     breadCrumbLinks: [
       {
         title: 'Staff',

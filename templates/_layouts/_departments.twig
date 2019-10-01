@@ -1,4 +1,4 @@
-{% extends '_layouts/_banner-with-nav' %}
+{% extends '_layouts/_banner-with-nav.twig' %}
 {% set eventOptions = {
   calendar: "events"
 } %}
@@ -14,7 +14,7 @@
 {% set relatedNews = craft.entries.section('news').relatedTo(entry) %}
 
 {% block content %}
-  {% include '_partials/_page-banners' with {
+  {% include '_partials/_page-banners.twig' with {
     breadCrumbLinks: [
       {
         title: 'Departments',
@@ -37,19 +37,19 @@
       'contact': contactState
     }
   } %}
-  {% include '_partials/_page-events' %}
-  {% include '_partials/_page-meetings' %}
-  {% include '_partials/_page-news' %}
-  {% include '_partials/_page-services' %}
-  {% include '_partials/_page-resources' %}
-  {% include '_partials/_page-topics' %}
-  {% include '_partials/_page-projects' %}
-  {% include '_partials/_page-documents' %}
-  {% include '_partials/_page-boards' with {
+  {% include '_partials/_page-events.twig' %}
+  {% include '_partials/_page-meetings.twig' %}
+  {% include '_partials/_page-news.twig' %}
+  {% include '_partials/_page-services.twig' %}
+  {% include '_partials/_page-resources.twig' %}
+  {% include '_partials/_page-topics.twig' %}
+  {% include '_partials/_page-projects.twig' %}
+  {% include '_partials/_page-documents.twig' %}
+  {% include '_partials/_page-boards.twig' with {
     pageBoardsHeaderText: 'Boards & Commissions',
     pageBoardsLinkText: 'All Boards & Commissions',
     pageBoardsLinkUrl: '/boards-commissions',
   } %}
-  {% include '_partials/_page-leadership' %}
-  {% include '_partials/_page-location' %}
+  {% include '_partials/_page-leadership.twig' %}
+  {% include '_partials/_page-location.twig' %}
 {% endblock %}
