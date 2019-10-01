@@ -1,4 +1,4 @@
-{% extends '_layout' %}
+{% extends '_layout.twig' %}
 {% set entry = craft.entries.section('searchIndex').one %}
 
 {% set section = section ?? '' %}
@@ -91,7 +91,7 @@
 {% set entries = craft.entries.section(sectionsToSearch).search(query).orderBy('score') %}
 
 {% block content %}
-  {% include '_partials/_page-banners' %}
+  {% include '_partials/_page-banners.twig' %}
   <div class="bg-gray-300">
     <div class="container">
       <form action="{{ url('search/legacy') }}">

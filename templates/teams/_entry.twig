@@ -1,7 +1,7 @@
-{% extends '_layout' %}
+{% extends '_layout.twig' %}
 
 {% block content %}
-  {% include '_partials/_page-banners' with {
+  {% include '_partials/_page-banners.twig' with {
     bannerTitle: entry.title | replace(' Index', ''),
     breadCrumbLinks: [
       {
@@ -42,7 +42,7 @@
               {% endif %}
             {%- endset -%}
 
-            {% include '_partials/_elements/_profile-cards' with {
+            {% include '_partials/_elements/_profile-cards.twig' with {
               photo: entry.portrait.one,
               name: entry.title,
               jobTitle: entry.jobTitle ?? '',

@@ -1,4 +1,4 @@
-{% extends '_layout' %}
+{% extends '_layout.twig' %}
 {# Sets any overrides for the volunteer imports #}
 {% set firstName = entry.firstName ?? '' %}
 {% set middleInitial = entry.middleInitial ?? '' %}
@@ -7,7 +7,7 @@
 {% set email = entry.emailAddress ?? '' %}
 
 {% block content %}
-  {% include '_partials/_page-banners' with {
+  {% include '_partials/_page-banners.twig' with {
     breadCrumbLinks: [
       {
         title: 'Volunteers',

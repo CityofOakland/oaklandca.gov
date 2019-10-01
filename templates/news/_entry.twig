@@ -1,8 +1,8 @@
-{% extends '_layout' %}
+{% extends '_layout.twig' %}
 {% set pressRelease = entry.pressReleaseFile %}
 
 {% block content %}
-  {% include '_partials/_page-banners' with {
+  {% include '_partials/_page-banners.twig' with {
     breadCrumbLinks: [
       {
         title: 'News',

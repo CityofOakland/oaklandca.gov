@@ -1,4 +1,4 @@
-{% extends '_layout' %}
+{% extends '_layout.twig' %}
 
 {%- set custSideNav -%}
 <figure class="w-48 pr-12 mb-8 md:mb-0 md:w-1/4">
@@ -62,7 +62,7 @@
 ] %}
 
 {% block content %}
-  {% include '_partials/_page-banners' with {
+  {% include '_partials/_page-banners.twig' with {
     breadCrumbLinks: [
       {
         title: 'Services',

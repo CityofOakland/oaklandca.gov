@@ -1,4 +1,4 @@
-{% extends '_layouts/_banner-with-nav' %}
+{% extends '_layouts/_banner-with-nav.twig' %}
 
 {% set relatedEvents = craft.calendar.events.relatedTo(entry) %}
 {% set relatedNews = craft.entries.section('news').relatedTo(entry) %}
@@ -6,7 +6,7 @@
 {% set contactState = entry.addresses | length or not entry.address.isEmpty or entry.phoneNumbers | length or entry.emailAddress | length or entry.openHours | length %}
 
 {% block content %}
-  {% include '_partials/_page-banners' with {
+  {% include '_partials/_page-banners.twig' with {
     breadCrumbLinks: [
       {
         title: 'Departments',
@@ -23,15 +23,15 @@
       'contact': contactState
     }
   } %}
-  {% include '_partials/_page-events' %}
-  {% include '_partials/_page-documents' with {
+  {% include '_partials/_page-events.twig' %}
+  {% include '_partials/_page-documents.twig' with {
     pageDocumentsHeaderText: 'Minutes & Agendas'
   } %}
-  {% include '_partials/_page-services' %}
-  {% include '_partials/_page-resources' %}
+  {% include '_partials/_page-services.twig' %}
+  {% include '_partials/_page-resources.twig' %}
   <section class="bg-rotate">
     <div class="container">
-      {% include '_partials/_elements/_module-header' with {
+      {% include '_partials/_elements/_module-header.twig' with {
         headerText: "City Officials",
         linkText: "All Elected Officials",
         linkUrl: "/officials",
@@ -39,7 +39,7 @@
       } %}
       <div class="card-grid grid-equal-height profile-cards mt-12">
         {% for entry in entry.pageOfficials.all() %}
-          {% include '_partials/_elements/_profile-cards' with {
+          {% include '_partials/_elements/_profile-cards.twig' with {
             photo: entry.portrait.one,
             name: entry.groupHeadName,
             jobTitle: entry.title,
@@ -49,5 +49,5 @@
       </div>
     </div>
   </section>
-  {% include '_partials/_page-location' %}
+  {% include '_partials/_page-location.twig' %}
 {% endblock %}

@@ -20,13 +20,13 @@
   <section class="bg-rotate">
     <a class="anchor-link" id="page-meetings"></a>
     <div class="container">
-      {% include '_partials/_elements/_module-header' with {
+      {% include '_partials/_elements/_module-header.twig' with {
         headerText: pageMeetingsHeaderText ?? "Meetings",
       } %}
       <div class="card-grid vertical-cards mt-8">
         {% if relatedEvents | length %}
           {% for entry in relatedEvents %}
-            {% include '_partials/_elements/_vertical-cards' with {
+            {% include '_partials/_elements/_vertical-cards.twig' with {
               title: entry.title,
               url: entry.url,
               icon: 'calendar',
@@ -37,7 +37,7 @@
           {% endfor %}
         {% else %}
           {% for entry in pastEvents %}
-            {% include '_partials/_elements/_vertical-cards' with {
+            {% include '_partials/_elements/_vertical-cards.twig' with {
               title: entry.title,
               url: entry.url,
               icon: 'calendar',

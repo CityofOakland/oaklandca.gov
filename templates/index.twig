@@ -1,4 +1,4 @@
-{% extends '_layout' %}
+{% extends '_layout.twig' %}
 {% set bannerImage = entry.banner %}
 
 {% block content %}
@@ -29,13 +29,13 @@
       </form>
     </div>
   </div>
-  {% include '_partials/_elements/_page-alert' %}
+  {% include '_partials/_elements/_page-alert.twig' %}
 
   {# Begin Services #}
   {% if entry.highlightedServices | length %}
     <section class="bg-rotate">
       <div class="container">
-        {% include '_partials/_elements/_module-header' with {
+        {% include '_partials/_elements/_module-header.twig' with {
           headerText: "Services",
         } %}
         <div class="card-grid card-grid-tight">
@@ -57,7 +57,7 @@
     <div class="container">
       <div class="md:flex">
         <div class="md:border-gray-400 md:border-r md:pr-10 md:w-1/2 lg:w-2/3">
-          {% include '_partials/_elements/_module-header' with {
+          {% include '_partials/_elements/_module-header.twig' with {
             headerText: "News & Updates",
           } %}
           <div class="lg:flex lg:flex-col mt-8">
@@ -107,7 +107,7 @@
           } %}
         </div>
         <div class="mt-8 md:mt-0 md:border-gray-400 md:border-l md:pl-10 md:w-1/2 lg:w-1/3">
-          {% include '_partials/_elements/_module-header' with {
+          {% include '_partials/_elements/_module-header.twig' with {
             headerText: "Upcoming Events",
           } %}
           {% set options = {
@@ -162,7 +162,7 @@
   {% if entry.learnMoreAbout | length %}
     <section class="bg-rotate">
       <div class="container">
-        {% include '_partials/_elements/_module-header' with {
+        {% include '_partials/_elements/_module-header.twig' with {
           headerText: "Learn More About",
         } %}
         <div class="card-grid card-grid-2up">
@@ -177,12 +177,12 @@
   {# Begin Officials #}
   <section class="bg-rotate">
     <div class="container">
-      {% include '_partials/_elements/_module-header' with {
+      {% include '_partials/_elements/_module-header.twig' with {
         headerText: "City Officials",
       } %}
       <div class="card-grid grid-equal-height profile-cards mt-12">
         {% for entry in craft.entries.section('officials').all() %}
-          {% include '_partials/_elements/_profile-cards' with {
+          {% include '_partials/_elements/_profile-cards.twig' with {
             photo: entry.portrait.one,
             name: entry.groupHeadName,
             jobTitle: entry.title,

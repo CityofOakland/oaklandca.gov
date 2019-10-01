@@ -3,7 +3,7 @@
 
 {% block content %}
   {% block banner %}
-    {% include '_partials/_page-banners' with {
+    {% include '_partials/_page-banners.twig' with {
       bannerImage: entry.eventImage,
       bannerImageBlur: 'large',
         breadCrumbLinks: [
@@ -60,7 +60,7 @@
             {% for entry in minutes %}
               {% set file = entry.documentFile.one %}
               <li class="mb-4">
-                {% include '_partials/_elements/_document-text' %}
+                {% include '_partials/_elements/_document-text.twig' %}
               </li>
             {% endfor %}
           </ul>
@@ -72,7 +72,7 @@
             {% for entry in agendas %}
               {% set file = entry.documentFile.one %}
               <li class="mb-4">
-                {% include '_partials/_elements/_document-text' %}
+                {% include '_partials/_elements/_document-text.twig' %}
               </li>
             {% endfor %}
           </ul>
@@ -84,7 +84,7 @@
             {% for entry in documents %}
               {% set file = entry.documentFile.one %}
               <li class="mb-4">
-                {% include '_partials/_elements/_document-text' %}
+                {% include '_partials/_elements/_document-text.twig' %}
               </li>
             {% endfor %}
           </ul>
@@ -139,7 +139,7 @@
         {% endif %}
         {% if entry.address | length %}
           <h3>Address</h3>
-          {% include '_partials/_elements/_address' %}
+          {% include '_partials/_elements/_address.twig' %}
         {% endif %}
       </div>
     </div>

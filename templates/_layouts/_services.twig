@@ -1,7 +1,7 @@
-{% extends '_layout' %}
+{% extends '_layout.twig' %}
 
 {% block content %}
-  {% include '_partials/_page-banners' with {
+  {% include '_partials/_page-banners.twig' with {
     breadCrumbLinks: [
       {
         title: 'Services',
@@ -11,9 +11,9 @@
   } %}
   <section class="bg-white relative z-0">
     <div class="container">
-      {% include '_partials/_elements/_ctas' %}
+      {% include '_partials/_elements/_ctas.twig' %}
       <div class="o-6">
-        {% include '_partials/_elements/_transaction-body' %}
+        {% include '_partials/_elements/_transaction-body.twig' %}
       </div>
       {% if entry.embeddedContent.exists() %}
         {{ entry.embeddedContent.one.codeInsertion | raw }}

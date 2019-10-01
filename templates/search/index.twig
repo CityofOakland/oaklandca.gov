@@ -1,5 +1,5 @@
 {% set query = craft.app.request.getParam('query') %}
-{% extends '_layout' %}
+{% extends '_layout.twig' %}
 {% set entry = craft.entries.section('searchIndex').one %}
 
 {% do view.registerJsFile("https://cdn.polyfill.io/v2/polyfill.min.js?features=default,Array.prototype.includes,Array.prototype.find") %}

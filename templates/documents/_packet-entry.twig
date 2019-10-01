@@ -1,9 +1,9 @@
-{% extends '_layout' %}
+{% extends '_layout.twig' %}
 
 {% set document = entry.documentFile %}
 
 {% block content %}
-  {% include '_partials/_page-banners' with {
+  {% include '_partials/_page-banners.twig' with {
     breadCrumbLinks: [
       {
         title: 'Documents',
