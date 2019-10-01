@@ -1,4 +1,4 @@
-{% extends '_layouts/_banner-with-nav' %}
+{% extends '_layouts/_banner-with-nav.twig' %}
 
 {% set relatedEvents = craft.calendar.events.relatedTo(entry) %}
 {% set relatedNews = craft.entries.section('news').relatedTo(entry) %}

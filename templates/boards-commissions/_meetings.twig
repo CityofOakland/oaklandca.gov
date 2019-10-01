@@ -1,4 +1,4 @@
-{% extends '_layouts/_banner-with-nav' %}
+{% extends '_layouts/_banner-with-nav.twig' %}
 {# Since this page doesn’t actually exist as an entry, we define our entry here #}
 {% set entry = craft.entries.section('boardsCommissions').slug(craft.app.request.getSegment(2)).one %}
 
