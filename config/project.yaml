@@ -32,7 +32,7 @@ categoryGroups:
         hasUrls: false
         uriFormat: null
         template: null
-dateModified: 1569965332
+dateModified: 1569966993
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -4528,7 +4528,7 @@ sections:
         handle: resources
         hasTitleField: true
         titleLabel: Title
-        titleFormat: null
+        titleFormat: ''
         sortOrder: 1
         fieldLayouts:
           96bb4dca-d6fb-4198-8f00-57dc09064d19:
@@ -4578,9 +4578,6 @@ sections:
                   ecc31df6-640f-4fa6-a2e6-caea757e379d:
                     required: false
                     sortOrder: 1
-              -
-                name: Legacy
-                sortOrder: 4
     siteSettings:
       c35d3a93-d7f4-4c37-ae3e-1b4d403311bb:
         enabledByDefault: true
@@ -4789,7 +4786,7 @@ sections:
         handle: topics
         hasTitleField: true
         titleLabel: Title
-        titleFormat: null
+        titleFormat: ''
         sortOrder: 1
         fieldLayouts:
           fa565bad-53b8-4d45-8441-7daeb4e907de:
@@ -4897,9 +4894,6 @@ sections:
                   ecc31df6-640f-4fa6-a2e6-caea757e379d:
                     required: false
                     sortOrder: 1
-              -
-                name: Legacy
-                sortOrder: 5
     siteSettings:
       c35d3a93-d7f4-4c37-ae3e-1b4d403311bb:
         enabledByDefault: true
@@ -6538,7 +6532,7 @@ sections:
         handle: boardsCommissions
         hasTitleField: true
         titleLabel: Title
-        titleFormat: null
+        titleFormat: ''
         sortOrder: 1
         fieldLayouts:
           3abd0d70-dc1c-4708-8939-33f6a049dcf5:
@@ -6618,9 +6612,6 @@ sections:
                   ecc31df6-640f-4fa6-a2e6-caea757e379d:
                     required: false
                     sortOrder: 1
-              -
-                name: Legacy
-                sortOrder: 4
     siteSettings:
       c35d3a93-d7f4-4c37-ae3e-1b4d403311bb:
         enabledByDefault: true
