@@ -268,7 +268,7 @@ class resourcesTransform extends TransformerAbstract
     $projects = enumEntries("projects", $entry);
     $topics = enumEntries("topics", $entry);
     $body = [];
-    foreach ($entry->transactionBody as $block) {
+    foreach ($entry->contentBuilder as $block) {
       $body[] = strip_tags($block->text);
     }
     return [
@@ -297,8 +297,8 @@ class servicesTransform extends TransformerAbstract
     $projects = enumEntries("projects", $entry);
     $topics = enumEntries("topics", $entry);
     $body = [];
-    if (! empty($entry->transactionBody)) {
-      foreach ($entry->transactionBody as $block) {
+    if (! empty($entry->contentBuilder)) {
+      foreach ($entry->contentBuilder as $block) {
         $body[] = strip_tags($block->text);
       }
     }
@@ -414,8 +414,8 @@ class allTransform extends TransformerAbstract
     $topics = enumEntries("topics", $entry);
     $documents = enumEntries("documents", $entry);
     $bodyMatrix = [];
-    if (! empty($entry->transactionBody)) {
-      foreach ($entry->transactionBody as $block) {
+    if (! empty($entry->contentBuilder)) {
+      foreach ($entry->contentBuilder as $block) {
         $bodyMatrix[] = strip_tags($block->text);
       }
     }
@@ -522,7 +522,7 @@ return [
       'elementType' => \craft\elements\Entry::class,
       'criteria' => [
         'section' => 'resources',
-        'with' => ['boardsCommissions', 'departments', 'officials', 'projects', 'topics', 'transactionBody']
+        'with' => ['boardsCommissions', 'departments', 'officials', 'projects', 'topics', 'contentBuilder']
       ],
       'transformer' => new resourcesTransform(),
     ],
@@ -532,7 +532,7 @@ return [
       'elementType' => \craft\elements\Entry::class,
       'criteria' => [
         'section' => 'services',
-        'with' => ['boardsCommissions', 'departments', 'officials', 'projects', 'topics', 'transactionBody']
+        'with' => ['boardsCommissions', 'departments', 'officials', 'projects', 'topics', 'contentBuilder']
       ],
       'transformer' => new servicesTransform(),
     ],
@@ -636,7 +636,7 @@ return [
           'topics', 
           'documentType', 
           'documents',
-          'transactionBody'
+          'contentBuilder'
         ]
       ],
       'transformer' => new allTransform(),
@@ -664,7 +664,7 @@ return [
           'topics', 
           'documentType', 
           'documents',
-          'transactionBody'
+          'contentBuilder'
         ]
       ],
       'transformer' => new allTransform(),

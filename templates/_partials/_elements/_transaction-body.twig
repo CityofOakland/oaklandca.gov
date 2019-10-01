@@ -36,7 +36,7 @@
 {% endmacro %}
 {% import _self as macro %}
 
-{% for block in entry.transactionBody.all() %}
+{% for block in entry.contentBuilder.all() %}
   {% switch block.type %}
     {% case "heading" %}
       <{{ heading }} class="{{ headingClass }}">{{ block.text }}</{{ heading }}>

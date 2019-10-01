@@ -32,7 +32,7 @@ categoryGroups:
         hasUrls: false
         uriFormat: null
         template: null
-dateModified: 1567706851
+dateModified: 1569965332
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -55,8 +55,6 @@ fieldGroups:
     name: Boards
   4ed914c6-b7ea-44be-a061-4430ad33baf2:
     name: News
-  58b17d29-fdec-4d4f-9e60-b7f103656306:
-    name: Legacy
   5bc46e53-a87c-4584-89aa-808cacedf461:
     name: Categories
   71fb693f-011b-4669-ba10-f1b379557bb9:
@@ -227,24 +225,6 @@ fields:
       placeholder: ''
     fieldGroup: ed709c7c-0c3a-4457-ae2d-38a3ccb797e4
     contentColumnType: text
-  170c83d8-2386-4459-a750-5a892a434e17:
-    name: 'Legacy Addresses'
-    handle: legacyAddresses
-    instructions: ''
-    searchable: true
-    translationMethod: none
-    translationKeyFormat: null
-    type: mmikkel\incognitofield\fields\IncognitoFieldType
-    settings:
-      mode: readonly
-      placeholder: ''
-      code: '1'
-      multiline: '1'
-      initialRows: '4'
-      charLimit: ''
-      columnType: text
-    fieldGroup: 58b17d29-fdec-4d4f-9e60-b7f103656306
-    contentColumnType: text
   18fa95ee-449e-4c22-9d88-b0fb8918a38b:
     name: 'Highlighted Services'
     handle: highlightedServices
@@ -381,26 +361,6 @@ fields:
       columnType: text
     fieldGroup: 71fb693f-011b-4669-ba10-f1b379557bb9
     contentColumnType: text
-  2c978d1c-dab3-4520-8ae2-99ae9c1a4923:
-    name: 'Urgent Issues Description'
-    handle: urgentIssuesDescription
-    instructions: 'Explain what urgent issues should be here.'
-    searchable: true
-    translationMethod: none
-    translationKeyFormat: null
-    type: craft\redactor\Field
-    settings:
-      availableTransforms: '*'
-      availableVolumes: ''
-      columnType: text
-      purifierConfig: ''
-      purifyHtml: '1'
-      redactorConfig: Basic.json
-      removeInlineStyles: '1'
-      removeEmptyTags: '1'
-      removeNbsp: '1'
-    fieldGroup: ed709c7c-0c3a-4457-ae2d-38a3ccb797e4
-    contentColumnType: text
   2fb76e53-8619-4e29-b609-c984c390de9a:
     name: 'Email Address'
     handle: emailAddress
@@ -451,26 +411,6 @@ fields:
       charLimit: ''
       columnType: text
     fieldGroup: a2015bc8-9d3a-4f8d-a180-1ddc7ebd3087
-    contentColumnType: text
-  38cfe0f3-017b-4f68-a98a-6579763d9a1f:
-    name: 'Non-Urgent Issues Description'
-    handle: nonUrgentIssuesDescription
-    instructions: 'Describe the kind of issues that are not immediate or urgent here.'
-    searchable: true
-    translationMethod: none
-    translationKeyFormat: null
-    type: craft\redactor\Field
-    settings:
-      availableTransforms: '*'
-      availableVolumes: ''
-      columnType: text
-      purifierConfig: ''
-      purifyHtml: '1'
-      redactorConfig: Basic.json
-      removeInlineStyles: '1'
-      removeEmptyTags: '1'
-      removeNbsp: '1'
-    fieldGroup: ed709c7c-0c3a-4457-ae2d-38a3ccb797e4
     contentColumnType: text
   3ff802bf-48ac-4e96-8e64-c7988d029bc1:
     name: Documents
@@ -650,24 +590,6 @@ fields:
       columnType: text
     fieldGroup: 71fb693f-011b-4669-ba10-f1b379557bb9
     contentColumnType: text
-  550cd0e8-b0e0-4bbf-a84d-d9fbfe40e80d:
-    name: 'Legacy Phone Numbers'
-    handle: legacyPhoneNumbers
-    instructions: ''
-    searchable: true
-    translationMethod: none
-    translationKeyFormat: null
-    type: mmikkel\incognitofield\fields\IncognitoFieldType
-    settings:
-      mode: readonly
-      placeholder: ''
-      code: '1'
-      multiline: '1'
-      initialRows: '4'
-      charLimit: ''
-      columnType: text
-    fieldGroup: 58b17d29-fdec-4d4f-9e60-b7f103656306
-    contentColumnType: text
   55169274-4595-4ab0-a461-9b4600d07779:
     name: 'Page Documents'
     handle: pageDocuments
@@ -722,24 +644,6 @@ fields:
       removeEmptyTags: '1'
       removeNbsp: '1'
     fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521
-    contentColumnType: text
-  5c006bbc-d7f0-4245-a900-34cddee824cd:
-    name: 'Legacy Body'
-    handle: legacyBody
-    instructions: ''
-    searchable: true
-    translationMethod: none
-    translationKeyFormat: null
-    type: mmikkel\incognitofield\fields\IncognitoFieldType
-    settings:
-      mode: readonly
-      placeholder: ''
-      code: ''
-      multiline: '1'
-      initialRows: '4'
-      charLimit: ''
-      columnType: text
-    fieldGroup: 58b17d29-fdec-4d4f-9e60-b7f103656306
     contentColumnType: text
   5cde5e79-0560-492c-b592-dd86cbde33c3:
     name: 'Funding Logos'
@@ -1256,24 +1160,6 @@ fields:
       viewMode: large
     fieldGroup: 8e8ee56e-cdb8-4206-a3b5-c3aa0eb3a884
     contentColumnType: string
-  99fff33e-614f-4e8a-9a0c-826ebb07db30:
-    name: 'Legacy Hours'
-    handle: legacyHours
-    instructions: ''
-    searchable: true
-    translationMethod: none
-    translationKeyFormat: null
-    type: mmikkel\incognitofield\fields\IncognitoFieldType
-    settings:
-      mode: readonly
-      placeholder: ''
-      code: ''
-      multiline: '1'
-      initialRows: '4'
-      charLimit: ''
-      columnType: text
-    fieldGroup: 58b17d29-fdec-4d4f-9e60-b7f103656306
-    contentColumnType: text
   9b53be12-6536-4cb0-8860-9b5e6e94fadd:
     name: 'Process Steps'
     handle: processSteps
@@ -1949,71 +1835,6 @@ fields:
       default: ''
     fieldGroup: c8e06b4a-2f85-41db-94e3-101a5c02dd6d
     contentColumnType: boolean
-  d15bb1a2-6a1e-4bf6-b1cb-d9b590fb5977:
-    name: 'Non-Urgent Issue Report Link'
-    handle: nonUrgentIssueReportLink
-    instructions: 'Enter the URL that users should go to to report issues that are not urgent.'
-    searchable: true
-    translationMethod: none
-    translationKeyFormat: null
-    type: fruitstudios\linkit\fields\LinkitField
-    settings:
-      selectLinkText: ''
-      types:
-        fruitstudios\linkit\models\Email:
-          enabled: ''
-          customLabel: ''
-          customPlaceholder: ''
-        fruitstudios\linkit\models\Phone:
-          enabled: ''
-          customLabel: ''
-          customPlaceholder: ''
-        fruitstudios\linkit\models\Url:
-          enabled: '1'
-          customLabel: ''
-          customPlaceholder: 'https://seeclickfix.com'
-        fruitstudios\linkit\models\Twitter:
-          enabled: ''
-          customLabel: ''
-          customPlaceholder: ''
-        fruitstudios\linkit\models\Facebook:
-          enabled: ''
-          customLabel: ''
-          customPlaceholder: ''
-        fruitstudios\linkit\models\Instagram:
-          enabled: ''
-          customLabel: ''
-          customPlaceholder: ''
-        fruitstudios\linkit\models\LinkedIn:
-          enabled: ''
-          customLabel: ''
-          customPlaceholder: ''
-        fruitstudios\linkit\models\Entry:
-          enabled: ''
-          customLabel: ''
-          sources: '*'
-          customSelectionLabel: ''
-        fruitstudios\linkit\models\Category:
-          enabled: ''
-          customLabel: ''
-          sources: '*'
-          customSelectionLabel: ''
-        fruitstudios\linkit\models\Asset:
-          enabled: ''
-          customLabel: ''
-          sources: '*'
-          customSelectionLabel: ''
-        fruitstudios\linkit\models\User:
-          enabled: ''
-          customLabel: ''
-          sources: '*'
-          customSelectionLabel: ''
-          userPath: ''
-      allowCustomText: ''
-      defaultText: ''
-      allowTarget: ''
-    fieldGroup: ed709c7c-0c3a-4457-ae2d-38a3ccb797e4
-    contentColumnType: text
   d2528b2a-d63a-477c-9c22-431796381707:
     name: 'Project Map Image'
     handle: projectMapImage
@@ -2452,8 +2273,8 @@ fields:
     fieldGroup: 71fb693f-011b-4669-ba10-f1b379557bb9
     contentColumnType: text
   fd0c8e02-99b4-4ce5-ab89-b29cd0efc581:
-    name: 'Transaction Body'
-    handle: transactionBody
+    name: 'Content Builder'
+    handle: contentBuilder
     instructions: '## Attention: Table blocks are currently being tested and will not render properly on mobile devices, nor will the information be searchable. Before you use these fields, please contact digitalteam@oaklandca.gov.'
     searchable: true
     translationMethod: site
@@ -2462,7 +2283,7 @@ fields:
     settings:
       minBlocks: ''
       maxBlocks: ''
-      contentTable: '{{%matrixcontent_transactionbody}}'
+      contentTable: '{{%matrixcontent_contentbuilder}}'
       propagationMethod: all
     contentColumnType: string
     fieldGroup: 767a8f0b-6ea5-4855-a6f3-8c2a4a4aee78
@@ -3167,6 +2988,49 @@ matrixBlockTypes:
           columnType: text
         fieldGroup: null
         contentColumnType: text
+  4ae79c6e-4218-4dc0-8c8e-d1e19e0c00e8:
+    field: fd0c8e02-99b4-4ce5-ab89-b29cd0efc581
+    name: Gallery
+    handle: gallery
+    sortOrder: 8
+    fields:
+      236e175c-1794-4eca-8655-15d196ec0e23:
+        name: Images
+        handle: images
+        instructions: ''
+        searchable: false
+        translationMethod: site
+        translationKeyFormat: null
+        type: craft\fields\Assets
+        settings:
+          useSingleFolder: '1'
+          defaultUploadLocationSource: 'volume:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67'
+          defaultUploadLocationSubpath: ''
+          singleUploadLocationSource: 'volume:56ad4140-da85-43ea-8292-3fac04cbefc1'
+          singleUploadLocationSubpath: '{entry.slug}/{owner.owner.id}'
+          restrictFiles: '1'
+          allowedKinds:
+            - image
+          sources: '*'
+          source: null
+          targetSiteId: null
+          viewMode: list
+          limit: ''
+          selectionLabel: 'Add an image'
+          localizeRelations: false
+          validateRelatedElements: '1'
+        contentColumnType: string
+        fieldGroup: null
+    fieldLayouts:
+      c771c456-8b8b-455b-8cb5-c552cd04e4bd:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              236e175c-1794-4eca-8655-15d196ec0e23:
+                required: true
+                sortOrder: 1
   4f58a8e7-8cf8-472a-b479-73a156087dfc:
     name: Fax
     handle: fax
@@ -3630,13 +3494,13 @@ matrixBlockTypes:
         settings:
           minRows: '1'
           maxRows: ''
-          contentTable: '{{%stc_28_table}}'
+          contentTable: '{{%stc_30_table}}'
           propagationMethod: all
           staticField: ''
           columns:
-            216:
+            234:
               width: ''
-            219:
+            235:
               width: ''
           fieldLayout: table
           selectionLabel: ''
@@ -3653,13 +3517,13 @@ matrixBlockTypes:
         settings:
           minRows: ''
           maxRows: ''
-          contentTable: '{{%stc_28_tableheadings}}'
+          contentTable: '{{%stc_30_tableheadings}}'
           propagationMethod: all
           staticField: '1'
           columns:
-            224:
+            237:
               width: ''
-            223:
+            236:
               width: ''
           fieldLayout: table
           selectionLabel: ''
@@ -3695,15 +3559,15 @@ matrixBlockTypes:
         settings:
           minRows: ''
           maxRows: ''
-          contentTable: '{{%stc_29_tableheadings}}'
+          contentTable: '{{%stc_27_tableheadings}}'
           propagationMethod: all
           staticField: '1'
           columns:
-            228:
+            233:
               width: ''
-            226:
+            231:
               width: ''
-            227:
+            232:
               width: ''
           fieldLayout: table
           selectionLabel: ''
@@ -3720,15 +3584,15 @@ matrixBlockTypes:
         settings:
           minRows: '1'
           maxRows: ''
-          contentTable: '{{%stc_29_table}}'
+          contentTable: '{{%stc_27_table}}'
           propagationMethod: all
           staticField: ''
           columns:
-            230:
+            216:
               width: ''
-            232:
+            218:
               width: ''
-            231:
+            217:
               width: ''
           fieldLayout: table
           selectionLabel: ''
@@ -3780,6 +3644,71 @@ matrixBlockTypes:
           columnType: text
         fieldGroup: null
         contentColumnType: text
+  cbc3d1ca-cf88-409f-be01-bc11a812b1c7:
+    field: fd0c8e02-99b4-4ce5-ab89-b29cd0efc581
+    name: Image
+    handle: image
+    sortOrder: 7
+    fields:
+      146e43c8-9154-487d-ab15-799e0f67185a:
+        name: 'Image File'
+        handle: imageFile
+        instructions: ''
+        searchable: false
+        translationMethod: site
+        translationKeyFormat: null
+        type: craft\fields\Assets
+        settings:
+          useSingleFolder: '1'
+          defaultUploadLocationSource: 'volume:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67'
+          defaultUploadLocationSubpath: ''
+          singleUploadLocationSource: 'volume:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67'
+          singleUploadLocationSubpath: ''
+          restrictFiles: '1'
+          allowedKinds:
+            - image
+          sources: '*'
+          source: null
+          targetSiteId: null
+          viewMode: list
+          limit: '1'
+          selectionLabel: 'Add an image'
+          localizeRelations: false
+          validateRelatedElements: '1'
+        contentColumnType: string
+        fieldGroup: null
+      2602abed-4f18-4a80-bcf3-92ad8975afc3:
+        name: 'Image Position'
+        handle: imagePosition
+        instructions: ''
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: rias\positionfieldtype\fields\Position
+        settings:
+          options:
+            left: '1'
+            center: '1'
+            right: '1'
+            full: '1'
+            drop-left: ''
+            drop-right: ''
+          default: center
+        contentColumnType: string
+        fieldGroup: null
+    fieldLayouts:
+      fa862fc0-fd2e-4d31-8d77-3dbd4cf08c00:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              146e43c8-9154-487d-ab15-799e0f67185a:
+                required: true
+                sortOrder: 1
+              2602abed-4f18-4a80-bcf3-92ad8975afc3:
+                required: false
+                sortOrder: 2
   d57b57bd-12a3-4c78-86c3-df137e9e99f8:
     name: 'Email Address'
     handle: emailAddress
@@ -3863,17 +3792,17 @@ matrixBlockTypes:
         settings:
           minRows: '1'
           maxRows: ''
-          contentTable: '{{%stc_31_table}}'
+          contentTable: '{{%stc_26_table}}'
           propagationMethod: all
           staticField: ''
           columns:
-            247:
+            222:
               width: ''
-            246:
+            221:
               width: ''
-            244:
+            219:
               width: ''
-            245:
+            220:
               width: ''
           fieldLayout: table
           selectionLabel: ''
@@ -3890,17 +3819,17 @@ matrixBlockTypes:
         settings:
           minRows: ''
           maxRows: ''
-          contentTable: '{{%stc_31_tableheadings}}'
+          contentTable: '{{%stc_26_tableheadings}}'
           propagationMethod: all
           staticField: '1'
           columns:
-            251:
+            229:
               width: ''
-            250:
+            228:
               width: ''
-            252:
+            230:
               width: ''
-            249:
+            227:
               width: ''
           fieldLayout: table
           selectionLabel: ''
@@ -4224,6 +4153,14 @@ plugins:
     schemaVersion: 3.0.0
     licenseKey: CO12HAFDJTLEDE1X2RN05WIE
   smith:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  position-fieldtype:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  field-manager:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
@@ -4644,19 +4581,6 @@ sections:
               -
                 name: Legacy
                 sortOrder: 4
-                fields:
-                  170c83d8-2386-4459-a750-5a892a434e17:
-                    required: false
-                    sortOrder: 1
-                  550cd0e8-b0e0-4bbf-a84d-d9fbfe40e80d:
-                    required: false
-                    sortOrder: 4
-                  5c006bbc-d7f0-4245-a900-34cddee824cd:
-                    required: false
-                    sortOrder: 2
-                  99fff33e-614f-4e8a-9a0c-826ebb07db30:
-                    required: false
-                    sortOrder: 3
     siteSettings:
       c35d3a93-d7f4-4c37-ae3e-1b4d403311bb:
         enabledByDefault: true
@@ -4976,19 +4900,6 @@ sections:
               -
                 name: Legacy
                 sortOrder: 5
-                fields:
-                  170c83d8-2386-4459-a750-5a892a434e17:
-                    required: false
-                    sortOrder: 1
-                  550cd0e8-b0e0-4bbf-a84d-d9fbfe40e80d:
-                    required: false
-                    sortOrder: 4
-                  5c006bbc-d7f0-4245-a900-34cddee824cd:
-                    required: false
-                    sortOrder: 2
-                  99fff33e-614f-4e8a-9a0c-826ebb07db30:
-                    required: false
-                    sortOrder: 3
     siteSettings:
       c35d3a93-d7f4-4c37-ae3e-1b4d403311bb:
         enabledByDefault: true
@@ -6710,19 +6621,6 @@ sections:
               -
                 name: Legacy
                 sortOrder: 4
-                fields:
-                  170c83d8-2386-4459-a750-5a892a434e17:
-                    required: false
-                    sortOrder: 1
-                  550cd0e8-b0e0-4bbf-a84d-d9fbfe40e80d:
-                    required: false
-                    sortOrder: 4
-                  5c006bbc-d7f0-4245-a900-34cddee824cd:
-                    required: false
-                    sortOrder: 2
-                  99fff33e-614f-4e8a-9a0c-826ebb07db30:
-                    required: false
-                    sortOrder: 3
     siteSettings:
       c35d3a93-d7f4-4c37-ae3e-1b4d403311bb:
         enabledByDefault: true
@@ -7893,7 +7791,7 @@ volumes:
       region: us-west-2
       secret: $S3_SECRET
       subfolder: seo
-    sortOrder: 7
+    sortOrder: 11
   1e78d0ad-2af1-4556-ab43-7b6c110e75b8:
     name: Headers
     handle: headers
@@ -7913,7 +7811,7 @@ volumes:
       cfDistributionId: ''
       cfPrefix: ''
       autoFocalPoint: ''
-    sortOrder: 1
+    sortOrder: 5
     fieldLayouts:
       ec980d66-163d-4a97-be21-f1626a2370e4:
         tabs:
@@ -7943,7 +7841,37 @@ volumes:
       cfDistributionId: ''
       cfPrefix: ''
       autoFocalPoint: ''
-    sortOrder: 9
+    sortOrder: 12
+  549d1a55-e94b-4c89-9cb9-b1fdac9d417d:
+    name: 'General Images'
+    handle: generalImages
+    type: craft\awss3\Volume
+    hasUrls: true
+    url: 'https://s3.us-west-2.amazonaws.com/cao-94612/'
+    settings:
+      subfolder: general-images
+      keyId: $S3_API_KEY
+      secret: $S3_SECRET
+      bucketSelectionMode: choose
+      bucket: cao-94612
+      region: us-west-2
+      expires: ''
+      makeUploadsPublic: '1'
+      storageClass: ''
+      cfDistributionId: ''
+      cfPrefix: ''
+      autoFocalPoint: ''
+    sortOrder: 1
+    fieldLayouts:
+      42f97d90-1640-4c11-9e6a-6a4ada81b7bb:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              fff5cf49-87e6-4751-9032-b4ca8136e237:
+                required: true
+                sortOrder: 1
   56ad4140-da85-43ea-8292-3fac04cbefc1:
     name: Galleries
     handle: galleries
@@ -7963,7 +7891,7 @@ volumes:
       cfDistributionId: ''
       cfPrefix: ''
       autoFocalPoint: ''
-    sortOrder: 8
+    sortOrder: 2
     fieldLayouts:
       22f6b433-ddd4-4b02-83da-3eb46af9359a:
         tabs:
@@ -7988,7 +7916,7 @@ volumes:
       region: us-west-2
       secret: $S3_SECRET
       subfolder: data
-    sortOrder: 5
+    sortOrder: 9
     fieldLayouts:
       5ca0b141-93fb-43cd-95ce-f4c021b05dcc:
         tabs:
@@ -8013,7 +7941,7 @@ volumes:
       region: us-west-2
       secret: $S3_SECRET
       subfolder: portraits
-    sortOrder: 2
+    sortOrder: 6
     fieldLayouts:
       ad61a558-eea0-469f-8c8f-f83aee44673b:
         tabs:
@@ -8043,7 +7971,7 @@ volumes:
       cfDistributionId: ''
       cfPrefix: ''
       autoFocalPoint: ''
-    sortOrder: 3
+    sortOrder: 7
     fieldLayouts:
       39a4d2c1-874c-4c00-ace6-772f69cd38bd:
         tabs:
@@ -8073,7 +8001,7 @@ volumes:
       cfDistributionId: ''
       cfPrefix: ''
       autoFocalPoint: ''
-    sortOrder: 0
+    sortOrder: 4
     fieldLayouts:
       db8d627c-2a6c-45d7-bed9-1e889f21cb61:
         tabs:
@@ -8098,7 +8026,7 @@ volumes:
       region: us-west-2
       secret: $S3_SECRET
       subfolder: events
-    sortOrder: 4
+    sortOrder: 8
     fieldLayouts:
       122ffc14-c738-4425-a48b-d7d999e6e166:
         tabs:
@@ -8123,7 +8051,7 @@ volumes:
       region: us-west-2
       secret: $S3_SECRET
       subfolder: documents
-    sortOrder: 6
+    sortOrder: 10
   f5dead8c-3e4c-4f97-8bea-2a3af1e34f67:
     name: Resources
     handle: resources
@@ -8143,4 +8071,4 @@ volumes:
       cfDistributionId: ''
       cfPrefix: ''
       autoFocalPoint: ''
-    sortOrder: 0
+    sortOrder: 3
