@@ -4,15 +4,15 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "3425bbd8c0c28569c6a0b78d19338a77",
+    "content-hash": "cc38e1e249dc994477dab63383c691b2",
     "packages": [
         {
             "name": "aelvan/imager",
-            "version": "v2.2.0",
+            "version": "v2.3.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aelvan/Imager-Craft/zipball/de6267d7b971a809c59ae6483c9b21e097cafcd0",
-                "reference": "de6267d7b971a809c59ae6483c9b21e097cafcd0",
+                "url": "https://api.github.com/repos/aelvan/Imager-Craft/zipball/b9f01d7bfb6e05a6688c676d7bbfcc50a68f5d29",
+                "reference": "b9f01d7bfb6e05a6688c676d7bbfcc50a68f5d29",
                 "shasum": ""
             },
             "require": {
@@ -68,7 +68,7 @@
                 "docs": "https://github.com/aelvan/Imager-Craft/blob/craft3/README.md",
                 "issues": "https://github.com/aelvan/Imager-Craft/issues"
             },
-            "time": "2019-09-16T20:28:38+00:00"
+            "time": "2019-09-21T14:25:19+00:00"
         },
         {
             "name": "aelvan/inlin",
@@ -238,11 +238,11 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.112.1",
+            "version": "3.112.11",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/e2fc12e34732f61000f2592fc66807794d32fb7b",
-                "reference": "e2fc12e34732f61000f2592fc66807794d32fb7b",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/ec29fd7cf36504fada118afe9c17025ce4c4ad89",
+                "reference": "ec29fd7cf36504fada118afe9c17025ce4c4ad89",
                 "shasum": ""
             },
             "require": {
@@ -297,7 +297,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2019-09-16T18:09:39+00:00"
+            "time": "2019-09-30T18:45:33+00:00"
         },
         {
             "name": "born05/craft-assetusage",
@@ -779,11 +779,11 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "3.3.4.1",
+            "version": "3.3.6",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/411852758f009292eb203c89e24dc83e0445c44c",
-                "reference": "411852758f009292eb203c89e24dc83e0445c44c",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/8cf2d3e18005e6fb44bb25f7d5238babba60b470",
+                "reference": "8cf2d3e18005e6fb44bb25f7d5238babba60b470",
                 "shasum": ""
             },
             "require": {
@@ -861,7 +861,7 @@
                 "docs": "https://docs.craftcms.com/v3/",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2019-09-17T22:35:58+00:00"
+            "time": "2019-09-27T17:33:15+00:00"
         },
         {
             "name": "craftcms/feed-me",
@@ -2029,26 +2029,17 @@
         },
         {
             "name": "giggsey/libphonenumber-for-php",
-            "version": "8.10.17",
+            "version": "8.10.19",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giggsey/libphonenumber-for-php/zipball/528e45db57b3dfa3d89965e52b635c50b285d584",
-                "reference": "528e45db57b3dfa3d89965e52b635c50b285d584",
+                "url": "https://api.github.com/repos/giggsey/libphonenumber-for-php/zipball/b8f2341692df067028445fee35ca7144d009e251",
+                "reference": "b8f2341692df067028445fee35ca7144d009e251",
                 "shasum": ""
             },
             "require": {
                 "ext-mbstring": "*",
                 "giggsey/locale": "^1.7",
                 "php": ">=5.3.2"
-            },
-            "require-dev": {
-                "pear/pear-core-minimal": "^1.9",
-                "pear/pear_exception": "^1.0",
-                "pear/versioncontrol_git": "^0.5",
-                "phing/phing": "^2.7",
-                "php-coveralls/php-coveralls": "^1.0|^2.0",
-                "phpunit/phpunit": "^4.8.36|^5.0",
-                "symfony/console": "^2.8|^3.0"
             },
             "type": "library",
             "extra": {
@@ -2067,7 +2058,6 @@
                     "/src/timezone/data/"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "Apache-2.0"
             ],
@@ -2088,7 +2078,7 @@
                 "phonenumber",
                 "validation"
             ],
-            "time": "2019-08-15T09:22:06+00:00"
+            "time": "2019-09-18T15:37:43+00:00"
         },
         {
             "name": "giggsey/locale",
@@ -2500,11 +2490,11 @@
         },
         {
             "name": "google/protobuf",
-            "version": "v3.9.1",
+            "version": "v3.9.2",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/protocolbuffers/protobuf-php/zipball/4bb1a332b47f618a0a21ad3cc9a43f1c4aaa5b62",
-                "reference": "4bb1a332b47f618a0a21ad3cc9a43f1c4aaa5b62",
+                "url": "https://api.github.com/repos/protocolbuffers/protobuf-php/zipball/5159d2b6f11fe86ea1b8fca5a5d5c42cb0c93b1e",
+                "reference": "5159d2b6f11fe86ea1b8fca5a5d5c42cb0c93b1e",
                 "shasum": ""
             },
             "require": {
@@ -2528,7 +2518,7 @@
             "keywords": [
                 "proto"
             ],
-            "time": "2019-08-06T17:47:34+00:00"
+            "time": "2019-09-23T17:53:18+00:00"
         },
         {
             "name": "grpc/grpc",
@@ -4084,11 +4074,11 @@
         },
         {
             "name": "nystudio107/craft-imageoptimize",
-            "version": "1.6.1",
+            "version": "1.6.2",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-imageoptimize/zipball/93d8dc7d0541d6148562aa0152841f9bad786289",
-                "reference": "93d8dc7d0541d6148562aa0152841f9bad786289",
+                "url": "https://api.github.com/repos/nystudio107/craft-imageoptimize/zipball/380a0b9c32739519707fc3eb02653bf562434508",
+                "reference": "380a0b9c32739519707fc3eb02653bf562434508",
                 "shasum": ""
             },
             "require": {
@@ -4144,7 +4134,7 @@
                 "docs": "https://nystudio107.com/plugins/imageoptimize/documentation",
                 "issues": "https://nystudio107.com/plugins/imageoptimize/support"
             },
-            "time": "2019-08-13T15:43:37+00:00"
+            "time": "2019-09-25T19:23:38+00:00"
         },
         {
             "name": "nystudio107/craft-imageoptimize-imgix",
@@ -4390,11 +4380,11 @@
         },
         {
             "name": "nystudio107/craft-twigpack",
-            "version": "1.1.8",
+            "version": "1.1.9",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-twigpack/zipball/c9413e4ea3aaf58e383a42ce663cb6d05490d73b",
-                "reference": "c9413e4ea3aaf58e383a42ce663cb6d05490d73b",
+                "url": "https://api.github.com/repos/nystudio107/craft-twigpack/zipball/4ed5513978f06d6d0d987d49ac369cd3b7436b4a",
+                "reference": "4ed5513978f06d6d0d987d49ac369cd3b7436b4a",
                 "shasum": ""
             },
             "require": {
@@ -4437,10 +4427,10 @@
                 "webpack-dev-server"
             ],
             "support": {
-                "docs": "https://github.com/nystudio107/craft-twigpack/blob/v1/README.md",
-                "issues": "https://github.com/nystudio107/craft-twigpack/issues"
+                "docs": "https://nystudio107.com/plugins/twigpack/documentation",
+                "issues": "https://nystudio107.com/plugins/twigpack/support"
             },
-            "time": "2019-08-06T01:14:07+00:00"
+            "time": "2019-10-02T00:15:44+00:00"
         },
         {
             "name": "nystudio107/craft-typogrify",
@@ -5293,11 +5283,11 @@
         },
         {
             "name": "rynpsc/craft-phone-number",
-            "version": "1.2.3",
+            "version": "1.2.4",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rynpsc/craft-phone-number/zipball/ad4dd3b9bdc699e208b07a4c8abbc1639e1d3b1f",
-                "reference": "ad4dd3b9bdc699e208b07a4c8abbc1639e1d3b1f",
+                "url": "https://api.github.com/repos/rynpsc/craft-phone-number/zipball/8b4bd8fb78f8ce4d85fe863aa4bc0252c62613af",
+                "reference": "8b4bd8fb78f8ce4d85fe863aa4bc0252c62613af",
                 "shasum": ""
             },
             "require": {
@@ -5340,7 +5330,7 @@
                 "source": "https://github.com/rynpsc/craft-phone-number",
                 "docs": "https://github.com/rynpsc/craft-phone-number"
             },
-            "time": "2019-05-05T10:41:50+00:00"
+            "time": "2019-09-20T18:11:15+00:00"
         },
         {
             "name": "seld/cli-prompt",
@@ -6913,22 +6903,21 @@
         },
         {
             "name": "topshelfcraft/wordsmith",
-            "version": "3.0.5",
+            "version": "3.1.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TopShelfCraft/Wordsmith/zipball/3cc897ebe448e5f09085a06688fc230ba67b97f2",
-                "reference": "3cc897ebe448e5f09085a06688fc230ba67b97f2",
+                "url": "https://api.github.com/repos/TopShelfCraft/Wordsmith/zipball/1913682b7b64080cbb459f12a544502dda248fcb",
+                "reference": "1913682b7b64080cbb459f12a544502dda248fcb",
                 "shasum": ""
             },
             "require": {
-                "craftcms/cms": "^3.0.0",
-                "danielstjules/stringy": "~3.1.0",
+                "craftcms/cms": "^3.3",
                 "davechild/textstatistics": "^1.0",
                 "erusev/parsedown-extra": "^0.7.1|0.8.0-beta-1",
                 "icanboogie/inflector": "^1.4",
                 "mofodojodino/profanity-filter": "^1.3",
                 "mundschenk-at/php-typography": "^6.0",
-                "tcb13/substringy": "^1.0"
+                "voku/stringy": "^5.1.0"
             },
             "type": "craft-plugin",
             "extra": {
@@ -6971,7 +6960,7 @@
                 "docs": "https://wordsmith.docs.topshelfcraft.com/",
                 "issues": "https://github.com/topshelfcraft/wordsmith/issues"
             },
-            "time": "2019-05-20T22:32:29+00:00"
+            "time": "2019-09-20T18:48:00+00:00"
         },
         {
             "name": "true/punycode",
@@ -7069,6 +7058,55 @@
                 "templating"
             ],
             "time": "2019-06-18T15:37:11+00:00"
+        },
+        {
+            "name": "vaersaagod/matrixmate",
+            "version": "1.2.2",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/vaersaagod/matrixmate/zipball/176a55728ae7925e152bb75e8613bf9035a95295",
+                "reference": "176a55728ae7925e152bb75e8613bf9035a95295",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "MatrixMate",
+                "handle": "matrixmate",
+                "hasCpSettings": false,
+                "hasCpSection": false,
+                "changelogUrl": "https://raw.githubusercontent.com/vaersaagod/matrixmate/master/CHANGELOG.md",
+                "class": "vaersaagod\\matrixmate\\MatrixMate"
+            },
+            "autoload": {
+                "psr-4": {
+                    "vaersaagod\\matrixmate\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Værsågod",
+                    "homepage": "https://vaersaagod.no"
+                }
+            ],
+            "description": "Welding Matrix into shape, mate!",
+            "keywords": [
+                "cms",
+                "craft",
+                "craft-plugin",
+                "craftcms",
+                "matrixmate"
+            ],
+            "support": {
+                "docs": "https://github.com/vaersaagod/matrixmate/blob/master/README.md",
+                "issues": "https://github.com/vaersaagod/matrixmate/issues"
+            },
+            "time": "2019-09-29T10:46:41+00:00"
         },
         {
             "name": "verbb/field-manager",
@@ -7318,19 +7356,16 @@
         },
         {
             "name": "voku/anti-xss",
-            "version": "4.1.14",
+            "version": "4.1.15",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/voku/anti-xss/zipball/53c5da8039cf2ed226e3249b86a2be700c415f88",
-                "reference": "53c5da8039cf2ed226e3249b86a2be700c415f88",
+                "url": "https://api.github.com/repos/voku/anti-xss/zipball/14ff3982d58af104f5f38a438d99b9600705151e",
+                "reference": "14ff3982d58af104f5f38a438d99b9600705151e",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.0.0",
-                "voku/portable-utf8": "~5.4.1"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~6.0 || ~7.0"
+                "voku/portable-utf8": "~5.4.21"
             },
             "type": "library",
             "extra": {
@@ -7343,7 +7378,6 @@
                     "voku\\helper\\": "src/voku/helper/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -7366,7 +7400,7 @@
                 "security",
                 "xss"
             ],
-            "time": "2019-06-27T21:40:28+00:00"
+            "time": "2019-09-25T22:40:48+00:00"
         },
         {
             "name": "voku/arrayy",
@@ -7506,11 +7540,11 @@
         },
         {
             "name": "voku/portable-utf8",
-            "version": "5.4.20",
+            "version": "5.4.23",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/voku/portable-utf8/zipball/a0ebc4908326cb6ee282acab250916bbb1b5256c",
-                "reference": "a0ebc4908326cb6ee282acab250916bbb1b5256c",
+                "url": "https://api.github.com/repos/voku/portable-utf8/zipball/bbecc90364dc1c7e028e0c0a6bf7c8ebfc119234",
+                "reference": "bbecc90364dc1c7e028e0c0a6bf7c8ebfc119234",
                 "shasum": ""
             },
             "require": {
@@ -7567,7 +7601,7 @@
                 "utf-8",
                 "utf8"
             ],
-            "time": "2019-09-15T22:59:31+00:00"
+            "time": "2019-09-27T07:24:07+00:00"
         },
         {
             "name": "voku/stop-words",
@@ -8087,11 +8121,11 @@
         },
         {
             "name": "yiisoft/yii2-debug",
-            "version": "2.1.8",
+            "version": "2.1.9",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-debug/zipball/959bf8206a3ec64f8949f62024a2c58d9a02e78f",
-                "reference": "959bf8206a3ec64f8949f62024a2c58d9a02e78f",
+                "url": "https://api.github.com/repos/yiisoft/yii2-debug/zipball/62679af3183c308c0edffecc69778afc32ae55aa",
+                "reference": "62679af3183c308c0edffecc69778afc32ae55aa",
                 "shasum": ""
             },
             "require": {
@@ -8099,11 +8133,6 @@
                 "opis/closure": "^3.3",
                 "php": ">=5.4",
                 "yiisoft/yii2": "~2.0.13"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "<7",
-                "yiisoft/yii2-coding-standards": "~2.0",
-                "yiisoft/yii2-swiftmailer": "*"
             },
             "type": "yii2-extension",
             "extra": {
@@ -8116,7 +8145,6 @@
                     "yii\\debug\\": "src"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "BSD-3-Clause"
             ],
@@ -8136,7 +8164,7 @@
                 "debugger",
                 "yii2"
             ],
-            "time": "2019-08-20T15:19:56+00:00"
+            "time": "2019-09-18T10:49:01+00:00"
         },
         {
             "name": "yiisoft/yii2-queue",

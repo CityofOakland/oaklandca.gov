@@ -42,8 +42,28 @@ function banner($element) {
   return null;
 }
 
+function contentBuilder($element) {
+  $body = [];
+  if (! empty($element)) {
+    foreach ($element as $block) {
+      switch ($block->type) {
+        case 'heading':
+        case 'subheading':
+        case 'text':
+          $body[] = strip_tags($block->text);
+          break;
+        case 'gallery':
+          foreach ($block->images as $image) {
+            $body[] = $image->altText;
+          }
+        default:
+      }
+    }
+  }
+}
+
 function portrait($element) {
-  ! empty($entry->portrait) ? $entry->portrait->one()->url : null;
+  ! empty($element->portrait) ? $element->portrait->one()->url : null;
 }
 
 function sectionPriority($element) {
@@ -70,7 +90,6 @@ function searchFilter($element) {
     case 'news':
     case 'processes':
     case 'projects':
-    case 'news':
     case 'resources':
     case 'services':
     case 'topics':
@@ -267,10 +286,7 @@ class resourcesTransform extends TransformerAbstract
     $officials = enumEntries("officials", $entry);
     $projects = enumEntries("projects", $entry);
     $topics = enumEntries("topics", $entry);
-    $body = [];
-    foreach ($entry->contentBuilder as $block) {
-      $body[] = strip_tags($block->text);
-    }
+    $body = contentBuilder($entry->contentBuilder);
     return [
       'title' => $entry->title,
       'url' => entryUrl($entry),
@@ -296,12 +312,7 @@ class servicesTransform extends TransformerAbstract
     $officials = enumEntries("officials", $entry);
     $projects = enumEntries("projects", $entry);
     $topics = enumEntries("topics", $entry);
-    $body = [];
-    if (! empty($entry->contentBuilder)) {
-      foreach ($entry->contentBuilder as $block) {
-        $body[] = strip_tags($block->text);
-      }
-    }
+    $body = contentBuilder($entry->contentBuilder);
     return [
       'title' => $entry->title,
       'url' => entryUrl($entry),
@@ -314,8 +325,6 @@ class servicesTransform extends TransformerAbstract
       'projects' => $projects,
       'topics' => $topics,
       'body' => $body,
-      'urgentIssuesDescription' => $entry->urgentIssuesDescription,
-      'nonUrgentIssuesDescription' => $entry->nonUrgentIssuesDescription,
     ];
   }
 }
@@ -413,12 +422,7 @@ class allTransform extends TransformerAbstract
     $services = enumEntries("services", $entry);
     $topics = enumEntries("topics", $entry);
     $documents = enumEntries("documents", $entry);
-    $bodyMatrix = [];
-    if (! empty($entry->contentBuilder)) {
-      foreach ($entry->contentBuilder as $block) {
-        $bodyMatrix[] = strip_tags($block->text);
-      }
-    }
+    $bodyMatrix = contentBuilder($entry->contentBuilder);
     return [
       'title' => $entry->title,
       'url' => entryUrl($entry),
@@ -437,8 +441,6 @@ class allTransform extends TransformerAbstract
       'groupHeadName' => $entry->groupHeadName,
       'groupHeadTitle' => $entry->groupHeadTitle,
       'mediaContact' => $entry->mediaContact,
-      'urgentIssuesDescription' => $entry->urgentIssuesDescription,
-      'nonUrgentIssuesDescription' => $entry->nonUrgentIssuesDescription,
       'departments' => $departments,
       'documents' => $documents,
       'officials' => $officials,

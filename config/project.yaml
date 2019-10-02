@@ -32,7 +32,7 @@ categoryGroups:
         hasUrls: false
         uriFormat: null
         template: null
-dateModified: 1569966993
+dateModified: 1570055599
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -2275,7 +2275,7 @@ fields:
   fd0c8e02-99b4-4ce5-ab89-b29cd0efc581:
     name: 'Content Builder'
     handle: contentBuilder
-    instructions: '## Attention: Table blocks are currently being tested and will not render properly on mobile devices, nor will the information be searchable. Before you use these fields, please contact digitalteam@oaklandca.gov.'
+    instructions: ''
     searchable: true
     translationMethod: site
     translationKeyFormat: null
@@ -3007,7 +3007,7 @@ matrixBlockTypes:
           defaultUploadLocationSource: 'volume:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67'
           defaultUploadLocationSubpath: ''
           singleUploadLocationSource: 'volume:56ad4140-da85-43ea-8292-3fac04cbefc1'
-          singleUploadLocationSubpath: '{entry.slug}/{owner.owner.id}'
+          singleUploadLocationSubpath: '{owner.slug}'
           restrictFiles: '1'
           allowedKinds:
             - image
@@ -4147,11 +4147,6 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 2.2.0
-  spoon:
-    edition: standard
-    enabled: true
-    schemaVersion: 3.0.0
-    licenseKey: CO12HAFDJTLEDE1X2RN05WIE
   smith:
     edition: standard
     enabled: true
@@ -4161,6 +4156,10 @@ plugins:
     enabled: true
     schemaVersion: 1.0.0
   field-manager:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  matrixmate:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
