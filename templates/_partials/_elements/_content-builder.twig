@@ -39,9 +39,9 @@
 {% for block in entry.contentBuilder.all() %}
   {% switch block.type %}
     {% case "heading" %}
-      <{{ heading }} class="{{ headingClass }}">{{ block.text }}</{{ heading }}>
+      <{{ heading }} class="anchor-link {{ headingClass }}"><a href="#{{ block.text | kebab }}-{{ block.id }}" id="{{ block.text | kebab }}-{{ block.id }}">{{ block.text }}</a></{{ heading }}>
     {% case "subheading" %}
-      <{{ subheading }} class="{{ subheadingClass }}">{{ block.text }}</{{ subheading }}>
+      <{{ subheading }} class="anchor-link {{ subheadingClass }}"><a href="#{{ block.text | kebab }}-{{ block.id }}" id="{{ block.text | kebab }}-{{ block.id }}">{{ block.text }}</a></{{ subheading }}>
     {% case "text" %}
       {{ block.text }}
     {% case "table2Columns" %}

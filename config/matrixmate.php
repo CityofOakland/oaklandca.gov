@@ -5,7 +5,7 @@ $isUserAdmin = Craft::$app->getUser()->getIsAdmin();
 return [
   'fields' => [
     'contentBuilder' => [
-      'section:documents,section:documentPackets,section:projects,section:processes,section:services' => !$isUserAdmin ? [
+      '*' => !$isUserAdmin ? [
         'groups' => [
           [
             'label' => 'Text',
@@ -14,7 +14,25 @@ return [
         ],
         'hideUngroupedTypes' => true,
       ] : null,
-      'section:topics' => $isUserAdmin ? [
+      'section:departments' => !$isUserAdmin ? [
+        'groups' => [
+          [
+            'label' => 'Text',
+            'types' => ['heading', 'subheading', 'text'],
+          ],
+          [
+            'label' => 'Links',
+            'types' => ['links2Entries', 'links3Entries', 'links6Entries', 'links9Entries', 'newsEntries']
+          ],
+        ],
+        'types' => [
+          'newsEntries' => [
+            'maxLimit' => 1
+          ]
+        ],
+        'hideUngroupedTypes' => true,
+      ] : null,
+      'section:topics' => !$isUserAdmin ? [
         'groups' => [
           [
             'label' => 'Text',
@@ -31,7 +49,7 @@ return [
         ],
         'hideUngroupedTypes' => true,
       ] : null,
-      'section:news,section:pressReleases,section:resources' => $isUserAdmin ? [
+      'section:news,section:pressReleases,section:resources' => !$isUserAdmin ? [
         'groups' => [
           [
             'label' => 'Text',
