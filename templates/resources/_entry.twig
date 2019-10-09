@@ -12,7 +12,7 @@
     ],
   } %}
   <section class="bg-white relative z-0">
-    <div class="container">
+    <div class="container pt-0">
       {% switch entry.type %}
         {% case "videos" %}
         {% set embed = craft.videoEmbedder.getEmbedUrl(entry.videoLink) %}
@@ -48,7 +48,10 @@
         {% include '_partials/_elements/_ctas.twig' %}
         {% default %}
       {% endswitch %}
-      {% include '_partials/_elements/_transaction-body.twig' %}
+      {% include '_partials/_elements/_last-update.twig' %}
+      <div class="body-text">
+        {% include '_partials/_elements/_transaction-body.twig' %}
+      </div>
     </div>
   </section>
 {% endblock %}
