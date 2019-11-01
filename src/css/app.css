@@ -63,7 +63,7 @@ a:hover {
   @apply relative block invisible;
 }
 
-@media (min-width: theme('screens.md')) {
+@media (min-width: theme("screens.md")) {
   .anchor-link {
     top: -10rem;
   }
@@ -73,7 +73,7 @@ a:hover {
   @apply p-6;
 }
 
-@media (min-width: theme('screens.sm')) {
+@media (min-width: theme("screens.sm")) {
   .container {
     @apply px-8 py-12;
   }
@@ -105,7 +105,7 @@ a:hover {
 }
 
 .section-box:hover {
-  @apply text-white bg-green-600
+  @apply text-white bg-green-600;
 }
 
 main,
@@ -117,14 +117,14 @@ main {
   @apply pt-14;
 }
 
-@media (min-width: theme('screens.md')) {
+@media (min-width: theme("screens.md")) {
   main {
     @apply pt-30;
   }
 }
 
 /* Banner Styles */
-.banner  {
+.banner {
   @apply relative text-white text-xl leading-loose bg-white;
 }
 
@@ -138,14 +138,13 @@ main {
 }
 
 /* Background Section Color Rotations */
-main > .bg-rotate:nth-of-type(odd) {
+main .bg-rotate:nth-of-type(odd) {
   @apply bg-gray-100;
 }
 
-main > .bg-rotate:nth-of-type(even) {
+main .bg-rotate:nth-of-type(even) {
   @apply bg-white;
 }
-
 
 .iframe-holder iframe {
   max-width: 100% !important;
@@ -165,29 +164,29 @@ main > .bg-rotate:nth-of-type(even) {
   }
 }
 
-@media (min-width: theme('screens.sm')) {
+@media (min-width: theme("screens.sm")) {
   .card-grid > * {
     @apply self-stretch;
-    width: calc(theme('width.1/3') - theme(margin.8));
+    width: calc(theme("width.1/3") - theme(margin.8));
   }
   .card-grid-2up > * {
-    width: calc(theme('width.1/2') - theme(margin.8));
+    width: calc(theme("width.1/2") - theme(margin.8));
   }
   .card-grid-tight {
     @apply -mx-2;
     & > * {
       @apply m-2;
-      width: calc(theme('width.1/3') - theme(margin.4));
+      width: calc(theme("width.1/3") - theme(margin.4));
     }
   }
   .profile-cards > * {
-    width: calc(theme('width.1/2') - theme(margin.4));
+    width: calc(theme("width.1/2") - theme(margin.4));
   }
 }
 
-@media (min-width: theme('screens.md')) {
+@media (min-width: theme("screens.md")) {
   .profile-cards > * {
-    width: calc(theme('width.1/3') - theme(margin.8));
+    width: calc(theme("width.1/3") - theme(margin.8));
   }
 }
 
@@ -199,18 +198,18 @@ main > .bg-rotate:nth-of-type(even) {
   .horizontal-card {
     @apply flex-row justify-between;
     & > figure {
-      width: calc(theme('width.1/3') - theme(margin.6));
+      width: calc(theme("width.1/3") - theme(margin.6));
     }
 
     & > div {
-      width: calc(theme('width.2/3') - theme(margin.6));
+      width: calc(theme("width.2/3") - theme(margin.6));
     }
   }
 }
 
 .step-grid {
   display: grid;
-  grid-gap: theme('spacing.4');
+  grid-gap: theme("spacing.4");
   grid-template-columns: 150px 1fr;
 }
 
@@ -231,7 +230,9 @@ button {
   }
 }
 
-table, th, td {
+table,
+th,
+td {
   @apply border border-solid border-gray-400;
 }
 
@@ -269,7 +270,7 @@ body.open #menu {
     &:after {
       @apply bg-no-repeat absolute;
       background-image: url("/assets/img/icon-right-arrow.svg");
-      content: '';
+      content: "";
       top: 10px;
       right: -30px;
       width: 59px;
@@ -326,7 +327,7 @@ body.open .page-holder {
 
 @responsive {
   .aspect-ratio-square {
-    padding-top: 100.00%;
+    padding-top: 100%;
   }
 
   .aspect-ratio-16\/9 {
@@ -334,7 +335,7 @@ body.open .page-holder {
   }
 
   .aspect-ratio-4\/3 {
-    padding-top: 75.00%;
+    padding-top: 75%;
   }
 
   .aspect-ratio-21\/9 {

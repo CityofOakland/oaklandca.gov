@@ -1,68 +1,60 @@
 <?php
 
 $isUserAdmin = Craft::$app->getUser()->getIsAdmin();
+$defaultTextBlock = [
+  'label' => 'Text',
+  'types' => ['heading', 'subheading', 'text'],
+];
+$defaultLinksBlock = [
+  'label' => 'Links',
+  'types' => ['largeEntryLinks', 'mediumEntryLinks', 'smallEntryLinks', 'newsEntries', 'eventEntries', 'meetingEntries']
+];
+$defaultImagesBlock = [
+  'label' => 'Images',
+  'types' => ['image', 'gallery']
+];
+$defaultTablesBlock = [
+  'label' => 'Tables',
+  'types' => ['table2Columns', 'table3Columns', 'table4Columns']
+];
 
 return [
   'fields' => [
     'contentBuilder' => [
       '*' => !$isUserAdmin ? [
         'groups' => [
-          [
-            'label' => 'Text',
-            'types' => ['heading', 'subheading', 'text'],
-          ]
+          $defaultTextBlock
         ],
         'hideUngroupedTypes' => true,
-      ] : null,
+      ] : [
+        'groups' => [
+          $defaultTextBlock,
+          $defaultLinksBlock,
+          $defaultImagesBlock,
+          $defaultTablesBlock
+        ],
+      ],
       'section:departments' => !$isUserAdmin ? [
         'groups' => [
-          [
-            'label' => 'Text',
-            'types' => ['heading', 'subheading', 'text'],
-          ],
-          [
-            'label' => 'Links',
-            'types' => ['links2Entries', 'links3Entries', 'links6Entries', 'links9Entries', 'newsEntries']
-          ],
-        ],
-        'types' => [
-          'newsEntries' => [
-            'maxLimit' => 1
-          ]
+          $defaultTextBlock,
+          $defaultLinksBlock,
         ],
         'hideUngroupedTypes' => true,
       ] : null,
       'section:topics' => !$isUserAdmin ? [
         'groups' => [
-          [
-            'label' => 'Text',
-            'types' => ['heading', 'subheading', 'text'],
-          ],
-          [
-            'label' => 'Images',
-            'types' => ['image', 'gallery'],
-          ],
-          [
-            'label' => 'Tables',
-            'types' => ['table2Columns', 'table3Columns', 'table4Columns']
-          ]
+          $defaultTextBlock,
+          $defaultLinksBlock,
+          $defaultImagesBlock,
+          $defaultTablesBlock
         ],
         'hideUngroupedTypes' => true,
       ] : null,
       'section:news,section:pressReleases,section:resources' => !$isUserAdmin ? [
         'groups' => [
-          [
-            'label' => 'Text',
-            'types' => ['heading', 'subheading', 'text'],
-          ],
-          [
-            'label' => 'Images',
-            'types' => ['image', 'gallery'],
-          ],
-          [
-            'label' => 'Tables',
-            'types' => ['table2Columns', 'table3Columns', 'table4Columns']
-          ]
+          $defaultTextBlock,
+          $defaultImagesBlock,
+          $defaultTablesBlock
         ],
         'hideUngroupedTypes' => true,
       ] : null,

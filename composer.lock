@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "e80c0cab05e645fec53de3329db9cc4f",
+    "content-hash": "1a0e7d8202e3673c964eae684ba72021",
     "packages": [
         {
             "name": "aelvan/imager",
@@ -779,11 +779,11 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "3.3.7",
+            "version": "3.3.13",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/24300e95ce3acd47d10557a8bd8b9b9fbc520795",
-                "reference": "24300e95ce3acd47d10557a8bd8b9b9fbc520795",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/a0ad545a5d337233babb89ce814027cfeadb561e",
+                "reference": "a0ad545a5d337233babb89ce814027cfeadb561e",
                 "shasum": ""
             },
             "require": {
@@ -811,7 +811,7 @@
                 "seld/cli-prompt": "^1.0.3",
                 "symfony/yaml": "^3.2|^4.0",
                 "true/punycode": "^2.1.0",
-                "twig/twig": "~2.11.0",
+                "twig/twig": "~2.12.0",
                 "voku/stringy": "~5.1.0",
                 "webonyx/graphql-php": "^0.12.0",
                 "yii2tech/ar-softdelete": "^1.0.2",
@@ -861,7 +861,7 @@
                 "docs": "https://docs.craftcms.com/v3/",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2019-10-03T19:15:33+00:00"
+            "time": "2019-10-23T19:55:56+00:00"
         },
         {
             "name": "craftcms/element-api",
@@ -2079,11 +2079,11 @@
         },
         {
             "name": "giggsey/libphonenumber-for-php",
-            "version": "8.10.19",
+            "version": "8.10.21",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giggsey/libphonenumber-for-php/zipball/b8f2341692df067028445fee35ca7144d009e251",
-                "reference": "b8f2341692df067028445fee35ca7144d009e251",
+                "url": "https://api.github.com/repos/giggsey/libphonenumber-for-php/zipball/04d0228908237931bc1d9c841e3380991055a7e6",
+                "reference": "04d0228908237931bc1d9c841e3380991055a7e6",
                 "shasum": ""
             },
             "require": {
@@ -2128,15 +2128,15 @@
                 "phonenumber",
                 "validation"
             ],
-            "time": "2019-09-18T15:37:43+00:00"
+            "time": "2019-10-16T11:25:36+00:00"
         },
         {
             "name": "giggsey/locale",
-            "version": "1.7.1",
+            "version": "1.8",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giggsey/Locale/zipball/b8030fc8df13cdfbecba318588de2d52b49c9b50",
-                "reference": "b8030fc8df13cdfbecba318588de2d52b49c9b50",
+                "url": "https://api.github.com/repos/giggsey/Locale/zipball/85a1b251bad11c986fec2a051b10d4b80a5caa1b",
+                "reference": "85a1b251bad11c986fec2a051b10d4b80a5caa1b",
                 "shasum": ""
             },
             "require": {
@@ -2159,7 +2159,7 @@
                 }
             ],
             "description": "Locale functions required by libphonenumber-for-php",
-            "time": "2019-04-26T07:28:50+00:00"
+            "time": "2019-10-09T18:53:14+00:00"
         },
         {
             "name": "google/auth",
@@ -2950,20 +2950,15 @@
         },
         {
             "name": "justinrainbow/json-schema",
-            "version": "5.2.8",
+            "version": "5.2.9",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/justinrainbow/json-schema/zipball/dcb6e1006bb5fd1e392b4daa68932880f37550d4",
-                "reference": "dcb6e1006bb5fd1e392b4daa68932880f37550d4",
+                "url": "https://api.github.com/repos/justinrainbow/json-schema/zipball/44c6787311242a979fa15c704327c20e7221a0e4",
+                "reference": "44c6787311242a979fa15c704327c20e7221a0e4",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "~2.2.20",
-                "json-schema/json-schema-test-suite": "1.2.0",
-                "phpunit/phpunit": "^4.8.35"
             },
             "bin": [
                 "bin/validate-json"
@@ -2979,7 +2974,6 @@
                     "JsonSchema\\": "src/JsonSchema/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -3007,7 +3001,7 @@
                 "json",
                 "schema"
             ],
-            "time": "2019-01-14T23:55:14+00:00"
+            "time": "2019-09-25T14:49:45+00:00"
         },
         {
             "name": "kraken-io/kraken-php",
@@ -3176,11 +3170,11 @@
         },
         {
             "name": "league/flysystem",
-            "version": "1.0.55",
+            "version": "1.0.57",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/33c91155537c6dc899eacdc54a13ac6303f156e6",
-                "reference": "33c91155537c6dc899eacdc54a13ac6303f156e6",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/0e9db7f0b96b9f12dcf6f65bc34b72b1a30ea55a",
+                "reference": "0e9db7f0b96b9f12dcf6f65bc34b72b1a30ea55a",
                 "shasum": ""
             },
             "require": {
@@ -3189,10 +3183,6 @@
             },
             "conflict": {
                 "league/flysystem-sftp": "<1.0.6"
-            },
-            "require-dev": {
-                "phpspec/phpspec": "^3.4",
-                "phpunit/phpunit": "^5.7.10"
             },
             "suggest": {
                 "ext-fileinfo": "Required for MimeType",
@@ -3221,7 +3211,6 @@
                     "League\\Flysystem\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -3251,7 +3240,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2019-08-24T11:17:19+00:00"
+            "time": "2019-10-16T21:01:05+00:00"
         },
         {
             "name": "league/flysystem-aws-s3-v3",
@@ -4245,11 +4234,11 @@
         },
         {
             "name": "nystudio107/craft-twigpack",
-            "version": "1.1.10",
+            "version": "1.1.11",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-twigpack/zipball/722c52a270f8d36460d9cdb5d811d9307b5421d4",
-                "reference": "722c52a270f8d36460d9cdb5d811d9307b5421d4",
+                "url": "https://api.github.com/repos/nystudio107/craft-twigpack/zipball/57e41cbcd8339d2871c43736f8932c763bc1d521",
+                "reference": "57e41cbcd8339d2871c43736f8932c763bc1d521",
                 "shasum": ""
             },
             "require": {
@@ -4295,7 +4284,7 @@
                 "docs": "https://nystudio107.com/plugins/twigpack/documentation",
                 "issues": "https://nystudio107.com/plugins/twigpack/support"
             },
-            "time": "2019-10-03T19:46:13+00:00"
+            "time": "2019-10-15T15:26:51+00:00"
         },
         {
             "name": "nystudio107/craft-typogrify",
@@ -4354,19 +4343,15 @@
         },
         {
             "name": "opis/closure",
-            "version": "3.4.0",
+            "version": "3.4.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/opis/closure/zipball/60a97fff133b1669a5b1776aa8ab06db3f3962b7",
-                "reference": "60a97fff133b1669a5b1776aa8ab06db3f3962b7",
+                "url": "https://api.github.com/repos/opis/closure/zipball/e79f851749c3caa836d7ccc01ede5828feb762c7",
+                "reference": "e79f851749c3caa836d7ccc01ede5828feb762c7",
                 "shasum": ""
             },
             "require": {
                 "php": "^5.4 || ^7.0"
-            },
-            "require-dev": {
-                "jeremeamia/superclosure": "^2.0",
-                "phpunit/phpunit": "^4.0 || ^5.0 || ^6.0 || ^7.0"
             },
             "type": "library",
             "extra": {
@@ -4382,7 +4367,6 @@
                     "functions.php"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -4406,7 +4390,7 @@
                 "serialization",
                 "serialize"
             ],
-            "time": "2019-09-02T21:07:33+00:00"
+            "time": "2019-10-19T18:38:51+00:00"
         },
         {
             "name": "paragonie/random_compat",
@@ -5147,11 +5131,11 @@
         },
         {
             "name": "rynpsc/craft-phone-number",
-            "version": "1.2.4",
+            "version": "1.2.5",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rynpsc/craft-phone-number/zipball/8b4bd8fb78f8ce4d85fe863aa4bc0252c62613af",
-                "reference": "8b4bd8fb78f8ce4d85fe863aa4bc0252c62613af",
+                "url": "https://api.github.com/repos/rynpsc/craft-phone-number/zipball/20d24a9a59c1444200bcc83d2f0b342e99303337",
+                "reference": "20d24a9a59c1444200bcc83d2f0b342e99303337",
                 "shasum": ""
             },
             "require": {
@@ -5194,7 +5178,7 @@
                 "source": "https://github.com/rynpsc/craft-phone-number",
                 "docs": "https://github.com/rynpsc/craft-phone-number"
             },
-            "time": "2019-09-20T18:11:15+00:00"
+            "time": "2019-10-15T18:01:22+00:00"
         },
         {
             "name": "seld/cli-prompt",
@@ -5703,11 +5687,11 @@
         },
         {
             "name": "symfony/console",
-            "version": "v3.4.31",
+            "version": "v3.4.32",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/4510f04e70344d70952566e4262a0b11df39cb10",
-                "reference": "4510f04e70344d70952566e4262a0b11df39cb10",
+                "url": "https://api.github.com/repos/symfony/console/zipball/4727d7f3c99b9dea0ae70ed4f34645728aa90453",
+                "reference": "4727d7f3c99b9dea0ae70ed4f34645728aa90453",
                 "shasum": ""
             },
             "require": {
@@ -5721,14 +5705,6 @@
             },
             "provide": {
                 "psr/log-implementation": "1.0"
-            },
-            "require-dev": {
-                "psr/log": "~1.0",
-                "symfony/config": "~3.3|~4.0",
-                "symfony/dependency-injection": "~3.4|~4.0",
-                "symfony/event-dispatcher": "~2.8|~3.0|~4.0",
-                "symfony/lock": "~3.4|~4.0",
-                "symfony/process": "~3.3|~4.0"
             },
             "suggest": {
                 "psr/log": "For using the console logger",
@@ -5750,7 +5726,6 @@
                     "/Tests/"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -5766,15 +5741,15 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2019-08-26T07:52:58+00:00"
+            "time": "2019-10-06T19:52:09+00:00"
         },
         {
             "name": "symfony/debug",
-            "version": "v3.4.31",
+            "version": "v3.4.32",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/debug/zipball/0b600300918780001e2821db77bc28b677794486",
-                "reference": "0b600300918780001e2821db77bc28b677794486",
+                "url": "https://api.github.com/repos/symfony/debug/zipball/b3e7ce815d82196435d16dc458023f8fb6b36ceb",
+                "reference": "b3e7ce815d82196435d16dc458023f8fb6b36ceb",
                 "shasum": ""
             },
             "require": {
@@ -5783,9 +5758,6 @@
             },
             "conflict": {
                 "symfony/http-kernel": ">=2.3,<2.3.24|~2.4.0|>=2.5,<2.5.9|>=2.6,<2.6.2"
-            },
-            "require-dev": {
-                "symfony/http-kernel": "~2.8|~3.0|~4.0"
             },
             "type": "library",
             "extra": {
@@ -5801,7 +5773,6 @@
                     "/Tests/"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -5817,11 +5788,11 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
-            "time": "2019-08-20T13:31:17+00:00"
+            "time": "2019-09-19T15:32:51+00:00"
         },
         {
             "name": "symfony/filesystem",
-            "version": "v3.4.31",
+            "version": "v3.4.32",
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/filesystem/zipball/00e3a6ddd723b8bcfe4f2a1b6f82b98eeeb51516",
@@ -5846,7 +5817,6 @@
                     "/Tests/"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -5866,11 +5836,11 @@
         },
         {
             "name": "symfony/finder",
-            "version": "v3.4.31",
+            "version": "v3.4.32",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/finder/zipball/1fcad80b440abcd1451767349906b6f9d3961d37",
-                "reference": "1fcad80b440abcd1451767349906b6f9d3961d37",
+                "url": "https://api.github.com/repos/symfony/finder/zipball/2b6a666d6ff7fb65d10b97d817c8e7930944afb9",
+                "reference": "2b6a666d6ff7fb65d10b97d817c8e7930944afb9",
                 "shasum": ""
             },
             "require": {
@@ -5890,7 +5860,6 @@
                     "/Tests/"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -5906,7 +5875,7 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
-            "time": "2019-08-14T09:39:58+00:00"
+            "time": "2019-09-01T21:32:23+00:00"
         },
         {
             "name": "symfony/inflector",
@@ -6392,11 +6361,11 @@
         },
         {
             "name": "symfony/process",
-            "version": "v3.4.31",
+            "version": "v3.4.32",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/process/zipball/d822cb654000a95b7855362c0d5b127f6a6d8baa",
-                "reference": "d822cb654000a95b7855362c0d5b127f6a6d8baa",
+                "url": "https://api.github.com/repos/symfony/process/zipball/344dc588b163ff58274f1769b90b75237f32ed16",
+                "reference": "344dc588b163ff58274f1769b90b75237f32ed16",
                 "shasum": ""
             },
             "require": {
@@ -6416,7 +6385,6 @@
                     "/Tests/"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -6432,7 +6400,7 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "https://symfony.com",
-            "time": "2019-08-26T07:52:58+00:00"
+            "time": "2019-09-25T14:09:38+00:00"
         },
         {
             "name": "symfony/property-access",
@@ -6623,11 +6591,11 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v3.4.31",
+            "version": "v3.4.32",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/3dc414b7db30695bae671a1d86013d03f4ae9834",
-                "reference": "3dc414b7db30695bae671a1d86013d03f4ae9834",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/768f817446da74a776a31eea335540f9dcb53942",
+                "reference": "768f817446da74a776a31eea335540f9dcb53942",
                 "shasum": ""
             },
             "require": {
@@ -6636,9 +6604,6 @@
             },
             "conflict": {
                 "symfony/console": "<3.4"
-            },
-            "require-dev": {
-                "symfony/console": "~3.4|~4.0"
             },
             "suggest": {
                 "symfony/console": "For validating YAML files using the lint command"
@@ -6657,7 +6622,6 @@
                     "/Tests/"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -6673,7 +6637,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2019-08-20T13:31:17+00:00"
+            "time": "2019-09-10T10:38:46+00:00"
         },
         {
             "name": "tcb13/substringy",
@@ -6967,11 +6931,11 @@
         },
         {
             "name": "twig/twig",
-            "version": "v2.11.3",
+            "version": "v2.12.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/699ed2342557c88789a15402de5eb834dedd6792",
-                "reference": "699ed2342557c88789a15402de5eb834dedd6792",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/ddd4134af9bfc6dba4eff7c8447444ecc45b9ee5",
+                "reference": "ddd4134af9bfc6dba4eff7c8447444ecc45b9ee5",
                 "shasum": ""
             },
             "require": {
@@ -6982,7 +6946,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.11-dev"
+                    "dev-master": "2.12-dev"
                 }
             },
             "autoload": {
@@ -7004,14 +6968,14 @@
                     "role": "Lead Developer"
                 },
                 {
-                    "name": "Armin Ronacher",
-                    "email": "armin.ronacher@active-4.com",
-                    "role": "Project Founder"
-                },
-                {
                     "name": "Twig Team",
                     "homepage": "https://twig.symfony.com/contributors",
                     "role": "Contributors"
+                },
+                {
+                    "name": "Armin Ronacher",
+                    "email": "armin.ronacher@active-4.com",
+                    "role": "Project Founder"
                 }
             ],
             "description": "Twig, the flexible, fast, and secure template language for PHP",
@@ -7019,7 +6983,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2019-06-18T15:37:11+00:00"
+            "time": "2019-10-17T07:34:53+00:00"
         },
         {
             "name": "vaersaagod/matrixmate",
@@ -7462,11 +7426,11 @@
         },
         {
             "name": "voku/portable-ascii",
-            "version": "1.2.3",
+            "version": "1.3.4",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/voku/portable-ascii/zipball/d29f78e8ead9cfef6a09208c27716737c1ac56be",
-                "reference": "d29f78e8ead9cfef6a09208c27716737c1ac56be",
+                "url": "https://api.github.com/repos/voku/portable-ascii/zipball/d3553af811794c377ea2afff5494b343bcef5b76",
+                "reference": "d3553af811794c377ea2afff5494b343bcef5b76",
                 "shasum": ""
             },
             "require": {
@@ -7498,15 +7462,15 @@
                 "clean",
                 "php"
             ],
-            "time": "2019-09-10T13:53:07+00:00"
+            "time": "2019-10-14T09:49:39+00:00"
         },
         {
             "name": "voku/portable-utf8",
-            "version": "5.4.24",
+            "version": "5.4.25",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/voku/portable-utf8/zipball/1ff025864df28cdbb946fe96f8343904400f5e2a",
-                "reference": "1ff025864df28cdbb946fe96f8343904400f5e2a",
+                "url": "https://api.github.com/repos/voku/portable-utf8/zipball/aed1b955d5d43e4104d72dce4158db5de3cecce6",
+                "reference": "aed1b955d5d43e4104d72dce4158db5de3cecce6",
                 "shasum": ""
             },
             "require": {
@@ -7516,7 +7480,7 @@
                 "symfony/polyfill-intl-normalizer": "~1.0",
                 "symfony/polyfill-mbstring": "~1.0",
                 "symfony/polyfill-php72": "~1.0",
-                "voku/portable-ascii": "~1.2"
+                "voku/portable-ascii": "~1.3"
             },
             "suggest": {
                 "ext-ctype": "Use Ctype for e.g. hexadecimal digit detection",
@@ -7563,7 +7527,7 @@
                 "utf-8",
                 "utf8"
             ],
-            "time": "2019-10-06T00:26:19+00:00"
+            "time": "2019-10-14T06:46:29+00:00"
         },
         {
             "name": "voku/stop-words",
@@ -8042,11 +8006,11 @@
         },
         {
             "name": "yiisoft/yii2-debug",
-            "version": "2.1.9",
+            "version": "2.1.10",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-debug/zipball/62679af3183c308c0edffecc69778afc32ae55aa",
-                "reference": "62679af3183c308c0edffecc69778afc32ae55aa",
+                "url": "https://api.github.com/repos/yiisoft/yii2-debug/zipball/4f1a9f0fe8c565203b9243613b0a81a46dde27e7",
+                "reference": "4f1a9f0fe8c565203b9243613b0a81a46dde27e7",
                 "shasum": ""
             },
             "require": {
@@ -8085,7 +8049,7 @@
                 "debugger",
                 "yii2"
             ],
-            "time": "2019-09-18T10:49:01+00:00"
+            "time": "2019-10-22T10:36:02+00:00"
         },
         {
             "name": "yiisoft/yii2-queue",

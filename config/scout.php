@@ -1,4 +1,5 @@
 <?php
+
 use craft\elements\Entry;
 use craft\helpers\UrlHelper;
 use Solspace\Calendar\Elements\Event;
@@ -20,7 +21,7 @@ function enumEntries($section, $element)
 
 function entryUrl($entry)
 {
-  return empty($entry->redirectUrl) ? $entry->uri : $entry->redirectUrl;
+  return empty($entry->redirectUrl) ? $entry->url : $entry->redirectUrl;
 }
 
 function entryDate($entry)
@@ -39,6 +40,16 @@ function ctaButtonText($element)
 }
 
 function banner($element)
+{
+  if (!empty($element->banner)) {
+    if (!empty($element->banner->one())) {
+      return $element->banner->one()->url;
+    }
+  }
+  return null;
+}
+
+function portrait($element)
 {
   if (!empty($element->banner)) {
     if (!empty($element->banner->one())) {
@@ -69,9 +80,17 @@ function contentBuilder($element)
   }
 }
 
-function portrait($element)
+function richTextSplit($field)
 {
-  !empty($element->portrait) ? $element->portrait->one()->url : null;
+  if (!empty($field)) {
+    $array = [];
+    $str = strip_tags($field);
+    $ps = preg_split('~((?:\S*?\s){100})~', $str, -1, PREG_SPLIT_DELIM_CAPTURE | PREG_SPLIT_NO_EMPTY);
+    foreach ($ps as $node) {
+      $array[] = $node;
+    }
+    return $array;
+  }
 }
 
 function sectionPriority($element)
@@ -135,13 +154,14 @@ class eventsTransform extends TransformerAbstract
     $officials = enumEntries("officials", $event);
     $projects = enumEntries("projects", $event);
     $topics = enumEntries("topics", $event);
+    $body = richTextSplit($event->body);
     return [
       'title' => $event->title,
       'url' => $event->uri,
       'calendar' => $event->calendar->handle,
       'date' => $event->startDate->timestamp * 1000,
       'displayDate' => $event->startDate->format('F j, Y'),
-      'body' => strip_tags($event->body),
+      'body' => $body,
       'contact' => $event->eventContact,
       'eventImage' => $event->eventImage->one()->url ?? null,
       'boardsCommissions' => $boardsCommissions,
@@ -154,45 +174,6 @@ class eventsTransform extends TransformerAbstract
   }
 }
 
-class documentsTransform extends TransformerAbstract
-{
-  public function transform(Entry $entry)
-  {
-    $boardsCommissions = enumEntries("boardsCommissions", $entry);
-    $departments = enumEntries("departments", $entry);
-    $officials = enumEntries("officials", $entry);
-    $projects = enumEntries("projects", $entry);
-    $resources = enumEntries("resources", $entry);
-    $services = enumEntries("services", $entry);
-    $topics = enumEntries("topics", $entry);
-    $documents = enumEntries("documents", $entry);
-    $types = [];
-    if (!empty($entry->documentType)) {
-      foreach ($entry->documentType as $value) {
-        $types[] = $value->title;
-      }
-    }
-    return [
-      'title' => $entry->title,
-      'section' => $entry->section->handle,
-      'type' => $entry->type->handle,
-      'url' => entryUrl($entry),
-      'date' => entryDate($entry),
-      'displayDate' => entryPrettyDate($entry),
-      'leadIn' => $entry->leadIn,
-      'summary' => strip_tags($entry->summary),
-      'categories' => $types,
-      'boardsCommissions' => $boardsCommissions,
-      'departments' => $departments,
-      'officials' => $officials,
-      'projects' => $projects,
-      'resources' => $resources,
-      'services' => $services,
-      'documents' => $documents,
-      'topics' => $topics,
-    ];
-  }
-}
 
 class allTransform extends TransformerAbstract
 {
@@ -206,7 +187,10 @@ class allTransform extends TransformerAbstract
     $services = enumEntries("services", $entry);
     $topics = enumEntries("topics", $entry);
     $documents = enumEntries("documents", $entry);
-    $bodyMatrix = contentBuilder($entry->contentBuilder);
+    $headBio = $entry->groupHeadBio;
+    $about = richTextSplit($entry->about);
+    $body = !empty($entry->contentBuilder) ? contentBuilder($entry->contentBuilder) : richTextSplit($entry->body);
+    $summary = richTextSplit($entry->summary);
     return [
       'title' => $entry->title,
       'url' => entryUrl($entry),
@@ -214,15 +198,14 @@ class allTransform extends TransformerAbstract
       'type' => $entry->type->handle,
       'date' => entryDate($entry),
       'displayDate' => entryPrettyDate($entry),
-      'summary' => strip_tags($entry->summary),
+      'summary' => $summary,
       'leadIn' => $entry->leadIn,
-      'about' => strip_tags($entry->about),
+      'about' => $about,
       'bio' => $entry->bio,
       'boardsCommissions' => $boardsCommissions,
-      'body' => strip_tags($entry->body),
-      'bodyMatrix' => $bodyMatrix,
+      'body' => $body,
       'ctaButtonText' => ctaButtonText($entry),
-      'groupHeadBio' => $entry->groupHeadBio,
+      'groupHeadBio' => $headBio,
       'groupHeadName' => $entry->groupHeadName,
       'groupHeadTitle' => $entry->groupHeadTitle,
       'mediaContact' => $entry->mediaContact,
@@ -291,47 +274,381 @@ return [
      * index should define an ElementType, criteria and a transformer.
      */
   'indices'       => [
+
+    // BEGIN NEWS INDEX
+    \rias\scout\ScoutIndex::create(getenv('ENVIRONMENT') . '_news')
+      // Scout uses this by default, so this is optional
+      ->elementType(\craft\elements\Entry::class)
+      // If you don't define a siteId, the primary site is used
+      ->criteria(function (\craft\elements\db\EntryQuery $query) {
+        return $query
+          ->section(['news'])
+          ->with(['boardsCommissions', 'departments', 'officials', 'projects', 'resources', 'services', 'topics', 'documentType', 'documents']);
+      })
+      ->splitElementsOn(['summary', 'body'])
+      ->transformer(function (craft\elements\Entry $entry) {
+        $boardsCommissions = enumEntries("boardsCommissions", $entry);
+        $departments = enumEntries("departments", $entry);
+        $officials = enumEntries("officials", $entry);
+        $projects = enumEntries("projects", $entry);
+        $topics = enumEntries("topics", $entry);
+        $body = richTextSplit($entry->body);
+        $summary = richTextSplit($entry->summary);
+        return [
+          'title' => $entry->title,
+          'url' => entryUrl($entry),
+          'date' => entryDate($entry),
+          'displayDate' => entryPrettyDate($entry),
+          'newsImage' => $entry->newsImage->one()->url ?? null,
+          'summary' => $summary,
+          'body' => $body,
+          'mediaContact' => $entry->mediaContact,
+          'boardsCommissions' => $boardsCommissions,
+          'departments' => $departments,
+          'projects' => $projects,
+          'officials' => $officials,
+          'topics' => $topics,
+        ];
+      }),
+
+    // BEGIN BOARDS INDEX
+    \rias\scout\ScoutIndex::create(getenv('ENVIRONMENT') . '_boards')
+      ->criteria(function (\craft\elements\db\EntryQuery $query) {
+        return $query
+          ->section('boardsCommissions')
+          ->type('boardsCommissions')
+          ->with(['boardsCommissions', 'departments', 'officials', 'projects', 'resources', 'services', 'topics', 'documentType', 'documents']);
+      })
+      ->splitElementsOn(['about'])
+      ->transformer(function (craft\elements\Entry $entry) {
+        return [
+          'title' => $entry->title,
+          'url' => entryUrl($entry),
+          'date' => entryDate($entry),
+          'displayDate' => entryPrettyDate($entry),
+          'banner' => banner($entry),
+          'ctaButtonText' => ctaButtonText($entry),
+          'leadIn' => $entry->leadIn,
+          'about' => richTextSplit($entry->about),
+        ];
+      }),
+
+    // BEGIN DEPARTMENTS INDEX
+    \rias\scout\ScoutIndex::create(getenv('ENVIRONMENT') . '_departments')
+      ->criteria(function (\craft\elements\db\EntryQuery $query) {
+        return $query
+          ->section('departments')
+          ->with(['boardsCommissions', 'departments', 'officials', 'projects', 'resources', 'services', 'topics', 'documentType', 'documents', 'contentBuilder']);
+      })
+      ->transformer(function (craft\elements\Entry $entry) {
+        $officials = enumEntries("officials", $entry);
+        $headBio = strip_tags($entry->groupHeadBio);
+        $body = contentBuilder($entry->contentBuilder);
+        return [
+          'title' => $entry->title,
+          'url' => entryUrl($entry),
+          'date' => entryDate($entry),
+          'displayDate' => entryPrettyDate($entry),
+          'leadIn' => $entry->leadIn,
+          'banner' => banner($entry),
+          'ctaButtonText' => ctaButtonText($entry),
+          'body' => $body,
+          'groupHeadBio' => $headBio,
+          'groupHeadName' => $entry->groupHeadName,
+          'groupHeadTitle' => $entry->groupHeadTitle,
+          'officials' => $officials,
+        ];
+      }),
+
     // BEGIN DOCUMENTS INDEX
     \rias\scout\ScoutIndex::create(getenv('ENVIRONMENT') . '_documents')
-        // Scout uses this by default, so this is optional
-        ->elementType(\craft\elements\Entry::class)
-        // If you don't define a siteId, the primary site is used
-        ->criteria(function (\craft\elements\db\EntryQuery $query) {
-          return $query
-            ->section(['documents', 'documentPackets'])
-            ->with(['boardsCommissions', 'departments', 'officials', 'projects', 'resources', 'services', 'topics', 'documentType', 'documents']);
-        })
-        // The element gets passed into the transform function, you can omit
-        // this and Scout will use the \rias\scout\ElementTransformer class 
-        // instead
-        ->transformer(new documentsTransform())
-        // You can use this to define index settings that get synced when 
-        // you call the ./craft scout/settings/update console command. This way 
-        // you can keep your index settings in source control. The IndexSettings
-        // object provides autocompletion for all Algolia's settings
-        ->indexSettings(
-          \rias\scout\IndexSettings::create()
-          ->attributesForFaceting(['boardsCommissions', 'departments', 'officials', 'documentType'])
-        ),
-        \rias\scout\ScoutIndex::create(getenv('ENVIRONMENT') . '_calendars')
-        ->elementType(\Solspace\Calendar\Elements\Event::class)
-        ->criteria(function (Solspace\Calendar\Elements\Db\EventQuery $query) {
-          return $query
-            ->with(['boardsCommissions', 'departments', 'officials', 'projects', 'topics']);
-        })
-        ->transformer(new eventsTransform())
-        ->indexSettings(
-          \rias\scout\IndexSettings::create()
-          ->attributesForFaceting(['boardsCommissions', 'departments', 'officials'])
-        ),  
-        \rias\scout\ScoutIndex::create(getenv('ENVIRONMENT') . '_all')
-        ->elementType(\craft\elements\Entry::class)
-        ->criteria(function (\craft\elements\db\EntryQuery $query) {
-          return $query
-            ->section(['boardsCommissions', 'departments', 'news',  'officials', 'processes', 'projects', 'resources', 'services', 'staff', 'teams', 'topics', 'volunteers'])
-            ->with(['boardsCommissions', 'contentBuilder', 'departments', 'documents', 'documentType', 'officials', 'projects', 'resources', 'services', 'topics']);
-        })
-        ->transformer(new allTransform())
-  
-    ],
+      ->criteria(function (\craft\elements\db\EntryQuery $query) {
+        return $query
+          ->section(['documents', 'documentPackets'])
+          ->with(['boardsCommissions', 'departments', 'officials', 'projects', 'resources', 'services', 'topics', 'documentType', 'documents']);
+      })
+      ->splitElementsOn(['summary', 'body'])
+      ->transformer(function (craft\elements\Entry $entry) {
+        $boardsCommissions = enumEntries("boardsCommissions", $entry);
+        $departments = enumEntries("departments", $entry);
+        $officials = enumEntries("officials", $entry);
+        $projects = enumEntries("projects", $entry);
+        $resources = enumEntries("resources", $entry);
+        $services = enumEntries("services", $entry);
+        $topics = enumEntries("topics", $entry);
+        $documents = enumEntries("documents", $entry);
+        $summary = richTextSplit($entry->summary);
+        $types = [];
+        if (!empty($entry->documentType)) {
+          foreach ($entry->documentType as $value) {
+            $types[] = $value->title;
+          }
+        }
+        return [
+          'title' => $entry->title,
+          'section' => $entry->section->handle,
+          'type' => $entry->type->handle,
+          'url' => entryUrl($entry),
+          'date' => entryDate($entry),
+          'displayDate' => entryPrettyDate($entry),
+          'leadIn' => $entry->leadIn,
+          'summary' => $summary,
+          'categories' => $types,
+          'boardsCommissions' => $boardsCommissions,
+          'departments' => $departments,
+          'officials' => $officials,
+          'projects' => $projects,
+          'resources' => $resources,
+          'services' => $services,
+          'documents' => $documents,
+          'topics' => $topics,
+        ];
+      }),
+
+    // BEGIN PROJECTS INDEX
+    \rias\scout\ScoutIndex::create(getenv('ENVIRONMENT') . '_projects')
+      ->criteria(function (\craft\elements\db\EntryQuery $query) {
+        return $query
+          ->section('projects')
+          ->with(['boardsCommissions', 'departments', 'officials', 'projects', 'resources', 'services', 'topics', 'documentType', 'documents']);
+      })
+      ->splitElementsOn(['about'])
+      ->transformer(function (craft\elements\Entry $entry) {
+        $milestones = [];
+        foreach ($entry->timeline as $block) {
+          $milestones[] = [
+            'name' => $block->milestoneName,
+            'dates' => $block->milestoneDates
+          ];
+        }
+        $boardsCommissions = enumEntries("boardsCommissions", $entry);
+        $departments = enumEntries("departments", $entry);
+        $officials = enumEntries("officials", $entry);
+        $topics = enumEntries("topics", $entry);
+        return [
+          'title' => $entry->title,
+          'url' => entryUrl($entry),
+          'date' => entryDate($entry),
+          'displayDate' => entryPrettyDate($entry),
+          'banner' => banner($entry),
+          'leadIn' => $entry->leadIn,
+          'about' => richTextSplit($entry->about),
+          'boardsCommissions' => $boardsCommissions,
+          'departments' => $departments,
+          'officials' => $officials,
+          'topics' => $topics,
+        ];
+      }),
+
+    // BEGIN RESOURCES INDEX
+    \rias\scout\ScoutIndex::create(getenv('ENVIRONMENT') . '_resources')
+      ->criteria(function (\craft\elements\db\EntryQuery $query) {
+        return $query
+          ->section('resources')
+          ->with(['boardsCommissions', 'departments', 'officials', 'projects', 'resources', 'services', 'topics', 'documentType', 'documents']);
+      })
+      ->splitElementsOn(['body'])
+      ->transformer(function (craft\elements\Entry $entry) {
+        $boardsCommissions = enumEntries("boardsCommissions", $entry);
+        $departments = enumEntries("departments", $entry);
+        $officials = enumEntries("officials", $entry);
+        $projects = enumEntries("projects", $entry);
+        $topics = enumEntries("topics", $entry);
+        $body = contentBuilder($entry->contentBuilder);
+        return [
+          'title' => $entry->title,
+          'url' => entryUrl($entry),
+          'date' => entryDate($entry),
+          'displayDate' => entryPrettyDate($entry),
+          'leadIn' => $entry->leadIn,
+          'boardsCommissions' => $boardsCommissions,
+          'departments' => $departments,
+          'officials' => $officials,
+          'projects' => $projects,
+          'topics' => $topics,
+          'body' => $body,
+        ];
+      }),
+
+    // BEGIN SERVICES INDEX
+    \rias\scout\ScoutIndex::create(getenv('ENVIRONMENT') . '_services')
+      ->criteria(function (\craft\elements\db\EntryQuery $query) {
+        return $query
+          ->section('services')
+          ->with(['boardsCommissions', 'departments', 'officials', 'projects', 'resources', 'services', 'topics', 'documentType', 'documents']);
+      })
+      ->splitElementsOn(['body'])
+      ->transformer(function (craft\elements\Entry $entry) {
+        $boardsCommissions = enumEntries("boardsCommissions", $entry);
+        $departments = enumEntries("departments", $entry);
+        $officials = enumEntries("officials", $entry);
+        $projects = enumEntries("projects", $entry);
+        $topics = enumEntries("topics", $entry);
+        $body = contentBuilder($entry->contentBuilder);
+        return [
+          'title' => $entry->title,
+          'url' => entryUrl($entry),
+          'date' => entryDate($entry),
+          'displayDate' => entryPrettyDate($entry),
+          'leadIn' => $entry->leadIn,
+          'boardsCommissions' => $boardsCommissions,
+          'departments' => $departments,
+          'officials' => $officials,
+          'projects' => $projects,
+          'topics' => $topics,
+          'body' => $body,
+        ];    
+      }),
+
+    // BEGIN TOPICS INDEX
+    \rias\scout\ScoutIndex::create(getenv('ENVIRONMENT') . '_topics')
+      ->criteria(function (\craft\elements\db\EntryQuery $query) {
+        return $query
+          ->section('topics')
+          ->with(['boardsCommissions', 'departments', 'officials', 'projects', 'resources', 'services', 'topics', 'documentType', 'documents']);
+      })
+      ->splitElementsOn(['about', 'body'])
+      ->transformer(function (craft\elements\Entry $entry) {
+        $boardsCommissions = enumEntries("boardsCommissions", $entry);
+        $departments = enumEntries("departments", $entry);
+        $officials = enumEntries("officials", $entry);
+        $projects = enumEntries("projects", $entry);
+        $topics = enumEntries("topics", $entry);
+        $body = contentBuilder($entry->contentBuilder);
+        return [
+          'title' => $entry->title,
+          'url' => entryUrl($entry),
+          'date' => entryDate($entry),
+          'displayDate' => entryPrettyDate($entry),
+          'banner' => banner($entry),
+          'leadIn' => $entry->leadIn,
+          'about' => richTextSplit($entry->about),
+          'body' => $body,
+          'boardsCommissions' => $boardsCommissions,
+          'departments' => $departments,
+          'officials' => $officials,
+          'projects' => $projects,
+          'topics' => $topics,
+        ];    
+      }),
+
+    // BEGIN STAFF INDEX
+    \rias\scout\ScoutIndex::create(getenv('ENVIRONMENT') . '_staff')
+      ->criteria(function (\craft\elements\db\EntryQuery $query) {
+        return $query
+          ->section('staff')
+          ->type('newStaff')
+          ->with(['portrait', 'department']);
+      })
+      ->transformer(function (craft\elements\Entry $entry) {
+        return [
+          'title' => $entry->title,
+          'url' => entryUrl($entry),
+          'date' => entryDate($entry),
+          'displayDate' => entryPrettyDate($entry),
+          'portrait' => portrait($entry),
+          'jobTitle' => !empty($entry->jobTitle) ? $entry->jobTitle : $entry->staffImportJobTitle,
+          'bio' => $entry->bio,
+          'email' => !empty($entry->emailAddress) ? $entry->emailAddress : str_replace("@oaklandnet.com", "@oaklandca.gov", $entry->staffImportEmail),
+          'department' => !empty($entry->departments[0]) ? $entry->departments[0]->title : $entry->staffImportDepartment,
+          'employmentType' => $entry->employmentType->label,
+        ];    
+      }),
+
+    // BEGIN VOLUNTEERS INDEX
+    \rias\scout\ScoutIndex::create(getenv('ENVIRONMENT') . '_volunteers')
+      ->criteria(function (\craft\elements\db\EntryQuery $query) {
+        return $query
+          ->section('volunteers')
+          ->with(['portrait', 'department']);
+      })
+      ->transformer(function (craft\elements\Entry $entry) {
+        return [
+          'title' => $entry->title,
+          'url' => entryUrl($entry),
+          'date' => entryDate($entry),
+          'displayDate' => entryPrettyDate($entry),
+          'portrait' => portrait($entry),
+          'jobTitle' => !empty($entry->jobTitle) ? $entry->jobTitle : null,
+          'bio' => $entry->bio,
+          'email' => !empty($entry->emailAddress) ? $entry->emailAddress : null,
+          'department' => !empty($entry->departmentOfficialBoardCommission->one()) ? $entry->departmentOfficialBoardCommission->one()->title : null,
+        ];    
+      }),
+
+    // BEGIN TEAMS INDEX
+    \rias\scout\ScoutIndex::create(getenv('ENVIRONMENT') . '_teams')
+      ->criteria(function (\craft\elements\db\EntryQuery $query) {
+        return $query
+          ->section('teams')
+          ->with(['teamMembers']);
+      })
+      ->transformer(function (craft\elements\Entry $entry) {
+        $teamMembers = [];
+        foreach ($entry->teamMembers as $value)
+          foreach ($value->staff as $teamMember)
+            $teamMembers[] = $teamMember->title;
+        return [
+          'title' => $entry->title,
+          'url' => entryUrl($entry),
+          'date' => entryDate($entry),
+          'displayDate' => entryPrettyDate($entry),
+          'teamMembers' => $teamMembers,
+        ];
+      }),
+
+    // BEGIN CALENDAR INDEX
+    \rias\scout\ScoutIndex::create(getenv('ENVIRONMENT') . '_calendars')
+      ->elementType(\Solspace\Calendar\Elements\Event::class)
+      ->criteria(function (Solspace\Calendar\Elements\Db\EventQuery $query) {
+        return $query
+          ->with(['boardsCommissions', 'departments', 'officials', 'projects', 'topics']);
+      })
+      ->splitElementsOn(['summary', 'body'])
+      ->transformer(new eventsTransform()),
+
+    // BEGIN EVENTS INDEX
+    \rias\scout\ScoutIndex::create(getenv('ENVIRONMENT') . '_events')
+      ->elementType(\Solspace\Calendar\Elements\Event::class)
+      ->criteria(function (Solspace\Calendar\Elements\Db\EventQuery $query) {
+        return $query
+          ->setCalendar('events')
+          ->with(['boardsCommissions', 'departments', 'officials', 'projects', 'topics']);
+      })
+      ->splitElementsOn(['summary', 'body'])
+      ->transformer(new eventsTransform()),
+
+    // BEGIN MEETINGS INDEX
+    \rias\scout\ScoutIndex::create(getenv('ENVIRONMENT') . '_meetings')
+      ->elementType(\Solspace\Calendar\Elements\Event::class)
+      ->criteria(function (Solspace\Calendar\Elements\Db\EventQuery $query) {
+        return $query
+          ->setCalendar('meetings')
+          ->with(['boardsCommissions', 'departments', 'officials', 'projects', 'topics']);
+      })
+      ->splitElementsOn(['summary', 'body'])
+      ->transformer(new eventsTransform()),
+
+    // BEGIN ALL INDEX
+    \rias\scout\ScoutIndex::create(getenv('ENVIRONMENT') . '_all')
+      ->elementType(\craft\elements\Entry::class)
+      ->criteria(function (\craft\elements\db\EntryQuery $query) {
+        return $query
+          ->section(['boardsCommissions', 'departments', 'news',  'officials', 'processes', 'projects', 'resources', 'services', 'staff', 'teams', 'topics', 'volunteers'])
+          ->with(['boardsCommissions', 'contentBuilder', 'departments', 'documents', 'documentType', 'officials', 'projects', 'resources', 'services', 'topics']);
+      })
+      ->splitElementsOn(['summary', 'body', 'about'])
+      ->transformer(new allTransform()),
+
+    // BEGIN GOVERNMENT INDEX
+    \rias\scout\ScoutIndex::create(getenv('ENVIRONMENT') . '_government')
+      ->elementType(\craft\elements\Entry::class)
+      ->criteria(function (\craft\elements\db\EntryQuery $query) {
+        return $query
+          ->section(['boardsCommissions', 'departments', 'officials', 'staff', 'teams', 'volunteers'])
+          ->with(['boardsCommissions', 'contentBuilder', 'departments', 'documents', 'documentType', 'officials', 'projects', 'resources', 'services', 'topics']);
+      })
+      ->splitElementsOn(['summary', 'body', 'about'])
+      ->transformer(new allTransform())
+  ]
 ];

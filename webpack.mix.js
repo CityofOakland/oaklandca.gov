@@ -19,10 +19,9 @@ const ImageminPlugin = require("imagemin-webpack-plugin").default;
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const imageminMozjpeg = require("imagemin-mozjpeg");
 
-mix
-  .setPublicPath("./web/assets/")
-  .postCss("./src/css/app.css", "css/app.css")
-  .styles(["./src/css/lightgallery.css", "./src/css/lg-transitions.css", "./src/css/lg-fb-comment-box.css"], "./web/assets/css/lightgallery.css")
+mix.setPublicPath('./web/assets/')
+  .postCss(pkg.paths.src.css + "app.css", "css")
+  .styles(pkg.paths.src.css + "lightgallery/" + "*.css", pkg.paths.dist.css + "lightgallery.css")
   .options({
     postCss: [
       tailwindcss(),
@@ -35,33 +34,17 @@ mix
       hexrgba
     ],
     processCssUrls: false,
+    hmrOptions: {
+      host: 'oakland.test',
+      port: 8080
+    }
   })
-  .js("./src/js/app.js", "js/app.js")
-  .js("./src/js/algoliafilter.js", "js/algoliafilter.js")
-  .js("./src/js/search.js", "js/search.js")
-  .js("./src/js/lightgallery.js", "js/lightgallery.js")
+  .js(pkg.paths.src.js + "app.js", "js")
+  .js(pkg.paths.src.js + "algoliafilter.js", "js")
+  .js(pkg.paths.src.js + "search.js", "js")
+  .js(pkg.paths.src.js + "lightgallery.js", "js")
+  .extract(['vue','algoliasearch'])
   .sourceMaps()
-  .extract()
-  .banner({
-    banner: (function () {
-      const moment = require("moment");
-      const gitRevSync = require("git-rev-sync");
-
-      return [
-        "/*!",
-        " * @project        " + pkg.name,
-        " * @author         " + pkg.author,
-        " * @build          " + moment().format("llll") + " GMT+1",
-        " * @release        " + gitRevSync.long() + " [" + gitRevSync.branch() + "]",
-        " * @copyright      Copyright (c) " + moment().format("YYYY") + "," + pkg.author,
-        " *",
-        " !*/",
-        "",
-      ].join("\n");
-    })(),
-    raw: true,
-    entryOnly: true,
-  })
   .browserSync({
     proxy: "http://oakland.test",
     ghostMode: false,
@@ -71,7 +54,7 @@ mix
         bottom: '1rem'
       }
     },
-    files: ["templates/*.twig", "templates/**/*.twig", "templates/*.js", "templates/**/*.js", "web/assets/css/*.css", "web/assets/js/*.js"]
+    files: ["templates/*.twig", "templates/**/*.twig", "templates/*.js", "templates/**/*.js"]
   });
 
 mix.disableSuccessNotifications();
@@ -81,8 +64,8 @@ if (mix.inProduction()) {
     plugins: [
       //Compress images
       new CopyWebpackPlugin([{
-        from: "src/img", // FROM
-        to: "img/", // TO
+        from: "./src/img",
+        to: "./img",
       }]),
       new ImageminPlugin({
         test: /\.(jpe?g|png|gif|svg)$/i,
@@ -99,23 +82,7 @@ if (mix.inProduction()) {
       })
     ],
   })
-  .copyDirectory('src/fonts', 'web/assets/fonts')
-  // .criticalCss({
-  //   enabled: mix.inProduction(),
-  //   paths: {
-  //     base: "http://oakland.test/",
-  //     templates: "./templates/"
-  //   },
-  //   urls: [
-  //     {
-  //       url: "/",
-  //       template: "index"
-  //     }
-  //   ],
-  //   options: {
-  //     minify: true,
-  //   },
-  // })
+  .copyDirectory(pkg.paths.src.fonts, pkg.paths.dist.fonts)
   .purgeCss({
     enabled: true,
     globs: [

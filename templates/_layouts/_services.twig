@@ -12,9 +12,7 @@
   <section class="bg-white relative z-0">
     <div class="container">
       {% include '_partials/_elements/_ctas.twig' %}
-      <div class="o-6 page-body">
-        {% include '_partials/_elements/_content-builder.twig' %}
-      </div>
+      {% include '_partials/_content-builder/_tool.twig' %}
       {% if entry.embeddedContent.exists() %}
         {{ entry.embeddedContent.one.codeInsertion | raw }}
       {% endif %}

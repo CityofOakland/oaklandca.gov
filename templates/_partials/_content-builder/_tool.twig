@@ -1,5 +1,6 @@
-{% set heading = heading ?? 'h2' %}
-{% set subheading = subheading ?? 'h3' %}
+{% set templateBase = "_partials/_content-builder/_blocks/_" %}
+{% set heading = heading ?? 'h2 my-8' %}
+{% set subheading = subheading ?? 'h3 my-6' %}
 {% set headingClass = headingClass ?? 'text-xxl' %}
 {% set subheadingClass = subheadingClass ?? 'text-xl' %}
 
@@ -27,7 +28,7 @@
         <tr>
           {% for col in 1..columns %}
             {% set colAttrib = 'column' ~ col ~ 'Cell' %}
-            <td class="border-green-400">{{ attribute(row, colAttrib) }}</td>
+            <td class="border-green-400 o-6 page-body">{{ attribute(row, colAttrib) }}</td>
           {% endfor %}
         </tr>
       {% endfor %}
@@ -37,18 +38,39 @@
 {% import _self as macro %}
 
 {% for block in entry.contentBuilder.all() %}
+  {% set blockId =  block.text ?? block.heading | kebab ~ '-' ~ block.id ?? block.id %}
   {% switch block.type %}
     {% case "heading" %}
-      <{{ heading }} class="anchor-link {{ headingClass }}"><a href="#{{ block.text | kebab }}-{{ block.id }}" id="{{ block.text | kebab }}-{{ block.id }}">{{ block.text }}</a></{{ heading }}>
+      <a id="{{ blockId }}" class="anchor-link"></a>
+      <{{ heading }} class="{{ headingClass }}">{{ block.text }}</{{ heading }}>
     {% case "subheading" %}
-      <{{ subheading }} class="anchor-link {{ subheadingClass }}"><a href="#{{ block.text | kebab }}-{{ block.id }}" id="{{ block.text | kebab }}-{{ block.id }}">{{ block.text }}</a></{{ subheading }}>
+      <a id="{{ blockId }}" class="anchor-link"></a>
+      <{{ subheading }} class="{{ subheadingClass }}">{{ block.text }}</{{ subheading }}>
     {% case "text" %}
-      {{ block.text }}
+      <div class="o-6 page-body">
+        {{ block.text }}
+      </div>
     {% case "table2Columns" %}
       {{ macro.tableBuilder(block, 2)}}
     {% case "table3Columns" %}
       {{ macro.tableBuilder(block, 3)}}
     {% case "table4Columns" %}
       {{ macro.tableBuilder(block, 4)}}
+    {% case "largeEntryLinks" or 
+            "mediumEntryLinks" or 
+            "smallEntryLinks" or 
+            "image"
+    %}
+      {% include templateBase ~ block.type ~ ".twig" %}
+    {% case "newsEntries" %}
+      {% include templateBase ~ block.type ~ ".twig" %}
+    {% case "meetingEntries" %}
+      {% include templateBase ~ "calendarEntries.twig" with {
+        calendarHandle: "meetings"
+      } %}
+    {% case "eventEntries" %}
+      {% include templateBase ~ "calendarEntries.twig" with {
+        calendarHandle: "events"
+      } %}
   {% endswitch %}
 {% endfor %}
