@@ -14,7 +14,7 @@
           {% spaceless %}            
           {% for entry in entries %}
             <div class="shadow-btn p-6 my-2 rounded-sm">
-              <h3 class="font-body text-lg mt-0 mb-4"><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
+              <h3 class="font-body text-lg mt-0 mb-4"><a href="{{ entry.redirectUrl ?? entry.url }}">{{ entry.title }}</a></h3>
               <p class="my-0 max-w-md">{{ entry.leadIn | chop(limit=200, unit='c', append='…') }}</p>
             </div>
           {% endfor %}
