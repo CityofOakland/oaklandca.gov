@@ -1,7 +1,8 @@
 <?php
 
-$isUserAdmin = Craft::$app->getUser()->getIsAdmin();
-$isContentBuilder = Craft::$app->getUser()->checkPermission('contentBuilderUser');
+$user = Craft::$app->getUser();
+$isUserAdmin = $user->getIsAdmin();
+$isContentBuilder = $user->getIdentity() ? $user->getIdentity()->isInGroup('contentBuilderUser') : null;
 
 $defaultTextBlock = [
   'label' => 'Text',
@@ -71,7 +72,7 @@ return [
         'groups' => $defaultBlock,
         'hideUngroupedTypes' => true
       ],
-      'section:departments' =>[
+      'section:departments,section:boardsCommissions' =>[
         'groups' => $departmentsBlock,
         'hideUngroupedTypes' => true,
       ],
