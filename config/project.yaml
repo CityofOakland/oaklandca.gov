@@ -32,7 +32,7 @@ categoryGroups:
         hasUrls: false
         uriFormat: null
         template: null
-dateModified: 1572884887
+dateModified: 1572900588
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -3764,8 +3764,8 @@ matrixBlockTypes:
       2cb8286b-77c4-4f76-b412-9c7fe640e669:
         name: 'Column Widths'
         handle: columnWidths
-        instructions: ''
-        searchable: true
+        instructions: 'Specify the percentage number you want each column to be, (example: **`25`** for 25%)'
+        searchable: false
         translationMethod: site
         translationKeyFormat: null
         type: verbb\supertable\fields\SuperTableField
@@ -3776,9 +3776,9 @@ matrixBlockTypes:
           propagationMethod: all
           staticField: '1'
           columns:
-            282:
+            309:
               width: ''
-            283:
+            310:
               width: ''
           fieldLayout: table
           selectionLabel: ''
@@ -7140,7 +7140,7 @@ superTableBlockTypes:
         translationKeyFormat: null
         type: craft\fields\Number
         settings:
-          defaultValue: null
+          defaultValue: '50'
           min: '1'
           max: '99'
           decimals: 0
@@ -7158,7 +7158,7 @@ superTableBlockTypes:
         translationKeyFormat: null
         type: craft\fields\Number
         settings:
-          defaultValue: null
+          defaultValue: '50'
           min: '1'
           max: '99'
           decimals: 0

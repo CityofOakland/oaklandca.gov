@@ -1,16 +1,12 @@
 <?php
 
-$user = Craft::$app->getUser();
-$isUserAdmin = $user->getIsAdmin();
-$isContentBuilder = $user->getIdentity() ? $user->getIdentity()->isInGroup('contentBuilderUser') : null;
-
 $defaultTextBlock = [
   'label' => 'Text',
   'types' => ['heading', 'subheading', 'text'],
 ];
 $defaultLinksBlock = [
   'label' => 'Links',
-  'types' => ['largeEntryLinks', 'mediumEntryLinks', 'smallEntryLinks', 'newsEntries', 'eventEntries', 'meetingEntries']
+  'types' => ['largeEntryLinks', 'smallEntryLinks', 'newsEntries', 'eventEntries', 'meetingEntries']
 ];
 $defaultImagesBlock = [
   'label' => 'Images',
@@ -20,6 +16,10 @@ $defaultTablesBlock = [
   'label' => 'Tables',
   'types' => ['table2Columns', 'table3Columns', 'table4Columns']
 ];
+
+$user = Craft::$app->getUser();
+$isUserAdmin = $user->getIsAdmin();
+$isContentBuilder = $user->getIdentity() ? $user->getIdentity()->isInGroup('contentBuilderUser') : null;
 
 if ($isUserAdmin) {
   $defaultBlock = [
