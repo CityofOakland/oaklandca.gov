@@ -149,26 +149,20 @@ class eventsTransform extends TransformerAbstract
 {
   public function transform(Solspace\Calendar\Elements\Event $event)
   {
-    $boardsCommissions = enumEntries("boardsCommissions", $event);
-    $departments = enumEntries("departments", $event);
-    $officials = enumEntries("officials", $event);
-    $projects = enumEntries("projects", $event);
-    $topics = enumEntries("topics", $event);
-    $body = richTextSplit($event->body);
     return [
       'title' => $event->title,
       'url' => $event->uri,
       'calendar' => $event->calendar->handle,
       'date' => $event->startDate->timestamp * 1000,
       'displayDate' => $event->startDate->format('F j, Y'),
-      'body' => $body,
+      'body' => richTextSplit($event->body),
       'contact' => $event->eventContact,
       'eventImage' => $event->eventImage->one()->url ?? null,
-      'boardsCommissions' => $boardsCommissions,
-      'departments' => $departments,
-      'officials' => $officials,
-      'projects' => $projects,
-      'topics' => $topics,
+      'boardsCommissions' => enumEntries("boardsCommissions", $event),
+      'departments' => enumEntries("departments", $event),
+      'officials' => enumEntries("officials", $event),
+      'projects' => enumEntries("projects", $event),
+      'topics' => enumEntries("topics", $event),
       'searchFilter' => searchFilter($event),
     ];
   }
@@ -179,18 +173,6 @@ class allTransform extends TransformerAbstract
 {
   public function transform(Entry $entry)
   {
-    $boardsCommissions = enumEntries("boardsCommissions", $entry);
-    $departments = enumEntries("departments", $entry);
-    $officials = enumEntries("officials", $entry);
-    $projects = enumEntries("projects", $entry);
-    $resources = enumEntries("resources", $entry);
-    $services = enumEntries("services", $entry);
-    $topics = enumEntries("topics", $entry);
-    $documents = enumEntries("documents", $entry);
-    $headBio = $entry->groupHeadBio;
-    $about = richTextSplit($entry->about);
-    $body = !empty($entry->contentBuilder) ? contentBuilder($entry->contentBuilder) : richTextSplit($entry->body);
-    $summary = richTextSplit($entry->summary);
     return [
       'title' => $entry->title,
       'url' => entryUrl($entry),
@@ -198,24 +180,24 @@ class allTransform extends TransformerAbstract
       'type' => $entry->type->handle,
       'date' => entryDate($entry),
       'displayDate' => entryPrettyDate($entry),
-      'summary' => $summary,
+      'summary' => richTextSplit($entry->summary),
       'leadIn' => $entry->leadIn,
-      'about' => $about,
-      'bio' => $entry->bio,
-      'boardsCommissions' => $boardsCommissions,
-      'body' => $body,
+      'about' => richTextSplit($entry->about),
+      'bio' => strip_tags($entry->bio),
+      'boardsCommissions' => enumEntries("boardsCommissions", $entry),
+      'body' => !empty($entry->contentBuilder) ? contentBuilder($entry->contentBuilder) : richTextSplit($entry->body),
       'ctaButtonText' => ctaButtonText($entry),
-      'groupHeadBio' => $headBio,
+      'groupHeadBio' => strip_tags($entry->groupHeadBio),
       'groupHeadName' => $entry->groupHeadName,
       'groupHeadTitle' => $entry->groupHeadTitle,
       'mediaContact' => $entry->mediaContact,
-      'departments' => $departments,
-      'documents' => $documents,
-      'officials' => $officials,
-      'projects' => $projects,
-      'resources' => $resources,
-      'services' => $services,
-      'topics' => $topics,
+      'departments' => enumEntries("departments", $entry),
+      'documents' => enumEntries("documents", $entry),
+      'officials' => enumEntries("officials", $entry),
+      'projects' => enumEntries("projects", $entry),
+      'resources' => enumEntries("resources", $entry),
+      'services' => enumEntries("services", $entry),
+      'topics' => enumEntries("topics", $entry),
       'sectionPriority' => sectionPriority($entry),
       'searchFilter' => searchFilter($entry),
     ];
@@ -287,27 +269,20 @@ return [
       })
       ->splitElementsOn(['summary', 'body'])
       ->transformer(function (craft\elements\Entry $entry) {
-        $boardsCommissions = enumEntries("boardsCommissions", $entry);
-        $departments = enumEntries("departments", $entry);
-        $officials = enumEntries("officials", $entry);
-        $projects = enumEntries("projects", $entry);
-        $topics = enumEntries("topics", $entry);
-        $body = richTextSplit($entry->body);
-        $summary = richTextSplit($entry->summary);
         return [
           'title' => $entry->title,
           'url' => entryUrl($entry),
           'date' => entryDate($entry),
           'displayDate' => entryPrettyDate($entry),
           'newsImage' => $entry->newsImage->one()->url ?? null,
-          'summary' => $summary,
-          'body' => $body,
+          'summary' => richTextSplit($entry->summary),
+          'body' => richTextSplit($entry->body),
           'mediaContact' => $entry->mediaContact,
-          'boardsCommissions' => $boardsCommissions,
-          'departments' => $departments,
-          'projects' => $projects,
-          'officials' => $officials,
-          'topics' => $topics,
+          'boardsCommissions' => enumEntries("boardsCommissions", $entry),
+          'departments' => enumEntries("departments", $entry),
+          'projects' => enumEntries("projects", $entry),
+          'officials' => enumEntries("officials", $entry),
+          'topics' => enumEntries("topics", $entry),
         ];
       }),
 
@@ -548,7 +523,7 @@ return [
           'displayDate' => entryPrettyDate($entry),
           'portrait' => portrait($entry),
           'jobTitle' => !empty($entry->jobTitle) ? $entry->jobTitle : $entry->staffImportJobTitle,
-          'bio' => $entry->bio,
+          'bio' => strip_tags($entry->bio),
           'email' => !empty($entry->emailAddress) ? $entry->emailAddress : str_replace("@oaklandnet.com", "@oaklandca.gov", $entry->staffImportEmail),
           'department' => !empty($entry->departments[0]) ? $entry->departments[0]->title : $entry->staffImportDepartment,
           'employmentType' => $entry->employmentType->label,

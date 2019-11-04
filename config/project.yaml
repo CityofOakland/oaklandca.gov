@@ -32,7 +32,7 @@ categoryGroups:
         hasUrls: false
         uriFormat: null
         template: null
-dateModified: 1572565861
+dateModified: 1572884887
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -5489,7 +5489,7 @@ sections:
         handle: processes
         hasTitleField: true
         titleLabel: Title
-        titleFormat: null
+        titleFormat: ''
         sortOrder: 1
         fieldLayouts:
           49d876b6-c3f5-4d42-bf19-44b541047c74:
@@ -5500,10 +5500,10 @@ sections:
                 fields:
                   78894bca-c6ce-4518-bb6f-fa94d7e7050e:
                     required: false
-                    sortOrder: 3
+                    sortOrder: 4
                   9b53be12-6536-4cb0-8860-9b5e6e94fadd:
                     required: false
-                    sortOrder: 4
+                    sortOrder: 5
                   bef74be8-b22d-4dd0-9217-9707bb43d888:
                     required: false
                     sortOrder: 2
@@ -5512,7 +5512,10 @@ sections:
                     sortOrder: 1
                   d9f6b182-7186-4e99-909f-9112985467b8:
                     required: false
-                    sortOrder: 5
+                    sortOrder: 6
+                  fd0c8e02-99b4-4ce5-ab89-b29cd0efc581:
+                    required: false
+                    sortOrder: 3
               -
                 name: Relationships
                 sortOrder: 2
@@ -8184,6 +8187,16 @@ users:
         - 'calendar-manageeventsfor:2'
         - 'calendar-manageeventsfor:3'
         - calendar-manageevents
+    7cac18ab-e8d7-437f-906e-5a8eb266d55c:
+      name: 'Content Builder Administrator'
+      handle: contentBuilderAdministrator
+      permissions:
+        - 'assignusergroup:b797f2a4-3f80-4128-8daa-b350d0b98762'
+        - assignusergroups
+        - editusers
+    b797f2a4-3f80-4128-8daa-b350d0b98762:
+      name: 'Content Builder User'
+      handle: contentBuilderUser
     cd008cb1-3f5b-4444-a259-bf905f9c6f96:
       name: Contributors
       handle: contributors
