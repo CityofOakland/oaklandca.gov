@@ -19,7 +19,8 @@
       <tr>
         {% for col in 1..columns %}
           {% set colAttrib = 'column' ~ col ~ 'Heading' %}
-          <th class="border-green-400">{{ attribute(object.tableHeadings, colAttrib) }}</th>
+          {% set widthAttrib = 'column' ~ col ~ 'Width' %}
+          <th style="width: {{ attribute(object, widthAttrib) ~ '%' ?? '' }}" class="border-green-400">{{ attribute(object, colAttrib) }}</th>
         {% endfor %}
       </tr>
     </thead>

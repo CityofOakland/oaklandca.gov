@@ -1,6 +1,6 @@
 {
   "require": {
-    "craftcms/cms": "3.3.13",
+    "craftcms/cms": "3.3.14",
     "vlucas/phpdotenv": "^2.4.0",
     "nystudio107/craft-typogrify": "1.1.18",
     "solspace/craft3-calendar": "2.0.24",
@@ -39,7 +39,8 @@
     "rias/craft-position-fieldtype": "1.0.14",
     "verbb/field-manager": "2.1.0",
     "vaersaagod/matrixmate": "1.2.2",
-    "craftcms/element-api": "2.6.0"
+    "craftcms/element-api": "2.6.0",
+    "doublesecretagency/craft-cpjs": "2.2.0"
   },
   "autoload": {
     "psr-4": {
