@@ -3,6 +3,12 @@
 {% set subheading = subheading ?? 'h3 my-6' %}
 {% set headingClass = headingClass ?? 'text-xxl' %}
 {% set subheadingClass = subheadingClass ?? 'text-xl' %}
+{% set galleryTrue = craft.matrixBlocks().owner(entry).fieldId(66).type('gallery') %}
+
+{% if galleryTrue | length %}
+  {% do view.registerJsFile(craft.twigpack.getModuleUri("/js/lightgallery.js")) %}
+  {% do view.registerCssFile(craft.twigpack.getModuleUri("/css/lightgallery.css")) %}
+{% endif %}
 
 {# 
   Table builder macro which takes the matrix block element, as well as the number of columns.
@@ -59,7 +65,8 @@
       {{ macro.tableBuilder(block, 4)}}
     {% case "largeEntryLinks" or 
             "smallEntryLinks" or 
-            "image"
+            "image" or
+            "gallery"
     %}
       {% include templateBase ~ block.type ~ ".twig" %}
     {% case "newsEntries" %}
