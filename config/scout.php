@@ -63,7 +63,7 @@ function contentBuilder($element)
 {
   $body = [];
   if (!empty($element)) {
-    foreach ($element as $block) {
+    foreach ($element->all() as $block) {
       switch ($block->type) {
         case 'heading':
         case 'subheading':
@@ -255,7 +255,7 @@ return [
      * by using the \rias\scout\ScoutIndex::create('IndexName') command. Each
      * index should define an ElementType, criteria and a transformer.
      */
-  'indices'       => [
+  'indices' => [
 
     // BEGIN NEWS INDEX
     \rias\scout\ScoutIndex::create(getenv('ENVIRONMENT') . '_news')
@@ -316,9 +316,6 @@ return [
           ->with(['boardsCommissions', 'departments', 'officials', 'projects', 'resources', 'services', 'topics', 'documentType', 'documents', 'contentBuilder']);
       })
       ->transformer(function (craft\elements\Entry $entry) {
-        $officials = enumEntries("officials", $entry);
-        $headBio = strip_tags($entry->groupHeadBio);
-        $body = contentBuilder($entry->contentBuilder);
         return [
           'title' => $entry->title,
           'url' => entryUrl($entry),
@@ -327,11 +324,11 @@ return [
           'leadIn' => $entry->leadIn,
           'banner' => banner($entry),
           'ctaButtonText' => ctaButtonText($entry),
-          'body' => $body,
-          'groupHeadBio' => $headBio,
+          'body' => contentBuilder($entry->contentBuilder),
+          'groupHeadBio' => strip_tags($entry->groupHeadBio),
           'groupHeadName' => $entry->groupHeadName,
           'groupHeadTitle' => $entry->groupHeadTitle,
-          'officials' => $officials,
+          'officials' => enumEntries("officials", $entry),
         ];
       }),
 
@@ -344,18 +341,10 @@ return [
       })
       ->splitElementsOn(['summary', 'body'])
       ->transformer(function (craft\elements\Entry $entry) {
-        $boardsCommissions = enumEntries("boardsCommissions", $entry);
-        $departments = enumEntries("departments", $entry);
-        $officials = enumEntries("officials", $entry);
-        $projects = enumEntries("projects", $entry);
-        $resources = enumEntries("resources", $entry);
-        $services = enumEntries("services", $entry);
-        $topics = enumEntries("topics", $entry);
-        $documents = enumEntries("documents", $entry);
         $summary = richTextSplit($entry->summary);
         $types = [];
         if (!empty($entry->documentType)) {
-          foreach ($entry->documentType as $value) {
+          foreach ($entry->documentType->all() as $value) {
             $types[] = $value->title;
           }
         }
@@ -369,14 +358,14 @@ return [
           'leadIn' => $entry->leadIn,
           'summary' => $summary,
           'categories' => $types,
-          'boardsCommissions' => $boardsCommissions,
-          'departments' => $departments,
-          'officials' => $officials,
-          'projects' => $projects,
-          'resources' => $resources,
-          'services' => $services,
-          'documents' => $documents,
-          'topics' => $topics,
+          'boardsCommissions' => enumEntries("boardsCommissions", $entry),
+          'departments' => enumEntries("departments", $entry),
+          'officials' => enumEntries("officials", $entry),
+          'projects' => enumEntries("projects", $entry),
+          'resources' => enumEntries("resources", $entry),
+          'services' => enumEntries("services", $entry),
+          'documents' => enumEntries("documents", $entry),
+          'topics' => enumEntries("topics", $entry),
         ];
       }),
 
@@ -396,10 +385,6 @@ return [
             'dates' => $block->milestoneDates
           ];
         }
-        $boardsCommissions = enumEntries("boardsCommissions", $entry);
-        $departments = enumEntries("departments", $entry);
-        $officials = enumEntries("officials", $entry);
-        $topics = enumEntries("topics", $entry);
         return [
           'title' => $entry->title,
           'url' => entryUrl($entry),
@@ -408,10 +393,10 @@ return [
           'banner' => banner($entry),
           'leadIn' => $entry->leadIn,
           'about' => richTextSplit($entry->about),
-          'boardsCommissions' => $boardsCommissions,
-          'departments' => $departments,
-          'officials' => $officials,
-          'topics' => $topics,
+          'boardsCommissions' => enumEntries("boardsCommissions", $entry),
+          'departments' => enumEntries("departments", $entry),
+          'officials' => enumEntries("officials", $entry),
+          'topics' => enumEntries("topics", $entry),
         ];
       }),
 
@@ -424,24 +409,18 @@ return [
       })
       ->splitElementsOn(['body'])
       ->transformer(function (craft\elements\Entry $entry) {
-        $boardsCommissions = enumEntries("boardsCommissions", $entry);
-        $departments = enumEntries("departments", $entry);
-        $officials = enumEntries("officials", $entry);
-        $projects = enumEntries("projects", $entry);
-        $topics = enumEntries("topics", $entry);
-        $body = contentBuilder($entry->contentBuilder);
         return [
           'title' => $entry->title,
           'url' => entryUrl($entry),
           'date' => entryDate($entry),
           'displayDate' => entryPrettyDate($entry),
           'leadIn' => $entry->leadIn,
-          'boardsCommissions' => $boardsCommissions,
-          'departments' => $departments,
-          'officials' => $officials,
-          'projects' => $projects,
-          'topics' => $topics,
-          'body' => $body,
+          'boardsCommissions' => enumEntries("boardsCommissions", $entry),
+          'departments' => enumEntries("departments", $entry),
+          'officials' => enumEntries("officials", $entry),
+          'projects' => enumEntries("projects", $entry),
+          'topics' => enumEntries("topics", $entry),
+          'body' => contentBuilder($entry->contentBuilder),
         ];
       }),
 
@@ -454,24 +433,18 @@ return [
       })
       ->splitElementsOn(['body'])
       ->transformer(function (craft\elements\Entry $entry) {
-        $boardsCommissions = enumEntries("boardsCommissions", $entry);
-        $departments = enumEntries("departments", $entry);
-        $officials = enumEntries("officials", $entry);
-        $projects = enumEntries("projects", $entry);
-        $topics = enumEntries("topics", $entry);
-        $body = contentBuilder($entry->contentBuilder);
         return [
           'title' => $entry->title,
           'url' => entryUrl($entry),
           'date' => entryDate($entry),
           'displayDate' => entryPrettyDate($entry),
           'leadIn' => $entry->leadIn,
-          'boardsCommissions' => $boardsCommissions,
-          'departments' => $departments,
-          'officials' => $officials,
-          'projects' => $projects,
-          'topics' => $topics,
-          'body' => $body,
+          'boardsCommissions' => enumEntries("boardsCommissions", $entry),
+          'departments' => enumEntries("departments", $entry),
+          'officials' => enumEntries("officials", $entry),
+          'projects' => enumEntries("projects", $entry),
+          'topics' => enumEntries("topics", $entry),
+          'body' => contentBuilder($entry->contentBuilder),
         ];    
       }),
 
@@ -484,12 +457,6 @@ return [
       })
       ->splitElementsOn(['about', 'body'])
       ->transformer(function (craft\elements\Entry $entry) {
-        $boardsCommissions = enumEntries("boardsCommissions", $entry);
-        $departments = enumEntries("departments", $entry);
-        $officials = enumEntries("officials", $entry);
-        $projects = enumEntries("projects", $entry);
-        $topics = enumEntries("topics", $entry);
-        $body = contentBuilder($entry->contentBuilder);
         return [
           'title' => $entry->title,
           'url' => entryUrl($entry),
@@ -498,12 +465,12 @@ return [
           'banner' => banner($entry),
           'leadIn' => $entry->leadIn,
           'about' => richTextSplit($entry->about),
-          'body' => $body,
-          'boardsCommissions' => $boardsCommissions,
-          'departments' => $departments,
-          'officials' => $officials,
-          'projects' => $projects,
-          'topics' => $topics,
+          'body' => contentBuilder($entry->contentBuilder),
+          'boardsCommissions' => enumEntries("boardsCommissions", $entry),
+          'departments' => enumEntries("departments", $entry),
+          'officials' => enumEntries("officials", $entry),
+          'projects' => enumEntries("projects", $entry),
+          'topics' => enumEntries("topics", $entry),
         ];    
       }),
 
