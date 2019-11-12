@@ -1,6 +1,7 @@
 {% extends '_layouts/_banner-with-nav.twig' %}
 
 {% set relatedMeetings = craft.calendar.events.relatedTo(entry) %}
+{% set relatedTeams = craft.entries.section('teams').relatedTo(entry).all() %}
 
 {% set aboutTrue = entry.about %}
 {% set photosTrue = entry.photoGallery.exists() %}
@@ -12,8 +13,9 @@
 {% set relatedTrue = entry.relatedProjectEntries.exists() %}
 {% set fundingTrue = entry.fundingLogos.exists() %}
 {% set emailTrue = entry.emailAddress %}
+{% set teamsTrue = relatedTeams | length %}
 {% set socialMediaTrue = entry.facebook or entry.twitter or entry.medium or entry.instagram or entry.youtube %}
-{% set contactTrue = emailTrue or socialMediaTrue %}
+{% set contactTrue = emailTrue or teamsTrue or socialMediaTrue %}
 
 {% js %}
   function toggleLinks(toggleId) {
@@ -260,6 +262,14 @@
             <h3 class="text-xl mb-2">Email</h3>
             <p class="mt-0">
               <a href="mailto:{{ entry.emailAddress }}">{{ entry.emailAddress }}</a>
+            </p>
+          {% endif %}
+          {% if teamsTrue %}
+            <h3 class="text-xl mb-2">Teams</h3>
+            <p class="mt-0">
+              {% for team in relatedTeams %}
+                <a href={{ team.url }}" class="btn btn-sm inline-block mr-2">{{ team.title }}</a>
+              {% endfor %}
             </p>
           {% endif %}
           {% for phone in entry.phoneNumbers.all() %}
