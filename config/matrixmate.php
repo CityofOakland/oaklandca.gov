@@ -30,7 +30,8 @@ if ($isUserAdmin) {
   ];
   $departmentsBlock = $defaultBlock;
   $topicsBlock = $defaultBlock;
-  $newsPressResourcesBlock = $defaultBlock;
+  $newsPressBlock = $defaultBlock;
+  $resourcesBlock = $defaultBlock;
   $servicesBlock = $defaultBlock;
 }
 elseif ($isContentBuilder) {
@@ -47,7 +48,12 @@ elseif ($isContentBuilder) {
     $defaultImagesBlock,
     $defaultTablesBlock
   ];
-  $newsPressResourcesBlock = [
+  $newsPressBlock = [
+    $defaultTextBlock,
+    $defaultImagesBlock,
+    $defaultTablesBlock
+  ];
+  $resourcesBlock = [
     $defaultTextBlock,
     $defaultImagesBlock,
     $defaultTablesBlock
@@ -61,8 +67,13 @@ else {
   $defaultBlock = [''];
   $departmentsBlock = $defaultBlock;
   $topicsBlock = $defaultBlock;
-  $newsPressResourcesBlock = $defaultBlock;
-  $servicesBlock = $defaultBlock;
+  $newsPressBlock = $defaultBlock;
+  $resourcesBlock = [
+    $defaultTextBlock,
+  ];
+  $servicesBlock = [
+    $defaultTextBlock
+  ];
 };
 
 return [
@@ -80,8 +91,12 @@ return [
         'groups' => $topicsBlock,
         'hideUngroupedTypes' => true,
       ],
-      'section:news,section:pressReleases,section:resources' => [
-        'groups' => $newsPressResourcesBlock,
+      'section:news,section:pressReleases' => [
+        'groups' => $newsPressBlock,
+        'hideUngroupedTypes' => true,
+      ],
+      'section:resources' => [
+        'groups' => $resourcesBlock,
         'hideUngroupedTypes' => true,
       ],
       'section:services' => [
