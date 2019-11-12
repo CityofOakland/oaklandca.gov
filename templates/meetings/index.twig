@@ -24,7 +24,7 @@
 ] %}
 
 {% js at head %}
-var algoliaIndex = 'production_meetings';
+var algoliaIndex = '{{ getenv('ENVIRONMENT') }}_meetings';
 var searchInputText = "Search for a meeting. E.g., “Public Meeting”";
 var hitsRootClass = 'card-grid vertical-cards';
 var facetFilters = [

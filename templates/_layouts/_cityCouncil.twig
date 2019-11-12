@@ -4,6 +4,8 @@
 {% set relatedNews = craft.entries.section('news').relatedTo(entry) %}
 
 {% set contactState = entry.addresses | length or not entry.address.isEmpty or entry.phoneNumbers | length or entry.emailAddress | length or entry.openHours | length %}
+{% set contentBuilder = entry.contentBuilder | length %}
+{% set contact = contactState %}
 
 {% block content %}
   {% include '_partials/_page-banners.twig' with {
@@ -23,31 +25,37 @@
       'contact': contactState
     }
   } %}
-  {% include '_partials/_page-events.twig' %}
-  {% include '_partials/_page-documents.twig' with {
-    pageDocumentsHeaderText: 'Minutes & Agendas'
-  } %}
-  {% include '_partials/_page-services.twig' %}
-  {% include '_partials/_page-resources.twig' %}
-  <section class="bg-rotate">
+  {% if contentBuilder %}
     <div class="container">
-      {% include '_partials/_elements/_module-header.twig' with {
-        headerText: "City Officials",
-        linkText: "All Elected Officials",
-        linkUrl: "/officials",
-        buttonBright: true
-      } %}
-      <div class="card-grid grid-equal-height profile-cards mt-12">
-        {% for entry in entry.pageOfficials.all() %}
-          {% include '_partials/_elements/_profile-cards.twig' with {
-            photo: entry.portrait.one,
-            name: entry.groupHeadName,
-            jobTitle: entry.title,
-            url: entry.redirectUrl ?? entry.url ?? ''
-          } %}
-        {% endfor %}
-      </div>
+      {% include '_partials/_content-builder/_tool.twig' %}
     </div>
-  </section>
+  {% else %}
+    {% include '_partials/_page-events.twig' %}
+    {% include '_partials/_page-documents.twig' with {
+      pageDocumentsHeaderText: 'Minutes & Agendas'
+    } %}
+    {% include '_partials/_page-services.twig' %}
+    {% include '_partials/_page-resources.twig' %}
+    <section class="bg-rotate">
+      <div class="container">
+        {% include '_partials/_elements/_module-header.twig' with {
+          headerText: "City Officials",
+          linkText: "All Elected Officials",
+          linkUrl: "/officials",
+          buttonBright: true
+        } %}
+        <div class="card-grid grid-equal-height profile-cards mt-12">
+          {% for entry in entry.pageOfficials.all() %}
+            {% include '_partials/_elements/_profile-cards.twig' with {
+              photo: entry.portrait.one,
+              name: entry.groupHeadName,
+              jobTitle: entry.title,
+              url: entry.redirectUrl ?? entry.url ?? ''
+            } %}
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+  {% endif %}
   {% include '_partials/_page-location.twig' %}
 {% endblock %}

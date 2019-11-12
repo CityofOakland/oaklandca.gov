@@ -22,7 +22,7 @@
 ] %}
 
 {% js at head %}
-var algoliaIndex = 'production_news';
+var algoliaIndex = '{{ getenv('ENVIRONMENT') }}_news';
 var searchInputText = "Search for a news item. E.g., “Announcements”";
 var facetFilters = [
   {% for facet in facets %}

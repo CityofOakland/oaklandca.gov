@@ -1,4 +1,4 @@
-{% extends '_layouts/_banner-with-nav' %}
+{% extends '_layouts/_banner-with-nav.twig' %}
 {# Since this page doesn’t actually exist as an entry, we define our entry here #}
 {% set entry = craft.entries.section('boardsCommissions').slug(craft.app.request.getSegment(2)).one %}
 
@@ -53,25 +53,25 @@
       class="container py-16">
       {# The below tag pairs set javascript and CSS for our responsive tables #}
       {% css %}
-      @media screen and (max-width: 575px) {
-                #meetings caption { background-image: none; }
-                #meetings thead { display: none; }
-                #meetings tbody td {
-                  display: block; padding: .6rem;
-                }
-                #meetings tbody tr td:first-child {
-                }
-                #meetings tbody td:before {
-                  content: attr(data-th);
-                  font-weight: bold;
-                  display: block;
-                  width: 100%;
-                }
-              }
+        @media screen and (max-width: 575px) {
+          #meetings caption { background-image: none; }
+          #meetings thead { display: none; }
+          #meetings tbody td {
+            display: block; padding: .6rem;
+          }
+          #meetings tbody tr td:first-child {
+          }
+          #meetings tbody td:before {
+            content: attr(data-th);
+            font-weight: bold;
+            display: block;
+            width: 100%;
+          }
+        }
       {% endcss %}
       {% js %}
-      { % include '_js/responsivetable.js'  %}
-              responsiveTable('meetings');
+        { % include '_js/responsivetable.js'  %}
+        responsiveTable('meetings');
       {% endjs %}
       {% if events | length %}
         <table class="border border-gray-400 w-full text-sm" id="meetings">

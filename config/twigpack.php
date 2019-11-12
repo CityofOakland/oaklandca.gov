@@ -18,8 +18,8 @@
     ],
     // webpack-dev-server config
     'devServer' => [
-      'manifestPath' => 'http://localhost:3000/assets/',
-      'publicPath' => 'http://localhost:3000/assets/',
+      'manifestPath' => 'http://oakland.test:8080/assets/',
+      'publicPath' => 'http://oakland.test:8080/assets/',
     ],
     // Local files config
     'localFiles' => [

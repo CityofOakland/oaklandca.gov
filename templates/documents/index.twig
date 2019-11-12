@@ -22,7 +22,7 @@
 ] %}
 
 {% js at head %}
-var algoliaIndex = 'production_documents';
+var algoliaIndex = '{{ getenv('ENVIRONMENT') }}_documents';
 var searchInputText = "Search for a specific document. E.g., “Permit Form”";
 var facetFilters = [
   {% for facet in facets %}

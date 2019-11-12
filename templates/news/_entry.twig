@@ -1,5 +1,6 @@
 {% extends '_layout.twig' %}
 {% set pressRelease = entry.pressReleaseFile %}
+{% set contentBuilder = entry.contentBuilder | length %}
 
 {% block content %}
   {% include '_partials/_page-banners.twig' with {
@@ -20,9 +21,13 @@
             <img src="{{ newsImage.url }}" alt="{{ newsImage.altText ?? ''}}" />
           </figure>
         {% endif %}
-        <div class="body-text">
-          {{ entry.body }}
-        </div>
+        {% if contentBuilder %}
+          {% include '_partials/_content-builder/_tool.twig' %}
+        {% else %}
+          <div class="body-text">
+            {{ entry.body }}
+          </div>
+        {% endif %}
       </div>
       <div class="md:flex-1">
         {% if entry.mediaContact | length %}

@@ -1,4 +1,4 @@
-{% extends '_layouts/_banner-with-nav' %}
+{% extends '_layouts/_banner-with-nav.twig' %}
 
 {% set relatedMeetings = craft.calendar.events.relatedTo(entry) %}
 
@@ -242,7 +242,7 @@
       {% if fundingTrue %}
         <section class="mb-16 border-b border-gray-400 pb-16">
           <a class="anchor-link" id="page-funding"></a>
-          <h2 class="text-xxl">Funding partners</h2>
+          <h2 class="text-xxl">Partners</h2>
           <div class="flex flex-wrap items-center justify-center -mx-4">
             {% for logo in entry.fundingLogos.all() %}
               <figure class="w-full sm:w-1/2 md:w-1/3 lg:w-1/5 mb-4 md:mb-8 mx-4">
@@ -262,6 +262,9 @@
               <a href="mailto:{{ entry.emailAddress }}">{{ entry.emailAddress }}</a>
             </p>
           {% endif %}
+          {% for phone in entry.phoneNumbers.all() %}
+            {% include '_partials/_elements/_phone-numbers.twig' %}
+          {% endfor %}
           {% if socialMediaTrue %}
             {% include "_partials/_elements/_social-media" %}
           {% endif %}

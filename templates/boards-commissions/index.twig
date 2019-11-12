@@ -3,7 +3,7 @@
 {% set entry = craft.entries.section('boardsCommissionsIndex').one %}
 
 {% js at head %}
-var algoliaIndex = 'production_boards';
+var algoliaIndex = '{{ getenv('ENVIRONMENT') }}_boards';
 var searchInputText = "Search for a specific Board. E.g., “Public Ethics”";
 var facetFilters = [
 ];
