@@ -32,7 +32,7 @@ categoryGroups:
         hasUrls: false
         uriFormat: null
         template: null
-dateModified: 1573581031
+dateModified: 1573582319
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -195,7 +195,7 @@ fields:
           value: started
           default: ''
         -
-          label: Hiatus
+          label: 'Hiatus / On Hold'
           value: hiatus
           default: ''
         -
@@ -205,6 +205,18 @@ fields:
         -
           label: Canceled
           value: canceled
+          default: ''
+        -
+          label: 'In Process'
+          value: inProcess
+          default: ''
+        -
+          label: Adopted
+          value: adopted
+          default: ''
+        -
+          label: Implementation
+          value: implementation
           default: ''
     contentColumnType: string
     fieldGroup: 8e8ee56e-cdb8-4206-a3b5-c3aa0eb3a884
