@@ -52,7 +52,7 @@ const defaultTemplate =
   </div>
   {{/displayDate}}
   <h2 class="text-xl md:text-xxl my-0 {{#leadIn}} mt-0 mb-3 md:mb-6 {{/leadIn}}">
-    <a href="/{{ url }}">
+    <a href="{{ url }}">
       {{{ _highlightResult.title.value }}}
     </a>
   </h2>
