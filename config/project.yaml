@@ -32,7 +32,7 @@ categoryGroups:
         hasUrls: false
         uriFormat: null
         template: null
-dateModified: 1572967642
+dateModified: 1573259558
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -4538,7 +4538,7 @@ plugins:
   calendar:
     enabled: '1'
     licenseKey: PRJ91600ENZBQ5S7HS7UE93Z
-    schemaVersion: 2.0.5
+    schemaVersion: 2.0.6
     settings:
       allDay: false
       authoredEventEditOnly: ''

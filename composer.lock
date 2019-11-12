@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "cdc9d3cc8affc86a9134dbf05558101c",
+    "content-hash": "bfa8fdda6670e64100d49f445d164de2",
     "packages": [
         {
             "name": "aelvan/imager",
@@ -779,11 +779,11 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "3.3.14",
+            "version": "3.3.15",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/42829299dd7eb126bb433bb1018d50309de45cab",
-                "reference": "42829299dd7eb126bb433bb1018d50309de45cab",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/7a294dd6fd6054b5278a940d7a6e4fcd9c1a2550",
+                "reference": "7a294dd6fd6054b5278a940d7a6e4fcd9c1a2550",
                 "shasum": ""
             },
             "require": {
@@ -860,7 +860,7 @@
                 "docs": "https://docs.craftcms.com/v3/",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2019-10-30T19:07:57+00:00"
+            "time": "2019-11-05T19:51:36+00:00"
         },
         {
             "name": "craftcms/element-api",
@@ -4054,11 +4054,11 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "1.39.0",
+            "version": "1.39.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/dd62a58af4e0775a45ea5f99d0363d81b7d9a1e0",
-                "reference": "dd62a58af4e0775a45ea5f99d0363d81b7d9a1e0",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/4be0c005164249208ce1b5ca633cd57bdd42ff33",
+                "reference": "4be0c005164249208ce1b5ca633cd57bdd42ff33",
                 "shasum": ""
             },
             "require": {
@@ -4100,7 +4100,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2019-06-11T09:07:59+00:00"
+            "time": "2019-10-14T05:51:36+00:00"
         },
         {
             "name": "nystudio107/craft-emptycoalesce",
@@ -4156,11 +4156,11 @@
         },
         {
             "name": "nystudio107/craft-retour",
-            "version": "3.1.23",
+            "version": "3.1.27",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-retour/zipball/2be14c5ca6f27a6c58b07b43ca51d22dffe4cbfa",
-                "reference": "2be14c5ca6f27a6c58b07b43ca51d22dffe4cbfa",
+                "url": "https://api.github.com/repos/nystudio107/craft-retour/zipball/a8223fcbff31a511a7a935510fb0d36018a79296",
+                "reference": "a8223fcbff31a511a7a935510fb0d36018a79296",
                 "shasum": ""
             },
             "require": {
@@ -4185,7 +4185,6 @@
                     "nystudio107\\retour\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "proprietary"
             ],
@@ -4204,15 +4203,19 @@
                 "retour",
                 "statistics"
             ],
-            "time": "2019-08-22T00:02:09+00:00"
+            "support": {
+                "docs": "https://nystudio107.com/plugins/retour/documentation",
+                "issues": "https://nystudio107.com/plugins/retour/support"
+            },
+            "time": "2019-10-24T15:34:29+00:00"
         },
         {
             "name": "nystudio107/craft-seomatic",
-            "version": "3.2.22",
+            "version": "3.2.32",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/fe0b34aad2f2be055bb6140c5a40fa4c9244d65b",
-                "reference": "fe0b34aad2f2be055bb6140c5a40fa4c9244d65b",
+                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/326f69e3e757bfd1ae3215cc63cac0091a6532a1",
+                "reference": "326f69e3e757bfd1ae3215cc63cac0091a6532a1",
                 "shasum": ""
             },
             "require": {
@@ -4248,7 +4251,6 @@
                     "nystudio107\\seomatic\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "proprietary"
             ],
@@ -4260,20 +4262,24 @@
             ],
             "description": "SEOmatic facilitates modern SEO best practices & implementation for Craft CMS 3. It is a turnkey SEO system that is comprehensive, powerful, and flexible.",
             "keywords": [
-                "Craft",
-                "JSON-LD",
-                "Sitemap",
                 "cms",
+                "craft",
                 "craft-plugin",
                 "craftcms",
                 "facebook",
+                "json-ld",
                 "meta",
                 "seo",
                 "seomatic",
+                "sitemap",
                 "tags",
                 "twitter"
             ],
-            "time": "2019-09-03T15:44:44+00:00"
+            "support": {
+                "docs": "https://nystudio107.com/plugins/seomatic/documentation",
+                "issues": "https://nystudio107.com/plugins/seomatic/support"
+            },
+            "time": "2019-11-05T18:24:37+00:00"
         },
         {
             "name": "nystudio107/craft-twigpack",
@@ -5346,11 +5352,11 @@
         },
         {
             "name": "solspace/craft3-calendar",
-            "version": "2.0.24",
+            "version": "2.0.25",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/solspace/craft3-calendar/zipball/fb137becea73c4cdb8bfa917d39694b82ba7c15a",
-                "reference": "fb137becea73c4cdb8bfa917d39694b82ba7c15a",
+                "url": "https://api.github.com/repos/solspace/craft3-calendar/zipball/53ebe92426648802866f738137ea206771f95c30",
+                "reference": "53ebe92426648802866f738137ea206771f95c30",
                 "shasum": ""
             },
             "require": {
@@ -5365,7 +5371,7 @@
             },
             "type": "craft-plugin",
             "extra": {
-                "schemaVersion": "2.0.5",
+                "schemaVersion": "2.0.6",
                 "handle": "calendar",
                 "class": "Solspace\\Calendar\\Calendar",
                 "name": "Calendar",
@@ -5387,20 +5393,20 @@
                     "homepage": "https://docs.solspace.com"
                 }
             ],
-            "description": "The most powerful event management plugin for Craft.",
-            "time": "2019-08-14T20:03:57+00:00"
+            "description": "The most reliable and powerful event management plugin for Craft.",
+            "time": "2019-10-30T13:55:52+00:00"
         },
         {
             "name": "solspace/craft3-commons",
-            "version": "1.0.20",
+            "version": "1.0.23",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/solspace/craft3-commons/zipball/2de20a76e83efe3ed615a2a102dfef18e2295420",
-                "reference": "2de20a76e83efe3ed615a2a102dfef18e2295420",
+                "url": "https://api.github.com/repos/solspace/craft3-commons/zipball/23a3a9edd5aa01da5e1a2d15c695d899ebff2fda",
+                "reference": "23a3a9edd5aa01da5e1a2d15c695d899ebff2fda",
                 "shasum": ""
             },
             "require": {
-                "monolog/monolog": "^1.23.0"
+                "monolog/monolog": "^1.23.0|^2.0"
             },
             "type": "library",
             "autoload": {
@@ -5412,7 +5418,7 @@
                 "MIT"
             ],
             "description": "Solspace Commons Library for Craft CMS 3 plugins",
-            "time": "2019-05-01T15:04:11+00:00"
+            "time": "2019-11-06T18:10:13+00:00"
         },
         {
             "name": "ssnepenthe/color-utils",
@@ -5917,11 +5923,11 @@
         },
         {
             "name": "symfony/inflector",
-            "version": "v3.4.31",
+            "version": "v3.4.33",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/inflector/zipball/4a7d5c4ad3edeba3fe4a27d26ece6a012eee46b1",
-                "reference": "4a7d5c4ad3edeba3fe4a27d26ece6a012eee46b1",
+                "url": "https://api.github.com/repos/symfony/inflector/zipball/67e9285380dd1fa56b870929d0379f41b9c56e87",
+                "reference": "67e9285380dd1fa56b870929d0379f41b9c56e87",
                 "shasum": ""
             },
             "require": {
@@ -5942,7 +5948,6 @@
                     "/Tests/"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -5966,7 +5971,7 @@
                 "symfony",
                 "words"
             ],
-            "time": "2019-01-16T13:27:11+00:00"
+            "time": "2019-09-17T08:36:34+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -6442,7 +6447,7 @@
         },
         {
             "name": "symfony/property-access",
-            "version": "v3.4.31",
+            "version": "v3.4.33",
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/property-access/zipball/5bd3b72aa0361a42c5d0316a6577892c6e04ca20",
@@ -6453,9 +6458,6 @@
                 "php": "^5.5.9|>=7.0.8",
                 "symfony/inflector": "~3.1|~4.0",
                 "symfony/polyfill-php70": "~1.0"
-            },
-            "require-dev": {
-                "symfony/cache": "~3.1|~4.0"
             },
             "suggest": {
                 "psr/cache-implementation": "To cache access methods."
@@ -6474,7 +6476,6 @@
                     "/Tests/"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -6505,11 +6506,11 @@
         },
         {
             "name": "symfony/translation",
-            "version": "v3.4.31",
+            "version": "v3.4.33",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/translation/zipball/49a884e9ac297f99c56052bad30b2af89f716ee1",
-                "reference": "49a884e9ac297f99c56052bad30b2af89f716ee1",
+                "url": "https://api.github.com/repos/symfony/translation/zipball/2031c895bc97ac1787d418d90bd1ed7d299f2772",
+                "reference": "2031c895bc97ac1787d418d90bd1ed7d299f2772",
                 "shasum": ""
             },
             "require": {
@@ -6520,16 +6521,6 @@
                 "symfony/config": "<2.8",
                 "symfony/dependency-injection": "<3.4",
                 "symfony/yaml": "<3.4"
-            },
-            "require-dev": {
-                "psr/log": "~1.0",
-                "symfony/config": "~2.8|~3.0|~4.0",
-                "symfony/dependency-injection": "~3.4|~4.0",
-                "symfony/finder": "~2.8|~3.0|~4.0",
-                "symfony/http-kernel": "~3.4|~4.0",
-                "symfony/intl": "^2.8.18|^3.2.5|~4.0",
-                "symfony/var-dumper": "~3.4|~4.0",
-                "symfony/yaml": "~3.4|~4.0"
             },
             "suggest": {
                 "psr/log-implementation": "To use logging capability in translator",
@@ -6550,7 +6541,6 @@
                     "/Tests/"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -6566,7 +6556,7 @@
             ],
             "description": "Symfony Translation Component",
             "homepage": "https://symfony.com",
-            "time": "2019-08-26T07:52:58+00:00"
+            "time": "2019-10-30T12:43:22+00:00"
         },
         {
             "name": "symfony/var-dumper",
@@ -7504,11 +7494,11 @@
         },
         {
             "name": "voku/portable-utf8",
-            "version": "5.4.25",
+            "version": "5.4.26",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/voku/portable-utf8/zipball/aed1b955d5d43e4104d72dce4158db5de3cecce6",
-                "reference": "aed1b955d5d43e4104d72dce4158db5de3cecce6",
+                "url": "https://api.github.com/repos/voku/portable-utf8/zipball/708c25fd7e460260cf111f034deed117f1ef5173",
+                "reference": "708c25fd7e460260cf111f034deed117f1ef5173",
                 "shasum": ""
             },
             "require": {
@@ -7565,7 +7555,7 @@
                 "utf-8",
                 "utf8"
             ],
-            "time": "2019-10-14T06:46:29+00:00"
+            "time": "2019-11-05T02:39:01+00:00"
         },
         {
             "name": "voku/stop-words",
@@ -8044,11 +8034,11 @@
         },
         {
             "name": "yiisoft/yii2-debug",
-            "version": "2.1.10",
+            "version": "2.1.11",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-debug/zipball/4f1a9f0fe8c565203b9243613b0a81a46dde27e7",
-                "reference": "4f1a9f0fe8c565203b9243613b0a81a46dde27e7",
+                "url": "https://api.github.com/repos/yiisoft/yii2-debug/zipball/72e7c6c454028366f14ccef5a93d6c18fc9dcd63",
+                "reference": "72e7c6c454028366f14ccef5a93d6c18fc9dcd63",
                 "shasum": ""
             },
             "require": {
@@ -8087,7 +8077,7 @@
                 "debugger",
                 "yii2"
             ],
-            "time": "2019-10-22T10:36:02+00:00"
+            "time": "2019-11-05T13:56:49+00:00"
         },
         {
             "name": "yiisoft/yii2-queue",
