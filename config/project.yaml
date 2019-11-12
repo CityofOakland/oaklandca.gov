@@ -32,7 +32,7 @@ categoryGroups:
         hasUrls: false
         uriFormat: null
         template: null
-dateModified: 1573259558
+dateModified: 1573578110
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -4776,6 +4776,10 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 2.0.0
+  patrol:
+    edition: standard
+    enabled: true
+    schemaVersion: 3.0.0
 sections:
   07faad04-9ec4-4f68-9fe8-0ca20f189f8a:
     name: Staff

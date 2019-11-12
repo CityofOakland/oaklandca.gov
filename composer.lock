@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "bfa8fdda6670e64100d49f445d164de2",
+    "content-hash": "7f5895eadd7c0ce00b18d0997191dd00",
     "packages": [
         {
             "name": "aelvan/imager",
@@ -4156,11 +4156,11 @@
         },
         {
             "name": "nystudio107/craft-retour",
-            "version": "3.1.27",
+            "version": "3.1.28",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-retour/zipball/a8223fcbff31a511a7a935510fb0d36018a79296",
-                "reference": "a8223fcbff31a511a7a935510fb0d36018a79296",
+                "url": "https://api.github.com/repos/nystudio107/craft-retour/zipball/5261adc1683f92b4768c3d101f82086733f44cf6",
+                "reference": "5261adc1683f92b4768c3d101f82086733f44cf6",
                 "shasum": ""
             },
             "require": {
@@ -4207,15 +4207,15 @@
                 "docs": "https://nystudio107.com/plugins/retour/documentation",
                 "issues": "https://nystudio107.com/plugins/retour/support"
             },
-            "time": "2019-10-24T15:34:29+00:00"
+            "time": "2019-11-11T23:41:17+00:00"
         },
         {
             "name": "nystudio107/craft-seomatic",
-            "version": "3.2.32",
+            "version": "3.2.33",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/326f69e3e757bfd1ae3215cc63cac0091a6532a1",
-                "reference": "326f69e3e757bfd1ae3215cc63cac0091a6532a1",
+                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/754e0b1ee48fb5381b066a3849c943ffd3d449b5",
+                "reference": "754e0b1ee48fb5381b066a3849c943ffd3d449b5",
                 "shasum": ""
             },
             "require": {
@@ -4279,15 +4279,15 @@
                 "docs": "https://nystudio107.com/plugins/seomatic/documentation",
                 "issues": "https://nystudio107.com/plugins/seomatic/support"
             },
-            "time": "2019-11-05T18:24:37+00:00"
+            "time": "2019-11-11T23:46:58+00:00"
         },
         {
             "name": "nystudio107/craft-twigpack",
-            "version": "1.1.11",
+            "version": "1.1.12",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-twigpack/zipball/57e41cbcd8339d2871c43736f8932c763bc1d521",
-                "reference": "57e41cbcd8339d2871c43736f8932c763bc1d521",
+                "url": "https://api.github.com/repos/nystudio107/craft-twigpack/zipball/5cf2416a791adcb5e15d46754f49fe904ae37610",
+                "reference": "5cf2416a791adcb5e15d46754f49fe904ae37610",
                 "shasum": ""
             },
             "require": {
@@ -4333,7 +4333,7 @@
                 "docs": "https://nystudio107.com/plugins/twigpack/documentation",
                 "issues": "https://nystudio107.com/plugins/twigpack/support"
             },
-            "time": "2019-10-15T15:26:51+00:00"
+            "time": "2019-11-12T15:34:41+00:00"
         },
         {
             "name": "nystudio107/craft-typogrify",
@@ -5349,6 +5349,58 @@
                 "phra"
             ],
             "time": "2015-10-13T18:44:15+00:00"
+        },
+        {
+            "name": "selvinortiz/patrol",
+            "version": "3.1.3",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/selvinortiz/craft-plugin-patrol/zipball/d443741770fbaca6adbd38236fb0faffab25be7a",
+                "reference": "d443741770fbaca6adbd38236fb0faffab25be7a",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0-RC1"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Patrol",
+                "class": "selvinortiz\\patrol\\Patrol",
+                "handle": "patrol",
+                "version": "3.1.3",
+                "schemaVersion": "3.0.0",
+                "developer": "Selvin Ortiz",
+                "developerUrl": "https://selvinortiz.com",
+                "description": "Maintenance Mode & SSL Routing for Craft 3",
+                "documentationUrl": "https://github.com/selvinortiz/patrol/blob/master/README.md",
+                "changelogUrl": "https://raw.githubusercontent.com/selvinortiz/patrol/CHANGELOG.md",
+                "hasCpSettings": true,
+                "components": {
+                    "defaultService": "selvinortiz\\patrol\\services\\PatrolService"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "selvinortiz\\patrol\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Selvin Ortiz",
+                    "email": "selvin@selvin.co"
+                }
+            ],
+            "description": "Maintenance Mode & SSL Routing for Craft 3",
+            "keywords": [
+                "craft",
+                "craftcms",
+                "patrol",
+                "plugin"
+            ],
+            "time": "2018-12-19T16:43:21+00:00"
         },
         {
             "name": "solspace/craft3-calendar",
