@@ -40,24 +40,74 @@
 {%- endset -%}
 
 {# SIDEBAR NAV #}
-{%- set sideNav -%}
-  {% if navMenu is defined %}
+
+{% if entry.contentBuilder | length %}
+  {% set sideNavLinks = [] %}
+  {% for block in entry.contentBuilder.all() %}
+    {% switch block.type %}
+      {% case "heading" %}
+        {% set sideNavLinks = sideNavLinks | merge([{
+          title:  block.text,
+          link:  block.text | kebab ~ '-' ~ block.id,
+        }]) %}
+      {% case "largeEntryLinks" or 
+              "mediumEntryLinks" or 
+              "smallEntryLinks" or
+              "newsEntries" or
+              "meetingEntries" or 
+              "eventEntries"
+      %}
+        {% set sideNavLinks = sideNavLinks | merge([{
+          title: block.heading,
+          link: block.heading | kebab ~ '-' ~ block.id,
+        }]) %}
+      {% endswitch %}
+  {% endfor %}
+
+  {% if leadership ?? '' %}
+    {% set sideNavLinks = sideNavLinks | merge([{title: "Leadership", link: "page-leadership"}]) %}
+  {% endif %}
+  {% if about ?? '' %}
+    {% set sideNavLinks = sideNavLinks | merge([{title: "About", link: "page-about"}]) %}
+  {% endif %}
+  {% if contact ?? '' %}
+    {% set sideNavLinks = sideNavLinks | merge([{title: "Contact Us", link: "page-contact"}]) %}
+  {% endif %}
+
+  {%- set sideNav -%}
     <div class="hidden mr-10 w-1/6 sm:block font-heading font-bold">
       <ul class="text-sm my-0 o-2">
-        {% for key,value in navMenu %}
-          {% if value %}
-            <li>
-              <a 
-                aria-label="Featured {{ fullNavMenu[key]['title'] }}" 
-                href="#page-{{ fullNavMenu[key]['url'] }}"
-              >{{ fullNavMenu[key]['title'] }}</a>
-            </li>
-          {% endif %}
+        {% for item in sideNavLinks %}
+          <li>
+            <a 
+              aria-label="Navigate to {{ item.title }} on this page." 
+              href="#{{ item.link }}"
+            >{{ item.title }}</a>
+          </li>          
         {% endfor %}
       </ul>
     </div>
-  {% endif %}
-{%- endset -%}
+  {%- endset -%}
+{% else %}
+  {%- set sideNav -%}
+    {% if navMenu is defined %}
+      <div class="hidden mr-10 w-1/6 sm:block font-heading font-bold">
+        <ul class="text-sm my-0 o-2">
+          {% for key,value in navMenu %}
+            {% if value %}
+              <li>
+                <a 
+                  aria-label="Featured {{ fullNavMenu[key]['title'] }}" 
+                  href="#page-{{ fullNavMenu[key]['url'] }}"
+                >{{ fullNavMenu[key]['title'] }}</a>
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+  {%- endset -%}
+{% endif %}
 
 {# HEADER CONTENT #}
 {%- set headerContent -%}

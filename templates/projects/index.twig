@@ -22,7 +22,7 @@
 ] %}
 
 {% js at head %}
-var algoliaIndex = 'production_projects';
+var algoliaIndex = '{{ getenv('ENVIRONMENT') }}_projects';
 var searchInputText = "Search for a project topic or title. E.g., “Renovation”";
 var facetFilters = [
   {% for facet in facets %}

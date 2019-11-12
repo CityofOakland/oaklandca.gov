@@ -1,7 +1,14 @@
-{% set heading = heading ?? 'h2' %}
-{% set subheading = subheading ?? 'h3' %}
+{% set templateBase = "_partials/_content-builder/_blocks/_" %}
+{% set heading = heading ?? 'h2 my-8' %}
+{% set subheading = subheading ?? 'h3 my-6' %}
 {% set headingClass = headingClass ?? 'text-xxl' %}
 {% set subheadingClass = subheadingClass ?? 'text-xl' %}
+{% set galleryTrue = craft.matrixBlocks().owner(entry).fieldId(66).type('gallery') %}
+
+{% if galleryTrue | length %}
+  {% do view.registerJsFile(craft.twigpack.getModuleUri("/js/lightgallery.js")) %}
+  {% do view.registerCssFile(craft.twigpack.getModuleUri("/css/lightgallery.css")) %}
+{% endif %}
 
 {# 
   Table builder macro which takes the matrix block element, as well as the number of columns.
@@ -18,7 +25,8 @@
       <tr>
         {% for col in 1..columns %}
           {% set colAttrib = 'column' ~ col ~ 'Heading' %}
-          <th class="border-green-400">{{ attribute(object.tableHeadings, colAttrib) }}</th>
+          {% set widthAttrib = 'column' ~ col ~ 'Width' %}
+          <th style="width: {{ attribute(object, widthAttrib) ~ '%' ?? '' }}" class="border-green-400">{{ attribute(object, colAttrib) }}</th>
         {% endfor %}
       </tr>
     </thead>
@@ -27,7 +35,7 @@
         <tr>
           {% for col in 1..columns %}
             {% set colAttrib = 'column' ~ col ~ 'Cell' %}
-            <td class="border-green-400">{{ attribute(row, colAttrib) }}</td>
+            <td class="border-green-400 o-6 page-body">{{ attribute(row, colAttrib) }}</td>
           {% endfor %}
         </tr>
       {% endfor %}
@@ -36,19 +44,40 @@
 {% endmacro %}
 {% import _self as macro %}
 
-{% for block in entry.transactionBody.all() %}
+{% for block in entry.contentBuilder.all() %}
+  {% set blockId =  block.text ?? block.heading | kebab ~ '-' ~ block.id ?? block.id %}
   {% switch block.type %}
     {% case "heading" %}
+      <a id="{{ blockId }}" class="anchor-link"></a>
       <{{ heading }} class="{{ headingClass }}">{{ block.text }}</{{ heading }}>
     {% case "subheading" %}
+      <a id="{{ blockId }}" class="anchor-link"></a>
       <{{ subheading }} class="{{ subheadingClass }}">{{ block.text }}</{{ subheading }}>
     {% case "text" %}
-      {{ block.text }}
+      <div class="o-6 page-body">
+        {{ block.text }}
+      </div>
     {% case "table2Columns" %}
       {{ macro.tableBuilder(block, 2)}}
     {% case "table3Columns" %}
       {{ macro.tableBuilder(block, 3)}}
     {% case "table4Columns" %}
       {{ macro.tableBuilder(block, 4)}}
+    {% case "largeEntryLinks" or 
+            "smallEntryLinks" or 
+            "image" or
+            "gallery"
+    %}
+      {% include templateBase ~ block.type ~ ".twig" %}
+    {% case "newsEntries" %}
+      {% include templateBase ~ block.type ~ ".twig" %}
+    {% case "meetingEntries" %}
+      {% include templateBase ~ "calendarEntries.twig" with {
+        calendarHandle: "meetings"
+      } %}
+    {% case "eventEntries" %}
+      {% include templateBase ~ "calendarEntries.twig" with {
+        calendarHandle: "events"
+      } %}
   {% endswitch %}
 {% endfor %}

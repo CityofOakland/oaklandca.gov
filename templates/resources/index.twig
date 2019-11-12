@@ -22,7 +22,7 @@
 ] %}
 
 {% js at head %}
-var algoliaIndex = 'production_resources';
+var algoliaIndex = '{{ getenv('ENVIRONMENT') }}_resources';
 var searchInputText = "Search for a resource. E.g., “Park hours”";
 var facetFilters = [
   {% for facet in facets %}

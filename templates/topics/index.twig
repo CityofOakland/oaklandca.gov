@@ -22,7 +22,7 @@
 ] %}
 
 {% js at head %}
-var algoliaIndex = 'production_topics';
+var algoliaIndex = '{{ getenv('ENVIRONMENT') }}_topics';
 var searchInputText = "Search for a specific topic. E.g., “Parking ticket”";
 var facetFilters = [
   {% for facet in facets %}

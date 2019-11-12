@@ -1,9 +1,12 @@
-{% extends '_layouts/_banner-with-nav' %}
+{% extends '_layouts/_banner-with-nav.twig' %}
 
 {% set relatedEvents = craft.calendar.events.relatedTo(entry) %}
 {% set relatedNews = craft.entries.section('news').relatedTo(entry) %}
 
 {% set contactState = entry.addresses | length or not entry.address.isEmpty or entry.phoneNumbers | length or entry.emailAddress | length or entry.openHours | length %}
+{% set contentBuilder = entry.contentBuilder | length %}
+{% set leadership = true %}
+{% set contact = contactState %}
 
 {% block content %}
   {% include '_partials/_page-banners.twig' with {
@@ -25,12 +28,18 @@
       'contact': contactState
     }
   } %}
-  {% include '_partials/_page-events.twig' %}
-  {% include '_partials/_page-news.twig' %}
-  {% include '_partials/_page-services.twig' %}
-  {% include '_partials/_page-topics.twig' %}
-  {% include '_partials/_page-projects.twig' %}
-  {% include '_partials/_page-documents.twig' %}
+  {% if contentBuilder %}
+    <div class="container">
+      {% include '_partials/_content-builder/_tool.twig' %}
+    </div>
+  {% else %}
+    {% include '_partials/_page-events.twig' %}
+    {% include '_partials/_page-news.twig' %}
+    {% include '_partials/_page-services.twig' %}
+    {% include '_partials/_page-topics.twig' %}
+    {% include '_partials/_page-projects.twig' %}
+    {% include '_partials/_page-documents.twig' %}
+  {% endif %}
   {% include '_partials/_page-leadership.twig' with {
     pageLeadershipHeaderText: 'About the ' ~ entry.title,
   } %}

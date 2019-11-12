@@ -1,7 +1,7 @@
 function responsiveTable(tableId) {
   var headertext = [],
-    headers = document.querySelectorAll("#" + tableId + " th"),
-    tablebody = document.querySelector("#" + tableId + " tbody");
+      headers = document.querySelectorAll("#" + tableId + " th"),
+      tablebody = document.querySelector("#" + tableId + " tbody");
 
   for (var i = 0; i < headers.length; i++) {
     var current = headers[i];

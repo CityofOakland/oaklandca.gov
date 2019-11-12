@@ -1,7 +1,7 @@
 {% extends '_layouts/_instant-search-index' %}
 
 {% js at head %}
-var algoliaIndex = 'production_teams';
+var algoliaIndex = '{{ getenv('ENVIRONMENT') }}_teams';
 var searchInputText = "Search for a team. E.g., “Digital Service Team”";
 var facetFilters = [];
 {% endjs %}

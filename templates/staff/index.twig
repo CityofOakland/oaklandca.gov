@@ -3,7 +3,7 @@
 {% set entry = craft.entries.section('staffIndex').one %}
 
 {% js at head %}
-var algoliaIndex = 'production_staff';
+var algoliaIndex = '{{ getenv('ENVIRONMENT') }}_staff';
 var searchInputText = "Search for a specific person. E.g., “Libby Schaaf”";
 var hitsRootClass = 'card-grid wide-cards mt-12';
 var facetFilters = [];
