@@ -498,15 +498,42 @@ return [
       'transformer' => new departmentsTransform(),
     ],
     // BEGIN DOCUMENTS INDEX
-    [
-      'indexName' => getenv('ENVIRONMENT') . '_documents',
-      'elementType' => \craft\elements\Entry::class,
-      'criteria' => [
-        'section' => ['documents', 'documentPackets'],
-        'with' => ['boardsCommissions', 'departments', 'officials', 'projects', 'resources', 'services', 'topics', 'documentType', 'documents']
-      ],
-      'transformer' => new documentsTransform(),
-    ],
+    \rias\scout\ScoutIndex::create(getenv('ENVIRONMENT') . '_documents')
+      ->criteria(function (\craft\elements\db\EntryQuery $query) {
+        return $query
+          ->section(['documents', 'documentPackets'])
+          ->with(['boardsCommissions', 'departments', 'officials', 'projects', 'resources', 'services', 'topics', 'documentType', 'documents']);
+      })
+      ->splitElementsOn(['summary', 'body'])
+      ->transformer(function (craft\elements\Entry $entry) {
+        $summary = richTextSplit($entry->summary);
+        $types = [];
+        if (!empty($entry->documentType)) {
+          foreach ($entry->documentType as $value) {
+            $types[] = $value->title;
+          }
+        }
+        return [
+          'title' => $entry->title,
+          'section' => $entry->section->handle,
+          'type' => $entry->type->handle,
+          'url' => entryUrl($entry),
+          'date' => entryDate($entry),
+          'displayDate' => entryPrettyDate($entry),
+          'leadIn' => $entry->leadIn,
+          'summary' => $summary,
+          'categories' => $types,
+          'boardsCommissions' => enumEntries("boardsCommissions", $entry),
+          'departments' => enumEntries("departments", $entry),
+          'officials' => enumEntries("officials", $entry),
+          'projects' => enumEntries("projects", $entry),
+          'resources' => enumEntries("resources", $entry),
+          'services' => enumEntries("services", $entry),
+          'documents' => enumEntries("documents", $entry),
+          'topics' => enumEntries("topics", $entry),
+        ];
+      }),
+
     // BEGIN PROJECTS INDEX
     [
       'indexName' => getenv('ENVIRONMENT') . '_projects',
