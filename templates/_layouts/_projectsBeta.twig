@@ -67,7 +67,7 @@
     ],
     navMenu: {
       'about': aboutTrue,
-      'photos': photosTrue,
+      'gallery': photosTrue,
       'documents': documentsTrue,
       'meetings': meetingsTrue,
       'updates': updatesTrue,
@@ -95,8 +95,8 @@
         {% do view.registerCssFile(craft.twigpack.getModuleUri("/css/lightgallery.css")) %}
         {% js %}lightGallery(document.querySelector('#js-photoGallery'));{% endjs %}
         <section class="mb-16 border-b border-gray-400 pb-16">
-          <a class="anchor-link" id="page-photos"></a>
-          <h2 class="text-xxl">Photos</h2>
+          <a class="anchor-link" id="page-gallery"></a>
+          <h2 class="text-xxl">Gallery</h2>
           <div class="flex flex-row flex-wrap" id="js-photoGallery">
             {% for photo in entry.photoGallery.all() %}
               <figure class="w-1/3" data-src="{{ photo.url }}" data-sub-html="<p class='font-bold'>{{ photo.title }}</p><p>{{ photo.altText }}</p>">
