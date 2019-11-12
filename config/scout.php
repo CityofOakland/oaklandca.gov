@@ -344,7 +344,7 @@ return [
         $summary = richTextSplit($entry->summary);
         $types = [];
         if (!empty($entry->documentType)) {
-          foreach ($entry->documentType->all() as $value) {
+          foreach ($entry->documentType as $value) {
             $types[] = $value->title;
           }
         }
