@@ -33,14 +33,13 @@ if ($isUserAdmin) {
   $newsPressBlock = $defaultBlock;
   $resourcesBlock = $defaultBlock;
   $servicesBlock = $defaultBlock;
-}
-elseif ($isContentBuilder) {
+} elseif ($isContentBuilder) {
   $defaultBlock = [
-    $defaultTextBlock,
+    $defaultTextBlock
   ];
   $departmentsBlock = [
     $defaultTextBlock,
-    $defaultLinksBlock,
+    $defaultLinksBlock
   ];
   $topicsBlock = [
     $defaultTextBlock,
@@ -62,14 +61,13 @@ elseif ($isContentBuilder) {
     $defaultTextBlock,
     $defaultLinksBlock,
   ];
-}
-else {
+} else {
   $defaultBlock = [''];
   $departmentsBlock = $defaultBlock;
   $topicsBlock = $defaultBlock;
   $newsPressBlock = $defaultBlock;
   $resourcesBlock = [
-    $defaultTextBlock,
+    $defaultTextBlock
   ];
   $servicesBlock = [
     $defaultTextBlock
@@ -83,7 +81,7 @@ return [
         'groups' => $defaultBlock,
         'hideUngroupedTypes' => true
       ],
-      'section:departments,section:boardsCommissions' =>[
+      'section:departments,section:boardsCommissions,section:officials' => [
         'groups' => $departmentsBlock,
         'hideUngroupedTypes' => true,
       ],
