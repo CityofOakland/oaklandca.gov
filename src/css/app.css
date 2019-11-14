@@ -215,7 +215,10 @@ main .bg-rotate:nth-of-type(even) {
 
 .body-text {
   & ul {
-    @apply list-disc list-inside;
+    @apply list-disc list-outside;
+    & li {
+      @apply ml-5 pl-2;
+    }
   }
 }
 
