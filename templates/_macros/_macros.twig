@@ -1,0 +1,24 @@
+{% macro relatedSectionCount(entry, relations) %}
+  {% set relCount = false %}
+  {% for relation in relations %}
+    {% set relSectionHandle = relation[0] %}
+    {% set relType = relation[1] %}
+    {% set isEntries = (relType == "entries") ? true : false %}
+    {% set hasRels = isEntries ? craft.entries.section(relSectionHandle).relatedTo(entry) : craft.calendar.events({calendar: relSectionHandle}).relatedTo(entry) %}
+    {% set relCount = true %}
+    {% return relCount %}
+  {% endfor %}
+{% endmacro %}
+{% macro relatedEntry(entry, relSection) %}
+  {% set relSectionHandle = relSection[0] %}
+  {% set relType = relSection[1] %}
+  {% set isEntries = (relType == "entries") ? true : false %}
+  {% set hasRels = isEntries ? craft.entries.section(relSectionHandle).relatedTo(entry) : craft.calendar.events({calendar: relSectionHandle}).relatedTo(entry) %}
+  {% if hasRels | length %}
+    {% set section = entry.section %}
+    {% set relSection = isEntries ? craft.sections.getSectionByHandle(relSectionHandle) : craft.calendar.calendar({handle: relSectionHandle}) %}
+    {% set urlBase = relSectionHandle | kebab %}
+    {% set relUrl = "/" ~ urlBase ~ "/related-to/" ~ section.handle ~ "/" ~ entry.slug %}
+    {% include "_partials/_elements/_title-cards" with { title: relSection.name, url: relUrl} %}
+  {% endif %}
+{% endmacro %}

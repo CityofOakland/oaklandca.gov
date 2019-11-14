@@ -70,6 +70,9 @@
   {% if about ?? '' %}
     {% set sideNavLinks = sideNavLinks | merge([{title: "About", link: "page-about"}]) %}
   {% endif %}
+  {% if relatedContent ?? '' %}
+    {% set sideNavLinks = sideNavLinks | merge([{title: "Related Pages", link: "page-relatedpages"}]) %}
+  {% endif %}
   {% if contact ?? '' %}
     {% set sideNavLinks = sideNavLinks | merge([{title: "Contact Us", link: "page-contact"}]) %}
   {% endif %}

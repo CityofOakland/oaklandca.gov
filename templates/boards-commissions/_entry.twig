@@ -1,5 +1,16 @@
 {% extends '_layouts/_banner-with-nav.twig' %}
 
+{% set relatedContent = [
+  ['events', 'calendar'],
+  ['meetings', 'calendar'],
+  ['news', 'entries'],
+  ['services', 'entries'],
+  ['resources', 'entries'],
+  ['topics', 'entries'],
+  ['projects', 'entries'],
+  ['documents', 'entries']
+] %}
+
 {% set relatedMeetings = craft.calendar.events.relatedTo(entry) %}
 {% set relatedNews = craft.entries.section('news').relatedTo(entry) %}
 
@@ -24,6 +35,7 @@
       'services': entry.pageServices.exists(),
       'resources': entry.pageResources.exists(),
       'news': relatedNews.exists(),
+      'relatedPages': true,
       'about': true,
       'contact': contactState
     }
@@ -44,6 +56,9 @@
     {% include '_partials/_page-services.twig' %}
     {% include '_partials/_page-news.twig' %}
   {% endif %}
+  {% include "_partials/_page-related-content.twig" with {
+    relatedContent : relatedContent
+  } %}
   {% include '_partials/_page-about.twig' %}
   {% include '_partials/_page-location.twig' %}
 {% endblock %}
