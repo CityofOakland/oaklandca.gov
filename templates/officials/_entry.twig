@@ -1,5 +1,14 @@
 {% extends '_layouts/_banner-with-nav.twig' %}
 
+{% set relatedContent = [
+  ['events', 'calendar'],
+  ['news', 'entries'],
+  ['services', 'entries'],
+  ['topics', 'entries'],
+  ['projects', 'entries'],
+  ['documents', 'entries']
+] %}
+
 {% set relatedEvents = craft.calendar.events.relatedTo(entry) %}
 {% set relatedNews = craft.entries.section('news').relatedTo(entry) %}
 
@@ -24,6 +33,7 @@
       'topics': entry.pageTopics.exists(),
       'projects': entry.pageProjects.exists(),
       'documents': entry.pageDocuments.exists(),
+      'relatedPages': true,
       'leadership': true,
       'contact': contactState
     }

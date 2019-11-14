@@ -3,6 +3,17 @@
 {% set relatedEvents = craft.calendar.events.relatedTo(entry) %}
 {% set relatedNews = craft.entries.section('news').relatedTo(entry) %}
 
+{% set relatedContent = [
+  ['events', 'calendar'],
+  ['meetings', 'calendar'],
+  ['news', 'entries'],
+  ['services', 'entries'],
+  ['resources', 'entries'],
+  ['topics', 'entries'],
+  ['projects', 'entries'],
+  ['documents', 'entries']
+] %}
+
 {% set contactState = entry.addresses | length or not entry.address.isEmpty or entry.phoneNumbers | length or entry.emailAddress | length or entry.openHours | length %}
 {% set contentBuilder = entry.contentBuilder | length %}
 {% set contact = contactState %}
@@ -22,6 +33,7 @@
       'minutesAgendas': entry.pageDocuments.exists(),
       'services': entry.pageServices.exists(),
       'resources': entry.pageResources.exists(),
+      'relatedPages': true,
       'contact': contactState
     }
   } %}
@@ -57,5 +69,8 @@
       </div>
     </section>
   {% endif %}
+  {% include "_partials/_page-related-content.twig" with {
+    relatedContent : relatedContent
+  } %}
   {% include '_partials/_page-location.twig' %}
 {% endblock %}
