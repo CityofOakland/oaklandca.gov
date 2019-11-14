@@ -32,7 +32,7 @@ categoryGroups:
         hasUrls: false
         uriFormat: null
         template: null
-dateModified: 1573582319
+dateModified: 1573753368
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -7391,7 +7391,7 @@ superTableBlockTypes:
         translationKeyFormat: null
         type: craft\redactor\Field
         settings:
-          redactorConfig: ''
+          redactorConfig: 'Basic with Links.json'
           purifierConfig: ''
           cleanupHtml: true
           removeInlineStyles: '1'
@@ -7412,7 +7412,7 @@ superTableBlockTypes:
         translationKeyFormat: null
         type: craft\redactor\Field
         settings:
-          redactorConfig: ''
+          redactorConfig: 'Basic with Links.json'
           purifierConfig: ''
           cleanupHtml: true
           removeInlineStyles: '1'
@@ -7473,7 +7473,7 @@ superTableBlockTypes:
         translationKeyFormat: null
         type: craft\redactor\Field
         settings:
-          redactorConfig: Basic.json
+          redactorConfig: 'Basic with Links.json'
           purifierConfig: ''
           cleanupHtml: true
           removeInlineStyles: '1'
