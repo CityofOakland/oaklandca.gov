@@ -18,7 +18,7 @@
       'meetings': relatedMeetings.exists(),
       'about': true,
       'contact': contactState,
-      'funding': entry.fundingLogos.exists(),
+      'logos': entry.fundingLogos.exists(),
     }
   } %}
   {% css %}
@@ -64,7 +64,7 @@
   </section>
   {% if entry.projectBeforePhoto.exists() and entry.projectAfterPhoto.exists() %}
     <section>
-      <a class="anchor-link" id="page-project-photos"></a>
+      <a class="anchor-link" id="page-gallery"></a>
       <div class="container">
         <div class="md:flex md:flex-row">
           <div class="md:pr-4 md:w-1/2">
@@ -144,7 +144,7 @@
   {% include '_partials/_page-location.twig' %}
   {% if entry.fundingLogos.exists() %}
     <section>
-      <a class="anchor-link" id="page-funding"></a>
+      <a class="anchor-link" id="page-logos"></a>
       <div class="container">
         <h3 class="mb-4 text-center">Project Funding</h3>
         <div class="flex flex-wrap items-center justify-center -mx-4">

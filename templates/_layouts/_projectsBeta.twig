@@ -1,6 +1,7 @@
 {% extends '_layouts/_banner-with-nav.twig' %}
 
 {% set relatedMeetings = craft.calendar.events.relatedTo(entry) %}
+{% set relatedTeams = craft.entries.section('teams').relatedTo(entry).all() %}
 
 {% set aboutTrue = entry.about %}
 {% set photosTrue = entry.photoGallery.exists() %}
@@ -12,8 +13,14 @@
 {% set relatedTrue = entry.relatedProjectEntries.exists() %}
 {% set fundingTrue = entry.fundingLogos.exists() %}
 {% set emailTrue = entry.emailAddress %}
+{% set teamsTrue = relatedTeams | length %}
 {% set socialMediaTrue = entry.facebook or entry.twitter or entry.medium or entry.instagram or entry.youtube %}
-{% set contactTrue = emailTrue or socialMediaTrue %}
+{% set contactTrue = emailTrue or teamsTrue or socialMediaTrue %}
+
+{% if photosTrue or mapTrue %}
+  {% do view.registerJsFile(craft.twigpack.getModuleUri("/js/lightgallery.js")) %}
+  {% do view.registerCssFile(craft.twigpack.getModuleUri("/css/lightgallery.css")) %}
+{% endif %}
 
 {% js %}
   function toggleLinks(toggleId) {
@@ -65,14 +72,14 @@
     ],
     navMenu: {
       'about': aboutTrue,
-      'photos': photosTrue,
+      'gallery': photosTrue,
       'documents': documentsTrue,
       'meetings': meetingsTrue,
       'updates': updatesTrue,
       'map': mapTrue,
       'timeline': timelineTrue,
       'relatedpages': relatedTrue,
-      'funding': fundingTrue,
+      'logos': fundingTrue,
       'contact': contactTrue,
     },
     headerSubContent: headerSubContent
@@ -89,12 +96,10 @@
         </section>
       {% endif %}
       {% if photosTrue %}
-        {% do view.registerJsFile(craft.twigpack.getModuleUri("/js/lightgallery.js")) %}
-        {% do view.registerCssFile(craft.twigpack.getModuleUri("/css/lightgallery.css")) %}
         {% js %}lightGallery(document.querySelector('#js-photoGallery'));{% endjs %}
         <section class="mb-16 border-b border-gray-400 pb-16">
-          <a class="anchor-link" id="page-photos"></a>
-          <h2 class="text-xxl">Photos</h2>
+          <a class="anchor-link" id="page-gallery"></a>
+          <h2 class="text-xxl">Gallery</h2>
           <div class="flex flex-row flex-wrap" id="js-photoGallery">
             {% for photo in entry.photoGallery.all() %}
               <figure class="w-1/3" data-src="{{ photo.url }}" data-sub-html="<p class='font-bold'>{{ photo.title }}</p><p>{{ photo.altText }}</p>">
@@ -167,20 +172,48 @@
           {% do view.registerJsFile("https://api.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.js") %}
           {% do view.registerCssFile("https://api.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.css") %}
 
+          {% js %}lightGallery(document.querySelector('#js-map'));{% endjs %}
+
           {% set maps = '' %}
 
-          {% for location in entry.projectLocations.all() %}
-            {% set last = not loop.last ? ', ' %}
-            {% set loc = location.address %}
-            {% set lat = loc.lat %}
-            {% set lon = loc.lng %}
-            {% set maps = maps ~ 'pin-m-marker+285A98(' ~ lon ~',' ~ lat ~ ')' ~ last | trim %}
-          {% endfor %}
+          {% set locations = entry.projectLocations.all() %}
+          {% if entry.projectLocations | length >= 2 %}
+            {% for location in locations %}
+              {% set last = not loop.last ? ', ' %}
+              {% set loc = location.address %}
+              {% set lat = loc.lat %}
+              {% set lon = loc.lng %}
+              {% set maps = maps ~ 'pin-l-marker+285A98(' ~ lon ~',' ~ lat ~ ')' ~ last | trim %}
+            {% endfor %}
+            {% set src = "https://api.mapbox.com/v4/mapbox.emerald/" ~ maps ~ "/auto/600x400@2x.png?access_token=pk.eyJ1Ijoib2FrbGFuZGRpZ2l0YWwiLCJhIjoiY2pudXBsb2Q5MTcyejNwcGFiMXI3djlvMiJ9.eWDu3rz5mBaZvBzMQtZGlQ" %}
+            {% set largePhoto = src | replace("600x400", "1280x854") %}
+            {% set locationText = locations | map(l => "#{l.address}") |join(', ', ' and ') %}
+          {% else %}
+            {% set map = entry.projectLocations.one() %}
+            {% set loc = map.address %}
+            {% set src = "https://api.mapbox.com/v4/mapbox.emerald/pin-l-marker+285A98(" ~ loc.lng ~ "," ~ loc.lat ~ ")/" ~ loc.lng ~ "," ~ loc.lat ~ ",16/600x400@2x.png?access_token=pk.eyJ1Ijoib2FrbGFuZGRpZ2l0YWwiLCJhIjoiY2pudXBsb2Q5MTcyejNwcGFiMXI3djlvMiJ9.eWDu3rz5mBaZvBzMQtZGlQ" %}
+            {% set largePhoto = src | replace("600x400", "1280x854") %}
+            {% set locationText = loc.street1 ~ ", " ~ loc.city ~ ", " ~ loc.state ~ ", " ~ loc.zip %}
+          {% endif %}
 
-          <figure class="mt-4 w-full" id='map'>
-            <img src="https://api.mapbox.com/v4/mapbox.emerald/{{ maps }}/auto/600x400@2x.png?access_token=pk.eyJ1Ijoib2FrbGFuZGRpZ2l0YWwiLCJhIjoiY2pudXBsb2Q5MTcyejNwcGFiMXI3djlvMiJ9.eWDu3rz5mBaZvBzMQtZGlQ" alt="Map of Project: {{ entry.title }}">
+          <figure class="mt-4 w-full cursor-pointer" id='js-map'>
+            <img
+              data-src="{{ largePhoto }}" 
+              data-sub-html="<p class='font-bold'>Map of Project: {{ entry.title }}</p><p>Showing locations of {{ locationText ?? '' }}</p>"
+              src="{{ src }}" 
+              alt="Map of Project: {{ entry.title }}">
           </figure>
-
+          {% for location in locations %}
+            {% if location.description %}
+              <h3 class="text-lg font-bold my-3">{{ location.description }}</h3>
+            {% endif %}
+            {% set loc = location.address %}
+            <p class="mt-{{ loop.index == 0 ? 3 : 0 }} mb-3">
+              {{ loc.street1 }}<br />
+              {% if loc.street2 %}{{ loc.street2 }}<br />{% endif %}
+              {{ loc.city }}, {{ loc.state }} {{ location.address.zip }}
+            </p>
+          {% endfor %}
         </section>
       {% endif %}
       {% css %}
@@ -241,8 +274,8 @@
       {% endif %}
       {% if fundingTrue %}
         <section class="mb-16 border-b border-gray-400 pb-16">
-          <a class="anchor-link" id="page-funding"></a>
-          <h2 class="text-xxl">Partners</h2>
+          <a class="anchor-link" id="page-logos"></a>
+          <h2 class="text-xxl">{{ entry.fundingLogosAlternateTitle ?? 'Partners' }}</h2>
           <div class="flex flex-wrap items-center justify-center -mx-4">
             {% for logo in entry.fundingLogos.all() %}
               <figure class="w-full sm:w-1/2 md:w-1/3 lg:w-1/5 mb-4 md:mb-8 mx-4">
@@ -260,6 +293,14 @@
             <h3 class="text-xl mb-2">Email</h3>
             <p class="mt-0">
               <a href="mailto:{{ entry.emailAddress }}">{{ entry.emailAddress }}</a>
+            </p>
+          {% endif %}
+          {% if teamsTrue %}
+            <h3 class="text-xl mb-2">Teams</h3>
+            <p class="mt-0">
+              {% for team in relatedTeams %}
+                <a href={{ team.url }}" class="btn btn-sm inline-block mr-2">{{ team.title }}</a>
+              {% endfor %}
             </p>
           {% endif %}
           {% for phone in entry.phoneNumbers.all() %}

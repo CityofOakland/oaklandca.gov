@@ -1,5 +1,6 @@
 {% set url = url ?? entry.url ?? null %}
 {% set title = title ?? entry.title ?? null %}
+{% set cardStyle = cardStyle ?? null %}
 {% set cardColor = cardColor ?? null %}
 
-<a href="{{ url }}" class="card-grid-button {{ cardColor }}">{{ title | raw }}</a>
+<a href="{{ url }}" class="card-grid-button {{ cardStyle }} {{ cardColor }}">{{ title | raw }}</a>

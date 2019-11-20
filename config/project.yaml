@@ -32,7 +32,7 @@ categoryGroups:
         hasUrls: false
         uriFormat: null
         template: null
-dateModified: 1573259558
+dateModified: 1573753368
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -195,7 +195,7 @@ fields:
           value: started
           default: ''
         -
-          label: Hiatus
+          label: 'Hiatus / On Hold'
           value: hiatus
           default: ''
         -
@@ -205,6 +205,18 @@ fields:
         -
           label: Canceled
           value: canceled
+          default: ''
+        -
+          label: 'In Process'
+          value: inProcess
+          default: ''
+        -
+          label: Adopted
+          value: adopted
+          default: ''
+        -
+          label: Implementation
+          value: implementation
           default: ''
     contentColumnType: string
     fieldGroup: 8e8ee56e-cdb8-4206-a3b5-c3aa0eb3a884
@@ -1496,6 +1508,23 @@ fields:
       localizeBlocks: false
     fieldGroup: 767a8f0b-6ea5-4855-a6f3-8c2a4a4aee78
     contentColumnType: string
+  bb70071c-d8c0-4a11-91f6-d4ca02503a00:
+    name: 'Funding Logos Alternate Title'
+    handle: fundingLogosAlternateTitle
+    instructions: 'If you don’t wish to use the default text of “Partners” you may use a different title here to define it.'
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\PlainText
+    settings:
+      placeholder: ''
+      code: ''
+      multiline: ''
+      initialRows: '4'
+      charLimit: ''
+      columnType: text
+    contentColumnType: text
+    fieldGroup: 8e8ee56e-cdb8-4206-a3b5-c3aa0eb3a884
   bca7e819-7353-4b88-a1ba-1f0cd2ef15b5:
     name: Address
     handle: address
@@ -4776,6 +4805,10 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 2.0.0
+  patrol:
+    edition: standard
+    enabled: true
+    schemaVersion: 3.0.0
 sections:
   07faad04-9ec4-4f68-9fe8-0ca20f189f8a:
     name: Staff
@@ -5925,7 +5958,7 @@ sections:
                     sortOrder: 6
                   5cde5e79-0560-492c-b592-dd86cbde33c3:
                     required: false
-                    sortOrder: 14
+                    sortOrder: 15
                   78894bca-c6ce-4518-bb6f-fa94d7e7050e:
                     required: false
                     sortOrder: 8
@@ -5935,6 +5968,9 @@ sections:
                   af0e38e2-c040-47dc-a4f5-a2364d160a8f:
                     required: false
                     sortOrder: 13
+                  bb70071c-d8c0-4a11-91f6-d4ca02503a00:
+                    required: false
+                    sortOrder: 14
                   bef74be8-b22d-4dd0-9217-9707bb43d888:
                     required: false
                     sortOrder: 3
@@ -7355,7 +7391,7 @@ superTableBlockTypes:
         translationKeyFormat: null
         type: craft\redactor\Field
         settings:
-          redactorConfig: ''
+          redactorConfig: 'Basic with Links.json'
           purifierConfig: ''
           cleanupHtml: true
           removeInlineStyles: '1'
@@ -7376,7 +7412,7 @@ superTableBlockTypes:
         translationKeyFormat: null
         type: craft\redactor\Field
         settings:
-          redactorConfig: ''
+          redactorConfig: 'Basic with Links.json'
           purifierConfig: ''
           cleanupHtml: true
           removeInlineStyles: '1'
@@ -7437,7 +7473,7 @@ superTableBlockTypes:
         translationKeyFormat: null
         type: craft\redactor\Field
         settings:
-          redactorConfig: Basic.json
+          redactorConfig: 'Basic with Links.json'
           purifierConfig: ''
           cleanupHtml: true
           removeInlineStyles: '1'
