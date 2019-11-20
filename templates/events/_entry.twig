@@ -23,10 +23,14 @@
           <h3 class="my-0 md:mr-8">Event</h3>
           <time datetime="{{ startDate | atom }}">
             <h4 class="font-bold my-0 text-xxxl">
-              {% for event in event.occurrences %}
-                <div>{{ event.startDate.format("F j, Y" )}}</div>
-              {% endfor %}
-            </h4>
+              {% if event.occurrences | length %}
+                {% for event in event.occurrences %}
+                  <div>{{ event.startDate.format("F j, Y" )}}</div>
+                {% endfor %}
+              {% else %}
+                {{ startDate.format("F j, Y") }}
+              {% endif %}
+          </h4>
             {% if not event.allDay %}
               <p class="mb-0 text-xl">{{ startDate.format("g:ia") }}
                 {% if endDate | length %}
