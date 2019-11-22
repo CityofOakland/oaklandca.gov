@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "7f5895eadd7c0ce00b18d0997191dd00",
+    "content-hash": "71fd5e65896d0845fbc5d26293f2396b",
     "packages": [
         {
             "name": "aelvan/imager",
@@ -122,11 +122,11 @@
         },
         {
             "name": "algolia/algoliasearch-client-php",
-            "version": "2.4.0",
+            "version": "2.5.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/algolia/algoliasearch-client-php/zipball/602748161cecbf9d329379a9949d63e1dc683852",
-                "reference": "602748161cecbf9d329379a9949d63e1dc683852",
+                "url": "https://api.github.com/repos/algolia/algoliasearch-client-php/zipball/446c9faedcb6534f2295b93835b606267ff5f816",
+                "reference": "446c9faedcb6534f2295b93835b606267ff5f816",
                 "shasum": ""
             },
             "require": {
@@ -176,7 +176,7 @@
                 "php",
                 "search"
             ],
-            "time": "2019-09-11T15:21:08+00:00"
+            "time": "2019-11-05T12:40:49+00:00"
         },
         {
             "name": "angellco/spoon",
@@ -4156,11 +4156,11 @@
         },
         {
             "name": "nystudio107/craft-retour",
-            "version": "3.1.28",
+            "version": "3.1.29",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-retour/zipball/5261adc1683f92b4768c3d101f82086733f44cf6",
-                "reference": "5261adc1683f92b4768c3d101f82086733f44cf6",
+                "url": "https://api.github.com/repos/nystudio107/craft-retour/zipball/b2f8a96a42adb06398300e7b7738c0cf9f968a6e",
+                "reference": "b2f8a96a42adb06398300e7b7738c0cf9f968a6e",
                 "shasum": ""
             },
             "require": {
@@ -4207,15 +4207,15 @@
                 "docs": "https://nystudio107.com/plugins/retour/documentation",
                 "issues": "https://nystudio107.com/plugins/retour/support"
             },
-            "time": "2019-11-11T23:41:17+00:00"
+            "time": "2019-11-18T23:06:41+00:00"
         },
         {
             "name": "nystudio107/craft-seomatic",
-            "version": "3.2.33",
+            "version": "3.2.34",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/754e0b1ee48fb5381b066a3849c943ffd3d449b5",
-                "reference": "754e0b1ee48fb5381b066a3849c943ffd3d449b5",
+                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/24d5599838c8a561e1966308a39f13e408eb523b",
+                "reference": "24d5599838c8a561e1966308a39f13e408eb523b",
                 "shasum": ""
             },
             "require": {
@@ -4279,7 +4279,7 @@
                 "docs": "https://nystudio107.com/plugins/seomatic/documentation",
                 "issues": "https://nystudio107.com/plugins/seomatic/support"
             },
-            "time": "2019-11-11T23:46:58+00:00"
+            "time": "2019-11-19T12:13:31+00:00"
         },
         {
             "name": "nystudio107/craft-twigpack",
@@ -5051,11 +5051,11 @@
         },
         {
             "name": "rias/craft-scout",
-            "version": "2.1.0",
+            "version": "2.1.3",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/riasvdv/craft-scout/zipball/65965a415b173cfe7a2905726a7e10a31025a253",
-                "reference": "65965a415b173cfe7a2905726a7e10a31025a253",
+                "url": "https://api.github.com/repos/riasvdv/craft-scout/zipball/e61adeb1d3549643620864171eba50f83e923836",
+                "reference": "e61adeb1d3549643620864171eba50f83e923836",
                 "shasum": ""
             },
             "require": {
@@ -5101,7 +5101,7 @@
                 "docs": "https://github.com/riasvdv/craft-scout/blob/master/README.md",
                 "issues": "https://github.com/riasvdv/craft-scout/issues"
             },
-            "time": "2019-09-20T07:30:09+00:00"
+            "time": "2019-11-21T09:47:31+00:00"
         },
         {
             "name": "rize/uri-template",
@@ -6612,11 +6612,11 @@
         },
         {
             "name": "symfony/var-dumper",
-            "version": "v3.4.32",
+            "version": "v3.4.35",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/bd54d0cc1ae78ca7366ca9056342d1f7e0b5d7fa",
-                "reference": "bd54d0cc1ae78ca7366ca9056342d1f7e0b5d7fa",
+                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/569e261461600810845a8305ca3f64abd3e712c0",
+                "reference": "569e261461600810845a8305ca3f64abd3e712c0",
                 "shasum": ""
             },
             "require": {
@@ -6667,7 +6667,7 @@
                 "debug",
                 "dump"
             ],
-            "time": "2019-10-04T07:44:32+00:00"
+            "time": "2019-10-10T11:03:19+00:00"
         },
         {
             "name": "symfony/yaml",
