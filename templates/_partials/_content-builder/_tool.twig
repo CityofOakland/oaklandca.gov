@@ -45,7 +45,7 @@
 {% import _self as macro %}
 
 {% for block in entry.contentBuilder.all() %}
-  {% set blockId =  block.text ?? block.heading | kebab ~ '-' ~ block.id ?? block.id %}
+  {% set blockId =  (block.text ?? block.heading) | kebab ~ '-' ~ block.id ?? block.id %}
   {% switch block.type %}
     {% case "heading" %}
       <a id="{{ blockId }}" class="anchor-link"></a>
