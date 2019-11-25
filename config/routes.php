@@ -27,7 +27,7 @@ return [
   'news/related-to/<section>/<slug>' => ['template' => 'news'],
   'projects/related-to/<section>/<slug>' => ['template' => 'projects'],
   'resources/related-to/<section>/<slug>' => ['template' => 'resources'],
-  'services/related-to/<section>/<slug>' => ['template' => 'services'],
+  'services/related-to/<section>/<slug>' => ['template' => '_layouts/_instant-search-services'],
   'topics/related-to/<section>/<slug>' => ['template' => 'topics'],
   'api' => 'graphql/api'
 ];
