@@ -1,11 +1,12 @@
 {% set bannerImage = bannerImage ?? entry.banner ?? '' %}
-{% set leadIn = leadIn ?? entry.leadIn ?? '' %}
+{% set leadIn = leadIn ?? category.summary ?? entry.leadIn ?? '' %}
 {% set ctaButton = ctaButton ?? entry.ctaButton ?? '' %}
+{% set contentBuilder = entry.contentBuilder ?? '' %}
 
 {% if bannerTitle is defined %}
   {% do seomatic.meta.seoTitle(bannerTitle) %}
 {% else %}
-  {% set bannerTitle = entry.title ?? '' %}
+  {% set bannerTitle = category.title ?? entry.title ?? '' %}
 {% endif %}
 
 {# BANNER IMAGE #}
@@ -41,7 +42,7 @@
 
 {# SIDEBAR NAV #}
 
-{% if entry.contentBuilder | length %}
+{% if contentBuilder %}
   {% set sideNavLinks = [] %}
   {% for block in entry.contentBuilder.all() %}
     {% switch block.type %}

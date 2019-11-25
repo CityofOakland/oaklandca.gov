@@ -176,7 +176,7 @@ main .bg-rotate:nth-of-type(even) {
     @apply -mx-2;
     & > * {
       @apply m-2;
-      width: calc(theme("width.1/3") - theme(margin.4));
+      width: calc(theme("width.1/2") - theme(margin.4));
     }
   }
   .profile-cards > * {
@@ -187,6 +187,12 @@ main .bg-rotate:nth-of-type(even) {
 @media (min-width: theme("screens.md")) {
   .profile-cards > * {
     width: calc(theme("width.1/3") - theme(margin.8));
+  }
+}
+
+@media (min-width: theme("screens.lg")) {
+  .card-grid-tight > * {
+    width: calc(theme("width.1/3") - theme(margin.4));
   }
 }
 
