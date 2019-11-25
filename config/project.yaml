@@ -21,6 +21,16 @@ categoryGroups:
         hasUrls: true
         uriFormat: 'services/category/{slug}'
         template: services/_category
+    fieldLayouts:
+      aa57cc98-0a36-4294-a711-d0916c509ae4:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              58eda166-7a65-4fb6-8f7d-c6590b0591ae:
+                required: false
+                sortOrder: 1
   947de11d-3d94-45c2-8565-04542ce0e737:
     name: 'Event Types'
     handle: eventTypes
@@ -32,7 +42,7 @@ categoryGroups:
         hasUrls: false
         uriFormat: null
         template: null
-dateModified: 1573753368
+dateModified: 1574707511
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
