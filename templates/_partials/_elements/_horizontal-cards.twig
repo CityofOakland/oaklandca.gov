@@ -1,4 +1,4 @@
-<article class="py-8 sm:py-16 horizontal-card {% if not loop.last %} border-gray-300 border-b-2 {% endif %}">
+<article class="horizontal-card {% if loop is defined and not loop.last %} border-gray-300 border-b-2 {% endif %}">
   {% if photo | length %}
     <figure class="bg-white z-0">
       <img src="{{ photo.url }}" class="">
@@ -10,14 +10,16 @@
       </div>
     </figure>
   {% endif %}
-  <div>
-    <div class="text-base text-gray-400 mb-6">{{ byline }}</div>
-    <h3 class="text-xxxxl mt-4">
-      <a href="{{ url }}">{{ title }}</a>
-    </h3>
-    <p class="text-gray-700 my-4">
-      {{ body }}
-    </p>
+  <div class="flex flex-col justify-between">
+    <div class="">
+      <div class="text-base text-gray-400 my-3">{{ byline }}</div>
+      <h3 class="text-xxxxl mt-0">
+        <a href="{{ url }}">{{ title }}</a>
+      </h3>
+      <p class="text-gray-700 my-4">
+        {{ body }}
+      </p>
+    </div>
     <div>
       <a href="{{ url }}">Read More »</a>
     </div>
