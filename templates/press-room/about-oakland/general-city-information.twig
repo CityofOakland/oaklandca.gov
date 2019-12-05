@@ -1,0 +1,22 @@
+{% extends '_layouts/_banner-with-nav.twig' %}
+
+{% import "press-room/macros/_macros.twig" as macro %}
+
+{% block content %}
+  {% include '_partials/_page-banners.twig' with {
+    bannerTitle: entry.title,
+    breadCrumbLinks: [
+      {
+        title: 'Press Room',
+        link: '/press-room'
+      },
+      {
+        title: 'About Oakland',
+        link: '/press-room/about-oakland'
+      }
+    ],
+  } %}
+  <div class="container pt-0 heading-0-margin">
+    {% include '_partials/_content-builder/_tool.twig' %}
+  </div>    
+{% endblock %}

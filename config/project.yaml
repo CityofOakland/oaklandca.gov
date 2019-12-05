@@ -42,7 +42,7 @@ categoryGroups:
         hasUrls: false
         uriFormat: null
         template: null
-dateModified: 1575355185
+dateModified: 1575537416
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -61,6 +61,8 @@ fieldGroups:
     name: SEO
   1fe293ad-52d9-4002-984e-b7a256d4b158:
     name: 'Social Media'
+  27454cbc-e66b-4d88-bef3-32b87a69a715:
+    name: 'Press Room'
   34f2c44b-4710-447e-9c4e-71e80288b6e4:
     name: Boards
   4ed914c6-b7ea-44be-a061-4430ad33baf2:
@@ -524,6 +526,21 @@ fields:
       columnType: text
     fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521
     contentColumnType: text
+  48c765be-2eab-42d5-bb78-461b32ba7d6a:
+    name: 'Press Room Leadership Profiles'
+    handle: pressRoomLeadershipProfiles
+    instructions: ''
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Matrix
+    settings:
+      minBlocks: ''
+      maxBlocks: ''
+      contentTable: '{{%matrixcontent_pressroomleadershipprofiles}}'
+      propagationMethod: all
+    contentColumnType: string
+    fieldGroup: 767a8f0b-6ea5-4855-a6f3-8c2a4a4aee78
   4d6dd644-455e-4186-8d05-a00079622246:
     name: 'Last Name'
     handle: lastName
@@ -2151,6 +2168,26 @@ fields:
       localizeRelations: false
     fieldGroup: 4ed914c6-b7ea-44be-a061-4430ad33baf2
     contentColumnType: string
+  ea50ec29-b638-4c57-aa62-e871a6bc95cc:
+    name: 'PIO Team'
+    handle: pioTeam
+    instructions: ''
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Entries
+    settings:
+      sources:
+        - 'section:07faad04-9ec4-4f68-9fe8-0ca20f189f8a'
+      source: null
+      targetSiteId: null
+      viewMode: null
+      limit: ''
+      selectionLabel: 'Add a PIO member'
+      localizeRelations: false
+      validateRelatedElements: ''
+    contentColumnType: string
+    fieldGroup: a8c82666-3295-4f90-b50b-67f2299847db
   eae235fc-29cb-4dd5-8e91-2c0ad69877ed:
     name: 'News Tags'
     handle: newsTags
@@ -2998,6 +3035,123 @@ matrixBlockTypes:
           columnType: text
         fieldGroup: null
         contentColumnType: text
+  373a4ad0-3cbf-4be9-bf93-66ed7a43985a:
+    field: 48c765be-2eab-42d5-bb78-461b32ba7d6a
+    name: Leader
+    handle: leader
+    sortOrder: 1
+    fields:
+      48927aca-a1ce-493e-bdea-1b83a4cecba4:
+        name: Email
+        handle: email
+        instructions: 'Adds a custom email address for this person'
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      7033f470-47c7-4511-98e2-4362a74a5ae2:
+        name: Person
+        handle: person
+        instructions: ''
+        searchable: false
+        translationMethod: site
+        translationKeyFormat: null
+        type: craft\fields\Entries
+        settings:
+          sources:
+            - 'section:28881fc8-3e61-4fdb-a5ee-cce1bab725bf'
+            - 'section:07faad04-9ec4-4f68-9fe8-0ca20f189f8a'
+          source: null
+          targetSiteId: null
+          viewMode: null
+          limit: '1'
+          selectionLabel: 'Add an official'
+          localizeRelations: false
+          validateRelatedElements: '1'
+        contentColumnType: string
+        fieldGroup: null
+      ad2f47f3-4f9c-4614-b324-849026514e0e:
+        name: 'Job Title'
+        handle: jobTitle
+        instructions: 'Adds a custom job title override for this person'
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      c91184da-cdea-4aba-8978-7e13aa753a61:
+        name: Office/Department
+        handle: officeDepartment
+        instructions: 'Adds a custom office or department title for this person'
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      ea4fa3a2-5b40-47ae-8547-4e6e09e689f1:
+        name: 'Phone Number'
+        handle: phoneNumber
+        instructions: 'Adds a custom phone number for this person'
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+    fieldLayouts:
+      722b0f85-1f87-491e-80aa-0574a0e915db:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              48927aca-a1ce-493e-bdea-1b83a4cecba4:
+                required: false
+                sortOrder: 4
+              7033f470-47c7-4511-98e2-4362a74a5ae2:
+                required: true
+                sortOrder: 1
+              ad2f47f3-4f9c-4614-b324-849026514e0e:
+                required: false
+                sortOrder: 2
+              c91184da-cdea-4aba-8978-7e13aa753a61:
+                required: false
+                sortOrder: 3
+              ea4fa3a2-5b40-47ae-8547-4e6e09e689f1:
+                required: false
+                sortOrder: 5
   380be87a-8c09-4edd-ac41-7a110a5dba44:
     name: 'Physical Address'
     handle: physicalAddress
@@ -5394,6 +5548,98 @@ sections:
         uriFormat: 'officials/{slug}'
         template: officials/_entry
     propagationMethod: all
+  36d0160d-50c5-479d-8efc-5959cb5bd45a:
+    name: 'Press Room'
+    handle: pressRoom
+    type: single
+    enableVersioning: true
+    propagationMethod: all
+    siteSettings:
+      c35d3a93-d7f4-4c37-ae3e-1b4d403311bb:
+        enabledByDefault: true
+        hasUrls: true
+        uriFormat: press-room
+        template: press-room/index
+    entryTypes:
+      38694eca-46a1-4051-b1ac-374b23cb2163:
+        name: 'Press Room'
+        handle: pressRoom
+        hasTitleField: false
+        titleLabel: ''
+        titleFormat: '{section.name|raw}'
+        sortOrder: 1
+        fieldLayouts:
+          e0dfa110-8bb7-42a8-8f3a-4b991b4740c3:
+            tabs:
+              -
+                name: Content
+                sortOrder: 1
+                fields:
+                  bef74be8-b22d-4dd0-9217-9707bb43d888:
+                    required: false
+                    sortOrder: 3
+                  c2ad07dc-05e7-4ef4-89b6-2e1eaccee210:
+                    required: false
+                    sortOrder: 2
+                  ea50ec29-b638-4c57-aa62-e871a6bc95cc:
+                    required: false
+                    sortOrder: 4
+                  f62c85ae-2203-4d1a-8702-da515126a398:
+                    required: false
+                    sortOrder: 1
+              -
+                name: SEO
+                sortOrder: 2
+                fields:
+                  ecc31df6-640f-4fa6-a2e6-caea757e379d:
+                    required: false
+                    sortOrder: 1
+  3bcee420-a923-4de2-9e6c-9081062b06e1:
+    name: 'About Oakland'
+    handle: aboutOakland
+    type: single
+    enableVersioning: true
+    propagationMethod: all
+    siteSettings:
+      c35d3a93-d7f4-4c37-ae3e-1b4d403311bb:
+        enabledByDefault: true
+        hasUrls: true
+        uriFormat: press-room/about-oakland
+        template: press-room/about-oakland
+    entryTypes:
+      816c2b77-dcc5-411d-b95a-3b006b42f3d4:
+        name: 'About Oakland'
+        handle: aboutOakland
+        hasTitleField: false
+        titleLabel: ''
+        titleFormat: '{section.name|raw}'
+        sortOrder: 1
+        fieldLayouts:
+          d8bfc1d3-a266-4f51-bb19-f3acab14edaa:
+            tabs:
+              -
+                name: Content
+                sortOrder: 1
+                fields:
+                  48c765be-2eab-42d5-bb78-461b32ba7d6a:
+                    required: false
+                    sortOrder: 4
+                  bef74be8-b22d-4dd0-9217-9707bb43d888:
+                    required: false
+                    sortOrder: 3
+                  c2ad07dc-05e7-4ef4-89b6-2e1eaccee210:
+                    required: false
+                    sortOrder: 2
+                  f62c85ae-2203-4d1a-8702-da515126a398:
+                    required: false
+                    sortOrder: 1
+              -
+                name: SEO
+                sortOrder: 2
+                fields:
+                  ecc31df6-640f-4fa6-a2e6-caea757e379d:
+                    required: false
+                    sortOrder: 1
   5e4e2c33-9bc3-4620-a00b-7ca3fb5d8688:
     name: 'Departments Index'
     handle: departmentsIndex
@@ -5596,6 +5842,52 @@ sections:
         uriFormat: null
         template: null
     propagationMethod: all
+  7c4ac5a1-1b30-41f1-b673-890f44221025:
+    name: 'General City Information'
+    handle: generalCityInformation
+    type: single
+    enableVersioning: true
+    propagationMethod: all
+    siteSettings:
+      c35d3a93-d7f4-4c37-ae3e-1b4d403311bb:
+        enabledByDefault: true
+        hasUrls: true
+        uriFormat: press-room/about-oakland/general-city-information
+        template: press-room/about-oakland/general-city-information
+    entryTypes:
+      b5015a50-2bb5-498e-ba78-c140f3592bf2:
+        name: 'General City Information'
+        handle: generalCityInformation
+        hasTitleField: false
+        titleLabel: ''
+        titleFormat: '{section.name|raw}'
+        sortOrder: 1
+        fieldLayouts:
+          ad703fc0-fd8c-4445-abf4-7777cef5b19c:
+            tabs:
+              -
+                name: Content
+                sortOrder: 1
+                fields:
+                  bef74be8-b22d-4dd0-9217-9707bb43d888:
+                    required: false
+                    sortOrder: 3
+                  c2ad07dc-05e7-4ef4-89b6-2e1eaccee210:
+                    required: false
+                    sortOrder: 2
+                  f62c85ae-2203-4d1a-8702-da515126a398:
+                    required: false
+                    sortOrder: 1
+                  fd0c8e02-99b4-4ce5-ab89-b29cd0efc581:
+                    required: false
+                    sortOrder: 4
+              -
+                name: SEO
+                sortOrder: 2
+                fields:
+                  ecc31df6-640f-4fa6-a2e6-caea757e379d:
+                    required: false
+                    sortOrder: 1
   89cda626-6500-4ace-b9f4-0f8a54a9ad02:
     name: 'Services Index'
     handle: servicesIndex

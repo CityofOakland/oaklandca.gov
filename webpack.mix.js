@@ -47,7 +47,6 @@ mix.setPublicPath('./web/assets/')
   .sourceMaps()
   .browserSync({
     proxy: "http://oakland.test",
-    ghostMode: false,
     notify: {
       styles: {
         top: 'auto',

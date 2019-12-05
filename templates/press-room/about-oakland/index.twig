@@ -1,0 +1,198 @@
+{% extends '_layouts/_banner-with-nav.twig' %}
+
+{% set customNav = [
+  {
+    title: "About Oakland",
+    link: "about-oakland"
+  },
+  {
+    title: "Leadership Profiles",
+    link: "leadership-profiles"
+  },
+  {
+    title: "Governance",
+    link: "governance"
+  },
+  {
+    title: "City budget and financials",
+    link: "city-budget-financials"
+  },
+  {
+    title: "Local agencies",
+    link: "local-agencies"
+  },
+  {
+    title: "Quick facts at a glance",
+    link: "quick-facts"
+  },
+] %}
+
+{% import "press-room/macros/_macros.twig" as macro %}
+
+{% block content %}
+  {% include '_partials/_page-banners.twig' with {
+    bannerTitle: entry.title,
+    breadCrumbLinks: [
+      {
+        title: 'Press Room',
+        link: '/press-room'
+      }
+    ],
+  } %}
+  <div class="container pt-0">
+    <div class="flex justify-end">
+      <div class="w-full md:w-5/6 md:pl-10">
+        <h2 class="text-xxxl md:text-xxxxl font-bold my-0">Mission statement</h2>
+        <p class="mb-0 md:leading-loose lg:w-2/3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </div>
+    </div>
+    <div class="flex justify-end">
+      <div class="w-full md:w-5/6 md:pl-10">
+        <h2 class="text-xxxl md:text-xxxxl font-bold mt-12 mb-0">City profile</h2>
+        <p class="mb-0 md:leading-loose lg:w-2/3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </div>
+    </div>
+  </div>
+  <section class="bg-rotate">
+    <a class="anchor-link" id="leadership-profiles"></a>
+    <div class="container">
+      {% include '_partials/_elements/_module-header.twig' with {
+        headerText: "Leadership profiles",
+      } %}
+      <div class="card-grid grid-equal-height profile-cards mt-12">
+        {% for leader in entry.pressRoomLeadershipProfiles.all() %}
+          {% set entry = leader.person.one() %}
+          {% set email = leader.email ?? entry.emailAddress ?? '' %}
+          {% set phone = leader.phoneNumber ?? entry.phoneNumbers.one.number ?? '' %}
+          {% set department = leader.officeDepartment ?? entry.title %}
+          {%- set extraContent -%}
+            <span class="block">{{ department }}</span>
+            {% if email | length %}
+              {% set e = email | replace({'@oaklandnet.com': '@oaklandca.gov'}) %}
+              <a class="block overflow-x-hidden" aria-label="Email {{ entry.groupHeadName ?? entry.title }}" href="mailto:{{ e }}"><span class="hidden truncate md:block">{{ e }}</span><span class="md:hidden">Email</span></a>
+            {% endif %}
+            {% if phone | length %}
+              <a class="block" href="tel:{{ phone }}">{{ phone }}</a>
+            {% endif %}
+          {%- endset -%}
+
+          {% include '_partials/_elements/_profile-cards.twig' with {
+            photo: entry.portrait.one,
+            name: entry.groupHeadName ?? entry.title,
+            jobTitle: leader.jobTitle ?? entry.title ?? '',
+            url: entry.redirectUrl ?? entry.url ?? '',
+            extraContent: extraContent ?? '',
+            icon: 'user'
+          } %}
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  <section class="bg-rotate">
+    <a class="anchor-link" id="press-badge-permits"></a>
+    <a class="anchor-link" id="governance"></a>
+    <div class="container">
+      {% include '_partials/_elements/_module-header.twig' with {
+        headerText: "Governance",
+      } %}
+      {% set cards = [
+        {
+          url: "https://www.google.com",
+          title: "Oakland’s Charter"
+        },
+        {
+          url: "https://www.google.com",
+          title: "Municipal Code"
+        },
+        {
+          url: "https://www.google.com",
+          title: "Oakland Sunshine Act & Brown Act"
+        }
+      ] %}
+      <div class="card-grid">
+        {% for entry in cards %}
+          {% include "_partials/_elements/_title-cards" with { cardStyle: 'text-white', cardColor: 'bg-green-300 hover:bg-green-500'} %}
+        {% endfor %}
+      </dev>
+    </div>
+  </section>
+  <a class="anchor-link" id="city-budget-financials"></a>
+  {{ macro.leftTextRightImage("City budget and financials", "<p class=\"md:mt-0 line-3-limit\">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>") }}
+  <section class="bg-rotate">
+    <a class="anchor-link" id="local-agencies"></a>
+    <div class="container">
+      {% include '_partials/_elements/_module-header.twig' with {
+        headerText: "Local agencies",
+      } %}
+      {% set localAgencies = [
+        { title: "Oakland Unified School District" },
+        { title: "Alameda County" },
+        { title: "Bay Area Rapid Transit (BART)" },
+        { title: "AC Transit" },
+        { title: "Other Agency – TBD" }
+      ] %}
+      <div class="card-grid">
+        {% for entry in localAgencies %}
+          <a href="{{ entry.url ?? "https://www.google.com" }}" class="section-box">{{ entry.title | raw }}</a>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  <section class="bg-rotate">
+    <a class="anchor-link" id="quick-facts"></a>
+    <div class="container">
+      {% include '_partials/_elements/_module-header.twig' with {
+        headerText: "Quick facts at a glance",
+      } %}
+      {% set quickFacts = [
+        {
+          number: "1772",
+          subLine: "Year Founded",
+          bottom: ""
+        },
+        {
+          number: "412,040",
+          subLine: "Population*",
+          bottom: "*as of 2016"
+        },
+        {
+          number: "1852",
+          subLine: "Year Chartered",
+          bottom: ""
+        },
+        {
+          number: "5,937",
+          subLine: "Acres of developed & undeveloped open space",
+          bottom: ""
+        },
+        {
+          number: "169,710",
+          subLine: "Housing Units*",
+          bottom: "as of 2010"
+        },
+        {
+          number: "16",
+          subLine: "Oakland Public Libraries",
+          bottom: ""
+        },
+      ] %}
+      <div class="card-grid">
+        {% for fact in quickFacts %}
+          <div class="bg-white flex p-8 shadow-btn">
+            <div class="flex flex-col items-center justify-start w-full text-center">
+              <h3 class="text-xxxl md:text-xxxxl my-0 font-bold">{{ fact.number }}</h3>
+              <p class="text-sm md:text-base my-0">{{ fact.subLine }}</p>
+              {% if fact.bottom %}
+                <p class="text-xs mt-4 mb-0 text-gray-400 md:text-sm">{{ fact.bottom }}</p>
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      {% include "_partials/_elements/_module-readmore.twig" with {
+        linkUrl: "#",
+        linkText: "More facts"
+      } %}
+    </div>
+  </section>
+{% endblock %}
