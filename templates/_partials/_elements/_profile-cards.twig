@@ -7,7 +7,14 @@
     <figure class="block w-1/3 md:w-1/4">
       <a href="{{ url }}" name="{{ name }}" aria-label="{{ name }}">
         {% if photo | length %}
-          <img src="{{ photo.getUrl('smallSquare') }}" alt="Portrait of {{ jobTitle }}, {{ name }}" class="block rounded-full h-full w-full">
+{# TODO: Migrate these settings to be stored as record properties in Algolia #}
+{% set transformedImage = craft.imager.transformImage(photo, { width: 150 }, { ratio: 1/1, position: photo.getFocalPoint()},{ fillTransforms: true}) %}
+{% set transformedImages = craft.imager.transformImage(photo, [
+  { width: 500 },
+  { width: 300, jpegQuality: 65 },
+  { width: 150, jpegQuality: 65 }
+], { ratio: 1/1, position: photo.getFocalPoint()},{ fillTransforms: true}) %}
+          <img src="{{ transformedImage.url }}" srcset="{{ transformedImages | srcset }}" alt="Portrait of {{ jobTitle }}, {{ name }}" class="block rounded-full h-full w-full">
         {% else %}
           <div class="text-gray-400 opacity-75 fill-current h-full bg-gray-300 rounded-full">
             {{ craft.inlin.er('/assets/img/icon-' ~ icon ~ '.svg') | replace('<svg ', '<svg class="h-full block" ') | raw }}
