@@ -42,7 +42,7 @@ categoryGroups:
         hasUrls: false
         uriFormat: null
         template: null
-dateModified: 1574707511
+dateModified: 1576168602
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -3255,7 +3255,7 @@ matrixBlockTypes:
           defaultUploadLocationSource: 'volume:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67'
           defaultUploadLocationSubpath: ''
           singleUploadLocationSource: 'volume:56ad4140-da85-43ea-8292-3fac04cbefc1'
-          singleUploadLocationSubpath: '{owner.slug}'
+          singleUploadLocationSubpath: ''
           restrictFiles: '1'
           allowedKinds:
             - image
