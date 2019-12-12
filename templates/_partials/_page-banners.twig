@@ -43,7 +43,7 @@
 
 {# SIDEBAR NAV #}
 
-{% if contentBuilder %}
+{% if contentBuilder | length %}
   {% set sideNavLinks = [] %}
   {% for block in entry.contentBuilder.all() %}
     {% switch block.type %}
