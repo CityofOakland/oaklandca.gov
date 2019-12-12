@@ -1,0 +1,37 @@
+<section class="bg-rotate">
+  <a class="anchor-link" id="{{ blockId }}"></a>
+  <div class="container">
+    {% include '_partials/_elements/_module-header.twig' with {
+      headerText: heading,
+    } %}
+    <div class="lg:flex lg:flex-row mt-4 md:mt-8">
+      {% for block in fieldHandle.all() %}
+        <div class="md:flex lg:w-1/2 lg:m{{ cycle(['r', 'l'], loop.index0) }}-6 mb-8 lg:mb-0">
+          {% set image = block.image.one %}
+          {% if image | length %}
+            <div class="w-full md:w-1/2 md:pr-4">
+              <figure class="aspect-ratio-box aspect-ratio-4/3 w-full">
+                <img src="{{ image.url }}" alt="{{ image.altText }}" class="aspect-ratio object-cover">
+              </figure>
+            </div>
+          {% endif %}
+          <div class="md:w-1/2{% if image %} md:pl-4{% endif %}">
+            <div class="text-base text-gray-700 my-3 md:mt-0">{{ block.itemDate | date() }}</div>
+            <h3 class="text-lg md:text-xxl my-0">
+              <a href="{{ block.webUrl }}">{{ block.itemTitle }}</a>
+            </h3>
+            <p class="text-gray-500 my-4">
+              {{ block.summary }}
+            </p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    {% if learnMoreUrl %}
+      {% include "_partials/_elements/_module-readmore.twig" with {
+        linkText: "Learn more",
+        linkUrl: learnMoreUrl
+      } %}
+    {% endif %}
+  </div>
+</section>

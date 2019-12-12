@@ -35,7 +35,6 @@
   },
 ] %}
 
-{% import "press-room/macros/_macros.twig" as macro %}
 
 {% set featuredItem = {
   photo: {
@@ -116,68 +115,30 @@
       } %}
     </div>
   </section>
-  <section class="bg-rotate">
-    <a class="anchor-link" id="communications-team"></a>
-    <div class="container">
-      {% include '_partials/_elements/_module-header.twig' with {
-        headerText: "Communications Team",
-      } %}
-      <div class="card-grid grid-equal-height profile-cards mt-12">
-        {% for entry in entry.pioTeam.all() %}
-          {% set department = entry.departments.one.title ?? entry.staffImportDepartment ?? '' %}
-          {% set organization = entry.staffImportOrganization ?? '' %}
-          {% set email = entry.emailAddress ??? entry.staffImportEmail %}
-          {% set phone = entry.phoneNumber ??? entry.staffImportPhoneNumber %}
-          {%- set extraContent -%}
-            {% if department | length %}
-              <span class="block">{{ department }}</span>
-            {% endif %}
-            {% if email | length %}
-              {% set e = email | replace({'@oaklandnet.com': '@oaklandca.gov'}) %}
-              <a class="block" aria-label="Email {{ entry.title }}" href="mailto:{{ e }}"><span class="hidden md:block">{{ e }}</span><span class="md:hidden">Email</span></a>
-            {% endif %}
-            {% if phone | length %}
-              <a class="block" href="tel:{{ phone }}">{{ phone }}</a>
-            {% endif %}
-            {% if entry.termStart | length and entry.termEnd | length %}
-              <br>{{ entry.termStart | date() }}
-              –
-              {{ entry.termEnd | date() }}
-            {% endif %}
-          {%- endset -%}
-
-          {% include '_partials/_elements/_profile-cards.twig' with {
-            photo: entry.portrait.one,
-            name: entry.title,
-            jobTitle: entry.jobTitle ?? '',
-            url: entry.redirectUrl ?? entry.url ?? '',
-            extraContent: extraContent,
-            icon: 'user'
-          } %}
-        {% endfor %}
-      </div>
-    </div>
-  </section>
-  <a class="anchor-link" id="about-oakland"></a>
-  {{ macro.leftTextRightImage("About Oakland", "<p class=\"md:mt-0 line-3-limit\">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>") }}
-  <section class="bg-rotate">
-    <a class="anchor-link" id="awards-accolades"></a>
-    <div class="container">
-      {% include '_partials/_elements/_module-header.twig' with {
-        headerText: "Awards and Accolades",
-      } %}
-      <div class="lg:flex lg:flex-row mt-4 md:mt-8">
-        {{ macro.horizontalCard(true, "https://placeimg.com/800/600/any/3", "4/3") }}
-        {{ macro.horizontalCard(false) }}
-      </div>
-      {% include "_partials/_elements/_module-readmore.twig" with {
-        linkText: "Learn more",
-        linkUrl: "https://www.google.com"
-      } %}
-    </div>
-  </section>
-  <a class="anchor-link" id="media-resources"></a>
-  {{ macro.leftTextRightImage("Media Resources", "<p class=\"md:mt-0 line-3-limit\">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>") }}
+  {% include "media-center/_partials/_people-block.twig" with {
+    blockId: "communications-team",
+    heading: "Communications team",
+    fieldHandle: entry.communicationsTeam
+  } %}
+  {% include "media-center/_partials/_left-text-right-image.twig" with {
+    blockId: "about-oakland",
+    heading: "About Oakland",
+    text: entry.aboutOaklandSummary,
+    image: entry.aboutOaklandSummaryPhoto,
+    link: "/media-center/about-oakland"
+  } %}
+  {% include "media-center/_partials/_horizontal-card-block.twig" with {
+    blockId: "awards-accolades",
+    heading: "Awards & accolades",
+    fieldHandle: entry.awardsAndAccolades,
+    learnMoreUrl: "/topics/recent-accolades-bestowed-on-oakland"
+  } %}
+  {% include "media-center/_partials/_left-text-right-image.twig" with {
+    blockId: "media-resources",
+    heading: "Media Resources",
+    text: entry.mediaResourcesSummary,
+    image: entry.mediaResourcesSummaryPhoto
+  } %}
   <section class="bg-rotate">
     <a class="anchor-link" id="press-badge-permits"></a>
     <div class="container">
@@ -201,22 +162,12 @@
       </dev>
     </div>
   </section>
-  <section class="bg-rotate">
-    <a class="anchor-link" id="oakland-in-the-news"></a>
-    <div class="container">
-      {% include '_partials/_elements/_module-header.twig' with {
-        headerText: "Oakland in the news",
-      } %}
-      <div class="lg:flex lg:flex-row mt-4 md:mt-8">
-        {{ macro.horizontalCard(true, "https://placeimg.com/800/600/any/8", "4/3") }}
-        {{ macro.horizontalCard(true, "https://placeimg.com/800/600/any/7", "4/3") }}
-      </div>
-      {% include "_partials/_elements/_module-readmore.twig" with {
-        linkText: "Read more",
-        linkUrl: "https://www.google.com"
-      } %}
-    </div>
-  </section>
+  {% include "media-center/_partials/_horizontal-card-block.twig" with {
+    blockId: "oakland-in-the-news",
+    heading: "Oakland in the news",
+    fieldHandle: entry.oaklandInTheNews,
+    learnMoreUrl: "/topics/recent-accolades-bestowed-on-oakland"
+  } %}
   <section class="bg-rotate">
     <a class="anchor-link" id="general-media-inquiries"></a>
     <div class="container">
@@ -234,21 +185,6 @@
           <p class="my-0"><a href="tel:510-123-4567">510-123-4567</a></p>
         </div>
         <div class="md:w-1/2 md:pl-4">
-          {% set cards = [
-            {
-              url: "#",
-              title: "Do a thing (TO BE FILLED)"
-            },
-            {
-              url: "#",
-              title: "Another call to action"
-            }
-          ] %}
-          <div class="flex flex-col max-w-xs">
-            {% for entry in cards %}
-              {% include "_partials/_elements/_title-cards" with { cardStyle: 'text-white mb-4 btn-md', cardColor: 'bg-green-300 hover:bg-green-500'} %}
-            {% endfor %}
-          </div>
           {% set seoMaticLinks = seomatic.site.sameAsLinks %}
           {% set socials = {
             facebook: seoMaticLinks.facebook.url,
