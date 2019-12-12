@@ -42,7 +42,7 @@ categoryGroups:
         hasUrls: false
         uriFormat: null
         template: null
-dateModified: 1576168602
+dateModified: 1576177897
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -5546,28 +5546,6 @@ plugins:
     licenseKey: null
     schemaVersion: 2.1.2
     settings: null
-  image-optimize:
-    enabled: true
-    licenseKey: F9IVKBV8GRMN7OBYF7R9THT5
-    schemaVersion: 1.0.0
-    settings:
-      transformClass: nystudio107\imageoptimizeimgix\imagetransforms\ImgixImageTransform
-      imageTransformTypeSettings:
-        nystudio107\imageoptimizeimgix\imagetransforms\ImgixImageTransform:
-          domain: $IMGOPT_IMGIX_SOURCE_DOMAIN
-          apiKey: $IMGOPT_IMGIX_API
-          securityToken: ''
-        nystudio107\imageoptimizesharp\imagetransforms\SharpImageTransform:
-          baseUrl: ''
-        nystudio107\imageoptimizethumbor\imagetransforms\ThumborImageTransform:
-          baseUrl: ''
-          securityKey: ''
-          includeBucketPrefix: ''
-      createColorPalette: true
-      createPlaceholderSilhouettes: true
-      lowerQualityRetinaImageVariants: true
-      allowUpScaledImageVariants: false
-      autoSharpenScaledImages: true
   incognito-field:
     enabled: '1'
     licenseKey: null
@@ -9545,13 +9523,18 @@ volumes:
     hasUrls: true
     url: 'https://cao-94612.s3.us-west-2.amazonaws.com'
     settings:
-      bucket: cao-94612
-      cfDistributionId: ''
-      expires: ''
-      keyId: $S3_API_KEY
-      region: us-west-2
-      secret: $S3_SECRET
       subfolder: portraits
+      keyId: $S3_API_KEY
+      secret: $S3_SECRET
+      bucketSelectionMode: choose
+      bucket: cao-94612
+      region: us-west-2
+      expires: ''
+      makeUploadsPublic: '1'
+      storageClass: ''
+      cfDistributionId: ''
+      cfPrefix: ''
+      autoFocalPoint: ''
     sortOrder: 6
     fieldLayouts:
       ad61a558-eea0-469f-8c8f-f83aee44673b:
