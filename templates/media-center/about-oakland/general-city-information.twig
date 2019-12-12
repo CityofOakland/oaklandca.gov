@@ -1,18 +1,16 @@
 {% extends '_layouts/_banner-with-nav.twig' %}
 
-{% import "press-room/macros/_macros.twig" as macro %}
-
 {% block content %}
   {% include '_partials/_page-banners.twig' with {
     bannerTitle: entry.title,
     breadCrumbLinks: [
       {
         title: 'Press Room',
-        link: '/press-room'
+        link: '/media-center'
       },
       {
         title: 'About Oakland',
-        link: '/press-room/about-oakland'
+        link: '/media-center/about-oakland'
       }
     ],
   } %}
