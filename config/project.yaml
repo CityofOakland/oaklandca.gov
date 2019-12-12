@@ -42,7 +42,7 @@ categoryGroups:
         hasUrls: false
         uriFormat: null
         template: null
-dateModified: 1576177897
+dateModified: 1576179723
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -8969,6 +8969,14 @@ users:
         - 'deletepeerentrydrafts:17d5d48d-2d75-4742-8820-cdce13764482'
         - 'editpeerentrydrafts:17d5d48d-2d75-4742-8820-cdce13764482'
         - 'editentries:17d5d48d-2d75-4742-8820-cdce13764482'
+        - 'saveassetinvolume:549d1a55-e94b-4c89-9cb9-b1fdac9d417d'
+        - 'deletefilesandfoldersinvolume:549d1a55-e94b-4c89-9cb9-b1fdac9d417d'
+        - 'editimagesinvolume:549d1a55-e94b-4c89-9cb9-b1fdac9d417d'
+        - 'viewvolume:549d1a55-e94b-4c89-9cb9-b1fdac9d417d'
+        - 'saveassetinvolume:56ad4140-da85-43ea-8292-3fac04cbefc1'
+        - 'deletefilesandfoldersinvolume:56ad4140-da85-43ea-8292-3fac04cbefc1'
+        - 'editimagesinvolume:56ad4140-da85-43ea-8292-3fac04cbefc1'
+        - 'viewvolume:56ad4140-da85-43ea-8292-3fac04cbefc1'
         - 'saveassetinvolume:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67'
         - 'deletefilesandfoldersinvolume:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67'
         - 'editimagesinvolume:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67'
@@ -9005,10 +9013,6 @@ users:
         - 'deletefilesandfoldersinvolume:1a78695a-f041-4562-9ee4-5405711bd29c'
         - 'editimagesinvolume:1a78695a-f041-4562-9ee4-5405711bd29c'
         - 'viewvolume:1a78695a-f041-4562-9ee4-5405711bd29c'
-        - 'saveassetinvolume:56ad4140-da85-43ea-8292-3fac04cbefc1'
-        - 'deletefilesandfoldersinvolume:56ad4140-da85-43ea-8292-3fac04cbefc1'
-        - 'editimagesinvolume:56ad4140-da85-43ea-8292-3fac04cbefc1'
-        - 'viewvolume:56ad4140-da85-43ea-8292-3fac04cbefc1'
         - 'saveassetinvolume:4494beaa-9c1f-44ae-b040-36f60f3d055d'
         - 'deletefilesandfoldersinvolume:4494beaa-9c1f-44ae-b040-36f60f3d055d'
         - 'editimagesinvolume:4494beaa-9c1f-44ae-b040-36f60f3d055d'
@@ -9325,6 +9329,12 @@ users:
         - 'createentries:fbf8b9b0-8875-4e08-819a-d62603676dc4'
         - 'publishentries:fbf8b9b0-8875-4e08-819a-d62603676dc4'
         - 'editentries:fbf8b9b0-8875-4e08-819a-d62603676dc4'
+        - 'saveassetinvolume:549d1a55-e94b-4c89-9cb9-b1fdac9d417d'
+        - 'editimagesinvolume:549d1a55-e94b-4c89-9cb9-b1fdac9d417d'
+        - 'viewvolume:549d1a55-e94b-4c89-9cb9-b1fdac9d417d'
+        - 'saveassetinvolume:56ad4140-da85-43ea-8292-3fac04cbefc1'
+        - 'editimagesinvolume:56ad4140-da85-43ea-8292-3fac04cbefc1'
+        - 'viewvolume:56ad4140-da85-43ea-8292-3fac04cbefc1'
         - 'saveassetinvolume:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67'
         - 'editimagesinvolume:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67'
         - 'viewvolume:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67'
@@ -9352,9 +9362,6 @@ users:
         - 'saveassetinvolume:1a78695a-f041-4562-9ee4-5405711bd29c'
         - 'editimagesinvolume:1a78695a-f041-4562-9ee4-5405711bd29c'
         - 'viewvolume:1a78695a-f041-4562-9ee4-5405711bd29c'
-        - 'saveassetinvolume:56ad4140-da85-43ea-8292-3fac04cbefc1'
-        - 'editimagesinvolume:56ad4140-da85-43ea-8292-3fac04cbefc1'
-        - 'viewvolume:56ad4140-da85-43ea-8292-3fac04cbefc1'
         - 'saveassetinvolume:4494beaa-9c1f-44ae-b040-36f60f3d055d'
         - 'editimagesinvolume:4494beaa-9c1f-44ae-b040-36f60f3d055d'
         - 'viewvolume:4494beaa-9c1f-44ae-b040-36f60f3d055d'
