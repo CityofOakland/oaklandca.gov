@@ -1,0 +1,27 @@
+{% extends '_layouts/_banner-with-nav.twig' %}
+
+{% block content %}
+  {% include '_partials/_page-banners.twig' with {
+    breadCrumbLinks: [
+      {
+        title: 'Services',
+        link: '/services'
+      }
+    ],
+  } %}
+  <section class="bg-rotate">
+    <div class="container mx-auto">
+      <h2 class="my-0 text-xl md:text-xxl">Services</h2>
+      <ul class="card-grid card-grid-tight items-stretch">
+        {% set entries = craft.entries.section("services").limit(null).orderBy("title asc").relatedTo(category).all() %}
+        {% nav entry in entries %}
+          <li>
+            <a class="block h-full rounded border-gray-500 bg-white border p-5 hover:bg-green-100" href="{{ entry.url }}">
+              <h3 class="mt-0 mb-4 font-body font-normal text-lg md:text-xl text-gray-500">{{ entry.title }}</h3>
+            </a>
+          </li>
+        {% endnav %}
+      </ul>
+    </div>
+  </section>
+{% endblock %}

@@ -61,6 +61,8 @@ fieldGroups:
     name: SEO
   1fe293ad-52d9-4002-984e-b7a256d4b158:
     name: 'Social Media'
+  27454cbc-e66b-4d88-bef3-32b87a69a715:
+    name: 'Media Center'
   34f2c44b-4710-447e-9c4e-71e80288b6e4:
     name: Boards
   4ed914c6-b7ea-44be-a061-4430ad33baf2:
@@ -356,6 +358,21 @@ fields:
       default: ''
     fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521
     contentColumnType: boolean
+  229564d1-ebbb-4cc3-9ff1-37466e51fae5:
+    name: 'Oakland in the News'
+    handle: oaklandInTheNews
+    instructions: ''
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Matrix
+    settings:
+      minBlocks: ''
+      maxBlocks: '2'
+      contentTable: '{{%matrixcontent_oaklandinthenews}}'
+      propagationMethod: all
+    contentColumnType: string
+    fieldGroup: 27454cbc-e66b-4d88-bef3-32b87a69a715
   277068ba-95c5-4881-862f-85c19b60d4da:
     name: 'Alert URL'
     handle: alertUrl
@@ -469,6 +486,21 @@ fields:
       contentTable: '{{%matrixcontent_calltoaction}}'
     fieldGroup: 767a8f0b-6ea5-4855-a6f3-8c2a4a4aee78
     contentColumnType: string
+  4060bfe6-8574-4b8f-bb64-ea670ce40748:
+    name: 'Awards and Accolades'
+    handle: awardsAndAccolades
+    instructions: ''
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Matrix
+    settings:
+      minBlocks: ''
+      maxBlocks: '2'
+      contentTable: '{{%matrixcontent_awardsandaccolades}}'
+      propagationMethod: all
+    contentColumnType: string
+    fieldGroup: 27454cbc-e66b-4d88-bef3-32b87a69a715
   41124ab0-0e88-44c6-b4f2-f002669d8133:
     name: Departments
     handle: departments
@@ -488,6 +520,21 @@ fields:
       localizeRelations: false
     fieldGroup: 83c14444-efcf-4d13-a20a-56275fd18855
     contentColumnType: string
+  415c75c4-9891-451d-b333-be4acb59c1fd:
+    name: 'Quick Facts at a Glance'
+    handle: quickFactsAtAGlance
+    instructions: ''
+    searchable: false
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Matrix
+    settings:
+      minBlocks: ''
+      maxBlocks: ''
+      contentTable: '{{%matrixcontent_quickfactsataglance}}'
+      propagationMethod: all
+    contentColumnType: string
+    fieldGroup: 27454cbc-e66b-4d88-bef3-32b87a69a715
   44b00870-0842-4c4e-838f-dcd688fb5b05:
     name: Topics
     handle: topics
@@ -524,6 +571,21 @@ fields:
       columnType: text
     fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521
     contentColumnType: text
+  48c765be-2eab-42d5-bb78-461b32ba7d6a:
+    name: 'Media Center Leadership'
+    handle: mediaCenterLeadership
+    instructions: ''
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Matrix
+    settings:
+      minBlocks: ''
+      maxBlocks: ''
+      contentTable: '{{%matrixcontent_mediacenterleadership}}'
+      propagationMethod: all
+    contentColumnType: string
+    fieldGroup: 27454cbc-e66b-4d88-bef3-32b87a69a715
   4d6dd644-455e-4186-8d05-a00079622246:
     name: 'Last Name'
     handle: lastName
@@ -694,6 +756,21 @@ fields:
       validateRelatedElements: ''
     contentColumnType: string
     fieldGroup: 8e8ee56e-cdb8-4206-a3b5-c3aa0eb3a884
+  5d92130f-648c-4519-ad6d-f68508ca2a2f:
+    name: 'Local Agencies'
+    handle: localAgencies
+    instructions: ''
+    searchable: false
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Matrix
+    settings:
+      minBlocks: ''
+      maxBlocks: ''
+      contentTable: '{{%matrixcontent_localagencies}}'
+      propagationMethod: all
+    contentColumnType: string
+    fieldGroup: 27454cbc-e66b-4d88-bef3-32b87a69a715
   5e5aad16-6bdc-4d3e-adfd-75147a323b78:
     name: 'Phone Number'
     handle: phoneNumber
@@ -711,6 +788,39 @@ fields:
       columnType: text
     fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521
     contentColumnType: text
+  5e60d793-558b-4747-8c69-8c91c1a3102b:
+    name: 'Governance Links'
+    handle: governanceLinks
+    instructions: ''
+    searchable: false
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Entries
+    settings:
+      sources:
+        - 'section:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f'
+        - 'section:b3411cb1-e860-46ed-9cd6-58cf9b8daacb'
+        - 'section:9da43fd8-c505-4d19-9486-e0cb669c568a'
+        - 'section:8b7c4e26-9aab-4c5d-874e-aee151107de3'
+        - 'section:983c9f6f-9251-4fd3-91e1-b598eccc6a1a'
+        - 'section:28881fc8-3e61-4fdb-a5ee-cce1bab725bf'
+        - 'section:542c176a-f523-4bf7-a1bd-8536d79682c9'
+        - 'section:98d541ae-56ee-4c98-ba9c-37438dc485a0'
+        - 'section:24fa116b-8516-4626-84f3-86b685e71071'
+        - 'section:b7e437e1-239f-4c5c-8c62-5f0323f9d22c'
+        - 'section:07faad04-9ec4-4f68-9fe8-0ca20f189f8a'
+        - 'section:fbf8b9b0-8875-4e08-819a-d62603676dc4'
+        - 'section:70778563-6dac-453d-a4b0-5121f3a614b7'
+        - 'section:17d5d48d-2d75-4742-8820-cdce13764482'
+      source: null
+      targetSiteId: null
+      viewMode: null
+      limit: '3'
+      selectionLabel: ''
+      localizeRelations: false
+      validateRelatedElements: ''
+    contentColumnType: string
+    fieldGroup: 27454cbc-e66b-4d88-bef3-32b87a69a715
   5f3a7701-690d-491c-9c18-9e92305a1aad:
     name: 'Event Contact'
     handle: eventContact
@@ -731,6 +841,59 @@ fields:
       removeNbsp: '1'
     fieldGroup: 7a44f3bc-fbe1-424a-a4ea-6bb6f3528d75
     contentColumnType: text
+  5ff206fa-fc15-4726-a9e2-0ed8b6da6407:
+    name: 'Communications Team'
+    handle: communicationsTeam
+    instructions: ''
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Matrix
+    settings:
+      minBlocks: ''
+      maxBlocks: ''
+      contentTable: '{{%matrixcontent_communicationsteam}}'
+      propagationMethod: all
+    contentColumnType: string
+    fieldGroup: 27454cbc-e66b-4d88-bef3-32b87a69a715
+  6036ab26-c74a-4a0e-95f8-1735e64eed98:
+    name: 'City Profile'
+    handle: cityProfile
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\PlainText
+    settings:
+      placeholder: ''
+      code: '1'
+      multiline: ''
+      initialRows: '4'
+      charLimit: ''
+      columnType: text
+    contentColumnType: text
+    fieldGroup: 27454cbc-e66b-4d88-bef3-32b87a69a715
+  655e742b-956c-4fc9-b241-b913e5b814d7:
+    name: 'City Budget and Financials Summary'
+    handle: cityBudgetAndFinancialsSummary
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\redactor\Field
+    settings:
+      redactorConfig: 'Basic with Links.json'
+      purifierConfig: ''
+      cleanupHtml: true
+      removeInlineStyles: '1'
+      removeEmptyTags: '1'
+      removeNbsp: '1'
+      purifyHtml: '1'
+      columnType: text
+      availableVolumes: '*'
+      availableTransforms: '*'
+    contentColumnType: text
+    fieldGroup: 27454cbc-e66b-4d88-bef3-32b87a69a715
   6694c82b-6e98-442b-976a-907b6c2f4bcc:
     name: 'Android Download Link'
     handle: androidDownloadLink
@@ -990,6 +1153,27 @@ fields:
       localizeBlocks: false
     fieldGroup: 767a8f0b-6ea5-4855-a6f3-8c2a4a4aee78
     contentColumnType: string
+  7d16fac3-b66a-4185-9f2e-d4cac77b58d5:
+    name: 'About Oakland Summary'
+    handle: aboutOaklandSummary
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\redactor\Field
+    settings:
+      redactorConfig: 'Basic with Links.json'
+      purifierConfig: ''
+      cleanupHtml: true
+      removeInlineStyles: '1'
+      removeEmptyTags: '1'
+      removeNbsp: '1'
+      purifyHtml: '1'
+      columnType: text
+      availableVolumes: '*'
+      availableTransforms: '*'
+    contentColumnType: text
+    fieldGroup: 27454cbc-e66b-4d88-bef3-32b87a69a715
   80554222-e44d-4971-b6db-30843c2f3a7d:
     name: Facebook
     handle: facebook
@@ -1238,6 +1422,23 @@ fields:
       columnType: text
     fieldGroup: d7390b6f-686c-4324-a1fa-7a38508eee7b
     contentColumnType: text
+  9eb69e7e-c32d-4390-9b2e-ce2344718906:
+    name: 'Mission Statement'
+    handle: missionStatement
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\PlainText
+    settings:
+      placeholder: ''
+      code: ''
+      multiline: '1'
+      initialRows: '4'
+      charLimit: ''
+      columnType: text
+    contentColumnType: text
+    fieldGroup: 27454cbc-e66b-4d88-bef3-32b87a69a715
   9fcc72cc-184c-467a-a45f-a154ba8a01d2:
     name: 'Employment Type'
     handle: employmentType
@@ -1443,11 +1644,12 @@ fields:
       source: null
       targetSiteId: null
       viewMode: null
-      limit: '1'
+      limit: ''
       selectionLabel: ''
       localizeRelations: false
-    fieldGroup: a8c82666-3295-4f90-b50b-67f2299847db
+      validateRelatedElements: ''
     contentColumnType: string
+    fieldGroup: a8c82666-3295-4f90-b50b-67f2299847db
   b34b92b7-9d4a-40f5-9e55-a2ccc8f764ad:
     name: 'Staff Import Organization'
     handle: staffImportOrganization
@@ -1518,6 +1720,32 @@ fields:
       localizeBlocks: false
     fieldGroup: 767a8f0b-6ea5-4855-a6f3-8c2a4a4aee78
     contentColumnType: string
+  bae021eb-4222-44c0-adb5-05e045cca640:
+    name: 'City Budget and Financials Summary Photo'
+    handle: cityBudgetAndFinancialsSummaryPhoto
+    instructions: ''
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Assets
+    settings:
+      useSingleFolder: '1'
+      defaultUploadLocationSource: 'volume:549d1a55-e94b-4c89-9cb9-b1fdac9d417d'
+      defaultUploadLocationSubpath: ''
+      singleUploadLocationSource: 'volume:549d1a55-e94b-4c89-9cb9-b1fdac9d417d'
+      singleUploadLocationSubpath: ''
+      restrictFiles: ''
+      allowedKinds: null
+      sources: '*'
+      source: null
+      targetSiteId: null
+      viewMode: list
+      limit: '1'
+      selectionLabel: 'Add a photo'
+      localizeRelations: false
+      validateRelatedElements: '1'
+    contentColumnType: string
+    fieldGroup: 27454cbc-e66b-4d88-bef3-32b87a69a715
   bb70071c-d8c0-4a11-91f6-d4ca02503a00:
     name: 'Funding Logos Alternate Title'
     handle: fundingLogosAlternateTitle
@@ -2049,6 +2277,33 @@ fields:
     type: craft\fields\Url
     fieldGroup: ed709c7c-0c3a-4457-ae2d-38a3ccb797e4
     contentColumnType: string(255)
+  e1a1763e-027e-46b1-86b6-e115fc43f064:
+    name: 'About Oakland Summary Photo'
+    handle: aboutOaklandSummaryPhoto
+    instructions: ''
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Assets
+    settings:
+      useSingleFolder: '1'
+      defaultUploadLocationSource: 'volume:549d1a55-e94b-4c89-9cb9-b1fdac9d417d'
+      defaultUploadLocationSubpath: ''
+      singleUploadLocationSource: 'volume:549d1a55-e94b-4c89-9cb9-b1fdac9d417d'
+      singleUploadLocationSubpath: ''
+      restrictFiles: '1'
+      allowedKinds:
+        - image
+      sources: '*'
+      source: null
+      targetSiteId: null
+      viewMode: list
+      limit: '1'
+      selectionLabel: 'Add an image'
+      localizeRelations: false
+      validateRelatedElements: '1'
+    contentColumnType: string
+    fieldGroup: 27454cbc-e66b-4d88-bef3-32b87a69a715
   e1abe78e-92f3-4d83-890e-7f67fd2db4e0:
     name: 'Related Project Entries'
     handle: relatedProjectEntries
@@ -2151,6 +2406,26 @@ fields:
       localizeRelations: false
     fieldGroup: 4ed914c6-b7ea-44be-a061-4430ad33baf2
     contentColumnType: string
+  ea50ec29-b638-4c57-aa62-e871a6bc95cc:
+    name: 'PIO Team'
+    handle: pioTeam
+    instructions: ''
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Entries
+    settings:
+      sources:
+        - 'section:07faad04-9ec4-4f68-9fe8-0ca20f189f8a'
+      source: null
+      targetSiteId: null
+      viewMode: null
+      limit: ''
+      selectionLabel: 'Add a PIO member'
+      localizeRelations: false
+      validateRelatedElements: ''
+    contentColumnType: string
+    fieldGroup: a8c82666-3295-4f90-b50b-67f2299847db
   eae235fc-29cb-4dd5-8e91-2c0ad69877ed:
     name: 'News Tags'
     handle: newsTags
@@ -2311,6 +2586,54 @@ fields:
       columnType: text
     fieldGroup: 71fb693f-011b-4669-ba10-f1b379557bb9
     contentColumnType: text
+  fbc5e95d-0c99-4d55-8eb5-a2156eac9c1d:
+    name: 'Media Resources Summary'
+    handle: mediaResourcesSummary
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\redactor\Field
+    settings:
+      redactorConfig: 'Basic with Links.json'
+      purifierConfig: ''
+      cleanupHtml: true
+      removeInlineStyles: '1'
+      removeEmptyTags: '1'
+      removeNbsp: '1'
+      purifyHtml: '1'
+      columnType: text
+      availableVolumes: '*'
+      availableTransforms: '*'
+    contentColumnType: text
+    fieldGroup: 27454cbc-e66b-4d88-bef3-32b87a69a715
+  fccfab94-5755-4a9a-96e5-9ed8359b99f4:
+    name: 'Media Resources Summary Photo'
+    handle: mediaResourcesSummaryPhoto
+    instructions: ''
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Assets
+    settings:
+      useSingleFolder: '1'
+      defaultUploadLocationSource: 'volume:549d1a55-e94b-4c89-9cb9-b1fdac9d417d'
+      defaultUploadLocationSubpath: ''
+      singleUploadLocationSource: 'volume:549d1a55-e94b-4c89-9cb9-b1fdac9d417d'
+      singleUploadLocationSubpath: ''
+      restrictFiles: '1'
+      allowedKinds:
+        - image
+      sources: '*'
+      source: null
+      targetSiteId: null
+      viewMode: list
+      limit: '1'
+      selectionLabel: 'Add an image'
+      localizeRelations: false
+      validateRelatedElements: '1'
+    contentColumnType: string
+    fieldGroup: 27454cbc-e66b-4d88-bef3-32b87a69a715
   fd0c8e02-99b4-4ce5-ab89-b29cd0efc581:
     name: 'Content Builder'
     handle: contentBuilder
@@ -2647,6 +2970,123 @@ matrixBlockTypes:
           default: ''
         fieldGroup: null
         contentColumnType: boolean
+  23582152-45a1-42c1-ad79-65deed3eaab0:
+    field: 5ff206fa-fc15-4726-a9e2-0ed8b6da6407
+    name: Person
+    handle: person
+    sortOrder: 1
+    fields:
+      236ba3eb-c1d3-4cb0-a2e5-f340dbf38399:
+        name: 'Phone Number'
+        handle: phoneNumber
+        instructions: 'Adds a custom phone number for this person'
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      4d103112-5444-4b00-aefb-95f9d113a8a2:
+        name: Office/Department
+        handle: officeDepartment
+        instructions: 'Adds a custom office or department title for this person'
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      8bd35022-d988-494a-9395-34bb21d37c18:
+        name: Person
+        handle: person
+        instructions: ''
+        searchable: true
+        translationMethod: site
+        translationKeyFormat: null
+        type: craft\fields\Entries
+        settings:
+          sources:
+            - 'section:28881fc8-3e61-4fdb-a5ee-cce1bab725bf'
+            - 'section:07faad04-9ec4-4f68-9fe8-0ca20f189f8a'
+          source: null
+          targetSiteId: null
+          viewMode: null
+          limit: '1'
+          selectionLabel: 'Add an official'
+          localizeRelations: false
+          validateRelatedElements: '1'
+        contentColumnType: string
+        fieldGroup: null
+      91c73b27-40c7-4fb9-b63e-fecb57ed61ec:
+        name: Email
+        handle: email
+        instructions: 'Adds a custom email address for this person'
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      a8865a0e-a230-4411-902e-53af47982f47:
+        name: 'Job Title'
+        handle: jobTitle
+        instructions: 'Adds a custom job title override for this person'
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+    fieldLayouts:
+      ec6de2e7-73ca-492e-ae67-0ccb0b7e86eb:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              236ba3eb-c1d3-4cb0-a2e5-f340dbf38399:
+                required: false
+                sortOrder: 5
+              4d103112-5444-4b00-aefb-95f9d113a8a2:
+                required: false
+                sortOrder: 3
+              8bd35022-d988-494a-9395-34bb21d37c18:
+                required: true
+                sortOrder: 1
+              91c73b27-40c7-4fb9-b63e-fecb57ed61ec:
+                required: false
+                sortOrder: 4
+              a8865a0e-a230-4411-902e-53af47982f47:
+                required: false
+                sortOrder: 2
   27636d1f-fd7e-41ce-81a5-c9728c61337f:
     field: fd0c8e02-99b4-4ce5-ab89-b29cd0efc581
     name: 'Small Entry Links'
@@ -2998,6 +3438,123 @@ matrixBlockTypes:
           columnType: text
         fieldGroup: null
         contentColumnType: text
+  373a4ad0-3cbf-4be9-bf93-66ed7a43985a:
+    field: 48c765be-2eab-42d5-bb78-461b32ba7d6a
+    name: Person
+    handle: person
+    sortOrder: 1
+    fields:
+      48927aca-a1ce-493e-bdea-1b83a4cecba4:
+        name: Email
+        handle: email
+        instructions: 'Adds a custom email address for this person'
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      7033f470-47c7-4511-98e2-4362a74a5ae2:
+        name: Person
+        handle: person
+        instructions: ''
+        searchable: false
+        translationMethod: site
+        translationKeyFormat: null
+        type: craft\fields\Entries
+        settings:
+          sources:
+            - 'section:28881fc8-3e61-4fdb-a5ee-cce1bab725bf'
+            - 'section:07faad04-9ec4-4f68-9fe8-0ca20f189f8a'
+          source: null
+          targetSiteId: null
+          viewMode: null
+          limit: '1'
+          selectionLabel: 'Add an official'
+          localizeRelations: false
+          validateRelatedElements: '1'
+        contentColumnType: string
+        fieldGroup: null
+      ad2f47f3-4f9c-4614-b324-849026514e0e:
+        name: 'Job Title'
+        handle: jobTitle
+        instructions: 'Adds a custom job title override for this person'
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      c91184da-cdea-4aba-8978-7e13aa753a61:
+        name: Office/Department
+        handle: officeDepartment
+        instructions: 'Adds a custom office or department title for this person'
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      ea4fa3a2-5b40-47ae-8547-4e6e09e689f1:
+        name: 'Phone Number'
+        handle: phoneNumber
+        instructions: 'Adds a custom phone number for this person'
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+    fieldLayouts:
+      722b0f85-1f87-491e-80aa-0574a0e915db:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              48927aca-a1ce-493e-bdea-1b83a4cecba4:
+                required: false
+                sortOrder: 4
+              7033f470-47c7-4511-98e2-4362a74a5ae2:
+                required: true
+                sortOrder: 1
+              ad2f47f3-4f9c-4614-b324-849026514e0e:
+                required: false
+                sortOrder: 2
+              c91184da-cdea-4aba-8978-7e13aa753a61:
+                required: false
+                sortOrder: 3
+              ea4fa3a2-5b40-47ae-8547-4e6e09e689f1:
+                required: false
+                sortOrder: 5
   380be87a-8c09-4edd-ac41-7a110a5dba44:
     name: 'Physical Address'
     handle: physicalAddress
@@ -3134,6 +3691,122 @@ matrixBlockTypes:
               9dda7113-fc9a-4806-9315-3625689c332d:
                 required: true
                 sortOrder: 1
+  41c1ddd5-39f7-4947-906f-28a40fc517d3:
+    field: 4060bfe6-8574-4b8f-bb64-ea670ce40748
+    name: Item
+    handle: item
+    sortOrder: 1
+    fields:
+      531953e0-f3f1-4dc6-9bc3-54c0fef3f548:
+        name: 'Item Title'
+        handle: itemTitle
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      6398b4d1-9f28-41eb-8f34-7b3d708726db:
+        name: Image
+        handle: image
+        instructions: ''
+        searchable: true
+        translationMethod: site
+        translationKeyFormat: null
+        type: craft\fields\Assets
+        settings:
+          useSingleFolder: '1'
+          defaultUploadLocationSource: 'volume:549d1a55-e94b-4c89-9cb9-b1fdac9d417d'
+          defaultUploadLocationSubpath: ''
+          singleUploadLocationSource: 'volume:549d1a55-e94b-4c89-9cb9-b1fdac9d417d'
+          singleUploadLocationSubpath: ''
+          restrictFiles: '1'
+          allowedKinds:
+            - image
+          sources: '*'
+          source: null
+          targetSiteId: null
+          viewMode: list
+          limit: '1'
+          selectionLabel: 'Add an award image'
+          localizeRelations: false
+          validateRelatedElements: '1'
+        contentColumnType: string
+        fieldGroup: null
+      686ccde2-8dd2-4557-83c2-ed0f1b860e17:
+        name: 'Item Date'
+        handle: itemDate
+        instructions: ''
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\Date
+        settings:
+          showDate: true
+          showTime: false
+          minuteIncrement: '30'
+        contentColumnType: datetime
+        fieldGroup: null
+      6e01dd35-4145-468a-9467-127523606164:
+        name: 'Web URL'
+        handle: webUrl
+        instructions: ''
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\Url
+        settings:
+          placeholder: ''
+          maxLength: '255'
+        contentColumnType: string(255)
+        fieldGroup: null
+      d37e0e4d-02a7-4d59-93ce-013ebbd27610:
+        name: Summary
+        handle: summary
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: '1'
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+    fieldLayouts:
+      c69addaf-60d0-4c9e-9823-8f87833450fc:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              531953e0-f3f1-4dc6-9bc3-54c0fef3f548:
+                required: true
+                sortOrder: 2
+              6398b4d1-9f28-41eb-8f34-7b3d708726db:
+                required: true
+                sortOrder: 3
+              686ccde2-8dd2-4557-83c2-ed0f1b860e17:
+                required: true
+                sortOrder: 1
+              6e01dd35-4145-468a-9467-127523606164:
+                required: true
+                sortOrder: 5
+              d37e0e4d-02a7-4d59-93ce-013ebbd27610:
+                required: true
+                sortOrder: 4
   48c81254-0e2d-4211-8859-7a45eef186ad:
     name: TTY
     handle: tty
@@ -3398,6 +4071,122 @@ matrixBlockTypes:
           columnType: text
         fieldGroup: null
         contentColumnType: text
+  6a311318-78e3-43c8-992f-408fdc1e9aef:
+    field: 229564d1-ebbb-4cc3-9ff1-37466e51fae5
+    name: Item
+    handle: item
+    sortOrder: 1
+    fields:
+      56b04dd8-2040-4e29-91f8-4decb3371c25:
+        name: Image
+        handle: image
+        instructions: ''
+        searchable: true
+        translationMethod: site
+        translationKeyFormat: null
+        type: craft\fields\Assets
+        settings:
+          useSingleFolder: '1'
+          defaultUploadLocationSource: 'volume:549d1a55-e94b-4c89-9cb9-b1fdac9d417d'
+          defaultUploadLocationSubpath: ''
+          singleUploadLocationSource: 'volume:549d1a55-e94b-4c89-9cb9-b1fdac9d417d'
+          singleUploadLocationSubpath: ''
+          restrictFiles: '1'
+          allowedKinds:
+            - image
+          sources: '*'
+          source: null
+          targetSiteId: null
+          viewMode: list
+          limit: '1'
+          selectionLabel: 'Add an award image'
+          localizeRelations: false
+          validateRelatedElements: '1'
+        contentColumnType: string
+        fieldGroup: null
+      8206614a-68d0-4e74-94ea-8747e41a63c4:
+        name: 'Item Date'
+        handle: itemDate
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\Date
+        settings:
+          showDate: true
+          showTime: false
+          minuteIncrement: '30'
+        contentColumnType: datetime
+        fieldGroup: null
+      c21b1f29-17eb-4467-9985-adc20fb127c0:
+        name: 'Item Title'
+        handle: itemTitle
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      d731f441-f5bc-4467-9ed9-3279138f9795:
+        name: 'Web URL'
+        handle: webUrl
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\Url
+        settings:
+          placeholder: ''
+          maxLength: '255'
+        contentColumnType: string(255)
+        fieldGroup: null
+      f54f4116-1b8a-47fb-a361-b3894ea4d734:
+        name: Summary
+        handle: summary
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: '1'
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+    fieldLayouts:
+      145a756b-2b63-43bb-b4a5-ccf731311df2:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              56b04dd8-2040-4e29-91f8-4decb3371c25:
+                required: true
+                sortOrder: 2
+              8206614a-68d0-4e74-94ea-8747e41a63c4:
+                required: true
+                sortOrder: 5
+              c21b1f29-17eb-4467-9985-adc20fb127c0:
+                required: true
+                sortOrder: 1
+              d731f441-f5bc-4467-9ed9-3279138f9795:
+                required: true
+                sortOrder: 4
+              f54f4116-1b8a-47fb-a361-b3894ea4d734:
+                required: true
+                sortOrder: 3
   6cc41a35-26fb-4081-b18b-30efdc19e8c8:
     name: 'Phone Number'
     handle: phoneNumber
@@ -4114,6 +4903,55 @@ matrixBlockTypes:
           columnType: text
         fieldGroup: null
         contentColumnType: text
+  ca8c168c-ecb4-4288-b0eb-96c8c2431b11:
+    field: 5d92130f-648c-4519-ad6d-f68508ca2a2f
+    name: Agency
+    handle: agency
+    sortOrder: 1
+    fields:
+      519a6fee-ee4d-479c-a823-a3501a9adfbf:
+        name: 'Agency Name'
+        handle: agencyName
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      ea37cb8f-52f5-4b75-a1f0-a6a5c5581093:
+        name: 'Agency Link'
+        handle: agencyLink
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\Url
+        settings:
+          placeholder: ''
+          maxLength: '255'
+        contentColumnType: string(255)
+        fieldGroup: null
+    fieldLayouts:
+      36901763-c86a-4bda-9d82-c7a57b5aa5fc:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              519a6fee-ee4d-479c-a823-a3501a9adfbf:
+                required: true
+                sortOrder: 1
+              ea37cb8f-52f5-4b75-a1f0-a6a5c5581093:
+                required: true
+                sortOrder: 2
   cbc3d1ca-cf88-409f-be01-bc11a812b1c7:
     field: fd0c8e02-99b4-4ce5-ab89-b29cd0efc581
     name: Image
@@ -4428,6 +5266,79 @@ matrixBlockTypes:
                 required: true
                 sortOrder: 4
               d535337e-0894-4ce9-80ee-a315e254df71:
+                required: true
+                sortOrder: 1
+  f668b78a-57d4-4471-92e8-5df63484be44:
+    field: 415c75c4-9891-451d-b333-be4acb59c1fd
+    name: Fact
+    handle: fact
+    sortOrder: 1
+    fields:
+      0a2f1442-0d83-4c78-abcb-b69b5862ddf9:
+        name: Description
+        handle: description
+        instructions: 'This is the text that describes what the top text is enumerating.'
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      40ab201a-4e31-4217-8e83-d92aa0b73567:
+        name: Footnote
+        handle: footnote
+        instructions: 'Use this field to add an asterisk on the description to provide additional context to the fact.'
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      e97175ac-0144-4961-9a33-a723d33e2910:
+        name: 'Top Text'
+        handle: topText
+        instructions: 'This is commonly the number used in the fact.'
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+    fieldLayouts:
+      3101cd79-5a68-4647-8df4-743f760cee98:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              0a2f1442-0d83-4c78-abcb-b69b5862ddf9:
+                required: true
+                sortOrder: 2
+              40ab201a-4e31-4217-8e83-d92aa0b73567:
+                required: false
+                sortOrder: 3
+              e97175ac-0144-4961-9a33-a723d33e2910:
                 required: true
                 sortOrder: 1
   f7fa3aa0-7245-47fd-8f47-3a3218e45e6c:
@@ -4794,7 +5705,7 @@ plugins:
   super-table:
     edition: standard
     enabled: true
-    schemaVersion: 2.2.0
+    schemaVersion: 2.2.1
   smith:
     edition: standard
     enabled: true
@@ -4819,6 +5730,10 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 3.0.0
+  retcon:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
 sections:
   07faad04-9ec4-4f68-9fe8-0ca20f189f8a:
     name: Staff
@@ -5390,6 +6305,189 @@ sections:
         uriFormat: 'officials/{slug}'
         template: officials/_entry
     propagationMethod: all
+  36d0160d-50c5-479d-8efc-5959cb5bd45a:
+    name: 'Media Center'
+    handle: mediaCenter
+    type: single
+    enableVersioning: true
+    propagationMethod: all
+    siteSettings:
+      c35d3a93-d7f4-4c37-ae3e-1b4d403311bb:
+        enabledByDefault: true
+        hasUrls: true
+        uriFormat: media-center
+        template: media-center/index
+    entryTypes:
+      38694eca-46a1-4051-b1ac-374b23cb2163:
+        name: 'Media Center'
+        handle: pressRoom
+        hasTitleField: false
+        titleLabel: ''
+        titleFormat: '{section.name|raw}'
+        sortOrder: 1
+        fieldLayouts:
+          e0dfa110-8bb7-42a8-8f3a-4b991b4740c3:
+            tabs:
+              -
+                name: Content
+                sortOrder: 1
+                fields:
+                  229564d1-ebbb-4cc3-9ff1-37466e51fae5:
+                    required: false
+                    sortOrder: 10
+                  4060bfe6-8574-4b8f-bb64-ea670ce40748:
+                    required: false
+                    sortOrder: 7
+                  5ff206fa-fc15-4726-a9e2-0ed8b6da6407:
+                    required: false
+                    sortOrder: 4
+                  7d16fac3-b66a-4185-9f2e-d4cac77b58d5:
+                    required: false
+                    sortOrder: 5
+                  bef74be8-b22d-4dd0-9217-9707bb43d888:
+                    required: false
+                    sortOrder: 3
+                  c2ad07dc-05e7-4ef4-89b6-2e1eaccee210:
+                    required: false
+                    sortOrder: 2
+                  e1a1763e-027e-46b1-86b6-e115fc43f064:
+                    required: false
+                    sortOrder: 6
+                  f62c85ae-2203-4d1a-8702-da515126a398:
+                    required: false
+                    sortOrder: 1
+                  fbc5e95d-0c99-4d55-8eb5-a2156eac9c1d:
+                    required: false
+                    sortOrder: 8
+                  fccfab94-5755-4a9a-96e5-9ed8359b99f4:
+                    required: false
+                    sortOrder: 9
+              -
+                name: 'Media Center'
+                sortOrder: 2
+                fields:
+                  48c765be-2eab-42d5-bb78-461b32ba7d6a:
+                    required: false
+                    sortOrder: 1
+              -
+                name: SEO
+                sortOrder: 3
+                fields:
+                  ecc31df6-640f-4fa6-a2e6-caea757e379d:
+                    required: false
+                    sortOrder: 1
+  3bcee420-a923-4de2-9e6c-9081062b06e1:
+    name: 'About Oakland'
+    handle: aboutOakland
+    type: single
+    enableVersioning: true
+    propagationMethod: all
+    siteSettings:
+      c35d3a93-d7f4-4c37-ae3e-1b4d403311bb:
+        enabledByDefault: true
+        hasUrls: true
+        uriFormat: media-center/about-oakland
+        template: media-center/about-oakland/index
+    entryTypes:
+      816c2b77-dcc5-411d-b95a-3b006b42f3d4:
+        name: 'About Oakland'
+        handle: aboutOakland
+        hasTitleField: false
+        titleLabel: ''
+        titleFormat: '{section.name|raw}'
+        sortOrder: 1
+        fieldLayouts:
+          d8bfc1d3-a266-4f51-bb19-f3acab14edaa:
+            tabs:
+              -
+                name: Content
+                sortOrder: 1
+                fields:
+                  415c75c4-9891-451d-b333-be4acb59c1fd:
+                    required: false
+                    sortOrder: 10
+                  48c765be-2eab-42d5-bb78-461b32ba7d6a:
+                    required: false
+                    sortOrder: 6
+                  5d92130f-648c-4519-ad6d-f68508ca2a2f:
+                    required: false
+                    sortOrder: 9
+                  6036ab26-c74a-4a0e-95f8-1735e64eed98:
+                    required: false
+                    sortOrder: 5
+                  655e742b-956c-4fc9-b241-b913e5b814d7:
+                    required: false
+                    sortOrder: 7
+                  9eb69e7e-c32d-4390-9b2e-ce2344718906:
+                    required: false
+                    sortOrder: 4
+                  bae021eb-4222-44c0-adb5-05e045cca640:
+                    required: false
+                    sortOrder: 8
+                  bef74be8-b22d-4dd0-9217-9707bb43d888:
+                    required: false
+                    sortOrder: 3
+                  c2ad07dc-05e7-4ef4-89b6-2e1eaccee210:
+                    required: false
+                    sortOrder: 2
+                  f62c85ae-2203-4d1a-8702-da515126a398:
+                    required: false
+                    sortOrder: 1
+              -
+                name: 'Media Center'
+                sortOrder: 2
+                fields:
+                  229564d1-ebbb-4cc3-9ff1-37466e51fae5:
+                    required: false
+                    sortOrder: 8
+                  4060bfe6-8574-4b8f-bb64-ea670ce40748:
+                    required: false
+                    sortOrder: 3
+                  5e60d793-558b-4747-8c69-8c91c1a3102b:
+                    required: false
+                    sortOrder: 5
+                  5ff206fa-fc15-4726-a9e2-0ed8b6da6407:
+                    required: false
+                    sortOrder: 4
+                  7d16fac3-b66a-4185-9f2e-d4cac77b58d5:
+                    required: false
+                    sortOrder: 1
+                  e1a1763e-027e-46b1-86b6-e115fc43f064:
+                    required: false
+                    sortOrder: 2
+                  fbc5e95d-0c99-4d55-8eb5-a2156eac9c1d:
+                    required: false
+                    sortOrder: 6
+                  fccfab94-5755-4a9a-96e5-9ed8359b99f4:
+                    required: false
+                    sortOrder: 7
+              -
+                name: SEO
+                sortOrder: 3
+                fields:
+                  ecc31df6-640f-4fa6-a2e6-caea757e379d:
+                    required: false
+                    sortOrder: 1
+  542c176a-f523-4bf7-a1bd-8536d79682c9:
+    name: 'Press Releases'
+    handle: pressReleases
+    type: channel
+    enableVersioning: true
+    propagationMethod: all
+    siteSettings:
+      c35d3a93-d7f4-4c37-ae3e-1b4d403311bb:
+        enabledByDefault: true
+        hasUrls: true
+        uriFormat: 'media-center/press-releases/{slug}'
+        template: media-center/_press-release
+    entryTypes:
+      560fa944-fc39-4513-aadb-86c21f7073cd:
+        name: 'Press Releases'
+        handle: pressReleases
+        hasTitleField: true
+        titleLabel: Title
+        titleFormat: null
+        sortOrder: 1
   5e4e2c33-9bc3-4620-a00b-7ca3fb5d8688:
     name: 'Departments Index'
     handle: departmentsIndex
@@ -5592,6 +6690,52 @@ sections:
         uriFormat: null
         template: null
     propagationMethod: all
+  7c4ac5a1-1b30-41f1-b673-890f44221025:
+    name: 'General City Information'
+    handle: generalCityInformation
+    type: single
+    enableVersioning: true
+    propagationMethod: all
+    siteSettings:
+      c35d3a93-d7f4-4c37-ae3e-1b4d403311bb:
+        enabledByDefault: true
+        hasUrls: true
+        uriFormat: media-center/about-oakland/general-city-information
+        template: media-center/about-oakland/general-city-information
+    entryTypes:
+      b5015a50-2bb5-498e-ba78-c140f3592bf2:
+        name: 'General City Information'
+        handle: generalCityInformation
+        hasTitleField: false
+        titleLabel: ''
+        titleFormat: '{section.name|raw}'
+        sortOrder: 1
+        fieldLayouts:
+          ad703fc0-fd8c-4445-abf4-7777cef5b19c:
+            tabs:
+              -
+                name: Content
+                sortOrder: 1
+                fields:
+                  bef74be8-b22d-4dd0-9217-9707bb43d888:
+                    required: false
+                    sortOrder: 3
+                  c2ad07dc-05e7-4ef4-89b6-2e1eaccee210:
+                    required: false
+                    sortOrder: 2
+                  f62c85ae-2203-4d1a-8702-da515126a398:
+                    required: false
+                    sortOrder: 1
+                  fd0c8e02-99b4-4ce5-ab89-b29cd0efc581:
+                    required: false
+                    sortOrder: 4
+              -
+                name: SEO
+                sortOrder: 2
+                fields:
+                  ecc31df6-640f-4fa6-a2e6-caea757e379d:
+                    required: false
+                    sortOrder: 1
   89cda626-6500-4ace-b9f4-0f8a54a9ad02:
     name: 'Services Index'
     handle: servicesIndex

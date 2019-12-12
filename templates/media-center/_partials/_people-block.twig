@@ -1,0 +1,49 @@
+<section class="bg-rotate">
+  <a class="anchor-link" id="{{ blockId }}"></a>
+  <div class="container">
+    {% include '_partials/_elements/_module-header.twig' with {
+      headerText: heading
+    } %}
+    <div class="card-grid grid-equal-height profile-cards mt-12">
+      {% for profile in fieldHandle.all() %}
+        {% set entry = profile.person.one() %}
+        {% set section = entry.section.handle %}
+        {% set jobTitle = profile.jobTitle %}
+        {% set officeDepartment = profile.officeDepartment %}
+        {% set email = profile.email %}
+        {% set phoneNumber = profile.phoneNumber %}
+        {% if section == "officials" %}
+          {% set name = entry.groupHeadName %}
+          {% set department = profile.officeDepartment ?? entry.title %}
+          {% set jobTitle = jobTitle ?? entry.groupHeadTitle ?? entry.title %}
+          {% set email = entry.emailAddress %}
+          {% set phone = entry.phoneNumbers.one.number %}
+        {% else %}
+          {% set name = entry.title %}
+          {% set departmentsValue = entry.departmentOfficialBoardCommission | group("title") | keys | join(",", " and ") %}
+          {% set department = profile.officeDepartment ?? departmentsValue ?? entry.staffImportDepartment ?? '' %}
+          {% set jobTitle = jobTitle ?? entry.jobTitle ?? entry.staffImportJobTitle %}
+          {% set email = entry.emailAddress ?? entry.staffImportEmail %}
+          {% set phone = entry.phoneNumber ??? entry.staffImportPhoneNumber %}
+        {% endif %}
+        {%- set extraContent -%}
+          <span class="block">{{ department }}</span>
+          {% if email | length %}
+            {% set e = email | replace({'@oaklandnet.com': '@oaklandca.gov'}) %}
+            <a class="block overflow-x-hidden" aria-label="Email {{ entry.groupHeadName ?? entry.title }}" href="mailto:{{ e }}"><span class="hidden truncate md:block">{{ e }}</span><span class="md:hidden">Email</span></a>
+          {% endif %}
+          {% if phone | length %}
+            <a class="block" href="tel:{{ phone }}">{{ phone }}</a>
+          {% endif %}
+        {%- endset -%}
+        {% include "_partials/_elements/_profile-cards.twig" with {
+          photo: entry.portrait.one,
+          name: name,
+          url: entry.redirectUrl ?? entry.url,
+          extraContent: extraContent ?? '',
+          icon: "user"
+        } %}
+      {% endfor %}
+    </div>
+  </div>
+</section>

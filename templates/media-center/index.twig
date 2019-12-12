@@ -1,0 +1,199 @@
+{% extends '_layouts/_banner-with-nav.twig' %}
+
+{% set customNav = [
+  {
+    title: "Press",
+    link: "press"
+  },
+  {
+    title: "Communications team",
+    link: "communications-team"
+  },
+  {
+    title: "About Oakland",
+    link: "about-oakland"
+  },
+  {
+    title: "Awards & accolades",
+    link: "awards-accolades"
+  },
+  {
+    title: "Media resources",
+    link: "media-resources"
+  },
+  {
+    title: "Press badge and parking permits",
+    link: "press-badge-permits"
+  },
+  {
+    title: "Oakland in the news",
+    link: "oakland-in-the-news"
+  },
+  {
+    title: "General media inquiries",
+    link: "general-media-inquiries"
+  },
+] %}
+
+
+{% set featuredItem = {
+  photo: {
+    title: "test",
+    url: "https://placeimg.com/768/480/any"
+  },
+  byline: "Oct 3, 2019",
+  url: "https://www.google.com",
+  title: "Long Header to Describe News Item",
+  body: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  }
+%}
+
+{% set pressItems = [
+  {
+    photo: {
+      title: "test",
+      url: "https://placeimg.com/768/480/any/1"
+    },
+    byline: "Oct 3, 2019",
+    url: "https://www.google.com",
+    title: "56 Character Max Headline Title Case",
+    body: "Service for Peace has partnered with Oakland Public Works to lead this annually..."
+  },
+  {
+    photo: {
+      title: "test",
+      url: "https://placeimg.com/768/480/any/2"
+    },
+    byline: "Oct 3, 2019",
+    url: "https://www.google.com",
+    title: "56 Character Max Headline Title Case",
+    body: "Service for Peace has partnered with Oakland Public Works to lead this annually..."
+  },
+  {
+    photo: {
+      title: "test",
+      url: "https://placeimg.com/768/480/any/3"
+    },
+    byline: "Oct 3, 2019",
+    url: "https://www.google.com",
+    title: "56 Character Max Headline Title Case",
+    body: "Service for Peace has partnered with Oakland Public Works to lead this annually..."
+  },
+] %}
+
+{% block content %}
+  {% include '_partials/_page-banners.twig' with {
+    bannerTitle: entry.title,
+  } %}
+  <section class="bg-rotate">
+    <a class="anchor-link" id="press"></a>
+    <div class="container">
+      {% include '_partials/_elements/_module-header.twig' with {
+        headerText: "Press",
+      } %}
+      {% include "_partials/_elements/_horizontal-cards.twig" with {
+        photo: featuredItem.photo,
+        byline: featuredItem.byline,
+        url: featuredItem.url,
+        title: featuredItem.title,
+        body: featuredItem.body | raw
+      } %}
+      <div class="card-grid vertical-cards my-4">
+        {% for item in pressItems %}
+          {% include "_partials/_elements/_vertical-cards.twig" with {
+            photo: item.photo,
+            byline: item.byline,
+            url: item.url,
+            title: item.title,
+            body: item.body | raw
+          } %}
+        {% endfor %}
+      </div>
+      {% include "_partials/_elements/_module-readmore.twig" with {
+        linkText: "More press",
+        linkUrl: "https://www.google.com"
+      } %}
+    </div>
+  </section>
+  {% include "media-center/_partials/_people-block.twig" with {
+    blockId: "communications-team",
+    heading: "Communications team",
+    fieldHandle: entry.communicationsTeam
+  } %}
+  {% include "media-center/_partials/_left-text-right-image.twig" with {
+    blockId: "about-oakland",
+    heading: "About Oakland",
+    text: entry.aboutOaklandSummary,
+    image: entry.aboutOaklandSummaryPhoto,
+    link: "/media-center/about-oakland"
+  } %}
+  {% include "media-center/_partials/_horizontal-card-block.twig" with {
+    blockId: "awards-accolades",
+    heading: "Awards & accolades",
+    fieldHandle: entry.awardsAndAccolades,
+    learnMoreUrl: "/topics/recent-accolades-bestowed-on-oakland"
+  } %}
+  {% include "media-center/_partials/_left-text-right-image.twig" with {
+    blockId: "media-resources",
+    heading: "Media Resources",
+    text: entry.mediaResourcesSummary,
+    image: entry.mediaResourcesSummaryPhoto
+  } %}
+  <section class="bg-rotate">
+    <a class="anchor-link" id="press-badge-permits"></a>
+    <div class="container">
+      {% include '_partials/_elements/_module-header.twig' with {
+        headerText: "Press badge and parking permits",
+      } %}
+      {% set cards = [
+        {
+          url: "https://www.google.com",
+          title: "Press Badge Application"
+        },
+        {
+          url: "https://www.google.com",
+          title: "Parking Permit for Press"
+        }
+      ] %}
+      <div class="card-grid">
+        {% for entry in cards %}
+          {% include "_partials/_elements/_title-cards" with { cardStyle: 'text-white', cardColor: 'bg-green-300 hover:bg-green-500'} %}
+        {% endfor %}
+      </dev>
+    </div>
+  </section>
+  {% include "media-center/_partials/_horizontal-card-block.twig" with {
+    blockId: "oakland-in-the-news",
+    heading: "Oakland in the news",
+    fieldHandle: entry.oaklandInTheNews,
+    learnMoreUrl: "/topics/recent-accolades-bestowed-on-oakland"
+  } %}
+  <section class="bg-rotate">
+    <a class="anchor-link" id="general-media-inquiries"></a>
+    <div class="container">
+      {% include '_partials/_elements/_module-header.twig' with {
+        headerText: "General media inquiries",
+      } %}
+      <div class="md:flex mt-4 md:mt-8">
+        <div class="md:w-1/2 md:pr-4 o-4">
+          <h3 class="text-xl my-0">Address</h3>
+          <p class="my-0">1 Frank H. Ogawa Plaza, 3rd Floor<br>
+          Oakland, CA 94612</p>
+          <h3 class="text-xl mb-0">Email</h3>
+          <p class="my-0"><a href="mailto:oaklandpio@oaklandca.gov">oaklandpio@oaklandca.gov</a></p>
+          <h3 class="text-xl mb-0">Phone</h3>
+          <p class="my-0"><a href="tel:510-123-4567">510-123-4567</a></p>
+        </div>
+        <div class="md:w-1/2 md:pl-4">
+          {% set seoMaticLinks = seomatic.site.sameAsLinks %}
+          {% set socials = {
+            facebook: seoMaticLinks.facebook.url,
+            twitter: seoMaticLinks.twitter.url,
+            instagram: seoMaticLinks.instagram.url
+          } %}
+          {% include '_partials/_elements/_social-media.twig' with { entry: socials, pageTitle: entry.title } %}
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

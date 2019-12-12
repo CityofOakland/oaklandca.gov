@@ -96,8 +96,21 @@ a:hover {
   @apply text-white underline bg-green-400 shadow-none;
 }
 
+/* Service Styles */
+.card-grid-button {
+  @apply bg-white rounded-sm text-gray-700 no-underline text-lg font-bold shadow-btn p-8 trans trans-fast;
+}
+
+.card-grid-button:hover {
+  @apply bg-green-300 underline text-white;
+}
+
 .btn-sm {
   @apply px-2 py-2;
+}
+
+.btn-md {
+  @apply px-4 py-4;
 }
 
 .section-box {
@@ -126,15 +139,6 @@ main {
 /* Banner Styles */
 .banner {
   @apply relative text-white text-xl leading-loose bg-white;
-}
-
-/* Service Styles */
-.card-grid-button {
-  @apply bg-white rounded-sm text-gray-700 no-underline text-lg font-bold shadow-btn p-8 trans trans-fast;
-}
-
-.card-grid-button:hover {
-  @apply bg-green-300 underline text-white;
 }
 
 /* Background Section Color Rotations */
@@ -176,7 +180,7 @@ main .bg-rotate:nth-of-type(even) {
     @apply -mx-2;
     & > * {
       @apply m-2;
-      width: calc(theme("width.1/3") - theme(margin.4));
+      width: calc(theme("width.1/2") - theme(margin.4));
     }
   }
   .profile-cards > * {
@@ -185,6 +189,15 @@ main .bg-rotate:nth-of-type(even) {
 }
 
 @media (min-width: theme("screens.md")) {
+  .profile-cards > * {
+    width: calc(theme("width.1/2") - theme(margin.8));
+  }
+}
+
+@media (min-width: theme("screens.lg")) {
+  .card-grid-tight > * {
+    width: calc(theme("width.1/3") - theme(margin.4));
+  }
   .profile-cards > * {
     width: calc(theme("width.1/3") - theme(margin.8));
   }
@@ -198,11 +211,11 @@ main .bg-rotate:nth-of-type(even) {
   .horizontal-card {
     @apply flex-row justify-between;
     & > figure {
-      width: calc(theme("width.1/3") - theme(margin.6));
+      width: calc(theme("width.1/2") - theme(margin.6));
     }
 
     & > div {
-      width: calc(theme("width.2/3") - theme(margin.6));
+      width: calc(theme("width.1/2") - theme(margin.6));
     }
   }
 }
@@ -326,6 +339,16 @@ body.open .page-holder {
   }
 }
 
+.heading-0-margin {
+  & h2,
+  & h3 {
+    margin-bottom: 0;
+    & + .body-text > *:first-child {
+      margin-top: .5rem;
+    }
+  }
+}
+
 @tailwind utilities;
 
 @responsive {
@@ -341,7 +364,7 @@ body.open .page-holder {
     padding-top: 75%;
   }
 
-  .aspect-ratio-21\/9 {
+  .aspect-ratio-7\/3 {
     padding-top: 42.86%;
   }
 }

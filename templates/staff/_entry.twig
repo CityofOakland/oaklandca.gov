@@ -19,7 +19,7 @@
     leadIn: jobTitle,
   } %}
   <section class="bg-white">
-    <div class="container py-16">
+    <div class="container pb-16">
       <div class="sm:flex">
         <div class="sm:w-1/4 sm:mr-8">
           <figure class="w-full">
@@ -33,22 +33,21 @@
           </figure>
           {% set dobc = entry.departmentOfficialBoardCommission %}
           {% if dobc.exists() %}
-            <h3 class="text-lg font-bold flex items-center">
-              <span class="w-16">Team:
-              </span>
-              <a href="{{ dobc.one.url }}" class="flex-1 btn btn-sm inline-block text-center">{{ dobc.one.title }}</a>
-            </h3>
+            {% set dobcLength = dobc | length %}
+            {% set plural = dobcLength > 1 ? true : false %}
+            <h3 class="text-lg font-bold flex items-center mb-2">Team{% if plural %}s{% endif %}:</h3>
+            <div class="o-4">
+              {% for entry in dobc.all() %}
+                <a href="{{ entry.url }}" class="btn btn-sm block text-center">{{ entry.title }}</a>
+              {% endfor %}
+            </div>
           {% elseif entry.staffImportDepartment | length %}
             <h3 class="text-lg font-bold flex items-center">{{ entry.staffImportDepartment }}</h3>
           {% endif %}
         </div>
-        <div class="sm:flex-1">
-          <h2 class="text-xxxl sm:mt-0 mb-0">{{ entry.title }}</h2>
-          <p class="text-xl mt-2">
-            {{ jobTitle }}
-          </p>
+        <div class="sm:flex-1 o-4">
           {% if entry.bio | length %}
-            <div class="text-xl mt-8">{{ entry.bio }}</div>
+            <div class="text-xl o-4">{{ entry.bio | replace('<p>', '<p class="my-0">') | raw }}</div>
           {% endif %}
           {% if email | length %}
             <p class="my-0">
