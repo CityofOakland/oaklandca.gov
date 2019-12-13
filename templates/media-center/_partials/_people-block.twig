@@ -20,7 +20,7 @@
           {% set phone = entry.phoneNumbers.one.number %}
         {% else %}
           {% set name = entry.title %}
-          {% set departmentsValue = entry.departmentOfficialBoardCommission.column('title').join(", ", " and ") %}
+          {% set departmentsValue = entry.departmentOfficialBoardCommission | group("title") | keys | join(",", " and ") %}
           {% set department = profile.officeDepartment ?? departmentsValue ?? entry.staffImportDepartment ?? '' %}
           {% set jobTitle = jobTitle ?? entry.jobTitle ?? entry.staffImportJobTitle %}
           {% set email = entry.emailAddress ?? entry.staffImportEmail %}
