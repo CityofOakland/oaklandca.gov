@@ -1,4 +1,6 @@
 {% set image = block.imageFile.one() %}
+{% set text = image.altText ?? image.filename %}
 <figure class="block w-full my-8">
-  <img class="w-full" src="{{ image.url }}" alt="{{ image.altText ?? image.filename }}">
+  <img class="w-full" src="{{ image.url }}" alt="{{ text }}">
+  <figcaption class="block text-center my-2 text-base">{{ text }}</figcaption>
 </figure>
