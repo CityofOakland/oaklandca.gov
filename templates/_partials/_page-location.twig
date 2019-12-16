@@ -60,18 +60,26 @@
               <a href="mailto:{{ entry.emailAddress }}">{{ entry.emailAddress }}</a>
             </p>
           {% endif %}
-          {% if entry.openHours | length %}
+          {% if entry.openHours | length or entry.hours | length %}
             <h3 class="text-xxl mb-0">Open Hours</h3>
-            {% for item in entry.openHours.all() %}
-              {% if item.hoursTitle | length %}
-                <h4 class="text-lg">{{ item.hoursTitle }}</h4>
-              {% endif %}
+            {% if entry.openHours | length %}
+              {% for item in entry.openHours.all() %}
+                {% if item.hoursTitle | length %}
+                  <h4 class="text-lg">{{ item.hoursTitle }}</h4>
+                {% endif %}
+                <dl>
+                  {% for day in item.hours.getRange(1, 0) %}
+                    {% include '_partials/_elements/_hours.twig' %}
+                  {% endfor %}
+                </dl>
+              {% endfor %}
+            {% elseif entry.hours | length %}
               <dl>
-                {% for day in item.hours.getRange(1, 0) %}
+                {% for day in entry.hours.getRange(1, 0) %}
                   {% include '_partials/_elements/_hours.twig' %}
                 {% endfor %}
               </dl>
-            {% endfor %}
+            {% endif %}
           {% endif %}
           {% if entry.boardHours | length %}
             <h3 class="text-xxl mb-0">Business Hours</h3>
