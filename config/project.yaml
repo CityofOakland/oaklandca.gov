@@ -42,7 +42,7 @@ categoryGroups:
         hasUrls: false
         uriFormat: null
         template: null
-dateModified: 1576179723
+dateModified: 1576274151
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -249,6 +249,33 @@ fields:
       placeholder: ''
     fieldGroup: ed709c7c-0c3a-4457-ae2d-38a3ccb797e4
     contentColumnType: text
+  16a8d87b-63fc-4df3-8597-2d70c5a4f987:
+    name: 'Press Release Image'
+    handle: pressReleaseImage
+    instructions: ''
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Assets
+    settings:
+      useSingleFolder: '1'
+      defaultUploadLocationSource: 'volume:549d1a55-e94b-4c89-9cb9-b1fdac9d417d'
+      defaultUploadLocationSubpath: ''
+      singleUploadLocationSource: 'volume:10fea577-3555-45aa-9169-8e3dee085cae'
+      singleUploadLocationSubpath: ''
+      restrictFiles: '1'
+      allowedKinds:
+        - image
+      sources: '*'
+      source: null
+      targetSiteId: null
+      viewMode: list
+      limit: '1'
+      selectionLabel: 'Add a main image'
+      localizeRelations: false
+      validateRelatedElements: '1'
+    contentColumnType: string
+    fieldGroup: 27454cbc-e66b-4d88-bef3-32b87a69a715
   18fa95ee-449e-4c22-9d88-b0fb8918a38b:
     name: 'Highlighted Services'
     handle: highlightedServices
@@ -1211,6 +1238,23 @@ fields:
       validateRelatedElements: '1'
     contentColumnType: string
     fieldGroup: c964d82c-a4e7-4ec4-ad42-7c3e843193c0
+  842891f1-23fb-4af0-93b5-d197738f08a0:
+    name: Role
+    handle: role
+    instructions: 'What role does this person have in regard to the entry?'
+    searchable: false
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\PlainText
+    settings:
+      placeholder: ''
+      code: ''
+      multiline: ''
+      initialRows: '4'
+      charLimit: ''
+      columnType: text
+    contentColumnType: text
+    fieldGroup: a8c82666-3295-4f90-b50b-67f2299847db
   85af3974-efa6-4a79-a433-1fa8e5b4d404:
     name: Medium
     handle: medium
@@ -1366,6 +1410,33 @@ fields:
       viewMode: large
     fieldGroup: 8e8ee56e-cdb8-4206-a3b5-c3aa0eb3a884
     contentColumnType: string
+  984d9094-e92b-4a6f-966a-e7c21159f950:
+    name: 'Press Release'
+    handle: pressRelease
+    instructions: ''
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Assets
+    settings:
+      useSingleFolder: '1'
+      defaultUploadLocationSource: 'volume:549d1a55-e94b-4c89-9cb9-b1fdac9d417d'
+      defaultUploadLocationSubpath: ''
+      singleUploadLocationSource: 'volume:5fab788c-0374-4ac2-945d-ba96ffd84669'
+      singleUploadLocationSubpath: ''
+      restrictFiles: '1'
+      allowedKinds:
+        - pdf
+      sources: '*'
+      source: null
+      targetSiteId: null
+      viewMode: list
+      limit: '1'
+      selectionLabel: 'Add a PDF'
+      localizeRelations: false
+      validateRelatedElements: ''
+    contentColumnType: string
+    fieldGroup: 27454cbc-e66b-4d88-bef3-32b87a69a715
   9b53be12-6536-4cb0-8860-9b5e6e94fadd:
     name: 'Process Steps'
     handle: processSteps
@@ -2380,6 +2451,46 @@ fields:
       localizeRelations: false
     fieldGroup: 83c14444-efcf-4d13-a20a-56275fd18855
     contentColumnType: string
+  e6b42dcc-e049-437d-b803-c75b6f95e6af:
+    name: 'Media Contacts'
+    handle: mediaContacts
+    instructions: ''
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Entries
+    settings:
+      sources:
+        - 'section:4c69249e-8905-4924-88d0-4eaa4ce13edc'
+      source: null
+      targetSiteId: null
+      viewMode: null
+      limit: ''
+      selectionLabel: 'Add a contact'
+      localizeRelations: false
+      validateRelatedElements: '1'
+    contentColumnType: string
+    fieldGroup: 27454cbc-e66b-4d88-bef3-32b87a69a715
+  ea2bc4af-23f2-4838-99c2-9da78c63420f:
+    name: 'Staff Entry'
+    handle: staffEntry
+    instructions: ''
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Entries
+    settings:
+      sources:
+        - 'section:07faad04-9ec4-4f68-9fe8-0ca20f189f8a'
+      source: null
+      targetSiteId: null
+      viewMode: null
+      limit: '1'
+      selectionLabel: 'Add a staff member'
+      localizeRelations: false
+      validateRelatedElements: '1'
+    contentColumnType: string
+    fieldGroup: a8c82666-3295-4f90-b50b-67f2299847db
   ea2e59d4-7906-4723-8dde-7bb4012c3361:
     name: 'Press Release File'
     handle: pressReleaseFile
@@ -5712,6 +5823,10 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
+  expanded-singles:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
 sections:
   07faad04-9ec4-4f68-9fe8-0ca20f189f8a:
     name: Staff
@@ -6341,15 +6456,8 @@ sections:
                     required: false
                     sortOrder: 9
               -
-                name: 'Media Center'
-                sortOrder: 2
-                fields:
-                  48c765be-2eab-42d5-bb78-461b32ba7d6a:
-                    required: false
-                    sortOrder: 1
-              -
                 name: SEO
-                sortOrder: 3
+                sortOrder: 2
                 fields:
                   ecc31df6-640f-4fa6-a2e6-caea757e379d:
                     required: false
@@ -6446,6 +6554,45 @@ sections:
                   ecc31df6-640f-4fa6-a2e6-caea757e379d:
                     required: false
                     sortOrder: 1
+  4c69249e-8905-4924-88d0-4eaa4ce13edc:
+    name: 'Media Contact'
+    handle: mediaContact
+    type: channel
+    enableVersioning: true
+    propagationMethod: all
+    siteSettings:
+      c35d3a93-d7f4-4c37-ae3e-1b4d403311bb:
+        enabledByDefault: true
+        hasUrls: false
+        uriFormat: ''
+        template: null
+    entryTypes:
+      cc9e3f30-06c7-4d1e-bb76-0d95e7d419e5:
+        name: 'Media Contact'
+        handle: mediaContact
+        hasTitleField: false
+        titleLabel: Title
+        titleFormat: '{role} - {staffEntry.one.title}'
+        sortOrder: 1
+        fieldLayouts:
+          83afe219-77cd-482e-99ac-4397f9e8a180:
+            tabs:
+              -
+                name: Content
+                sortOrder: 1
+                fields:
+                  2fb76e53-8619-4e29-b609-c984c390de9a:
+                    required: false
+                    sortOrder: 4
+                  5e5aad16-6bdc-4d3e-adfd-75147a323b78:
+                    required: false
+                    sortOrder: 3
+                  842891f1-23fb-4af0-93b5-d197738f08a0:
+                    required: true
+                    sortOrder: 2
+                  ea2bc4af-23f2-4838-99c2-9da78c63420f:
+                    required: true
+                    sortOrder: 1
   542c176a-f523-4bf7-a1bd-8536d79682c9:
     name: 'Press Releases'
     handle: pressReleases
@@ -6457,15 +6604,41 @@ sections:
         enabledByDefault: true
         hasUrls: true
         uriFormat: 'media-center/press-releases/{slug}'
-        template: media-center/_press-release
+        template: media-center/press-releases/_entry
     entryTypes:
       560fa944-fc39-4513-aadb-86c21f7073cd:
         name: 'Press Releases'
         handle: pressReleases
         hasTitleField: true
         titleLabel: Title
-        titleFormat: null
+        titleFormat: ''
         sortOrder: 1
+        fieldLayouts:
+          60190c44-7789-43e6-a223-27d3243ad638:
+            tabs:
+              -
+                name: Content
+                sortOrder: 1
+                fields:
+                  16a8d87b-63fc-4df3-8597-2d70c5a4f987:
+                    required: false
+                    sortOrder: 2
+                  984d9094-e92b-4a6f-966a-e7c21159f950:
+                    required: false
+                    sortOrder: 4
+                  e6b42dcc-e049-437d-b803-c75b6f95e6af:
+                    required: true
+                    sortOrder: 1
+                  fd0c8e02-99b4-4ce5-ab89-b29cd0efc581:
+                    required: false
+                    sortOrder: 3
+              -
+                name: SEO
+                sortOrder: 2
+                fields:
+                  ecc31df6-640f-4fa6-a2e6-caea757e379d:
+                    required: false
+                    sortOrder: 1
   5e4e2c33-9bc3-4620-a00b-7ca3fb5d8688:
     name: 'Departments Index'
     handle: departmentsIndex
@@ -8005,6 +8178,49 @@ sections:
         uriFormat: resources
         template: resources
     propagationMethod: all
+  c61018ed-ff63-485f-aecc-aa9cdcbe7f5c:
+    name: 'Press Releases Index'
+    handle: pressReleasesIndex
+    type: single
+    enableVersioning: true
+    propagationMethod: all
+    siteSettings:
+      c35d3a93-d7f4-4c37-ae3e-1b4d403311bb:
+        enabledByDefault: true
+        hasUrls: true
+        uriFormat: media-center/press-releases
+        template: media-center/press-releases/index
+    entryTypes:
+      6809dad5-36d1-4a41-99d3-d21c14368d3a:
+        name: 'Press Releases Index'
+        handle: pressReleasesIndex
+        hasTitleField: true
+        titleLabel: Title
+        titleFormat: '{section.name|raw}'
+        sortOrder: 1
+        fieldLayouts:
+          a2b6134c-90f2-4b6d-9ee1-3949eb1cb843:
+            tabs:
+              -
+                name: Content
+                sortOrder: 1
+                fields:
+                  bef74be8-b22d-4dd0-9217-9707bb43d888:
+                    required: false
+                    sortOrder: 3
+                  c2ad07dc-05e7-4ef4-89b6-2e1eaccee210:
+                    required: false
+                    sortOrder: 2
+                  f62c85ae-2203-4d1a-8702-da515126a398:
+                    required: false
+                    sortOrder: 1
+              -
+                name: SEO
+                sortOrder: 2
+                fields:
+                  ecc31df6-640f-4fa6-a2e6-caea757e379d:
+                    required: false
+                    sortOrder: 1
   ce969731-41e7-42b9-aad7-a6bff2089c57:
     name: 'News Index'
     handle: newsIndex
@@ -8276,8 +8492,8 @@ sections:
         name: 'Boards & Commissions Index'
         handle: boardsCommissionsIndex
         hasTitleField: true
-        titleLabel: 'Boards & Commissions'
-        titleFormat: null
+        titleLabel: Title
+        titleFormat: ''
         sortOrder: 1
         fieldLayouts:
           5b54eb46-1e2f-421e-8414-2c9f32f37f66:
@@ -9373,6 +9589,36 @@ users:
   allowPublicRegistration: false
   defaultGroup: ''
 volumes:
+  10fea577-3555-45aa-9169-8e3dee085cae:
+    name: 'Press Release Images'
+    handle: pressReleaseImages
+    type: craft\awss3\Volume
+    hasUrls: true
+    url: 'https://s3.us-west-2.amazonaws.com/cao-94612/'
+    settings:
+      subfolder: press-release-images
+      keyId: $S3_API_KEY
+      secret: $S3_SECRET
+      bucketSelectionMode: choose
+      bucket: cao-94612
+      region: us-west-2
+      expires: ''
+      makeUploadsPublic: '1'
+      storageClass: ''
+      cfDistributionId: ''
+      cfPrefix: ''
+      autoFocalPoint: ''
+    sortOrder: 13
+    fieldLayouts:
+      bba582aa-b597-4c43-b269-f5814699bc37:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              fff5cf49-87e6-4751-9032-b4ca8136e237:
+                required: true
+                sortOrder: 1
   1a78695a-f041-4562-9ee4-5405711bd29c:
     name: SEO
     handle: seo
@@ -9523,6 +9769,26 @@ volumes:
               fff5cf49-87e6-4751-9032-b4ca8136e237:
                 required: true
                 sortOrder: 1
+  5fab788c-0374-4ac2-945d-ba96ffd84669:
+    name: 'Press Release Files'
+    handle: pressReleaseFiles
+    type: craft\awss3\Volume
+    hasUrls: true
+    url: 'https://s3.us-west-2.amazonaws.com/cao-94612/'
+    settings:
+      subfolder: press-release-files
+      keyId: $S3_API_KEY
+      secret: $S3_SECRET
+      bucketSelectionMode: choose
+      bucket: cao-94612
+      region: us-west-2
+      expires: ''
+      makeUploadsPublic: '1'
+      storageClass: ''
+      cfDistributionId: ''
+      cfPrefix: ''
+      autoFocalPoint: ''
+    sortOrder: 14
   7a12e399-b320-4d23-8abb-a79b5f303015:
     name: Portraits
     handle: portraits

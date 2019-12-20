@@ -157,7 +157,10 @@
       ] %}
       <div class="card-grid">
         {% for entry in cards %}
-          {% include "_partials/_elements/_title-cards" with { cardStyle: 'text-white', cardColor: 'bg-green-300 hover:bg-green-500'} %}
+          {% include "_partials/_elements/_title-cards" with { 
+            cardStyle: 'text-white', 
+            cardColor: 'bg-green-300 hover:bg-green-500'
+          } %}
         {% endfor %}
       </dev>
     </div>
