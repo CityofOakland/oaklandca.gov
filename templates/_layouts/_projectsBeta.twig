@@ -299,13 +299,26 @@
             <h3 class="text-xl mb-2">Teams</h3>
             <p class="mt-0">
               {% for team in relatedTeams %}
-                <a href={{ team.url }}" class="btn btn-sm inline-block mr-2">{{ team.title }}</a>
+                <a href="{{ team.url }}" class="btn btn-sm inline-block mr-2">{{ team.title }}</a>
               {% endfor %}
             </p>
           {% endif %}
-          {% for phone in entry.phoneNumbers.all() %}
-            {% include '_partials/_elements/_phone-numbers.twig' %}
-          {% endfor %}
+          {% if entry.phoneNumbers.exists() %}
+            <h3 class="text-xl mb-2">Phone Numbers</h3>
+            <p class="mt-0">
+            {% for phone in entry.phoneNumbers.all() %}
+              {% switch phone.type %}
+                {% case "other" %}
+                {{ phone.numberTitle }}:
+                <a href="tel:{{ phone.number }}">{{ phone.number }}</a>
+                {% default %}
+                {{ phone.getType().name }}:
+                <a href="tel:{{ phone.number }}">{{ phone.number }}</a>
+              {% endswitch %}
+              {% if not loop.last %}<br>{% endif %}
+            {% endfor %}
+            </p>
+          {% endif %}
           {% if socialMediaTrue %}
             {% include "_partials/_elements/_social-media" %}
           {% endif %}
