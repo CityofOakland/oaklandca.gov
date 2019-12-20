@@ -78,6 +78,7 @@ function contentBuilder($element)
       }
     }
   }
+  return $body;
 }
 
 function richTextSplit($field)
@@ -576,7 +577,7 @@ return [
       ->elementType(\craft\elements\Entry::class)
       ->criteria(function (\craft\elements\db\EntryQuery $query) {
         return $query
-          ->section(['boardsCommissions', 'departments', 'news',  'officials', 'processes', 'projects', 'resources', 'services', 'staff', 'teams', 'topics', 'volunteers'])
+          ->section(['boardsCommissions', 'departments', 'news',  'officials', 'processes', 'projects', 'resources', 'services', 'staff', 'teams', 'topics', 'volunteers', 'pressReleases'])
           ->with(['boardsCommissions', 'contentBuilder', 'departments', 'documents', 'documentType', 'officials', 'projects', 'resources', 'services', 'topics']);
       })
       ->splitElementsOn(['summary', 'body', 'about'])
