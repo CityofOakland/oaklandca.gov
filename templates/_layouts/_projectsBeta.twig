@@ -8,14 +8,17 @@
 {% set documentsTrue = entry.projectDocuments.exists() %}
 {% set meetingsTrue = relatedMeetings | length %}
 {% set updatesTrue = entry.projectUpdates.exists() %}
-{% set mapTrue = entry.projectLocations.exists() %}
+{% set addressesTrue = entry.projectLocations.exists() %}
+{% set mapImageTrue = entry.projectMapImage.exists() %}
+{% set mapTrue = addressesTrue or mapImageTrue %}
 {% set timelineTrue = entry.timeline.exists() %}
 {% set relatedTrue = entry.relatedProjectEntries.exists() %}
 {% set fundingTrue = entry.fundingLogos.exists() %}
 {% set emailTrue = entry.emailAddress %}
+{% set phoneTrue = entry.phoneNumbers.exists() %}
 {% set teamsTrue = relatedTeams | length %}
 {% set socialMediaTrue = entry.facebook or entry.twitter or entry.medium or entry.instagram or entry.youtube %}
-{% set contactTrue = emailTrue or teamsTrue or socialMediaTrue %}
+{% set contactTrue = emailTrue or phoneTrue or teamsTrue or socialMediaTrue %}
 
 {% if photosTrue or mapTrue %}
   {% do view.registerJsFile(craft.twigpack.getModuleUri("/js/lightgallery.js")) %}
@@ -165,55 +168,86 @@
         </section>
       {% endif %}
       {% if mapTrue %}
+        {% js %}lightGallery(document.querySelector('#js-map'));{% endjs %}
         <section class="mb-16 border-b border-gray-400 pb-16">
           <a class="anchor-link" id="page-map"></a>
           <h2 class="text-xxl">Map</h2>
 
-          {% do view.registerJsFile("https://api.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.js") %}
-          {% do view.registerCssFile("https://api.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.css") %}
-
-          {% js %}lightGallery(document.querySelector('#js-map'));{% endjs %}
-
-          {% set maps = '' %}
-
-          {% set locations = entry.projectLocations.all() %}
-          {% if entry.projectLocations | length >= 2 %}
-            {% for location in locations %}
-              {% set last = not loop.last ? ', ' %}
-              {% set loc = location.address %}
-              {% set lat = loc.lat %}
-              {% set lon = loc.lng %}
-              {% set maps = maps ~ 'pin-l-marker+285A98(' ~ lon ~',' ~ lat ~ ')' ~ last | trim %}
-            {% endfor %}
-            {% set src = "https://api.mapbox.com/v4/mapbox.emerald/" ~ maps ~ "/auto/600x400@2x.png?access_token=pk.eyJ1Ijoib2FrbGFuZGRpZ2l0YWwiLCJhIjoiY2pudXBsb2Q5MTcyejNwcGFiMXI3djlvMiJ9.eWDu3rz5mBaZvBzMQtZGlQ" %}
-            {% set largePhoto = src | replace("600x400", "1280x854") %}
-            {% set locationText = locations | map(l => "#{l.address}") |join(', ', ' and ') %}
-          {% else %}
-            {% set map = entry.projectLocations.one() %}
-            {% set loc = map.address %}
-            {% set src = "https://api.mapbox.com/v4/mapbox.emerald/pin-l-marker+285A98(" ~ loc.lng ~ "," ~ loc.lat ~ ")/" ~ loc.lng ~ "," ~ loc.lat ~ ",16/600x400@2x.png?access_token=pk.eyJ1Ijoib2FrbGFuZGRpZ2l0YWwiLCJhIjoiY2pudXBsb2Q5MTcyejNwcGFiMXI3djlvMiJ9.eWDu3rz5mBaZvBzMQtZGlQ" %}
-            {% set largePhoto = src | replace("600x400", "1280x854") %}
-            {% set locationText = loc.street1 ~ ", " ~ loc.city ~ ", " ~ loc.state ~ ", " ~ loc.zip %}
+          {% if mapImageTrue %}
+            {% set image = entry.projectMapImage.one %}
+            {% set transformedImage = craft.imager.transformImage(image, { width: 320 }, { ratio: 1/1, position: image.getFocalPoint()},{ fillTransforms: true}) %}
+            {% set transformedImages = craft.imager.transformImage(image, [
+              { width: 1400 },
+              { width: 912 },
+              { width: 528, jpegQuality: 65 }
+            ],{ fillTransforms: true}) %}
+            {%- set mapImageBlock -%}
+            <figure class="mt-4 w-full cursor-pointer" id='js-map'>
+              <img
+                data-src="{{ image.url }}" 
+                data-sub-html="<p class='font-bold'>Map of Project: {{ entry.title }}</p>"
+                src="{{ transformedImage.url }}"
+                srcset="{{ transformedImages | srcset }}"
+                sizes="75vw"
+                alt="{{ image.altText ?? 'Map of Project: ' ~ entry.title }}"
+                class="block">
+            </figure>
+            {%- endset -%}
           {% endif %}
 
-          <figure class="mt-4 w-full cursor-pointer" id='js-map'>
-            <img
-              data-src="{{ largePhoto }}" 
-              data-sub-html="<p class='font-bold'>Map of Project: {{ entry.title }}</p><p>Showing locations of {{ locationText ?? '' }}</p>"
-              src="{{ src }}" 
-              alt="Map of Project: {{ entry.title }}">
-          </figure>
-          {% for location in locations %}
-            {% if location.description %}
-              <h3 class="text-lg font-bold my-3">{{ location.description }}</h3>
+          {% if addressesTrue %}
+            {% do view.registerJsFile("https://api.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.js") %}
+            {% do view.registerCssFile("https://api.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.css") %}
+
+            {% set maps = '' %}
+
+            {% set locations = entry.projectLocations.all() %}
+            {% if entry.projectLocations | length >= 2 %}
+              {% for location in locations %}
+                {% set last = not loop.last ? ', ' %}
+                {% set loc = location.address %}
+                {% set lat = loc.lat %}
+                {% set lon = loc.lng %}
+                {% set maps = maps ~ 'pin-l-marker+285A98(' ~ lon ~',' ~ lat ~ ')' ~ last | trim %}
+              {% endfor %}
+              {% set src = "https://api.mapbox.com/v4/mapbox.emerald/" ~ maps ~ "/auto/600x400@2x.png?access_token=pk.eyJ1Ijoib2FrbGFuZGRpZ2l0YWwiLCJhIjoiY2pudXBsb2Q5MTcyejNwcGFiMXI3djlvMiJ9.eWDu3rz5mBaZvBzMQtZGlQ" %}
+              {% set largePhoto = src | replace("600x400", "1280x854") %}
+              {% set locationText = locations | map(l => "#{l.address}") |join(', ', ' and ') %}
+            {% else %}
+              {% set map = entry.projectLocations.one() %}
+              {% set loc = map.address %}
+              {% set src = "https://api.mapbox.com/v4/mapbox.emerald/pin-l-marker+285A98(" ~ loc.lng ~ "," ~ loc.lat ~ ")/" ~ loc.lng ~ "," ~ loc.lat ~ ",16/600x400@2x.png?access_token=pk.eyJ1Ijoib2FrbGFuZGRpZ2l0YWwiLCJhIjoiY2pudXBsb2Q5MTcyejNwcGFiMXI3djlvMiJ9.eWDu3rz5mBaZvBzMQtZGlQ" %}
+              {% set largePhoto = src | replace("600x400", "1280x854") %}
+              {% set locationText = loc.street1 ~ ", " ~ loc.city ~ ", " ~ loc.state ~ ", " ~ loc.zip %}
             {% endif %}
-            {% set loc = location.address %}
-            <p class="mt-{{ loop.index == 0 ? 3 : 0 }} mb-3">
-              {{ loc.street1 }}<br />
-              {% if loc.street2 %}{{ loc.street2 }}<br />{% endif %}
-              {{ loc.city }}, {{ loc.state }} {{ location.address.zip }}
-            </p>
-          {% endfor %}
+
+            {% if mapImageTrue %}
+              {{ mapImageBlock | raw }}
+            {% else %}
+              <figure class="mt-4 w-full cursor-pointer" id='js-map'>
+                <img
+                  data-src="{{ largePhoto }}" 
+                  data-sub-html="<p class='font-bold'>Map of Project: {{ entry.title }}</p><p>Showing locations of {{ locationText ?? '' }}</p>"
+                  src="{{ src }}" 
+                  alt="Map of Project: {{ entry.title }}">
+              </figure>
+            {% endif %}
+            
+            {% for location in locations %}
+              {% if location.description %}
+                <h3 class="text-lg font-bold my-3">{{ location.description }}</h3>
+              {% endif %}
+              {% set loc = location.address %}
+              <p class="mt-{{ loop.index == 0 ? 3 : 0 }} mb-3">
+                {{ loc.street1 }}<br />
+                {% if loc.street2 %}{{ loc.street2 }}<br />{% endif %}
+                {{ loc.city }}, {{ loc.state }} {{ location.address.zip }}
+              </p>
+            {% endfor %}
+          {% else %}
+            {{ mapImageBlock | raw }}
+          {% endif %}
+          
         </section>
       {% endif %}
       {% css %}
@@ -303,7 +337,7 @@
               {% endfor %}
             </p>
           {% endif %}
-          {% if entry.phoneNumbers.exists() %}
+          {% if phoneTrue %}
             <h3 class="text-xl mb-2">Phone Numbers</h3>
             <p class="mt-0">
             {% for phone in entry.phoneNumbers.all() %}

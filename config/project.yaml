@@ -42,7 +42,7 @@ categoryGroups:
         hasUrls: false
         uriFormat: null
         template: null
-dateModified: 1576274151
+dateModified: 1576886061
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -7247,7 +7247,7 @@ sections:
         hasTitleField: true
         titleLabel: Title
         titleFormat: ''
-        sortOrder: 3
+        sortOrder: 1
         fieldLayouts:
           21db3772-d66c-42ec-a85b-aaa3775ca0a3:
             tabs:
@@ -7263,19 +7263,19 @@ sections:
                     sortOrder: 6
                   5cde5e79-0560-492c-b592-dd86cbde33c3:
                     required: false
-                    sortOrder: 15
+                    sortOrder: 16
                   78894bca-c6ce-4518-bb6f-fa94d7e7050e:
                     required: false
                     sortOrder: 8
                   899b11d8-2bd0-43d6-b39b-31e362b7534f:
                     required: false
-                    sortOrder: 11
+                    sortOrder: 12
                   af0e38e2-c040-47dc-a4f5-a2364d160a8f:
                     required: false
-                    sortOrder: 13
+                    sortOrder: 14
                   bb70071c-d8c0-4a11-91f6-d4ca02503a00:
                     required: false
-                    sortOrder: 14
+                    sortOrder: 15
                   bef74be8-b22d-4dd0-9217-9707bb43d888:
                     required: false
                     sortOrder: 3
@@ -7284,16 +7284,19 @@ sections:
                     sortOrder: 1
                   c7c1aa87-0003-4cdf-a925-11ae2f05ec24:
                     required: false
-                    sortOrder: 10
+                    sortOrder: 11
                   caf0bc06-3f8b-4152-ab45-8e9289767860:
                     required: false
                     sortOrder: 7
                   cccbcd50-864f-49a8-bbde-d44e04005272:
                     required: false
                     sortOrder: 5
+                  d2528b2a-d63a-477c-9c22-431796381707:
+                    required: false
+                    sortOrder: 10
                   e1abe78e-92f3-4d83-890e-7f67fd2db4e0:
                     required: false
-                    sortOrder: 12
+                    sortOrder: 13
                   e3f23e85-4290-41f4-bff9-7d12b6e1b52c:
                     required: false
                     sortOrder: 9
@@ -7361,16 +7364,13 @@ sections:
                   c18e25ad-bdd5-4629-a5d4-daf8579db08f:
                     required: false
                     sortOrder: 1
-                  d2528b2a-d63a-477c-9c22-431796381707:
-                    required: false
-                    sortOrder: 3
       3d2f9fee-52c3-44bb-86c1-f3c77e26b450:
         name: 'LEGACY Projects'
         handle: legacyProjects
         hasTitleField: true
         titleLabel: Title
         titleFormat: ''
-        sortOrder: 2
+        sortOrder: 3
         fieldLayouts:
           56ecda0c-259a-4836-b0c7-f60cd0906c90:
             tabs:
@@ -7465,7 +7465,7 @@ sections:
         hasTitleField: true
         titleLabel: Title
         titleFormat: ''
-        sortOrder: 1
+        sortOrder: 2
         fieldLayouts:
           b60719dd-2fa9-440b-bf52-6b8b194d5e31:
             tabs:
