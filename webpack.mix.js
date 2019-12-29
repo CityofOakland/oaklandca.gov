@@ -46,7 +46,7 @@ mix.setPublicPath('./web/assets/')
   .extract(['vue','algoliasearch'])
   .sourceMaps()
   .browserSync({
-    proxy: "http://oakland.test",
+    proxy: "https://oakland.test",
     notify: {
       styles: {
         top: 'auto',
