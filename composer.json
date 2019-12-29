@@ -1,6 +1,6 @@
 {
   "require": {
-    "craftcms/cms": "3.3.18.1",
+    "craftcms/cms": "3.3.18.4",
     "vlucas/phpdotenv": "^2.4.0",
     "nystudio107/craft-typogrify": "1.1.18",
     "solspace/craft3-calendar": "2.0.25",
