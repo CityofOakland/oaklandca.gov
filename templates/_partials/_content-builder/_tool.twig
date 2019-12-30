@@ -57,6 +57,8 @@
       <div class="o-6 body-text">
         {{ block.text }}
       </div>
+    {% case "textImageBlock" %}
+      {% include templateBase ~ block.type ~ ".twig" %}
     {% case "table2Columns" %}
       {{ macro.tableBuilder(block, 2)}}
     {% case "table3Columns" %}

@@ -2,8 +2,13 @@
 
 $defaultTextBlock = [
   'label' => 'Text',
-  'types' => ['heading', 'subheading', 'text'],
+  'types' => ['heading', 'subheading', 'text', ],
 ];
+$topicsTextBlock = [
+  'label' => 'Text',
+  'types' => ['heading', 'subheading', 'text', 'textImageBlock'],
+];
+$adminTextBlock = $topicsTextBlock;
 $defaultLinksBlock = [
   'label' => 'Links',
   'types' => ['largeEntryLinks', 'smallEntryLinks', 'newsEntries', 'eventEntries', 'meetingEntries']
@@ -23,7 +28,7 @@ $isContentBuilder = $user->getIdentity() ? $user->getIdentity()->isInGroup('cont
 
 if ($isUserAdmin) {
   $defaultBlock = [
-    $defaultTextBlock,
+    $adminTextBlock,
     $defaultLinksBlock,
     $defaultImagesBlock,
     $defaultTablesBlock
@@ -42,7 +47,7 @@ if ($isUserAdmin) {
     $defaultLinksBlock
   ];
   $topicsBlock = [
-    $defaultTextBlock,
+    $topicsTextBlock,
     $defaultLinksBlock,
     $defaultImagesBlock,
     $defaultTablesBlock
@@ -79,27 +84,27 @@ return [
     'contentBuilder' => [
       '*' => [
         'groups' => $defaultBlock,
-        'hideUngroupedTypes' => true
+        'hideUngroupedTypes' => ($isUserAdmin ? false : true),
       ],
       'section:departments,section:boardsCommissions,section:officials' => [
         'groups' => $departmentsBlock,
-        'hideUngroupedTypes' => true,
+        'hideUngroupedTypes' => ($isUserAdmin ? false : true),
       ],
       'section:topics' => [
         'groups' => $topicsBlock,
-        'hideUngroupedTypes' => true,
+        'hideUngroupedTypes' => ($isUserAdmin ? false : true),
       ],
       'section:news,section:pressReleases' => [
         'groups' => $newsPressBlock,
-        'hideUngroupedTypes' => true,
+        'hideUngroupedTypes' => ($isUserAdmin ? false : true),
       ],
       'section:resources' => [
         'groups' => $resourcesBlock,
-        'hideUngroupedTypes' => true,
+        'hideUngroupedTypes' => ($isUserAdmin ? false : true),
       ],
       'section:services' => [
         'groups' => $servicesBlock,
-        'hideUngroupedTypes' => true,
+        'hideUngroupedTypes' => ($isUserAdmin ? false : true),
       ],
     ],
   ],

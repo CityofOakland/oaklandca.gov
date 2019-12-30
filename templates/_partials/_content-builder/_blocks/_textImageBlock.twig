@@ -1,0 +1,26 @@
+{% set imageIsLeft = block.imageColumnPosition == "left" ? true : false %}
+{% set direction = imageIsLeft ? "md:flex-row" : "md:flex-row-reverse" %}
+{% set imagePad = imageIsLeft ? "md:pr-4" : "md:pl-4" %}
+{% set textPad = imageIsLeft ? "md:pl-4" : "md:pr-4" %}
+<div class="md:flex {{ direction }}">
+{% set image = block.image.one %}
+{% set transformedImage = craft.imager.transformImage(image, { width: 320 }, { ratio: 1/1, position: image.getFocalPoint()},{ fillTransforms: true}) %}
+{% set transformedImages = craft.imager.transformImage(image, [
+    { width: 1400 },
+    { width: 912 },
+    { width: 528, jpegQuality: 65 }
+],{ fillTransforms: true}) %}
+<figure class="mb-6 {{ imagePad }} md:w-{{ block.imageColumnWidth }} cursor-pointer">
+    {% set text = image.altText ?? image.filename %}
+    <img
+    src="{{ transformedImage.url }}"
+    srcset="{{ transformedImages | srcset }}"
+    sizes="100vw"
+    alt="{{ text }}"
+    class="block">
+    <figcaption class="block text-center my-2 text-base">{{ text }}</figcaption>
+</figure>
+<div class="{{ textPad }} md:flex-1 o-override o-6 body-text">
+    {{ block.textBlock }}
+</div>
+</div>
