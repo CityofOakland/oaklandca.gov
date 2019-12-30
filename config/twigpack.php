@@ -18,8 +18,8 @@
     ],
     // webpack-dev-server config
     'devServer' => [
-      'manifestPath' => 'http://localhost:3000/assets/',
-      'publicPath' => 'http://localhost:3000/assets/',
+      'manifestPath' => 'https://localhost:3000/assets/',
+      'publicPath' => 'https://localhost:3000/assets/',
     ],
     // Local files config
     'localFiles' => [
