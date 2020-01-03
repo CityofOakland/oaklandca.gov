@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "68a1270593392e2b1e45a656d4f52dec",
+    "content-hash": "70305d42cd5c4d72e0747db4dab3476d",
     "packages": [
         {
             "name": "aelvan/imager",
@@ -921,11 +921,11 @@
         },
         {
             "name": "craftcms/feed-me",
-            "version": "4.1.2",
+            "version": "4.2.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/feed-me/zipball/38a4a02ab4ca0cfd21736a7156cb8a54c7d3001e",
-                "reference": "38a4a02ab4ca0cfd21736a7156cb8a54c7d3001e",
+                "url": "https://api.github.com/repos/craftcms/feed-me/zipball/218541f2cb740758aaa6e00a34d8a075969efa4c",
+                "reference": "218541f2cb740758aaa6e00a34d8a075969efa4c",
                 "shasum": ""
             },
             "require": {
@@ -936,9 +936,6 @@
                 "nesbot/carbon": "^1.22 || ^2.10",
                 "ralouphie/mimey": "^1.0",
                 "seld/jsonlint": "^1.7"
-            },
-            "require-dev": {
-                "codeception/codeception": "~2.3.3"
             },
             "type": "craft-plugin",
             "extra": {
@@ -951,7 +948,6 @@
                     "craft\\feedme\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "proprietary"
             ],
@@ -967,13 +963,20 @@
             ],
             "description": "Import content from XML, RSS, CSV or JSON feeds into entries, categories, Craft Commerce products, and more.",
             "keywords": [
-                "Craft",
                 "cms",
+                "craft",
                 "craft-plugin",
                 "craftcms",
                 "feed me"
             ],
-            "time": "2019-08-11T16:41:38+00:00"
+            "support": {
+                "email": "support@craftcms.com",
+                "issues": "https://github.com/craftcms/feed-me/issues?state=open",
+                "source": "https://github.com/craftcms/feed-me",
+                "docs": "https://docs.craftcms.com/feed-me/v4/",
+                "rss": "https://github.com/craftcms/feed-me/commits/master.atom"
+            },
+            "time": "2020-01-02T18:51:34+00:00"
         },
         {
             "name": "craftcms/oauth2-craftid",
