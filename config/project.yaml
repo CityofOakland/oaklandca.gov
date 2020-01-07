@@ -42,7 +42,7 @@ categoryGroups:
         hasUrls: false
         uriFormat: null
         template: null
-dateModified: 1576274151
+dateModified: 1577682649
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -3202,7 +3202,7 @@ matrixBlockTypes:
     field: fd0c8e02-99b4-4ce5-ab89-b29cd0efc581
     name: 'Small Entry Links'
     handle: smallEntryLinks
-    sortOrder: 10
+    sortOrder: 11
     fields:
       5eb32746-ba01-4a64-b84f-f6b988abfa97:
         name: Heading
@@ -3240,7 +3240,6 @@ matrixBlockTypes:
             - 'section:98d541ae-56ee-4c98-ba9c-37438dc485a0'
             - 'section:24fa116b-8516-4626-84f3-86b685e71071'
             - 'section:b7e437e1-239f-4c5c-8c62-5f0323f9d22c'
-            - singles
             - 'section:07faad04-9ec4-4f68-9fe8-0ca20f189f8a'
             - 'section:fbf8b9b0-8875-4e08-819a-d62603676dc4'
             - 'section:70778563-6dac-453d-a4b0-5121f3a614b7'
@@ -3366,7 +3365,7 @@ matrixBlockTypes:
     field: fd0c8e02-99b4-4ce5-ab89-b29cd0efc581
     name: 'News Entries'
     handle: newsEntries
-    sortOrder: 11
+    sortOrder: 12
     fields:
       1e960f43-f531-48ab-81a0-67d143aebac6:
         name: Heading
@@ -3955,7 +3954,7 @@ matrixBlockTypes:
     field: fd0c8e02-99b4-4ce5-ab89-b29cd0efc581
     name: 'Large Entry Links'
     handle: largeEntryLinks
-    sortOrder: 9
+    sortOrder: 10
     fields:
       1020f3d1-0dcb-45c8-b054-15d7d2bfa99d:
         name: Heading
@@ -3993,7 +3992,6 @@ matrixBlockTypes:
             - 'section:98d541ae-56ee-4c98-ba9c-37438dc485a0'
             - 'section:24fa116b-8516-4626-84f3-86b685e71071'
             - 'section:b7e437e1-239f-4c5c-8c62-5f0323f9d22c'
-            - singles
             - 'section:07faad04-9ec4-4f68-9fe8-0ca20f189f8a'
             - 'section:fbf8b9b0-8875-4e08-819a-d62603676dc4'
             - 'section:70778563-6dac-453d-a4b0-5121f3a614b7'
@@ -4024,7 +4022,7 @@ matrixBlockTypes:
     field: fd0c8e02-99b4-4ce5-ab89-b29cd0efc581
     name: Gallery
     handle: gallery
-    sortOrder: 8
+    sortOrder: 9
     fields:
       236e175c-1794-4eca-8655-15d196ec0e23:
         name: Images
@@ -4629,7 +4627,7 @@ matrixBlockTypes:
     field: fd0c8e02-99b4-4ce5-ab89-b29cd0efc581
     name: '2 Columns'
     handle: table2Columns
-    sortOrder: 4
+    sortOrder: 5
     fields:
       42276684-be78-4449-b3e9-8eeb42ad49ba:
         name: Table
@@ -4646,9 +4644,9 @@ matrixBlockTypes:
           propagationMethod: all
           staticField: ''
           columns:
-            234:
+            1df2afd1-1725-4190-ae6d-b40882c360af:
               width: ''
-            235:
+            7b65742c-194e-4096-8efb-75f75936b03d:
               width: ''
           fieldLayout: table
           selectionLabel: ''
@@ -4750,7 +4748,7 @@ matrixBlockTypes:
     field: fd0c8e02-99b4-4ce5-ab89-b29cd0efc581
     name: 'Meeting Entries'
     handle: meetingEntries
-    sortOrder: 13
+    sortOrder: 14
     fields:
       84c6ab36-1b2e-49f1-93a1-aa41ce3d194a:
         name: Heading
@@ -4821,7 +4819,7 @@ matrixBlockTypes:
     field: fd0c8e02-99b4-4ce5-ab89-b29cd0efc581
     name: '3 Columns'
     handle: table3Columns
-    sortOrder: 5
+    sortOrder: 6
     fields:
       5ca3c157-200f-49a4-9390-48c84349b0be:
         name: 'Column 3 Heading'
@@ -4943,11 +4941,11 @@ matrixBlockTypes:
           propagationMethod: all
           staticField: ''
           columns:
-            216:
+            23389191-2978-49d8-a70e-6da12c8aeab0:
               width: ''
-            218:
+            d513ffa1-20e6-405d-845e-b4a8fd041461:
               width: ''
-            217:
+            fb2b9f42-74a0-45c4-be6e-d3d69c87557e:
               width: ''
           fieldLayout: table
           selectionLabel: ''
@@ -5067,7 +5065,7 @@ matrixBlockTypes:
     field: fd0c8e02-99b4-4ce5-ab89-b29cd0efc581
     name: Image
     handle: image
-    sortOrder: 7
+    sortOrder: 8
     fields:
       146e43c8-9154-487d-ab15-799e0f67185a:
         name: 'Image File'
@@ -5176,7 +5174,7 @@ matrixBlockTypes:
     field: fd0c8e02-99b4-4ce5-ab89-b29cd0efc581
     name: '4 Columns'
     handle: table4Columns
-    sortOrder: 6
+    sortOrder: 7
     fields:
       1c974e73-c709-48c5-bc6e-fb8a9ae1ba8a:
         name: Table
@@ -5193,13 +5191,13 @@ matrixBlockTypes:
           propagationMethod: all
           staticField: ''
           columns:
-            222:
+            2200fe2a-bcb7-435e-96f9-7f00262131e5:
               width: ''
-            221:
+            7769a82a-1135-4a99-aa7c-d121376328d6:
               width: ''
-            219:
+            c48fd91b-ae6d-42f1-9c3b-62258d7e681f:
               width: ''
-            220:
+            c51bb818-8e54-4a71-b8e6-e623907d4cae:
               width: ''
           fieldLayout: table
           selectionLabel: ''
@@ -5379,6 +5377,125 @@ matrixBlockTypes:
               d535337e-0894-4ce9-80ee-a315e254df71:
                 required: true
                 sortOrder: 1
+  efb06368-db7c-46e0-84e2-1857e0393801:
+    field: fd0c8e02-99b4-4ce5-ab89-b29cd0efc581
+    name: 'Text & Image Block'
+    handle: textImageBlock
+    sortOrder: 4
+    fields:
+      323dd893-cdef-4562-9cfc-566d7afd7909:
+        name: 'Text Block'
+        handle: textBlock
+        instructions: 'Enter your text content here. Remember that the image will appear to the top of the text regardless of its position on desktop, so avoid referring to the image’s position in the text.'
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\redactor\Field
+        settings:
+          redactorConfig: 'Basic with Links.json'
+          purifierConfig: ''
+          cleanupHtml: true
+          removeInlineStyles: '1'
+          removeEmptyTags: '1'
+          removeNbsp: '1'
+          purifyHtml: '1'
+          columnType: text
+          availableVolumes: '*'
+          availableTransforms: '*'
+        contentColumnType: text
+        fieldGroup: null
+      bcbcc37a-a53b-42f8-9a80-e9abf9ffe063:
+        name: Image
+        handle: image
+        instructions: 'Choose an image to display to the side of the text.'
+        searchable: false
+        translationMethod: site
+        translationKeyFormat: null
+        type: craft\fields\Assets
+        settings:
+          useSingleFolder: '1'
+          defaultUploadLocationSource: 'volume:549d1a55-e94b-4c89-9cb9-b1fdac9d417d'
+          defaultUploadLocationSubpath: ''
+          singleUploadLocationSource: 'volume:549d1a55-e94b-4c89-9cb9-b1fdac9d417d'
+          singleUploadLocationSubpath: ''
+          restrictFiles: '1'
+          allowedKinds:
+            - image
+          sources: '*'
+          source: null
+          targetSiteId: null
+          viewMode: list
+          limit: '1'
+          selectionLabel: 'Add an image'
+          localizeRelations: false
+          validateRelatedElements: '1'
+        contentColumnType: string
+        fieldGroup: null
+      d0cf7d52-44a5-44a7-9efa-ba27c7541ff9:
+        name: 'Image Column Position'
+        handle: imageColumnPosition
+        instructions: 'Choose which side the image appears on desktop layouts. On mobile layouts it will appear above the text, so make sure you don’t refer to the image’s position in your text block.'
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\Dropdown
+        settings:
+          optgroups: true
+          options:
+            -
+              label: Left
+              value: left
+              default: '1'
+            -
+              label: Right
+              value: right
+              default: ''
+        contentColumnType: string
+        fieldGroup: null
+      e58f615b-174a-4196-a96c-e824862acfa9:
+        name: 'Image Column Width'
+        handle: imageColumnWidth
+        instructions: 'Choose a width for the image column on tablet and desktop browsers. On mobile layouts it will be 100% of the browser width.'
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\Dropdown
+        settings:
+          optgroups: true
+          options:
+            -
+              label: 25%
+              value: 1/4
+              default: '1'
+            -
+              label: 33%
+              value: 1/3
+              default: ''
+            -
+              label: 50%
+              value: 1/2
+              default: ''
+        contentColumnType: string
+        fieldGroup: null
+    fieldLayouts:
+      00d2d434-9858-470b-9311-b6b27dc6fd06:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              323dd893-cdef-4562-9cfc-566d7afd7909:
+                required: true
+                sortOrder: 4
+              bcbcc37a-a53b-42f8-9a80-e9abf9ffe063:
+                required: true
+                sortOrder: 1
+              d0cf7d52-44a5-44a7-9efa-ba27c7541ff9:
+                required: false
+                sortOrder: 2
+              e58f615b-174a-4196-a96c-e824862acfa9:
+                required: true
+                sortOrder: 3
   f668b78a-57d4-4471-92e8-5df63484be44:
     field: 415c75c4-9891-451d-b333-be4acb59c1fd
     name: Fact
@@ -5456,7 +5573,7 @@ matrixBlockTypes:
     field: fd0c8e02-99b4-4ce5-ab89-b29cd0efc581
     name: 'Event Entries'
     handle: eventEntries
-    sortOrder: 12
+    sortOrder: 13
     fields:
       0e81d688-16ec-4519-9f60-7d2e2d72526d:
         name: Heading
@@ -7247,7 +7364,7 @@ sections:
         hasTitleField: true
         titleLabel: Title
         titleFormat: ''
-        sortOrder: 3
+        sortOrder: 1
         fieldLayouts:
           21db3772-d66c-42ec-a85b-aaa3775ca0a3:
             tabs:
@@ -7263,19 +7380,19 @@ sections:
                     sortOrder: 6
                   5cde5e79-0560-492c-b592-dd86cbde33c3:
                     required: false
-                    sortOrder: 15
+                    sortOrder: 16
                   78894bca-c6ce-4518-bb6f-fa94d7e7050e:
                     required: false
                     sortOrder: 8
                   899b11d8-2bd0-43d6-b39b-31e362b7534f:
                     required: false
-                    sortOrder: 11
+                    sortOrder: 12
                   af0e38e2-c040-47dc-a4f5-a2364d160a8f:
                     required: false
-                    sortOrder: 13
+                    sortOrder: 14
                   bb70071c-d8c0-4a11-91f6-d4ca02503a00:
                     required: false
-                    sortOrder: 14
+                    sortOrder: 15
                   bef74be8-b22d-4dd0-9217-9707bb43d888:
                     required: false
                     sortOrder: 3
@@ -7284,16 +7401,19 @@ sections:
                     sortOrder: 1
                   c7c1aa87-0003-4cdf-a925-11ae2f05ec24:
                     required: false
-                    sortOrder: 10
+                    sortOrder: 11
                   caf0bc06-3f8b-4152-ab45-8e9289767860:
                     required: false
                     sortOrder: 7
                   cccbcd50-864f-49a8-bbde-d44e04005272:
                     required: false
                     sortOrder: 5
+                  d2528b2a-d63a-477c-9c22-431796381707:
+                    required: false
+                    sortOrder: 10
                   e1abe78e-92f3-4d83-890e-7f67fd2db4e0:
                     required: false
-                    sortOrder: 12
+                    sortOrder: 13
                   e3f23e85-4290-41f4-bff9-7d12b6e1b52c:
                     required: false
                     sortOrder: 9
@@ -7361,16 +7481,13 @@ sections:
                   c18e25ad-bdd5-4629-a5d4-daf8579db08f:
                     required: false
                     sortOrder: 1
-                  d2528b2a-d63a-477c-9c22-431796381707:
-                    required: false
-                    sortOrder: 3
       3d2f9fee-52c3-44bb-86c1-f3c77e26b450:
         name: 'LEGACY Projects'
         handle: legacyProjects
         hasTitleField: true
         titleLabel: Title
         titleFormat: ''
-        sortOrder: 2
+        sortOrder: 3
         fieldLayouts:
           56ecda0c-259a-4836-b0c7-f60cd0906c90:
             tabs:
@@ -7465,7 +7582,7 @@ sections:
         hasTitleField: true
         titleLabel: Title
         titleFormat: ''
-        sortOrder: 1
+        sortOrder: 2
         fieldLayouts:
           b60719dd-2fa9-440b-bf52-6b8b194d5e31:
             tabs:
