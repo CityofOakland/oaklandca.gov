@@ -47,6 +47,31 @@ return [
         },
       ];
     },
+    'pressreleases.json' => function () {
+      return [
+        'elementType' => Entry::class,
+        'criteria' => [
+          'section' => 'news',
+          'relatedTo' => 17939
+        ],
+        'transformer' => function (Entry $entry) {
+          $body = '';
+          if ($entry->body) {
+            $body = Craft::$app->getElements()->parseRefs($entry->body->getRawContent());
+          }
+          return [
+            'title' => $entry->title,
+            'id' => $entry->id,
+            'author' => $entry->author->email,
+            'postDate' => $entry->postDate->format("Y-m-d\TH:i:sP"),
+            'summary' => $entry->summary,
+            'image' => !empty($entry->newsImage->one()) ? $entry->newsImage->one() : null,
+            'body' => $body,
+            'pressRelease' => !empty($entry->pressReleaseFile->one()) ? (string) $entry->pressReleaseFile->one()->url : null,
+          ];
+        },
+      ];
+    },
     'meetings.json' => function () {
       return [
         'elementType' => \Solspace\Calendar\Elements\Event::class,
