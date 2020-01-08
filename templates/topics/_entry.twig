@@ -6,7 +6,7 @@
 
 {% set contactState = entry.addresses | length or (entry.address | length and not entry.address.isEmpty) or entry.phoneNumbers | length or entry.emailAddress | length or entry.openHours | length %}
 {% set contentBuilder = entry.contentBuilder | length %}
-{% set about = true %}
+{% set about = entry.about | length %}
 {% set contact = contactState %}
 
 {% block content %}
@@ -27,7 +27,7 @@
       'events': relatedEvents.exists(),
       'news': relatedNews.exists(),
       'relatedPages': false,
-      'about': true,
+      'about': about,
       'contact': contactState
     }
   } %}
@@ -47,6 +47,8 @@
     {% include '_partials/_page-meetings.twig' %}
     {% include '_partials/_page-news.twig' %}
   {% endif %}
-  {% include '_partials/_page-about.twig' %}
+  {% if about %}
+    {% include '_partials/_page-about.twig' %}
+  {% endif %}
   {% include '_partials/_page-location.twig' %}
 {% endblock %}
