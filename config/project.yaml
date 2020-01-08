@@ -42,7 +42,7 @@ categoryGroups:
         hasUrls: false
         uriFormat: null
         template: null
-dateModified: 1577682649
+dateModified: 1578518199
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -4349,6 +4349,34 @@ matrixBlockTypes:
           columnType: text
         fieldGroup: null
         contentColumnType: text
+  7387d152-ff9e-42b8-82ca-ea3525fb723d:
+    field: fd0c8e02-99b4-4ce5-ab89-b29cd0efc581
+    name: 'Custom Template'
+    handle: customTemplate
+    sortOrder: 15
+    fields:
+      37b9cad8-04be-41c4-938a-c869de41bfc6:
+        name: 'Template Select'
+        handle: templateSelect
+        instructions: 'Select the template partial that is to be used in your custom layout.'
+        searchable: false
+        translationMethod: none
+        translationKeyFormat: null
+        type: superbig\templateselect\fields\TemplateSelectField
+        settings:
+          limitToSubfolder: _partials/_content-builder/_blocks/_custom-elements/
+        contentColumnType: string
+        fieldGroup: null
+    fieldLayouts:
+      be600bf9-8d6e-4a13-9a5a-2f58593ee956:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              37b9cad8-04be-41c4-938a-c869de41bfc6:
+                required: true
+                sortOrder: 1
   7b2905cb-3cdd-4812-9c93-b1bfb2fbda44:
     field: fd0c8e02-99b4-4ce5-ab89-b29cd0efc581
     name: Subheading
@@ -5944,6 +5972,10 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
+  template-select:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.0.0
 sections:
   07faad04-9ec4-4f68-9fe8-0ca20f189f8a:
     name: Staff
