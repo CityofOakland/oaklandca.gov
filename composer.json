@@ -43,7 +43,8 @@
     "doublesecretagency/craft-cpjs": "2.2.0",
     "selvinortiz/patrol": "3.1.3",
     "mmikkel/retcon": "2.0.12",
-    "verbb/expanded-singles": "1.0.7"
+    "verbb/expanded-singles": "1.0.7",
+    "superbig/craft3-templateselect": "2.0.2"
   },
   "autoload": {
     "psr-4": {

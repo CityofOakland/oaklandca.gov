@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "c566b868095a51b4e6cbae95d3904c76",
+    "content-hash": "162894ad5da7d9d3b07353ac078c007d",
     "packages": [
         {
             "name": "aelvan/imager",
@@ -5834,6 +5834,56 @@
                 "craftcms"
             ],
             "time": "2019-06-06T09:10:47+00:00"
+        },
+        {
+            "name": "superbig/craft3-templateselect",
+            "version": "2.0.2",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sjelfull/craft3-templateselect/zipball/0c964d0648fb9aea0072713819115e2af1e6e1b3",
+                "reference": "0c964d0648fb9aea0072713819115e2af1e6e1b3",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0-beta.23"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Template Select",
+                "handle": "template-select",
+                "schemaVersion": "2.0.0",
+                "hasCpSettings": false,
+                "hasCpSection": false,
+                "changelogUrl": "https://raw.githubusercontent.com/sjelfull/craft3-templateselect/master/CHANGELOG.md",
+                "class": "superbig\\templateselect\\TemplateSelect"
+            },
+            "autoload": {
+                "psr-4": {
+                    "superbig\\templateselect\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Superbig",
+                    "homepage": "https://superbig.co"
+                }
+            ],
+            "description": "A fieldtype that allows you to select a template from a dropdown.",
+            "keywords": [
+                "cms",
+                "craft",
+                "craft-plugin",
+                "craftcms",
+                "template select"
+            ],
+            "support": {
+                "docs": "https://github.com/sjelfull/craft3-templateselect/blob/master/README.md",
+                "issues": "https://github.com/sjelfull/craft3-templateselect/issues"
+            },
+            "time": "2019-05-22T12:42:40+00:00"
         },
         {
             "name": "supercool/tablemaker",

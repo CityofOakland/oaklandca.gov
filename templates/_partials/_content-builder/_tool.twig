@@ -59,6 +59,8 @@
       </div>
     {% case "textImageBlock" %}
       {% include templateBase ~ block.type ~ ".twig" %}
+    {% case "customTemplate" %}
+      {% include templateBase ~ "custom-elements/" ~ block.templateSelect %}
     {% case "table2Columns" %}
       {{ macro.tableBuilder(block, 2)}}
     {% case "table3Columns" %}
