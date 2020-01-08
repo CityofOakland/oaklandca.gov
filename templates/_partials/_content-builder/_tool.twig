@@ -20,7 +20,7 @@
   Further additions (like column widths and optional classes for styling) should follow a similar naming convention.
 #}
 {% macro tableBuilder(object, columns) %}
-  <table class="w-full">
+  <table class="w-full my-8">
     <thead class="bg-green-400 text-white font-bold">
       <tr>
         {% for col in 1..columns %}
@@ -35,7 +35,7 @@
         <tr>
           {% for col in 1..columns %}
             {% set colAttrib = 'column' ~ col ~ 'Cell' %}
-            <td class="border-green-400 o-6 body-text">{{ attribute(row, colAttrib) }}</td>
+            <td class="border-green-400 o-6 body-text o-override p-4">{{ attribute(row, colAttrib) }}</td>
           {% endfor %}
         </tr>
       {% endfor %}
