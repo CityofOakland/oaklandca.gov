@@ -1,0 +1,57 @@
+{%- cache using key "topics-export" for 1 day -%}
+{%- macro entries(field, title) -%}
+  {%- for entry in field.all() -%}
+    {%- if loop.first -%}
+    <MatrixBlock>
+      <Heading>{{ title }}</Heading>
+      <Entries>
+    {%- endif -%}
+        <EntryRelation>
+          <EntryTitle>{{ entry.title }}</EntryTitle>
+          <EntryID>{{ entry.id }}</EntryID>
+        </EntryRelation>
+    {%- if loop.last -%}
+      </Entries>
+    </MatrixBlock>
+    {%- endif -%}
+  {%- endfor -%}
+{%- endmacro -%}
+{%- macro events(field, title) -%}
+  {%- for entry in field.all() -%}
+    {%- if loop.first -%}
+    <MatrixBlock>
+      <Heading>{{ title }}</Heading>
+      <Events>
+    {%- endif -%}
+        <EventRelation>
+          <EventTitle>{{ entry.title }}</EventTitle>
+          <EventID>{{ entry.id }}</EventID>
+        </EventRelation>
+    {%- if loop.last -%}
+      </Events>
+    </MatrixBlock>
+    {%- endif -%}
+  {%- endfor -%}
+{%- endmacro -%}
+{%- import _self as macro -%}
+<?xml version="1.0" encoding="UTF-8"?>
+<entries>
+  {%- for entry in craft.entries.section("topics").type("topics").all() -%}
+  <entry>
+    <Title>{{ entry.title }}</Title>
+    <ID>{{ entry.title }}</ID>
+
+    <Matrix>
+      {{ macro.entries(entry.pageServices, "Services") }}
+      {{ macro.entries(entry.pageResources, "Resources") }}
+      {{ macro.entries(entry.pageDocuments, "Documents") }}
+      {{ macro.entries(entry.pageProjects, "Projects") }}
+      {{ macro.entries(entry.pageTopics, "Topics") }}
+      {{ macro.entries(entry.pageNews, "News") }}
+      {{ macro.events(entry.pageEvents, "Events") }}
+    </Matrix>
+  </entry>
+  {%- endfor -%}
+
+</entries>
+{%- endcache -%}

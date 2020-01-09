@@ -1,0 +1,39 @@
+{%- cache using key "boards-export" for 1 day -%}
+{%- macro entries(field, title) -%}
+  {%- for entry in field.all() -%}
+    {%- if loop.first -%}
+    <MatrixBlock>
+      <Heading>{{ title }}</Heading>
+      <Entries>
+    {%- endif -%}
+        <EntryRelation>
+          <EntryTitle>{{ entry.title }}</EntryTitle>
+          <EntryID>{{ entry.id }}</EntryID>
+        </EntryRelation>
+    {%- if loop.last -%}
+      </Entries>
+    </MatrixBlock>
+    {%- endif -%}
+  {%- endfor -%}
+{%- endmacro -%}
+{%- import _self as macro -%}
+<?xml version="1.0" encoding="UTF-8"?>
+<entries>
+  {%- for entry in craft.entries.section("boardsCommissions").type("boardsCommissions").all() -%}
+  <entry>
+    <Title>{{ entry.title }}</Title>
+    <ID>{{ entry.title }}</ID>
+
+    <Matrix>
+      {{ macro.entries(entry.pageDocuments, "Documents") }}
+      {{ macro.entries(entry.pageProjects, "Projects") }}
+      {{ macro.entries(entry.pageTopics, "Topics") }}
+      {{ macro.entries(entry.pageServices, "Services") }}
+      {{ macro.entries(entry.pageResources, "Resources") }}
+      {{ macro.entries(entry.pageNews, "News") }}
+    </Matrix>
+  </entry>
+  {%- endfor -%}
+
+</entries>
+{%- endcache -%}
