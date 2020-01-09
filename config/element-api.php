@@ -3,6 +3,17 @@
 use craft\elements\Entry;
 use craft\helpers\UrlHelper;
 
+function cbEntries($section, $element)
+{
+  $sectionArray = [];
+  if (!empty($element->$section)) {
+    foreach ($element->$section as $value) {
+      $sectionArray[] = $value->id;
+    }
+  }
+  return $sectionArray;
+}
+
 return [
   'endpoints' => [
     'volunteers.json' => function () {
@@ -43,6 +54,47 @@ return [
             'title' => $entry->title,
             'id' => $entry->id,
             'body' => $body,
+          ];
+        },
+      ];
+    },
+    'export/departments.json' => function () {
+      return [
+        'elementType' => Entry::class,
+        'criteria' => [
+          'section' => 'departments',
+          'type' => 'departments'
+        ],
+        'transformer' => function (Entry $entry) {
+          return [
+            'title' => $entry->title,
+            'id' => $entry->id,
+            'matrix' => [
+              'serviceBlock' => !empty($entry->pageServices->all()) ? [
+                'title' => "Services",
+                cbEntries("pageServices", $entry)
+              ] : null,
+              'resourceBlock' => !empty($entry->pageResources->all()) ? [
+                'title' => "Resources",
+                cbEntries("pageResources", $entry)
+              ] : null,
+              'boardBlock' => !empty($entry->pageBoardsCommissions->all()) ? [
+                'title' => "Boards & Commissions",
+                cbEntries("pageBoardsCommissions", $entry)
+              ] : null,
+              'newsBlock' => !empty($entry->pageNews->all()) ? [
+                'title' => "News",
+                cbEntries("pageNews", $entry)
+              ] : null,
+              'topicBlock' => !empty($entry->pageTopics->all()) ? [
+                'title' => "Topics",
+                cbEntries("pageTopics", $entry)
+              ] : null,
+              'documentBlock' => !empty($entry->pageDocuments->all()) ? [
+                'title' => "Documents",
+                cbEntries("pageDocuments", $entry)
+              ] : null,
+            ]
           ];
         },
       ];
