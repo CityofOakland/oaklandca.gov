@@ -19,7 +19,9 @@
 {%- import _self as macro -%}
 <?xml version="1.0" encoding="UTF-8"?>
 <entries>
-  {%- for entry in craft.entries.section("departments").type("departments").all() -%}
+  {%- set query = craft.entries.section("departments").type("departments").limit(25) -%}
+  {%- paginate query as pageInfo, pageEntries -%}
+  {%- for entry in pageEntries -%}
   <entry>
     <Title>{{ entry.title }}</Title>
     <ID>{{ entry.title }}</ID>
@@ -35,6 +37,9 @@
     </Matrix>
   </entry>
   {%- endfor -%}
-
+  <paginate>
+    {%- if pageInfo.prevUrl %}<prev>{{ pageInfo.prevUrl }}</prev>{%- endif -%}
+    {%- if pageInfo.nextUrl %}<next>{{ pageInfo.nextUrl }}</next>{%- endif -%}
+  </paginate>
 </entries>
 {%- endcache -%}
