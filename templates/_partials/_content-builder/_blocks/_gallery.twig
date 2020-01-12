@@ -1,14 +1,14 @@
 {% js %}lightGallery(document.querySelector('#js-photoGallery-{{ block.id }}'));{% endjs %}
-<div class="flex flex-row flex-wrap" id="js-photoGallery-{{ block.id }}">
+<div class="flex flex-row flex-wrap my-8" id="js-photoGallery-{{ block.id }}">
   {% for photo in block.images.all() %}
-    <figure class="w-1/3" data-src="{{ photo.url }}" data-sub-html="<p class='font-bold'>{{ photo.title }}</p><p>{{ photo.altText }}</p>">
+    <figure class="w-1/6" data-src="{{ photo.url }}" data-sub-html="<p class='font-bold'>{{ photo.title }}</p><p>{{ photo.altText }}</p>">
       <a href="{{ photo.url }}">
         {% set transformedImage = craft.imager.transformImage(photo, { width: 400}, {
           ratio: 1/1, position: photo.getFocalPoint()
         }, {
           fillTransforms: true
         }) %}
-        <img src="{{ transformedImage.url }}">
+        <img class="block" src="{{ transformedImage.url }}">
       </a>
     </figure>
   {% endfor %}

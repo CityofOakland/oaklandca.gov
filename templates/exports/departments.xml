@@ -1,0 +1,45 @@
+{%- cache using key "departments-export" for 1 day -%}
+{%- macro entries(field, title) -%}
+  {%- for entry in field.all() -%}
+    {%- if loop.first -%}
+    <MatrixBlock>
+      <Heading>{{ title }}</Heading>
+      <Entries>
+    {%- endif -%}
+        <EntryRelation>
+          <EntryTitle>{{ entry.title }}</EntryTitle>
+          <EntryID>{{ entry.id }}</EntryID>
+        </EntryRelation>
+    {%- if loop.last -%}
+      </Entries>
+    </MatrixBlock>
+    {%- endif -%}
+  {%- endfor -%}
+{%- endmacro -%}
+{%- import _self as macro -%}
+<?xml version="1.0" encoding="UTF-8"?>
+<entries>
+  {%- set query = craft.entries.section("departments").type("departments").limit(25) -%}
+  {%- paginate query as pageInfo, pageEntries -%}
+  {%- for entry in pageEntries -%}
+  <entry>
+    <Title>{{ entry.title }}</Title>
+    <ID>{{ entry.title }}</ID>
+
+    <Matrix>
+      {{ macro.entries(entry.pageServices, "Services") }}
+      {{ macro.entries(entry.pageResources, "Resources") }}
+      {{ macro.entries(entry.pageBoardsCommissions, "Boards & Commissions") }}
+      {{ macro.entries(entry.pageNews, "News") }}
+      {{ macro.entries(entry.pageTopics, "Topics") }}
+      {{ macro.entries(entry.pageProjects, "Projects") }}
+      {{ macro.entries(entry.pageDocuments, "Documents") }}
+    </Matrix>
+  </entry>
+  {%- endfor -%}
+  <paginate>
+    {%- if pageInfo.prevUrl %}<prev>{{ pageInfo.prevUrl }}</prev>{%- endif -%}
+    {%- if pageInfo.nextUrl %}<next>{{ pageInfo.nextUrl }}</next>{%- endif -%}
+  </paginate>
+</entries>
+{%- endcache -%}
