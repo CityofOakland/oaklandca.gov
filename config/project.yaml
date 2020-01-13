@@ -42,7 +42,7 @@ categoryGroups:
         hasUrls: false
         uriFormat: null
         template: null
-dateModified: 1578762961
+dateModified: 1578944737
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -3247,7 +3247,7 @@ matrixBlockTypes:
           source: null
           targetSiteId: null
           viewMode: null
-          limit: '9'
+          limit: '12'
           selectionLabel: ''
           localizeRelations: false
           validateRelatedElements: ''
@@ -3976,7 +3976,7 @@ matrixBlockTypes:
       260c86d2-a919-42ce-ba0f-64f1d25952d5:
         name: Entries
         handle: entries
-        instructions: 'Select up to 9 entries to include as medium-sized links on your page'
+        instructions: 'Select up to 9 entries to include as large-sized links on your page'
         searchable: false
         translationMethod: site
         translationKeyFormat: null
