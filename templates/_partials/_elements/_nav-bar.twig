@@ -11,7 +11,7 @@
 {% set mainNav = craft.entries.section('navigation').slug('main-nav').one() %}
 
 <div id="nav-wrapper" class="fixed w-full z-40 bg-green-600 h-8">
-  <div class="hidden md:block py-1 z-40 container text-sm h-8">
+  <div class="oak-hidden md:block py-1 z-40 container text-sm h-8">
     <ul class="flex w-full font-bold my-0">
       <li class="flex-1">
         <a href="/officials/libby-schaaf" class="text-white hover:text-white hover:underline">Mayor Libby Schaaf</a>
@@ -33,11 +33,11 @@
             <span class="hidden-visually">Home</span>
           </a>
         </div>
-        <button class="text-xs font-semibold sm:text-base absolute flex flex-col flex-wrap items-center tracking-widest right-0 uppercase lg:hidden" id="menu-toggle">
+        <button class="text-xs font-semibold sm:text-base absolute flex flex-col flex-wrap items-center tracking-widest right-0 uppercase lg:oak-hidden" id="menu-toggle">
           <svg enable-background="new 0 0 32 32" height="32" viewBox="0 0 32 32" width="32" class="w-5 h-5 inline-block" xmlns="http://www.w3.org/2000/svg" fill="#FFF"><path d="m4 10h24c1.104 0 2-.896 2-2s-.896-2-2-2h-24c-1.104 0-2 .896-2 2s.896 2 2 2zm24 4h-24c-1.104 0-2 .896-2 2s.896 2 2 2h24c1.104 0 2-.896 2-2s-.896-2-2-2zm0 8h-24c-1.104 0-2 .896-2 2s.896 2 2 2h24c1.104 0 2-.896 2-2s-.896-2-2-2z"/></svg>
           Menu
         </button>
-        <ul class="hidden uppercase font-bold w-full justify-end flex-1 tracking-wide text-sm lg:flex">
+        <ul class="oak-hidden uppercase font-bold w-full justify-end flex-1 tracking-wide text-sm lg:flex">
           {% for nav in mainNav.navBuilder.all() %}
             {% set link = nav.navLink %}
             <li class="{% if not loop.first %}ml-4 lg:ml-6 xl:ml-8{% endif %}">
@@ -59,7 +59,7 @@
       <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" type="text/javascript"></script>
     </div>
     {% if craft.app.request.segments() %}
-      <div class="hidden bg-green-400 text-white absolute items-center w-full right-0 bottom-0 text-base" id="global-search-bar" style="transform: translateY(100%);">
+      <div class="oak-hidden bg-green-400 text-white absolute items-center w-full right-0 bottom-0 text-base" id="global-search-bar" style="transform: translateY(100%);">
         <div class="container py-4">
           <form action="{{ url('search') }}" class="w-full">
             <div class="flex w-full h-full">

@@ -6,7 +6,7 @@
         <a class="mx-2" href="{{ pageInfo.prevUrl }}">‹</a>
       {% endif %}
 
-      <span class="hidden sm:inline">
+      <span class="oak-hidden sm:inline">
         {% for page, url in pageInfo.getPrevUrls(5) %}
           <a class="mx-2" href="{{ url }}">{{ page }}</a>
         {% endfor %}
