@@ -30,7 +30,7 @@
           <span class="block">{{ department }}</span>
           {% if email | length %}
             {% set e = email | replace({'@oaklandnet.com': '@oaklandca.gov'}) %}
-            <a class="block overflow-x-hidden" aria-label="Email {{ entry.groupHeadName ?? entry.title }}" href="mailto:{{ e }}"><span class="hidden truncate md:block">{{ e }}</span><span class="md:hidden">Email</span></a>
+            <a class="block overflow-x-hidden" aria-label="Email {{ entry.groupHeadName ?? entry.title }}" href="mailto:{{ e }}"><span class="oak-hidden truncate md:block">{{ e }}</span><span class="md:oak-hidden">Email</span></a>
           {% endif %}
           {% if phone | length %}
             <a class="block" href="tel:{{ phone }}">{{ phone }}</a>
