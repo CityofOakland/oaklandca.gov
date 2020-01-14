@@ -8,6 +8,14 @@
   overflow: hidden;
 }
 
+/*  Formstack unfortunately includes a .hidden class that overrides our Tailwind default class, 
+    so we need to @apply it's class to another one to avoid namespace collision  */
+@responsive {
+  .oak-hidden {
+    @apply hidden;
+  }
+}
+
 .o-override > * {
   margin-top: 0;
   margin-bottom: 0;

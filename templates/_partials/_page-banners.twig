@@ -80,7 +80,7 @@
   {% endif %}
 
   {%- set sideNav -%}
-    <div class="hidden mr-10 w-1/6 sm:block font-heading font-bold">
+    <div class="oak-hidden mr-10 w-1/6 sm:block font-heading font-bold">
       <ul class="text-sm my-0 o-2">
         {% for item in sideNavLinks %}
           <li>
@@ -95,7 +95,7 @@
   {%- endset -%}
 {% elseif customNav %}
   {%- set sideNav -%}
-    <div class="hidden mr-10 w-1/6 sm:block font-heading font-bold">
+    <div class="oak-hidden mr-10 w-1/6 sm:block font-heading font-bold">
       <ul class="text-sm my-0 o-2">
         {% for item in customNav %}
           <li>
@@ -111,7 +111,7 @@
 {% else %}
   {%- set sideNav -%}
     {% if navMenu is defined %}
-      <div class="hidden mr-10 w-1/6 sm:block font-heading font-bold">
+      <div class="oak-hidden mr-10 w-1/6 sm:block font-heading font-bold">
         <ul class="text-sm my-0 o-2">
           {% for key,value in navMenu %}
             {% if value %}
