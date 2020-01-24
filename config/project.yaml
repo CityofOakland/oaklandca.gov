@@ -42,7 +42,7 @@ categoryGroups:
         hasUrls: false
         uriFormat: null
         template: null
-dateModified: 1578944737
+dateModified: 1579879742
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -10001,3 +10001,13 @@ volumes:
       cfPrefix: ''
       autoFocalPoint: ''
     sortOrder: 3
+    fieldLayouts:
+      85581bc6-c596-4282-bc53-e011830eee84:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              fff5cf49-87e6-4751-9032-b4ca8136e237:
+                required: true
+                sortOrder: 1
