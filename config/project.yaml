@@ -42,7 +42,7 @@ categoryGroups:
         hasUrls: false
         uriFormat: null
         template: null
-dateModified: 1580242115
+dateModified: 1580243209
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -5722,15 +5722,6 @@ matrixBlockTypes:
         fieldGroup: null
         contentColumnType: text
 plugins:
-  audit:
-    enabled: '1'
-    licenseKey: DIHEDGOO9YB18029NWMB3149
-    schemaVersion: 1.0.2
-    settings:
-      enabled: true
-      enabledGeolocation: true
-      pruneDays: 30
-      updateAuthKey: xUyghFHyWCvtN7XY
   aws-s3:
     enabled: '1'
     licenseKey: null
@@ -5786,17 +5777,6 @@ plugins:
     licenseKey: null
     schemaVersion: 1.0.0
     settings: null
-  environment-label:
-    enabled: '1'
-    licenseKey: null
-    schemaVersion: 1.0.0
-    settings:
-      labelColor: '#212529'
-      labelText: 'Production Site'
-      prefixText: null
-      showLabel: true
-      suffixText: null
-      textColor: '#FFFFFF'
   feed-me:
     enabled: '1'
     licenseKey: null
@@ -5836,11 +5816,6 @@ plugins:
     enabled: '1'
     licenseKey: null
     schemaVersion: 1.0.0
-    settings: null
-  redirect:
-    enabled: '1'
-    licenseKey: null
-    schemaVersion: 1.0.5
     settings: null
   retour:
     enabled: '1'
@@ -5928,10 +5903,6 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 0.1.0
-  inventory:
-    edition: standard
-    enabled: true
-    schemaVersion: 2.0.0
   imager:
     edition: standard
     enabled: true
@@ -5965,10 +5936,6 @@ plugins:
     enabled: true
     schemaVersion: 3.0.0
   retcon:
-    edition: standard
-    enabled: true
-    schemaVersion: 1.0.0
-  expanded-singles:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
