@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "e904ade043febd73f14ca7a16ad43a32",
+    "content-hash": "ea1c2fc9e8559b2f531687e027c3ccb2",
     "packages": [
         {
             "name": "aelvan/imager",
@@ -7305,11 +7305,11 @@
         },
         {
             "name": "vaersaagod/matrixmate",
-            "version": "1.2.2",
+            "version": "1.2.3",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vaersaagod/matrixmate/zipball/176a55728ae7925e152bb75e8613bf9035a95295",
-                "reference": "176a55728ae7925e152bb75e8613bf9035a95295",
+                "url": "https://api.github.com/repos/vaersaagod/matrixmate/zipball/0a8e56400377738015940d7a3139cc4133b75ee7",
+                "reference": "0a8e56400377738015940d7a3139cc4133b75ee7",
                 "shasum": ""
             },
             "require": {
@@ -7329,7 +7329,6 @@
                     "vaersaagod\\matrixmate\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -7341,13 +7340,17 @@
             ],
             "description": "Welding Matrix into shape, mate!",
             "keywords": [
-                "Craft",
                 "cms",
+                "craft",
                 "craft-plugin",
                 "craftcms",
                 "matrixmate"
             ],
-            "time": "2019-09-29T10:46:41+00:00"
+            "support": {
+                "docs": "https://github.com/vaersaagod/matrixmate/blob/master/README.md",
+                "issues": "https://github.com/vaersaagod/matrixmate/issues"
+            },
+            "time": "2020-01-28T20:58:11+00:00"
         },
         {
             "name": "verbb/field-manager",
