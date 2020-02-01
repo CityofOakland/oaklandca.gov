@@ -84,9 +84,17 @@
             </div>
           {% endif %}
         {% endif %}
+        {% if entry.registrationLink | length %}
+          <p>
+            <a class="btn" href="{{ entry.registrationLink }}">Register for this event</a>
+          </p>
+        {% endif %}
         {% if entry.eventContact | length %}
           <h3>Contact</h3>
           {{ entry.eventContact }}
+        {% endif %}
+        {% if entry.embeddedContent.exists() %}
+          {{ entry.embeddedContent.one.codeInsertion | raw }}
         {% endif %}
       </div>
       <div class="sm:flex-1">

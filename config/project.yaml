@@ -42,7 +42,7 @@ categoryGroups:
         hasUrls: false
         uriFormat: null
         template: null
-dateModified: 1580243209
+dateModified: 1580585846
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -339,6 +339,19 @@ fields:
       validateRelatedElements: '1'
     contentColumnType: string
     fieldGroup: c964d82c-a4e7-4ec4-ad42-7c3e843193c0
+  1cedbae2-6f4a-4212-b968-bb71bde9b7bc:
+    name: 'Registration Link'
+    handle: registrationLink
+    instructions: 'Enter the URL for an online registration page (Eg., Eventbrite) for your visitors to sign up for this event.'
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\Url
+    settings:
+      placeholder: ''
+      maxLength: '255'
+    contentColumnType: string(255)
+    fieldGroup: 7a44f3bc-fbe1-424a-a4ea-6bb6f3528d75
   1f6c0b74-c954-4e91-a513-8cd9aad771c4:
     name: 'Board Hours'
     handle: boardHours
