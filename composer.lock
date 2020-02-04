@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "9b6fcb3fe04d1f2e08c55bb34d9c7aea",
+    "content-hash": "003e442b2da70b5f757a63f23d950806",
     "packages": [
         {
             "name": "aelvan/imager",
@@ -726,11 +726,11 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "3.4.1",
+            "version": "3.4.3",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/9a9d5a5d1f512105042edb55b2d0468de4e72f3d",
-                "reference": "9a9d5a5d1f512105042edb55b2d0468de4e72f3d",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/8436bfe373e81a2cc9d551feb4f9bad8d0fbdefb",
+                "reference": "8436bfe373e81a2cc9d551feb4f9bad8d0fbdefb",
                 "shasum": ""
             },
             "require": {
@@ -811,7 +811,7 @@
                 "docs": "https://docs.craftcms.com/v3/",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2020-01-29T21:03:20+00:00"
+            "time": "2020-02-04T00:47:42+00:00"
         },
         {
             "name": "craftcms/element-api",
@@ -4550,11 +4550,11 @@
         },
         {
             "name": "nystudio107/craft-twigpack",
-            "version": "1.1.13",
+            "version": "1.1.14",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-twigpack/zipball/60231fdc64a55ae7d8553d5708b417e54e5929e6",
-                "reference": "60231fdc64a55ae7d8553d5708b417e54e5929e6",
+                "url": "https://api.github.com/repos/nystudio107/craft-twigpack/zipball/03b1fa0d87e4ecead097e6bd982e2c31f56a2922",
+                "reference": "03b1fa0d87e4ecead097e6bd982e2c31f56a2922",
                 "shasum": ""
             },
             "require": {
@@ -4600,7 +4600,7 @@
                 "docs": "https://nystudio107.com/plugins/twigpack/documentation",
                 "issues": "https://nystudio107.com/plugins/twigpack/support"
             },
-            "time": "2020-01-22T18:33:47+00:00"
+            "time": "2020-02-04T22:16:13+00:00"
         },
         {
             "name": "nystudio107/craft-typogrify",
@@ -5861,15 +5861,15 @@
         },
         {
             "name": "solspace/craft3-calendar",
-            "version": "2.0.25",
+            "version": "3.0.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/solspace/craft3-calendar/zipball/53ebe92426648802866f738137ea206771f95c30",
-                "reference": "53ebe92426648802866f738137ea206771f95c30",
+                "url": "https://api.github.com/repos/solspace/craft3-calendar/zipball/b1d2135cd693ccb087299f62264debb8d9fe7fe3",
+                "reference": "b1d2135cd693ccb087299f62264debb8d9fe7fe3",
                 "shasum": ""
             },
             "require": {
-                "craftcms/cms": "^3.0.0",
+                "craftcms/cms": "^3.4.0",
                 "nesbot/carbon": "^1.22.1|^2.19",
                 "php": ">=7.0",
                 "rlanvin/php-rrule": "~1.6.0",
@@ -5880,13 +5880,13 @@
             },
             "type": "craft-plugin",
             "extra": {
-                "schemaVersion": "2.0.6",
+                "schemaVersion": "3.0.0",
                 "handle": "calendar",
                 "class": "Solspace\\Calendar\\Calendar",
                 "name": "Calendar",
                 "developer": "Solspace",
-                "developerUrl": "https://docs.solspace.com/craft/calendar/v2/",
-                "documentationUrl": "https://docs.solspace.com/craft/calendar/v2/",
+                "developerUrl": "https://docs.solspace.com/craft/calendar/v3/",
+                "documentationUrl": "https://docs.solspace.com/craft/calendar/v3/",
                 "changelogUrl": "https://raw.githubusercontent.com/solspace/craft3-calendar/master/CHANGELOG.md",
                 "hasSettings": true,
                 "hasCpSection": true
@@ -5896,7 +5896,6 @@
                     "Solspace\\Calendar\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "authors": [
                 {
                     "name": "Solspace",
@@ -5904,7 +5903,7 @@
                 }
             ],
             "description": "The most reliable and powerful event management plugin for Craft.",
-            "time": "2019-10-30T13:55:52+00:00"
+            "time": "2020-02-04T15:54:32+00:00"
         },
         {
             "name": "solspace/craft3-commons",
@@ -7831,11 +7830,11 @@
         },
         {
             "name": "verbb/super-table",
-            "version": "2.4.0",
+            "version": "2.4.4",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/verbb/super-table/zipball/0c42d9f41a984678569fb030c387754726769a84",
-                "reference": "0c42d9f41a984678569fb030c387754726769a84",
+                "url": "https://api.github.com/repos/verbb/super-table/zipball/746cc0122329dff4548227caa68852222bceabee",
+                "reference": "746cc0122329dff4548227caa68852222bceabee",
                 "shasum": ""
             },
             "require": {
@@ -7880,7 +7879,7 @@
                 "docs": "https://github.com/verbb/super-table",
                 "rss": "https://github.com/verbb/super-table/commits/v2.atom"
             },
-            "time": "2020-01-29T07:15:52+00:00"
+            "time": "2020-02-03T01:25:40+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -8122,11 +8121,11 @@
         },
         {
             "name": "voku/portable-utf8",
-            "version": "5.4.38",
+            "version": "5.4.39",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/voku/portable-utf8/zipball/0991729d5ca364078b00fe0e107f87ec0d53b0d7",
-                "reference": "0991729d5ca364078b00fe0e107f87ec0d53b0d7",
+                "url": "https://api.github.com/repos/voku/portable-utf8/zipball/e462e8985a80cbd927765fd7e09f52bb103c9797",
+                "reference": "e462e8985a80cbd927765fd7e09f52bb103c9797",
                 "shasum": ""
             },
             "require": {
@@ -8137,9 +8136,6 @@
                 "symfony/polyfill-mbstring": "~1.0",
                 "symfony/polyfill-php72": "~1.0",
                 "voku/portable-ascii": "~1.4"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~6.0 || ~7.0"
             },
             "suggest": {
                 "ext-ctype": "Use Ctype for e.g. hexadecimal digit detection",
@@ -8159,7 +8155,6 @@
                     "bootstrap.php"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "(Apache-2.0 or GPL-2.0)"
             ],
@@ -8187,7 +8182,7 @@
                 "utf-8",
                 "utf8"
             ],
-            "time": "2020-01-14T13:30:41+00:00"
+            "time": "2020-01-30T15:12:06+00:00"
         },
         {
             "name": "voku/stop-words",
