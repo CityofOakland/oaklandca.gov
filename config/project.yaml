@@ -42,7 +42,7 @@ categoryGroups:
     structure:
       maxLevels: 1
       uid: b4e9ab1c-aa42-46f9-a679-898119f39e8d
-dateModified: 1580251440
+dateModified: 1580859241
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -187,6 +187,19 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Date
+  09053ba3-5577-4175-ba56-263da6112729:
+    contentColumnType: string(255)
+    fieldGroup: 7a44f3bc-fbe1-424a-a4ea-6bb6f3528d75
+    handle: registrationLink
+    instructions: 'Enter the URL for an online registration page (Eg., Eventbrite) for your visitors to sign up for this event.'
+    name: 'Registration Link'
+    searchable: true
+    settings:
+      maxLength: '255'
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Url
   09e3ac15-7089-4e7f-9f6b-33267bfebc94:
     contentColumnType: string
     fieldGroup: 8e8ee56e-cdb8-4206-a3b5-c3aa0eb3a884
@@ -6611,7 +6624,7 @@ plugins:
   calendar:
     enabled: '1'
     licenseKey: PRJ91600ENZBQ5S7HS7UE93Z
-    schemaVersion: 2.0.6
+    schemaVersion: 3.0.0
     settings:
       allDay: false
       authoredEventEditOnly: ''
