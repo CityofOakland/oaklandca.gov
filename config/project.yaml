@@ -42,7 +42,7 @@ categoryGroups:
     structure:
       maxLevels: 1
       uid: b4e9ab1c-aa42-46f9-a679-898119f39e8d
-dateModified: 1580876022
+dateModified: 1580928775
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -6805,7 +6805,7 @@ plugins:
     schemaVersion: 2.1.1
 sections:
   07faad04-9ec4-4f68-9fe8-0ca20f189f8a:
-    enableVersioning: true
+    enableVersioning: false
     entryTypes:
       3f29603b-dede-4258-8ae1-fc01c48f372d:
         fieldLayouts:
@@ -6900,6 +6900,7 @@ sections:
     previewTargets:
       -
         label: 'Primary entry page'
+        refresh: '1'
         urlFormat: '{url}'
     propagationMethod: all
     siteSettings:
@@ -6947,6 +6948,7 @@ sections:
     previewTargets:
       -
         label: 'Primary entry page'
+        refresh: '1'
         urlFormat: '{url}'
     propagationMethod: all
     siteSettings:
@@ -7018,6 +7020,7 @@ sections:
     previewTargets:
       -
         label: 'Primary entry page'
+        refresh: '1'
         urlFormat: '{url}'
     propagationMethod: all
     siteSettings:
@@ -7065,6 +7068,7 @@ sections:
     previewTargets:
       -
         label: 'Primary entry page'
+        refresh: '1'
         urlFormat: '{url}'
     propagationMethod: all
     siteSettings:
@@ -7112,6 +7116,7 @@ sections:
     previewTargets:
       -
         label: 'Primary entry page'
+        refresh: '1'
         urlFormat: '{url}'
     propagationMethod: all
     siteSettings:
@@ -7239,6 +7244,7 @@ sections:
     previewTargets:
       -
         label: 'Primary entry page'
+        refresh: '1'
         urlFormat: '{url}'
     propagationMethod: all
     siteSettings:
@@ -7390,6 +7396,7 @@ sections:
     previewTargets:
       -
         label: 'Primary entry page'
+        refresh: '1'
         urlFormat: '{url}'
     propagationMethod: all
     siteSettings:
@@ -7450,7 +7457,7 @@ sections:
                     sortOrder: 1
                 name: SEO
                 sortOrder: 2
-        handle: pressRoom
+        handle: mediaCenter
         hasTitleField: false
         name: 'Media Center'
         sortOrder: 1
@@ -7461,6 +7468,7 @@ sections:
     previewTargets:
       -
         label: 'Primary entry page'
+        refresh: '1'
         urlFormat: '{url}'
     propagationMethod: all
     siteSettings:
@@ -7557,6 +7565,7 @@ sections:
     previewTargets:
       -
         label: 'Primary entry page'
+        refresh: '1'
         urlFormat: '{url}'
     propagationMethod: all
     siteSettings:
@@ -7646,6 +7655,7 @@ sections:
     previewTargets:
       -
         label: 'Primary entry page'
+        refresh: '1'
         urlFormat: '{url}'
     propagationMethod: all
     siteSettings:
@@ -7693,6 +7703,7 @@ sections:
     previewTargets:
       -
         label: 'Primary entry page'
+        refresh: '1'
         urlFormat: '{url}'
     propagationMethod: all
     siteSettings:
@@ -7826,6 +7837,7 @@ sections:
     previewTargets:
       -
         label: 'Primary entry page'
+        refresh: '1'
         urlFormat: '{url}'
     propagationMethod: all
     siteSettings:
@@ -7906,6 +7918,7 @@ sections:
     previewTargets:
       -
         label: 'Primary entry page'
+        refresh: '1'
         urlFormat: '{url}'
     propagationMethod: all
     siteSettings:
@@ -7953,6 +7966,7 @@ sections:
     previewTargets:
       -
         label: 'Primary entry page'
+        refresh: '1'
         urlFormat: '{url}'
     propagationMethod: all
     siteSettings:
@@ -8037,6 +8051,7 @@ sections:
     previewTargets:
       -
         label: 'Primary entry page'
+        refresh: '1'
         urlFormat: '{url}'
     propagationMethod: all
     siteSettings:
@@ -8143,6 +8158,7 @@ sections:
     previewTargets:
       -
         label: 'Primary entry page'
+        refresh: '1'
         urlFormat: '{url}'
     propagationMethod: all
     siteSettings:
@@ -8227,6 +8243,7 @@ sections:
     previewTargets:
       -
         label: 'Primary entry page'
+        refresh: '1'
         urlFormat: '{url}'
     propagationMethod: all
     siteSettings:
@@ -8274,6 +8291,7 @@ sections:
     previewTargets:
       -
         label: 'Primary entry page'
+        refresh: '1'
         urlFormat: '{url}'
     propagationMethod: all
     siteSettings:
@@ -8619,6 +8637,7 @@ sections:
     previewTargets:
       -
         label: 'Primary entry page'
+        refresh: '1'
         urlFormat: '{url}'
     propagationMethod: all
     siteSettings:
@@ -8666,6 +8685,7 @@ sections:
     previewTargets:
       -
         label: 'Primary entry page'
+        refresh: '1'
         urlFormat: '{url}'
     propagationMethod: all
     siteSettings:
@@ -8750,6 +8770,7 @@ sections:
     previewTargets:
       -
         label: 'Primary entry page'
+        refresh: '1'
         urlFormat: '{url}'
     propagationMethod: all
     siteSettings:
@@ -8797,6 +8818,7 @@ sections:
     previewTargets:
       -
         label: 'Primary entry page'
+        refresh: '1'
         urlFormat: '{url}'
     propagationMethod: all
     siteSettings:
@@ -8844,6 +8866,7 @@ sections:
     previewTargets:
       -
         label: 'Primary entry page'
+        refresh: '1'
         urlFormat: '{url}'
     propagationMethod: all
     siteSettings:
@@ -9061,6 +9084,7 @@ sections:
     previewTargets:
       -
         label: 'Primary entry page'
+        refresh: '1'
         urlFormat: '{url}'
     propagationMethod: all
     siteSettings:
@@ -9172,6 +9196,7 @@ sections:
     previewTargets:
       -
         label: 'Primary entry page'
+        refresh: '1'
         urlFormat: '{url}'
     propagationMethod: all
     siteSettings:
@@ -9249,6 +9274,7 @@ sections:
     previewTargets:
       -
         label: 'Primary entry page'
+        refresh: '1'
         urlFormat: '{url}'
     propagationMethod: all
     siteSettings:
@@ -9296,6 +9322,7 @@ sections:
     previewTargets:
       -
         label: 'Primary entry page'
+        refresh: '1'
         urlFormat: '{url}'
     propagationMethod: all
     siteSettings:
@@ -9343,6 +9370,7 @@ sections:
     previewTargets:
       -
         label: 'Primary entry page'
+        refresh: '1'
         urlFormat: '{url}'
     propagationMethod: all
     siteSettings:
@@ -9390,6 +9418,7 @@ sections:
     previewTargets:
       -
         label: 'Primary entry page'
+        refresh: '1'
         urlFormat: '{url}'
     propagationMethod: all
     siteSettings:
@@ -9437,6 +9466,7 @@ sections:
     previewTargets:
       -
         label: 'Primary entry page'
+        refresh: '1'
         urlFormat: '{url}'
     propagationMethod: all
     siteSettings:
@@ -9484,6 +9514,7 @@ sections:
     previewTargets:
       -
         label: 'Primary entry page'
+        refresh: '1'
         urlFormat: '{url}'
     propagationMethod: all
     siteSettings:
@@ -9534,6 +9565,7 @@ sections:
     previewTargets:
       -
         label: 'Primary entry page'
+        refresh: '1'
         urlFormat: '{url}'
     propagationMethod: all
     siteSettings:
@@ -9581,6 +9613,7 @@ sections:
     previewTargets:
       -
         label: 'Primary entry page'
+        refresh: '1'
         urlFormat: '{url}'
     propagationMethod: all
     siteSettings:
@@ -9628,6 +9661,7 @@ sections:
     previewTargets:
       -
         label: 'Primary entry page'
+        refresh: '1'
         urlFormat: '{url}'
     propagationMethod: all
     siteSettings:
@@ -9740,6 +9774,7 @@ sections:
     previewTargets:
       -
         label: 'Primary entry page'
+        refresh: '1'
         urlFormat: '{url}'
     propagationMethod: all
     siteSettings:
@@ -9803,6 +9838,7 @@ sections:
     previewTargets:
       -
         label: 'Primary entry page'
+        refresh: '1'
         urlFormat: '{url}'
     propagationMethod: all
     siteSettings:
