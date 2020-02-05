@@ -42,7 +42,7 @@ categoryGroups:
     structure:
       maxLevels: 1
       uid: b4e9ab1c-aa42-46f9-a679-898119f39e8d
-dateModified: 1580873309
+dateModified: 1580876022
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -6673,6 +6673,19 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 3.0.0
+    settings:
+      maintenanceModeAuthorizedIps:
+        - '::1'
+        - 127.0.0.1
+      maintenanceModeEnabled: ''
+      maintenanceModePageUrl: /offline
+      maintenanceModeResponseStatusCode: 410
+      primaryDomain: null
+      redirectStatusCode: 302
+      sslRoutingBaseUrl: 'https://www.oaklandca.gov'
+      sslRoutingEnabled: '1'
+      sslRoutingRestrictedUrls:
+        - /
   phone-number:
     enabled: '1'
     licenseKey: null
