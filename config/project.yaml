@@ -42,7 +42,7 @@ categoryGroups:
     structure:
       maxLevels: 1
       uid: b4e9ab1c-aa42-46f9-a679-898119f39e8d
-dateModified: 1580928775
+dateModified: 1581007966
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -6584,6 +6584,7 @@ plugins:
     schemaVersion: 2.0.0
     settings: null
   calendar:
+    edition: pro
     enabled: '1'
     licenseKey: PRJ91600ENZBQ5S7HS7UE93Z
     schemaVersion: 3.0.0
