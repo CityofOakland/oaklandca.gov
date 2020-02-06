@@ -35,6 +35,13 @@ return [
       // Enables Project Config file
       'useProjectConfigFile' => true,
 
+      'extraFileKinds' => [
+        // Allows us to use CSV files when uploading to the Excel filetype
+        'excel' => [
+          'extensions' => ['csv']
+        ]
+      ],
+
       'aliases' => [
         '@algoliaAppId' => getenv('ALGOLIA_APP_ID'),
         '@algoliaAdminApi' => getenv('ALGOLIA_ADMIN_API'),
