@@ -42,7 +42,7 @@ categoryGroups:
     structure:
       maxLevels: 1
       uid: b4e9ab1c-aa42-46f9-a679-898119f39e8d
-dateModified: 1581007966
+dateModified: 1581017602
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -95,6 +95,8 @@ fieldGroups:
     name: Documents
   c964d82c-a4e7-4ec4-ad42-7c3e843193c0:
     name: Images
+  cea536bc-4ae2-48c6-b388-34eed4a79ac6:
+    name: 'Redistricting Commission'
   d7390b6f-686c-4324-a1fa-7a38508eee7b:
     name: Admin
   daeb9cef-d6dd-4377-9973-51548d31e6c2:
@@ -173,6 +175,24 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\redactor\Field
+  044231f1-5e15-4ab5-bb69-e8afeb4d908d:
+    contentColumnType: text
+    fieldGroup: cea536bc-4ae2-48c6-b388-34eed4a79ac6
+    handle: votingHistory
+    instructions: ''
+    name: 'Voting History'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
   069f8ed4-d4ee-4ed8-bf37-efafb4e633e8:
     contentColumnType: datetime
     fieldGroup: a8c82666-3295-4f90-b50b-67f2299847db
@@ -301,6 +321,24 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Dropdown
+  0ed51bfe-acce-4e07-8017-8b3498bcba94:
+    contentColumnType: text
+    fieldGroup: cea536bc-4ae2-48c6-b388-34eed4a79ac6
+    handle: income
+    instructions: ''
+    name: Income
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
   1160308b-03c0-43ad-9f4b-35e26c016c89:
     contentColumnType: text
     fieldGroup: ed709c7c-0c3a-4457-ae2d-38a3ccb797e4
@@ -631,6 +669,24 @@ fields:
     translationKeyFormat: null
     translationMethod: site
     type: craft\fields\Matrix
+  41e64e96-658b-4686-a45e-876808b04da6:
+    contentColumnType: text
+    fieldGroup: cea536bc-4ae2-48c6-b388-34eed4a79ac6
+    handle: district
+    instructions: ''
+    name: District
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
   44b00870-0842-4c4e-838f-dcd688fb5b05:
     contentColumnType: string
     fieldGroup: 83c14444-efcf-4d13-a20a-56275fd18855
@@ -1116,6 +1172,24 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Dropdown
+  6f5ec8d7-c11e-43a0-9bae-82709ddffe49:
+    contentColumnType: text
+    fieldGroup: cea536bc-4ae2-48c6-b388-34eed4a79ac6
+    handle: age
+    instructions: ''
+    name: Age
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
   6fb3f41c-93f6-4185-9622-e6765cdcc837:
     contentColumnType: text
     fieldGroup: a2015bc8-9d3a-4f8d-a180-1ddc7ebd3087
@@ -1342,6 +1416,35 @@ fields:
     translationKeyFormat: null
     translationMethod: site
     type: craft\fields\Assets
+  82a071f5-19ec-49b0-aca7-f390757c0892:
+    contentColumnType: string
+    fieldGroup: baa859d6-a861-4617-bb79-73d0982ee25c
+    handle: csvUpload
+    instructions: ''
+    name: 'CSV Upload'
+    searchable: false
+    settings:
+      allowedKinds:
+        - excel
+      defaultUploadLocationSource: 'volume:549d1a55-e94b-4c89-9cb9-b1fdac9d417d'
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      restrictFiles: '1'
+      selectionLabel: 'Add a CSV'
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:58c3bf22-aa23-441f-bd65-acf677638ae6'
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: true
+      validateRelatedElements: ''
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
   842891f1-23fb-4af0-93b5-d197738f08a0:
     contentColumnType: text
     fieldGroup: a8c82666-3295-4f90-b50b-67f2299847db
@@ -1427,6 +1530,24 @@ fields:
     translationKeyFormat: null
     translationMethod: site
     type: craft\fields\Entries
+  8a298708-bd62-4f5d-b277-e76e6c2f6041:
+    contentColumnType: text
+    fieldGroup: cea536bc-4ae2-48c6-b388-34eed4a79ac6
+    handle: timeInDistrict
+    instructions: ''
+    name: 'Time in District'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
   8a89416e-010d-4a83-a254-dafb9b29ce26:
     contentColumnType: text
     fieldGroup: 71fb693f-011b-4669-ba10-f1b379557bb9
@@ -1910,6 +2031,24 @@ fields:
     translationKeyFormat: null
     translationMethod: site
     type: craft\fields\Entries
+  b63ff443-ed3d-489e-b84a-b410aa3e09cd:
+    contentColumnType: text
+    fieldGroup: cea536bc-4ae2-48c6-b388-34eed4a79ac6
+    handle: education
+    instructions: ''
+    name: Education
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
   b7ec3bdf-65b5-4385-8d12-cd2110b1c75c:
     contentColumnType: string
     fieldGroup: 5bc46e53-a87c-4584-89aa-808cacedf461
@@ -1944,6 +2083,24 @@ fields:
     translationKeyFormat: null
     translationMethod: site
     type: craft\fields\Matrix
+  b9f7ae6c-d494-4169-802f-32d4e1659a1c:
+    contentColumnType: text
+    fieldGroup: cea536bc-4ae2-48c6-b388-34eed4a79ac6
+    handle: applicantName
+    instructions: ''
+    name: 'Applicant Name'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
   bae021eb-4222-44c0-adb5-05e045cca640:
     contentColumnType: string
     fieldGroup: 27454cbc-e66b-4d88-bef3-32b87a69a715
@@ -2495,6 +2652,24 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Lightswitch
+  d14c3f65-a312-48e0-a7e6-52cdbf5632ef:
+    contentColumnType: text
+    fieldGroup: cea536bc-4ae2-48c6-b388-34eed4a79ac6
+    handle: genderIdentity
+    instructions: ''
+    name: 'Gender Identity'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
   d2528b2a-d63a-477c-9c22-431796381707:
     contentColumnType: string
     fieldGroup: 8e8ee56e-cdb8-4206-a3b5-c3aa0eb3a884
@@ -2874,6 +3049,24 @@ fields:
     translationKeyFormat: null
     translationMethod: site
     type: craft\fields\Entries
+  eac17a7e-9cb8-464b-9a5e-2f0342162433:
+    contentColumnType: text
+    fieldGroup: cea536bc-4ae2-48c6-b388-34eed4a79ac6
+    handle: raceEthnicity
+    instructions: ''
+    name: 'Race / Ethnicity'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
   eae235fc-29cb-4dd5-8e91-2c0ad69877ed:
     contentColumnType: string
     fieldGroup: 4ed914c6-b7ea-44be-a061-4430ad33baf2
@@ -7031,6 +7224,41 @@ sections:
         template: volunteers/_entry
         uriFormat: 'volunteers/{slug}'
     type: channel
+  1ab8269c-e225-472e-b5e1-1504af7a1622:
+    enableVersioning: false
+    entryTypes:
+      cb67721c-4d46-42f1-bbcf-91bd6bb4b2f0:
+        fieldLayouts:
+          95c72197-cb30-4f10-b7eb-93e9bd6db998:
+            tabs:
+              -
+                fields:
+                  82a071f5-19ec-49b0-aca7-f390757c0892:
+                    required: true
+                    sortOrder: 1
+                name: Content
+                sortOrder: 1
+        handle: datasets
+        hasTitleField: true
+        name: Datasets
+        sortOrder: 1
+        titleFormat: ''
+        titleLabel: Title
+    handle: datasets
+    name: Datasets
+    previewTargets:
+      -
+        label: 'Primary entry page'
+        refresh: '1'
+        urlFormat: '{url}'
+    propagationMethod: all
+    siteSettings:
+      c35d3a93-d7f4-4c37-ae3e-1b4d403311bb:
+        enabledByDefault: true
+        hasUrls: true
+        template: datasets/_entry
+        uriFormat: 'datasets/{id}'
+    type: channel
   20567858-8423-4c20-9004-d0b02150fa2a:
     enableVersioning: true
     entryTypes:
@@ -8061,6 +8289,60 @@ sections:
         hasUrls: true
         template: documents/_entry
         uriFormat: 'documents/{slug}'
+    type: channel
+  9168f154-c0f9-4cf9-991d-60b287a85fc0:
+    enableVersioning: false
+    entryTypes:
+      a1fa525c-d0a9-46a0-ad69-01e6bf413da6:
+        fieldLayouts:
+          bc2507db-b195-40e3-937b-f39a0a0f4cfb:
+            tabs:
+              -
+                fields:
+                  044231f1-5e15-4ab5-bb69-e8afeb4d908d:
+                    required: false
+                    sortOrder: 7
+                  0ed51bfe-acce-4e07-8017-8b3498bcba94:
+                    required: false
+                    sortOrder: 6
+                  41e64e96-658b-4686-a45e-876808b04da6:
+                    required: false
+                    sortOrder: 2
+                  6f5ec8d7-c11e-43a0-9bae-82709ddffe49:
+                    required: false
+                    sortOrder: 4
+                  8a298708-bd62-4f5d-b277-e76e6c2f6041:
+                    required: false
+                    sortOrder: 3
+                  b63ff443-ed3d-489e-b84a-b410aa3e09cd:
+                    required: false
+                    sortOrder: 5
+                  b9f7ae6c-d494-4169-802f-32d4e1659a1c:
+                    required: false
+                    sortOrder: 1
+                  d14c3f65-a312-48e0-a7e6-52cdbf5632ef:
+                    required: false
+                    sortOrder: 8
+                  eac17a7e-9cb8-464b-9a5e-2f0342162433:
+                    required: false
+                    sortOrder: 9
+                name: Content
+                sortOrder: 1
+        handle: redistrictingCommissionApplication
+        hasTitleField: false
+        name: 'Redistricting Commission Application'
+        sortOrder: 2
+        titleFormat: '{applicantName} - {district}'
+        titleLabel: Title
+    handle: importedContent
+    name: 'Imported Content'
+    propagationMethod: all
+    siteSettings:
+      c35d3a93-d7f4-4c37-ae3e-1b4d403311bb:
+        enabledByDefault: true
+        hasUrls: false
+        template: null
+        uriFormat: ''
     type: channel
   92f0f749-ed5b-4acc-aa15-6340f6e25791:
     enableVersioning: true
