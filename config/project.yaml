@@ -42,7 +42,7 @@ categoryGroups:
     structure:
       maxLevels: 1
       uid: b4e9ab1c-aa42-46f9-a679-898119f39e8d
-dateModified: 1581014720
+dateModified: 1581017602
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -8329,10 +8329,10 @@ sections:
                 name: Content
                 sortOrder: 1
         handle: redistrictingCommissionApplication
-        hasTitleField: true
+        hasTitleField: false
         name: 'Redistricting Commission Application'
         sortOrder: 2
-        titleFormat: ''
+        titleFormat: '{applicantName} - {district}'
         titleLabel: Title
     handle: importedContent
     name: 'Imported Content'
