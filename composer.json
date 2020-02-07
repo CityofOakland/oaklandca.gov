@@ -2,11 +2,11 @@
   "name": "Oakland City Website",
   "description": "The official Craft CMS website for the City of OaklandCA.gov",
   "require": {
-    "craftcms/cms": "3.4.4",
+    "craftcms/cms": "3.4.4.1",
     "vlucas/phpdotenv": "^2.4.0",
     "nystudio107/craft-typogrify": "1.1.18",
     "solspace/craft3-calendar": "3.0.0",
-    "nystudio107/craft-seomatic": "3.2.41",
+    "nystudio107/craft-seomatic": "3.2.42",
     "craftcms/store-hours": "2.1.1.1",
     "craftcms/redactor": "2.5.0",
     "verbb/redactor-tweaks": "2.0.2",

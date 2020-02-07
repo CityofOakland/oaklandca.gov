@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "174740e2e398796890973143aeea5706",
+    "content-hash": "9fb44d959e81d3ef003fbbea92743480",
     "packages": [
         {
             "name": "aelvan/imager",
@@ -726,11 +726,11 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "3.4.4",
+            "version": "3.4.4.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/9cf6b233afb68fb4988f21f8a55d4420b3dbb16b",
-                "reference": "9cf6b233afb68fb4988f21f8a55d4420b3dbb16b",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/f595178873bf02ace57d8bd9d056af5f486d0912",
+                "reference": "f595178873bf02ace57d8bd9d056af5f486d0912",
                 "shasum": ""
             },
             "require": {
@@ -811,7 +811,7 @@
                 "docs": "https://docs.craftcms.com/v3/",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2020-02-05T21:42:11+00:00"
+            "time": "2020-02-06T14:47:41+00:00"
         },
         {
             "name": "craftcms/element-api",
@@ -3282,11 +3282,11 @@
         },
         {
             "name": "league/flysystem",
-            "version": "1.0.63",
+            "version": "1.0.64",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/8132daec326565036bc8e8d1876f77ec183a7bd6",
-                "reference": "8132daec326565036bc8e8d1876f77ec183a7bd6",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/d13c43dbd4b791f815215959105a008515d1a2e0",
+                "reference": "d13c43dbd4b791f815215959105a008515d1a2e0",
                 "shasum": ""
             },
             "require": {
@@ -3352,7 +3352,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2020-01-04T16:30:31+00:00"
+            "time": "2020-02-05T18:14:17+00:00"
         },
         {
             "name": "league/flysystem-aws-s3-v3",
@@ -4478,11 +4478,11 @@
         },
         {
             "name": "nystudio107/craft-seomatic",
-            "version": "3.2.41",
+            "version": "3.2.42",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/a04521c70b07634c7b9dc4a76f6670870722cb9a",
-                "reference": "a04521c70b07634c7b9dc4a76f6670870722cb9a",
+                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/b58dde45c87581ad2629cdc2893e03bd9ba3a1a6",
+                "reference": "b58dde45c87581ad2629cdc2893e03bd9ba3a1a6",
                 "shasum": ""
             },
             "require": {
@@ -4546,7 +4546,7 @@
                 "docs": "https://nystudio107.com/plugins/seomatic/documentation",
                 "issues": "https://nystudio107.com/plugins/seomatic/support"
             },
-            "time": "2020-01-29T17:25:51+00:00"
+            "time": "2020-02-07T03:13:40+00:00"
         },
         {
             "name": "nystudio107/craft-twigpack",
@@ -7929,11 +7929,11 @@
         },
         {
             "name": "voku/anti-xss",
-            "version": "4.1.21",
+            "version": "4.1.22",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/voku/anti-xss/zipball/a96c8d4e688128dd9b98d2796c9cfcad399c25db",
-                "reference": "a96c8d4e688128dd9b98d2796c9cfcad399c25db",
+                "url": "https://api.github.com/repos/voku/anti-xss/zipball/4c23b8b88430834ee3eaee30d2bc373ef1ba19eb",
+                "reference": "4c23b8b88430834ee3eaee30d2bc373ef1ba19eb",
                 "shasum": ""
             },
             "require": {
@@ -7973,7 +7973,7 @@
                 "security",
                 "xss"
             ],
-            "time": "2019-12-30T14:57:06+00:00"
+            "time": "2020-02-06T14:46:13+00:00"
         },
         {
             "name": "voku/arrayy",
@@ -8077,18 +8077,15 @@
         },
         {
             "name": "voku/portable-ascii",
-            "version": "1.4.7",
+            "version": "1.4.8",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/voku/portable-ascii/zipball/a691852adbf7518370332fd7921292d8dad34e7e",
-                "reference": "a691852adbf7518370332fd7921292d8dad34e7e",
+                "url": "https://api.github.com/repos/voku/portable-ascii/zipball/a3801f5facf187a28cc2cae7b98a540c36406dc4",
+                "reference": "a3801f5facf187a28cc2cae7b98a540c36406dc4",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.0.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~6.0 || ~7.0"
             },
             "suggest": {
                 "ext-intl": "Use Intl for transliterator_transliterate() support"
@@ -8100,7 +8097,6 @@
                     "voku\\tests\\": "tests/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -8117,7 +8113,7 @@
                 "clean",
                 "php"
             ],
-            "time": "2020-01-27T08:58:33+00:00"
+            "time": "2020-02-06T21:46:48+00:00"
         },
         {
             "name": "voku/portable-utf8",
