@@ -1,0 +1,24 @@
+<div class="my-8">
+  <form class="flex" action="{{ url(craft.request.url ~ '?apn=') }}">
+    <input class="rounded-sm border-green-300 border px-4 mr-4" type="search" name="apn" placeholder="Search">
+    <input class="btn btn-sm px-4" type="submit" value="Go">
+  </form>
+
+  {# Get the user's search query from the 'q' query-string param #}
+  {% set searchQuery = craft.app.request.getParam('apn') %}
+
+  {% if searchQuery | length %}
+    {# Fetch entries that match the search query #}
+    {% set entries = craft.entries().search('title::' ~ searchQuery).section('importedContent').type('specialAssessmentTestStatus').all() %}
+
+    {% if entries | length %}
+      {% for entry in entries %}
+        <div class="bg-green-600 rounded-sm p-8 text-white inline-block mt-4 font-heading">
+          {{ entry.title }}’s status is <span class="inline-block text-green-600 bg-white px-2 rounded-sm">{{ entry.elementStatus }}</span> as of {{ entry.date | date() }}
+        </div>
+      {% endfor %}
+    {% else %}
+      <p class="bg-green-600 rounded-sm p-8 text-white inline-block mt-4 font-heading">The APN “{{ searchQuery }}” didn’t return any results.</p>
+    {% endif %}
+  {% endif %}
+</div>

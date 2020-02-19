@@ -42,7 +42,7 @@ categoryGroups:
     structure:
       maxLevels: 1
       uid: b4e9ab1c-aa42-46f9-a679-898119f39e8d
-dateModified: 1581017602
+dateModified: 1582062680
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -551,6 +551,20 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
+  31d30a51-422e-471c-be55-3441a4219dd8:
+    contentColumnType: datetime
+    fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521
+    handle: date
+    instructions: ''
+    name: Date
+    searchable: false
+    settings:
+      minuteIncrement: '30'
+      showDate: true
+      showTime: false
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Date
   341595b4-52a8-432f-b327-5fbc3a4289a8:
     contentColumnType: text
     fieldGroup: 71fb693f-011b-4669-ba10-f1b379557bb9
@@ -1559,6 +1573,24 @@ fields:
       charLimit: ''
       code: ''
       columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  8ff1f216-9327-4d13-952e-f47f08febbfd:
+    contentColumnType: text
+    fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521
+    handle: elementStatus
+    instructions: ''
+    name: Status
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: '1'
+      columnType: null
       initialRows: '4'
       multiline: ''
       placeholder: ''
@@ -8293,6 +8325,26 @@ sections:
   9168f154-c0f9-4cf9-991d-60b287a85fc0:
     enableVersioning: false
     entryTypes:
+      057c9181-27ec-4d3e-a5b0-fbdce2462afd:
+        fieldLayouts:
+          6bfec61f-f233-4b6d-8926-eebff6c16e28:
+            tabs:
+              -
+                fields:
+                  31d30a51-422e-471c-be55-3441a4219dd8:
+                    required: false
+                    sortOrder: 2
+                  8ff1f216-9327-4d13-952e-f47f08febbfd:
+                    required: false
+                    sortOrder: 1
+                name: Content
+                sortOrder: 1
+        handle: specialAssessmentTestStatus
+        hasTitleField: true
+        name: 'Special Assessment Test Status'
+        sortOrder: 3
+        titleFormat: ''
+        titleLabel: APN
       a1fa525c-d0a9-46a0-ad69-01e6bf413da6:
         fieldLayouts:
           bc2507db-b195-40e3-937b-f39a0a0f4cfb:
