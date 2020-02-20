@@ -1,7 +1,10 @@
 <div class="my-8">
-  <form class="flex" action="{{ url(craft.request.url ~ '?apn=') }}">
-    <input class="rounded-sm border-green-300 border px-4 mr-4" type="search" name="apn" placeholder="Search">
-    <input class="btn btn-sm px-4" type="submit" value="Go">
+  <form action="{{ url(craft.request.url ~ '?apn=') }}">
+    <label class="block font-bold" for="apn">Assessor's parcel number</label> 
+    <div class="flex">
+      <input class="rounded-sm border-green-300 border px-4 mr-4" type="search" id="apn" name="apn" placeholder="APN">
+      <input class="btn btn-sm px-4" type="submit" value="Go">
+    </div>
   </form>
 
   {# Get the user's search query from the 'q' query-string param #}
