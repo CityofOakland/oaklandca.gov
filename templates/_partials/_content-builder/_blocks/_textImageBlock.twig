@@ -4,7 +4,7 @@
 {% set textPad = imageIsLeft ? "md:pl-4" : "md:pr-4" %}
 <div class="md:flex my-8 {{ direction }}">
 {% set image = block.image.one %}
-{% set transformedImage = craft.imager.transformImage(image, { width: 320 }, { ratio: 1/1, position: image.getFocalPoint()},{ fillTransforms: true}) %}
+{% set transformedImage = craft.imager.transformImage(image, { width: 320 },{ fillTransforms: true}) %}
 {% set transformedImages = craft.imager.transformImage(image, [
     { width: 1400 },
     { width: 912 },
