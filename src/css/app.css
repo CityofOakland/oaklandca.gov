@@ -67,6 +67,14 @@ a:hover {
   @apply text-green-600;
 }
 
+.body-text a {
+  @apply underline text-green-300;
+}
+
+.body-text a:hover {
+  @apply text-green-500;
+}
+
 .anchor-link {
   @apply relative block invisible;
 }
