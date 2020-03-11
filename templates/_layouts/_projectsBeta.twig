@@ -275,7 +275,7 @@
           <h2 class="text-xxl">Timeline</h2>
           <div class="project-timeline">
             {% for milestone in entry.timeline.all() %}
-              <div class="project-timeline-item pl-8 border-l-2 {% if not loop.last %}pb-4 border-gray-400{% else %}border-white{% endif %}" {{ loop.index < 4 ? '' : 'data-toggle="off"' }}>
+              <div class="project-timeline-item pl-8 border-l-2 {% if not loop.last %}pb-4 border-gray-400{% else %}border-white{% endif %}" {{ loop.index0 < 4 ? '' : 'data-toggle="off"' }}>
                 <div class="text-gray-500">
                   <div class="milestone-name leading-none">{{ milestone.milestoneName }}</div>
                   {% if milestone.milestoneDates %}
