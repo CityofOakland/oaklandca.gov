@@ -42,7 +42,7 @@ categoryGroups:
     structure:
       maxLevels: 1
       uid: b4e9ab1c-aa42-46f9-a679-898119f39e8d
-dateModified: 1583767296
+dateModified: 1584639792
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -3869,7 +3869,8 @@ matrixBlockTypes:
         name: Heading
         searchable: false
         settings:
-          charLimit: ''
+          byteLimit: null
+          charLimit: null
           code: ''
           columnType: text
           initialRows: '4'
@@ -4145,7 +4146,8 @@ matrixBlockTypes:
         name: Heading
         searchable: true
         settings:
-          charLimit: ''
+          byteLimit: null
+          charLimit: null
           code: ''
           columnType: text
           initialRows: '4'
@@ -4638,6 +4640,8 @@ matrixBlockTypes:
           removeEmptyTags: '1'
           removeInlineStyles: '1'
           removeNbsp: '1'
+          showUnpermittedFiles: false
+          showUnpermittedVolumes: true
         translationKeyFormat: null
         translationMethod: none
         type: craft\redactor\Field
@@ -4817,7 +4821,8 @@ matrixBlockTypes:
         name: Heading
         searchable: false
         settings:
-          charLimit: ''
+          byteLimit: null
+          charLimit: null
           code: ''
           columnType: text
           initialRows: '4'
@@ -4890,12 +4895,14 @@ matrixBlockTypes:
           localizeRelations: false
           restrictFiles: '1'
           selectionLabel: 'Add an image'
+          showUnpermittedFiles: false
+          showUnpermittedVolumes: true
           singleUploadLocationSource: 'volume:56ad4140-da85-43ea-8292-3fac04cbefc1'
           singleUploadLocationSubpath: ''
           source: null
           sources: '*'
           targetSiteId: null
-          useSingleFolder: '1'
+          useSingleFolder: true
           validateRelatedElements: '1'
           viewMode: list
         translationKeyFormat: null
@@ -4958,7 +4965,8 @@ matrixBlockTypes:
         name: __blank__
         searchable: true
         settings:
-          charLimit: ''
+          byteLimit: null
+          charLimit: null
           code: ''
           columnType: text
           initialRows: '4'
@@ -5241,7 +5249,8 @@ matrixBlockTypes:
         name: __blank__
         searchable: true
         settings:
-          charLimit: ''
+          byteLimit: null
+          charLimit: null
           code: ''
           columnType: text
           initialRows: '4'
@@ -5707,7 +5716,8 @@ matrixBlockTypes:
         name: 'Column 1 Heading'
         searchable: false
         settings:
-          charLimit: ''
+          byteLimit: null
+          charLimit: null
           code: ''
           columnType: text
           initialRows: '4'
@@ -5724,7 +5734,8 @@ matrixBlockTypes:
         name: 'Column 2 Heading'
         searchable: false
         settings:
-          charLimit: ''
+          byteLimit: null
+          charLimit: null
           code: ''
           columnType: text
           initialRows: '4'
@@ -5799,7 +5810,8 @@ matrixBlockTypes:
         name: Heading
         searchable: true
         settings:
-          charLimit: ''
+          byteLimit: null
+          charLimit: null
           code: ''
           columnType: text
           initialRows: '4'
@@ -5882,7 +5894,8 @@ matrixBlockTypes:
         name: 'Column 3 Heading'
         searchable: false
         settings:
-          charLimit: ''
+          byteLimit: null
+          charLimit: null
           code: ''
           columnType: text
           initialRows: '4'
@@ -5899,7 +5912,8 @@ matrixBlockTypes:
         name: 'Column 1 Heading'
         searchable: false
         settings:
-          charLimit: ''
+          byteLimit: null
+          charLimit: null
           code: ''
           columnType: text
           initialRows: '4'
@@ -5970,7 +5984,8 @@ matrixBlockTypes:
         name: 'Column 2 Heading'
         searchable: false
         settings:
-          charLimit: ''
+          byteLimit: null
+          charLimit: null
           code: ''
           columnType: text
           initialRows: '4'
@@ -5997,14 +6012,14 @@ matrixBlockTypes:
                       - width
                       - ''
               -
-                - d513ffa1-20e6-405d-845e-b4a8fd041461
+                - fb2b9f42-74a0-45c4-be6e-d3d69c87557e
                 -
                   __assoc__:
                     -
                       - width
                       - ''
               -
-                - fb2b9f42-74a0-45c4-be6e-d3d69c87557e
+                - d513ffa1-20e6-405d-845e-b4a8fd041461
                 -
                   __assoc__:
                     -
@@ -6134,12 +6149,14 @@ matrixBlockTypes:
           localizeRelations: false
           restrictFiles: '1'
           selectionLabel: 'Add an image'
+          showUnpermittedFiles: false
+          showUnpermittedVolumes: true
           singleUploadLocationSource: 'volume:549d1a55-e94b-4c89-9cb9-b1fdac9d417d'
           singleUploadLocationSubpath: ''
           source: null
           sources: '*'
           targetSiteId: null
-          useSingleFolder: '1'
+          useSingleFolder: true
           validateRelatedElements: '1'
           viewMode: list
         translationKeyFormat: null
@@ -6262,14 +6279,7 @@ matrixBlockTypes:
           columns:
             __assoc__:
               -
-                - 2200fe2a-bcb7-435e-96f9-7f00262131e5
-                -
-                  __assoc__:
-                    -
-                      - width
-                      - ''
-              -
-                - 7769a82a-1135-4a99-aa7c-d121376328d6
+                - c51bb818-8e54-4a71-b8e6-e623907d4cae
                 -
                   __assoc__:
                     -
@@ -6283,7 +6293,14 @@ matrixBlockTypes:
                       - width
                       - ''
               -
-                - c51bb818-8e54-4a71-b8e6-e623907d4cae
+                - 2200fe2a-bcb7-435e-96f9-7f00262131e5
+                -
+                  __assoc__:
+                    -
+                      - width
+                      - ''
+              -
+                - 7769a82a-1135-4a99-aa7c-d121376328d6
                 -
                   __assoc__:
                     -
@@ -6379,7 +6396,8 @@ matrixBlockTypes:
         name: 'Column 2 Heading'
         searchable: false
         settings:
-          charLimit: ''
+          byteLimit: null
+          charLimit: null
           code: ''
           columnType: text
           initialRows: '4'
@@ -6396,7 +6414,8 @@ matrixBlockTypes:
         name: 'Column 3 Heading'
         searchable: false
         settings:
-          charLimit: ''
+          byteLimit: null
+          charLimit: null
           code: ''
           columnType: text
           initialRows: '4'
@@ -6413,7 +6432,8 @@ matrixBlockTypes:
         name: 'Column 4 Heading'
         searchable: false
         settings:
-          charLimit: ''
+          byteLimit: null
+          charLimit: null
           code: ''
           columnType: text
           initialRows: '4'
@@ -6430,7 +6450,8 @@ matrixBlockTypes:
         name: 'Column 1 Heading'
         searchable: false
         settings:
-          charLimit: ''
+          byteLimit: null
+          charLimit: null
           code: ''
           columnType: text
           initialRows: '4'
@@ -6452,6 +6473,9 @@ matrixBlockTypes:
               323dd893-cdef-4562-9cfc-566d7afd7909:
                 required: true
                 sortOrder: 4
+              566d26c2-9af4-45bb-b994-a552cc3fc03b:
+                required: false
+                sortOrder: 5
               bcbcc37a-a53b-42f8-9a80-e9abf9ffe063:
                 required: true
                 sortOrder: 1
@@ -6482,9 +6506,23 @@ matrixBlockTypes:
           removeEmptyTags: '1'
           removeInlineStyles: '1'
           removeNbsp: '1'
+          showUnpermittedFiles: false
+          showUnpermittedVolumes: true
         translationKeyFormat: null
         translationMethod: none
         type: craft\redactor\Field
+      566d26c2-9af4-45bb-b994-a552cc3fc03b:
+        contentColumnType: boolean
+        fieldGroup: null
+        handle: displayAltTextAsCaption
+        instructions: 'If enabled, this will display your image''s alt text as a small figure caption below the image.'
+        name: 'Display Alt Text as Caption?'
+        searchable: false
+        settings:
+          default: ''
+        translationKeyFormat: null
+        translationMethod: none
+        type: craft\fields\Lightswitch
       bcbcc37a-a53b-42f8-9a80-e9abf9ffe063:
         contentColumnType: string
         fieldGroup: null
@@ -6501,12 +6539,14 @@ matrixBlockTypes:
           localizeRelations: false
           restrictFiles: '1'
           selectionLabel: 'Add an image'
+          showUnpermittedFiles: false
+          showUnpermittedVolumes: true
           singleUploadLocationSource: 'volume:549d1a55-e94b-4c89-9cb9-b1fdac9d417d'
           singleUploadLocationSubpath: ''
           source: null
           sources: '*'
           targetSiteId: null
-          useSingleFolder: '1'
+          useSingleFolder: true
           validateRelatedElements: '1'
           viewMode: list
         translationKeyFormat: null
@@ -6696,7 +6736,8 @@ matrixBlockTypes:
         name: Heading
         searchable: true
         settings:
-          charLimit: ''
+          byteLimit: null
+          charLimit: null
           code: ''
           columnType: text
           initialRows: '4'
@@ -10234,6 +10275,8 @@ superTableBlockTypes:
           removeEmptyTags: '1'
           removeInlineStyles: '1'
           removeNbsp: '1'
+          showUnpermittedFiles: false
+          showUnpermittedVolumes: true
         translationKeyFormat: null
         translationMethod: none
         type: craft\redactor\Field
@@ -10255,6 +10298,8 @@ superTableBlockTypes:
           removeEmptyTags: '1'
           removeInlineStyles: '1'
           removeNbsp: '1'
+          showUnpermittedFiles: false
+          showUnpermittedVolumes: true
         translationKeyFormat: null
         translationMethod: none
         type: craft\redactor\Field
@@ -10276,6 +10321,8 @@ superTableBlockTypes:
           removeEmptyTags: '1'
           removeInlineStyles: '1'
           removeNbsp: '1'
+          showUnpermittedFiles: false
+          showUnpermittedVolumes: true
         translationKeyFormat: null
         translationMethod: none
         type: craft\redactor\Field
@@ -10319,6 +10366,8 @@ superTableBlockTypes:
           removeEmptyTags: '1'
           removeInlineStyles: '1'
           removeNbsp: '1'
+          showUnpermittedFiles: false
+          showUnpermittedVolumes: true
         translationKeyFormat: null
         translationMethod: none
         type: craft\redactor\Field
@@ -10340,6 +10389,8 @@ superTableBlockTypes:
           removeEmptyTags: '1'
           removeInlineStyles: '1'
           removeNbsp: '1'
+          showUnpermittedFiles: false
+          showUnpermittedVolumes: true
         translationKeyFormat: null
         translationMethod: none
         type: craft\redactor\Field
@@ -10361,6 +10412,8 @@ superTableBlockTypes:
           removeEmptyTags: '1'
           removeInlineStyles: '1'
           removeNbsp: '1'
+          showUnpermittedFiles: false
+          showUnpermittedVolumes: true
         translationKeyFormat: null
         translationMethod: none
         type: craft\redactor\Field
@@ -10382,6 +10435,8 @@ superTableBlockTypes:
           removeEmptyTags: '1'
           removeInlineStyles: '1'
           removeNbsp: '1'
+          showUnpermittedFiles: false
+          showUnpermittedVolumes: true
         translationKeyFormat: null
         translationMethod: none
         type: craft\redactor\Field
@@ -10419,6 +10474,8 @@ superTableBlockTypes:
           removeEmptyTags: '1'
           removeInlineStyles: '1'
           removeNbsp: '1'
+          showUnpermittedFiles: false
+          showUnpermittedVolumes: true
         translationKeyFormat: null
         translationMethod: none
         type: craft\redactor\Field
@@ -10440,6 +10497,8 @@ superTableBlockTypes:
           removeEmptyTags: '1'
           removeInlineStyles: '1'
           removeNbsp: '1'
+          showUnpermittedFiles: false
+          showUnpermittedVolumes: true
         translationKeyFormat: null
         translationMethod: none
         type: craft\redactor\Field
