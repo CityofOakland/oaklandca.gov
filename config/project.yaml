@@ -42,7 +42,7 @@ categoryGroups:
     structure:
       maxLevels: 1
       uid: b4e9ab1c-aa42-46f9-a679-898119f39e8d
-dateModified: 1584639792
+dateModified: 1584668478
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -3857,6 +3857,9 @@ matrixBlockTypes:
                 sortOrder: 1
               646188fb-7ed1-48ae-b539-736f4fd442d1:
                 required: true
+                sortOrder: 3
+              a027ac28-65c7-472f-b9ea-d30253b0205f:
+                required: false
                 sortOrder: 2
             name: Content
             sortOrder: 1
@@ -3883,11 +3886,11 @@ matrixBlockTypes:
         contentColumnType: string
         fieldGroup: null
         handle: entries
-        instructions: 'Select up to 12 entries to include as small text links on your page'
+        instructions: 'Select up to 24 entries to include as small text links on your page'
         name: Entries
         searchable: true
         settings:
-          limit: '12'
+          limit: '24'
           localizeRelations: false
           selectionLabel: ''
           source: null
@@ -3896,6 +3899,7 @@ matrixBlockTypes:
             - 'section:b3411cb1-e860-46ed-9cd6-58cf9b8daacb'
             - 'section:9da43fd8-c505-4d19-9486-e0cb669c568a'
             - 'section:8b7c4e26-9aab-4c5d-874e-aee151107de3'
+            - 'section:983c9f6f-9251-4fd3-91e1-b598eccc6a1a'
             - 'section:28881fc8-3e61-4fdb-a5ee-cce1bab725bf'
             - 'section:92f0f749-ed5b-4acc-aa15-6340f6e25791'
             - 'section:98d541ae-56ee-4c98-ba9c-37438dc485a0'
@@ -3911,6 +3915,29 @@ matrixBlockTypes:
         translationKeyFormat: null
         translationMethod: site
         type: craft\fields\Entries
+      a027ac28-65c7-472f-b9ea-d30253b0205f:
+        contentColumnType: text
+        fieldGroup: null
+        handle: entriesDescription
+        instructions: 'Use this optional field to provide context for the pages you link to in this section.'
+        name: 'Entries Description'
+        searchable: true
+        settings:
+          availableTransforms: '*'
+          availableVolumes: '*'
+          cleanupHtml: true
+          columnType: text
+          purifierConfig: ''
+          purifyHtml: '1'
+          redactorConfig: 'Simple with Links.json'
+          removeEmptyTags: '1'
+          removeInlineStyles: '1'
+          removeNbsp: '1'
+          showUnpermittedFiles: false
+          showUnpermittedVolumes: false
+        translationKeyFormat: null
+        translationMethod: none
+        type: craft\redactor\Field
     handle: smallEntryLinks
     name: 'Small Entry Links'
     sortOrder: 11
@@ -4809,6 +4836,9 @@ matrixBlockTypes:
                 sortOrder: 1
               260c86d2-a919-42ce-ba0f-64f1d25952d5:
                 required: true
+                sortOrder: 3
+              7c42e182-2c0f-45c6-9b1a-229a0312589a:
+                required: false
                 sortOrder: 2
             name: Content
             sortOrder: 1
@@ -4835,7 +4865,7 @@ matrixBlockTypes:
         contentColumnType: string
         fieldGroup: null
         handle: entries
-        instructions: 'Select up to 9 entries to include as large-sized links on your page'
+        instructions: 'Select up to 12 entries to include as large button-shaped links on your page'
         name: Entries
         searchable: false
         settings:
@@ -4848,6 +4878,7 @@ matrixBlockTypes:
             - 'section:b3411cb1-e860-46ed-9cd6-58cf9b8daacb'
             - 'section:9da43fd8-c505-4d19-9486-e0cb669c568a'
             - 'section:8b7c4e26-9aab-4c5d-874e-aee151107de3'
+            - 'section:983c9f6f-9251-4fd3-91e1-b598eccc6a1a'
             - 'section:28881fc8-3e61-4fdb-a5ee-cce1bab725bf'
             - 'section:92f0f749-ed5b-4acc-aa15-6340f6e25791'
             - 'section:98d541ae-56ee-4c98-ba9c-37438dc485a0'
@@ -4863,6 +4894,29 @@ matrixBlockTypes:
         translationKeyFormat: null
         translationMethod: site
         type: craft\fields\Entries
+      7c42e182-2c0f-45c6-9b1a-229a0312589a:
+        contentColumnType: text
+        fieldGroup: null
+        handle: entriesDescription
+        instructions: 'Use this optional field to provide context for the pages you link to in this section.'
+        name: 'Entries Description'
+        searchable: true
+        settings:
+          availableTransforms: '*'
+          availableVolumes: '*'
+          cleanupHtml: true
+          columnType: text
+          purifierConfig: ''
+          purifyHtml: '1'
+          redactorConfig: 'Simple with Links.json'
+          removeEmptyTags: '1'
+          removeInlineStyles: '1'
+          removeNbsp: '1'
+          showUnpermittedFiles: false
+          showUnpermittedVolumes: false
+        translationKeyFormat: null
+        translationMethod: none
+        type: craft\redactor\Field
     handle: largeEntryLinks
     name: 'Large Entry Links'
     sortOrder: 10
