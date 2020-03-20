@@ -1,6 +1,7 @@
 <div>
   <a class="anchor-link" id="{{ blockId }}"></a>
   <{{ heading }} class="{{ headingClass }}">{{ block.heading }}</{{ heading }}>
+  {{ block.entriesDescription }}
   <div class="card-grid grid-equal-height">
     {% for entry in block.entries.all() %}
       {% include '_partials/_elements/_title-cards.twig' with {

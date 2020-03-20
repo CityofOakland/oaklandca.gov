@@ -1,6 +1,7 @@
 <div class="body-text">
   <a class="anchor-link" id="{{ blockId }}"></a>
   <{{ heading }} class="{{ headingClass }}">{{ block.heading }}</{{ heading }}>
+  {{ block.entriesDescription }}
   <ul class="">
     {% for entry in block.entries.all() %}
       <li class="my-2"><a href="{{ entry.redirectUrl ?? entry.url }}">{{ entry.title }}</a></li>
