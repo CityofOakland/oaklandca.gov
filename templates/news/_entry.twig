@@ -11,33 +11,36 @@
       }
     ],
   } %}
-  <section class="bg-white relative z-0">
-    <div class="container md:flex pt-0">
-      <div class="md:w-3/4 md:mr-8">
-        {% include '_partials/_elements/_last-update.twig' %}
-        {% if entry.newsImage | length %}
-          <figure class="max-w-full mb-8">
-            {% set newsImage = entry.newsImage.one() %}
-            <img src="{{ newsImage.url }}" alt="{{ newsImage.altText ?? ''}}" />
-          </figure>
-        {% endif %}
-        {% if contentBuilder %}
-          {% include '_partials/_content-builder/_tool.twig' %}
-        {% else %}
-          <div class="body-text">
-            {{ entry.body }}
-          </div>
-        {% endif %}
-      </div>
-      <div class="md:flex-1">
-        {% if entry.mediaContact | length %}
-          <h3>Media Contact</h3>
-          {{ entry.mediaContact }}
-        {% endif %}
-        {% if pressRelease.exists() %}
-          <a href="{{ pressRelease.one.url }}" class="btn w-full">Download Press Release</a>
-        {% endif %}
+  <div class="container pt-0">
+    <div class="flex">
+      {% include "_partials/_elements/_nav-sidebar.twig" %}
+      <div class="w-full flex">
+        <div class="md:w-3/4 md:mr-8">
+          {% include '_partials/_elements/_last-update.twig' %}
+          {% if entry.newsImage | length %}
+            <figure class="max-w-full mb-8">
+              {% set newsImage = entry.newsImage.one() %}
+              <img src="{{ newsImage.url }}" alt="{{ newsImage.altText ?? ''}}" />
+            </figure>
+          {% endif %}
+          {% if contentBuilder %}
+            {% include '_partials/_content-builder/_tool.twig' %}
+          {% else %}
+            <div class="body-text">
+              {{ entry.body }}
+            </div>
+          {% endif %}
+        </div>
+        <div class="md:flex-1">
+          {% if entry.mediaContact | length %}
+            <h3>Media Contact</h3>
+            {{ entry.mediaContact }}
+          {% endif %}
+          {% if pressRelease.exists() %}
+            <a href="{{ pressRelease.one.url }}" class="btn w-full">Download Press Release</a>
+          {% endif %}
+        </div>
       </div>
     </div>
-  </section>
+  </div>
 {% endblock %}

@@ -1,22 +1,20 @@
 <section class="bg-white">
   <a class="anchor-link" id="page-about"></a>
-  <div class="container py-16">
-    {% include '_partials/_elements/_module-header.twig' with {
-      headerText: pageAboutHeaderText ?? "About",
-    } %}
-    <div class="mt-8 sm:flex">
-      {% if entry.teams | length %}
-        <div class="sm:w-1/4 sm:mr-8">
-          {% for entry in entry.teams.all() %}
-            <a href="{{ entry.url }}" class="btn btn-sm block text-center mb-4">{{ entry.title }}</a>
-          {% endfor %}
-        </div>
-      {% endif %}
-      <div class="sm:flex-1">
-        <div class="text-xl">
-          <div class="body-text">
-            {{ entry.about }}
-          </div>
+  {% include '_partials/_elements/_module-header.twig' with {
+    headerText: pageAboutHeaderText ?? "About",
+  } %}
+  <div class="mt-8 sm:flex">
+    {% if entry.teams | length %}
+      <div class="sm:w-1/4 sm:mr-8">
+        {% for entry in entry.teams.all() %}
+          <a href="{{ entry.url }}" class="btn btn-sm block text-center mb-4">{{ entry.title }}</a>
+        {% endfor %}
+      </div>
+    {% endif %}
+    <div class="sm:flex-1">
+      <div class="text-xl">
+        <div class="body-text">
+          {{ entry.about }}
         </div>
       </div>
     </div>

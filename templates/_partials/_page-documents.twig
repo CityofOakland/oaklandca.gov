@@ -1,20 +1,18 @@
 {% set defaultButtonUrl = "/documents/related-to/" ~ entry.section.handle ~ "/" ~ entry.slug %}
 {% if entry.pageDocuments | length %}
-  <section class="bg-rotate">
+  <section class="mb-16">
     <a class="anchor-link" id="page-documents"></a>
-    <div class="container">
-      {% include '_partials/_elements/_module-header.twig' with {
-        headerText: pageDocumentsHeaderText ?? "Documents",
-      } %}
-      <div class="card-grid wide-cards mt-8">
-        {% for entry in entry.pageDocuments.all() %}
-          {% include '_partials/_elements/_title-cards.twig' %}
-        {% endfor %}
-      </div>
-      {% include "_partials/_elements/_module-readmore.twig" with {
-        linkText: pageDocumentsLinkText ?? "Related Documents",
-        linkUrl: pageDocumentsLinkUrl ?? defaultButtonUrl
-      } %}
+    {% include '_partials/_elements/_module-header.twig' with {
+      headerText: pageDocumentsHeaderText ?? "Documents",
+    } %}
+    <div class="card-grid mt-8">
+      {% for entry in entry.pageDocuments.all() %}
+        {% include '_partials/_elements/_title-cards.twig' %}
+      {% endfor %}
     </div>
+    {% include "_partials/_elements/_module-readmore.twig" with {
+      linkText: pageDocumentsLinkText ?? "Related Documents",
+      linkUrl: pageDocumentsLinkUrl ?? defaultButtonUrl
+    } %}
   </section>
 {% endif %}

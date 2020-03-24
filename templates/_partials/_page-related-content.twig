@@ -3,17 +3,15 @@
 {% set relatedContent = relatedContent ?? [] %}
 {% if relatedContent | length %}
   {% set isRelated = macros.relatedSectionCount(entry ?? event, relatedContent) %}
-  <div class="container">
-    <a id="page-relatedpages" class="anchor-link"></a>
-    <h2 class="text-xxl my-8">Related Pages</h2>
-    {% if isRelated %}
-      <div class="card-grid">
-        {% for section in relatedContent %}
-          {{ macros.relatedEntry(entry ?? event, section) }}
-        {% endfor %}
-      </div>
-    {% else %}
-      <p class="text-xl">No pages have been related to this entry yet.</p>
-    {% endif %}
-  </div>
+  <a id="page-relatedpages" class="anchor-link"></a>
+  <h2 class="text-xxl my-8">Related Pages</h2>
+  {% if isRelated %}
+    <div class="card-grid">
+      {% for section in relatedContent %}
+        {{ macros.relatedEntry(entry ?? event, section) }}
+      {% endfor %}
+    </div>
+  {% else %}
+    <p class="text-xl">No pages have been related to this entry yet.</p>
+  {% endif %}
 {% endif %}
