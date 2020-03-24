@@ -26,32 +26,40 @@
         link: '/officials'
       }
     ],
-    navMenu: {
-      'events': relatedEvents.exists(),
-      'news': relatedNews.exists(),
-      'services': entry.pageServices.exists(),
-      'topics': entry.pageTopics.exists(),
-      'projects': entry.pageProjects.exists(),
-      'documents': entry.pageDocuments.exists(),
-      'relatedPages': true,
-      'leadership': true,
-      'contact': contactState
-    }
   } %}
-  {% if contentBuilder %}
-    <div class="container">
-      {% include '_partials/_content-builder/_tool.twig' %}
+  <div class="container pt-0">
+    <div class="flex">
+      {% include "_partials/_elements/_nav-sidebar.twig" with {
+        navMenu: {
+        'events': relatedEvents.exists(),
+        'news': relatedNews.exists(),
+        'services': entry.pageServices.exists(),
+        'topics': entry.pageTopics.exists(),
+        'projects': entry.pageProjects.exists(),
+        'documents': entry.pageDocuments.exists(),
+        'relatedPages': true,
+        'leadership': true,
+        'contact': contactState
+        }
+      } %}
+      <div class="w-full">
+        {% if contentBuilder %}
+          <div class="container">
+            {% include '_partials/_content-builder/_tool.twig' %}
+          </div>
+        {% else %}
+          {% include '_partials/_page-events.twig' %}
+          {% include '_partials/_page-news.twig' %}
+          {% include '_partials/_page-services.twig' %}
+          {% include '_partials/_page-topics.twig' %}
+          {% include '_partials/_page-projects.twig' %}
+          {% include '_partials/_page-documents.twig' %}
+        {% endif %}
+        {% include '_partials/_page-leadership.twig' with {
+          pageLeadershipHeaderText: 'About the ' ~ entry.title,
+        } %}
+        {% include '_partials/_page-location.twig' %}
+      </div>
     </div>
-  {% else %}
-    {% include '_partials/_page-events.twig' %}
-    {% include '_partials/_page-news.twig' %}
-    {% include '_partials/_page-services.twig' %}
-    {% include '_partials/_page-topics.twig' %}
-    {% include '_partials/_page-projects.twig' %}
-    {% include '_partials/_page-documents.twig' %}
-  {% endif %}
-  {% include '_partials/_page-leadership.twig' with {
-    pageLeadershipHeaderText: 'About the ' ~ entry.title,
-  } %}
-  {% include '_partials/_page-location.twig' %}
+  </div>
 {% endblock %}

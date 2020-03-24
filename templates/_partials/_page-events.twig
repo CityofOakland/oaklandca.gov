@@ -6,28 +6,26 @@
 } %}
 {% set events = craft.calendar.events(options).relatedTo(entry).all() %}
 {% if events | length %}
-  <section class="bg-rotate">
+  <section class="mb-16">
     <a class="anchor-link" id="page-events"></a>
-    <div class="container">
-      {% include '_partials/_elements/_module-header.twig' with {
-        headerText: pageEventsHeaderText ?? "Events",
-      } %}
-      <div class="card-grid vertical-cards mt-8">
-        {% for entry in events %}
-          {% include '_partials/_elements/_vertical-cards.twig' with {
-            title: entry.title,
-            url: entry.url,
-            icon: 'calendar',
-            photo: entry.eventImage.one,
-            byline: entry.startDate.format("M d, Y"),
-            body: entry.body | chop(limit=50, unit='w', append='…')
-          } %}
-        {% endfor %}
-      </div>
-      {% include "_partials/_elements/_module-readmore.twig" with {
-        linkText: pageEventsLinkText ?? "Related Events",
-        linkUrl: pageEventsLinkUrl ?? defaultButtonUrl
-      } %}
+    {% include '_partials/_elements/_module-header.twig' with {
+      headerText: pageEventsHeaderText ?? "Events",
+    } %}
+    <div class="card-grid vertical-cards mt-8">
+      {% for entry in events %}
+        {% include '_partials/_elements/_vertical-cards.twig' with {
+          title: entry.title,
+          url: entry.url,
+          icon: 'calendar',
+          photo: entry.eventImage.one,
+          byline: entry.startDate.format("M d, Y"),
+          body: entry.body | chop(limit=50, unit='w', append='…')
+        } %}
+      {% endfor %}
     </div>
+    {% include "_partials/_elements/_module-readmore.twig" with {
+      linkText: pageEventsLinkText ?? "Related Events",
+      linkUrl: pageEventsLinkUrl ?? defaultButtonUrl
+    } %}
   </section>
 {% endif %}

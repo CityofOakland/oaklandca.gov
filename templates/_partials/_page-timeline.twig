@@ -1,16 +1,14 @@
 {% if entry.timeline.exists() %}
-  <section class="bg-rotate">
+  <section class="mb-16">
     <a class="anchor-link" id="page-timeline"></a>
-    <div class="container">
-      {% include '_partials/_elements/_module-header.twig' with {
-        headerText: headerText ?? "Timeline"
-      } %}
-      <dl class="timeline-grid">
-        {% for block in entry.timeline.all() %}
-          <dt>{{ block.milestoneName }}</dt>
-          <dd>{{ block.milestoneDates }}</dd>
-        {% endfor %}
-      </dl>
-    </div>
+    {% include '_partials/_elements/_module-header.twig' with {
+      headerText: headerText ?? "Timeline"
+    } %}
+    <dl class="timeline-grid">
+      {% for block in entry.timeline.all() %}
+        <dt>{{ block.milestoneName }}</dt>
+        <dd>{{ block.milestoneDates }}</dd>
+      {% endfor %}
+    </dl>
   </section>
 {% endif %}

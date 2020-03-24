@@ -1,34 +1,32 @@
 {% if entry.groupHeadName | length %}
   <section class="bg-white">
     <a class="anchor-link" id="page-leadership"></a>
-    <div class="container py-16">
-      {% include '_partials/_elements/_module-header.twig' with {
-        headerText: pageLeadershipHeaderText ?? "Leadership",
-      } %}
-      <div class="mt-8 sm:flex">
-        <div class="sm:w-1/4 sm:mr-8">
-          <figure class="w-full">
-            {% if entry.portrait | length %}
-              <img src="{{ entry.portrait.one.url }}" alt="Portrait of {{ entry.groupHeadName }}">
-            {% else %}
-              <div class="bg-gray-300 text-gray-400 opacity-75 fill-current h-full p-12">
-                {{ craft.inlin.er('/assets/img/icon-user.svg') | replace('<svg ', '<svg class="h-full w-full" ') | raw }}
-              </div>
-            {% endif %}
-          </figure>
-          {% if entry.teams | length %}
-            {% for entry in entry.teams.all() %}
-              <a href="{{ entry.url }}" class="btn btn-sm block text-center mt-4">{{ entry.title }}</a>
-            {% endfor %}
+    {% include '_partials/_elements/_module-header.twig' with {
+      headerText: pageLeadershipHeaderText ?? "Leadership",
+    } %}
+    <div class="mt-8 sm:flex">
+      <div class="sm:w-1/4 sm:mr-8">
+        <figure class="w-full">
+          {% if entry.portrait | length %}
+            <img src="{{ entry.portrait.one.url }}" alt="Portrait of {{ entry.groupHeadName }}">
+          {% else %}
+            <div class="bg-gray-300 text-gray-400 opacity-75 fill-current h-full p-12">
+              {{ craft.inlin.er('/assets/img/icon-user.svg') | replace('<svg ', '<svg class="h-full w-full" ') | raw }}
+            </div>
           {% endif %}
-        </div>
-        <div class="sm:flex-1">
-          <h2 class="text-xxxl sm:mt-0 mb-0">{{ entry.groupHeadName }}</h2>
-          {% if pageLeadershipHeaderText is not defined %}
-            <p class="text-xl mt-2">{{ entry.groupHeadTitle }}</p>
-          {% endif %}
-          <div class="text-xl mt-8">{{ entry.groupHeadBio | raw }}</div>
-        </div>
+        </figure>
+        {% if entry.teams | length %}
+          {% for entry in entry.teams.all() %}
+            <a href="{{ entry.url }}" class="btn btn-sm block text-center mt-4">{{ entry.title }}</a>
+          {% endfor %}
+        {% endif %}
+      </div>
+      <div class="sm:flex-1">
+        <h2 class="text-xxxl sm:mt-0 mb-0">{{ entry.groupHeadName }}</h2>
+        {% if pageLeadershipHeaderText is not defined %}
+          <p class="text-xl mt-2">{{ entry.groupHeadTitle }}</p>
+        {% endif %}
+        <div class="text-xl mt-8">{{ entry.groupHeadBio | raw }}</div>
       </div>
     </div>
   </section>

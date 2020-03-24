@@ -1,20 +1,18 @@
 {% set defaultButtonUrl = "/resources/related-to/"  ~ entry.section.handle ~ "/" ~ entry.slug %}
 {% if entry.pageResources | length %}
-  <section class="bg-rotate">
-    <a id="page-resources" class="anchor-link"></a>
-    <div class="container">
-      {% include '_partials/_elements/_module-header.twig' with {
-        headerText: pageResourcesHeaderText ?? "Featured Resources",
-      } %}
-      <div class="card-grid grid-equal-height mt-8">
-        {% for entry in entry.pageResources.all() %}
-          {% include '_partials/_elements/_title-cards.twig' %}
-        {% endfor %}
-      </div>
-      {% include "_partials/_elements/_module-readmore.twig" with {
-        linkText: pageResourcesLinkText ?? "Related Resources",
-        linkUrl: pageResourcesLinkUrl ?? defaultButtonUrl
-      } %}
+  <section class="mb-16">
+  <a id="page-resources" class="anchor-link"></a>
+    {% include '_partials/_elements/_module-header.twig' with {
+      headerText: pageResourcesHeaderText ?? "Featured Resources",
+    } %}
+    <div class="card-grid grid-equal-height mt-8">
+      {% for entry in entry.pageResources.all() %}
+        {% include '_partials/_elements/_title-cards.twig' %}
+      {% endfor %}
     </div>
+    {% include "_partials/_elements/_module-readmore.twig" with {
+      linkText: pageResourcesLinkText ?? "Related Resources",
+      linkUrl: pageResourcesLinkUrl ?? defaultButtonUrl
+    } %}
   </section>
 {% endif %}

@@ -17,7 +17,11 @@
         link: '/topics'
       }
     ],
-    navMenu: {
+  } %}
+  <div class="container pt-0">
+    <div class="flex">
+      {% include "_partials/_elements/_nav-sidebar.twig" with {
+            navMenu: {
       'services': entry.pageServices.exists(),
       'resources': entry.pageResources.exists(),
       'documents': entry.pageDocuments.exists(),
@@ -30,23 +34,26 @@
       'about': about,
       'contact': contactState
     }
-  } %}
-  {% if contentBuilder %}
-    <div class="container">
-      {% include '_partials/_content-builder/_tool.twig' %}
-    </div>    
-  {% else %}
-    {% include '_partials/_page-services.twig' with {
-      pageServicesLinkText: 'More Services'
-    } %}
-    {% include '_partials/_page-resources.twig' %}
-    {% include '_partials/_page-documents.twig' %}
-    {% include '_partials/_page-projects.twig' %}
-    {% include '_partials/_page-topics.twig' %}
-    {% include '_partials/_page-events.twig' %}
-    {% include '_partials/_page-meetings.twig' %}
-    {% include '_partials/_page-news.twig' %}
-  {% endif %}
+
+      } %}
+      <div class="w-full">
+        {% if contentBuilder %}
+          {% include '_partials/_content-builder/_tool.twig' %}
+        {% else %}
+          {% include '_partials/_page-services.twig' with {
+            pageServicesLinkText: 'More Services'
+          } %}
+          {% include '_partials/_page-resources.twig' %}
+          {% include '_partials/_page-documents.twig' %}
+          {% include '_partials/_page-projects.twig' %}
+          {% include '_partials/_page-topics.twig' %}
+          {% include '_partials/_page-events.twig' %}
+          {% include '_partials/_page-meetings.twig' %}
+          {% include '_partials/_page-news.twig' %}
+        {% endif %}
+      </div>
+    </div>  
+  </div>
   {% if about %}
     {% include '_partials/_page-about.twig' %}
   {% endif %}
