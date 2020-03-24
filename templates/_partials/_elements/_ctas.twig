@@ -1,13 +1,13 @@
 {% macro buttonTemplate(descriptorText, url, buttonText) %}
-  <div class="flex items-center mb-4">
-    <a aria-label="{{ buttonText }} {{ descriptorText }}" href="{{ url }}" class="btn btn-sm max-w-xs">{{ buttonText | raw }}</a>
-    {% if descriptorText | length %}<div class="ml-4 text-sm uppercase tracking-wide">{{ descriptorText }}</div>{% endif %}
+  <div class="mb-4 lg:mx-3">
+    <a aria-label="{{ buttonText }} {{ descriptorText }}" href="{{ url }}" class="btn btn-sm">{{ buttonText | raw }}</a>
+    {% if descriptorText | length %}<div class="mt-2 text-sm uppercase tracking-wide">{{ descriptorText }}</div>{% endif %}
   </div>
 {% endmacro %}
 {% import _self as macro %}
 
 {% if entry.callToAction | length %}
-  <div class="mb-16">
+  <div class="mb-8 flex flex-col lg:flex-row lg:-mx-3">
     {% for cta in entry.callToAction.all() %}
       {% switch cta.type %}
         {% case "onlineLink" %}
