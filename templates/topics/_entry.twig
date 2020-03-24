@@ -51,11 +51,11 @@
           {% include '_partials/_page-meetings.twig' %}
           {% include '_partials/_page-news.twig' %}
         {% endif %}
+        {% if about %}
+          {% include '_partials/_page-about.twig' %}
+        {% endif %}
+        {% include '_partials/_page-location.twig' %}
       </div>
     </div>  
   </div>
-  {% if about %}
-    {% include '_partials/_page-about.twig' %}
-  {% endif %}
-  {% include '_partials/_page-location.twig' %}
 {% endblock %}
