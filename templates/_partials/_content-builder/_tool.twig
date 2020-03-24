@@ -1,8 +1,8 @@
 {% set templateBase = "_partials/_content-builder/_blocks/_" %}
 {% set heading = heading ?? 'h2' %}
 {% set subheading = subheading ?? 'h3' %}
-{% set headingClass = headingClass ?? 'text-xxl my-8' %}
-{% set subheadingClass = subheadingClass ?? 'text-xl my-6' %}
+{% set headingClass = headingClass ?? 'text-xxl my-6' %}
+{% set subheadingClass = subheadingClass ?? 'text-xl my-4' %}
 {% set galleryTrue = craft.matrixBlocks().owner(entry).fieldId(66).type('gallery') %}
 
 {% if galleryTrue | length %}
@@ -49,7 +49,7 @@
   {% switch block.type %}
     {% case "heading" %}
       <a id="{{ blockId }}" class="anchor-link"></a>
-      <{{ heading }} class="{{ headingClass }}">{{ block.text }}</{{ heading }}>
+      <{{ heading }} class="{{ headingClass }} {% if loop.index0 == 0 %} mt-0{% endif %}">{{ block.text }}</{{ heading }}>
     {% case "subheading" %}
       <a id="{{ blockId }}" class="anchor-link"></a>
       <{{ subheading }} class="{{ subheadingClass }}">{{ block.text }}</{{ subheading }}>

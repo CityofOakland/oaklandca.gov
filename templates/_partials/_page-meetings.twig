@@ -17,41 +17,39 @@
 {% set relatedEvents = craft.calendar.events(options).relatedTo(entry).all() %}
 
 {% if pastEvents | length or relatedEvents | length %}
-  <section class="bg-rotate">
+  <section class="mb-16">
     <a class="anchor-link" id="page-meetings"></a>
-    <div class="container">
-      {% include '_partials/_elements/_module-header.twig' with {
-        headerText: pageMeetingsHeaderText ?? "Meetings",
-      } %}
-      <div class="card-grid vertical-cards mt-8">
-        {% if relatedEvents | length %}
-          {% for entry in relatedEvents %}
-            {% include '_partials/_elements/_vertical-cards.twig' with {
-              title: entry.title,
-              url: entry.url,
-              icon: 'calendar',
-              photo: entry.eventImage.one,
-              byline: entry.startDate.format("M d, Y"),
-              body: entry.body | chop(limit=40, unit='w', append='…')
-            } %}
-          {% endfor %}
-        {% else %}
-          {% for entry in pastEvents %}
-            {% include '_partials/_elements/_vertical-cards.twig' with {
-              title: entry.title,
-              url: entry.url,
-              icon: 'calendar',
-              photo: entry.eventImage.one,
-              byline: entry.startDate.format("M d, Y"),
-              body: entry.body | chop(limit=40, unit='w', append='…')
-            } %}
-          {% endfor %}
-        {% endif %}
-      </div>
-      {% include "_partials/_elements/_module-readmore.twig" with {
-        linkText: pageMeetingsLinkText ?? "All Meetings",
-        linkUrl: pageMeetingsLinkUrl ?? defaultButtonUrl
-      } %}
+    {% include '_partials/_elements/_module-header.twig' with {
+      headerText: pageMeetingsHeaderText ?? "Meetings",
+    } %}
+    <div class="card-grid vertical-cards mt-8">
+      {% if relatedEvents | length %}
+        {% for entry in relatedEvents %}
+          {% include '_partials/_elements/_vertical-cards.twig' with {
+            title: entry.title,
+            url: entry.url,
+            icon: 'calendar',
+            photo: entry.eventImage.one,
+            byline: entry.startDate.format("M d, Y"),
+            body: entry.body | chop(limit=40, unit='w', append='…')
+          } %}
+        {% endfor %}
+      {% else %}
+        {% for entry in pastEvents %}
+          {% include '_partials/_elements/_vertical-cards.twig' with {
+            title: entry.title,
+            url: entry.url,
+            icon: 'calendar',
+            photo: entry.eventImage.one,
+            byline: entry.startDate.format("M d, Y"),
+            body: entry.body | chop(limit=40, unit='w', append='…')
+          } %}
+        {% endfor %}
+      {% endif %}
     </div>
+    {% include "_partials/_elements/_module-readmore.twig" with {
+      linkText: pageMeetingsLinkText ?? "All Meetings",
+      linkUrl: pageMeetingsLinkUrl ?? defaultButtonUrl
+    } %}
   </section>
 {% endif %}

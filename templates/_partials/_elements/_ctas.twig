@@ -1,15 +1,13 @@
 {% macro buttonTemplate(descriptorText, url, buttonText) %}
-  <div>
-    {% if descriptorText | length %}
-      <p class="text-sm uppercase tracking-wide">{{ descriptorText }}</p>
-    {% endif %}
-    <a aria-label="{{ buttonText }} {{ descriptorText }}" href="{{ url }}" class="btn w-full">{{ buttonText | raw }}</a>
+  <div class="flex items-center mb-4">
+    <a aria-label="{{ buttonText }} {{ descriptorText }}" href="{{ url }}" class="btn btn-sm max-w-xs">{{ buttonText | raw }}</a>
+    {% if descriptorText | length %}<div class="ml-4 text-sm uppercase tracking-wide">{{ descriptorText }}</div>{% endif %}
   </div>
 {% endmacro %}
 {% import _self as macro %}
 
 {% if entry.callToAction | length %}
-  <div class="card-grid grid-equal-height mb-16">
+  <div class="mb-16">
     {% for cta in entry.callToAction.all() %}
       {% switch cta.type %}
         {% case "onlineLink" %}
@@ -22,7 +20,7 @@
         {% case "emailAddress" %}
           {{ macro.buttonTemplate(cta.emailTitle, 'mailto:' ~ cta.emailAddress, cta.linkText) }}
         {% case "physicalAddress" %}
-          <div>
+          <div class="mb-4">
             {% set location = cta.streetAddress %}
             <p class="text-sm uppercase tracking-wide">{{ cta.addressTitle }}</p>
             <p>

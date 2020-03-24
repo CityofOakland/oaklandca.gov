@@ -13,23 +13,31 @@
         link: '/projects'
       }
     ],
-    navMenu: {
-      'timeline': entry.timeline.exists(),
-      'meetings': relatedMeetings.exists(),
-      'resources': entry.pageResources.exists(),
-      'documents': entry.pageDocuments.exists(),
-      'about': true,
-      'news': relatedNews.exists(),
-      'contact': contactState
-    }
   } %}
-  {% include '_partials/_page-timeline.twig' %}
-  {% include '_partials/_page-meetings.twig' %}
-  {% include '_partials/_page-resources.twig' %}
-  {% include '_partials/_page-topics.twig' %}
-  {% include '_partials/_page-projects.twig' %}
-  {% include '_partials/_page-documents.twig' %}
-  {% include '_partials/_page-about.twig' %}
-  {% include '_partials/_page-news.twig' %}
-  {% include '_partials/_page-location.twig' %}
+  <div class="container pt-0">
+    <div class="flex">
+      {% include "_partials/_elements/_nav-sidebar.twig" with {
+        navMenu: {
+          'timeline': entry.timeline.exists(),
+          'meetings': relatedMeetings.exists(),
+          'resources': entry.pageResources.exists(),
+          'documents': entry.pageDocuments.exists(),
+          'about': true,
+          'news': relatedNews.exists(),
+          'contact': contactState
+        }
+      } %}
+      <div class="w-full">
+        {% include '_partials/_page-timeline.twig' %}
+        {% include '_partials/_page-meetings.twig' %}
+        {% include '_partials/_page-resources.twig' %}
+        {% include '_partials/_page-topics.twig' %}
+        {% include '_partials/_page-projects.twig' %}
+        {% include '_partials/_page-documents.twig' %}
+        {% include '_partials/_page-about.twig' %}
+        {% include '_partials/_page-news.twig' %}
+        {% include '_partials/_page-location.twig' %}
+      </div>
+    </div>
+  </div>
 {% endblock %}
