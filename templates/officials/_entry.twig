@@ -44,9 +44,7 @@
       } %}
       <div class="w-full">
         {% if contentBuilder %}
-          <div class="container">
-            {% include '_partials/_content-builder/_tool.twig' %}
-          </div>
+          {% include '_partials/_content-builder/_tool.twig' %}
         {% else %}
           {% include '_partials/_page-events.twig' %}
           {% include '_partials/_page-news.twig' %}
