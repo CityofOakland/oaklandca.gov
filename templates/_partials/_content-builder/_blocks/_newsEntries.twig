@@ -1,5 +1,6 @@
 {% set entryIds = block.entries.ids() %}
-{% set relatedNews = "" %}
+{% set relatedNews = craft.entries.section('news').relatedTo(entry) %}
+{% set defaultButtonUrl = "" %}
 
 {% if block.allowAutofill %}
   {% set options = {
@@ -27,4 +28,10 @@
       } %}
     {% endfor %}
   </div>
+  {% if block.allowAutofill and relatedNews | length %}
+    {% include "_partials/_elements/_module-readmore.twig" with {
+      linkText: pageNewsLinkText ?? "Related News",
+      linkUrl: pageNewsLinkUrl ?? defaultButtonUrl
+    } %}
+  {% endif %}
 </div>
