@@ -28,7 +28,7 @@
       } %}
     {% endfor %}
   </div>
-  {% if block.allowAutofill %}
+  {% if block.allowAutofill and relatedNews | length %}
     {% include "_partials/_elements/_module-readmore.twig" with {
       linkText: pageNewsLinkText ?? "Related News",
       linkUrl: pageNewsLinkUrl ?? defaultButtonUrl
