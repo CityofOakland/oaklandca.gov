@@ -70,7 +70,8 @@
     {% case "largeEntryLinks" or 
             "smallEntryLinks" or 
             "image" or
-            "gallery"
+            "gallery" or
+            "linksWithDescriptions"
     %}
       {% include templateBase ~ block.type ~ ".twig" %}
     {% case "newsEntries" %}
