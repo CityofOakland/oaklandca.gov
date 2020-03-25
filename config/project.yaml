@@ -42,7 +42,7 @@ categoryGroups:
     structure:
       maxLevels: 1
       uid: b4e9ab1c-aa42-46f9-a679-898119f39e8d
-dateModified: 1584668478
+dateModified: 1585173433
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -3940,7 +3940,7 @@ matrixBlockTypes:
         type: craft\redactor\Field
     handle: smallEntryLinks
     name: 'Small Entry Links'
-    sortOrder: 11
+    sortOrder: 12
   29ebabf1-0b23-4bc0-8561-b15e84b44bca:
     field: bd28c3bb-d183-4caf-99bf-bff1b218c7a8
     fieldLayouts:
@@ -4217,7 +4217,7 @@ matrixBlockTypes:
         type: craft\fields\Lightswitch
     handle: newsEntries
     name: 'News Entries'
-    sortOrder: 12
+    sortOrder: 13
   31daeaab-9824-4c64-bad1-bdf49fb2ab9d:
     field: b924108b-fb70-4757-ad7f-3e713f23a6d6
     fieldLayouts:
@@ -4919,7 +4919,7 @@ matrixBlockTypes:
         type: craft\redactor\Field
     handle: largeEntryLinks
     name: 'Large Entry Links'
-    sortOrder: 10
+    sortOrder: 11
   4ae79c6e-4218-4dc0-8c8e-d1e19e0c00e8:
     field: fd0c8e02-99b4-4ce5-ab89-b29cd0efc581
     fieldLayouts:
@@ -5281,7 +5281,7 @@ matrixBlockTypes:
         type: superbig\templateselect\fields\TemplateSelectField
     handle: customTemplate
     name: 'Custom Template'
-    sortOrder: 15
+    sortOrder: 16
   7b2905cb-3cdd-4812-9c93-b1bfb2fbda44:
     field: fd0c8e02-99b4-4ce5-ab89-b29cd0efc581
     fieldLayouts:
@@ -5837,6 +5837,103 @@ matrixBlockTypes:
     handle: table2Columns
     name: '2 Columns'
     sortOrder: 5
+  9bcd16e5-bd37-435b-a9f8-36d5a9e3eb55:
+    field: fd0c8e02-99b4-4ce5-ab89-b29cd0efc581
+    fieldLayouts:
+      25ddc7d5-b636-4886-a112-15195c636ae7:
+        tabs:
+          -
+            fields:
+              5dc172d1-4954-444f-b558-6f9f388d0ac3:
+                required: false
+                sortOrder: 2
+              7897bf8b-9bea-4c58-8f04-aea29c95d7bf:
+                required: true
+                sortOrder: 3
+              ad4e3d36-752c-48da-bfbd-bd61e083119b:
+                required: true
+                sortOrder: 1
+            name: Content
+            sortOrder: 1
+    fields:
+      5dc172d1-4954-444f-b558-6f9f388d0ac3:
+        contentColumnType: text
+        fieldGroup: null
+        handle: linkSetDescription
+        instructions: 'Use this optional field to provide context for the links you create in this section.'
+        name: 'Link Set Description'
+        searchable: false
+        settings:
+          availableTransforms: '*'
+          availableVolumes: '*'
+          cleanupHtml: true
+          columnType: text
+          purifierConfig: ''
+          purifyHtml: '1'
+          redactorConfig: 'Simple with Links.json'
+          removeEmptyTags: '1'
+          removeInlineStyles: '1'
+          removeNbsp: '1'
+          showUnpermittedFiles: false
+          showUnpermittedVolumes: false
+        translationKeyFormat: null
+        translationMethod: none
+        type: craft\redactor\Field
+      7897bf8b-9bea-4c58-8f04-aea29c95d7bf:
+        contentColumnType: string
+        fieldGroup: null
+        handle: linkSet
+        instructions: ''
+        name: 'Link Set'
+        searchable: false
+        settings:
+          columns:
+            __assoc__:
+              -
+                - ac30e2e0-2f26-4b6c-a404-07b749af00dc
+                -
+                  __assoc__:
+                    -
+                      - width
+                      - ''
+              -
+                - 109ddbd1-80ea-471e-a6f9-ef77d84a0800
+                -
+                  __assoc__:
+                    -
+                      - width
+                      - ''
+          contentTable: '{{%stc_46_linkset}}'
+          fieldLayout: table
+          maxRows: ''
+          minRows: ''
+          propagationMethod: all
+          selectionLabel: ''
+          staticField: ''
+        translationKeyFormat: null
+        translationMethod: site
+        type: verbb\supertable\fields\SuperTableField
+      ad4e3d36-752c-48da-bfbd-bd61e083119b:
+        contentColumnType: text
+        fieldGroup: null
+        handle: heading
+        instructions: ''
+        name: Heading
+        searchable: false
+        settings:
+          byteLimit: null
+          charLimit: null
+          code: ''
+          columnType: null
+          initialRows: '4'
+          multiline: ''
+          placeholder: ''
+        translationKeyFormat: null
+        translationMethod: none
+        type: craft\fields\PlainText
+    handle: linksWithDescriptions
+    name: 'Links with Descriptions'
+    sortOrder: 10
   9ea91970-dd04-4a69-91e0-ba30496e7905:
     field: fd0c8e02-99b4-4ce5-ab89-b29cd0efc581
     fieldLayouts:
@@ -5908,7 +6005,7 @@ matrixBlockTypes:
         type: Solspace\Calendar\FieldTypes\EventFieldType
     handle: meetingEntries
     name: 'Meeting Entries'
-    sortOrder: 14
+    sortOrder: 15
   a26ba17c-1ef7-47e3-949a-a26183eb54b7:
     field: fd0c8e02-99b4-4ce5-ab89-b29cd0efc581
     fieldLayouts:
@@ -6834,7 +6931,7 @@ matrixBlockTypes:
         type: Solspace\Calendar\FieldTypes\EventFieldType
     handle: eventEntries
     name: 'Event Entries'
-    sortOrder: 13
+    sortOrder: 14
   f9f00c04-43ac-44f6-a44f-922292b71b01:
     field: 78894bca-c6ce-4518-bb6f-fa94d7e7050e
     fieldLayouts:
@@ -10292,6 +10389,240 @@ sites:
     siteGroup: 226351ad-9bcd-4a73-bd65-bf1ef65f710c
     sortOrder: 1
 superTableBlockTypes:
+  47243b5f-83ef-4999-bb07-7af8281cf911:
+    field: 7897bf8b-9bea-4c58-8f04-aea29c95d7bf
+    fieldLayouts:
+      289af806-82ca-4c2f-a9e6-081a29b8573d:
+        tabs:
+          -
+            fields:
+              109ddbd1-80ea-471e-a6f9-ef77d84a0800:
+                required: true
+                sortOrder: 2
+              ac30e2e0-2f26-4b6c-a404-07b749af00dc:
+                required: true
+                sortOrder: 1
+            name: Content
+            sortOrder: 1
+    fields:
+      109ddbd1-80ea-471e-a6f9-ef77d84a0800:
+        contentColumnType: string(360)
+        fieldGroup: null
+        handle: linkDescription
+        instructions: 'Describe the link above here. Keep it short!'
+        name: 'Link Description'
+        searchable: false
+        settings:
+          byteLimit: null
+          charLimit: 90
+          code: ''
+          columnType: null
+          initialRows: '4'
+          multiline: ''
+          placeholder: ''
+        translationKeyFormat: null
+        translationMethod: none
+        type: craft\fields\PlainText
+      ac30e2e0-2f26-4b6c-a404-07b749af00dc:
+        contentColumnType: text
+        fieldGroup: null
+        handle: linkLocation
+        instructions: ''
+        name: 'Link Location'
+        searchable: false
+        settings:
+          allowCustomText: '1'
+          allowTarget: ''
+          defaultText: ''
+          selectLinkText: ''
+          types:
+            __assoc__:
+              -
+                - fruitstudios\linkit\models\Email
+                -
+                  __assoc__:
+                    -
+                      - enabled
+                      - '1'
+                    -
+                      - customLabel
+                      - ''
+                    -
+                      - customPlaceholder
+                      - dotgovsupport@oaklandca.gov
+              -
+                - fruitstudios\linkit\models\Phone
+                -
+                  __assoc__:
+                    -
+                      - enabled
+                      - ''
+                    -
+                      - customLabel
+                      - ''
+                    -
+                      - customPlaceholder
+                      - ''
+              -
+                - fruitstudios\linkit\models\Url
+                -
+                  __assoc__:
+                    -
+                      - enabled
+                      - '1'
+                    -
+                      - customLabel
+                      - ''
+                    -
+                      - customPlaceholder
+                      - 'https://www.google.com'
+                    -
+                      - allowAlias
+                      - ''
+                    -
+                      - allowMailto
+                      - ''
+                    -
+                      - allowHash
+                      - ''
+                    -
+                      - allowPaths
+                      - ''
+              -
+                - fruitstudios\linkit\models\Twitter
+                -
+                  __assoc__:
+                    -
+                      - enabled
+                      - ''
+                    -
+                      - customLabel
+                      - ''
+                    -
+                      - customPlaceholder
+                      - ''
+              -
+                - fruitstudios\linkit\models\Facebook
+                -
+                  __assoc__:
+                    -
+                      - enabled
+                      - ''
+                    -
+                      - customLabel
+                      - ''
+                    -
+                      - customPlaceholder
+                      - ''
+              -
+                - fruitstudios\linkit\models\Instagram
+                -
+                  __assoc__:
+                    -
+                      - enabled
+                      - ''
+                    -
+                      - customLabel
+                      - ''
+                    -
+                      - customPlaceholder
+                      - ''
+              -
+                - fruitstudios\linkit\models\LinkedIn
+                -
+                  __assoc__:
+                    -
+                      - enabled
+                      - ''
+                    -
+                      - customLabel
+                      - ''
+                    -
+                      - customPlaceholder
+                      - ''
+              -
+                - fruitstudios\linkit\models\Entry
+                -
+                  __assoc__:
+                    -
+                      - enabled
+                      - '1'
+                    -
+                      - customLabel
+                      - ''
+                    -
+                      - sources
+                      -
+                        - 'section:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f'
+                        - 'section:b3411cb1-e860-46ed-9cd6-58cf9b8daacb'
+                        - 'section:9da43fd8-c505-4d19-9486-e0cb669c568a'
+                        - 'section:8b7c4e26-9aab-4c5d-874e-aee151107de3'
+                        - 'section:983c9f6f-9251-4fd3-91e1-b598eccc6a1a'
+                        - 'section:28881fc8-3e61-4fdb-a5ee-cce1bab725bf'
+                        - 'section:98d541ae-56ee-4c98-ba9c-37438dc485a0'
+                        - 'section:24fa116b-8516-4626-84f3-86b685e71071'
+                        - 'section:b7e437e1-239f-4c5c-8c62-5f0323f9d22c'
+                        - 'section:07faad04-9ec4-4f68-9fe8-0ca20f189f8a'
+                        - 'section:fbf8b9b0-8875-4e08-819a-d62603676dc4'
+                        - 'section:70778563-6dac-453d-a4b0-5121f3a614b7'
+                        - 'section:17d5d48d-2d75-4742-8820-cdce13764482'
+                    -
+                      - customSelectionLabel
+                      - ''
+              -
+                - fruitstudios\linkit\models\Category
+                -
+                  __assoc__:
+                    -
+                      - enabled
+                      - ''
+                    -
+                      - customLabel
+                      - ''
+                    -
+                      - sources
+                      - '*'
+                    -
+                      - customSelectionLabel
+                      - ''
+              -
+                - fruitstudios\linkit\models\Asset
+                -
+                  __assoc__:
+                    -
+                      - enabled
+                      - ''
+                    -
+                      - customLabel
+                      - ''
+                    -
+                      - sources
+                      - ''
+                    -
+                      - customSelectionLabel
+                      - ''
+              -
+                - fruitstudios\linkit\models\User
+                -
+                  __assoc__:
+                    -
+                      - enabled
+                      - ''
+                    -
+                      - customLabel
+                      - ''
+                    -
+                      - sources
+                      - '*'
+                    -
+                      - customSelectionLabel
+                      - ''
+                    -
+                      - userPath
+                      - ''
+        translationKeyFormat: null
+        translationMethod: none
+        type: fruitstudios\linkit\fields\LinkitField
   6a3c5ca9-b11f-40c8-8af6-5e03302432aa:
     field: ff148937-9066-4578-8eb1-56090c97b181
     fieldLayouts:

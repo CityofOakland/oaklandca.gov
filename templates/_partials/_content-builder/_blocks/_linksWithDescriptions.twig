@@ -1,0 +1,16 @@
+<div>
+  <a class="anchor-link" id="{{ blockId }}"></a>
+  <{{ heading }} class="{{ headingClass }}">{{ block.heading }}</{{ heading }}>
+  {{ block.linkSetDescription }}
+  <ul class="mt-0 card-grid card-grid-tight items-stretch">
+    {% for linkSet in block.linkSet.all() %}
+      <li>
+        <a class="block h-full rounded border-gray-500 border p-5 hover:bg-green-100" href="{{ linkSet.linkLocation.url }}">
+          <{{ subheading }} class="my-0 text-lg md:text-xl text-gray-500">{{ linkSet.linkLocation.text }}</{{ subheading }}>
+          <p class="mt-4 mb-0 text-gray-500 text-sm md:text-base">{{ linkSet.linkDescription }}</p>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+

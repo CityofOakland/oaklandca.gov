@@ -13,6 +13,10 @@ $defaultLinksBlock = [
   'label' => 'Links',
   'types' => ['largeEntryLinks', 'smallEntryLinks', 'newsEntries', 'eventEntries', 'meetingEntries']
 ];
+$adminLinksBlock = [
+  'label' => 'Links',
+  'types' => ['linksWithDescriptions', 'largeEntryLinks', 'smallEntryLinks', 'newsEntries', 'eventEntries', 'meetingEntries']
+];
 $defaultImagesBlock = [
   'label' => 'Images',
   'types' => ['image', 'gallery']
@@ -29,7 +33,7 @@ $isContentBuilder = $user->getIdentity() ? $user->getIdentity()->isInGroup('cont
 if ($isUserAdmin) {
   $defaultBlock = [
     $adminTextBlock,
-    $defaultLinksBlock,
+    $adminLinksBlock,
     $defaultImagesBlock,
     $defaultTablesBlock
   ];
