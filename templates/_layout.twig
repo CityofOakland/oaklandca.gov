@@ -39,9 +39,7 @@
     <div class="page-holder">
       {% include '_partials/_elements/_nav-bar.twig' %}
       <main>
-        {% if craft.app.request.segments() %}
-          {% include '_partials/_elements/_page-alert.twig' %}
-        {% endif %}
+        {% include '_partials/_elements/_page-alert.twig' %}
         {% block content %}
           <div class="container">
             <p>No content has been added to this layout. Please make sure to include the following in your template:</p>
