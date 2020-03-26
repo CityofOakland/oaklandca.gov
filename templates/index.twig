@@ -4,10 +4,10 @@
 {% block content %}
   <div class="banner banner-home">
     <div class="container text-green-600">
-      <div class="z-10 o-1 relative mb-32 md:mt-12 md:mb-24 bg-white font-heading p-6 max-w-xs rounded-sm">
-        <h1 class="font-extrabold text-xxxxl leading-tight"><span class="text-xl block">Welcome to</span> Oakland, California</h1>
+      <div class="z-10 o-1 relative mb-32 md:mt-12 md:mb-24 bg-white font-heading p-6 max-w-md rounded-sm">
+        <h1 class="font-extrabold text-xxxxl leading-tight"><span class="text-xl uppercase block mb-3">Important </span>Stay at home. Do your part to flatten the curve.</h1>
         <p class="my-0">
-          <b><a class="text-green-300" href="/topics/oaklandlovelife" class="">#OaklandLoveLife</a></b>
+          <b><a class="text-green-300" href="/topics/covid-19" class="">Get information & resources »</a></b>
         </p>
       </div>
       <img 
@@ -29,10 +29,9 @@
       </form>
     </div>
   </div>
-  {% include '_partials/_elements/_page-alert.twig' %}
 
   {# Begin Services #}
-  {% if entry.highlightedServices | length %}
+  {# {% if entry.highlightedServices | length %}
     <section class="bg-rotate">
       <div class="container">
         {% include '_partials/_elements/_module-header.twig' with {
@@ -49,8 +48,33 @@
         } %}
       </div>
     </section>
-  {% endif %}
+  {% endif %} #}
   {# End Services #}
+
+  {% if entry.cityServicesAndResourcesUpdates | length %}
+    <section class="bg-rotate">
+      <div class="container">
+        {% include '_partials/_elements/_module-header.twig' with {
+          headerText: "City Services and Resources Updates",
+        } %}
+        <div class="flex flex-col md:flex-row md:mt-8">
+          <div class="md:w-64 md:border-r-2 md:border-gray-300 md:pr-8 md:mr-8">
+            {{ entry.cityServicesAndResourcesUpdatesDescription }}
+            <a href="/services" class="btn">See all services</a>
+          </div>
+          <div class="text-base">
+            <ul class="md:h-64 md:flex md:flex-col md:flex-wrap md:flex-initial md:items-start md:justify-start">
+            {% for block in entry.cityServicesAndResourcesUpdates.all() %}
+              <li class="md:max-w-56 md:mr-8 mb-2">
+                <a class="underline text-green-300 hover:text-green-500" href="{{ block.destination.url }}">{{ block.destination.text }}</a>
+              </li>
+            {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  {% endif %}
 
   {# Begin News #}
   <section class="bg-rotate">

@@ -42,7 +42,7 @@ categoryGroups:
     structure:
       maxLevels: 1
       uid: b4e9ab1c-aa42-46f9-a679-898119f39e8d
-dateModified: 1585173433
+dateModified: 1585210572
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -339,6 +339,29 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
+  1011d286-bca1-40e1-abcb-1d61f6f7ebb2:
+    contentColumnType: text
+    fieldGroup: 8ac349fa-f382-4bc4-9f01-25e04abf073c
+    handle: cityServicesAndResourcesUpdatesDescription
+    instructions: ''
+    name: 'City Services and Resources Updates Description'
+    searchable: false
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      cleanupHtml: true
+      columnType: text
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: 'Simple with Links.json'
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
   1160308b-03c0-43ad-9f4b-35e26c016c89:
     contentColumnType: text
     fieldGroup: ed709c7c-0c3a-4457-ae2d-38a3ccb797e4
@@ -419,6 +442,21 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
+  19567722-f3ec-4502-977f-61661602f624:
+    contentColumnType: string
+    fieldGroup: 8ac349fa-f382-4bc4-9f01-25e04abf073c
+    handle: cityServicesAndResourcesUpdates
+    instructions: ''
+    name: 'City Services and Resources Updates'
+    searchable: true
+    settings:
+      contentTable: '{{%matrixcontent_cityservicesandresourcesupdates}}'
+      maxBlocks: ''
+      minBlocks: ''
+      propagationMethod: all
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Matrix
   1b7fc839-7de9-4717-b41d-d74bfa40b5c8:
     contentColumnType: string
     fieldGroup: c964d82c-a4e7-4ec4-ad42-7c3e843193c0
@@ -6189,6 +6227,222 @@ matrixBlockTypes:
     handle: table3Columns
     name: '3 Columns'
     sortOrder: 6
+  a5f4a9fc-df41-498a-b3b2-e30e383453bc:
+    field: 19567722-f3ec-4502-977f-61661602f624
+    fieldLayouts:
+      8213a8b6-a1f3-48fb-bc8a-96d00db76a14:
+        tabs:
+          -
+            fields:
+              a2623193-86a7-40d6-9f1c-1be72d77b6d0:
+                required: true
+                sortOrder: 1
+            name: Content
+            sortOrder: 1
+    fields:
+      a2623193-86a7-40d6-9f1c-1be72d77b6d0:
+        contentColumnType: text
+        fieldGroup: null
+        handle: destination
+        instructions: ''
+        name: Destination
+        searchable: false
+        settings:
+          allowCustomText: '1'
+          allowTarget: ''
+          defaultText: ''
+          selectLinkText: ''
+          types:
+            __assoc__:
+              -
+                - fruitstudios\linkit\models\Email
+                -
+                  __assoc__:
+                    -
+                      - enabled
+                      - ''
+                    -
+                      - customLabel
+                      - ''
+                    -
+                      - customPlaceholder
+                      - ''
+              -
+                - fruitstudios\linkit\models\Phone
+                -
+                  __assoc__:
+                    -
+                      - enabled
+                      - ''
+                    -
+                      - customLabel
+                      - ''
+                    -
+                      - customPlaceholder
+                      - ''
+              -
+                - fruitstudios\linkit\models\Url
+                -
+                  __assoc__:
+                    -
+                      - enabled
+                      - '1'
+                    -
+                      - customLabel
+                      - ''
+                    -
+                      - customPlaceholder
+                      - ''
+                    -
+                      - allowAlias
+                      - ''
+                    -
+                      - allowMailto
+                      - ''
+                    -
+                      - allowHash
+                      - ''
+                    -
+                      - allowPaths
+                      - ''
+              -
+                - fruitstudios\linkit\models\Twitter
+                -
+                  __assoc__:
+                    -
+                      - enabled
+                      - ''
+                    -
+                      - customLabel
+                      - ''
+                    -
+                      - customPlaceholder
+                      - ''
+              -
+                - fruitstudios\linkit\models\Facebook
+                -
+                  __assoc__:
+                    -
+                      - enabled
+                      - ''
+                    -
+                      - customLabel
+                      - ''
+                    -
+                      - customPlaceholder
+                      - ''
+              -
+                - fruitstudios\linkit\models\Instagram
+                -
+                  __assoc__:
+                    -
+                      - enabled
+                      - ''
+                    -
+                      - customLabel
+                      - ''
+                    -
+                      - customPlaceholder
+                      - ''
+              -
+                - fruitstudios\linkit\models\LinkedIn
+                -
+                  __assoc__:
+                    -
+                      - enabled
+                      - ''
+                    -
+                      - customLabel
+                      - ''
+                    -
+                      - customPlaceholder
+                      - ''
+              -
+                - fruitstudios\linkit\models\Entry
+                -
+                  __assoc__:
+                    -
+                      - enabled
+                      - '1'
+                    -
+                      - customLabel
+                      - ''
+                    -
+                      - sources
+                      -
+                        - 'section:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f'
+                        - 'section:b3411cb1-e860-46ed-9cd6-58cf9b8daacb'
+                        - 'section:9da43fd8-c505-4d19-9486-e0cb669c568a'
+                        - 'section:8b7c4e26-9aab-4c5d-874e-aee151107de3'
+                        - 'section:983c9f6f-9251-4fd3-91e1-b598eccc6a1a'
+                        - 'section:28881fc8-3e61-4fdb-a5ee-cce1bab725bf'
+                        - 'section:98d541ae-56ee-4c98-ba9c-37438dc485a0'
+                        - 'section:24fa116b-8516-4626-84f3-86b685e71071'
+                        - 'section:b7e437e1-239f-4c5c-8c62-5f0323f9d22c'
+                        - 'section:07faad04-9ec4-4f68-9fe8-0ca20f189f8a'
+                        - 'section:fbf8b9b0-8875-4e08-819a-d62603676dc4'
+                        - 'section:70778563-6dac-453d-a4b0-5121f3a614b7'
+                        - 'section:17d5d48d-2d75-4742-8820-cdce13764482'
+                    -
+                      - customSelectionLabel
+                      - ''
+              -
+                - fruitstudios\linkit\models\Category
+                -
+                  __assoc__:
+                    -
+                      - enabled
+                      - ''
+                    -
+                      - customLabel
+                      - ''
+                    -
+                      - sources
+                      - '*'
+                    -
+                      - customSelectionLabel
+                      - ''
+              -
+                - fruitstudios\linkit\models\Asset
+                -
+                  __assoc__:
+                    -
+                      - enabled
+                      - ''
+                    -
+                      - customLabel
+                      - ''
+                    -
+                      - sources
+                      - '*'
+                    -
+                      - customSelectionLabel
+                      - ''
+              -
+                - fruitstudios\linkit\models\User
+                -
+                  __assoc__:
+                    -
+                      - enabled
+                      - ''
+                    -
+                      - customLabel
+                      - ''
+                    -
+                      - sources
+                      - '*'
+                    -
+                      - customSelectionLabel
+                      - ''
+                    -
+                      - userPath
+                      - ''
+        translationKeyFormat: null
+        translationMethod: none
+        type: fruitstudios\linkit\fields\LinkitField
+    handle: link
+    name: Link
+    sortOrder: 1
   af608e3d-ec36-44a3-a250-24cdd1e7195f:
     field: 555efa28-a6b9-471d-8548-735eae07cb3c
     fieldLayouts:
@@ -10060,15 +10314,21 @@ sections:
             tabs:
               -
                 fields:
-                  18fa95ee-449e-4c22-9d88-b0fb8918a38b:
+                  1011d286-bca1-40e1-abcb-1d61f6f7ebb2:
                     required: false
                     sortOrder: 2
-                  de273878-3929-4764-b4ab-a670a2987d39:
-                    required: false
-                    sortOrder: 3
-                  f528b37c-8b15-43b8-8da0-d1b161fbf629:
+                  18fa95ee-449e-4c22-9d88-b0fb8918a38b:
                     required: false
                     sortOrder: 4
+                  19567722-f3ec-4502-977f-61661602f624:
+                    required: false
+                    sortOrder: 3
+                  de273878-3929-4764-b4ab-a670a2987d39:
+                    required: false
+                    sortOrder: 5
+                  f528b37c-8b15-43b8-8da0-d1b161fbf629:
+                    required: false
+                    sortOrder: 6
                   f62c85ae-2203-4d1a-8702-da515126a398:
                     required: false
                     sortOrder: 1

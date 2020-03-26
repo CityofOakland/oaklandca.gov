@@ -1,42 +1,42 @@
 module.exports = {
   theme: {
     colors: {
-      'transparent':  'transparent',
+      'transparent': 'transparent',
 
-      'white':        '#ffffff',
-      'black':        '#000000',
+      'white': '#ffffff',
+      'black': '#000000',
 
-      'gray-100':     '#f1f4f4',
-      'gray-200':     '#e4e6e3',
-      'gray-300':     '#cfd0ce',
-      'gray-400':     '#8c9d96',
-      'gray-500':     '#4a4a4a',
-      'gray-600':     '#303030',
-      'gray-700':     '#212529',
+      'gray-100': '#f1f4f4',
+      'gray-200': '#e4e6e3',
+      'gray-300': '#cfd0ce',
+      'gray-400': '#8c9d96',
+      'gray-500': '#4a4a4a',
+      'gray-600': '#303030',
+      'gray-700': '#212529',
 
-      'red-100':      '#ffa194',
-      'red-200':      '#ff7971',
-      'red-300':      '#fd454b',
-      'red-400':      '#f31431',
-      'red-500':      '#c00011',
-      'red-600':      '#980000',
-      'red-700':      '#720000',
+      'red-100': '#ffa194',
+      'red-200': '#ff7971',
+      'red-300': '#fd454b',
+      'red-400': '#f31431',
+      'red-500': '#c00011',
+      'red-600': '#980000',
+      'red-700': '#720000',
 
-      'yellow-100':   '#ffd366',
-      'yellow-200':   '#ffae42',
-      'yellow-300':   '#d58a1a',
-      'yellow-400':   '#ac6800',
-      'yellow-500':   '#854800',
-      'yellow-600':   '#612900',
-      'yellow-700':   '#430800',
+      'yellow-100': '#ffd366',
+      'yellow-200': '#ffae42',
+      'yellow-300': '#d58a1a',
+      'yellow-400': '#ac6800',
+      'yellow-500': '#854800',
+      'yellow-600': '#612900',
+      'yellow-700': '#430800',
 
-      'green-100':    '#d0e9dc',
-      'green-200':    '#a2c7b4',
-      'green-300':    '#008943',
-      'green-400':    '#006632',
-      'green-500':    '#00582b',
-      'green-600':    '#003d1e',
-      'green-700':    '#002613',
+      'green-100': '#d0e9dc',
+      'green-200': '#a2c7b4',
+      'green-300': '#008943',
+      'green-400': '#006632',
+      'green-500': '#00582b',
+      'green-600': '#003d1e',
+      'green-700': '#002613',
     },
     spacing: {
       px: '1px',
@@ -64,16 +64,16 @@ module.exports = {
     },
     backgroundColor: theme => theme('colors'),
     fontFamily: {
-      heading: ['Montserrat', 'system-ui', '-apple-system', 'sans-serif',],
-      body: ['Noto Sans', 'system-ui', '-apple-system', 'sans-serif',],
+      heading: ['Montserrat', 'system-ui', '-apple-system', 'sans-serif', ],
+      body: ['Noto Sans', 'system-ui', '-apple-system', 'sans-serif', ],
     },
     fontSize: {
-      xs: '.75rem',     // 12px
-      sm: '.875rem',    // 14px
-      base: '1rem',     // 16px
-      lg: '1.125rem',   // 18px
-      xl: '1.25rem',    // 20px
-      xxl: '1.5rem',    // 24px
+      xs: '.75rem', // 12px
+      sm: '.875rem', // 14px
+      base: '1rem', // 16px
+      lg: '1.125rem', // 18px
+      xl: '1.25rem', // 20px
+      xxl: '1.5rem', // 24px
       xxxl: '1.875rem', // 30px
       xxxxl: '2.25rem', // 36px
     },
@@ -99,7 +99,7 @@ module.exports = {
       full: '100%',
       screen: '100vh',
     },
-    width: theme =>({
+    width: theme => ({
       auto: 'auto',
       ...theme('spacing'),
       '1/2': '50%',
@@ -131,14 +131,15 @@ module.exports = {
       full: '100%',
       screen: '100vw',
     }),
-    maxWidth: {
+    maxWidth: theme => ({
+      ...theme('spacing'),
       xs: '20rem',
       sm: '30rem',
       md: '40rem',
       lg: '50rem',
       xl: '60rem',
       full: '100%',
-    },
+    }),
     margin: (theme, { negative }) => ({
       auto: 'auto',
       ...theme('spacing'),
