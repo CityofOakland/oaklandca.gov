@@ -2,6 +2,7 @@
 {% set heading = heading ?? 'h2' %}
 {% set subheading = subheading ?? 'h3' %}
 {% set headingClass = headingClass ?? 'text-xxl my-6' %}
+{% set topHeadingClass = 'text-xxl mt-0 mb-6' %}
 {% set subheadingClass = subheadingClass ?? 'text-xl my-4' %}
 {% set galleryTrue = craft.matrixBlocks().owner(entry).fieldId(66).type('gallery') %}
 
@@ -46,10 +47,19 @@
 
 {% for block in entry.contentBuilder.all() %}
   {% set blockId =  (block.text ?? block.heading) | kebab ~ '-' ~ block.id ?? block.id %}
+  {% switch loop.index0 %}
+  
+    {% case 0 %}    
+      {% set hClass = topHeadingClass %}
+    {% default %}
+      {% set hClass = headingClass %}
+  
+  {% endswitch %}
+  
   {% switch block.type %}
     {% case "heading" %}
       <a id="{{ blockId }}" class="anchor-link"></a>
-      <{{ heading }} class="{{ headingClass }} {% if loop.index0 == 0 %} mt-0{% endif %}">{{ block.text }}</{{ heading }}>
+      <{{ heading }} class="{{ hClass }} {% if loop.index0 == 0 %} mt-0{% endif %}">{{ block.text }}</{{ heading }}>
     {% case "subheading" %}
       <a id="{{ blockId }}" class="anchor-link"></a>
       <{{ subheading }} class="{{ subheadingClass }}">{{ block.text }}</{{ subheading }}>
