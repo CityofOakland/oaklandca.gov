@@ -58,17 +58,12 @@
           headerText: "City Services and Resources Updates",
         } %}
         <div class="flex flex-col md:flex-row md:mt-8">
-          <div class="md:w-64 md:border-r-2 md:border-gray-300 md:pr-8 md:mr-8">
+          <div class="md:w-64 md:border-r-2 md:border-gray-300 md:pr-8 md:mr-8 | lg:w-1/4">
             {{ entry.cityServicesAndResourcesUpdatesDescription }}
-            <a href="/services" class="btn">See all services</a>
+            <a href="/services" class="btn md:w-full">See all services</a>
           </div>
           <div class="text-base flex-1">
-            <style>
-              .services-updates {
-                columns: 16rem;
-              }
-            </style>
-            <ul class="services-updates">
+            <ul>
             {% for block in entry.cityServicesAndResourcesUpdates.all() %}
               <li class="mb-2">
                 <a class="underline text-green-300 hover:text-green-500" href="{{ block.destination.url }}">{{ block.destination.text }}</a>
