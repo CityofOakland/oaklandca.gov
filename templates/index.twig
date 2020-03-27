@@ -62,10 +62,25 @@
             {{ entry.cityServicesAndResourcesUpdatesDescription }}
             <a href="/services" class="btn">See all services</a>
           </div>
-          <div class="text-base">
-            <ul class="md:h-64 md:flex md:flex-col md:flex-wrap md:flex-initial md:items-start md:justify-start">
+          <div class="text-base flex-1">
+            <style>
+              .services-updates {
+                columns: 16rem;
+              }
+            </style>
+            <ul class="services-updates">
             {% for block in entry.cityServicesAndResourcesUpdates.all() %}
-              <li class="md:max-w-56 md:mr-8 mb-2">
+              <li class="mb-2">
+                <a class="underline text-green-300 hover:text-green-500" href="{{ block.destination.url }}">{{ block.destination.text }}</a>
+              </li>
+            {% endfor %}
+            {% for block in entry.cityServicesAndResourcesUpdates.all() %}
+              <li class="mb-2">
+                <a class="underline text-green-300 hover:text-green-500" href="{{ block.destination.url }}">{{ block.destination.text }}</a>
+              </li>
+            {% endfor %}
+            {% for block in entry.cityServicesAndResourcesUpdates.all() %}
+              <li class="mb-2">
                 <a class="underline text-green-300 hover:text-green-500" href="{{ block.destination.url }}">{{ block.destination.text }}</a>
               </li>
             {% endfor %}
