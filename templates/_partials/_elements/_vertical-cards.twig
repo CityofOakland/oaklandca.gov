@@ -1,18 +1,22 @@
 <article>
-  <figure class="w-full h-48 sm:h-64 p-4 bg-gray-300 relative z-0 flex items-center justify-center">
-    {% if photo | length %}
-      <img src="{{ photo.url }}" class="absolute inset-0 object-cover w-full h-full" alt="{{ photo.altText ?? ''}}">
-    {% elseif icon is defined %}
-      <div class="text-gray-400 opacity-75 fill-current h-full p-12">
-        {{ craft.inlin.er('/assets/img/icon-' ~ icon ~ '.svg') | replace('<svg ', '<svg class="h-full" ') | raw }}
-      </div>
-    {% endif %}
-  </figure>
-  <div class="mt-4 text-base text-gray-400">{{ byline }}</div>
-  <h3 class="text-xxl mt-4">
+  {% if not photoHide ?? '' %}
+    <figure class="w-full h-48 sm:h-64 p-4 bg-gray-300 relative z-0 flex items-center justify-center mb-4">
+      {% if photo | length %}
+        <img src="{{ photo.url }}" class="absolute inset-0 object-cover w-full h-full" alt="{{ photo.altText ?? ''}}">
+      {% elseif icon is defined %}
+        <div class="text-gray-400 opacity-75 fill-current h-full p-12">
+          {{ craft.inlin.er('/assets/img/icon-' ~ icon ~ '.svg') | replace('<svg ', '<svg class="h-full" ') | raw }}
+        </div>
+      {% endif %}
+    </figure>
+  {% endif %}
+  <div class="mb-2 text-base text-gray-500 uppercase">{{ byline }}</div>
+  <h3 class="text-xl mt-0 mb-4">
     <a href="{{ url }}">{{ title }}</a>
   </h3>
-  <div class="text-gray-700 mt-4">
-    {{ body }}
-  </div>
+  {% if not summaryHide ?? '' %}
+    <div class="text-gray-700 text-base">
+      {{ body }}
+    </div>
+  {% endif %}
 </article>
