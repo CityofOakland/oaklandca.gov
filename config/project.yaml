@@ -42,7 +42,7 @@ categoryGroups:
     structure:
       maxLevels: 1
       uid: b4e9ab1c-aa42-46f9-a679-898119f39e8d
-dateModified: 1585210572
+dateModified: 1585757102
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -4197,9 +4197,15 @@ matrixBlockTypes:
               295df0c5-cc10-4392-9fbb-3452cc97b84a:
                 required: false
                 sortOrder: 3
+              5ee14b98-d8d9-46bd-88d8-0aa45871cfc9:
+                required: false
+                sortOrder: 5
               8960f671-8e74-4a40-a507-6ba440cb6c8e:
                 required: false
                 sortOrder: 1
+              a2cf024d-962c-4e66-a16e-9b6faefbae19:
+                required: false
+                sortOrder: 4
             name: Content
             sortOrder: 1
     fields:
@@ -4241,12 +4247,36 @@ matrixBlockTypes:
         translationKeyFormat: null
         translationMethod: site
         type: craft\fields\Entries
+      5ee14b98-d8d9-46bd-88d8-0aa45871cfc9:
+        contentColumnType: boolean
+        fieldGroup: null
+        handle: hideSummary
+        instructions: 'Check this box if you wish to hide the summary text that appears at the bottom of each entry’s block.'
+        name: 'Hide Summary?'
+        searchable: false
+        settings:
+          default: ''
+        translationKeyFormat: null
+        translationMethod: none
+        type: craft\fields\Lightswitch
       8960f671-8e74-4a40-a507-6ba440cb6c8e:
         contentColumnType: boolean
         fieldGroup: null
         handle: allowAutofill
         instructions: 'If enabled, your news will automatically fill with the latest news entries that have been related to this page, up to 3, minus however many manual selections you make below.'
         name: 'Allow Autofill?'
+        searchable: false
+        settings:
+          default: ''
+        translationKeyFormat: null
+        translationMethod: none
+        type: craft\fields\Lightswitch
+      a2cf024d-962c-4e66-a16e-9b6faefbae19:
+        contentColumnType: boolean
+        fieldGroup: null
+        handle: hideThumbnails
+        instructions: 'Check this box if you wish to hide the thumbnail images and/or default icons for this block.'
+        name: 'Hide Thumbnails?'
         searchable: false
         settings:
           default: ''
@@ -5979,6 +6009,9 @@ matrixBlockTypes:
         tabs:
           -
             fields:
+              6781472a-633d-4059-b528-3b826db0332f:
+                required: false
+                sortOrder: 4
               84c6ab36-1b2e-49f1-93a1-aa41ce3d194a:
                 required: true
                 sortOrder: 2
@@ -5988,9 +6021,24 @@ matrixBlockTypes:
               ddd25f23-4975-475c-9bef-e8a0e0e43fc0:
                 required: false
                 sortOrder: 3
+              de14155f-e982-42aa-9b79-71ceeaf08a77:
+                required: false
+                sortOrder: 5
             name: Content
             sortOrder: 1
     fields:
+      6781472a-633d-4059-b528-3b826db0332f:
+        contentColumnType: boolean
+        fieldGroup: null
+        handle: hideThumbnails
+        instructions: 'Check this box if you wish to hide the thumbnail images and/or default icons for this block.'
+        name: 'Hide Thumbnails?'
+        searchable: false
+        settings:
+          default: ''
+        translationKeyFormat: null
+        translationMethod: none
+        type: craft\fields\Lightswitch
       84c6ab36-1b2e-49f1-93a1-aa41ce3d194a:
         contentColumnType: text
         fieldGroup: null
@@ -6041,6 +6089,24 @@ matrixBlockTypes:
         translationKeyFormat: null
         translationMethod: site
         type: Solspace\Calendar\FieldTypes\EventFieldType
+      de14155f-e982-42aa-9b79-71ceeaf08a77:
+        contentColumnType: text
+        fieldGroup: null
+        handle: hideSummary
+        instructions: 'Check this box if you wish to hide the summary text that appears at the bottom of each entry’s block.'
+        name: 'Hide Summary?'
+        searchable: true
+        settings:
+          byteLimit: null
+          charLimit: null
+          code: ''
+          columnType: null
+          initialRows: '4'
+          multiline: ''
+          placeholder: ''
+        translationKeyFormat: null
+        translationMethod: none
+        type: craft\fields\PlainText
     handle: meetingEntries
     name: 'Meeting Entries'
     sortOrder: 15
@@ -7127,9 +7193,15 @@ matrixBlockTypes:
               321943ce-06f4-4125-b82a-baf2e174a37f:
                 required: false
                 sortOrder: 1
+              6444dc50-fd8a-41d1-94c1-7af9ba982cc1:
+                required: false
+                sortOrder: 5
               853a4c55-fd81-4715-8804-22a057720485:
                 required: false
                 sortOrder: 3
+              e4562472-8b84-4213-97bc-476f6f092cad:
+                required: false
+                sortOrder: 4
             name: Content
             sortOrder: 1
     fields:
@@ -7163,6 +7235,18 @@ matrixBlockTypes:
         translationKeyFormat: null
         translationMethod: none
         type: craft\fields\Lightswitch
+      6444dc50-fd8a-41d1-94c1-7af9ba982cc1:
+        contentColumnType: boolean
+        fieldGroup: null
+        handle: hideSummary
+        instructions: 'Check this box if you wish to hide the summary text that appears at the bottom of each entry’s block.'
+        name: 'Hide Summary?'
+        searchable: false
+        settings:
+          default: ''
+        translationKeyFormat: null
+        translationMethod: none
+        type: craft\fields\Lightswitch
       853a4c55-fd81-4715-8804-22a057720485:
         contentColumnType: string
         fieldGroup: null
@@ -7183,6 +7267,18 @@ matrixBlockTypes:
         translationKeyFormat: null
         translationMethod: site
         type: Solspace\Calendar\FieldTypes\EventFieldType
+      e4562472-8b84-4213-97bc-476f6f092cad:
+        contentColumnType: boolean
+        fieldGroup: null
+        handle: hideThumbnails
+        instructions: 'Check this box if you wish to hide the thumbnail images and/or default icons for this block.'
+        name: 'Hide Thumbnails?'
+        searchable: false
+        settings:
+          default: ''
+        translationKeyFormat: null
+        translationMethod: none
+        type: craft\fields\Lightswitch
     handle: eventEntries
     name: 'Event Entries'
     sortOrder: 14

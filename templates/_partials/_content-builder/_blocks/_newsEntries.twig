@@ -35,7 +35,9 @@
         icon: 'newspaper',
         photo: entry.newsImage.one,
         byline: entry.postDate.format("M d, Y"),
-        body: entry.summary
+        body: entry.summary,
+        photoHide: block.hideThumbnails,
+        summaryHide: block.hideSummary
       } %}
     {% endfor %}
   </div>

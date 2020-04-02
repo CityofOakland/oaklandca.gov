@@ -24,7 +24,9 @@
         icon: 'calendar',
         photo: entry.eventImage.one,
         byline: entry.startDate.format("M d, Y"),
-        body: entry.body | chop(limit=40, unit='w', append='…')
+        body: entry.body | chop(limit=40, unit='w', append='…'),
+        photoHide: block.hideThumbnails,
+        summaryHide: block.hideSummary
       } %}
     {% endfor %}
   </div>
