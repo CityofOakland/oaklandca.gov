@@ -44,6 +44,7 @@
   <div class="flex-1 flex flex-col lg:flex-row">
     <div class="w-full lg:w-2/3">
       <h1 class="text-xxxl md:text-xxxxl font-bold mb-0">{{ bannerTitle }}</h1>
+      {% include "_partials/_elements/_page-alerts.twig" %}
       {% if leadIn %}
         <p class="mb-0 md:leading-loose">{{ leadIn | raw }}</p>
       {% endif %}
