@@ -1,5 +1,13 @@
 {% if sitewideAlert.alertShowHide == "show" %}
-  <div class="relative bg-{{ sitewideAlert.alertType }} z-0 text-white">
+  {% switch sitewideAlert.alertType %}
+    {% case "warning" %}
+      {% set color = "yellow-500" %}
+    {% case "alert" %}
+      {% set color = "red-500" %}
+    {% default %}
+      {% set color = "green-300" %}
+  {% endswitch %}
+  <div class="relative bg-{{ color }} z-0 text-white">
     <img alt="" class="absolute inset-0 object-cover w-full h-full opacity-3" role="presentation" src="/assets/img/oaklandroots.svg">
     <div class="text-base container py-4 relative z-20">
       <div class="sm:flex content-start items-center">

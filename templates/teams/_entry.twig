@@ -12,7 +12,6 @@
   } %}
   <section class="bg-white relative z-0">
     <div class="container">
-      {% include "_partials/_elements/_page-alerts.twig" %}
       {% for team in entry.teamMembers.all() %}
         {% if team.staffHeading | length %}
           <h2 class="mb-0">{{ team.staffHeading }}</h2>

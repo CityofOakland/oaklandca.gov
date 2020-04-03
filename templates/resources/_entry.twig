@@ -17,7 +17,6 @@
       <div class="flex">
       {% include "_partials/_elements/_nav-sidebar.twig" %}
       <div class="flex-1">
-        {% include "_partials/_elements/_page-alerts.twig" %}
         {% if entry.resourceImage.exists() %}
           <figure class="mb-8">
             <img class="w-full block" src="{{ entry.resourceImage.one.url }}" alt="{{ entry.title }} Image">
