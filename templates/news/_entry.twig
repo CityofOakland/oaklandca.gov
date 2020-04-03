@@ -16,6 +16,7 @@
       {% include "_partials/_elements/_nav-sidebar.twig" %}
       <div class="w-full flex">
         <div class="md:w-3/4 md:mr-8">
+        {% include "_partials/_elements/_page-alerts.twig" %}
           {% include '_partials/_elements/_last-update.twig' %}
           {% if entry.newsImage | length %}
             <figure class="max-w-full mb-8">

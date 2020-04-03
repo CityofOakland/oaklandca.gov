@@ -1,6 +1,6 @@
 {% macro buttonTemplate(descriptorText, url, buttonText) %}
   <div class="mb-4 lg:mx-3">
-    <a aria-label="{{ buttonText }} {{ descriptorText }}" href="{{ url }}" class="btn btn-sm">{{ buttonText | raw }}</a>
+    <a aria-label="{{ buttonText }} {{ descriptorText }}" href="{{ url }}" class="btn btn-sm w-full text-center">{{ buttonText | raw }}</a>
     {% if descriptorText | length %}<div class="mt-2 text-sm uppercase tracking-wide">{{ descriptorText }}</div>{% endif %}
   </div>
 {% endmacro %}

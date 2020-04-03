@@ -17,6 +17,7 @@
   <section class="bg-white relative z-0">
     <div class="container p-8 py-16 sm:flex">
       <div class="sm:w-2/3 sm:mr-8">
+        {% include "_partials/_elements/_page-alerts.twig" %}
         {% set startDate = event.startDate %}
         {% set endDate = event.endDate %}
         <div class="text-white bg-gray-700 p-4 md:inline-flex md:items-center">
