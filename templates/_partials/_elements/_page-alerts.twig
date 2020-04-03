@@ -1,11 +1,20 @@
 {% set alerts = craft.entries.section("pageAlerts").relatedTo(entry).all() %}
 {% for alert in alerts %}
-  <div class="rounded border border-{{ alert.alertType }} border-l-8 p-4 mb-8 text-base">
+  {% switch alert.alertType %}
+    {% case "warning" %}
+      {% set color = "yellow-500" %}
+    {% case "alert" %}
+      {% set color = "red-500" %}
+    {% default %}
+      {% set color = "green-300" %}
+  {% endswitch %}
+  
+  <div class="rounded border border-{{ color }} border-l-8 p-4 mb-8 text-base">
     <p class="font-heading mt-0 uppercase">{{ alert.alertHeading }}</p>
     {{ alert.alertDescription }}
     {% if alert.alertLink %}
       <p class="mt-4 mb-0">
-        <a href="{{ alert.alertLink.url }}" class="btn btn-sm text-sm bg-{{ alert.alertType }} hover:bg-{{ alert.alertType }} text-white hover:text-white">{{ alert.alertLink.text }}</a>
+        <a href="{{ alert.alertLink.url }}" class="btn btn-sm text-sm bg-{{ color }} hover:bg-{{ color }} text-white hover:text-white">{{ alert.alertLink.text }}</a>
       </p>
     {% endif %}
   </div>
