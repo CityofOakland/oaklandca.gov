@@ -42,7 +42,7 @@ categoryGroups:
     structure:
       maxLevels: 1
       uid: b4e9ab1c-aa42-46f9-a679-898119f39e8d
-dateModified: 1585862754
+dateModified: 1585947171
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -2214,48 +2214,6 @@ fields:
           __assoc__:
             -
               - label
-              - Information
-            -
-              - value
-              - green-300
-            -
-              - cssColour
-              - '#008943'
-            -
-              - default
-              - '1'
-        -
-          __assoc__:
-            -
-              - label
-              - Warning
-            -
-              - value
-              - yellow-500
-            -
-              - cssColour
-              - '#f7d070'
-            -
-              - default
-              - ''
-        -
-          __assoc__:
-            -
-              - label
-              - Alert
-            -
-              - value
-              - red-500
-            -
-              - cssColour
-              - '#d64545'
-            -
-              - default
-              - ''
-        -
-          __assoc__:
-            -
-              - label
               - Info
             -
               - value
@@ -2265,7 +2223,7 @@ fields:
               - '#008943'
             -
               - default
-              - ''
+              - '1'
         -
           __assoc__:
             -
