@@ -14,6 +14,7 @@
   } %}
   <section class="bg-white relative z-0">
     <div class="container">
+      {% include "_partials/_elements/_page-alerts.twig" %}
       {% if document.exists() %}
         <div>
           <a class="btn" href="{{ document.one.url }}">Download File</a>

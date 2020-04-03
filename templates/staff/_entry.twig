@@ -46,6 +46,7 @@
           {% endif %}
         </div>
         <div class="sm:flex-1 o-4">
+          {% include "_partials/_elements/_page-alerts.twig" %}
           {% if entry.bio | length %}
             <div class="text-xl o-4">{{ entry.bio | replace('<p>', '<p class="my-0">') | raw }}</div>
           {% endif %}
