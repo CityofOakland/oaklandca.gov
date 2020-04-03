@@ -2,7 +2,7 @@
 {% for alert in alerts %}
   {% switch alert.alertType %}
     {% case "warning" %}
-      {% set color = "yellow-500" %}
+      {% set color = "yellow-600" %}
     {% case "alert" %}
       {% set color = "red-500" %}
     {% default %}
