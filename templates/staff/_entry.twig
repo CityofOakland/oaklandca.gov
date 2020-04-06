@@ -46,7 +46,7 @@
           {% endif %}
         </div>
         <div class="sm:flex-1 o-4">
-          {% if entry.bio | length %}
+            {% if entry.bio | length %}
             <div class="text-xl o-4">{{ entry.bio | replace('<p>', '<p class="my-0">') | raw }}</div>
           {% endif %}
           {% if email | length %}

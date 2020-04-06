@@ -42,7 +42,7 @@ categoryGroups:
     structure:
       maxLevels: 1
       uid: b4e9ab1c-aa42-46f9-a679-898119f39e8d
-dateModified: 1585757102
+dateModified: 1585947171
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -61,6 +61,8 @@ fieldGroups:
     name: SEO
   1fe293ad-52d9-4002-984e-b7a256d4b158:
     name: 'Social Media'
+  211c24f8-a046-4d59-a3ac-d8c51494ec3d:
+    name: 'Page Alerts'
   27454cbc-e66b-4d88-bef3-32b87a69a715:
     name: 'Media Center'
   34f2c44b-4710-447e-9c4e-71e80288b6e4:
@@ -362,6 +364,29 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\redactor\Field
+  1090a1a7-e23c-45c0-a7b3-aeeae640337e:
+    contentColumnType: text
+    fieldGroup: 211c24f8-a046-4d59-a3ac-d8c51494ec3d
+    handle: alertDescription
+    instructions: ''
+    name: 'Alert Description'
+    searchable: true
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      cleanupHtml: true
+      columnType: text
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: Basic.json
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
   1160308b-03c0-43ad-9f4b-35e26c016c89:
     contentColumnType: text
     fieldGroup: ed709c7c-0c3a-4457-ae2d-38a3ccb797e4
@@ -379,6 +404,38 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
+  11892a6b-a44e-4406-af4e-49f3803e7931:
+    contentColumnType: string
+    fieldGroup: 211c24f8-a046-4d59-a3ac-d8c51494ec3d
+    handle: alertPages
+    instructions: 'Select all the pages you want this alert to show up on'
+    name: 'Alert Pages'
+    searchable: false
+    settings:
+      limit: ''
+      localizeRelations: false
+      selectionLabel: ''
+      source: null
+      sources:
+        - 'section:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f'
+        - 'section:b3411cb1-e860-46ed-9cd6-58cf9b8daacb'
+        - 'section:9da43fd8-c505-4d19-9486-e0cb669c568a'
+        - 'section:8b7c4e26-9aab-4c5d-874e-aee151107de3'
+        - 'section:983c9f6f-9251-4fd3-91e1-b598eccc6a1a'
+        - 'section:28881fc8-3e61-4fdb-a5ee-cce1bab725bf'
+        - 'section:98d541ae-56ee-4c98-ba9c-37438dc485a0'
+        - 'section:24fa116b-8516-4626-84f3-86b685e71071'
+        - 'section:b7e437e1-239f-4c5c-8c62-5f0323f9d22c'
+        - 'section:07faad04-9ec4-4f68-9fe8-0ca20f189f8a'
+        - 'section:fbf8b9b0-8875-4e08-819a-d62603676dc4'
+        - 'section:70778563-6dac-453d-a4b0-5121f3a614b7'
+        - 'section:17d5d48d-2d75-4742-8820-cdce13764482'
+      targetSiteId: null
+      validateRelatedElements: ''
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Entries
   16a8d87b-63fc-4df3-8597-2d70c5a4f987:
     contentColumnType: string
     fieldGroup: 27454cbc-e66b-4d88-bef3-32b87a69a715
@@ -546,15 +603,205 @@ fields:
     translationMethod: site
     type: craft\fields\Matrix
   277068ba-95c5-4881-862f-85c19b60d4da:
-    contentColumnType: string(255)
+    contentColumnType: text
     fieldGroup: a2015bc8-9d3a-4f8d-a180-1ddc7ebd3087
     handle: alertUrl
     instructions: 'Link to a more detailed page if necessary.'
     name: 'Alert URL'
     searchable: true
+    settings:
+      allowCustomText: ''
+      allowTarget: ''
+      defaultText: ''
+      selectLinkText: ''
+      types:
+        __assoc__:
+          -
+            - fruitstudios\linkit\models\Email
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - '1'
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - ''
+          -
+            - fruitstudios\linkit\models\Phone
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - ''
+          -
+            - fruitstudios\linkit\models\Url
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - '1'
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - 'https://www.google.com/'
+                -
+                  - allowAlias
+                  - ''
+                -
+                  - allowMailto
+                  - ''
+                -
+                  - allowHash
+                  - ''
+                -
+                  - allowPaths
+                  - '1'
+          -
+            - fruitstudios\linkit\models\Twitter
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - ''
+          -
+            - fruitstudios\linkit\models\Facebook
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - ''
+          -
+            - fruitstudios\linkit\models\Instagram
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - ''
+          -
+            - fruitstudios\linkit\models\LinkedIn
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - ''
+          -
+            - fruitstudios\linkit\models\Entry
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - '1'
+                -
+                  - customLabel
+                  - ''
+                -
+                  - sources
+                  -
+                    - 'section:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f'
+                    - 'section:b3411cb1-e860-46ed-9cd6-58cf9b8daacb'
+                    - 'section:8b7c4e26-9aab-4c5d-874e-aee151107de3'
+                    - 'section:983c9f6f-9251-4fd3-91e1-b598eccc6a1a'
+                    - 'section:28881fc8-3e61-4fdb-a5ee-cce1bab725bf'
+                    - 'section:98d541ae-56ee-4c98-ba9c-37438dc485a0'
+                    - 'section:24fa116b-8516-4626-84f3-86b685e71071'
+                    - 'section:b7e437e1-239f-4c5c-8c62-5f0323f9d22c'
+                    - 'section:07faad04-9ec4-4f68-9fe8-0ca20f189f8a'
+                    - 'section:fbf8b9b0-8875-4e08-819a-d62603676dc4'
+                    - 'section:70778563-6dac-453d-a4b0-5121f3a614b7'
+                    - 'section:17d5d48d-2d75-4742-8820-cdce13764482'
+                -
+                  - customSelectionLabel
+                  - ''
+          -
+            - fruitstudios\linkit\models\Category
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - sources
+                  - '*'
+                -
+                  - customSelectionLabel
+                  - ''
+          -
+            - fruitstudios\linkit\models\Asset
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - '1'
+                -
+                  - customLabel
+                  - ''
+                -
+                  - sources
+                  -
+                    - 'folder:baf733c3-48be-42a7-8b4f-7a6bf9763542'
+                -
+                  - customSelectionLabel
+                  - ''
+          -
+            - fruitstudios\linkit\models\User
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - sources
+                  - '*'
+                -
+                  - customSelectionLabel
+                  - ''
+                -
+                  - userPath
+                  - ''
     translationKeyFormat: null
     translationMethod: none
-    type: craft\fields\Url
+    type: fruitstudios\linkit\fields\LinkitField
   28e53a14-23f2-492a-be43-e6e83bca9aa1:
     contentColumnType: text
     fieldGroup: 71fb693f-011b-4669-ba10-f1b379557bb9
@@ -1108,6 +1355,207 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Url
+  6730cced-6743-4ada-abb8-1f4c0f2e8878:
+    contentColumnType: text
+    fieldGroup: 211c24f8-a046-4d59-a3ac-d8c51494ec3d
+    handle: alertLink
+    instructions: ''
+    name: 'Alert Link'
+    searchable: false
+    settings:
+      allowCustomText: '1'
+      allowTarget: ''
+      defaultText: 'Learn more »'
+      selectLinkText: ''
+      types:
+        __assoc__:
+          -
+            - fruitstudios\linkit\models\Email
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - '1'
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - dotgovsupport@oaklandca.gov
+          -
+            - fruitstudios\linkit\models\Phone
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - ''
+          -
+            - fruitstudios\linkit\models\Url
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - '1'
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - ''
+                -
+                  - allowAlias
+                  - ''
+                -
+                  - allowMailto
+                  - ''
+                -
+                  - allowHash
+                  - ''
+                -
+                  - allowPaths
+                  - ''
+          -
+            - fruitstudios\linkit\models\Twitter
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - ''
+          -
+            - fruitstudios\linkit\models\Facebook
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - ''
+          -
+            - fruitstudios\linkit\models\Instagram
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - ''
+          -
+            - fruitstudios\linkit\models\LinkedIn
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - ''
+          -
+            - fruitstudios\linkit\models\Entry
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - '1'
+                -
+                  - customLabel
+                  - ''
+                -
+                  - sources
+                  -
+                    - 'section:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f'
+                    - 'section:b3411cb1-e860-46ed-9cd6-58cf9b8daacb'
+                    - 'section:9da43fd8-c505-4d19-9486-e0cb669c568a'
+                    - 'section:8b7c4e26-9aab-4c5d-874e-aee151107de3'
+                    - 'section:983c9f6f-9251-4fd3-91e1-b598eccc6a1a'
+                    - 'section:28881fc8-3e61-4fdb-a5ee-cce1bab725bf'
+                    - 'section:98d541ae-56ee-4c98-ba9c-37438dc485a0'
+                    - 'section:24fa116b-8516-4626-84f3-86b685e71071'
+                    - 'section:b7e437e1-239f-4c5c-8c62-5f0323f9d22c'
+                    - 'section:07faad04-9ec4-4f68-9fe8-0ca20f189f8a'
+                    - 'section:fbf8b9b0-8875-4e08-819a-d62603676dc4'
+                    - 'section:70778563-6dac-453d-a4b0-5121f3a614b7'
+                    - 'section:17d5d48d-2d75-4742-8820-cdce13764482'
+                -
+                  - customSelectionLabel
+                  - ''
+          -
+            - fruitstudios\linkit\models\Category
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - sources
+                  - '*'
+                -
+                  - customSelectionLabel
+                  - ''
+          -
+            - fruitstudios\linkit\models\Asset
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - '1'
+                -
+                  - customLabel
+                  - ''
+                -
+                  - sources
+                  -
+                    - 'folder:baf733c3-48be-42a7-8b4f-7a6bf9763542'
+                -
+                  - customSelectionLabel
+                  - ''
+          -
+            - fruitstudios\linkit\models\User
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - sources
+                  - '*'
+                -
+                  - customSelectionLabel
+                  - ''
+                -
+                  - userPath
+                  - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: fruitstudios\linkit\fields\LinkitField
   6982234e-dc9c-4165-a2a0-4d6edfcbea52:
     contentColumnType: text
     fieldGroup: b1b0e0eb-fd37-4708-96c7-4f5f11d8fdb0
@@ -1248,17 +1696,23 @@ fields:
     handle: alertMessage
     instructions: 'Write the message of your alert here. Try to keep it short and use the link to guide viewers to more detailed information.'
     name: 'Alert Message'
-    searchable: true
+    searchable: false
     settings:
-      charLimit: ''
-      code: ''
+      availableTransforms: '*'
+      availableVolumes: '*'
+      cleanupHtml: true
       columnType: text
-      initialRows: '4'
-      multiline: ''
-      placeholder: ''
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: Simple.json
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
     translationKeyFormat: null
     translationMethod: none
-    type: craft\fields\PlainText
+    type: craft\redactor\Field
   7084b5f1-19ef-4812-97fc-927d55c98c93:
     contentColumnType: string
     fieldGroup: c964d82c-a4e7-4ec4-ad42-7c3e843193c0
@@ -1748,50 +2202,59 @@ fields:
     translationMethod: site
     type: craft\fields\Matrix
   9c0b44a4-b6de-498e-bc9d-4f7a4f9fe5f2:
-    contentColumnType: string
+    contentColumnType: text
     fieldGroup: a2015bc8-9d3a-4f8d-a180-1ddc7ebd3087
     handle: alertType
     instructions: 'Choose the color of the alert based on the purpose.'
     name: 'Alert Type'
-    searchable: true
+    searchable: false
     settings:
       options:
         -
           __assoc__:
             -
               - label
-              - Information
+              - Info
             -
               - value
               - information
             -
+              - cssColour
+              - '#008943'
+            -
               - default
-              - ''
+              - '1'
         -
           __assoc__:
             -
               - label
-              - Warning
+              - Warn
             -
               - value
               - warning
             -
+              - cssColour
+              - '#f7d070'
+            -
               - default
               - ''
         -
           __assoc__:
             -
               - label
-              - Alert
+              - Alerts
             -
               - value
               - alert
+            -
+              - cssColour
+              - '#d64545'
             -
               - default
               - ''
     translationKeyFormat: null
     translationMethod: none
-    type: craft\fields\RadioButtons
+    type: supercool\buttonbox\fields\Colours
   9cbe85fd-e9c4-4fd6-8d2a-38d00bebc377:
     contentColumnType: text
     fieldGroup: d7390b6f-686c-4324-a1fa-7a38508eee7b
@@ -2523,6 +2986,24 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: fruitstudios\linkit\fields\LinkitField
+  bf9907da-64c0-4cb6-bc21-493b39110166:
+    contentColumnType: string(200)
+    fieldGroup: 211c24f8-a046-4d59-a3ac-d8c51494ec3d
+    handle: alertHeading
+    instructions: ''
+    name: 'Alert Heading'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: 50
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
   c01a4b08-11e1-42c3-97c4-e3de1bd7974e:
     contentColumnType: text
     fieldGroup: 1fe293ad-52d9-4002-984e-b7a256d4b158
@@ -3565,9 +4046,9 @@ fields:
     translationMethod: none
     type: craft\fields\PlainText
 globalSets:
-  0f8677bf-fac9-4b09-8504-bf02b20c6ec5:
+  7657014a-eefc-419e-921e-8896ed282ab3:
     fieldLayouts:
-      80b82fc5-7bcf-43b1-b76c-3487d353d6e0:
+      5a2d2246-c14b-4c8b-a973-cc070f30ce97:
         tabs:
           -
             fields:
@@ -3576,7 +4057,7 @@ globalSets:
                 sortOrder: 5
               36fcc9c4-85be-4bd9-959a-5b26e30673d4:
                 required: false
-                sortOrder: 3
+                sortOrder: 2
               6fb3f41c-93f6-4185-9622-e6765cdcc837:
                 required: false
                 sortOrder: 4
@@ -3585,7 +4066,7 @@ globalSets:
                 sortOrder: 1
               9c0b44a4-b6de-498e-bc9d-4f7a4f9fe5f2:
                 required: false
-                sortOrder: 2
+                sortOrder: 3
             name: Content
             sortOrder: 1
     handle: sitewideAlert
@@ -7350,6 +7831,10 @@ plugins:
     licenseKey: null
     schemaVersion: 2.0.0
     settings: null
+  buttonbox:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
   calendar:
     edition: pro
     enabled: '1'
@@ -10112,6 +10597,48 @@ sections:
         hasUrls: false
         template: null
         uriFormat: null
+    type: channel
+  be8acece-2031-4965-a62f-31911d00e24c:
+    enableVersioning: false
+    entryTypes:
+      f35490ea-a075-4077-ac18-6be871f68c65:
+        fieldLayouts:
+          d3053b19-aa97-40df-a583-0335fb94fe55:
+            tabs:
+              -
+                fields:
+                  1090a1a7-e23c-45c0-a7b3-aeeae640337e:
+                    required: false
+                    sortOrder: 3
+                  11892a6b-a44e-4406-af4e-49f3803e7931:
+                    required: false
+                    sortOrder: 5
+                  6730cced-6743-4ada-abb8-1f4c0f2e8878:
+                    required: false
+                    sortOrder: 4
+                  9c0b44a4-b6de-498e-bc9d-4f7a4f9fe5f2:
+                    required: false
+                    sortOrder: 1
+                  bf9907da-64c0-4cb6-bc21-493b39110166:
+                    required: true
+                    sortOrder: 2
+                name: 'Page Alerts'
+                sortOrder: 1
+        handle: pageAlerts
+        hasTitleField: false
+        name: 'Page Alerts'
+        sortOrder: 1
+        titleFormat: '{{ object.alertHeading }}: {{ object.alertDescription | striptags | chop(limit=5, unit=''w'', append=''…'') }}'
+        titleLabel: Title
+    handle: pageAlerts
+    name: 'Page Alerts'
+    propagationMethod: all
+    siteSettings:
+      c35d3a93-d7f4-4c37-ae3e-1b4d403311bb:
+        enabledByDefault: true
+        hasUrls: false
+        template: null
+        uriFormat: ''
     type: channel
   c1969337-e50a-48d2-8823-fbb68bd3776b:
     enableVersioning: true
