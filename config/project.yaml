@@ -42,7 +42,7 @@ categoryGroups:
     structure:
       maxLevels: 1
       uid: b4e9ab1c-aa42-46f9-a679-898119f39e8d
-dateModified: 1586219961
+dateModified: 1586281381
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -10249,6 +10249,12 @@ sections:
                 fields:
                   93eaa329-904e-4a23-9047-4decf3d47cac:
                     required: false
+                    sortOrder: 3
+                  b0a28612-04bc-4669-a6d1-816c9c768a29:
+                    required: false
+                    sortOrder: 2
+                  c2ad07dc-05e7-4ef4-89b6-2e1eaccee210:
+                    required: false
                     sortOrder: 1
                 name: Content
                 sortOrder: 1
@@ -10256,7 +10262,7 @@ sections:
         hasTitleField: true
         name: 'Department Redirect'
         sortOrder: 2
-        titleFormat: null
+        titleFormat: ''
         titleLabel: Title
       853acfc8-1959-4654-89f9-e544989d27d5:
         fieldLayouts:
