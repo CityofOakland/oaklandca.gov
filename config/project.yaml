@@ -42,7 +42,7 @@ categoryGroups:
     structure:
       maxLevels: 1
       uid: b4e9ab1c-aa42-46f9-a679-898119f39e8d
-dateModified: 1586281596
+dateModified: 1586282560
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -8399,61 +8399,6 @@ sections:
   24fa116b-8516-4626-84f3-86b685e71071:
     enableVersioning: true
     entryTypes:
-      be64571a-7223-48e4-abb7-f4bac604a6d9:
-        fieldLayouts:
-          8f0afd15-645c-4267-b1dd-c6dd01214ff8:
-            tabs:
-              -
-                fields:
-                  c2ad07dc-05e7-4ef4-89b6-2e1eaccee210:
-                    required: false
-                    sortOrder: 1
-                  f73a45bb-5e6b-4a27-8f19-edd0e6bbc507:
-                    required: true
-                    sortOrder: 2
-                  fd0c8e02-99b4-4ce5-ab89-b29cd0efc581:
-                    required: false
-                    sortOrder: 3
-                name: Content
-                sortOrder: 1
-              -
-                fields:
-                  41124ab0-0e88-44c6-b4f2-f002669d8133:
-                    required: false
-                    sortOrder: 2
-                  44b00870-0842-4c4e-838f-dcd688fb5b05:
-                    required: false
-                    sortOrder: 7
-                  73b7b0c7-bff1-4c55-97aa-fc62042f0347:
-                    required: false
-                    sortOrder: 3
-                  a25a56ba-bfb3-4e4d-a857-6d3cb4a5dcdc:
-                    required: false
-                    sortOrder: 1
-                  cb9bcb47-f3e9-4ed8-a4d8-506aa11fe546:
-                    required: false
-                    sortOrder: 4
-                  d624c5c7-9cce-4088-92ba-02e1f2024c6a:
-                    required: false
-                    sortOrder: 5
-                  e67ec759-ea3a-4568-bfa6-a314ff3d1036:
-                    required: false
-                    sortOrder: 6
-                name: Relationships
-                sortOrder: 2
-              -
-                fields:
-                  ecc31df6-640f-4fa6-a2e6-caea757e379d:
-                    required: false
-                    sortOrder: 1
-                name: SEO
-                sortOrder: 3
-        handle: videos
-        hasTitleField: true
-        name: Videos
-        sortOrder: 2
-        titleFormat: null
-        titleLabel: Title
       df535740-f62a-4027-aefd-b7fef85f4a7f:
         fieldLayouts:
           96bb4dca-d6fb-4198-8f00-57dc09064d19:
@@ -8462,16 +8407,19 @@ sections:
                 fields:
                   4047207e-c317-47cc-825b-7e751cc4ad38:
                     required: false
-                    sortOrder: 3
+                    sortOrder: 4
                   c2ad07dc-05e7-4ef4-89b6-2e1eaccee210:
                     required: false
                     sortOrder: 1
                   d7d618a5-5819-44e0-bc30-5c685f47f039:
                     required: false
+                    sortOrder: 3
+                  f62c85ae-2203-4d1a-8702-da515126a398:
+                    required: false
                     sortOrder: 2
                   fd0c8e02-99b4-4ce5-ab89-b29cd0efc581:
                     required: false
-                    sortOrder: 4
+                    sortOrder: 5
                 name: Content
                 sortOrder: 1
               -
