@@ -42,7 +42,7 @@ categoryGroups:
     structure:
       maxLevels: 1
       uid: b4e9ab1c-aa42-46f9-a679-898119f39e8d
-dateModified: 1585947171
+dateModified: 1586281596
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -99,8 +99,6 @@ fieldGroups:
     name: Images
   cea536bc-4ae2-48c6-b388-34eed4a79ac6:
     name: 'Redistricting Commission'
-  d7390b6f-686c-4324-a1fa-7a38508eee7b:
-    name: Admin
   daeb9cef-d6dd-4377-9973-51548d31e6c2:
     name: Navigation
   ed709c7c-0c3a-4457-ae2d-38a3ccb797e4:
@@ -1345,6 +1343,20 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\redactor\Field
+  658cca3c-01d9-4de0-b0be-bc04b699d806:
+    contentColumnType: datetime
+    fieldGroup: a2015bc8-9d3a-4f8d-a180-1ddc7ebd3087
+    handle: alertExpiration
+    instructions: 'If the current date is after this date, then the alert will be hidden. To make the alert persistent, leave this field empty.'
+    name: 'Alert Expiration'
+    searchable: false
+    settings:
+      minuteIncrement: '30'
+      showDate: true
+      showTime: false
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Date
   6694c82b-6e98-442b-976a-907b6c2f4bcc:
     contentColumnType: string(255)
     fieldGroup: ed709c7c-0c3a-4457-ae2d-38a3ccb797e4
@@ -2255,23 +2267,6 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: supercool\buttonbox\fields\Colours
-  9cbe85fd-e9c4-4fd6-8d2a-38d00bebc377:
-    contentColumnType: text
-    fieldGroup: d7390b6f-686c-4324-a1fa-7a38508eee7b
-    handle: cacheFlush
-    instructions: 'Enter any string here to empty the site’s CSS cache'
-    name: 'Cache Flush'
-    searchable: true
-    settings:
-      charLimit: ''
-      code: '1'
-      columnType: text
-      initialRows: '4'
-      multiline: ''
-      placeholder: ''
-    translationKeyFormat: null
-    translationMethod: none
-    type: craft\fields\PlainText
   9eb69e7e-c32d-4390-9b2e-ce2344718906:
     contentColumnType: text
     fieldGroup: 27454cbc-e66b-4d88-bef3-32b87a69a715
@@ -3580,26 +3575,6 @@ fields:
     translationKeyFormat: null
     translationMethod: site
     type: craft\fields\Assets
-  ea50ec29-b638-4c57-aa62-e871a6bc95cc:
-    contentColumnType: string
-    fieldGroup: a8c82666-3295-4f90-b50b-67f2299847db
-    handle: pioTeam
-    instructions: ''
-    name: 'PIO Team'
-    searchable: true
-    settings:
-      limit: ''
-      localizeRelations: false
-      selectionLabel: 'Add a PIO member'
-      source: null
-      sources:
-        - 'section:07faad04-9ec4-4f68-9fe8-0ca20f189f8a'
-      targetSiteId: null
-      validateRelatedElements: ''
-      viewMode: null
-    translationKeyFormat: null
-    translationMethod: site
-    type: craft\fields\Entries
   eac17a7e-9cb8-464b-9a5e-2f0342162433:
     contentColumnType: text
     fieldGroup: cea536bc-4ae2-48c6-b388-34eed4a79ac6
@@ -4054,19 +4029,22 @@ globalSets:
             fields:
               277068ba-95c5-4881-862f-85c19b60d4da:
                 required: false
-                sortOrder: 5
+                sortOrder: 6
               36fcc9c4-85be-4bd9-959a-5b26e30673d4:
+                required: false
+                sortOrder: 3
+              658cca3c-01d9-4de0-b0be-bc04b699d806:
                 required: false
                 sortOrder: 2
               6fb3f41c-93f6-4185-9622-e6765cdcc837:
                 required: false
-                sortOrder: 4
+                sortOrder: 5
               7485ca3f-30b1-4ca6-a095-c2061d848559:
                 required: false
                 sortOrder: 1
               9c0b44a4-b6de-498e-bc9d-4f7a4f9fe5f2:
                 required: false
-                sortOrder: 3
+                sortOrder: 4
             name: Content
             sortOrder: 1
     handle: sitewideAlert
@@ -7908,6 +7886,10 @@ plugins:
     licenseKey: null
     schemaVersion: 2.0.0
     settings: null
+  inventory:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.0.0
   linkit:
     enabled: '1'
     licenseKey: 46HXL3KFU6B2Z3R5LOC856G4
@@ -8673,6 +8655,16 @@ sections:
                     sortOrder: 1
                 name: SEO
                 sortOrder: 4
+              -
+                fields:
+                  6ac11602-f5a4-4e2e-bc97-fdfea3e3d005:
+                    required: false
+                    sortOrder: 2
+                  90d724d7-7c32-4d04-8b9a-3900d6ecdb84:
+                    required: false
+                    sortOrder: 1
+                name: 'Admin Only'
+                sortOrder: 5
         handle: officials
         hasTitleField: true
         name: Officials
@@ -9114,6 +9106,16 @@ sections:
                     sortOrder: 1
                 name: SEO
                 sortOrder: 4
+              -
+                fields:
+                  6ac11602-f5a4-4e2e-bc97-fdfea3e3d005:
+                    required: false
+                    sortOrder: 2
+                  90d724d7-7c32-4d04-8b9a-3900d6ecdb84:
+                    required: false
+                    sortOrder: 1
+                name: 'Admin Only'
+                sortOrder: 5
         handle: topics
         hasTitleField: true
         name: Topics
@@ -9509,6 +9511,13 @@ sections:
                     sortOrder: 1
                 name: SEO
                 sortOrder: 4
+              -
+                fields:
+                  6ac11602-f5a4-4e2e-bc97-fdfea3e3d005:
+                    required: false
+                    sortOrder: 1
+                name: 'Admin Only'
+                sortOrder: 5
         handle: processes
         hasTitleField: true
         name: Processes
@@ -9797,13 +9806,13 @@ sections:
                 fields:
                   55169274-4595-4ab0-a461-9b4600d07779:
                     required: false
-                    sortOrder: 7
+                    sortOrder: 6
                   78894bca-c6ce-4518-bb6f-fa94d7e7050e:
                     required: false
                     sortOrder: 4
                   9723e73e-bf9d-4785-809e-fa94b4b85e14:
                     required: false
-                    sortOrder: 6
+                    sortOrder: 5
                   bef74be8-b22d-4dd0-9217-9707bb43d888:
                     required: false
                     sortOrder: 3
@@ -9812,10 +9821,10 @@ sections:
                     sortOrder: 1
                   caf0bc06-3f8b-4152-ab45-8e9289767860:
                     required: false
-                    sortOrder: 8
+                    sortOrder: 7
                   d9f6b182-7186-4e99-909f-9112985467b8:
                     required: false
-                    sortOrder: 9
+                    sortOrder: 8
                   f62c85ae-2203-4d1a-8702-da515126a398:
                     required: false
                     sortOrder: 2
@@ -9878,6 +9887,13 @@ sections:
                     sortOrder: 1
                 name: SEO
                 sortOrder: 4
+              -
+                fields:
+                  90d724d7-7c32-4d04-8b9a-3900d6ecdb84:
+                    required: false
+                    sortOrder: 1
+                name: 'Admin Only'
+                sortOrder: 5
         handle: legacyProjects
         hasTitleField: true
         name: 'LEGACY Projects'
@@ -9988,6 +10004,13 @@ sections:
                     sortOrder: 1
                 name: SEO
                 sortOrder: 4
+              -
+                fields:
+                  90d724d7-7c32-4d04-8b9a-3900d6ecdb84:
+                    required: false
+                    sortOrder: 1
+                name: 'Admin Only'
+                sortOrder: 5
         handle: projects
         hasTitleField: true
         name: Projects
@@ -10249,6 +10272,12 @@ sections:
                 fields:
                   93eaa329-904e-4a23-9047-4decf3d47cac:
                     required: false
+                    sortOrder: 3
+                  b0a28612-04bc-4669-a6d1-816c9c768a29:
+                    required: false
+                    sortOrder: 2
+                  c2ad07dc-05e7-4ef4-89b6-2e1eaccee210:
+                    required: false
                     sortOrder: 1
                 name: Content
                 sortOrder: 1
@@ -10256,7 +10285,7 @@ sections:
         hasTitleField: true
         name: 'Department Redirect'
         sortOrder: 2
-        titleFormat: null
+        titleFormat: ''
         titleLabel: Title
       853acfc8-1959-4654-89f9-e544989d27d5:
         fieldLayouts:
@@ -11173,6 +11202,13 @@ sections:
                     sortOrder: 1
                 name: SEO
                 sortOrder: 3
+              -
+                fields:
+                  90d724d7-7c32-4d04-8b9a-3900d6ecdb84:
+                    required: false
+                    sortOrder: 1
+                name: 'Admin Only'
+                sortOrder: 4
         handle: boardsCommissions
         hasTitleField: true
         name: 'Boards & Commissions'

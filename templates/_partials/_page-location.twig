@@ -74,8 +74,8 @@
         {% endif %}
         {# TODO: Move Topics, processes (negligible) and officials to matrix immediately #}
         {% if entry.hours %}
-          <h3 class="text-xxl mb-0">Open Hours</h3>
-          {# <dl>
+          {# <h3 class="text-xxl mb-0">Open Hours</h3>
+          <dl>
             {% for day in entry.hours.getRange(1, 0) %}
               {% include '_partials/_elements/_hours.twig' %}
             {% endfor %}
