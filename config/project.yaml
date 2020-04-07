@@ -42,7 +42,7 @@ categoryGroups:
     structure:
       maxLevels: 1
       uid: b4e9ab1c-aa42-46f9-a679-898119f39e8d
-dateModified: 1586198869
+dateModified: 1586219961
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -7886,6 +7886,10 @@ plugins:
     licenseKey: null
     schemaVersion: 2.0.0
     settings: null
+  inventory:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.0.0
   linkit:
     enabled: '1'
     licenseKey: 46HXL3KFU6B2Z3R5LOC856G4
@@ -8617,31 +8621,37 @@ sections:
                 fields:
                   2fb76e53-8619-4e29-b609-c984c390de9a:
                     required: false
-                    sortOrder: 3
+                    sortOrder: 4
                   555efa28-a6b9-471d-8548-735eae07cb3c:
                     required: false
-                    sortOrder: 4
-                  80554222-e44d-4971-b6db-30843c2f3a7d:
+                    sortOrder: 5
+                  6ac11602-f5a4-4e2e-bc97-fdfea3e3d005:
                     required: false
                     sortOrder: 7
-                  85af3974-efa6-4a79-a433-1fa8e5b4d404:
+                  80554222-e44d-4971-b6db-30843c2f3a7d:
                     required: false
                     sortOrder: 9
+                  85af3974-efa6-4a79-a433-1fa8e5b4d404:
+                    required: false
+                    sortOrder: 11
+                  90d724d7-7c32-4d04-8b9a-3900d6ecdb84:
+                    required: false
+                    sortOrder: 2
                   bca7e819-7353-4b88-a1ba-1f0cd2ef15b5:
                     required: false
                     sortOrder: 1
                   c9d86e3f-9738-4d97-a271-5331264c10b8:
                     required: false
-                    sortOrder: 2
+                    sortOrder: 3
                   d71c1375-6cf3-4873-9c42-fde00a9b766b:
                     required: false
-                    sortOrder: 8
+                    sortOrder: 10
                   d9a54ffb-26e9-4883-83bb-8e41650c8927:
                     required: false
-                    sortOrder: 6
+                    sortOrder: 8
                   dc60bd1b-5618-4b28-9455-bb06946164d8:
                     required: false
-                    sortOrder: 5
+                    sortOrder: 6
                 name: Contact
                 sortOrder: 3
               -
@@ -9055,34 +9065,40 @@ sections:
                 fields:
                   2fb76e53-8619-4e29-b609-c984c390de9a:
                     required: false
-                    sortOrder: 2
+                    sortOrder: 3
                   4597e3f8-233a-4369-91e0-9942a60ddc2b:
                     required: false
-                    sortOrder: 4
+                    sortOrder: 5
                   5e5aad16-6bdc-4d3e-adfd-75147a323b78:
                     required: false
-                    sortOrder: 3
-                  80554222-e44d-4971-b6db-30843c2f3a7d:
+                    sortOrder: 4
+                  6ac11602-f5a4-4e2e-bc97-fdfea3e3d005:
                     required: false
                     sortOrder: 8
-                  85af3974-efa6-4a79-a433-1fa8e5b4d404:
+                  80554222-e44d-4971-b6db-30843c2f3a7d:
                     required: false
                     sortOrder: 10
+                  85af3974-efa6-4a79-a433-1fa8e5b4d404:
+                    required: false
+                    sortOrder: 12
+                  90d724d7-7c32-4d04-8b9a-3900d6ecdb84:
+                    required: false
+                    sortOrder: 2
                   a3fccaa0-bcac-433c-9b51-7d3f47c751f2:
                     required: false
-                    sortOrder: 5
+                    sortOrder: 6
                   bca7e819-7353-4b88-a1ba-1f0cd2ef15b5:
                     required: false
                     sortOrder: 1
                   d71c1375-6cf3-4873-9c42-fde00a9b766b:
                     required: false
-                    sortOrder: 9
+                    sortOrder: 11
                   d9a54ffb-26e9-4883-83bb-8e41650c8927:
                     required: false
-                    sortOrder: 7
+                    sortOrder: 9
                   dc60bd1b-5618-4b28-9455-bb06946164d8:
                     required: false
-                    sortOrder: 6
+                    sortOrder: 7
                 name: Contact
                 sortOrder: 3
               -
@@ -9775,13 +9791,13 @@ sections:
                 fields:
                   55169274-4595-4ab0-a461-9b4600d07779:
                     required: false
-                    sortOrder: 7
+                    sortOrder: 6
                   78894bca-c6ce-4518-bb6f-fa94d7e7050e:
                     required: false
                     sortOrder: 4
                   9723e73e-bf9d-4785-809e-fa94b4b85e14:
                     required: false
-                    sortOrder: 6
+                    sortOrder: 5
                   bef74be8-b22d-4dd0-9217-9707bb43d888:
                     required: false
                     sortOrder: 3
@@ -9790,10 +9806,10 @@ sections:
                     sortOrder: 1
                   caf0bc06-3f8b-4152-ab45-8e9289767860:
                     required: false
-                    sortOrder: 8
+                    sortOrder: 7
                   d9f6b182-7186-4e99-909f-9112985467b8:
                     required: false
-                    sortOrder: 9
+                    sortOrder: 8
                   f62c85ae-2203-4d1a-8702-da515126a398:
                     required: false
                     sortOrder: 2
@@ -9822,31 +9838,34 @@ sections:
                 fields:
                   2fb76e53-8619-4e29-b609-c984c390de9a:
                     required: false
-                    sortOrder: 4
+                    sortOrder: 5
                   555efa28-a6b9-471d-8548-735eae07cb3c:
                     required: false
-                    sortOrder: 3
+                    sortOrder: 4
                   6ac11602-f5a4-4e2e-bc97-fdfea3e3d005:
                     required: false
-                    sortOrder: 5
+                    sortOrder: 6
                   80554222-e44d-4971-b6db-30843c2f3a7d:
                     required: false
-                    sortOrder: 6
+                    sortOrder: 7
                   85af3974-efa6-4a79-a433-1fa8e5b4d404:
                     required: false
-                    sortOrder: 9
+                    sortOrder: 10
+                  90d724d7-7c32-4d04-8b9a-3900d6ecdb84:
+                    required: false
+                    sortOrder: 2
                   bca7e819-7353-4b88-a1ba-1f0cd2ef15b5:
                     required: false
                     sortOrder: 1
                   c9d86e3f-9738-4d97-a271-5331264c10b8:
                     required: false
-                    sortOrder: 2
+                    sortOrder: 3
                   d71c1375-6cf3-4873-9c42-fde00a9b766b:
                     required: false
-                    sortOrder: 8
+                    sortOrder: 9
                   d9a54ffb-26e9-4883-83bb-8e41650c8927:
                     required: false
-                    sortOrder: 7
+                    sortOrder: 8
                 name: Contact
                 sortOrder: 3
               -
@@ -9932,31 +9951,34 @@ sections:
                 fields:
                   2fb76e53-8619-4e29-b609-c984c390de9a:
                     required: false
-                    sortOrder: 4
+                    sortOrder: 5
                   555efa28-a6b9-471d-8548-735eae07cb3c:
                     required: false
-                    sortOrder: 3
+                    sortOrder: 4
                   6ac11602-f5a4-4e2e-bc97-fdfea3e3d005:
                     required: false
-                    sortOrder: 5
+                    sortOrder: 6
                   80554222-e44d-4971-b6db-30843c2f3a7d:
                     required: false
-                    sortOrder: 6
+                    sortOrder: 7
                   85af3974-efa6-4a79-a433-1fa8e5b4d404:
                     required: false
-                    sortOrder: 9
+                    sortOrder: 10
+                  90d724d7-7c32-4d04-8b9a-3900d6ecdb84:
+                    required: false
+                    sortOrder: 2
                   bca7e819-7353-4b88-a1ba-1f0cd2ef15b5:
                     required: false
                     sortOrder: 1
                   c9d86e3f-9738-4d97-a271-5331264c10b8:
                     required: false
-                    sortOrder: 2
+                    sortOrder: 3
                   d71c1375-6cf3-4873-9c42-fde00a9b766b:
                     required: false
-                    sortOrder: 8
+                    sortOrder: 9
                   d9a54ffb-26e9-4883-83bb-8e41650c8927:
                     required: false
-                    sortOrder: 7
+                    sortOrder: 8
                 name: Contact
                 sortOrder: 3
               -
@@ -11117,31 +11139,34 @@ sections:
                 fields:
                   1f6c0b74-c954-4e91-a513-8cd9aad771c4:
                     required: false
-                    sortOrder: 3
+                    sortOrder: 4
                   2fb76e53-8619-4e29-b609-c984c390de9a:
                     required: false
-                    sortOrder: 4
+                    sortOrder: 5
                   555efa28-a6b9-471d-8548-735eae07cb3c:
                     required: false
-                    sortOrder: 5
+                    sortOrder: 6
                   80554222-e44d-4971-b6db-30843c2f3a7d:
                     required: false
-                    sortOrder: 7
+                    sortOrder: 8
                   85af3974-efa6-4a79-a433-1fa8e5b4d404:
                     required: false
-                    sortOrder: 9
+                    sortOrder: 10
+                  90d724d7-7c32-4d04-8b9a-3900d6ecdb84:
+                    required: false
+                    sortOrder: 2
                   bca7e819-7353-4b88-a1ba-1f0cd2ef15b5:
                     required: false
                     sortOrder: 1
                   c9d86e3f-9738-4d97-a271-5331264c10b8:
                     required: false
-                    sortOrder: 2
+                    sortOrder: 3
                   d71c1375-6cf3-4873-9c42-fde00a9b766b:
                     required: false
-                    sortOrder: 8
+                    sortOrder: 9
                   d9a54ffb-26e9-4883-83bb-8e41650c8927:
                     required: false
-                    sortOrder: 6
+                    sortOrder: 7
                 name: Contact
                 sortOrder: 2
               -
