@@ -1,4 +1,4 @@
-{% if sitewideAlert.alertShowHide == "show" %}
+{% if sitewideAlert.alertShowHide == "show" and (sitewideAlert.alertExpiration.date ?? '' >= now.date or not sitewideAlert.alertExpiration) %}
   {% switch sitewideAlert.alertType %}
     {% case "warning" %}
       {% set color = "yellow-600" %}
@@ -9,14 +9,14 @@
   {% endswitch %}
   <div class="relative bg-{{ color }} z-0 text-white">
     <img alt="" class="absolute inset-0 object-cover w-full h-full opacity-3" role="presentation" src="/assets/img/oaklandroots.svg">
-    <div class="text-base container py-4 relative z-20">
+    <div class="text-sm container py-4 relative z-20">
       <div class="sm:flex content-start items-center">
-        <div class="mb-6 sm:mb-0 sm:mr-8 flex-1">
-          <p class="m-0 font-bold uppercase">{{ sitewideAlert.alertLabel }}: {{ sitewideAlert.alertMessage }}</p>
+        <div class="mb-2 sm:mb-0 sm:mr-8 flex-1 md:flex">
+          {% if sitewideAlert.alertLabel %}<p class="m-0 sm:mr-2 font-bold uppercase">{{ sitewideAlert.alertLabel }}:</p>{% endif %}<div class="o-override o-2">{{ sitewideAlert.alertMessage }}</div>
         </div>
         {% if sitewideAlert.alertUrl %}
           <div>
-            <a href="{{ sitewideAlert.alertUrl.url }}" class="text-white hover:text-white hover:opacity-75 hover:underline">Read More »</a>
+            <a href="{{ sitewideAlert.alertUrl.url }}" class="btn btn-sm uppercase bg-white text-xs text-red-600 hover:text-white hover:bg-red-600 hover:no-underline shadow-sm p-1 sm:p-2">Read More »</a>
           </div>
         {% endif %}
       </div>
