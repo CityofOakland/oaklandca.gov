@@ -42,7 +42,7 @@ categoryGroups:
     structure:
       maxLevels: 1
       uid: b4e9ab1c-aa42-46f9-a679-898119f39e8d
-dateModified: 1586282560
+dateModified: 1586537446
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -8803,6 +8803,67 @@ sections:
         template: media-center/about-oakland/index
         uriFormat: media-center/about-oakland
     type: single
+  3d20db52-3ddf-4e65-baee-9e51e72240a3:
+    enableVersioning: true
+    entryTypes:
+      2f074263-7317-480b-8255-feb34bad1713:
+        fieldLayouts:
+          2f92e1ba-0a2f-4fd8-a04f-b5e45b8aa96f:
+            tabs:
+              -
+                fields:
+                  bef74be8-b22d-4dd0-9217-9707bb43d888:
+                    required: false
+                    sortOrder: 3
+                  c2ad07dc-05e7-4ef4-89b6-2e1eaccee210:
+                    required: false
+                    sortOrder: 2
+                  f62c85ae-2203-4d1a-8702-da515126a398:
+                    required: false
+                    sortOrder: 1
+                  fd0c8e02-99b4-4ce5-ab89-b29cd0efc581:
+                    required: false
+                    sortOrder: 4
+                name: Content
+                sortOrder: 1
+              -
+                fields:
+                  ecc31df6-640f-4fa6-a2e6-caea757e379d:
+                    required: false
+                    sortOrder: 1
+                name: SEO
+                sortOrder: 2
+        handle: oaklandHomelessResponse
+        hasTitleField: true
+        name: 'Oakland Homeless Response'
+        sortOrder: 1
+        titleFormat: ''
+        titleLabel: Title
+    handle: oaklandHomelessResponse
+    name: 'Oakland Homeless Response'
+    previewTargets:
+      -
+        __assoc__:
+          -
+            - label
+            - 'Primary entry page'
+          -
+            - urlFormat
+            - '{url}'
+          -
+            - refresh
+            - '1'
+    propagationMethod: all
+    siteSettings:
+      c35d3a93-d7f4-4c37-ae3e-1b4d403311bb:
+        enabledByDefault: true
+        hasUrls: true
+        template: _layouts/_mini-site
+        uriFormat: '{slug}'
+    structure:
+      maxLevels: 3
+      uid: 0ee5768d-c880-441c-ad65-57f53af85377
+    type: structure
   4c69249e-8905-4924-88d0-4eaa4ce13edc:
     enableVersioning: true
     entryTypes:
