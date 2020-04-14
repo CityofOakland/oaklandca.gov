@@ -1,4 +1,4 @@
-{% set alerts = craft.entries.section("pageAlerts").relatedTo(entry).all() %}
+{% set alerts = craft.entries.section("pageAlerts").relatedTo(entry ?? event ?? category ?? "").all() %}
 {% for alert in alerts %}
   {% switch alert.alertType %}
     {% case "warning" %}
