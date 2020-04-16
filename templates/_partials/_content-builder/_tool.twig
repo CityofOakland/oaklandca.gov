@@ -94,5 +94,7 @@
       {% include templateBase ~ "calendarEntries.twig" with {
         calendarHandle: "events"
       } %}
+    {% case "embeddedContent" %}
+      {% include templateBase ~ "embeddedContent.twig" %}
   {% endswitch %}
 {% endfor %}
