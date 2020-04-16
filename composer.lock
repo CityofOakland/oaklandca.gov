@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "d0b7e2342071b1e4c6e767d8405f1ea2",
+    "content-hash": "c2e3a0921cb7a94aaadad00fe481202b",
     "packages": [
         {
             "name": "aelvan/imager",
@@ -7807,11 +7807,11 @@
         },
         {
             "name": "verbb/base",
-            "version": "1.0.1",
+            "version": "1.0.2",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/verbb/verbb-base/zipball/c95545f2b86db0791294a4b25e967a007f1dbf57",
-                "reference": "c95545f2b86db0791294a4b25e967a007f1dbf57",
+                "url": "https://api.github.com/repos/verbb/verbb-base/zipball/85a11791c811c90ea58a3718488af0e60e12ba2c",
+                "reference": "85a11791c811c90ea58a3718488af0e60e12ba2c",
                 "shasum": ""
             },
             "require": {
@@ -7833,19 +7833,20 @@
                 }
             ],
             "description": "Common utilities and building-blocks for Verbb plugins for Craft CMS.",
-            "time": "2020-01-23T22:22:44+00:00"
+            "time": "2020-04-14T23:40:29+00:00"
         },
         {
             "name": "verbb/field-manager",
-            "version": "2.1.1",
+            "version": "2.1.3",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/verbb/field-manager/zipball/026cc5d6c030e509158d7525d8764514e7da3a79",
-                "reference": "026cc5d6c030e509158d7525d8764514e7da3a79",
+                "url": "https://api.github.com/repos/verbb/field-manager/zipball/f72eabd7dc85d16e593e0e9897e18b91e3a5bdac",
+                "reference": "f72eabd7dc85d16e593e0e9897e18b91e3a5bdac",
                 "shasum": ""
             },
             "require": {
-                "craftcms/cms": "^3.1.0"
+                "craftcms/cms": "^3.1.0",
+                "verbb/base": "^1.0.2"
             },
             "type": "craft-plugin",
             "extra": {
@@ -7859,7 +7860,6 @@
                     "verbb\\fieldmanager\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -7871,34 +7871,39 @@
             ],
             "description": "Manage your fields and field groups with ease with simple field or group cloning and quicker overall management.",
             "keywords": [
-                "Craft",
                 "cms",
+                "craft",
                 "craft-plugin",
                 "craftcms",
                 "field manager"
             ],
-            "time": "2019-11-27T06:04:29+00:00"
+            "support": {
+                "email": "support@verbb.io",
+                "issues": "https://github.com/verbb/field-manager/issues?state=open",
+                "source": "https://github.com/verbb/field-manager",
+                "docs": "https://github.com/verbb/field-manager",
+                "rss": "https://github.com/verbb/field-manager/commits/v2.atom"
+            },
+            "time": "2020-04-16T01:10:30+00:00"
         },
         {
             "name": "verbb/redactor-tweaks",
-            "version": "2.0.2",
+            "version": "2.0.4",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/verbb/redactor-tweaks/zipball/a2d668ce76d322e5779fbbff5ca11851ae27d1ca",
-                "reference": "a2d668ce76d322e5779fbbff5ca11851ae27d1ca",
+                "url": "https://api.github.com/repos/verbb/redactor-tweaks/zipball/abbcb694da16c149cd81544471441a1a3028fd1b",
+                "reference": "abbcb694da16c149cd81544471441a1a3028fd1b",
                 "shasum": ""
             },
             "require": {
-                "craftcms/cms": "^3.0.0"
+                "craftcms/cms": "^3.0.0",
+                "verbb/base": "^1.0.2"
             },
             "type": "craft-plugin",
             "extra": {
                 "name": "Redactor Tweaks",
                 "handle": "redactor-tweaks",
-                "description": "A small Craft CMS that provides some tweaks to the default Redactor II Rich Text fieldtype.",
-                "schemaVersion": "1.0.0",
-                "hasCpSettings": false,
-                "hasCpSection": false,
+                "description": "A small Craft CMS plugin that provides some tweaks to the default Redactor II Rich Text fieldtype.",
                 "changelogUrl": "https://raw.githubusercontent.com/verbb/redactor-tweaks/craft-3/CHANGELOG.md",
                 "class": "verbb\\redactortweaks\\RedactorTweaks"
             },
@@ -7907,7 +7912,6 @@
                     "verbb\\redactortweaks\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -7917,28 +7921,35 @@
                     "homepage": "https://verbb.io"
                 }
             ],
-            "description": "A small Craft CMS that provides some tweaks to the default Redactor II Rich Text fieldtype.",
+            "description": "A small Craft CMS plugin that provides some tweaks to the default Redactor II Rich Text fieldtype.",
             "keywords": [
-                "Craft",
-                "Redactor",
                 "cms",
+                "craft",
                 "craft-plugin",
-                "craftcms"
+                "craftcms",
+                "redactor"
             ],
-            "time": "2018-07-10T03:53:00+00:00"
+            "support": {
+                "email": "support@verbb.io",
+                "issues": "https://github.com/verbb/redactor-tweaks/issues?state=open",
+                "source": "https://github.com/verbb/redactor-tweaks",
+                "docs": "https://github.com/verbb/redactor-tweaks",
+                "rss": "https://github.com/verbb/redactor-tweaks/commits/v2.atom"
+            },
+            "time": "2020-04-16T01:08:47+00:00"
         },
         {
             "name": "verbb/smith",
-            "version": "1.1.1",
+            "version": "1.1.3",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/verbb/smith/zipball/95d18eceb58866d0fabcdeb757d987a2cd049b44",
-                "reference": "95d18eceb58866d0fabcdeb757d987a2cd049b44",
+                "url": "https://api.github.com/repos/verbb/smith/zipball/787136d316a0d0d1f32a4c29a4528d1ef774a07a",
+                "reference": "787136d316a0d0d1f32a4c29a4528d1ef774a07a",
                 "shasum": ""
             },
             "require": {
                 "craftcms/cms": "^3.4.0",
-                "verbb/base": "^1.0.0"
+                "verbb/base": "^1.0.2"
             },
             "type": "craft-plugin",
             "extra": {
@@ -7952,7 +7963,6 @@
                     "verbb\\smith\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -7964,26 +7974,33 @@
             ],
             "description": "Add copy, paste and clone functionality to Matrix blocks.",
             "keywords": [
-                "Craft",
-                "Smith",
                 "cms",
+                "craft",
                 "craft-plugin",
-                "craftcms"
+                "craftcms",
+                "smith"
             ],
-            "time": "2020-02-12T12:35:15+00:00"
+            "support": {
+                "email": "support@verbb.io",
+                "issues": "https://github.com/verbb/smith/issues?state=open",
+                "source": "https://github.com/verbb/smith",
+                "docs": "https://github.com/verbb/smith",
+                "rss": "https://github.com/verbb/smith/commits/v2.atom"
+            },
+            "time": "2020-04-16T01:04:31+00:00"
         },
         {
             "name": "verbb/super-table",
-            "version": "2.4.7",
+            "version": "2.4.9",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/verbb/super-table/zipball/33c1586bc153c03579087d9f1e88daef180c2200",
-                "reference": "33c1586bc153c03579087d9f1e88daef180c2200",
+                "url": "https://api.github.com/repos/verbb/super-table/zipball/cf3237d0e5be608561bfcf02d77e9bef03855a69",
+                "reference": "cf3237d0e5be608561bfcf02d77e9bef03855a69",
                 "shasum": ""
             },
             "require": {
                 "craftcms/cms": "^3.4.8",
-                "verbb/base": "^1.0.0"
+                "verbb/base": "^1.0.2"
             },
             "type": "craft-plugin",
             "extra": {
@@ -8023,7 +8040,7 @@
                 "docs": "https://github.com/verbb/super-table",
                 "rss": "https://github.com/verbb/super-table/commits/v2.atom"
             },
-            "time": "2020-04-02T10:16:04+00:00"
+            "time": "2020-04-15T22:45:13+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
