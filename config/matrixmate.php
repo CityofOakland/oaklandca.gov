@@ -17,6 +17,10 @@ $adminLinksBlock = [
   'label' => 'Links',
   'types' => ['linksWithDescriptions', 'largeEntryLinks', 'smallEntryLinks', 'newsEntries', 'eventEntries', 'meetingEntries']
 ];
+$adminOnlyBlock = [
+  'label' => 'Admin',
+  'types' => ['customTemplate', 'embeddedContent']
+];
 $defaultImagesBlock = [
   'label' => 'Images',
   'types' => ['image', 'gallery']
@@ -35,7 +39,8 @@ if ($isUserAdmin) {
     $adminTextBlock,
     $adminLinksBlock,
     $defaultImagesBlock,
-    $defaultTablesBlock
+    $defaultTablesBlock,
+    $adminOnlyBlock
   ];
   $departmentsBlock = $defaultBlock;
   $topicsBlock = $defaultBlock;

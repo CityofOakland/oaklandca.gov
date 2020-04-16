@@ -42,7 +42,8 @@
     "mmikkel/retcon": "2.1.0",
     "superbig/craft3-templateselect": "2.0.2",
     "supercool/buttonbox": "2.0.4",
-    "doublesecretagency/craft-inventory": "2.1.0"
+    "doublesecretagency/craft-inventory": "2.1.0",
+    "doublesecretagency/craft-viewcount": "^1.0"
   },
   "autoload": {
     "psr-4": {
