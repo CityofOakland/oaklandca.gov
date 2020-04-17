@@ -54,7 +54,7 @@
     {{ craft.twigpack.includeJsModule("/js/manifest.js") }}
     {{ craft.twigpack.includeJsModule("/js/vendor.js") }}
     {{ craft.twigpack.includeJsModule("/js/app.js") }}
-    {% do craft.viewCount.increment(entry.id ?? event.id ?? '') %}
+    {% do craft.viewCount.increment(entry.id ?? event.id ?? category.id ?? '') %}
   </body>
 </html>
 {% if section is defined and slug is defined %}
