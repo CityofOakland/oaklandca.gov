@@ -42,7 +42,7 @@ categoryGroups:
     structure:
       maxLevels: 1
       uid: b4e9ab1c-aa42-46f9-a679-898119f39e8d
-dateModified: 1586537446
+dateModified: 1587070845
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -4225,6 +4225,42 @@ matrixBlockTypes:
     handle: step
     name: Step
     sortOrder: 1
+  2202fe16-460f-4520-b11d-6c0c332621bb:
+    field: fd0c8e02-99b4-4ce5-ab89-b29cd0efc581
+    fieldLayouts:
+      4aae0748-dca8-4dca-8961-92d81dd26e8f:
+        tabs:
+          -
+            fields:
+              bca01eec-d702-410d-8417-9f70c9146820:
+                required: true
+                sortOrder: 1
+            name: Content
+            sortOrder: 1
+    fields:
+      bca01eec-d702-410d-8417-9f70c9146820:
+        contentColumnType: string
+        fieldGroup: null
+        handle: entry
+        instructions: ''
+        name: Entry
+        searchable: false
+        settings:
+          limit: '1'
+          localizeRelations: false
+          selectionLabel: ''
+          source: null
+          sources:
+            - 'section:74ecde2f-b254-4f3e-b889-1affac6f5999'
+          targetSiteId: null
+          validateRelatedElements: ''
+          viewMode: null
+        translationKeyFormat: null
+        translationMethod: site
+        type: craft\fields\Entries
+    handle: embeddedContent
+    name: 'Embedded Content'
+    sortOrder: 17
   23582152-45a1-42c1-ad79-65deed3eaab0:
     field: 5ff206fa-fc15-4726-a9e2-0ed8b6da6407
     fieldLayouts:
@@ -8028,6 +8064,13 @@ plugins:
     licenseKey: null
     schemaVersion: 1.0.0
     settings: null
+  view-count:
+    edition: standard
+    enabled: true
+    licenseKey: URW1UZY5ZKSGKC22JQCSCYLQ
+    schemaVersion: 1.0.0
+    settings:
+      keepViewLog: ''
   wordsmith:
     enabled: '1'
     licenseKey: null
@@ -11828,6 +11871,19 @@ tagGroups:
 users:
   allowPublicRegistration: false
   defaultGroup: ''
+  fieldLayouts:
+    f259309f-242f-4e74-b147-ed55c97de190:
+      tabs:
+        -
+          fields:
+            b34a0436-278d-4bb7-a7e8-729da1db7c4e:
+              required: true
+              sortOrder: 1
+            ea2bc4af-23f2-4838-99c2-9da78c63420f:
+              required: true
+              sortOrder: 2
+          name: 'Additional Information'
+          sortOrder: 1
   groups:
     28b0988c-b6ee-404e-922d-8278e9ab4daa:
       handle: digitalLeads
