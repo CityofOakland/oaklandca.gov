@@ -1,4 +1,4 @@
-{% set url = url ?? entry.url ?? null %}
+{% set url = url ?? entry.redirectUrl ?? entry.url ?? '' ?? null %}
 {% set title = title ?? entry.title ?? null %}
 {% set cardStyle = cardStyle ?? null %}
 {% set cardColor = cardColor ?? null %}

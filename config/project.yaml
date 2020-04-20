@@ -42,7 +42,7 @@ categoryGroups:
     structure:
       maxLevels: 1
       uid: b4e9ab1c-aa42-46f9-a679-898119f39e8d
-dateModified: 1587070845
+dateModified: 1587399574
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -10540,6 +10540,51 @@ sections:
   b7e437e1-239f-4c5c-8c62-5f0323f9d22c:
     enableVersioning: true
     entryTypes:
+      33857d17-d8e8-4c03-8902-f1fb2e4422da:
+        fieldLayouts:
+          815fb02b-00d1-436a-a5ef-598b938f2831:
+            tabs:
+              -
+                fields:
+                  93eaa329-904e-4a23-9047-4decf3d47cac:
+                    required: false
+                    sortOrder: 2
+                  c2ad07dc-05e7-4ef4-89b6-2e1eaccee210:
+                    required: false
+                    sortOrder: 1
+                name: Content
+                sortOrder: 1
+              -
+                fields:
+                  41124ab0-0e88-44c6-b4f2-f002669d8133:
+                    required: false
+                    sortOrder: 3
+                  44b00870-0842-4c4e-838f-dcd688fb5b05:
+                    required: false
+                    sortOrder: 7
+                  73b7b0c7-bff1-4c55-97aa-fc62042f0347:
+                    required: false
+                    sortOrder: 4
+                  7594e9ae-f194-47c8-9a6b-076789f1087b:
+                    required: false
+                    sortOrder: 1
+                  a25a56ba-bfb3-4e4d-a857-6d3cb4a5dcdc:
+                    required: false
+                    sortOrder: 2
+                  d624c5c7-9cce-4088-92ba-02e1f2024c6a:
+                    required: false
+                    sortOrder: 5
+                  e67ec759-ea3a-4568-bfa6-a314ff3d1036:
+                    required: false
+                    sortOrder: 6
+                name: Relationships
+                sortOrder: 2
+        handle: serviceRedirect
+        hasTitleField: true
+        name: 'Service Redirect'
+        sortOrder: 3
+        titleFormat: ''
+        titleLabel: Title
       85f10314-7c48-4f3e-8edb-8fa58b270abc:
         fieldLayouts:
           9047615e-bdbb-45a1-bb9d-b5652e318743:

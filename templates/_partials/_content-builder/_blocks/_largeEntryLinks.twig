@@ -4,10 +4,7 @@
   {{ block.entriesDescription }}
   <div class="card-grid grid-equal-height">
     {% for entry in block.entries.all() %}
-      {% include '_partials/_elements/_title-cards.twig' with {
-        title: entry.title,
-        url: entry.url,
-      } %}
+      {% include '_partials/_elements/_title-cards.twig' %}
     {% endfor %}
   </div>
 </div>
