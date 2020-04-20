@@ -42,7 +42,7 @@ categoryGroups:
     structure:
       maxLevels: 1
       uid: b4e9ab1c-aa42-46f9-a679-898119f39e8d
-dateModified: 1587399574
+dateModified: 1587400291
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -8009,7 +8009,7 @@ plugins:
   smart-map:
     enabled: '1'
     licenseKey: 8KND7ZM72H5RQY65UFT7QUH1
-    schemaVersion: 3.2.2
+    schemaVersion: 3.2.3
     settings:
       debugRoute: map/debug
       geolocation: none
