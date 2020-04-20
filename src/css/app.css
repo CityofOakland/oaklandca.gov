@@ -249,6 +249,13 @@ main .bg-rotate:nth-of-type(even) {
       @apply ml-5 pl-2;
     }
   }
+
+  & ol {
+    @apply list-decimal list-outside;
+    & li {
+      @apply ml-5 pl-2;
+    }
+  }
 }
 
 a,
