@@ -32,7 +32,6 @@ $defaultTablesBlock = [
 
 $user = Craft::$app->getUser();
 $isUserAdmin = $user->getIsAdmin();
-$isContentBuilder = $user->getIdentity() ? $user->getIdentity()->isInGroup('contentBuilderUser') : null;
 
 if ($isUserAdmin) {
   $defaultBlock = [
@@ -47,7 +46,7 @@ if ($isUserAdmin) {
   $newsPressBlock = $defaultBlock;
   $resourcesBlock = $defaultBlock;
   $servicesBlock = $defaultBlock;
-} elseif ($isContentBuilder) {
+} else {
   $defaultBlock = [
     $defaultTextBlock
   ];
@@ -74,17 +73,6 @@ if ($isUserAdmin) {
   $servicesBlock = [
     $defaultTextBlock,
     $defaultLinksBlock,
-  ];
-} else {
-  $defaultBlock = [''];
-  $departmentsBlock = $defaultBlock;
-  $topicsBlock = $defaultBlock;
-  $newsPressBlock = $defaultBlock;
-  $resourcesBlock = [
-    $defaultTextBlock
-  ];
-  $servicesBlock = [
-    $defaultTextBlock
   ];
 };
 
