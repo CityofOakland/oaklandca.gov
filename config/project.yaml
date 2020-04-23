@@ -42,7 +42,7 @@ categoryGroups:
     structure:
       maxLevels: 1
       uid: b4e9ab1c-aa42-46f9-a679-898119f39e8d
-dateModified: 1587400291
+dateModified: 1587683565
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -12540,22 +12540,12 @@ users:
         - 'publishpeerentries:1ab8269c-e225-472e-b5e1-1504af7a1622'
         - 'editpeerentries:1ab8269c-e225-472e-b5e1-1504af7a1622'
         - 'editentries:1ab8269c-e225-472e-b5e1-1504af7a1622'
-    7cac18ab-e8d7-437f-906e-5a8eb266d55c:
-      handle: contentBuilderAdministrator
-      name: 'Content Builder Administrator'
-      permissions:
-        - 'assignusergroup:b797f2a4-3f80-4128-8daa-b350d0b98762'
-        - assignusergroups
-        - editusers
     a407c106-4190-4ba9-b4c1-7886e5a462c8:
       handle: datasets
       name: Datasets
       permissions:
         - 'publishentries:1ab8269c-e225-472e-b5e1-1504af7a1622'
         - 'editentries:1ab8269c-e225-472e-b5e1-1504af7a1622'
-    b797f2a4-3f80-4128-8daa-b350d0b98762:
-      handle: contentBuilderUser
-      name: 'Content Builder User'
     cd008cb1-3f5b-4444-a259-bf905f9c6f96:
       handle: contributors
       name: Contributors
