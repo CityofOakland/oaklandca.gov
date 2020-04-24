@@ -36,7 +36,7 @@
 {%- import _self as macro -%}
 <?xml version="1.0" encoding="UTF-8"?>
 <entries>
-  {%- set query = craft.entries.section("topics").type("topics").limit(25) -%}
+  {%- set query = craft.entries.section("topics").type("topics").contentBuilder(":empty:").limit(25) -%}
   {%- paginate query as pageInfo, pageEntries -%}
   {%- for entry in pageEntries -%}
   <entry>
