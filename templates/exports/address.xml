@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entries>
+  {%- set query = query ?? "" -%}
+  {%- paginate query as pageInfo, pageEntries -%}
+  {%- for entry in pageEntries -%}
+  <entry>
+    <Title>{{ entry.title }}</Title>
+    <ID>{{ entry.id }}</ID>
+    <Addresses>
+      <MatrixBlock>
+        <LocationName>Address</LocationName>
+        <LocationAbout>{{ entry.addressExtended ?? "" }}</LocationAbout>
+        <Locations>
+          <LocationStreet1>{{ entry.address.street1 }}</LocationStreet1>
+          <LocationStreet2>{{ entry.address.street2 }}</LocationStreet2>
+          <LocationCity>{{ entry.address.city }}</LocationCity>
+          <LocationState>{{ entry.address.state }}</LocationState>
+          <LocationCountry>{{ entry.address.country }}</LocationCountry>
+          <LocationLat>{{ entry.address.lat }}</LocationLat>
+          <LocationLng>{{ entry.address.lng }}</LocationLng>
+        </Locations>
+      </MatrixBlock>
+    </Addresses>
+  </entry>
+  {%- endfor -%}
+  <paginate>
+    {%- if pageInfo.prevUrl %}<prev>{{ pageInfo.prevUrl }}</prev>{%- endif -%}
+    {%- if pageInfo.nextUrl %}<next>{{ pageInfo.nextUrl }}</next>{%- endif -%}
+  </paginate>
+</entries>
