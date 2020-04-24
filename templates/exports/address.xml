@@ -15,6 +15,7 @@
           <LocationStreet2>{{ entry.address.street2 }}</LocationStreet2>
           <LocationCity>{{ entry.address.city }}</LocationCity>
           <LocationState>{{ entry.address.state }}</LocationState>
+          <LocationZip>{{ entry.address.zip }}</LocationZip>
           <LocationCountry>{{ entry.address.country }}</LocationCountry>
           <LocationLat>{{ entry.address.lat }}</LocationLat>
           <LocationLng>{{ entry.address.lng }}</LocationLng>
