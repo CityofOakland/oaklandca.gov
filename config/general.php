@@ -35,6 +35,9 @@ return [
       // Enables Project Config file
       'useProjectConfigFile' => true,
 
+      // Sets a maximum number of entry revisions
+      'maxRevisions' => 20,
+
       'extraFileKinds' => [
         // Allows us to use CSV files when uploading to the Excel filetype
         'excel' => [
