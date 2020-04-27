@@ -1,37 +1,19 @@
 {%- cache using key "topics-export" for 1 day -%}
-{%- macro entries(field, title) -%}
-  {%- for entry in field.all() -%}
-    {%- if loop.first -%}
-    <MatrixBlock>
+{%- macro entries(field, title, blockType) -%}
+  {%- set blockType = (blockType ?? "Entries") ~ "Block" -%}
+  {%- if field | length -%}
+    <{{ blockType }}>
       <Heading>{{ title }}</Heading>
       <Entries>
-    {%- endif -%}
+        {%- for entry in field.all() -%}
         <EntryRelation>
           <EntryTitle>{{ entry.title }}</EntryTitle>
           <EntryID>{{ entry.id }}</EntryID>
         </EntryRelation>
-    {%- if loop.last -%}
+        {%- endfor -%}
       </Entries>
-    </MatrixBlock>
-    {%- endif -%}
-  {%- endfor -%}
-{%- endmacro -%}
-{%- macro events(field, title) -%}
-  {%- for entry in field.all() -%}
-    {%- if loop.first -%}
-    <MatrixBlock>
-      <Heading>{{ title }}</Heading>
-      <Events>
-    {%- endif -%}
-        <EventRelation>
-          <EventTitle>{{ entry.title }}</EventTitle>
-          <EventID>{{ entry.id }}</EventID>
-        </EventRelation>
-    {%- if loop.last -%}
-      </Events>
-    </MatrixBlock>
-    {%- endif -%}
-  {%- endfor -%}
+    </{{ blockType }}>
+  {%- endif -%}
 {%- endmacro -%}
 {%- import _self as macro -%}
 <?xml version="1.0" encoding="UTF-8"?>
@@ -42,16 +24,19 @@
   <entry>
     <Title>{{ entry.title }}</Title>
     <ID>{{ entry.title }}</ID>
-
-    <Matrix>
+    <Entries>
       {{ macro.entries(entry.pageServices, "Services") }}
       {{ macro.entries(entry.pageResources, "Resources") }}
       {{ macro.entries(entry.pageDocuments, "Documents") }}
       {{ macro.entries(entry.pageProjects, "Projects") }}
       {{ macro.entries(entry.pageTopics, "Topics") }}
-      {{ macro.entries(entry.pageNews, "News") }}
-      {{ macro.events(entry.pageEvents, "Events") }}
-    </Matrix>
+      {{ macro.events(entry.pageEvents, "Events", "Events") }}
+      <MeetingsBlock>
+        <Heading>Meetings</Heading>
+        <Autofill>Yes</Autofill>
+      </MeetingsBlock>
+      {{ macro.entries(entry.pageNews, "News", "News") }}
+    </Entries>
   </entry>
   {%- endfor -%}
   <paginate>
