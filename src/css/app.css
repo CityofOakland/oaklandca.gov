@@ -143,14 +143,15 @@ footer {
 }
 
 main {
-  @apply pt-14;
+  padding-top: 3.75rem;
 }
 
-@media (min-width: theme("screens.md")) {
+@media (min-width: theme("screens.lg")) {
   main {
-    @apply pt-30;
+    padding-top: 4rem;    
   }
 }
+
 
 /* Banner Styles */
 .banner {
@@ -263,9 +264,9 @@ input,
 textarea,
 button {
   &:focus {
-    outline-style: solid;
+    outline-style: dotted;
     outline-color: invert;
-    outline-width: 3px;
+    outline-width: 1px;
   }
 }
 
@@ -278,6 +279,12 @@ td {
 th,
 td {
   @apply p-2;
+}
+
+.search-box {
+  background-image: url("/assets/img/icon-spyglass.svg");
+  background-repeat: no-repeat;
+  background-position: .5rem center;
 }
 
 /* PUSH MENU */
