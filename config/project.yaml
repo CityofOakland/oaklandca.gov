@@ -42,7 +42,7 @@ categoryGroups:
     structure:
       maxLevels: 1
       uid: b4e9ab1c-aa42-46f9-a679-898119f39e8d
-dateModified: 1587766055
+dateModified: 1588379492
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -7908,10 +7908,11 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
-  imager:
-    edition: standard
+  imager-x:
+    edition: pro
     enabled: true
-    schemaVersion: 2.0.0
+    licenseKey: DO8L9Q9NW2ZFBS105XUDBCMW
+    schemaVersion: 3.0.0
   incognito-field:
     enabled: '1'
     licenseKey: null

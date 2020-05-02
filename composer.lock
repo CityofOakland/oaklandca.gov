@@ -4,69 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "6285d2c1d1edde45df82d67e7c7861ed",
+    "content-hash": "c74612de6012b84980b025739257eb01",
     "packages": [
-        {
-            "name": "aelvan/imager",
-            "version": "v2.4.0",
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/aelvan/Imager-Craft/zipball/c3d8c8944dcc5492c727bdd96b52a5806312c9b9",
-                "reference": "c3d8c8944dcc5492c727bdd96b52a5806312c9b9",
-                "shasum": ""
-            },
-            "require": {
-                "aws/aws-sdk-php": "^3.0.0",
-                "craftcms/cms": "^3.0.0-RC10",
-                "google/cloud": "~0.20",
-                "imageoptim/imageoptim": "^1.3",
-                "imgix/imgix-php": "^2.1.0",
-                "kraken-io/kraken-php": "^1.2",
-                "ksubileau/color-thief-php": "^1.4.0",
-                "mikehaertl/php-shellcommand": "^1.2",
-                "ssnepenthe/color-utils": "~0.4",
-                "tinify/tinify": ">=1.1.1"
-            },
-            "type": "craft-plugin",
-            "extra": {
-                "name": "Imager",
-                "handle": "imager",
-                "schemaVersion": "2.0.0",
-                "hasCpSettings": false,
-                "hasCpSection": false,
-                "changelogUrl": "https://raw.githubusercontent.com/aelvan/Imager-Craft/craft3/CHANGELOG.md",
-                "components": [],
-                "class": "aelvan\\imager\\Imager"
-            },
-            "autoload": {
-                "psr-4": {
-                    "aelvan\\imager\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "André Elvan",
-                    "homepage": "https://www.vaersaagod.no"
-                }
-            ],
-            "description": "Image transforms gone wild",
-            "keywords": [
-                "Craft",
-                "cms",
-                "craft-plugin",
-                "craftcms",
-                "image",
-                "picture",
-                "responsive",
-                "srcset",
-                "transform"
-            ],
-            "time": "2020-02-11T19:28:27+00:00"
-        },
         {
             "name": "aelvan/inlin",
             "version": "2.1.1",
@@ -177,11 +116,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.133.19",
+            "version": "3.137.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/aws/aws-sdk-php.git",
+                "reference": "935060ae3d64f2bfeab7a6ba46bebe525047446c"
+            },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/e5a78b0704bba3024abac91a1009dde8f8ec1fa8",
-                "reference": "e5a78b0704bba3024abac91a1009dde8f8ec1fa8",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/935060ae3d64f2bfeab7a6ba46bebe525047446c",
+                "reference": "935060ae3d64f2bfeab7a6ba46bebe525047446c",
                 "shasum": ""
             },
             "require": {
@@ -252,7 +196,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2020-02-20T19:10:17+00:00"
+            "time": "2020-05-01T18:13:22+00:00"
         },
         {
             "name": "born05/craft-assetusage",
@@ -674,8 +618,8 @@
             "version": "1.2.7",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/aws-s3/zipball/5d588959ae9c9f3850606b9ade061a815dc65829",
-                "reference": "5d588959ae9c9f3850606b9ade061a815dc65829",
+                "url": "https://api.github.com/repos/craftcms/aws-s3/zipball/a9b0e146e2fca732694977dbc8d9c83d8229805a",
+                "reference": "a9b0e146e2fca732694977dbc8d9c83d8229805a",
                 "shasum": ""
             },
             "require": {
@@ -1860,18 +1804,15 @@
         },
         {
             "name": "firebase/php-jwt",
-            "version": "v5.0.0",
+            "version": "v5.2.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/firebase/php-jwt/zipball/9984a4d3a32ae7673d6971ea00bae9d0a1abba0e",
-                "reference": "9984a4d3a32ae7673d6971ea00bae9d0a1abba0e",
+                "url": "https://api.github.com/repos/firebase/php-jwt/zipball/feb0e820b8436873675fd3aca04f3728eb2185cb",
+                "reference": "feb0e820b8436873675fd3aca04f3728eb2185cb",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": " 4.8.35"
             },
             "type": "library",
             "autoload": {
@@ -1879,7 +1820,6 @@
                     "Firebase\\JWT\\": "src"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "BSD-3-Clause"
             ],
@@ -1897,7 +1837,11 @@
             ],
             "description": "A simple library to encode and decode JSON Web Tokens (JWT) in PHP. Should conform to the current spec.",
             "homepage": "https://github.com/firebase/php-jwt",
-            "time": "2017-06-27T22:17:23+00:00"
+            "keywords": [
+                "jwt",
+                "php"
+            ],
+            "time": "2020-03-25T18:49:23+00:00"
         },
         {
             "name": "fruitstudios/linkit",
@@ -2059,11 +2003,11 @@
         },
         {
             "name": "google/auth",
-            "version": "v1.7.1",
+            "version": "v1.8.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-auth-library-php/zipball/39e243a7d8320b1889ab8bb4cd6f98f7af83c582",
-                "reference": "39e243a7d8320b1889ab8bb4cd6f98f7af83c582",
+                "url": "https://api.github.com/repos/googleapis/google-auth-library-php/zipball/c7b295feb248f138f462a1e6b7d635e4244204c5",
+                "reference": "c7b295feb248f138f462a1e6b7d635e4244204c5",
                 "shasum": ""
             },
             "require": {
@@ -2093,15 +2037,15 @@
                 "google",
                 "oauth2"
             ],
-            "time": "2020-02-12T20:54:50+00:00"
+            "time": "2020-03-26T19:47:36+00:00"
         },
         {
             "name": "google/cloud",
-            "version": "v0.125.0",
+            "version": "v0.132.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-cloud-php/zipball/3adb76e84fabff79f6fd66b353ea45871194bd46",
-                "reference": "3adb76e84fabff79f6fd66b353ea45871194bd46",
+                "url": "https://api.github.com/repos/googleapis/google-cloud-php/zipball/72f40ad21565120ecd5ed283c5c55b63711616e7",
+                "reference": "72f40ad21565120ecd5ed283c5c55b63711616e7",
                 "shasum": ""
             },
             "require": {
@@ -2114,62 +2058,56 @@
                 "monolog/monolog": "^1.1|^2.0",
                 "php": ">=5.5",
                 "psr/http-message": "1.0.*",
-                "ramsey/uuid": "~3",
+                "ramsey/uuid": "^3.0|^4.0",
                 "rize/uri-template": "~0.3"
             },
             "replace": {
-                "google/cloud-asset": "0.6.0",
-                "google/cloud-automl": "0.9.0",
-                "google/cloud-bigquery": "1.13.0",
-                "google/cloud-bigquerydatatransfer": "0.16.0",
-                "google/cloud-bigtable": "1.2.0",
-                "google/cloud-common-protos": "0.2.0",
-                "google/cloud-container": "0.12.0",
-                "google/cloud-core": "1.35.0",
-                "google/cloud-dataproc": "0.17.0",
-                "google/cloud-datastore": "1.11.0",
-                "google/cloud-debugger": "0.21.0",
-                "google/cloud-dialogflow": "0.12.0",
-                "google/cloud-dlp": "0.25.0",
-                "google/cloud-error-reporting": "0.16.0",
-                "google/cloud-firestore": "1.11.0",
-                "google/cloud-iot": "0.11.0",
-                "google/cloud-kms": "1.9.0",
-                "google/cloud-language": "0.22.0",
-                "google/cloud-logging": "1.19.0",
-                "google/cloud-monitoring": "0.20.0",
-                "google/cloud-oslogin": "0.11.0",
-                "google/cloud-pubsub": "1.21.0",
-                "google/cloud-recommender": "0.2.0",
-                "google/cloud-redis": "0.12.0",
-                "google/cloud-scheduler": "1.2.0",
-                "google/cloud-secret-manager": "0.2.0",
-                "google/cloud-security-center": "0.4.0",
-                "google/cloud-spanner": "1.24.0",
-                "google/cloud-speech": "0.31.0",
-                "google/cloud-storage": "1.18.0",
-                "google/cloud-talent": "0.9.0",
-                "google/cloud-tasks": "1.5.0",
-                "google/cloud-text-to-speech": "0.6.0",
-                "google/cloud-trace": "0.17.0",
-                "google/cloud-translate": "1.7.0",
-                "google/cloud-videointelligence": "1.8.0",
-                "google/cloud-vision": "0.25.0",
-                "google/cloud-web-risk": "0.4.0",
-                "google/cloud-web-security-scanner": "0.4.0"
-            },
-            "require-dev": {
-                "erusev/parsedown": "^1.6",
-                "google/cloud-tools": "^0.9.0",
-                "opis/closure": "^3.0",
-                "phpdocumentor/reflection": "^3.0",
-                "phpseclib/phpseclib": "^2",
-                "phpunit/phpunit": "^4.8|^5.0",
-                "squizlabs/php_codesniffer": "2.*",
-                "swaggest/json-schema": "^0.12.0",
-                "symfony/console": "^3.0",
-                "symfony/lock": "3.3.x-dev#1ba6ac9",
-                "vierbergenlars/php-semver": "^3.0"
+                "google/cloud-asset": "1.0.0",
+                "google/cloud-automl": "1.1.0",
+                "google/cloud-bigquery": "1.16.0",
+                "google/cloud-bigquery-storage": "0.1.0",
+                "google/cloud-bigquerydatatransfer": "1.0.1",
+                "google/cloud-bigtable": "1.3.2",
+                "google/cloud-billing": "1.0.0",
+                "google/cloud-common-protos": "0.2.1",
+                "google/cloud-container": "1.0.1",
+                "google/cloud-core": "1.36.2",
+                "google/cloud-data-catalog": "0.1.0",
+                "google/cloud-dataproc": "1.0.1",
+                "google/cloud-datastore": "1.11.2",
+                "google/cloud-debugger": "1.0.0",
+                "google/cloud-dialogflow": "0.14.1",
+                "google/cloud-dlp": "0.26.1",
+                "google/cloud-error-reporting": "0.16.2",
+                "google/cloud-firestore": "1.12.2",
+                "google/cloud-iot": "1.0.0",
+                "google/cloud-kms": "1.10.0",
+                "google/cloud-language": "0.22.3",
+                "google/cloud-logging": "1.20.0",
+                "google/cloud-memcache": "0.1.0",
+                "google/cloud-monitoring": "1.0.1",
+                "google/cloud-oslogin": "1.0.0",
+                "google/cloud-pubsub": "1.24.0",
+                "google/cloud-recaptcha-enterprise": "0.1.0",
+                "google/cloud-recommendations-ai": "0.1.0",
+                "google/cloud-recommender": "1.0.0",
+                "google/cloud-redis": "1.0.0",
+                "google/cloud-scheduler": "1.3.0",
+                "google/cloud-secret-manager": "1.0.0",
+                "google/cloud-security-center": "0.7.0",
+                "google/cloud-service-directory": "0.1.1",
+                "google/cloud-spanner": "1.28.0",
+                "google/cloud-speech": "1.1.0",
+                "google/cloud-storage": "1.20.1",
+                "google/cloud-talent": "0.12.0",
+                "google/cloud-tasks": "1.6.1",
+                "google/cloud-text-to-speech": "1.0.1",
+                "google/cloud-trace": "1.0.0",
+                "google/cloud-translate": "1.7.2",
+                "google/cloud-videointelligence": "1.9.1",
+                "google/cloud-vision": "1.0.0",
+                "google/cloud-web-risk": "0.5.0",
+                "google/cloud-web-security-scanner": "0.4.2"
             },
             "suggest": {
                 "opis/closure": "May be used to serialize closures to process jobs in the batch daemon. Please require version ^3.",
@@ -2198,17 +2136,25 @@
                     "GPBMetadata\\Google\\Cloud\\Asset\\": "Asset/metadata",
                     "GPBMetadata\\Google\\Cloud\\Automl\\": "AutoMl/metadata",
                     "GPBMetadata\\Google\\Cloud\\Bigquery\\Datatransfer\\": "BigQueryDataTransfer/metadata",
+                    "GPBMetadata\\Google\\Cloud\\Bigquery\\Storage\\": "BigQueryStorage/metadata",
+                    "GPBMetadata\\Google\\Cloud\\Billing\\": "Billing/metadata",
+                    "GPBMetadata\\Google\\Cloud\\Datacatalog\\": "DataCatalog/metadata",
                     "GPBMetadata\\Google\\Cloud\\Dataproc\\": "Dataproc/metadata",
                     "GPBMetadata\\Google\\Cloud\\Dialogflow\\": "Dialogflow/metadata",
                     "GPBMetadata\\Google\\Cloud\\Iot\\": "Iot/metadata",
                     "GPBMetadata\\Google\\Cloud\\Kms\\": "Kms/metadata",
                     "GPBMetadata\\Google\\Cloud\\Language\\": "Language/metadata",
+                    "GPBMetadata\\Google\\Cloud\\Memcache\\": "Memcache/metadata",
                     "GPBMetadata\\Google\\Cloud\\Oslogin\\": "OsLogin/metadata",
+                    "GPBMetadata\\Google\\Cloud\\Recaptchaenterprise\\": "RecaptchaEnterprise/metadata",
+                    "GPBMetadata\\Google\\Cloud\\Recommendationengine\\": "RecommendationEngine/metadata",
                     "GPBMetadata\\Google\\Cloud\\Recommender\\": "Recommender/metadata",
                     "GPBMetadata\\Google\\Cloud\\Redis\\": "Redis/metadata",
                     "GPBMetadata\\Google\\Cloud\\Scheduler\\": "Scheduler/metadata",
+                    "GPBMetadata\\Google\\Cloud\\Secretmanager\\": "SecretManager/metadata",
                     "GPBMetadata\\Google\\Cloud\\Secrets\\": "SecretManager/metadata",
                     "GPBMetadata\\Google\\Cloud\\Securitycenter\\": "SecurityCenter/metadata",
+                    "GPBMetadata\\Google\\Cloud\\Servicedirectory\\": "ServiceDirectory/metadata",
                     "GPBMetadata\\Google\\Cloud\\Speech\\": "Speech/metadata",
                     "GPBMetadata\\Google\\Cloud\\Talent\\": "Talent/metadata",
                     "GPBMetadata\\Google\\Cloud\\Tasks\\": "Tasks/metadata",
@@ -2237,9 +2183,12 @@
                     "Google\\Cloud\\AutoMl\\": "AutoMl/src",
                     "Google\\Cloud\\BigQuery\\": "BigQuery/src",
                     "Google\\Cloud\\BigQuery\\DataTransfer\\": "BigQueryDataTransfer/src",
+                    "Google\\Cloud\\BigQuery\\Storage\\": "BigQueryStorage/src",
                     "Google\\Cloud\\Bigtable\\": "Bigtable/src",
+                    "Google\\Cloud\\Billing\\": "Billing/src",
                     "Google\\Cloud\\Container\\": "Container/src",
                     "Google\\Cloud\\Core\\": "Core/src",
+                    "Google\\Cloud\\DataCatalog\\": "DataCatalog/src",
                     "Google\\Cloud\\Dataproc\\": "Dataproc/src",
                     "Google\\Cloud\\Datastore\\": "Datastore/src",
                     "Google\\Cloud\\Debugger\\": "Debugger/src",
@@ -2251,14 +2200,18 @@
                     "Google\\Cloud\\Kms\\": "Kms/src",
                     "Google\\Cloud\\Language\\": "Language/src",
                     "Google\\Cloud\\Logging\\": "Logging/src",
+                    "Google\\Cloud\\Memcache\\": "Memcache/src",
                     "Google\\Cloud\\Monitoring\\": "Monitoring/src",
                     "Google\\Cloud\\OsLogin\\": "OsLogin/src",
                     "Google\\Cloud\\PubSub\\": "PubSub/src",
+                    "Google\\Cloud\\RecaptchaEnterprise\\": "RecaptchaEnterprise/src",
+                    "Google\\Cloud\\RecommendationEngine\\": "RecommendationEngine/src",
                     "Google\\Cloud\\Recommender\\": "Recommender/src",
                     "Google\\Cloud\\Redis\\": "Redis/src",
                     "Google\\Cloud\\Scheduler\\": "Scheduler/src",
                     "Google\\Cloud\\SecretManager\\": "SecretManager/src",
                     "Google\\Cloud\\SecurityCenter\\": "SecurityCenter/src",
+                    "Google\\Cloud\\ServiceDirectory\\": "ServiceDirectory/src",
                     "Google\\Cloud\\Spanner\\": "Spanner/src",
                     "Google\\Cloud\\Speech\\": "Speech/src",
                     "Google\\Cloud\\Storage\\": "Storage/src",
@@ -2273,7 +2226,6 @@
                     "Google\\Cloud\\WebSecurityScanner\\": "WebSecurityScanner/src"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "Apache-2.0"
             ],
@@ -2317,7 +2269,7 @@
                 "translation",
                 "vision"
             ],
-            "time": "2020-02-11T23:07:13+00:00"
+            "time": "2020-04-22T21:58:25+00:00"
         },
         {
             "name": "google/common-protos",
@@ -2360,18 +2312,12 @@
             "require": {
                 "php": ">=5.4"
             },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "^1.13 || v2.14.2",
-                "paragonie/random_compat": ">=2",
-                "phpunit/phpunit": "^4"
-            },
             "type": "library",
             "autoload": {
                 "psr-4": {
                     "Google\\CRC32\\": "src"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "Apache-2.0"
             ],
@@ -2440,10 +2386,6 @@
                 "php": ">=5.5.0",
                 "psr/cache": "^1.0.1"
             },
-            "require-dev": {
-                "google/cloud-spanner": "^1.7",
-                "phpunit/phpunit": "4.8.36"
-            },
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -2451,7 +2393,6 @@
                     "": "src/generated/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "Apache-2.0"
             ],
@@ -2524,21 +2465,26 @@
         },
         {
             "name": "guzzlehttp/guzzle",
-            "version": "6.5.2",
+            "version": "6.5.3",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/43ece0e75098b7ecd8d13918293029e555a50f82",
-                "reference": "43ece0e75098b7ecd8d13918293029e555a50f82",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/aab4ebd862aa7d04f01a4b51849d657db56d882e",
+                "reference": "aab4ebd862aa7d04f01a4b51849d657db56d882e",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "guzzlehttp/promises": "^1.0",
                 "guzzlehttp/psr7": "^1.6.1",
-                "php": ">=5.5"
+                "php": ">=5.5",
+                "symfony/polyfill-intl-idn": "^1.11"
+            },
+            "require-dev": {
+                "ext-curl": "*",
+                "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.4 || ^7.0",
+                "psr/log": "^1.1"
             },
             "suggest": {
-                "ext-intl": "Required for Internationalized Domain Name (IDN) support",
                 "psr/log": "Required for using the Log middleware"
             },
             "type": "library",
@@ -2555,6 +2501,7 @@
                     "src/functions_include.php"
                 ]
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -2576,7 +2523,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2019-12-23T11:57:10+00:00"
+            "time": "2020-04-18T10:38:46+00:00"
         },
         {
             "name": "guzzlehttp/promises",
@@ -2749,16 +2696,12 @@
             "require": {
                 "php": "^5.4 || ^7.0"
             },
-            "require-dev": {
-                "phpunit/phpunit": "^5.3"
-            },
             "type": "library",
             "autoload": {
                 "psr-4": {
                     "ImageOptim\\": "src"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "BSD-2-Clause"
             ],
@@ -2781,18 +2724,15 @@
         },
         {
             "name": "imgix/imgix-php",
-            "version": "2.3.0",
+            "version": "3.2.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/imgix/imgix-php/zipball/081c80c26d34e37d287f10fb6de620b495d11dee",
-                "reference": "081c80c26d34e37d287f10fb6de620b495d11dee",
+                "url": "https://api.github.com/repos/imgix/imgix-php/zipball/d95a5937c4a5e1ffc6b2c64e51215a7262d4eb09",
+                "reference": "d95a5937c4a5e1ffc6b2c64e51215a7262d4eb09",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "*"
             },
             "type": "library",
             "autoload": {
@@ -2800,7 +2740,6 @@
                     "Imgix\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "BSD-2-Clause"
             ],
@@ -2808,7 +2747,7 @@
             "keywords": [
                 "imgix"
             ],
-            "time": "2019-05-07T00:02:57+00:00"
+            "time": "2020-04-01T22:48:20+00:00"
         },
         {
             "name": "intervention/httpauth",
@@ -3027,7 +2966,6 @@
                     "Kraken": "lib"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -3052,10 +2990,6 @@
             "require": {
                 "php": ">=5.4.0"
             },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "^2.13",
-                "phpunit/phpunit": "~4.8|~5.7"
-            },
             "suggest": {
                 "ext-gd": "to use the GD image adapter.",
                 "ext-gmagick": "to use the Gmagick image adapter.",
@@ -3067,7 +3001,6 @@
                     "ColorThief\\": "lib/ColorThief"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "CC-BY-2.5"
             ],
@@ -5090,7 +5023,6 @@
                     "Psr\\Cache\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -5415,11 +5347,11 @@
         },
         {
             "name": "ramsey/uuid",
-            "version": "3.9.2",
+            "version": "3.9.3",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ramsey/uuid/zipball/7779489a47d443f845271badbdcedfe4df8e06fb",
-                "reference": "7779489a47d443f845271badbdcedfe4df8e06fb",
+                "url": "https://api.github.com/repos/ramsey/uuid/zipball/7e1633a6964b48589b142d60542f9ed31bd37a92",
+                "reference": "7e1633a6964b48589b142d60542f9ed31bd37a92",
                 "shasum": ""
             },
             "require": {
@@ -5430,18 +5362,6 @@
             },
             "replace": {
                 "rhumsaa/uuid": "self.version"
-            },
-            "require-dev": {
-                "codeception/aspect-mock": "^1 | ^2",
-                "doctrine/annotations": "^1.2",
-                "goaop/framework": "1.0.0-alpha.2 | ^1 | ^2.1",
-                "jakub-onderka/php-parallel-lint": "^1",
-                "mockery/mockery": "^0.9.11 | ^1",
-                "moontoast/math": "^1.1",
-                "paragonie/random-lib": "^2",
-                "php-mock/php-mock-phpunit": "^0.3 | ^1.1",
-                "phpunit/phpunit": "^4.8 | ^5.4 | ^6.5",
-                "squizlabs/php_codesniffer": "^3.5"
             },
             "suggest": {
                 "ext-ctype": "Provides support for PHP Ctype functions",
@@ -5467,7 +5387,6 @@
                     "src/functions.php"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -5493,7 +5412,7 @@
                 "identifier",
                 "uuid"
             ],
-            "time": "2019-12-17T08:18:51+00:00"
+            "time": "2020-02-21T04:36:14+00:00"
         },
         {
             "name": "rias/craft-position-fieldtype",
@@ -5608,16 +5527,12 @@
             "require": {
                 "php": ">=5.3.0"
             },
-            "require-dev": {
-                "phpunit/phpunit": "~4.0.0"
-            },
             "type": "library",
             "autoload": {
                 "psr-0": {
                     "Rize\\UriTemplate": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -5975,6 +5890,70 @@
             "time": "2020-01-13T16:35:19+00:00"
         },
         {
+            "name": "spacecatninja/imager-x",
+            "version": "v3.0.7",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spacecatninja/craft-imager-x/zipball/e73841a4899044eaf2f7e9bf6a3e3d59f79ecf55",
+                "reference": "e73841a4899044eaf2f7e9bf6a3e3d59f79ecf55",
+                "shasum": ""
+            },
+            "require": {
+                "aws/aws-sdk-php": "^3.0.0",
+                "craftcms/cms": "^3.3.0",
+                "google/cloud": "~0.20",
+                "imageoptim/imageoptim": "^1.3",
+                "imgix/imgix-php": "^3.0",
+                "kraken-io/kraken-php": "^1.2",
+                "ksubileau/color-thief-php": "^1.4.0",
+                "mikehaertl/php-shellcommand": "^1.2",
+                "ssnepenthe/color-utils": "~0.4",
+                "tinify/tinify": ">=1.1.1"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Imager X",
+                "handle": "imager-x",
+                "schemaVersion": "3.0.0",
+                "hasCpSettings": false,
+                "hasCpSection": false,
+                "changelogUrl": "https://raw.githubusercontent.com/spacecatninja/craft-imager-x/master/CHANGELOG.md",
+                "components": [],
+                "class": "spacecatninja\\imagerx\\ImagerX"
+            },
+            "autoload": {
+                "psr-4": {
+                    "spacecatninja\\imagerx\\": "src/"
+                }
+            },
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "SPACECATNINJA",
+                    "homepage": "https://www.spacecat.ninja"
+                }
+            ],
+            "description": "Ninja powered image transforms.",
+            "keywords": [
+                "cms",
+                "craft",
+                "craft-plugin",
+                "craftcms",
+                "image",
+                "picture",
+                "responsive",
+                "srcset",
+                "transform"
+            ],
+            "support": {
+                "docs": "http://imager-x.spacecat.ninja/",
+                "issues": "https://github.com/spacecatninja/craft-imager-x/issues"
+            },
+            "time": "2020-04-11T12:04:42+00:00"
+        },
+        {
             "name": "ssnepenthe/color-utils",
             "version": "0.4.2",
             "dist": {
@@ -5985,14 +5964,6 @@
             },
             "require": {
                 "php": ">=7.0"
-            },
-            "require-dev": {
-                "phploc/phploc": "^3.0",
-                "phpmd/phpmd": "^2.6",
-                "phpunit/phpunit": "^6.0",
-                "psy/psysh": "^0.8",
-                "squizlabs/php_codesniffer": "^2.8",
-                "vimeo/psalm": "^0.3"
             },
             "type": "library",
             "autoload": {
@@ -6005,7 +5976,6 @@
                     "SSNepenthe\\ColorUtils\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "GPL-2.0"
             ],
@@ -7556,10 +7526,6 @@
                 "lib-curl": ">=7.20.0",
                 "php": ">=5.3.0"
             },
-            "require-dev": {
-                "phpunit/phpunit": "~4.0",
-                "symfony/yaml": "~2.0"
-            },
             "type": "library",
             "autoload": {
                 "files": [
@@ -7570,7 +7536,6 @@
                     "Tinify\\": "lib/Tinify/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
