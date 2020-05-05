@@ -24,7 +24,7 @@
         <form class="flex-1 max-w-xs px-2" action="{{ url('search') }}">
           <label for="site-search" class="hidden-visually">Search?</label>
           <div class="relative z-0 flex justify-stretch">
-            <input type="search" id="site-search" class="z-10 w-full pl-8 pr-2 mb-0 text-sm leading-none border-2 rounded appearance-none search-box h-9 md:h-10 border-new-gray-800 bg-new-gray-1000 placeholder-new-gray-100 text-new-gray-100 md:text-base" aria-label="Site Search" name="query" placeholder="Search" value="">
+            <input type="search" id="site-search" class="z-10 w-full pl-8 pr-2 mb-0 text-sm leading-normal border-2 rounded appearance-none search-box h-9 md:h-10 border-new-gray-800 bg-new-gray-1000 placeholder-new-gray-200 text-new-gray-100 md:text-base" aria-label="Site Search" name="query" placeholder="Search" value="">
           </div>
         </form>
         <div class="oak-hidden lg:flex">
@@ -46,7 +46,7 @@
             <img src="{{ craft.imager.placeholder() }}" sizes="100vw" srcset="{{ transformed311Logos | srcset }}" alt="OAK 311 Logo" class="block w-10 h-10 border-2 rounded-full border-new-gray-800">
           </a>
         </div>
-        <button @click="openNav = true" class="flex justify-end w-16 fill-current text-new-gray-100 lg:oak-hidden hover:text-new-gray-200">
+        <button @click="openNav = true" class="flex justify-end w-16 fill-current text-new-gray-100 touch-action-none lg:oak-hidden hover:text-new-gray-200">
           {{ craft.inlin.er('/assets/img/menu-button.svg') | replace('<svg ', '<svg class="h-9 md:h-10 xl:oak-hidden" ') | raw }}
         </button>
       </nav>
