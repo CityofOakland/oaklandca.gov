@@ -104,7 +104,8 @@ if (mix.inProduction()) {
         "md:bg-transparent",
         "bg-alert-red",
         "bg-warning-yellow",
-        "home"
+        "home",
+        "[x-cloak]"
       ],
       folders: ["src", "templates"],
     }).version();

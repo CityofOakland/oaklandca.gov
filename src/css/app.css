@@ -16,6 +16,10 @@
   }
 }
 
+[x-cloak] {
+  @apply: hidden;
+}
+
 @responsive {
   .touch-action-auto {
     touch-action: auto;
@@ -188,9 +192,15 @@ main {
   padding-top: 3.75rem;
 }
 
-@media (min-width: theme("screens.lg")) {
+@media (min-width: theme("screens.md")) {
   main {
     padding-top: 4rem;    
+  }
+}
+
+@media (min-width: theme("screens.lg")) {
+  main {
+    padding-top: 5rem;
   }
 }
 
