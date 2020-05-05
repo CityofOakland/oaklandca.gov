@@ -35,7 +35,6 @@
   {# Sets the navigation to the nav section entry, "Main Nav" #}
   {% set mainNav = craft.entries.section('navigation').slug('main-nav').one() %}
   <body class="overflow-x-hidden {{ pageClass ?? '' }}">
-    {% include '_partials/_elements/_mobile-nav-bar.twig' %}
     <div class="page-holder">
       {% include '_partials/_elements/_nav-bar.twig' %}
       <main>

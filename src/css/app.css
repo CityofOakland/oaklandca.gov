@@ -16,6 +16,48 @@
   }
 }
 
+@responsive {
+  .touch-action-auto {
+    touch-action: auto;
+  }
+  .touch-action-none {
+    touch-action: none;
+  }
+  .touch-action-pan-x {
+    touch-action: pan-x;
+  }
+  .touch-action-pan-left {
+    touch-action: pan-left;
+  }
+  .touch-action-pan-right {
+    touch-action: pan-right;
+  }
+  .touch-action-pan-y {
+    touch-action: pan-y;
+  }
+  .touch-action-pan-up {
+    touch-action: pan-up;
+  }
+  .touch-action-pan-down {
+    touch-action: pan-down;
+  }
+  .touch-action-pinch-zoom {
+    touch-action: pinch-zoom;
+  }
+  .touch-action-manipulation {
+    touch-action: manipulation;
+  }
+  .touch-action-inherit {
+    touch-action: inherit;
+  }
+  .touch-action-initial {
+    touch-action: initial;
+  }
+  .touch-action-unset {
+    touch-action: unset;
+  }
+}
+
 .o-override > * {
   margin-top: 0;
   margin-bottom: 0;
@@ -151,7 +193,6 @@ main {
     padding-top: 4rem;    
   }
 }
-
 
 /* Banner Styles */
 .banner {
@@ -402,6 +443,11 @@ body.open .page-holder {
 .bg-transparent-oakland-roots {
   @apply bg-cover;
   background-image: url(/assets/img/oaklandroots-transparent-green.png);
+}
+
+.bg-transparent-oakland-roots-black {
+  @apply bg-cover;
+  background-image: url(/assets/img/oaklandroots-black.svg);
 }
 
 /* Aspect Ratio Box */
