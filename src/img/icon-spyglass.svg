@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>Spyglass</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="Page-Elements-4-|-Mobile/Navbar" transform="translate(-92.000000, -21.000000)" stroke="#515151" stroke-width="1.5">
+            <g id="Navbar">
+                <g id="Group-2" transform="translate(82.000000, 12.000000)">
+                    <path d="M15.4158417,11.028022 C19.1010506,9.53643712 23.3573989,11.1727622 24.9236326,14.6815671 C26.4898664,18.1903721 24.7716488,22.2446188 21.0872398,23.7362037 C17.4028308,25.2277886 13.1456827,23.5914636 11.5794489,20.0826586 C10.0132151,16.5738536 11.7314328,12.519607 15.4158417,11.028022 Z M23.3773967,22.2636635 L29,27.6190476" id="Spyglass"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

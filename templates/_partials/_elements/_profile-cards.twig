@@ -14,16 +14,16 @@
   { width: 300, jpegQuality: 65 },
   { width: 150, jpegQuality: 65 }
 ], { ratio: 1/1, position: photo.getFocalPoint()},{ fillTransforms: true}) %}
-          <img src="{{ transformedImage.url }}" srcset="{{ transformedImages | srcset }}" alt="Portrait of {{ jobTitle }}, {{ name }}" class="block rounded-full h-full w-full">
+          <img src="{{ transformedImage.url }}" srcset="{{ transformedImages | srcset }}" alt="Portrait of {{ jobTitle }}, {{ name }}" class="block w-full h-full border-2 rounded-full border-new-gray-200">
         {% else %}
-          <div class="text-gray-400 opacity-75 fill-current h-full bg-gray-300 rounded-full">
-            {{ craft.inlin.er('/assets/img/icon-' ~ icon ~ '.svg') | replace('<svg ', '<svg class="h-full block" ') | raw }}
+          <div class="h-full text-gray-400 bg-gray-300 rounded-full opacity-75 fill-current">
+            {{ craft.inlin.er('/assets/img/icon-' ~ icon ~ '.svg') | replace('<svg ', '<svg class="block h-full" ') | raw }}
           </div>
         {% endif %}
       </a>
     </figure>
     <div class="mt-4 sm:mt-0 sm:pl-6 sm:w-2/3 md:w-3/4">
-      <h3 class="m-0 text-base md:text-xl font-semibold">
+      <h3 class="m-0 text-base font-semibold md:text-xl">
         <a href="{{ url }}">{{ name }}</a>
       </h3>
       <p class="mt-2 text-sm md:text-base">

@@ -582,17 +582,6 @@ return [
           ->with(['boardsCommissions', 'contentBuilder', 'departments', 'documents', 'documentType', 'officials', 'projects', 'resources', 'services', 'topics']);
       })
       ->splitElementsOn(['summary', 'body', 'about'])
-      ->transformer(new allTransform()),
-
-    // BEGIN GOVERNMENT INDEX
-    \rias\scout\ScoutIndex::create(getenv('ENVIRONMENT') . '_government')
-      ->elementType(\craft\elements\Entry::class)
-      ->criteria(function (\craft\elements\db\EntryQuery $query) {
-        return $query
-          ->section(['boardsCommissions', 'departments', 'officials', 'staff', 'teams', 'volunteers'])
-          ->with(['boardsCommissions', 'contentBuilder', 'departments', 'documents', 'documentType', 'officials', 'projects', 'resources', 'services', 'topics']);
-      })
-      ->splitElementsOn(['summary', 'body', 'about'])
       ->transformer(new allTransform())
   ]
 ];

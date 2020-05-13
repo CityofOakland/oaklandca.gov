@@ -35,7 +35,6 @@
   {# Sets the navigation to the nav section entry, "Main Nav" #}
   {% set mainNav = craft.entries.section('navigation').slug('main-nav').one() %}
   <body class="overflow-x-hidden {{ pageClass ?? '' }}">
-    {% include '_partials/_elements/_mobile-nav-bar.twig' %}
     <div class="page-holder">
       {% include '_partials/_elements/_nav-bar.twig' %}
       <main>
@@ -43,7 +42,7 @@
         {% block content %}
           <div class="container">
             <p>No content has been added to this layout. Please make sure to include the following in your template:</p>
-            <pre class="bg-gray-500 text-white whitespace-pre-line p-4 inline-block">{% verbatim %}
+            <pre class="inline-block p-4 text-white whitespace-pre-line bg-gray-500">{% verbatim %}
             {% block content %}
             {% endblock %}{% endverbatim %}</pre>
           </div>
@@ -51,6 +50,8 @@
       </main>
       {% include '_partials/_elements/_footer.twig' %}
     </div>
+    <script type="module" src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine-ie11.min.js" defer></script>
     {{ craft.twigpack.includeJsModule("/js/manifest.js") }}
     {{ craft.twigpack.includeJsModule("/js/vendor.js") }}
     {{ craft.twigpack.includeJsModule("/js/app.js") }}

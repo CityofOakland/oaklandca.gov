@@ -43,7 +43,7 @@ mix.setPublicPath('./web/assets/')
   .js(pkg.paths.src.js + "algoliafilter.js", "js")
   .js(pkg.paths.src.js + "search.js", "js")
   .js(pkg.paths.src.js + "lightgallery.js", "js")
-  .extract(['vue', 'algoliasearch'])
+  .extract(["alpinejs", "picturefill"])
   .sourceMaps()
   .browserSync({
     proxy: "https://oakland.test",
@@ -104,12 +104,8 @@ if (mix.inProduction()) {
         "md:bg-transparent",
         "bg-alert-red",
         "bg-warning-yellow",
-        "image-blur-none",
-        "image-blur-base",
-        "image-blur-small",
-        "image-blur-large",
-        "image-blur-xlarge",
-        "home"
+        "home",
+        "[x-cloak]"
       ],
       folders: ["src", "templates"],
     }).version();
