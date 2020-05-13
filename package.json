@@ -144,7 +144,7 @@
     "es6-promise": "^4.2.6",
     "hover.css": "^2.3.2",
     "instantsearch.js": "2.10.4",
-    "jquery": "^3.4.0",
+    "jquery": "^3.5.0",
     "laravel-mix": "^5.0.0",
     "picturefill": "^3.0.3",
     "tailwindcss-multi-column": "^1.0.1"
