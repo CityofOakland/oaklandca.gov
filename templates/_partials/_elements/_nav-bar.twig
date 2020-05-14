@@ -50,12 +50,12 @@
     </div>
     {# BEGIN MOBILE NAV #}
     <div
-        class="container relative z-30 py-0 font-heading bg-new-gray-1000"
+        class="relative z-30 py-0 font-heading bg-new-gray-1000"
         x-show="openNav" 
         @click.away="openNav = false"
         x-cloak
       >
-      <ul class="justify-end flex-1 w-full pt-0 pb-4 my-0 text-lg">
+      <ul class="container justify-end flex-1 w-full pt-0 pb-4 mx-auto my-0 text-lg">
         {% for nav in mainNav.navBuilder.all() %}
           {% set link = nav.navLink %}
           <li class="{% if not loop.first %}border-t {% endif %}border-new-gray-600">
@@ -71,19 +71,8 @@
         <li class="border-t border-new-gray-600">
           <a class="flex items-center justify-between block py-2 font-normal fill-current text-new-gray-100 hover:text-new-gray-200" href="/services/oak311"><div class="text">Report a problem to OAK 311</div><div class="text">{{ craft.inlin.er('/assets/img/icon-arrow.svg') | replace('<svg ', '<svg class="w-4 h-4 xl:oak-hidden" ') | raw }}</div></a>
         </li>
-        <li class="pt-3 border-t border-new-gray-600"><div class="bottom-0 right-0 leading-none lg:block lg:pr-8" id="google_translate_element"></div></li>
       </ul>
     </div>
     {# END MOBILE NAV #}
-    <script>
-      function googleTranslateElementInit() {
-        new google.translate.TranslateElement({
-          pageLanguage: 'en',
-          includedLanguages: 'ceb,en,es,hmn,ja,km,ko,mn,tl,vi,zh-TW',
-          layout: google.translate.TranslateElement.FloatPosition.TOP_RIGHT
-        }, 'google_translate_element');
-      }
-    </script>
-    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
   </div>
 </div>
