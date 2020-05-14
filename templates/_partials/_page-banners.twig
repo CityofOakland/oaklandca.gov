@@ -13,7 +13,7 @@
   {%- set banner -%}
     <figure class="absolute inset-0 z-0">
       <img 
-        class="absolute inset-0 object-cover w-full h-full z-0" 
+        class="absolute inset-0 z-0 object-cover w-full h-full" 
         style="object-position:{{ bannerImage.one.getFocalPoint('asCss') }};" 
         src="{{ bannerImage.one.url }}"
         alt="{{ bannerImage.one.title }}">
@@ -28,7 +28,7 @@
 
 {# BREADCRUMBS #}
 {%- set breadCrumbs -%}
-  <div class="relative z-10 bg-white text-green-400 text-xs md:text-xs rounded-sm px-2 py-1 inline-block shadow">
+  <div class="relative z-10 inline-block px-2 py-1 text-xs text-green-400 bg-white rounded-sm shadow md:text-xs">
     <a class="text-green-400 hover:text-green-400 hover:underline" href="/">
       Oakland
     </a> →
@@ -41,9 +41,9 @@
 
 {# HEADER CONTENT #}
 {%- set headerContent -%}
-  <div class="flex-1 flex flex-col lg:flex-row">
+  <div class="flex flex-col flex-1 lg:flex-row">
     <div class="w-full lg:w-2/3">
-      <h1 class="text-xxxl md:text-xxxxl font-bold mb-0">{{ bannerTitle }}</h1>
+      <h1 class="mb-0 font-bold text-xxxl md:text-xxxxl">{{ bannerTitle }}</h1>
       {% include "_partials/_elements/_page-alerts.twig" %}
       {% if leadIn %}
         <p class="mb-0 md:leading-loose">{{ leadIn | raw }}</p>
@@ -63,20 +63,22 @@
 {%- endset -%}
 
 {% if bannerImage | length %}
-  <div class="banner leading-normal">
-    <div class="container pt-2 pb-8 md:pt-4 md:pb-6 min-h-2-1/2 md:min-h-4 leading-none">
+  <div class="leading-normal banner">
+    {% include "_partials/_elements/_banner-google-translate.twig" with { paddingTop: "pt-5" } %}
+    <div class="container pt-2 pb-8 leading-none md:pt-4 md:pb-6 min-h-2-1/2 md:min-h-4">
       {{ banner }}
       {{ breadCrumbs }}
     </div>
   </div>
 {% else %}
-  <div class="banner leading-none">
+  <div class="leading-none banner">
+    {% include "_partials/_elements/_banner-google-translate.twig" with { paddingTop: "pt-5" } %}
     <div class="container pt-2 pb-8 md:pt-4 md:pb-6">
       {{ banner }}
       {{ breadCrumbs }}
     </div>
   </div>
 {% endif %}
-<div class="container sm:flex">
+<div class="container relative sm:flex">
   {{ custHeaderContent ?? headerContent }}
 </div>
