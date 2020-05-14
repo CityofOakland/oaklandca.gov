@@ -145,8 +145,11 @@ a:hover {
   fill: #ffffff;
 }
 
-#google_translate_element img {
-  @apply inline;
+#google_translate_element,
+#google_translate_element_2 {
+  & img {
+    @apply inline;
+  }
 }
 
 /* Button Styles */
