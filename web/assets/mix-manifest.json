@@ -1,10 +1,16 @@
 {
-    "/js/algoliafilter.js": "/js/algoliafilter.js",
-    "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css",
-    "/js/lightgallery.js": "/js/lightgallery.js",
-    "/js/manifest.js": "/js/manifest.js",
-    "/js/search.js": "/js/search.js",
-    "/js/vendor.js": "/js/vendor.js",
-    "/css/lightgallery.css": "/css/lightgallery.css"
+    "/js/manifest.js": "/js/manifest.js?id=d91051ea7d0c9bd1981e",
+    "/js/manifest.js.map": "/js/manifest.js.map?id=a07956f82042cc418451",
+    "/js/algoliafilter.js": "/js/algoliafilter.js?id=2178822316ec9df63084",
+    "/js/algoliafilter.js.map": "/js/algoliafilter.js.map?id=596ae7c01133b1ca4e5f",
+    "/js/app.js": "/js/app.js?id=b3cbdfad8ab30d97a8b1",
+    "/css/app.css": "/css/app.css?id=56f312dece4cbca8423a",
+    "/js/app.js.map": "/js/app.js.map?id=57be99b039a796151433",
+    "/js/lightgallery.js": "/js/lightgallery.js?id=dd87d692f1b36f4bd7f9",
+    "/js/lightgallery.js.map": "/js/lightgallery.js.map?id=ebd2f7cb3cd1d386d6d0",
+    "/js/search.js": "/js/search.js?id=1449010bb8a3dead1800",
+    "/js/search.js.map": "/js/search.js.map?id=32bc040b694eb076e407",
+    "/js/vendor.js": "/js/vendor.js?id=55177a80caaf02ff5eda",
+    "/js/vendor.js.map": "/js/vendor.js.map?id=7c7c172a9d900184c713",
+    "/css/lightgallery.css": "/css/lightgallery.css?id=c47330d999c0084460b0"
 }
