@@ -201,6 +201,7 @@ class allTransform extends TransformerAbstract
       'topics' => enumEntries("topics", $entry),
       'sectionPriority' => sectionPriority($entry),
       'searchFilter' => searchFilter($entry),
+      'viewCount' => $entry->viewCount,
     ];
   }
 }
@@ -306,6 +307,7 @@ return [
           'ctaButtonText' => ctaButtonText($entry),
           'leadIn' => $entry->leadIn,
           'about' => richTextSplit($entry->about),
+          'viewCount' => $entry->viewCount,
         ];
       }),
 
@@ -330,6 +332,7 @@ return [
           'groupHeadName' => $entry->groupHeadName,
           'groupHeadTitle' => $entry->groupHeadTitle,
           'officials' => enumEntries("officials", $entry),
+          'viewCount' => $entry->viewCount,
         ];
       }),
 
@@ -367,6 +370,7 @@ return [
           'services' => enumEntries("services", $entry),
           'documents' => enumEntries("documents", $entry),
           'topics' => enumEntries("topics", $entry),
+          'viewCount' => $entry->viewCount,
         ];
       }),
 
@@ -398,6 +402,7 @@ return [
           'departments' => enumEntries("departments", $entry),
           'officials' => enumEntries("officials", $entry),
           'topics' => enumEntries("topics", $entry),
+          'viewCount' => $entry->viewCount,
         ];
       }),
 
@@ -422,6 +427,7 @@ return [
           'projects' => enumEntries("projects", $entry),
           'topics' => enumEntries("topics", $entry),
           'body' => contentBuilder($entry->contentBuilder),
+          'viewCount' => $entry->viewCount,
         ];
       }),
 
@@ -446,6 +452,7 @@ return [
           'projects' => enumEntries("projects", $entry),
           'topics' => enumEntries("topics", $entry),
           'body' => contentBuilder($entry->contentBuilder),
+          'viewCount' => $entry->viewCount,
         ];    
       }),
 
@@ -472,6 +479,7 @@ return [
           'officials' => enumEntries("officials", $entry),
           'projects' => enumEntries("projects", $entry),
           'topics' => enumEntries("topics", $entry),
+          'viewCount' => $entry->viewCount,
         ];    
       }),
 
@@ -496,6 +504,7 @@ return [
           'email' => !empty($entry->emailAddress) ? $entry->emailAddress : str_replace("@oaklandnet.com", "@oaklandca.gov", $entry->staffImportEmail),
           'department' => !empty($entry->departments[0]) ? $entry->departments[0]->title : $entry->staffImportDepartment,
           'employmentType' => $entry->employmentType->label,
+          'viewCount' => $entry->viewCount,
         ];    
       }),
 
@@ -517,6 +526,7 @@ return [
           'bio' => $entry->bio,
           'email' => !empty($entry->emailAddress) ? $entry->emailAddress : null,
           'department' => !empty($entry->departmentOfficialBoardCommission->one()) ? $entry->departmentOfficialBoardCommission->one()->title : null,
+          'viewCount' => $entry->viewCount,
         ];    
       }),
 
@@ -538,6 +548,7 @@ return [
           'date' => entryDate($entry),
           'displayDate' => entryPrettyDate($entry),
           'teamMembers' => $teamMembers,
+          'viewCount' => $entry->viewCount,
         ];
       }),
 
