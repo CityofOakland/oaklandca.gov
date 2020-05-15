@@ -589,7 +589,7 @@ return [
       ->elementType(\craft\elements\Entry::class)
       ->criteria(function (\craft\elements\db\EntryQuery $query) {
         return $query
-          ->section(['boardsCommissions', 'departments', 'news',  'officials', 'processes', 'projects', 'resources', 'services', 'staff', 'teams', 'topics', 'volunteers', 'pressReleases'])
+          ->section(['boardsCommissions', 'departments', 'news',  'officials', 'processes', 'projects', 'resources', 'services', 'staff', 'teams', 'topics', 'volunteers'])
           ->with(['boardsCommissions', 'contentBuilder', 'departments', 'documents', 'documentType', 'officials', 'projects', 'resources', 'services', 'topics']);
       })
       ->splitElementsOn(['summary', 'body', 'about'])
