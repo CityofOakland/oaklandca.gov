@@ -93,6 +93,12 @@ if (mix.inProduction()) {
       ],
       extensions: ["html", "js", "twig", "vue"],
       whitelist: [
+        "bg-red-500",
+        "bg-yellow-600",
+        "bg-green-300",
+        "hover:bg-red-500",
+        "hover:bg-yellow-600",
+        "hover:bg-green-300",
         "home",
         "[x-cloak]"
       ],
