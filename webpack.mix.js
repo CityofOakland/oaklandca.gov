@@ -46,7 +46,7 @@ mix.setPublicPath('./web/assets/')
   .extract(["alpinejs", "picturefill"])
   .sourceMaps()
   .browserSync({
-    proxy: "https://oakland.test",
+    proxy: "http://oakland.test",
     notify: {
       styles: {
         top: 'auto',
@@ -59,7 +59,8 @@ mix.setPublicPath('./web/assets/')
 mix.disableSuccessNotifications();
 
 if (mix.inProduction()) {
-  mix.webpackConfig({
+  mix
+    .webpackConfig({
       plugins: [
         //Compress images
         new CopyWebpackPlugin([{
@@ -92,21 +93,10 @@ if (mix.inProduction()) {
       ],
       extensions: ["html", "js", "twig", "vue"],
       whitelist: [
-        "bg-yellow-600",
-        "bg-red-500",
-        "bg-green-300",
-        "hover:bg-yellow-600",
-        "hover:bg-red-500",
-        "hover:bg-green-300",
-        "border-yellow-600",
-        "border-red-500",
-        "border-green-300",
-        "md:bg-transparent",
-        "bg-alert-red",
-        "bg-warning-yellow",
         "home",
         "[x-cloak]"
       ],
       folders: ["src", "templates"],
-    }).version();
+    })
+    .version();
 }
