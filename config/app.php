@@ -19,7 +19,7 @@
 
 return [
     'modules' => [
-        'viewCount' => \modules\Module::class,
+        'my-module' => \modules\Module::class,
     ],
-    'bootstrap' => ['viewCount'],
+    'bootstrap' => ['my-module'],
 ];
