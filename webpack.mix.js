@@ -34,10 +34,6 @@ mix.setPublicPath('./web/assets/')
       hexrgba
     ],
     processCssUrls: false,
-    hmrOptions: {
-      host: 'oakland.test',
-      port: 8080
-    }
   })
   .js(pkg.paths.src.js + "app.js", "js")
   .js(pkg.paths.src.js + "algoliafilter.js", "js")

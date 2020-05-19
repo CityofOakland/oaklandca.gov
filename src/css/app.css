@@ -152,6 +152,10 @@ a:hover {
   }
 }
 
+.goog-te-gadget-simple {
+  @apply rounded-sm border-none shadow !important;
+}
+
 /* Button Styles */
 .btn {
   @apply inline-block bg-green-300 py-4 px-8 text-base text-white no-underline trans trans-fast font-bold tracking-wide shadow rounded-sm;
@@ -436,8 +440,16 @@ body.open .page-holder {
 @tailwind utilities;
 
 @responsive {
-  .aspect-ratio-square {
-    padding-top: 100%;
+  .aspect-ratio-1\/4 {
+    padding-top: 25%;
+  }
+
+  .aspect-ratio-27\/9 {
+    padding-top: 33.3333333%
+  }
+
+  .aspect-ratio-21\/9 {
+    padding-top: 42.8571429%
   }
 
   .aspect-ratio-16\/9 {
@@ -448,8 +460,8 @@ body.open .page-holder {
     padding-top: 75%;
   }
 
-  .aspect-ratio-7\/3 {
-    padding-top: 42.86%;
+  .aspect-ratio-square {
+    padding-top: 100%;
   }
 }
 

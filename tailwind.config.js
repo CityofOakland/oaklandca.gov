@@ -188,7 +188,7 @@ module.exports = {
     }),
     padding: theme => theme('spacing'),
     boxShadow: {
-      default: '0 1px 2px 0 rgba(theme("colors.shark"),.325)',
+      default: '0 1px 2px 0 rgba(theme("colors.new-gray-800"),.325)',
       btn: '0 2px 6px 2px theme("colors.gray-200"), 0 3px 7px 1px theme("colors.green-100")',
       none: 'none',
     },
