@@ -70,10 +70,16 @@ function contentBuilder($element)
         case 'text':
           $body[] = strip_tags($block->text);
           break;
-        case 'gallery':
-          foreach ($block->images as $image) {
-            $body[] = $image->altText;
-          }
+        case 'textImageBlock':
+          $body[] = strip_tags($block->textBlock);
+          break;
+        case 'linksWithDescriptions':
+          $body[] = strip_tags($block->linkDescription);
+          break;
+        case 'largeEntryLinks':
+        case 'smallEntryLinks':
+          $body[] = strip_tags($block->entriesDescription);
+          break;
         default:
       }
     }

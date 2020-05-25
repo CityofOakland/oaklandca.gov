@@ -96,6 +96,7 @@ if (mix.inProduction()) {
         "hover:bg-yellow-600",
         "hover:bg-green-300",
         "home",
+        "goog-te-gadget-simple",
         "[x-cloak]"
       ],
       folders: ["src", "templates"],
