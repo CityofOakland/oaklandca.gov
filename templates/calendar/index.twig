@@ -1,0 +1,40 @@
+{% extends '_layouts/_instant-search-event-meetings' %}
+
+{% set entry = craft.entries.section('calendarIndex').one %}
+
+{% set facets = [
+  {
+    container: 'boardsCommissions',
+    attribute: 'boardsCommissions',
+    header: 'Boards & Commissions'
+  },
+  {
+    container: 'departments',
+    attribute: 'departments',
+    header: 'Departments'
+  },
+  {
+    container: 'projects',
+    attribute: 'projects',
+    header: 'Projects'
+  },
+
+] %}
+
+{% js at head %}
+var algoliaIndex = '{{ getenv('ENVIRONMENT') }}_calendar';
+var searchInputText = "Search for an event. E.g., “Walking Tour”";
+var hitsRootClass = 'card-grid vertical-cards';
+var facetFilters = [
+  {% for facet in facets %}
+    {
+      container: '#{{ facet.container }}',
+      attribute: '{{ facet.attribute }}',
+      header: '{{ facet.header }}'
+    },
+  {% endfor %}
+];
+
+{{ source('_js/algolia-templates/events.js') }}
+
+{% endjs %}

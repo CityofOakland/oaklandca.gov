@@ -1,26 +1,5 @@
 import { publicDecrypt } from "crypto";
 
-const calSearch = instantsearch({
-  appId: "6V5VJO8ZG2",
-  apiKey: "9bded46d3070b2089499c70b2389708b",
-  indexName: "production_calendars",
-  searchParameters: {
-    highlightPreTag: '<b class="font-bold"><em>',
-    highlightPostTag: '</em></b>',
-  },
-});
-
-const docSearch = instantsearch({
-  appId: "6V5VJO8ZG2",
-  apiKey: "9bded46d3070b2089499c70b2389708b",
-  indexName: "production_documents",
-  searchParameters: {
-    highlightPreTag: '<b class="font-bold"><em>',
-    highlightPostTag: '</em></b>',
-    hitsPerPage: 10,
-  },
-});
-
 const allSearch = instantsearch({
   appId: "6V5VJO8ZG2",
   apiKey: "9bded46d3070b2089499c70b2389708b",
@@ -33,12 +12,6 @@ const allSearch = instantsearch({
   searchFunction: function(helper) {
     const query = allSearch.helper.state.query;
     const page = allSearch.helper.state.page;
-    calSearch.helper.setQuery(query);
-    calSearch.helper.setPage(page);
-    calSearch.helper.search();
-    docSearch.helper.setQuery(query);
-    docSearch.helper.setPage(page);
-    docSearch.helper.search();
     helper.search();
   },
 });
@@ -48,6 +21,14 @@ allSearch.addWidget(
     container: "#search-input",
     placeholder: "Search"
   })
+);
+
+allSearch.addWidget(
+  instantsearch.widgets.clearAll({
+    container: '#clear-refinements',
+    templates: {
+      link: "Remove Filters"
+    }  })
 );
 
 allSearch.addWidget(
@@ -64,13 +45,24 @@ allSearch.addWidget(
 );
 
 allSearch.addWidget(
+  instantsearch.widgets.menu({
+    container: "#section-filter",
+    attributeName: "section",
+    operator: 'or',
+    limit: 10,
+  })
+);    
+
+allSearch.addWidget(
   instantsearch.widgets.hits({
     container: "#all-hits",
     templates: {
       empty: "No results",
       item: `
-      <div>
-        <h3 class="text-lg mb-2"><a class="hover:bg-green-300 hover:text-white" href="{{ url }}">{{{_highlightResult.title.value}}}</a></h3>
+      <div class="mb-4">
+        <h3 class="text-lg my-0">
+          <a class="hover:bg-green-300 hover:text-white" href="{{ url }}">{{{_highlightResult.title.value}}}</a>
+        </h3>
 
         <p class="text-sm my-0">
           {{{ _snippetResult.leadIn.value }}}
@@ -99,80 +91,7 @@ allSearch.addWidget(
   })
 );
 
-docSearch.addWidget(
-  instantsearch.widgets.hits({
-    container: "#doc-hits",
-    templates: {
-      empty: "No results",
-      item: `
-      <article class="text-sm mb-6">
-        <h3 class="text-base my-0 leading-normal mb-2"><a class="block hover:bg-green-300 hover:text-white" href="{{ url }}">{{{_highlightResult.title.value}}}</a></h3>
-        {{ ^leadIn }}
-          <p class="my-0">
-            {{{ _snippetResult.leadIn.value }}}
-          </p>
-        {{{ /summary }}}
-        {{ ^documents }}
-          <p class="my-0">
-            {{{ _snippetResult.summary.value }}}
-          </p>
-        {{{ /documents }}}
-      </article>
-      `
-    },
-    cssClasses: {
-      root: "block"
-    },
-  })
-);
-
-calSearch.addWidget(
-  instantsearch.widgets.hits({
-    container: "#cal-hits",
-    templates: {
-      empty: "No results",
-      item: `
-        <article class="text-xs md:text-sm">
-          <h3 class="text-base my-2"><a class="block hover:bg-green-300 hover:text-white" href="{{ url }}">{{{_highlightResult.title.value}}}</a></h3>
-          {{{ #body }}}
-            <p class="mt-0 mb-2">
-              {{{ _snippetResult.body.value }}}
-            </p>
-          {{{ /body }}}
-        </article>
-      `
-    },
-    cssClasses: {
-      root: "block"
-    },
-  })
-);
-
-docSearch.start();
-calSearch.start();
 allSearch.start();
 
 const searchNav = Array.from(document.querySelectorAll('a[data-holder]'));
-const swapHits = Array.from(document.querySelectorAll('[data-hits]'));
 
-searchNav.forEach(function(e) {
-  switchHits(e);
-});
-
-function switchHits(e) {
-  e.addEventListener("click", function(e) {
-    e.preventDefault();
-    searchNav.forEach(function(e) {
-      e.classList.remove('active');
-    });
-    e.target.classList.add('active');
-    let holderOn = e.target.dataset.holder;
-    swapHits.forEach(function(h) {
-      if (h.id == holderOn) {
-        h.classList.remove('oak-hidden');
-      } else {
-        h.classList.add('oak-hidden');
-      }
-    });
-  })
-}

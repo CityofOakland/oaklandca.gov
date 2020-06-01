@@ -42,7 +42,7 @@ categoryGroups:
     structure:
       maxLevels: 1
       uid: b4e9ab1c-aa42-46f9-a679-898119f39e8d
-dateModified: 1589393706
+dateModified: 1590994479
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -8017,7 +8017,7 @@ plugins:
   seomatic:
     enabled: '1'
     licenseKey: WE9YYSPHWC5CNFB2RL64YDJ6
-    schemaVersion: 3.0.8
+    schemaVersion: 3.0.9
     settings: null
   smart-map:
     enabled: '1'
@@ -10732,6 +10732,61 @@ sections:
         template: services/_entry
         uriFormat: 'services/{slug}'
     type: channel
+  ba27f849-b247-4db0-ae91-53a01f44bd0b:
+    enableVersioning: true
+    entryTypes:
+      edd782d7-6b1e-40f2-ba66-61b9b39ccd21:
+        fieldLayouts:
+          a0eb960a-fcbd-432e-9100-c8aa23e82e9d:
+            tabs:
+              -
+                fields:
+                  bef74be8-b22d-4dd0-9217-9707bb43d888:
+                    required: false
+                    sortOrder: 3
+                  c2ad07dc-05e7-4ef4-89b6-2e1eaccee210:
+                    required: false
+                    sortOrder: 1
+                  f62c85ae-2203-4d1a-8702-da515126a398:
+                    required: false
+                    sortOrder: 2
+                name: Content
+                sortOrder: 1
+              -
+                fields:
+                  ecc31df6-640f-4fa6-a2e6-caea757e379d:
+                    required: false
+                    sortOrder: 1
+                name: SEO
+                sortOrder: 2
+        handle: calendarIndex
+        hasTitleField: false
+        name: 'Calendar Index'
+        sortOrder: 1
+        titleFormat: '{section.name|raw}'
+        titleLabel: ''
+    handle: calendarIndex
+    name: 'Calendar Index'
+    previewTargets:
+      -
+        __assoc__:
+          -
+            - label
+            - 'Primary entry page'
+          -
+            - urlFormat
+            - '{url}'
+          -
+            - refresh
+            - '1'
+    propagationMethod: all
+    siteSettings:
+      c35d3a93-d7f4-4c37-ae3e-1b4d403311bb:
+        enabledByDefault: true
+        hasUrls: true
+        template: calendar/index
+        uriFormat: calendar
+    type: single
   bc354abe-c941-47fa-aebc-0eb5897e7f7c:
     enableVersioning: true
     entryTypes:
