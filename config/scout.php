@@ -100,58 +100,6 @@ function richTextSplit($field)
   }
 }
 
-function sectionPriority($element)
-{
-  $handle = $element->section->handle;
-  switch ($handle) {
-    case 'services':
-      return 1;
-    case 'resources':
-      return 2;
-    case 'departments':
-      return 3;
-    case 'boardsCommissions':
-      return 4;
-    case 'projects':
-      return 5;
-    default:
-      return null;
-  }
-}
-
-function searchFilter($element)
-{
-  $handle = !empty($element->section) ? $element->section->handle : $element->calendar->handle;
-  switch ($handle) {
-    case 'news':
-    case 'processes':
-    case 'projects':
-    case 'resources':
-    case 'services':
-    case 'topics':
-      return 'general';
-
-    case 'boardsCommissions':
-    case 'departments':
-    case 'officials':
-    case 'staff':
-    case 'teams':
-    case 'volunteers':
-      return 'officialsPeople';
-
-    case 'meetings':
-    case 'events':
-      return 'calendars';
-
-    case 'documents':
-    case 'documentPackets':
-      return 'documents';
-
-    default:
-      break;
-  }
-}
-
 class eventsTransform extends TransformerAbstract
 {
   public function transform(Solspace\Calendar\Elements\Event $event)
@@ -170,11 +118,9 @@ class eventsTransform extends TransformerAbstract
       'officials' => enumEntries("officials", $event),
       'projects' => enumEntries("projects", $event),
       'topics' => enumEntries("topics", $event),
-      'searchFilter' => searchFilter($event),
     ];
   }
 }
-
 
 class allTransform extends TransformerAbstract
 {
@@ -191,22 +137,12 @@ class allTransform extends TransformerAbstract
       'leadIn' => $entry->leadIn,
       'about' => richTextSplit($entry->about),
       'bio' => strip_tags($entry->bio),
-      'boardsCommissions' => enumEntries("boardsCommissions", $entry),
       'body' => !empty($entry->contentBuilder) ? contentBuilder($entry->contentBuilder) : richTextSplit($entry->body),
       'ctaButtonText' => ctaButtonText($entry),
       'groupHeadBio' => strip_tags($entry->groupHeadBio),
       'groupHeadName' => $entry->groupHeadName,
       'groupHeadTitle' => $entry->groupHeadTitle,
       'mediaContact' => $entry->mediaContact,
-      'departments' => enumEntries("departments", $entry),
-      'documents' => enumEntries("documents", $entry),
-      'officials' => enumEntries("officials", $entry),
-      'projects' => enumEntries("projects", $entry),
-      'resources' => enumEntries("resources", $entry),
-      'services' => enumEntries("services", $entry),
-      'topics' => enumEntries("topics", $entry),
-      'sectionPriority' => sectionPriority($entry),
-      'searchFilter' => searchFilter($entry),
       'viewCount' => $entry->viewCount,
     ];
   }
@@ -595,8 +531,7 @@ return [
       ->elementType(\craft\elements\Entry::class)
       ->criteria(function (\craft\elements\db\EntryQuery $query) {
         return $query
-          ->section(['boardsCommissions', 'departments', 'news',  'officials', 'processes', 'projects', 'resources', 'services', 'staff', 'teams', 'topics', 'volunteers'])
-          ->with(['boardsCommissions', 'contentBuilder', 'departments', 'documents', 'documentType', 'officials', 'projects', 'resources', 'services', 'topics']);
+          ->section(['boardsCommissions', 'departments', 'news',  'officials', 'processes', 'projects', 'resources', 'services', 'staff', 'teams', 'topics', 'volunteers', 'documents']);
       })
       ->splitElementsOn(['summary', 'body', 'about'])
       ->transformer(new allTransform())
