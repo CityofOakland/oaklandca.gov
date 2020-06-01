@@ -24,6 +24,14 @@ allSearch.addWidget(
 );
 
 allSearch.addWidget(
+  instantsearch.widgets.clearAll({
+    container: '#clear-refinements',
+    templates: {
+      link: "Remove Filters"
+    }  })
+);
+
+allSearch.addWidget(
   instantsearch.widgets.pagination({
     container: "#bottom-pagination",
     padding: 5,
