@@ -129,7 +129,7 @@ class allTransform extends TransformerAbstract
     return [
       'title' => $entry->title,
       'url' => entryUrl($entry),
-      'section' => $entry->section,
+      'section' => $entry->section->name,
       'type' => $entry->type->handle,
       'date' => entryDate($entry),
       'displayDate' => entryPrettyDate($entry),
@@ -296,7 +296,7 @@ return [
         }
         return [
           'title' => $entry->title,
-          'section' => $entry->section->handle,
+          'section' => $entry->section->name,
           'type' => $entry->type->handle,
           'url' => entryUrl($entry),
           'date' => entryDate($entry),
