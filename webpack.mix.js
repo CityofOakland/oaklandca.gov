@@ -49,7 +49,7 @@ mix.setPublicPath('./web/assets/')
         bottom: '1rem'
       }
     },
-    files: ["src/css/*.css", "templates/*.twig", "templates/**/*.twig", "templates/*.js", "templates/**/*.js"]
+    files: ["src/css/*.css", "templates/*.twig", "src/js/**/*.js", "templates/**/*.twig", "templates/*.js", "templates/**/*.js"]
   });
 
 mix.disableSuccessNotifications();

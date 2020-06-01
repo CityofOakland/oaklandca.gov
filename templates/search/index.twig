@@ -3,19 +3,36 @@
 {% set entry = craft.entries.section('searchIndex').one %}
 
 {% do view.registerJsFile("https://cdn.polyfill.io/v2/polyfill.min.js?features=default,Array.prototype.includes,Array.prototype.find") %}
-{% do view.registerCssFile("https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4/dist/instantsearch.min.css") %}
-{% do view.registerCssFile ("https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4/dist/instantsearch-theme-algolia.min.css") %}
-{% do view.registerJsFile("https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4") %}
+{% do view.registerCssFile("https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.5/dist/instantsearch.min.css") %}
+{% do view.registerCssFile ("https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.5/dist/instantsearch-theme-algolia.min.css") %}
+{% do view.registerJsFile("https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.5") %}
 
 {% do view.registerJsFile(craft.twigpack.getModuleUri("/js/search.js")) %}
 
 {% css %}
-.ais-search-box {
+  .ais-search-box {
     max-width: initial;
   }
   .ais-search-box--magnifier {
     top: 50%;
     transform: translateY(-50%);
+  }
+
+  .ais-menu--link {
+    color: #653cad !important;
+  }
+
+  .ais-menu--link:hover {
+    color: #240754 !important;
+  }
+
+  .ais-menu--count {
+    color: #653cad !important;
+    background-color: #eae2f8 !important;
+  }
+
+  .ais-clear-all--link {
+    background-color: #653cad !important;
   }
 {% endcss %}
 
@@ -54,10 +71,11 @@
               <a href="/calendar" class="btn btn-sm bg-new-green-800 hover:bg-new-green-900">View Oakland Calendars</a>
             </p>
           </div>
-          <p class="mt-0 text-sm uppercase">Problems with search?
+          <p class="mt-0 text-sm uppercase">Problems with search?<br>
             <a class="underline" href="/search/legacy/?query={{ query }}">Try using our legacy search feature.</a>
           </p>
           <div id="section-filter" class="hidden md:block"></div>
+          <div class="mt-2" id="clear-refinements"></div>
         </div>
       </div>
       <div id="bottom-pagination"></div>
