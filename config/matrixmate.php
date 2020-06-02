@@ -104,5 +104,8 @@ return [
         'hideUngroupedTypes' => ($isUserAdmin ? false : true),
       ],
     ],
+    'addresses' => [
+      'hiddenTypes' => ['onlineLocation'],
+    ],
   ],
 ];

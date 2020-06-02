@@ -14,15 +14,15 @@
       ],
     } %}
   {% endblock %}
-  <section class="bg-white relative z-0">
+  <section class="relative z-0 bg-white">
     <div class="container sm:flex">
       <div class="sm:w-2/3 sm:mr-8">
         {% set startDate = event.startDate %}
         {% set endDate = event.endDate %}
-        <div class="text-white bg-gray-700 p-6 md:inline-flex md:items-start">
+        <div class="p-6 text-white bg-gray-700 md:inline-flex md:items-start">
           <h3 class="my-0 md:mr-8">Event</h3>
           <time datetime="{{ startDate | atom }}">
-            <h4 class="font-bold my-0 text-xxxl">
+            <h4 class="my-0 font-bold text-xxxl">
               {% if event.occurrences | length %}
                 {% for event in event.occurrences %}
                   <div>{{ event.startDate.format("F j, Y" )}}</div>
@@ -49,7 +49,7 @@
         {% endif %}
         {% if entry.documents.exists() %}
           <h3>Documents</h3>
-          <div class="card-grid wide-cards mt-8">
+          <div class="mt-8 card-grid wide-cards">
             {% for entry in entry.documents.all() %}
               {% include '_partials/_elements/_title-cards.twig' with {
                 cardColor: 'bg-gray-300'
@@ -100,12 +100,27 @@
       <div class="sm:flex-1">
         {% if entry.eventImage.exists() %}
           <figure>
-            <img class="w-full block" src="{{ entry.eventImage.one.url }}" alt="{{ entry.title }} Image">
+            <img class="block w-full" src="{{ entry.eventImage.one.url }}" alt="{{ entry.title }} Image">
           </figure>
         {% endif %}
-        {% if entry.address | length %}
-          <h3>Address</h3>
-          {% include '_partials/_elements/_address.twig' %}
+        {% if entry.addresses | length %}
+          <h3>Address{% if entry.addresses | length > 1%}es{% endif %}</h3>
+          {% for block in entry.addresses.all() %}
+            {% switch block.type %}
+              {% case "location" %}
+                {% if block.locationName %}<h4 class="text-sm uppercase">{{ block.locationName }}</h4>{% endif %}
+                {% include '_partials/_elements/_address.twig' %}
+              {% case "onlineLocation" %}
+                {% if block.locationName %}<h4 class="text-sm uppercase">{{ block.locationName }}</h4>{% endif %}
+                {{ block.locationDescription }}
+                <p>
+                  <a href="{{ block.webAddress }}" class="btn btn-sm">Visit {{ block.locationName }}</a>
+                </p>
+              {% default %}
+            {% endswitch %}
+          {% endfor %}
+        {% elseif entry.address | length %}
+          {% include '_partials/_elements/_address.twig' %}          
         {% endif %}
         {% include "_partials/_elements/_a11y-requests.twig" %}
       </div>
