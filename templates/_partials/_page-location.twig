@@ -1,41 +1,52 @@
 {% set addresses = entry.addresses | length %}
+{% set address = entry.address | length %}
 {% if addresses or (entry.address | length and not entry.address.isEmpty) or entry.phoneNumbers | length or entry.emailAddress | length or entry.openHours | length %}
-  <section class="bg-white mt-16">
+  <section class="mt-16 bg-white">
     <a class="anchor-link" id="page-contact"></a>
     {% include '_partials/_elements/_module-header.twig' with {
       headerText: pageLocationHeaderText ?? "Contact Us",
     } %}
-    <div class="lg:flex mt-4">
+    <div class="mt-4 lg:flex">
       {% if entry.address | length or entry.addresses | length %}
         <div class="lg:w-1/2 lg:pr-8">
-          {% if entry.addresses | length and not entry.addresses.one.locationName | length %}
-            <h3 class="text-xxl mb-0">Addresses</h3>
+          {% if addresses | length and not entry.addresses.one.locationName | length %}
+            <h3 class="mb-0 text-xxl">Addresses</h3>
           {% elseif addresses %}
-            <h3 class="text-xxl mb-0">Address</h3>
+            <h3 class="mb-0 text-xxl">Address</h3>
           {% endif %}
-          {% for location in entry.addresses.all() ?? '' %}
-            {% if location.locationName | length %}
-              <h4 class="{% if not loop.first %} mt-8 {% endif %} text-xxl mb-0">{{ location.locationName }}</h4>
-            {% endif %}
-            {% include '_partials/_elements/_address.twig' %}
+          {% for block in entry.addresses.all() ?? '' %}
+            {% switch block.type %}
+              {% case "location" %}
+                <h4 class="{% if not loop.first %} mt-8 {% endif %} text-xxl mb-0">{{ block.locationName }}</h4>
+                {% include '_partials/_elements/_address.twig' %}
+              {% case "onlineLocation" %}
+                <div class="mt-4 mb-8">
+                  {% if block.locationName %}<h4 class="{% if not loop.first %} mt-8 {% endif %} text-xxl mb-0">{{ block.locationName }}</h4>{% endif %}
+                  {{ block.locationDescription }}
+                  <p class="mb-0">
+                    <a href="{{ block.webAddress }}" class="btn btn-sm">Visit {{ block.locationName }}</a>
+                  </p>
+                </div>              
+              {% default %}
+            {% endswitch %}
           {% endfor %}
-          {% if entry.address | length %}
+          {% if address %}
             {% include '_partials/_elements/_address.twig' %}
           {% endif %}
           {{ entry.addressExtended }}
         </div>
       {% endif %}
-      <div class="{% if entry.addresses | length or entry.address | length %} lg:w-1/2 lg:pl-8 {% else %} flex-1 {% endif %}">
+      <div class="{% if addresses or address %} lg:w-1/2 lg:pl-8 {% else %} flex-1 {% endif %}">
         {% set phonesTrue = entry.phoneNumber ?? entry.faxNumber ?? entry.ttyNumber ?? false %}
         {% if entry.phoneNumbers | length %}
-          <h3 class="text-xxl mb-0">Phone Numbers</h3>
+          <h3 class="mb-0 text-xxl">Phone Numbers</h3>
           <ul class="mb-8">
             {% for phone in entry.phoneNumbers.all() %}
               {% include '_partials/_elements/_phone-numbers.twig' %}
             {% endfor %}
           </ul>
         {% elseif phonesTrue %}
-          <h3 class="text-xxl mb-0">Phone Numbers</h3>
+          <h3 class="mb-0 text-xxl">Phone Numbers</h3>
           <ul class="mb-8">
             {% if entry.phoneNumber | length %}
               <li>Phone Number:
@@ -54,13 +65,13 @@
           </ul>
         {% endif %}
         {% if entry.emailAddress | length %}
-          <h3 class="text-xxl mb-0">Email Address</h3>
+          <h3 class="mb-0 text-xxl">Email Address</h3>
           <p>
             <a href="mailto:{{ entry.emailAddress }}">{{ entry.emailAddress }}</a>
           </p>
         {% endif %}
         {% if entry.openHours | length %}
-          <h3 class="text-xxl mb-0">Open Hours</h3>
+          <h3 class="mb-0 text-xxl">Open Hours</h3>
           {% for item in entry.openHours.all() %}
             {% if item.hoursTitle | length %}
               <h4 class="text-lg">{{ item.hoursTitle }}</h4>
@@ -74,7 +85,7 @@
         {% endif %}
         {# TODO: Move Topics, processes (negligible) and officials to matrix immediately #}
         {% if entry.hours %}
-          {# <h3 class="text-xxl mb-0">Open Hours</h3>
+          {# <h3 class="mb-0 text-xxl">Open Hours</h3>
           <dl>
             {% for day in entry.hours.getRange(1, 0) %}
               {% include '_partials/_elements/_hours.twig' %}
@@ -82,7 +93,7 @@
           </dl> #}
         {% endif %}
         {% if entry.boardHours | length %}
-          <h3 class="text-xxl mb-0">Business Hours</h3>
+          <h3 class="mb-0 text-xxl">Business Hours</h3>
           {{ entry.boardHours }}
         {% endif %}
         {% include '_partials/_elements/_social-media.twig' %}
