@@ -131,54 +131,9 @@
             linkText: "Newsroom"
           } %}
         </div>
-        <div class="mt-8 md:mt-0 md:border-gray-400 md:border-l md:pl-10 md:w-1/2 lg:w-1/3">
-          {% include '_partials/_elements/_module-header.twig' with {
-            headerText: "Upcoming Events",
-          } %}
-          {% set options = {
-            calendar: "events",
-            limit: 1,
-            featureOnHomepage: true,
-            rangeStart: now | date('Y-m-d'),
-          } %}
-          {% set event = craft.calendar.events(options).one() %}
-          {% if event | length %}
-            {% set title = event.title %}
-            {% set url = event.url %}
-            {% set icon = 'calendar' %}
-            {% set photo = event.eventImage.one ?? '' %}
-            {% set byline = event.startDate.format("M d, Y") %}
-            {% set body = event.body | chop(limit=25, unit='w', append='…') %}
-            <article class="mt-8">
-              <figure class="relative z-0 flex items-center justify-center w-full h-48 p-4 bg-gray-300">
-                {% if photo | length %}
-                  <img src="{{ photo.url }}" class="absolute inset-0 object-cover w-full h-full" alt="{{ photo.altText ?? ''}}">
-                {% elseif icon is defined %}
-                  <div class="h-full p-12 text-gray-400 opacity-75 fill-current">
-                    {{ craft.inlin.er('/assets/img/icon-' ~ icon ~ '.svg') | replace('<svg ', '<svg class="h-full" ') | raw }}
-                  </div>
-                {% endif %}
-              </figure>
-              <div class="mt-4 text-base text-gray-400">{{ byline }}</div>
-              <h3 class="mt-4 text-xl font-semibold md:text-xxl">
-                <a href="{{ url }}">{{ title }}</a>
-              </h3>
-              <div class="mt-4 overflow-x-hidden text-gray-700">
-                {{ body }}
-              </div>
-            </article>
-          {% else %}
-            <h3 class="mt-4 text-xl md:text-xxl">
-              Stay tuned
-            </h3>
-            <div class="mt-4 text-gray-700">
-              <p>There are no upcoming events at this time.</p>
-            </div>
-          {% endif %}
-          {% include "_partials/_elements/_module-readmore.twig" with {
-            linkUrl: "/events",
-            linkText: "All Events"
-          } %}
+        <div class="flex items-stretch mt-8 md:mt-0 md:border-gray-400 md:border-l md:pl-10 md:w-1/2 lg:w-1/3">
+          <div class="block w-full md:oak-hidden"><a class="twitter-timeline" data-height="400px" data-width="100%" href="https://twitter.com/Oakland/lists/official-agencies?ref_src=twsrc%5Etfw">A Twitter List by Oakland</a></div>
+          <div class="w-full oak-hidden md:block"><a class="twitter-timeline" data-height="100%" data-width="100%" href="https://twitter.com/Oakland/lists/official-agencies?ref_src=twsrc%5Etfw">A Twitter List by Oakland</a></div><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
       </div>
     </div>
