@@ -21,7 +21,7 @@
   ['documents', 'entries']
 ] %}
 
-{% set contactState = entry.addresses | length or (entry.address | length and not entry.address.isEmpty) or entry.phoneNumbers | length or entry.emailAddress | length or entry.openHours | length %}
+{% set contactState = entry.addresses | length or entry.phoneNumbers | length or entry.emailAddress | length or entry.openHours | length %}
 
 {% set relatedEvents = craft.calendar.events(eventOptions).relatedTo(entry) %}
 {% set relatedMeetings = craft.calendar.events(meetingOptions).relatedTo(entry) %}
