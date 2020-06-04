@@ -42,7 +42,7 @@ categoryGroups:
     structure:
       maxLevels: 1
       uid: b4e9ab1c-aa42-46f9-a679-898119f39e8d
-dateModified: 1591047701
+dateModified: 1591307265
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -2672,127 +2672,6 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-  bca7e819-7353-4b88-a1ba-1f0cd2ef15b5:
-    contentColumnType: string
-    fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521
-    handle: address
-    instructions: 'To ensure your map is generated correctly on your page, make sure to pick an address the popup provides. If you haven''t received a popup, click **"Search Addresses"** and then choose from that list. If you have successfully chosen an address, you will see the **Latitude** and **Longitude** fields below filled out automatically.'
-    name: Address
-    searchable: true
-    settings:
-      dragPinDefault: ''
-      dragPinLatitude: '37.8053514'
-      dragPinLongitude: '-122.2730467'
-      dragPinZoom: '4'
-      layout:
-        __assoc__:
-          -
-            - street1
-            -
-              __assoc__:
-                -
-                  - width
-                  - 100
-                -
-                  - enable
-                  - 1
-                -
-                  - position
-                  - 1
-          -
-            - street2
-            -
-              __assoc__:
-                -
-                  - width
-                  - 100
-                -
-                  - enable
-                  - 1
-                -
-                  - position
-                  - 2
-          -
-            - city
-            -
-              __assoc__:
-                -
-                  - width
-                  - 50
-                -
-                  - enable
-                  - 1
-                -
-                  - position
-                  - 3
-          -
-            - state
-            -
-              __assoc__:
-                -
-                  - width
-                  - 15
-                -
-                  - enable
-                  - 1
-                -
-                  - position
-                  - 4
-          -
-            - zip
-            -
-              __assoc__:
-                -
-                  - width
-                  - 35
-                -
-                  - enable
-                  - 1
-                -
-                  - position
-                  - 5
-          -
-            - country
-            -
-              __assoc__:
-                -
-                  - width
-                  - 100
-                -
-                  - enable
-                  - 0
-                -
-                  - position
-                  - 6
-          -
-            - lat
-            -
-              __assoc__:
-                -
-                  - width
-                  - 50
-                -
-                  - enable
-                  - 1
-                -
-                  - position
-                  - 7
-          -
-            - lng
-            -
-              __assoc__:
-                -
-                  - width
-                  - 50
-                -
-                  - enable
-                  - 1
-                -
-                  - position
-                  - 8
-    translationKeyFormat: null
-    translationMethod: none
-    type: doublesecretagency\smartmap\fields\Address
   bd28c3bb-d183-4caf-99bf-bff1b218c7a8:
     contentColumnType: string
     fieldGroup: 767a8f0b-6ea5-4855-a6f3-8c2a4a4aee78
@@ -8727,9 +8606,6 @@ sections:
                   90d724d7-7c32-4d04-8b9a-3900d6ecdb84:
                     required: false
                     sortOrder: 1
-                  bca7e819-7353-4b88-a1ba-1f0cd2ef15b5:
-                    required: false
-                    sortOrder: 2
                   c9d86e3f-9738-4d97-a271-5331264c10b8:
                     required: false
                     sortOrder: 3
@@ -9241,9 +9117,6 @@ sections:
                   a3fccaa0-bcac-433c-9b51-7d3f47c751f2:
                     required: false
                     sortOrder: 6
-                  bca7e819-7353-4b88-a1ba-1f0cd2ef15b5:
-                    required: false
-                    sortOrder: 2
                   d71c1375-6cf3-4873-9c42-fde00a9b766b:
                     required: false
                     sortOrder: 11
@@ -10023,9 +9896,6 @@ sections:
                   90d724d7-7c32-4d04-8b9a-3900d6ecdb84:
                     required: false
                     sortOrder: 1
-                  bca7e819-7353-4b88-a1ba-1f0cd2ef15b5:
-                    required: false
-                    sortOrder: 2
                   c9d86e3f-9738-4d97-a271-5331264c10b8:
                     required: false
                     sortOrder: 3
@@ -10139,9 +10009,6 @@ sections:
                   90d724d7-7c32-4d04-8b9a-3900d6ecdb84:
                     required: false
                     sortOrder: 1
-                  bca7e819-7353-4b88-a1ba-1f0cd2ef15b5:
-                    required: false
-                    sortOrder: 2
                   c9d86e3f-9738-4d97-a271-5331264c10b8:
                     required: false
                     sortOrder: 3
@@ -11451,9 +11318,6 @@ sections:
                   90d724d7-7c32-4d04-8b9a-3900d6ecdb84:
                     required: false
                     sortOrder: 1
-                  bca7e819-7353-4b88-a1ba-1f0cd2ef15b5:
-                    required: false
-                    sortOrder: 2
                   c9d86e3f-9738-4d97-a271-5331264c10b8:
                     required: false
                     sortOrder: 3

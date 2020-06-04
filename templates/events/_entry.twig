@@ -119,8 +119,6 @@
               {% default %}
             {% endswitch %}
           {% endfor %}
-        {% elseif entry.address | length %}
-          {% include '_partials/_elements/_address.twig' %}          
         {% endif %}
         {% include "_partials/_elements/_a11y-requests.twig" %}
       </div>

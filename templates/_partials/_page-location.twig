@@ -1,24 +1,19 @@
 {% set addresses = entry.addresses | length %}
-{% set address = entry.address | length %}
-{% if addresses or (entry.address | length and not entry.address.isEmpty) or entry.phoneNumbers | length or entry.emailAddress | length or entry.openHours | length %}
+{% if addresses or entry.phoneNumbers | length or entry.emailAddress %}
   <section class="mt-16 bg-white">
     <a class="anchor-link" id="page-contact"></a>
     {% include '_partials/_elements/_module-header.twig' with {
       headerText: pageLocationHeaderText ?? "Contact Us",
     } %}
     <div class="mt-4 lg:flex">
-      {% if entry.address | length or entry.addresses | length %}
+      {% if addresses %}
         <div class="lg:w-1/2 lg:pr-8">
-          {% if addresses | length and not entry.addresses.one.locationName | length %}
-            <h3 class="mb-0 text-xxl">Addresses</h3>
-          {% elseif addresses %}
-            <h3 class="mb-0 text-xxl">Address</h3>
-          {% endif %}
+          <h3 class="mb-0 text-xxl">Address{% if addresses > 1 %}es{% endif %}</h3>
           {% for block in entry.addresses.all() ?? '' %}
             {% switch block.type %}
               {% case "location" %}
                 <h4 class="{% if not loop.first %} mt-8 {% endif %} text-xxl mb-0">{{ block.locationName }}</h4>
-                {% include '_partials/_elements/_address.twig' %}
+                {% include '_partials/_elements/_address.twig' with { location: block } %}
               {% case "onlineLocation" %}
                 <div class="mt-4 mb-8">
                   {% if block.locationName %}<h4 class="{% if not loop.first %} mt-8 {% endif %} text-xxl mb-0">{{ block.locationName }}</h4>{% endif %}
@@ -30,13 +25,10 @@
               {% default %}
             {% endswitch %}
           {% endfor %}
-          {% if address %}
-            {% include '_partials/_elements/_address.twig' %}
-          {% endif %}
           {{ entry.addressExtended }}
         </div>
       {% endif %}
-      <div class="{% if addresses or address %} lg:w-1/2 lg:pl-8 {% else %} flex-1 {% endif %}">
+      <div class="{% if addresses %} lg:w-1/2 lg:pl-8 {% else %} flex-1 {% endif %}">
         {% set phonesTrue = entry.phoneNumber ?? entry.faxNumber ?? entry.ttyNumber ?? false %}
         {% if entry.phoneNumbers | length %}
           <h3 class="mb-0 text-xxl">Phone Numbers</h3>
