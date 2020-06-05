@@ -6,14 +6,19 @@
 {% set lat = loc.lat %}
 {% set lon = loc.lng %}
 
-<figure class="w-full mt-4" id='map-{{ location.id }}'>
-  <img alt="Map location for {{ entry.title }}, located at {{loc.street1 }} in {{ loc.city }}, {{ loc.state }} {{ loc.zip }}" src="https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/pin-l({{ lon }},{{ lat }})/{{ lon }},{{ lat }},14.25,5,25/640x480@2x?access_token=pk.eyJ1Ijoib2FrbGFuZGRpZ2l0YWwiLCJhIjoiY2pudXBsb2Q5MTcyejNwcGFiMXI3djlvMiJ9.eWDu3rz5mBaZvBzMQtZGlQ"></figure>
-<div class="mt-4 mb-8">
-  {{ loc.street1 }}<br>
-  {% if loc.street2 | length %}
-    {{ loc.street2 }}<br>
-  {% endif %}
-  {{ loc.city }},
-  {{ loc.state }}
-  {{ loc.zip }}
-</div>
+{% if lat and lon %}
+  <figure class="w-full mt-4" id='map-{{ location.id }}'>
+    <img 
+      alt="Map image for {{ entry.title }}, located at {{loc.street1 }} in {{ loc.city }}, {{ loc.state }} {{ loc.zip }}"
+      src="https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/pin-l({{ lon }},{{ lat }})/{{ lon }},{{ lat }},14.25,5,25/640x480@2x?access_token=pk.eyJ1Ijoib2FrbGFuZGRpZ2l0YWwiLCJhIjoiY2pudXBsb2Q5MTcyejNwcGFiMXI3djlvMiJ9.eWDu3rz5mBaZvBzMQtZGlQ">
+    </figure>
+  <div class="mt-4 mb-8">
+    {{ loc.street1 }}<br>
+    {% if loc.street2 | length %}
+      {{ loc.street2 }}<br>
+    {% endif %}
+    {{ loc.city }},
+    {{ loc.state }}
+    {{ loc.zip }}
+  </div>
+{% endif %}
