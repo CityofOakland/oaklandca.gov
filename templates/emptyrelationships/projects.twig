@@ -1,0 +1,5 @@
+{% set total = craft.entries.section("projects").departments(":empty:") %}
+<h1>Resources missing Department relationships: {{ total | length }}</h1>
+{% for entry in total.all() %}
+  {{ entry.title }} - {{ entry.author }} - {{ entry.id }}<br>
+{% endfor %}

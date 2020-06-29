@@ -1,0 +1,35 @@
+{% set entries = craft.entries().all() %}
+
+{% set topicsPageRelationship = craft.entries()
+  .section("topics")
+  .relatedTo([
+    { sourceElement: entries, field: "pageTopics" }
+  ]).ids()
+%}
+
+{% set topicsNoPageRelationship = topicsPageRelationship | join(', not ') %}
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Date</th>
+      <th>Author</th>
+      <th>Author Email</th>
+      <th>Entry ID</th>
+      <th>CP ID</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for entry in craft.entries.section("topics").id(topicsNoPageRelationship) %}
+      <tr>
+        <td>{{ entry.title }}</td>
+        <td>{{ entry.postDate | date }}</td>
+        <td>{{ entry.author }}</td>
+        <td>{{ entry.author.email }}</td>
+        <td>{{ entry.id }}</td>
+        <td><a href="{{ entry.getCpEditUrl() }}" target="_blank">Edit URL</a></td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
