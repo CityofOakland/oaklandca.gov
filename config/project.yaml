@@ -42,7 +42,7 @@ categoryGroups:
     structure:
       maxLevels: 1
       uid: b4e9ab1c-aa42-46f9-a679-898119f39e8d
-dateModified: 1591307265
+dateModified: 1593621423
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -1071,6 +1071,24 @@ fields:
     translationKeyFormat: null
     translationMethod: site
     type: Solspace\Calendar\FieldTypes\EventFieldType
+  509d4604-912b-44dc-a01a-a728586e87a2:
+    contentColumnType: text
+    fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521
+    handle: departmentCodeSnippet
+    instructions: 'Add code that should be run on pages related to this department.'
+    name: 'Department Code Snippet'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: '1'
+      columnType: null
+      initialRows: '4'
+      multiline: '1'
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
   5261f0db-3453-423b-87c5-e5d3112c4141:
     contentColumnType: string
     fieldGroup: c8e06b4a-2f85-41db-94e3-101a5c02dd6d
@@ -10413,6 +10431,13 @@ sections:
                     sortOrder: 1
                 name: SEO
                 sortOrder: 4
+              -
+                fields:
+                  509d4604-912b-44dc-a01a-a728586e87a2:
+                    required: false
+                    sortOrder: 1
+                name: 'ADMIN ONLY'
+                sortOrder: 5
         handle: departments
         hasTitleField: true
         name: Departments

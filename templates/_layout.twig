@@ -67,31 +67,21 @@
       </main>
       {% include '_partials/_elements/_footer.twig' %}
     </div>
-    {% if craft.app.env == "staging" %}
-      <!--Start of HappyFox Live Chat Script-->
-      <script>
-        window.HFCHAT_CONFIG = {
-          EMBED_TOKEN: '8d11c0d0-a773-11ea-88a0-9d0ee2bd7509',
-          ASSETS_URL: 'https://widget.happyfoxchat.com/v2/visitor'
-        };
-        (function () {
-          var scriptTag = document.createElement('script')
-          scriptTag.type = 'text/javascript'
-          scriptTag.async = true
-          scriptTag.src = window.HFCHAT_CONFIG.ASSETS_URL + '/js/widget-loader.js'
-
-          var s = document.getElementsByTagName('script')[0]
-          s.parentNode.insertBefore(scriptTag, s)
-        })()
-      </script>
-      <!--End of HappyFox Live Chat Script-->
-    {% endif %}
     <script type="module" src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
     <script nomodule src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine-ie11.min.js" defer></script>
     {{ craft.twigpack.includeJsModule("/js/manifest.js") }}
     {{ craft.twigpack.includeJsModule("/js/vendor.js") }}
     {{ craft.twigpack.includeJsModule("/js/app.js") }}
     {% do craft.viewCount.increment(entry.id ?? event.id ?? category.id ?? '') %}
+    {% set page = entry ?? null %}
+    {% for department in craft.entries.section("departments").type("departments").departmentCodeSnippet(":notempty:").all() %}
+      {% if page %}
+        {% if craft.entries.id(page.id).relatedTo(department) | length or page.id == department.id %}
+          <!-- Loading code snippet -->
+          {{ department.departmentCodeSnippet | raw }}
+        {% endif %}
+      {% endif %}
+    {% endfor %}
   </body>
 </html>
 {% if section is defined and slug is defined %}
