@@ -68,7 +68,7 @@
 }
 
 body {
-  @apply font-body text-lg leading-normal text-gray-500;
+  @apply text-lg leading-normal text-gray-500 font-body;
 }
 
 h1,
@@ -87,15 +87,15 @@ h3 {
 }
 
 h2 {
-  @apply text-xxxxl my-8;
+  @apply my-8 text-xxxxl;
 }
 
 h3 {
-  @apply text-xxxl my-6 font-semibold;
+  @apply my-6 font-semibold text-xxxl;
 }
 
 h4 {
-  @apply text-xxl my-6;
+  @apply my-6 text-xxl;
 }
 
 ol,
@@ -106,7 +106,7 @@ p {
 }
 
 a {
-  @apply no-underline text-green-400;
+  @apply text-green-400 no-underline;
 }
 
 a:hover {
@@ -114,7 +114,7 @@ a:hover {
 }
 
 .body-text a {
-  @apply underline text-green-300;
+  @apply text-green-300 underline break-words;
 }
 
 .body-text a:hover {
@@ -122,7 +122,7 @@ a:hover {
 }
 
 .anchor-link {
-  @apply relative block invisible;
+  @apply relative invisible block;
 }
 
 @media (min-width: theme("screens.md")) {
@@ -158,7 +158,7 @@ a:hover {
 
 /* Button Styles */
 .btn {
-  @apply inline-block bg-green-300 py-4 px-8 text-base text-white no-underline trans trans-fast font-bold tracking-wide shadow rounded-sm;
+  @apply inline-block px-8 py-4 text-base font-bold tracking-wide text-white no-underline bg-green-300 rounded-sm shadow trans trans-fast;
 }
 
 .btn:hover {
@@ -167,11 +167,11 @@ a:hover {
 
 /* Service Styles */
 .card-grid-button {
-  @apply bg-white rounded-sm text-gray-700 no-underline text-lg font-bold shadow-btn p-8 trans trans-fast;
+  @apply p-8 text-lg font-bold text-gray-700 no-underline bg-white rounded-sm shadow-btn trans trans-fast;
 }
 
 .card-grid-button:hover {
-  @apply bg-green-300 underline text-white;
+  @apply text-white underline bg-green-300;
 }
 
 .btn-sm {
@@ -183,7 +183,7 @@ a:hover {
 }
 
 .section-box {
-  @apply border-l-4 border-green-300 rounded-sm font-semibold block p-5 text-green-400 bg-white shadow-btn;
+  @apply block p-5 font-semibold text-green-400 bg-white border-l-4 border-green-300 rounded-sm shadow-btn;
 }
 
 .section-box:hover {
@@ -213,7 +213,7 @@ main {
 
 /* Banner Styles */
 .banner {
-  @apply relative text-white text-xl leading-loose bg-white;
+  @apply relative text-xl leading-loose text-white bg-white;
 }
 
 /* Background Section Color Rotations */
@@ -230,7 +230,7 @@ main .bg-rotate:nth-of-type(even) {
 }
 
 .card-grid {
-  @apply flex -mx-4 flex-row flex-wrap;
+  @apply flex flex-row flex-wrap -mx-4;
   & > * {
     @apply w-full m-4;
   }
@@ -239,7 +239,7 @@ main .bg-rotate:nth-of-type(even) {
 .card-grid-tight {
   @apply mx-0;
   & > * {
-    @apply my-2 mx-0;
+    @apply mx-0 my-2;
   }
 }
 
@@ -305,14 +305,14 @@ main .bg-rotate:nth-of-type(even) {
   & ul {
     @apply list-disc list-outside;
     & li {
-      @apply ml-5 pl-2;
+      @apply pl-2 ml-5;
     }
   }
 
   & ol {
     @apply list-decimal list-outside;
     & li {
-      @apply ml-5 pl-2;
+      @apply pl-2 ml-5;
     }
   }
 }
@@ -331,7 +331,7 @@ button {
 table,
 th,
 td {
-  @apply border border-solid border-gray-400;
+  @apply border border-gray-400 border-solid;
 }
 
 th,
@@ -363,7 +363,7 @@ body.open #menu {
 }
 
 .how-it-works-block {
-  @apply px-24 mb-4 relative bg-no-repeat bg-bottom;
+  @apply relative px-24 mb-4 bg-bottom bg-no-repeat;
   background-image: url("/assets/img/icon-down-arrow.svg");
 }
 
@@ -372,7 +372,7 @@ body.open #menu {
     @apply w-1/4 px-8 mb-0;
     background-image: none;
     &:after {
-      @apply bg-no-repeat absolute;
+      @apply absolute bg-no-repeat;
       background-image: url("/assets/img/icon-right-arrow.svg");
       content: "";
       top: 10px;
@@ -395,21 +395,21 @@ body.open .page-holder {
 }
 
 .timeline-grid dt {
-  @apply text-xxl bg-no-repeat bg-left-top pl-12;
+  @apply pl-12 bg-left-top bg-no-repeat text-xxl;
   background-image: url("/assets/img/icon-timeline-point.svg");
   background-size: theme(spacing.9);
 }
 
 .timeline-grid dd {
-  @apply text-base pl-12 pb-5;
+  @apply pb-5 pl-12 text-base;
 }
 
 .search-filter-button {
-  @apply p-2 inline-block uppercase text-white pb-1;
+  @apply inline-block p-2 pb-1 text-white uppercase;
 }
 
 .search-filter-button:hover {
-  @apply rounded bg-white text-gray-700 shadow;
+  @apply text-gray-700 bg-white rounded shadow;
 }
 
 .search-filter-button.active {
@@ -422,7 +422,7 @@ body.open .page-holder {
 
 @responsive {
   .hidden-visually {
-    @apply absolute overflow-hidden border-none p-0 -mx-px h-px w-px;
+    @apply absolute w-px h-px p-0 -mx-px overflow-hidden border-none;
     clip: rect(0 0 0 0);
   }
 }
