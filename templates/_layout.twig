@@ -74,14 +74,16 @@
     {{ craft.twigpack.includeJsModule("/js/app.js") }}
     {% do craft.viewCount.increment(entry.id ?? event.id ?? category.id ?? '') %}
     {% set page = entry ?? null %}
-    {% for department in craft.entries.section("departments").type("departments").departmentCodeSnippet(":notempty:").all() %}
-      {% if page %}
-        {% if craft.entries.id(page.id).relatedTo(department) | length or page.id == department.id %}
-          <!-- Loading code snippet -->
-          {{ department.departmentCodeSnippet | raw }}
+    {% if craft.app.env == "staging" %}
+      {% for department in craft.entries.section("departments").type("departments").departmentCodeSnippet(":notempty:").all() %}
+        {% if page %}
+          {% if craft.entries.id(page.id).relatedTo(department) | length or page.id == department.id %}
+            <!-- Loading code snippet -->
+            {{ department.departmentCodeSnippet | raw }}
+          {% endif %}
         {% endif %}
-      {% endif %}
-    {% endfor %}
+      {% endfor %}
+    {% endif %}
   </body>
 </html>
 {% if section is defined and slug is defined %}
