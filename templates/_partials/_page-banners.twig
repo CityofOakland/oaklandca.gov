@@ -49,7 +49,11 @@
       <h1 class="mb-0 font-bold text-xxxl md:text-xxxxl">{{ bannerTitle }}</h1>
       {% include "_partials/_elements/_page-alerts.twig" %}
       {% if leadIn %}
-        <p class="mb-0 md:leading-loose">{{ leadIn | raw }}</p>
+        {% if leadInParagraph ?? "" %}
+          {{ leadIn | replace({'<p' : '<p class="my-2 last:mb-0"', '<a': '<a class="font-bold text-new-green-800 hover:text-new-green-700"'}) | raw }}
+        {% else %}
+          <p class="mb-0 md:leading-loose">{{ leadIn | raw }}</p>
+        {% endif %}
       {% endif %}
       {% if ctaButton | length %}
         {% set attributes = {
