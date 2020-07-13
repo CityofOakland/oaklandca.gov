@@ -42,7 +42,7 @@ categoryGroups:
     structure:
       maxLevels: 1
       uid: b4e9ab1c-aa42-46f9-a679-898119f39e8d
-dateModified: 1594146572
+dateModified: 1594664277
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -4178,6 +4178,7 @@ matrixBlockTypes:
         name: Entry
         searchable: false
         settings:
+          allowSelfRelations: ''
           limit: '1'
           localizeRelations: false
           selectionLabel: ''
@@ -4355,6 +4356,7 @@ matrixBlockTypes:
         name: Entries
         searchable: true
         settings:
+          allowSelfRelations: ''
           limit: '24'
           localizeRelations: false
           selectionLabel: ''
@@ -4662,6 +4664,7 @@ matrixBlockTypes:
         name: Entries
         searchable: false
         settings:
+          allowSelfRelations: ''
           limit: '3'
           localizeRelations: false
           selectionLabel: 'Add a news entry'
@@ -5440,6 +5443,7 @@ matrixBlockTypes:
         name: Entries
         searchable: false
         settings:
+          allowSelfRelations: ''
           limit: '9'
           localizeRelations: false
           selectionLabel: ''
@@ -5512,6 +5516,7 @@ matrixBlockTypes:
         name: Images
         searchable: false
         settings:
+          allowSelfRelations: ''
           allowedKinds:
             - image
           defaultUploadLocationSource: 'volume:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67'
@@ -6581,6 +6586,7 @@ matrixBlockTypes:
         name: Entries
         searchable: false
         settings:
+          allowSelfRelations: ''
           limit: '3'
           localizeRelations: false
           selectionLabel: 'Add a meeting'
@@ -7116,6 +7122,7 @@ matrixBlockTypes:
         name: 'Image File'
         searchable: false
         settings:
+          allowSelfRelations: ''
           allowedKinds:
             - image
           defaultUploadLocationSource: 'volume:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67'
@@ -7506,6 +7513,7 @@ matrixBlockTypes:
         name: Image
         searchable: false
         settings:
+          allowSelfRelations: ''
           allowedKinds:
             - image
           defaultUploadLocationSource: 'volume:549d1a55-e94b-4c89-9cb9-b1fdac9d417d'
@@ -7759,6 +7767,7 @@ matrixBlockTypes:
         name: Entries
         searchable: false
         settings:
+          allowSelfRelations: ''
           limit: '3'
           localizeRelations: false
           selectionLabel: ''
@@ -11539,7 +11548,7 @@ superTableBlockTypes:
         searchable: false
         settings:
           allowCustomText: '1'
-          allowTarget: ''
+          allowTarget: '1'
           defaultText: ''
           selectLinkText: ''
           types:

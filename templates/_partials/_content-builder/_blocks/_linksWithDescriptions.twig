@@ -2,12 +2,19 @@
   <a class="anchor-link" id="{{ blockId }}"></a>
   <{{ heading }} class="{{ hClass }}">{{ block.heading }}</{{ heading }}>
   {{ block.linkSetDescription }}
-  <ul class="mt-0 card-grid card-grid-tight items-stretch">
+  <ul class="items-stretch mt-0 card-grid card-grid-tight">
     {% for linkSet in block.linkSet.all() %}
+      {% set link = linkSet.linkLocation %}
+      {% set linkType = link.typeHandle %}
+      {% if link.hasElement %}
+        {% set isDoc = (link.element.type == "documents") ? true : false %}
+      {% else %}
+        {% set isDoc = false %}
+      {% endif %}
       <li>
-        <a class="block h-full rounded border-gray-500 border p-5 hover:bg-green-100" href="{{ linkSet.linkLocation.url }}">
-          <{{ subheading }} class="my-0 text-lg md:text-xl text-gray-500">{{ linkSet.linkLocation.text }}</{{ subheading }}>
-          <p class="mt-4 mb-0 text-gray-500 text-sm md:text-base">{{ linkSet.linkDescription }}</p>
+        <a class="block h-full p-5 border border-gray-500 rounded hover:bg-green-100" href="{{ link.url }}" target="{{ link.target }}">
+          <{{ subheading }} class="my-0 text-lg text-gray-500 md:text-xl">{{ link.text }}</{{ subheading }}>
+          <p class="mt-4 mb-0 text-sm text-gray-500 md:text-base">{{ linkSet.linkDescription }}</p>
         </a>
       </li>
     {% endfor %}

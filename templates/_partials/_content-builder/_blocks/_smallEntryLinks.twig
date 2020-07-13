@@ -4,7 +4,10 @@
   {{ block.entriesDescription }}
   <ul class="">
     {% for entry in block.entries.all() %}
-      <li class="my-2"><a href="{{ entry.redirectUrl ?? entry.url }}">{{ entry.title }}</a></li>
+      {% set isDoc = (entry.type == "documents") ? true : false %}
+      {% set url = isDoc ? entry.documentFile.one.url : entry.redirectUrl ?? entry.url %}
+      {% set target = isDoc ? "_blank" : "_self" %}
+      <li class="my-2"><a href="{{ url }}" target="{{ target }}">{{ entry.title }}</a></li>
     {% endfor %}
   </ul>
 </div>
