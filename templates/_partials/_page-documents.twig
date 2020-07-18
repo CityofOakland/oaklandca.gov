@@ -5,9 +5,13 @@
     {% include '_partials/_elements/_module-header.twig' with {
       headerText: pageDocumentsHeaderText ?? "Documents",
     } %}
-    <div class="card-grid mt-8">
+    <div class="mt-8 card-grid">
       {% for entry in entry.pageDocuments.all() %}
-        {% include '_partials/_elements/_title-cards.twig' %}
+        {% set isDoc = (entry.type == "documents") ? true : false %}
+        {% include '_partials/_elements/_title-cards.twig' with {
+          url: isDoc ? entry.documentFile.one.url : entry.url,
+          target: isDoc ? "_blank" : "_self"
+        } %}
       {% endfor %}
     </div>
     {% include "_partials/_elements/_module-readmore.twig" with {
