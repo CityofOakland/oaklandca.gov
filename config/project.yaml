@@ -42,7 +42,7 @@ categoryGroups:
     structure:
       maxLevels: 1
       uid: b4e9ab1c-aa42-46f9-a679-898119f39e8d
-dateModified: 1594664277
+dateModified: 1595357281
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -7871,7 +7871,7 @@ plugins:
     edition: pro
     enabled: '1'
     licenseKey: PRJ91600ENZBQ5S7HS7UE93Z
-    schemaVersion: 3.0.0
+    schemaVersion: 3.1.0
     settings:
       allDay: false
       authoredEventEditOnly: ''
@@ -12007,7 +12007,7 @@ system:
   edition: pro
   live: true
   name: 'City of Oakland'
-  schemaVersion: 3.4.10
+  schemaVersion: 3.4.11
   timeZone: America/Los_Angeles
 tagGroups:
   56057193-b9d8-4ac0-9f31-d4a755c91447:
