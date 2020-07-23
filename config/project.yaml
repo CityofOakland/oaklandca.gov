@@ -42,7 +42,7 @@ categoryGroups:
     structure:
       maxLevels: 1
       uid: b4e9ab1c-aa42-46f9-a679-898119f39e8d
-dateModified: 1595357281
+dateModified: 1595545034
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -7879,9 +7879,11 @@ plugins:
       demoBannerDisabled: true
       descriptionFieldHandle: null
       eventDuration: 60
+      firstDayOfWeek: -1
       guestAccess: null
       locationFieldHandle: null
       overlapThreshold: 5
+      pluginName: null
       quickCreateEnabled: '1'
       showDisabledEvents: '1'
       showMiniCal: '1'
@@ -8100,6 +8102,292 @@ plugins:
     enabled: true
     licenseKey: 2WB604K477I8QSMPA1DIIVGV
     schemaVersion: 2.1.1
+routes:
+  0436d898-3bfe-4d27-8e5d-dc67947d0e9d:
+    siteUid: null
+    sortOrder: 11
+    template: /calendar-demo/calendars
+    uriParts:
+      - calendar-demo/calendars/
+      -
+        - slug
+        - '[^\/]+'
+    uriPattern: 'calendar-demo/calendars/<slug:[^\/]+>'
+  089cd124-55b4-4569-bce5-0615d4d58897:
+    siteUid: null
+    sortOrder: 7
+    template: /calendar-demo/week
+    uriParts:
+      - calendar-demo/week/calendar/
+      -
+        - slug
+        - '[^\/]+'
+      - /
+      -
+        - year
+        - '\d{4}'
+      - /
+      -
+        - month
+        - '(?:0?[1-9]|1[012])'
+      - /
+      -
+        - day
+        - '(?:0?[1-9]|[12][0-9]|3[01])'
+    uriPattern: 'calendar-demo/week/calendar/<slug:[^\/]+>/<year:\d{4}>/<month:(?:0?[1-9]|1[012])>/<day:(?:0?[1-9]|[12][0-9]|3[01])>'
+  0d4391b0-9dca-46d3-82fa-8a0dc66470e1:
+    siteUid: null
+    sortOrder: 3
+    template: /calendar-demo/month
+    uriParts:
+      - calendar-demo/month/calendar/
+      -
+        - slug
+        - '[^\/]+'
+    uriPattern: 'calendar-demo/month/calendar/<slug:[^\/]+>'
+  1b57fb8b-e6bb-435a-a95f-de6e27ee71a5:
+    siteUid: null
+    sortOrder: 17
+    template: /calendar-demo/edit
+    uriParts:
+      - calendar-demo/edit/event/new
+    uriPattern: calendar-demo/edit/event/new
+  2f90aa70-ad64-4014-a3ca-0ee8a96e5a61:
+    siteUid: null
+    sortOrder: 9
+    template: /calendar-demo/day
+    uriParts:
+      - calendar-demo/day/calendar/
+      -
+        - slug
+        - '[^\/]+'
+    uriPattern: 'calendar-demo/day/calendar/<slug:[^\/]+>'
+  2fcf5e03-90a3-4e93-9381-374bd8476b23:
+    siteUid: null
+    sortOrder: 16
+    template: /calendar-demo/edit
+    uriParts:
+      - calendar-demo/edit/event/
+      -
+        - number
+        - \d+
+    uriPattern: 'calendar-demo/edit/event/<number:\d+>'
+  32c42af1-fdd8-451f-bc35-cfe016037b5a:
+    siteUid: null
+    sortOrder: 12
+    template: /calendar-demo/event
+    uriParts:
+      - calendar-demo/event/
+      -
+        - number
+        - \d+
+    uriPattern: 'calendar-demo/event/<number:\d+>'
+  351b8a5e-11d8-472d-83eb-4ae5e491c418:
+    siteUid: null
+    sortOrder: 19
+    template: /calendar-demo/fullcalendar
+    uriParts:
+      - calendar-demo/fullcalendar/
+      -
+        - slug
+        - '[^\/]+'
+      - /
+      -
+        - year
+        - '\d{4}'
+      - /
+      -
+        - month
+        - '(?:0?[1-9]|1[012])'
+      - /
+      -
+        - day
+        - '(?:0?[1-9]|[12][0-9]|3[01])'
+    uriPattern: 'calendar-demo/fullcalendar/<slug:[^\/]+>/<year:\d{4}>/<month:(?:0?[1-9]|1[012])>/<day:(?:0?[1-9]|[12][0-9]|3[01])>'
+  4dbdc347-e8e2-4efa-a5b5-2ef65be6dc54:
+    siteUid: null
+    sortOrder: 8
+    template: /calendar-demo/day
+    uriParts:
+      - calendar-demo/day/
+      -
+        - year
+        - '\d{4}'
+      - /
+      -
+        - month
+        - '(?:0?[1-9]|1[012])'
+      - /
+      -
+        - day
+        - '(?:0?[1-9]|[12][0-9]|3[01])'
+    uriPattern: 'calendar-demo/day/<year:\d{4}>/<month:(?:0?[1-9]|1[012])>/<day:(?:0?[1-9]|[12][0-9]|3[01])>'
+  547792d3-5015-49f1-a4ed-8d22b218fc3f:
+    siteUid: null
+    sortOrder: 2
+    template: /calendar-demo/month
+    uriParts:
+      - calendar-demo/month/
+      -
+        - year
+        - '\d{4}'
+      - /
+      -
+        - month
+        - '(?:0?[1-9]|1[012])'
+    uriPattern: 'calendar-demo/month/<year:\d{4}>/<month:(?:0?[1-9]|1[012])>'
+  6762b2a7-8743-4894-b473-f23d2a64a221:
+    siteUid: null
+    sortOrder: 13
+    template: /calendar-demo/event
+    uriParts:
+      - calendar-demo/event/
+      -
+        - number
+        - \d+
+      - /
+      -
+        - year
+        - '\d{4}'
+      - /
+      -
+        - month
+        - '(?:0?[1-9]|1[012])'
+      - /
+      -
+        - day
+        - '(?:0?[1-9]|[12][0-9]|3[01])'
+    uriPattern: 'calendar-demo/event/<number:\d+>/<year:\d{4}>/<month:(?:0?[1-9]|1[012])>/<day:(?:0?[1-9]|[12][0-9]|3[01])>'
+  89f50b25-599d-44b8-ad6e-6c505fcef0a6:
+    siteUid: null
+    sortOrder: 14
+    template: /calendar-demo/events
+    uriParts:
+      - calendar-demo/events/
+      -
+        - year
+        - '\d{4}'
+      - /
+      -
+        - month
+        - '(?:0?[1-9]|1[012])'
+      - /
+      -
+        - day
+        - '(?:0?[1-9]|[12][0-9]|3[01])'
+    uriPattern: 'calendar-demo/events/<year:\d{4}>/<month:(?:0?[1-9]|1[012])>/<day:(?:0?[1-9]|[12][0-9]|3[01])>'
+  96cb6155-abaf-4eb5-85d1-acb406b4b2ee:
+    siteUid: null
+    sortOrder: 6
+    template: /calendar-demo/week
+    uriParts:
+      - calendar-demo/week/calendar/
+      -
+        - slug
+        - '[^\/]+'
+    uriPattern: 'calendar-demo/week/calendar/<slug:[^\/]+>'
+  a780887e-3c14-40e2-90cc-7e8f1c6fa844:
+    siteUid: null
+    sortOrder: 1
+    template: /calendar-demo/mini_cal
+    uriParts:
+      - calendar-demo/mini_cal/
+      -
+        - year
+        - '\d{4}'
+      - /
+      -
+        - month
+        - '(?:0?[1-9]|1[012])'
+    uriPattern: 'calendar-demo/mini_cal/<year:\d{4}>/<month:(?:0?[1-9]|1[012])>'
+  aab0c87f-c7f3-402b-a480-490976daac2c:
+    siteUid: null
+    sortOrder: 10
+    template: /calendar-demo/day
+    uriParts:
+      - calendar-demo/day/calendar/
+      -
+        - slug
+        - '[^\/]+'
+      - /
+      -
+        - year
+        - '\d{4}'
+      - /
+      -
+        - month
+        - '(?:0?[1-9]|1[012])'
+      - /
+      -
+        - day
+        - '(?:0?[1-9]|[12][0-9]|3[01])'
+    uriPattern: 'calendar-demo/day/calendar/<slug:[^\/]+>/<year:\d{4}>/<month:(?:0?[1-9]|1[012])>/<day:(?:0?[1-9]|[12][0-9]|3[01])>'
+  e7e6f6ac-62b8-4464-a7b4-e05c39e26758:
+    siteUid: null
+    sortOrder: 18
+    template: /calendar-demo/export
+    uriParts:
+      - calendar-demo/export/calendar/
+      -
+        - number
+        - \d+
+    uriPattern: 'calendar-demo/export/calendar/<number:\d+>'
+  e825f960-4ea2-4411-8428-7a566733a109:
+    siteUid: null
+    sortOrder: 5
+    template: /calendar-demo/week
+    uriParts:
+      - calendar-demo/week/
+      -
+        - year
+        - '\d{4}'
+      - /
+      -
+        - month
+        - '(?:0?[1-9]|1[012])'
+      - /
+      -
+        - day
+        - '(?:0?[1-9]|[12][0-9]|3[01])'
+    uriPattern: 'calendar-demo/week/<year:\d{4}>/<month:(?:0?[1-9]|1[012])>/<day:(?:0?[1-9]|[12][0-9]|3[01])>'
+  f85539d7-221d-40bd-8b3d-b834aa7dd2e4:
+    siteUid: null
+    sortOrder: 15
+    template: /calendar-demo/export
+    uriParts:
+      - calendar-demo/export/event/
+      -
+        - number
+        - \d+
+    uriPattern: 'calendar-demo/export/event/<number:\d+>'
+  fda4e1bf-c9a8-412e-a5f8-46bc9f6123bc:
+    siteUid: null
+    sortOrder: 4
+    template: /calendar-demo/month
+    uriParts:
+      - calendar-demo/month/calendar/
+      -
+        - slug
+        - '[^\/]+'
+      - /
+      -
+        - year
+        - '\d{4}'
+      - /
+      -
+        - month
+        - '(?:0?[1-9]|1[012])'
+    uriPattern: 'calendar-demo/month/calendar/<slug:[^\/]+>/<year:\d{4}>/<month:(?:0?[1-9]|1[012])>'
+  ff1887b9-0746-4fac-bf52-79c7de8a2728:
+    siteUid: null
+    sortOrder: 20
+    template: /calendar-demo/resources/event_data
+    uriParts:
+      - calendar-demo/resources/event_data/
+      -
+        - number
+        - \d+
+    uriPattern: 'calendar-demo/resources/event_data/<number:\d+>'
 sections:
   07faad04-9ec4-4f68-9fe8-0ca20f189f8a:
     enableVersioning: false

@@ -1,0 +1,23 @@
+{% set segment1 = craft.app.request.segment(2) %}
+{% set segment2 = craft.app.request.segment(3) %}
+{% set segment3 = craft.app.request.segment(4) %}
+
+{%- if segment2 == "event" -%}
+    {% set options = {
+        id: segment3
+    } %}
+{%- elseif segment2 == "calendar" -%}
+    {% set options = {
+        calendarId: segment3
+    } %}
+{% endif %}
+
+{%- set events = craft.calendar.events(options|merge({
+    rangeStart: "1 year ago",
+    rangeEnd: "5 years",
+    loadOccurrences: false
+})) -%}
+
+{% header "Content-Type: application/octet-stream" %}
+{% header "Content-Transfer-Encoding: binary" %}
+{{- craft.calendar.export(events) -}}
