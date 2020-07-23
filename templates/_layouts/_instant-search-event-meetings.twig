@@ -28,19 +28,19 @@
       bannerTitle: entry.title | replace(' Index', '') ~ bannerTitleSuffix ?? '',
     } %}
   {% endblock %}
-  <div class="bg-gray-300" id="search-bar-container">
+  <div class="bg-new-gray-100" id="search-bar-container">
     <div class="container text-right">
       <div class="flex flex-col sm:flex-row">
         <label class="hidden-visually" for="search-input">How can we help?</label>
-        <input class="w-full p-2 md:py-4 md:px-8 rounded-none appearance-none" id="search-input" name="keywords" required type="search" value="">
+        <input class="w-full p-2 rounded-none appearance-none md:py-4 md:px-8" id="search-input" name="keywords" required type="search" value="">
       </div>
       {% if facets is defined %}
-        <a class="inline-block mt-4 text-right" href="#" id="filter-reveal">Show Filters</a>
+        <a class="inline-block mt-4 text-right text-new-gray-800 hover:text-new-gray-900" href="#" id="filter-reveal">Show Filters</a>
       {% endif %}
     </div>
   </div>
-  <section class="bg-white relative z-0">
-    <div class="opacity-0 invisible h-0 overflow-hidden bg-gray-700 text-white relative z-neg-10 trans trans-all" id="algolia-filters">
+  <section class="relative z-0 bg-white">
+    <div class="relative invisible h-0 overflow-hidden opacity-0 text-new-gray-700 bg-new-gray-300 z-neg-10 trans trans-all" id="algolia-filters">
       <div class="container flex-col -my-4" id="facet-holder">
         {% if facets is defined %}
           {% for facet in facets %}
@@ -49,14 +49,14 @@
         {% endif %}
       </div>
     </div>
-    <div class="container py-0 daterange mt-8 max-w-sm" id="calendar"></div>
-    <div class="container mt-4 md:flex">
-      <div class="flex-1">
-        <div id="hits"></div>
-        <div class="text-xxl flex items-center">
-          <div class="inline-block" id="bottom-pagination"></div>
+    <div class="container max-w-sm py-0 mt-8 daterange" id="calendar"></div>
+      <div class="container mt-4 md:flex min-h-8">
+        <div class="flex-1">
+          <div id="hits"></div>
+          <div class="flex items-center text-xxl">
+            <div class="inline-block" id="bottom-pagination"></div>
+          </div>
         </div>
       </div>
-    </div>
   </section>
 {% endblock %}

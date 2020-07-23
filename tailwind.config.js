@@ -127,7 +127,8 @@ module.exports = {
     },
     minHeight: {
       '2-1/2': '10rem',
-      '4': '16rem'
+      '4': '16rem',
+      '8': '32rem'
     },
     height: theme => ({
       auto: 'auto',
