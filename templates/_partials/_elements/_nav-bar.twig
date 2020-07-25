@@ -59,17 +59,17 @@
         {% for nav in mainNav.navBuilder.all() %}
           {% set link = nav.navLink %}
           <li class="{% if not loop.first %}border-t {% endif %}border-new-gray-600">
-            <a class="flex items-center justify-between block py-2 font-normal fill-current text-new-gray-100 hover:text-new-gray-200" href="{{ link.url }}" {% if link.target | length %} target="{{ link.target }}" {% endif %}><div class="text">{{ link.text }}</div><div class="text">{{ craft.inlin.er('/assets/img/icon-arrow.svg') | replace('<svg ', '<svg class="w-4 h-4 xl:oak-hidden" ') | raw }}</div></a>
+            <a class="flex items-center justify-between py-2 font-normal fill-current text-new-gray-100 hover:text-new-gray-200" href="{{ link.url }}" {% if link.target | length %} target="{{ link.target }}" {% endif %}><div class="text">{{ link.text }}</div><div class="text">{{ craft.inlin.er('/assets/img/icon-arrow.svg') | replace('<svg ', '<svg class="w-4 h-4 xl:oak-hidden" ') | raw }}</div></a>
           </li>
         {% endfor %}
         <li class="border-t border-new-gray-600">
-          <a class="flex items-center justify-between block py-2 font-normal fill-current text-new-gray-100 hover:text-new-gray-200" href="/topics/oaklandlovelife"><div class="text">#OaklandLoveLife</div><div class="text">{{ craft.inlin.er('/assets/img/icon-arrow.svg') | replace('<svg ', '<svg class="w-4 h-4 xl:oak-hidden" ') | raw }}</div></a>
+          <a class="flex items-center justify-between py-2 font-normal fill-current text-new-gray-100 hover:text-new-gray-200" href="/topics/oaklandlovelife"><div class="text">#OaklandLoveLife</div><div class="text">{{ craft.inlin.er('/assets/img/icon-arrow.svg') | replace('<svg ', '<svg class="w-4 h-4 xl:oak-hidden" ') | raw }}</div></a>
         </li>
         <li class="border-t border-new-gray-600">
-          <a class="flex items-center justify-between block py-2 font-normal fill-current text-new-gray-100 hover:text-new-gray-200" href="/officials/libby-schaaf"><div class="text">Mayor Libby Schaaf</div><div class="text">{{ craft.inlin.er('/assets/img/icon-arrow.svg') | replace('<svg ', '<svg class="w-4 h-4 xl:oak-hidden" ') | raw }}</div></a>
+          <a class="flex items-center justify-between py-2 font-normal fill-current text-new-gray-100 hover:text-new-gray-200" href="/officials/libby-schaaf"><div class="text">Mayor Libby Schaaf</div><div class="text">{{ craft.inlin.er('/assets/img/icon-arrow.svg') | replace('<svg ', '<svg class="w-4 h-4 xl:oak-hidden" ') | raw }}</div></a>
         </li>
         <li class="border-t border-new-gray-600">
-          <a class="flex items-center justify-between block py-2 font-normal fill-current text-new-gray-100 hover:text-new-gray-200" href="/services/oak311"><div class="text">Report a problem to OAK 311</div><div class="text">{{ craft.inlin.er('/assets/img/icon-arrow.svg') | replace('<svg ', '<svg class="w-4 h-4 xl:oak-hidden" ') | raw }}</div></a>
+          <a class="flex items-center justify-between py-2 font-normal fill-current text-new-gray-100 hover:text-new-gray-200" href="/services/oak311"><div class="text">Report a problem to OAK 311</div><div class="text">{{ craft.inlin.er('/assets/img/icon-arrow.svg') | replace('<svg ', '<svg class="w-4 h-4 xl:oak-hidden" ') | raw }}</div></a>
         </li>
       </ul>
     </div>
