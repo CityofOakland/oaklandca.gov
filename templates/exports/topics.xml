@@ -6,10 +6,10 @@
       <Heading>{{ title }}</Heading>
       <Entries>
         {%- for entry in field.all() -%}
-        <EntryRelation>
-          <EntryTitle>{{ entry.title }}</EntryTitle>
-          <EntryID>{{ entry.id }}</EntryID>
-        </EntryRelation>
+          <EntryRelation>
+            <EntryTitle>{{ entry.title }}</EntryTitle>
+            <EntryID>{{ entry.id }}</EntryID>
+          </EntryRelation>
         {%- endfor -%}
       </Entries>
     </{{ blockType }}>

@@ -2,18 +2,18 @@
 {%- macro entries(field, title, blockType) -%}
   {%- set blockType = (blockType ?? "Entries") ~ "Block" -%}
   {%- if field | length -%}
-  {%- for entry in field.all() -%}
     <{{ blockType }}>
       <Heading>{{ title }}</Heading>
       <Entries>
-        <EntryRelation>
-          <EntryTitle>{{ entry.title }}</EntryTitle>
-          <EntryID>{{ entry.id }}</EntryID>
-        </EntryRelation>
+        {%- for entry in field.all() -%}
+          <EntryRelation>
+            <EntryTitle>{{ entry.title }}</EntryTitle>
+            <EntryID>{{ entry.id }}</EntryID>
+          </EntryRelation>
+        {%- endfor -%}
       </Entries>
     </{{ blockType }}>
-  {%- endfor -%}
-    {%- endif -%}
+  {%- endif -%}
 {%- endmacro -%}
 {%- import _self as macro -%}
 <?xml version="1.0" encoding="UTF-8"?>
