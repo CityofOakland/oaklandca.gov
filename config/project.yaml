@@ -42,7 +42,7 @@ categoryGroups:
     structure:
       maxLevels: 1
       uid: b4e9ab1c-aa42-46f9-a679-898119f39e8d
-dateModified: 1595545034
+dateModified: 1595859953
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -10653,24 +10653,9 @@ sections:
             tabs:
               -
                 fields:
-                  55169274-4595-4ab0-a461-9b4600d07779:
-                    required: false
-                    sortOrder: 12
                   86a3f1a5-a708-49b5-bac4-ff225f556ae1:
                     required: false
-                    sortOrder: 13
-                  89fc1206-d81a-4ef4-b8fd-3431852a9db7:
-                    required: false
-                    sortOrder: 10
-                  9723e73e-bf9d-4785-809e-fa94b4b85e14:
-                    required: false
-                    sortOrder: 7
-                  a1b84d64-99d2-4d66-a914-6260fc55fe55:
-                    required: false
-                    sortOrder: 8
-                  a658ef46-5ee4-44f5-b775-9df0ea27df38:
-                    required: false
-                    sortOrder: 11
+                    sortOrder: 6
                   b0a28612-04bc-4669-a6d1-816c9c768a29:
                     required: false
                     sortOrder: 4
@@ -10680,12 +10665,6 @@ sections:
                   c2ad07dc-05e7-4ef4-89b6-2e1eaccee210:
                     required: false
                     sortOrder: 2
-                  ca2e4145-9289-482b-b1f1-c2843b4b4d60:
-                    required: false
-                    sortOrder: 6
-                  d9f6b182-7186-4e99-909f-9112985467b8:
-                    required: false
-                    sortOrder: 9
                   f62c85ae-2203-4d1a-8702-da515126a398:
                     required: false
                     sortOrder: 1
