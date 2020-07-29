@@ -45,7 +45,7 @@
             {% include '_partials/_elements/_profile-cards.twig' with {
               photo: entry.portrait.one,
               name: entry.title,
-              jobTitle: entry.jobTitle ?? '',
+              jobTitle: entry.jobTitle ?? entry.staffImportJobTitle ?? '',
               url: entry.redirectUrl ?? entry.url ?? '',
               extraContent: extraContent,
               icon: 'user'
