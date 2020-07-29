@@ -2,6 +2,7 @@
 {% set photo = photo ?? entry.photo.one ?? '' %}
 {% set jobTitle = jobTitle ?? entry.jobTitle ?? entry.staffImportJobTitle ?? '' %}
 {% set name = name ?? entry.title %}
+{% set extraContent = extraContent ?? "" %}
 <div class="block">
   <div class="text-gray-700 sm:flex sm:items-start">
     <figure class="block w-1/3 md:w-1/4">
@@ -27,8 +28,8 @@
         <a href="{{ url }}">{{ name }}</a>
       </h3>
       <p class="mt-2 text-sm md:text-base">
-        {{ jobTitle }}
-        {{ extraContent ?? '' }}
+        {{ jobTitle }}{{ extraContent ? "<br>" : "" | raw }}
+        {{ extraContent }}
       </p>
     </div>
   </div>
