@@ -74,7 +74,7 @@
     {{ craft.twigpack.includeJsModule("/js/app.js") }}
     {% do craft.viewCount.increment(entry.id ?? event.id ?? category.id ?? '') %}
     {% set page = entry ?? null %}
-    {% if craft.app.env == "staging" %}
+    {% if craft.app.env == "production" %}
       {% for department in craft.entries.section("departments").type("departments").departmentCodeSnippet(":notempty:").all() %}
         {% if page %}
           {% if craft.entries.id(page.id).relatedTo(department) | length or page.id == department.id %}
