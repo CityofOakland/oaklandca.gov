@@ -45,7 +45,7 @@
 
 {% block content %}
   {%- set headerSubContent -%}
-    <div class="o-4 mt-4 md:mt-0">
+    <div class="mt-4 o-4 md:mt-0">
     {% if entry.projectStatus %}
       <div class="text-sm">
         <strong>Status:</strong><br>
@@ -87,10 +87,10 @@
     },
     headerSubContent: headerSubContent
   } %}
-  <div class="container md:flex pt-0">
+  <div class="container pt-0 md:flex">
     <div class="md:w-2/3 md:pr-8 md:mr-8">
       {% if entry.about %}
-        <section class="mb-16 border-b border-gray-400 pb-16">
+        <section class="pb-16 mb-16 border-b border-gray-400">
           <a class="anchor-link" id="page-about"></a>
           <h2 class="text-xxl">About</h2>
           <div class="body-text">
@@ -100,7 +100,7 @@
       {% endif %}
       {% if photosTrue %}
         {% js %}lightGallery(document.querySelector('#js-photoGallery'));{% endjs %}
-        <section class="mb-16 border-b border-gray-400 pb-16">
+        <section class="pb-16 mb-16 border-b border-gray-400">
           <a class="anchor-link" id="page-gallery"></a>
           <h2 class="text-xxl">Gallery</h2>
           <div class="flex flex-row flex-wrap" id="js-photoGallery">
@@ -120,18 +120,14 @@
         </section>
       {% endif %}
       {% if documentsTrue %}
-        <section class="mb-16 border-b border-gray-400 pb-16">
+        <section class="pb-16 mb-16 border-b border-gray-400">
           <a class="anchor-link" id="page-documents"></a>
           <h2 class="text-xxl">Documents</h2>
           <div class="o-6"> 
             {% for entry in entry.projectDocuments.all() %}
-              <a class="section-box project-documents" {{ loop.first ? '' : 'data-toggle="off"' }} href="{{ entry.url }}">{{ entry.title }}</a>
+              <a class="section-box project-documents" href="{{ entry.url }}">{{ entry.title }}</a>
             {% endfor %}
           </div>
-          {% if entry.projectDocuments | length > 1 %}
-            <p class="font-bold font-heading mt-4 border-green-400 border-b-2 inline-block"><a href="" id="project-documents-toggle" data-class="project-documents">Toggle all related documents</a></p>
-            {% js %}toggleLinks('project-documents-toggle');{% endjs %}
-          {% endif %}
         </section>
       {% endif %}
       {% if meetingsTrue %}
@@ -153,7 +149,7 @@
     </div>
     <div class="md:w-1/3">
       {% if updatesTrue %}
-        <section class="mb-16 border-b border-gray-400 pb-16">
+        <section class="pb-16 mb-16 border-b border-gray-400">
           <a class="anchor-link" id="page-updates"></a>
           <h2 class="text-xxl">Updates</h2>
           <div class="o-6">
@@ -162,14 +158,14 @@
             {% endfor %}
           </div>
           {% if entry.projectUpdates | length > 1 %}
-           <p class="font-bold font-heading mt-4 border-green-400 border-b-2 inline-block"><a href="" id="project-updates-toggle" data-class="project-updates">Toggle all project updates</a></p>
+           <p class="inline-block mt-4 font-bold border-b-2 border-green-400 font-heading"><a href="" id="project-updates-toggle" data-class="project-updates">Toggle all project updates</a></p>
             {% js %}toggleLinks('project-updates-toggle');{% endjs %}
           {% endif %}
         </section>
       {% endif %}
       {% if mapTrue %}
         {% js %}lightGallery(document.querySelector('#js-map'));{% endjs %}
-        <section class="mb-16 border-b border-gray-400 pb-16">
+        <section class="pb-16 mb-16 border-b border-gray-400">
           <a class="anchor-link" id="page-map"></a>
           <h2 class="text-xxl">Map</h2>
 
@@ -182,7 +178,7 @@
               { width: 528, jpegQuality: 65 }
             ],{ fillTransforms: true}) %}
             {%- set mapImageBlock -%}
-            <figure class="mt-4 w-full cursor-pointer" id='js-map'>
+            <figure class="w-full mt-4 cursor-pointer" id='js-map'>
               <img
                 data-src="{{ image.url }}" 
                 data-sub-html="<p class='font-bold'>Map of Project: {{ entry.title }}</p>"
@@ -224,7 +220,7 @@
             {% if mapImageTrue %}
               {{ mapImageBlock | raw }}
             {% else %}
-              <figure class="mt-4 w-full cursor-pointer" id='js-map'>
+              <figure class="w-full mt-4 cursor-pointer" id='js-map'>
                 <img
                   data-src="{{ largePhoto }}" 
                   data-sub-html="<p class='font-bold'>Map of Project: {{ entry.title }}</p><p>Showing locations of {{ locationText ?? '' }}</p>"
@@ -235,7 +231,7 @@
             
             {% for location in locations %}
               {% if location.description %}
-                <h3 class="text-lg font-bold my-3">{{ location.description }}</h3>
+                <h3 class="my-3 text-lg font-bold">{{ location.description }}</h3>
               {% endif %}
               {% set loc = location.address %}
               <p class="mt-{{ loop.index == 0 ? 3 : 0 }} mb-3">
@@ -270,29 +266,25 @@
       {% endcss %}
       
       {% if timelineTrue %}
-        <section class="mb-16 border-b border-gray-400 pb-16">
+        <section class="pb-16 mb-16 border-b border-gray-400">
           <a class="anchor-link" id="page-timeline"></a>
           <h2 class="text-xxl">Timeline</h2>
           <div class="project-timeline">
             {% for milestone in entry.timeline.all() %}
-              <div class="project-timeline-item pl-8 border-l-2 {% if not loop.last %}pb-4 border-gray-400{% else %}border-white{% endif %}" {{ loop.index0 < 4 ? '' : 'data-toggle="off"' }}>
+              <div class="project-timeline-item pl-8 border-l-2 {% if not loop.last %}pb-4 border-gray-400{% else %}border-white{% endif %}">
                 <div class="text-gray-500">
-                  <div class="milestone-name leading-none">{{ milestone.milestoneName }}</div>
+                  <div class="leading-none milestone-name">{{ milestone.milestoneName }}</div>
                   {% if milestone.milestoneDates %}
-                    <span class="text-sm text-gray-700 font-bold">{{ milestone.milestoneDates }}</span>
+                    <span class="text-sm font-bold text-gray-700">{{ milestone.milestoneDates }}</span>
                   {% endif %}
                 </div>
               </div>
             {% endfor %}
           </div>
-          {% if entry.timeline | length > 4 %}
-            <p class="font-bold font-heading mt-4 border-green-400 border-b-2 inline-block"><a href="" id="project-timeline-toggle" data-class="project-timeline-item">See all timeline</a></p>
-            {% js %}toggleLinks('project-timeline-toggle');{% endjs %}
-          {% endif %}
         </section>
       {% endif %}
       {% if relatedTrue %}
-        <section class="mb-16 border-b border-gray-400 pb-16">
+        <section class="pb-16 mb-16 border-b border-gray-400">
           <a class="anchor-link" id="page-related"></a>
           <h2 class="text-xxl">Related pages</h2>
           <div class="o-6">
@@ -301,19 +293,19 @@
             {% endfor %}
           </div>
           {% if entry.relatedProjectEntries | length > 1 %}
-            <p class="font-bold font-heading mt-4 border-green-400 border-b-2 inline-block"><a href="" id="project-related-toggle" data-class="project-related">Toggle all related pages</a></p>
+            <p class="inline-block mt-4 font-bold border-b-2 border-green-400 font-heading"><a href="" id="project-related-toggle" data-class="project-related">Toggle all related pages</a></p>
             {% js %}toggleLinks('project-related-toggle');{% endjs %}          
           {% endif %}
         </section>
       {% endif %}
       {% if fundingTrue %}
-        <section class="mb-16 border-b border-gray-400 pb-16">
+        <section class="pb-16 mb-16 border-b border-gray-400">
           <a class="anchor-link" id="page-logos"></a>
           <h2 class="text-xxl">{{ entry.fundingLogosAlternateTitle ?? 'Partners' }}</h2>
           <div class="flex flex-wrap items-center justify-center -mx-4">
             {% for logo in entry.fundingLogos.all() %}
-              <figure class="w-full sm:w-1/2 md:w-1/3 lg:w-1/5 mb-4 md:mb-8 mx-4">
-                <img class="w-full h-auto block mx-auto" src="{{ logo.url }}" alt="{{ logo.title }}">
+              <figure class="w-full mx-4 mb-4 sm:w-1/2 md:w-1/3 lg:w-1/5 md:mb-8">
+                <img class="block w-full h-auto mx-auto" src="{{ logo.url }}" alt="{{ logo.title }}">
               </figure>
             {% endfor %}
           </div>
@@ -324,21 +316,21 @@
           <a class="anchor-link" id="page-contact"></a>
           <h2 class="text-xxl">Contact</h2>
           {% if emailTrue %}
-            <h3 class="text-xl mb-2">Email</h3>
+            <h3 class="mb-2 text-xl">Email</h3>
             <p class="mt-0">
               <a href="mailto:{{ entry.emailAddress }}">{{ entry.emailAddress }}</a>
             </p>
           {% endif %}
           {% if teamsTrue %}
-            <h3 class="text-xl mb-2">Teams</h3>
+            <h3 class="mb-2 text-xl">Teams</h3>
             <p class="mt-0">
               {% for team in relatedTeams %}
-                <a href="{{ team.url }}" class="btn btn-sm inline-block mr-2">{{ team.title }}</a>
+                <a href="{{ team.url }}" class="inline-block mr-2 btn btn-sm">{{ team.title }}</a>
               {% endfor %}
             </p>
           {% endif %}
           {% if phoneTrue %}
-            <h3 class="text-xl mb-2">Phone Numbers</h3>
+            <h3 class="mb-2 text-xl">Phone Numbers</h3>
             <p class="mt-0">
             {% for phone in entry.phoneNumbers.all() %}
               {% switch phone.type %}
