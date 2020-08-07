@@ -1,0 +1,16 @@
+contentColumnType: text
+fieldGroup: 1fe293ad-52d9-4002-984e-b7a256d4b158
+handle: youtube
+instructions: 'Add the URL for the YouTube account for this entry.'
+name: YouTube
+searchable: true
+settings:
+  charLimit: ''
+  code: ''
+  columnType: text
+  initialRows: '4'
+  multiline: ''
+  placeholder: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

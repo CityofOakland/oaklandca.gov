@@ -1,0 +1,24 @@
+fieldLayouts:
+  5ca0b141-93fb-43cd-95ce-f4c021b05dcc:
+    tabs:
+      -
+        fields:
+          fff5cf49-87e6-4751-9032-b4ca8136e237:
+            required: true
+            sortOrder: 1
+        name: Content
+        sortOrder: 1
+handle: data
+hasUrls: true
+name: Data
+settings:
+  bucket: cao-94612
+  cfDistributionId: ''
+  expires: ''
+  keyId: $S3_API_KEY
+  region: us-west-2
+  secret: $S3_SECRET
+  subfolder: data
+sortOrder: 9
+type: craft\awss3\Volume
+url: 'https://cao-94612.s3.amazonaws.com/'

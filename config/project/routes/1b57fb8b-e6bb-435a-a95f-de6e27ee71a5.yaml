@@ -1,0 +1,6 @@
+siteUid: null
+sortOrder: 17
+template: /calendar-demo/edit
+uriParts:
+  - calendar-demo/edit/event/new
+uriPattern: calendar-demo/edit/event/new

@@ -1,0 +1,182 @@
+field: fd0c8e02-99b4-4ce5-ab89-b29cd0efc581
+fieldLayouts:
+  1ecef578-5469-4582-9db8-30d8099ecb26:
+    tabs:
+      -
+        fields:
+          5ca3c157-200f-49a4-9390-48c84349b0be:
+            required: true
+            sortOrder: 3
+          7664938a-7aa3-400c-ab55-335b7ef374bd:
+            required: true
+            sortOrder: 1
+          a9027f1f-7200-4053-9b64-7be69dc993e5:
+            required: false
+            sortOrder: 5
+          c3cd0c7f-e997-4960-9b97-046778155766:
+            required: false
+            sortOrder: 4
+          e9c00016-6698-4bae-ae61-26a8ced249d7:
+            required: false
+            sortOrder: 6
+          facc7196-7444-4e77-873f-68c1b09d1298:
+            required: true
+            sortOrder: 2
+          ff148937-9066-4578-8eb1-56090c97b181:
+            required: true
+            sortOrder: 7
+        name: Content
+        sortOrder: 1
+fields:
+  5ca3c157-200f-49a4-9390-48c84349b0be:
+    contentColumnType: text
+    fieldGroup: null
+    handle: column3Heading
+    instructions: ''
+    name: 'Column 3 Heading'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  7664938a-7aa3-400c-ab55-335b7ef374bd:
+    contentColumnType: text
+    fieldGroup: null
+    handle: column1Heading
+    instructions: ''
+    name: 'Column 1 Heading'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  a9027f1f-7200-4053-9b64-7be69dc993e5:
+    contentColumnType: smallint(2)
+    fieldGroup: null
+    handle: column2Width
+    instructions: ''
+    name: 'Column 2 Width'
+    searchable: false
+    settings:
+      decimals: 0
+      defaultValue: '33'
+      max: '99'
+      min: '1'
+      prefix: ''
+      size: null
+      suffix: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Number
+  c3cd0c7f-e997-4960-9b97-046778155766:
+    contentColumnType: smallint(2)
+    fieldGroup: null
+    handle: column1Width
+    instructions: ''
+    name: 'Column 1 Width'
+    searchable: false
+    settings:
+      decimals: 0
+      defaultValue: '33'
+      max: '99'
+      min: '1'
+      prefix: ''
+      size: null
+      suffix: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Number
+  e9c00016-6698-4bae-ae61-26a8ced249d7:
+    contentColumnType: smallint(2)
+    fieldGroup: null
+    handle: column3Width
+    instructions: ''
+    name: 'Column 3 Width'
+    searchable: false
+    settings:
+      decimals: 0
+      defaultValue: '34'
+      max: '99'
+      min: '1'
+      prefix: ''
+      size: null
+      suffix: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Number
+  facc7196-7444-4e77-873f-68c1b09d1298:
+    contentColumnType: text
+    fieldGroup: null
+    handle: column2Heading
+    instructions: ''
+    name: 'Column 2 Heading'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  ff148937-9066-4578-8eb1-56090c97b181:
+    contentColumnType: string
+    fieldGroup: null
+    handle: table
+    instructions: ''
+    name: Table
+    searchable: true
+    settings:
+      columns:
+        __assoc__:
+          -
+            - 23389191-2978-49d8-a70e-6da12c8aeab0
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - fb2b9f42-74a0-45c4-be6e-d3d69c87557e
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - d513ffa1-20e6-405d-845e-b4a8fd041461
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_27_table}}'
+      fieldLayout: table
+      maxRows: ''
+      minRows: '1'
+      propagationMethod: all
+      selectionLabel: ''
+      staticField: ''
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+handle: table3Columns
+name: '3 Columns'
+sortOrder: 6

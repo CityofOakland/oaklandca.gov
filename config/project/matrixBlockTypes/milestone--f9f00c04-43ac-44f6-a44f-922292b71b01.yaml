@@ -1,0 +1,52 @@
+field: 78894bca-c6ce-4518-bb6f-fa94d7e7050e
+fieldLayouts:
+  8f37ffd8-930c-4774-a80c-34e639885697:
+    tabs:
+      -
+        fields:
+          66c28d05-1cce-4903-af5e-5667d0a1cb53:
+            required: false
+            sortOrder: 2
+          d2258f6a-704e-413b-8079-a7611a4139c4:
+            required: true
+            sortOrder: 1
+        name: Content
+        sortOrder: 1
+fields:
+  66c28d05-1cce-4903-af5e-5667d0a1cb53:
+    contentColumnType: text
+    fieldGroup: null
+    handle: milestoneDates
+    instructions: 'Name the dates or time periods to show the deadline and progress (max. 50 characters.)'
+    name: 'Milestone Date(s)'
+    searchable: true
+    settings:
+      charLimit: '50'
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  d2258f6a-704e-413b-8079-a7611a4139c4:
+    contentColumnType: text
+    fieldGroup: null
+    handle: milestoneName
+    instructions: 'Name this milestone (max. 50 characters)'
+    name: 'Milestone Name'
+    searchable: true
+    settings:
+      charLimit: '50'
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: milestone
+name: Milestone
+sortOrder: 1

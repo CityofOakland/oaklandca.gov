@@ -1,0 +1,14 @@
+handle: seo
+hasUrls: true
+name: SEO
+settings:
+  bucket: cao-94612
+  cfDistributionId: ''
+  expires: ''
+  keyId: $S3_API_KEY
+  region: us-west-2
+  secret: $S3_SECRET
+  subfolder: seo
+sortOrder: 11
+type: craft\awss3\Volume
+url: $S3_URL

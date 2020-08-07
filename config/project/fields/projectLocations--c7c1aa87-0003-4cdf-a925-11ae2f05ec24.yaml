@@ -1,0 +1,14 @@
+contentColumnType: string
+fieldGroup: 8e8ee56e-cdb8-4206-a3b5-c3aa0eb3a884
+handle: projectLocations
+instructions: ''
+name: 'Project Locations'
+searchable: true
+settings:
+  contentTable: '{{%matrixcontent_projectlocations}}'
+  maxBlocks: ''
+  minBlocks: ''
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

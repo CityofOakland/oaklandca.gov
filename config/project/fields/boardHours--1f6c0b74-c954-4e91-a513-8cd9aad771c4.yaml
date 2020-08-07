@@ -1,0 +1,16 @@
+contentColumnType: text
+fieldGroup: 34f2c44b-4710-447e-9c4e-71e80288b6e4
+handle: boardHours
+instructions: ''
+name: 'Board Hours'
+searchable: true
+settings:
+  charLimit: ''
+  code: ''
+  columnType: text
+  initialRows: '4'
+  multiline: '1'
+  placeholder: 'Enter the hours/days the board meets'
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

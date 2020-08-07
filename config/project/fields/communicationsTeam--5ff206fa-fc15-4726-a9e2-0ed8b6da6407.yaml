@@ -1,0 +1,14 @@
+contentColumnType: string
+fieldGroup: 27454cbc-e66b-4d88-bef3-32b87a69a715
+handle: communicationsTeam
+instructions: ''
+name: 'Communications Team'
+searchable: true
+settings:
+  contentTable: '{{%matrixcontent_communicationsteam}}'
+  maxBlocks: ''
+  minBlocks: ''
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

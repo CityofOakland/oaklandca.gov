@@ -1,0 +1,18 @@
+contentColumnType: string
+fieldGroup: 83c14444-efcf-4d13-a20a-56275fd18855
+handle: pageEvents
+instructions: 'Choose up to three (3) events to show on the page.'
+name: 'Page Events'
+searchable: true
+settings:
+  limit: '3'
+  localizeRelations: false
+  selectionLabel: ''
+  source: null
+  sources:
+    - 'calendar:2'
+  targetSiteId: null
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: Solspace\Calendar\FieldTypes\EventFieldType

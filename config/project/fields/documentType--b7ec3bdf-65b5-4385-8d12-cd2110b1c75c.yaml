@@ -1,0 +1,18 @@
+contentColumnType: string
+fieldGroup: 5bc46e53-a87c-4584-89aa-808cacedf461
+handle: documentType
+instructions: ''
+name: 'Document Type'
+searchable: true
+settings:
+  branchLimit: ''
+  limit: null
+  localizeRelations: false
+  selectionLabel: 'Add a type'
+  source: 'group:827f6570-faf8-42da-98e5-fffcb15e7cf6'
+  sources: '*'
+  targetSiteId: null
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Categories

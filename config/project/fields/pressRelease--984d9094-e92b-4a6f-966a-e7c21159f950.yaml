@@ -1,0 +1,26 @@
+contentColumnType: string
+fieldGroup: 27454cbc-e66b-4d88-bef3-32b87a69a715
+handle: pressRelease
+instructions: ''
+name: 'Press Release'
+searchable: true
+settings:
+  allowedKinds:
+    - pdf
+  defaultUploadLocationSource: 'volume:549d1a55-e94b-4c89-9cb9-b1fdac9d417d'
+  defaultUploadLocationSubpath: ''
+  limit: '1'
+  localizeRelations: false
+  restrictFiles: '1'
+  selectionLabel: 'Add a PDF'
+  singleUploadLocationSource: 'volume:5fab788c-0374-4ac2-945d-ba96ffd84669'
+  singleUploadLocationSubpath: ''
+  source: null
+  sources: '*'
+  targetSiteId: null
+  useSingleFolder: '1'
+  validateRelatedElements: ''
+  viewMode: list
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Assets

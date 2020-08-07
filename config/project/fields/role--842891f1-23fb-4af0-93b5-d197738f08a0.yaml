@@ -1,0 +1,16 @@
+contentColumnType: text
+fieldGroup: a8c82666-3295-4f90-b50b-67f2299847db
+handle: role
+instructions: 'What role does this person have in regard to the entry?'
+name: Role
+searchable: false
+settings:
+  charLimit: ''
+  code: ''
+  columnType: text
+  initialRows: '4'
+  multiline: ''
+  placeholder: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

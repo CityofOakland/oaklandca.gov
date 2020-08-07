@@ -1,0 +1,52 @@
+field: 4047207e-c317-47cc-825b-7e751cc4ad38
+fieldLayouts:
+  5e170125-2c9e-421f-93fa-4fb66353769b:
+    tabs:
+      -
+        fields:
+          6ad6bb8d-7fc5-4c49-8695-d7ea3c27da98:
+            required: true
+            sortOrder: 2
+          ebf1c335-ab50-4879-9bfa-72e22c1ceb98:
+            required: false
+            sortOrder: 1
+        name: Content
+        sortOrder: 1
+fields:
+  6ad6bb8d-7fc5-4c49-8695-d7ea3c27da98:
+    contentColumnType: text
+    fieldGroup: null
+    handle: number
+    instructions: 'Write the phone number in this format: (510) XXX-XXXX'
+    name: Number
+    searchable: true
+    settings:
+      charLimit: ''
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  ebf1c335-ab50-4879-9bfa-72e22c1ceb98:
+    contentColumnType: text
+    fieldGroup: null
+    handle: phoneNumberTitle
+    instructions: 'Write the name of the individual or agency for the phone number. For example: "Fax to the City Administrator", or "Call the Program Coordinator"'
+    name: 'Phone Number Title'
+    searchable: true
+    settings:
+      charLimit: ''
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: phoneNumber
+name: 'Phone Number'
+sortOrder: 2

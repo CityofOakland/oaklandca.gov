@@ -1,0 +1,16 @@
+contentColumnType: text
+fieldGroup: 27454cbc-e66b-4d88-bef3-32b87a69a715
+handle: missionStatement
+instructions: ''
+name: 'Mission Statement'
+searchable: true
+settings:
+  charLimit: ''
+  code: ''
+  columnType: text
+  initialRows: '4'
+  multiline: '1'
+  placeholder: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

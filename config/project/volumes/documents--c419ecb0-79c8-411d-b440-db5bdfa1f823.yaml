@@ -1,0 +1,14 @@
+handle: documents
+hasUrls: true
+name: Documents
+settings:
+  bucket: cao-94612
+  cfDistributionId: ''
+  expires: ''
+  keyId: $S3_API_KEY
+  region: us-west-2
+  secret: $S3_SECRET
+  subfolder: documents
+sortOrder: 10
+type: craft\awss3\Volume
+url: 'https://cao-94612.s3.amazonaws.com/'

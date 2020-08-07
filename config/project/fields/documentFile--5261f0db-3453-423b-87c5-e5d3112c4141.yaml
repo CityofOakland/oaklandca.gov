@@ -1,0 +1,34 @@
+contentColumnType: string
+fieldGroup: c8e06b4a-2f85-41db-94e3-101a5c02dd6d
+handle: documentFile
+instructions: 'Select the file that you need to add.'
+name: 'Document File'
+searchable: true
+settings:
+  allowedKinds:
+    - audio
+    - compressed
+    - excel
+    - illustrator
+    - image
+    - pdf
+    - powerpoint
+    - word
+    - xml
+  defaultUploadLocationSource: 'volume:1e78d0ad-2af1-4556-ab43-7b6c110e75b8'
+  defaultUploadLocationSubpath: ''
+  limit: '1'
+  localizeRelations: false
+  restrictFiles: '1'
+  selectionLabel: 'Add a file'
+  singleUploadLocationSource: 'volume:c419ecb0-79c8-411d-b440-db5bdfa1f823'
+  singleUploadLocationSubpath: ''
+  source: null
+  sources:
+    - 'volume:c419ecb0-79c8-411d-b440-db5bdfa1f823'
+  targetSiteId: null
+  useSingleFolder: '1'
+  viewMode: list
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Assets

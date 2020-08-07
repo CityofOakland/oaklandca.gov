@@ -1,0 +1,72 @@
+field: 415c75c4-9891-451d-b333-be4acb59c1fd
+fieldLayouts:
+  3101cd79-5a68-4647-8df4-743f760cee98:
+    tabs:
+      -
+        fields:
+          0a2f1442-0d83-4c78-abcb-b69b5862ddf9:
+            required: true
+            sortOrder: 2
+          40ab201a-4e31-4217-8e83-d92aa0b73567:
+            required: false
+            sortOrder: 3
+          e97175ac-0144-4961-9a33-a723d33e2910:
+            required: true
+            sortOrder: 1
+        name: Content
+        sortOrder: 1
+fields:
+  0a2f1442-0d83-4c78-abcb-b69b5862ddf9:
+    contentColumnType: text
+    fieldGroup: null
+    handle: description
+    instructions: 'This is the text that describes what the top text is enumerating.'
+    name: Description
+    searchable: false
+    settings:
+      charLimit: ''
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  40ab201a-4e31-4217-8e83-d92aa0b73567:
+    contentColumnType: text
+    fieldGroup: null
+    handle: footnote
+    instructions: 'Use this field to add an asterisk on the description to provide additional context to the fact.'
+    name: Footnote
+    searchable: false
+    settings:
+      charLimit: ''
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  e97175ac-0144-4961-9a33-a723d33e2910:
+    contentColumnType: text
+    fieldGroup: null
+    handle: topText
+    instructions: 'This is commonly the number used in the fact.'
+    name: 'Top Text'
+    searchable: false
+    settings:
+      charLimit: ''
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: fact
+name: Fact
+sortOrder: 1

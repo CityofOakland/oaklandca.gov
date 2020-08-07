@@ -1,0 +1,13 @@
+contentColumnType: datetime
+fieldGroup: a8c82666-3295-4f90-b50b-67f2299847db
+handle: termStart
+instructions: 'Choose the day this person is starting/started.'
+name: 'Term Start'
+searchable: true
+settings:
+  minuteIncrement: '30'
+  showDate: true
+  showTime: false
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Date

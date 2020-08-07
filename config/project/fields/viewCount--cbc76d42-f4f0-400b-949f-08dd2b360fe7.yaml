@@ -1,0 +1,11 @@
+contentColumnType: string
+fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521
+handle: viewCount
+instructions: ''
+name: 'View Count'
+searchable: false
+settings:
+  viewKey: ''
+translationKeyFormat: null
+translationMethod: none
+type: doublesecretagency\viewcount\fields\TotalViews

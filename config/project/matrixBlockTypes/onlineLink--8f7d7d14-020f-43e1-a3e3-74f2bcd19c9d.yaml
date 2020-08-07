@@ -1,0 +1,72 @@
+field: 4047207e-c317-47cc-825b-7e751cc4ad38
+fieldLayouts:
+  dbe5f13a-451e-4b09-94e1-530be31baf7b:
+    tabs:
+      -
+        fields:
+          18c27d2b-612d-49e3-87d4-9a61c6c85408:
+            required: false
+            sortOrder: 1
+          7332ba8f-a9ac-4e3b-b372-8b4724617ae4:
+            required: true
+            sortOrder: 2
+          fbdba36a-ff35-4883-a29d-e5194516c7ae:
+            required: true
+            sortOrder: 3
+        name: Content
+        sortOrder: 1
+fields:
+  18c27d2b-612d-49e3-87d4-9a61c6c85408:
+    contentColumnType: text
+    fieldGroup: null
+    handle: onlineTitle
+    instructions: 'Write a short description of this call to action.'
+    name: 'Online Title'
+    searchable: true
+    settings:
+      charLimit: ''
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  7332ba8f-a9ac-4e3b-b372-8b4724617ae4:
+    contentColumnType: text
+    fieldGroup: null
+    handle: linkText
+    instructions: 'This is text for the button. Use action words such as Apply, Pay, Report a Problem, Access, Request, Visit Online.'
+    name: 'Link Text'
+    searchable: true
+    settings:
+      charLimit: ''
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  fbdba36a-ff35-4883-a29d-e5194516c7ae:
+    contentColumnType: text
+    fieldGroup: null
+    handle: linkUrl
+    instructions: 'Write the complete URL for the link. Example: http://www.edd.ca.gov/'
+    name: 'Link URL'
+    searchable: true
+    settings:
+      charLimit: ''
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: onlineLink
+name: 'Online Link'
+sortOrder: 1

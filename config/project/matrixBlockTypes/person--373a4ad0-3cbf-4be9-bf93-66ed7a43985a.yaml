@@ -1,0 +1,116 @@
+field: 48c765be-2eab-42d5-bb78-461b32ba7d6a
+fieldLayouts:
+  722b0f85-1f87-491e-80aa-0574a0e915db:
+    tabs:
+      -
+        fields:
+          48927aca-a1ce-493e-bdea-1b83a4cecba4:
+            required: false
+            sortOrder: 4
+          7033f470-47c7-4511-98e2-4362a74a5ae2:
+            required: true
+            sortOrder: 1
+          ad2f47f3-4f9c-4614-b324-849026514e0e:
+            required: false
+            sortOrder: 2
+          c91184da-cdea-4aba-8978-7e13aa753a61:
+            required: false
+            sortOrder: 3
+          ea4fa3a2-5b40-47ae-8547-4e6e09e689f1:
+            required: false
+            sortOrder: 5
+        name: Content
+        sortOrder: 1
+fields:
+  48927aca-a1ce-493e-bdea-1b83a4cecba4:
+    contentColumnType: text
+    fieldGroup: null
+    handle: email
+    instructions: 'Adds a custom email address for this person'
+    name: Email
+    searchable: false
+    settings:
+      charLimit: ''
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  7033f470-47c7-4511-98e2-4362a74a5ae2:
+    contentColumnType: string
+    fieldGroup: null
+    handle: person
+    instructions: ''
+    name: Person
+    searchable: false
+    settings:
+      limit: '1'
+      localizeRelations: false
+      selectionLabel: 'Add an official'
+      source: null
+      sources:
+        - 'section:28881fc8-3e61-4fdb-a5ee-cce1bab725bf'
+        - 'section:07faad04-9ec4-4f68-9fe8-0ca20f189f8a'
+      targetSiteId: null
+      validateRelatedElements: '1'
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Entries
+  ad2f47f3-4f9c-4614-b324-849026514e0e:
+    contentColumnType: text
+    fieldGroup: null
+    handle: jobTitle
+    instructions: 'Adds a custom job title override for this person'
+    name: 'Job Title'
+    searchable: false
+    settings:
+      charLimit: ''
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  c91184da-cdea-4aba-8978-7e13aa753a61:
+    contentColumnType: text
+    fieldGroup: null
+    handle: officeDepartment
+    instructions: 'Adds a custom office or department title for this person'
+    name: Office/Department
+    searchable: false
+    settings:
+      charLimit: ''
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  ea4fa3a2-5b40-47ae-8547-4e6e09e689f1:
+    contentColumnType: text
+    fieldGroup: null
+    handle: phoneNumber
+    instructions: 'Adds a custom phone number for this person'
+    name: 'Phone Number'
+    searchable: true
+    settings:
+      charLimit: ''
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: person
+name: Person
+sortOrder: 1

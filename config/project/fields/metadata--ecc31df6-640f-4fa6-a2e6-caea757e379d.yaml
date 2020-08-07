@@ -1,0 +1,19 @@
+contentColumnType: text
+fieldGroup: 112bec4a-44ab-4d8b-afab-679c5e8bfb5c
+handle: metadata
+instructions: ''
+name: Metadata
+searchable: true
+settings:
+  facebookTabEnabled: ''
+  generalEnabledFields:
+    - seoPreview
+    - seoTitle
+    - seoDescription
+    - seoImage
+  generalTabEnabled: '1'
+  sitemapTabEnabled: ''
+  twitterTabEnabled: ''
+translationKeyFormat: null
+translationMethod: none
+type: nystudio107\seomatic\fields\SeoSettings

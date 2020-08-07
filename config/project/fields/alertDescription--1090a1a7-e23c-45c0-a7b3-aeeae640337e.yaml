@@ -1,0 +1,22 @@
+contentColumnType: text
+fieldGroup: 211c24f8-a046-4d59-a3ac-d8c51494ec3d
+handle: alertDescription
+instructions: ''
+name: 'Alert Description'
+searchable: true
+settings:
+  availableTransforms: '*'
+  availableVolumes: '*'
+  cleanupHtml: true
+  columnType: text
+  purifierConfig: ''
+  purifyHtml: '1'
+  redactorConfig: Basic.json
+  removeEmptyTags: '1'
+  removeInlineStyles: '1'
+  removeNbsp: '1'
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+translationKeyFormat: null
+translationMethod: none
+type: craft\redactor\Field

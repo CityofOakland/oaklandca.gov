@@ -1,0 +1,96 @@
+field: fd0c8e02-99b4-4ce5-ab89-b29cd0efc581
+fieldLayouts:
+  25ddc7d5-b636-4886-a112-15195c636ae7:
+    tabs:
+      -
+        fields:
+          5dc172d1-4954-444f-b558-6f9f388d0ac3:
+            required: false
+            sortOrder: 2
+          7897bf8b-9bea-4c58-8f04-aea29c95d7bf:
+            required: true
+            sortOrder: 3
+          ad4e3d36-752c-48da-bfbd-bd61e083119b:
+            required: true
+            sortOrder: 1
+        name: Content
+        sortOrder: 1
+fields:
+  5dc172d1-4954-444f-b558-6f9f388d0ac3:
+    contentColumnType: text
+    fieldGroup: null
+    handle: linkSetDescription
+    instructions: 'Use this optional field to provide context for the links you create in this section.'
+    name: 'Link Set Description'
+    searchable: false
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      cleanupHtml: true
+      columnType: text
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: 'Simple with Links.json'
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  7897bf8b-9bea-4c58-8f04-aea29c95d7bf:
+    contentColumnType: string
+    fieldGroup: null
+    handle: linkSet
+    instructions: ''
+    name: 'Link Set'
+    searchable: false
+    settings:
+      columns:
+        __assoc__:
+          -
+            - ac30e2e0-2f26-4b6c-a404-07b749af00dc
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 109ddbd1-80ea-471e-a6f9-ef77d84a0800
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_46_linkset}}'
+      fieldLayout: table
+      maxRows: ''
+      minRows: ''
+      propagationMethod: all
+      selectionLabel: ''
+      staticField: ''
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+  ad4e3d36-752c-48da-bfbd-bd61e083119b:
+    contentColumnType: text
+    fieldGroup: null
+    handle: heading
+    instructions: ''
+    name: Heading
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: linksWithDescriptions
+name: 'Links with Descriptions'
+sortOrder: 10

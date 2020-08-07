@@ -1,0 +1,26 @@
+enableVersioning: true
+handle: oaklandHomelessResponse
+name: 'Oakland Homeless Response'
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  c35d3a93-d7f4-4c37-ae3e-1b4d403311bb:
+    enabledByDefault: true
+    hasUrls: true
+    template: _layouts/_mini-site
+    uriFormat: '{slug}'
+structure:
+  maxLevels: 3
+  uid: 0ee5768d-c880-441c-ad65-57f53af85377
+type: structure

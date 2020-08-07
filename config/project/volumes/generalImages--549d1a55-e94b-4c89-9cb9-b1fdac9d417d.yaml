@@ -1,0 +1,29 @@
+fieldLayouts:
+  42f97d90-1640-4c11-9e6a-6a4ada81b7bb:
+    tabs:
+      -
+        fields:
+          fff5cf49-87e6-4751-9032-b4ca8136e237:
+            required: true
+            sortOrder: 1
+        name: Content
+        sortOrder: 1
+handle: generalImages
+hasUrls: true
+name: 'General Images'
+settings:
+  autoFocalPoint: ''
+  bucket: cao-94612
+  bucketSelectionMode: choose
+  cfDistributionId: ''
+  cfPrefix: ''
+  expires: ''
+  keyId: $S3_API_KEY
+  makeUploadsPublic: '1'
+  region: us-west-2
+  secret: $S3_SECRET
+  storageClass: ''
+  subfolder: general-images
+sortOrder: 1
+type: craft\awss3\Volume
+url: 'https://s3.us-west-2.amazonaws.com/cao-94612/'

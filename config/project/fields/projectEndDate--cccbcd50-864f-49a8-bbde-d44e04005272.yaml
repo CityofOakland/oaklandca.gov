@@ -1,0 +1,13 @@
+contentColumnType: datetime
+fieldGroup: 8e8ee56e-cdb8-4206-a3b5-c3aa0eb3a884
+handle: projectEndDate
+instructions: ''
+name: 'Project End Date'
+searchable: true
+settings:
+  minuteIncrement: '30'
+  showDate: true
+  showTime: false
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Date

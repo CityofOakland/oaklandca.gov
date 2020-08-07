@@ -1,0 +1,18 @@
+contentColumnType: string
+fieldGroup: 83c14444-efcf-4d13-a20a-56275fd18855
+handle: boardsCommissions
+instructions: 'Choose the board and commission pages to relate to this entry. Relationships help content surface in search. Relationships also help documents surface on index pages. '
+name: 'Boards & Commissions'
+searchable: true
+settings:
+  limit: ''
+  localizeRelations: false
+  selectionLabel: 'Add a board or commission'
+  source: null
+  sources:
+    - 'section:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f'
+  targetSiteId: null
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Entries

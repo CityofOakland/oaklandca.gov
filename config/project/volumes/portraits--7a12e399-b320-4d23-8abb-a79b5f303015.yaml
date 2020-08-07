@@ -1,0 +1,29 @@
+fieldLayouts:
+  ad61a558-eea0-469f-8c8f-f83aee44673b:
+    tabs:
+      -
+        fields:
+          fff5cf49-87e6-4751-9032-b4ca8136e237:
+            required: true
+            sortOrder: 1
+        name: Content
+        sortOrder: 1
+handle: portraits
+hasUrls: true
+name: Portraits
+settings:
+  autoFocalPoint: ''
+  bucket: cao-94612
+  bucketSelectionMode: choose
+  cfDistributionId: ''
+  cfPrefix: ''
+  expires: ''
+  keyId: $S3_API_KEY
+  makeUploadsPublic: '1'
+  region: us-west-2
+  secret: $S3_SECRET
+  storageClass: ''
+  subfolder: portraits
+sortOrder: 6
+type: craft\awss3\Volume
+url: 'https://cao-94612.s3.us-west-2.amazonaws.com'

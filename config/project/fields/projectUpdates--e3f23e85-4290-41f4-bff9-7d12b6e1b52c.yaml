@@ -1,0 +1,18 @@
+contentColumnType: string
+fieldGroup: 8e8ee56e-cdb8-4206-a3b5-c3aa0eb3a884
+handle: projectUpdates
+instructions: 'Include any news items you wish to display on this page.'
+name: 'Project Updates'
+searchable: true
+settings:
+  limit: ''
+  localizeRelations: false
+  selectionLabel: 'Add an update'
+  source: null
+  sources:
+    - 'section:983c9f6f-9251-4fd3-91e1-b598eccc6a1a'
+  targetSiteId: null
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Entries

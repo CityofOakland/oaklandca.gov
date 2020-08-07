@@ -1,0 +1,16 @@
+contentColumnType: text
+fieldGroup: a2015bc8-9d3a-4f8d-a180-1ddc7ebd3087
+handle: alertLabel
+instructions: 'Label this alert (e.g., Warning, Important, Urgent, Info)'
+name: 'Alert Label'
+searchable: true
+settings:
+  charLimit: ''
+  code: ''
+  columnType: text
+  initialRows: '4'
+  multiline: ''
+  placeholder: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

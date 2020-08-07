@@ -1,0 +1,87 @@
+field: ff148937-9066-4578-8eb1-56090c97b181
+fieldLayouts:
+  4131573e-9016-47f4-bff6-b499fc6bae82:
+    tabs:
+      -
+        fields:
+          23389191-2978-49d8-a70e-6da12c8aeab0:
+            required: false
+            sortOrder: 1
+          d513ffa1-20e6-405d-845e-b4a8fd041461:
+            required: false
+            sortOrder: 3
+          fb2b9f42-74a0-45c4-be6e-d3d69c87557e:
+            required: false
+            sortOrder: 2
+        name: Content
+        sortOrder: 1
+fields:
+  23389191-2978-49d8-a70e-6da12c8aeab0:
+    contentColumnType: text
+    fieldGroup: null
+    handle: column1Cell
+    instructions: ''
+    name: 'Column 1 Cell'
+    searchable: true
+    settings:
+      availableTransforms: ''
+      availableVolumes: '*'
+      cleanupHtml: true
+      columnType: text
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: 'Basic with Links.json'
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: true
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  d513ffa1-20e6-405d-845e-b4a8fd041461:
+    contentColumnType: text
+    fieldGroup: null
+    handle: column3Cell
+    instructions: ''
+    name: 'Column 3 Cell'
+    searchable: true
+    settings:
+      availableTransforms: ''
+      availableVolumes: '*'
+      cleanupHtml: true
+      columnType: text
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: 'Basic with Links.json'
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: true
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  fb2b9f42-74a0-45c4-be6e-d3d69c87557e:
+    contentColumnType: text
+    fieldGroup: null
+    handle: column2Cell
+    instructions: ''
+    name: 'Column 2 Cell'
+    searchable: true
+    settings:
+      availableTransforms: ''
+      availableVolumes: '*'
+      cleanupHtml: true
+      columnType: text
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: 'Basic with Links.json'
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: true
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field

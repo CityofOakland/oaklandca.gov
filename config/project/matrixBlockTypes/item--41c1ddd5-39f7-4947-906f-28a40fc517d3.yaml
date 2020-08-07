@@ -1,0 +1,115 @@
+field: 4060bfe6-8574-4b8f-bb64-ea670ce40748
+fieldLayouts:
+  c69addaf-60d0-4c9e-9823-8f87833450fc:
+    tabs:
+      -
+        fields:
+          531953e0-f3f1-4dc6-9bc3-54c0fef3f548:
+            required: true
+            sortOrder: 2
+          6398b4d1-9f28-41eb-8f34-7b3d708726db:
+            required: true
+            sortOrder: 3
+          686ccde2-8dd2-4557-83c2-ed0f1b860e17:
+            required: true
+            sortOrder: 1
+          6e01dd35-4145-468a-9467-127523606164:
+            required: true
+            sortOrder: 5
+          d37e0e4d-02a7-4d59-93ce-013ebbd27610:
+            required: true
+            sortOrder: 4
+        name: Content
+        sortOrder: 1
+fields:
+  531953e0-f3f1-4dc6-9bc3-54c0fef3f548:
+    contentColumnType: text
+    fieldGroup: null
+    handle: itemTitle
+    instructions: ''
+    name: 'Item Title'
+    searchable: true
+    settings:
+      charLimit: ''
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  6398b4d1-9f28-41eb-8f34-7b3d708726db:
+    contentColumnType: string
+    fieldGroup: null
+    handle: image
+    instructions: ''
+    name: Image
+    searchable: true
+    settings:
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:549d1a55-e94b-4c89-9cb9-b1fdac9d417d'
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      restrictFiles: '1'
+      selectionLabel: 'Add an award image'
+      singleUploadLocationSource: 'volume:549d1a55-e94b-4c89-9cb9-b1fdac9d417d'
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: '1'
+      validateRelatedElements: '1'
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  686ccde2-8dd2-4557-83c2-ed0f1b860e17:
+    contentColumnType: datetime
+    fieldGroup: null
+    handle: itemDate
+    instructions: ''
+    name: 'Item Date'
+    searchable: false
+    settings:
+      minuteIncrement: '30'
+      showDate: true
+      showTime: false
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Date
+  6e01dd35-4145-468a-9467-127523606164:
+    contentColumnType: string(255)
+    fieldGroup: null
+    handle: webUrl
+    instructions: ''
+    name: 'Web URL'
+    searchable: false
+    settings:
+      maxLength: '255'
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Url
+  d37e0e4d-02a7-4d59-93ce-013ebbd27610:
+    contentColumnType: text
+    fieldGroup: null
+    handle: summary
+    instructions: ''
+    name: Summary
+    searchable: true
+    settings:
+      charLimit: ''
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: '1'
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: item
+name: Item
+sortOrder: 1

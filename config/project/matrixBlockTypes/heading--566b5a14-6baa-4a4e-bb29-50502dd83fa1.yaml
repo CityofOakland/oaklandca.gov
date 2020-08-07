@@ -1,0 +1,33 @@
+field: fd0c8e02-99b4-4ce5-ab89-b29cd0efc581
+fieldLayouts:
+  ed0bbfe0-3836-4eba-8703-96936a0eb5f7:
+    tabs:
+      -
+        fields:
+          8271e244-cc0e-44cd-90b0-7cc43801ad59:
+            required: true
+            sortOrder: 1
+        name: Content
+        sortOrder: 1
+fields:
+  8271e244-cc0e-44cd-90b0-7cc43801ad59:
+    contentColumnType: text
+    fieldGroup: null
+    handle: text
+    instructions: 'This will be a large heading for separating thoughts within your body.'
+    name: __blank__
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: heading
+name: Heading
+sortOrder: 1

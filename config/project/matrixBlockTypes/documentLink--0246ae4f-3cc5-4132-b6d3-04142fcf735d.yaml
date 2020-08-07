@@ -1,0 +1,75 @@
+field: 4047207e-c317-47cc-825b-7e751cc4ad38
+fieldLayouts:
+  03ea29e2-c637-49cf-bd11-d404ab05cca5:
+    tabs:
+      -
+        fields:
+          4c46efcc-d38f-4f25-8873-d8c0837babd9:
+            required: false
+            sortOrder: 1
+          afb94d9f-c334-44c9-a37a-e71360270610:
+            required: true
+            sortOrder: 2
+          e51016cb-464b-4bd1-b32c-ace827d1b9dc:
+            required: true
+            sortOrder: 3
+        name: Content
+        sortOrder: 1
+fields:
+  4c46efcc-d38f-4f25-8873-d8c0837babd9:
+    contentColumnType: text
+    fieldGroup: null
+    handle: documentLabel
+    instructions: 'Write the full name of the document.'
+    name: 'Document Label'
+    searchable: true
+    settings:
+      charLimit: ''
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  afb94d9f-c334-44c9-a37a-e71360270610:
+    contentColumnType: text
+    fieldGroup: null
+    handle: buttonLabel
+    instructions: 'Write an action word such as Download or Access to fit on the button.'
+    name: 'Button Label'
+    searchable: true
+    settings:
+      charLimit: '20'
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  e51016cb-464b-4bd1-b32c-ace827d1b9dc:
+    contentColumnType: string
+    fieldGroup: null
+    handle: documentLink
+    instructions: 'Select the document to link to this CTA button.'
+    name: 'Document Link'
+    searchable: true
+    settings:
+      limit: '1'
+      localizeRelations: false
+      selectionLabel: 'Add a document'
+      source: null
+      sources:
+        - 'section:9da43fd8-c505-4d19-9486-e0cb669c568a'
+        - 'section:8b7c4e26-9aab-4c5d-874e-aee151107de3'
+      targetSiteId: null
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Entries
+handle: documentLink
+name: 'Document Link'
+sortOrder: 4

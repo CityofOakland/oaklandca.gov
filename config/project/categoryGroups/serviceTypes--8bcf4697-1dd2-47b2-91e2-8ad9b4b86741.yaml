@@ -1,0 +1,20 @@
+fieldLayouts:
+  aa57cc98-0a36-4294-a711-d0916c509ae4:
+    tabs:
+      -
+        fields:
+          58eda166-7a65-4fb6-8f7d-c6590b0591ae:
+            required: false
+            sortOrder: 1
+        name: Content
+        sortOrder: 1
+handle: serviceTypes
+name: 'Service Types'
+siteSettings:
+  c35d3a93-d7f4-4c37-ae3e-1b4d403311bb:
+    hasUrls: true
+    template: services/_category
+    uriFormat: 'services/category/{slug}'
+structure:
+  maxLevels: 1
+  uid: 0c5ce80e-36f6-4ed7-b737-5ab9cca716dc

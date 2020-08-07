@@ -1,0 +1,16 @@
+enableVersioning: true
+handle: volunteers
+name: Volunteers
+previewTargets:
+  -
+    label: 'Primary entry page'
+    refresh: '1'
+    urlFormat: '{url}'
+propagationMethod: all
+siteSettings:
+  c35d3a93-d7f4-4c37-ae3e-1b4d403311bb:
+    enabledByDefault: true
+    hasUrls: true
+    template: volunteers/_entry
+    uriFormat: 'volunteers/{slug}'
+type: channel

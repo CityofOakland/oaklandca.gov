@@ -1,0 +1,17 @@
+contentColumnType: string(200)
+fieldGroup: 211c24f8-a046-4d59-a3ac-d8c51494ec3d
+handle: alertHeading
+instructions: ''
+name: 'Alert Heading'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: 50
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: ''
+  placeholder: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

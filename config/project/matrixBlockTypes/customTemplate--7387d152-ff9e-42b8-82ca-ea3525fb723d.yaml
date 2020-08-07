@@ -1,0 +1,27 @@
+field: fd0c8e02-99b4-4ce5-ab89-b29cd0efc581
+fieldLayouts:
+  be600bf9-8d6e-4a13-9a5a-2f58593ee956:
+    tabs:
+      -
+        fields:
+          37b9cad8-04be-41c4-938a-c869de41bfc6:
+            required: true
+            sortOrder: 1
+        name: Content
+        sortOrder: 1
+fields:
+  37b9cad8-04be-41c4-938a-c869de41bfc6:
+    contentColumnType: string
+    fieldGroup: null
+    handle: templateSelect
+    instructions: 'Select the template partial that is to be used in your custom layout.'
+    name: 'Template Select'
+    searchable: false
+    settings:
+      limitToSubfolder: _partials/_content-builder/_blocks/_custom-elements/
+    translationKeyFormat: null
+    translationMethod: none
+    type: superbig\templateselect\fields\TemplateSelectField
+handle: customTemplate
+name: 'Custom Template'
+sortOrder: 16

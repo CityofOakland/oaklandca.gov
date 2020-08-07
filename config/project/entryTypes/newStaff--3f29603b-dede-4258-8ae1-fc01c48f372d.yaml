@@ -1,0 +1,117 @@
+fieldLayouts:
+  fde26ba6-c177-4a45-ab8f-b649df04dcae:
+    tabs:
+      -
+        elements:
+          -
+            instructions: null
+            label: ''
+            type: craft\fieldlayoutelements\EntryTitleField
+          -
+            fieldUid: 6c28ddf9-1938-489c-ad36-75d555e50269
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 01d73fd7-5170-4523-8658-02c344e3ff55
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 4d6dd644-455e-4186-8d05-a00079622246
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: e3a53ca0-960e-4ce6-933b-b3613bd64d7a
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 1b7fc839-7de9-4717-b41d-d74bfa40b5c8
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 736bfdbe-8ec1-4b3d-bd17-6dc825c56855
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 5e5aad16-6bdc-4d3e-adfd-75147a323b78
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 2fb76e53-8619-4e29-b609-c984c390de9a
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: b34a0436-278d-4bb7-a7e8-729da1db7c4e
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 9fcc72cc-184c-467a-a45f-a154ba8a01d2
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: People
+        sortOrder: 1
+      -
+        elements:
+          -
+            fieldUid: 8a89416e-010d-4a83-a254-dafb9b29ce26
+            required: true
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 770f79c9-6a08-4685-94fa-2dfd804f3758
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 54b48d39-e6a7-4d50-9cf7-91ce11c798ee
+            required: true
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: a8f10940-f4f7-4c31-9bc7-b3798289f357
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: f9ec1965-4721-44e2-b551-069ae06c54f3
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: a7cd6f1e-a5c0-47fc-9080-1bc5ace85242
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 341595b4-52a8-432f-b327-5fbc3a4289a8
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: b34b92b7-9d4a-40f5-9e55-a2ccc8f764ad
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 28e53a14-23f2-492a-be43-e6e83bca9aa1
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 19443cdb-77c5-4c3c-ac94-a8530dc39587
+            required: true
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 41124ab0-0e88-44c6-b4f2-f002669d8133
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: 'New Staff Fields'
+        sortOrder: 2
+      -
+        elements:
+          -
+            fieldUid: ecc31df6-640f-4fa6-a2e6-caea757e379d
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: cbc76d42-f4f0-400b-949f-08dd2b360fe7
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: SEO
+        sortOrder: 3
+handle: newStaff
+hasTitleField: false
+name: 'New Staff'
+section: 07faad04-9ec4-4f68-9fe8-0ca20f189f8a
+sortOrder: 1
+titleFormat: '{{ object.firstName ??? object.staffImportGivenName }} {{ object.lastName ??? object.staffImportSurname }}'

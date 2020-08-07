@@ -1,0 +1,48 @@
+field: 5d92130f-648c-4519-ad6d-f68508ca2a2f
+fieldLayouts:
+  36901763-c86a-4bda-9d82-c7a57b5aa5fc:
+    tabs:
+      -
+        fields:
+          519a6fee-ee4d-479c-a823-a3501a9adfbf:
+            required: true
+            sortOrder: 1
+          ea37cb8f-52f5-4b75-a1f0-a6a5c5581093:
+            required: true
+            sortOrder: 2
+        name: Content
+        sortOrder: 1
+fields:
+  519a6fee-ee4d-479c-a823-a3501a9adfbf:
+    contentColumnType: text
+    fieldGroup: null
+    handle: agencyName
+    instructions: ''
+    name: 'Agency Name'
+    searchable: true
+    settings:
+      charLimit: ''
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  ea37cb8f-52f5-4b75-a1f0-a6a5c5581093:
+    contentColumnType: string(255)
+    fieldGroup: null
+    handle: agencyLink
+    instructions: ''
+    name: 'Agency Link'
+    searchable: true
+    settings:
+      maxLength: '255'
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Url
+handle: agency
+name: Agency
+sortOrder: 1
