@@ -1,9 +1,9 @@
 {% extends '_layout.twig' %}
 
 {% block content %}
-  <div class="banner leading-normal">
+  <div class="leading-normal banner">
     <div class="container">
-      <h1 class="text-xxxl md:text-xxxxl font-bold mb-0">{{ entry.title | replace({' Index': ''}) }}</h1>
+      <h1 class="mb-0 font-bold text-xxxl md:text-xxxxl">{{ entry.title | replace({' Index': ''}) }}</h1>
       {% if entry.leadIn %}
         <p class="mt-8 mb-0">{{ entry.leadIn }}</p>
       {% endif %}
@@ -17,13 +17,14 @@
         linkText: "View Staff Directory",
         linkUrl: "/staff/",
       } %}
-      <div class="card-grid grid-equal-height profile-cards mt-12">
+      <div class="mt-12 card-grid grid-equal-height profile-cards">
         {% for entry in craft.entries.section('officials').all() %}
           {% include '_partials/_elements/_profile-cards.twig' with {
             photo: entry.portrait.one,
             name: entry.groupHeadName,
             jobTitle: entry.title,
-            url: entry.redirectUrl ?? entry.url ?? ''
+            url: entry.redirectUrl ?? entry.url ?? '',
+            icon: "user"
           } %}
         {% endfor %}
       </div>

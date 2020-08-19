@@ -57,13 +57,14 @@
             linkUrl: "/officials",
             buttonBright: true
           } %}
-          <div class="card-grid grid-equal-height profile-cards mt-12">
+          <div class="mt-12 card-grid grid-equal-height profile-cards">
             {% for entry in entry.pageOfficials.all() %}
               {% include '_partials/_elements/_profile-cards.twig' with {
                 photo: entry.portrait.one,
                 name: entry.groupHeadName,
                 jobTitle: entry.title,
-                url: entry.redirectUrl ?? entry.url ?? ''
+                url: entry.redirectUrl ?? entry.url ?? '',
+                icon: "user"
               } %}
             {% endfor %}
           </div>
