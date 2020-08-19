@@ -1,0 +1,18 @@
+contentColumnType: string
+fieldGroup: 83c14444-efcf-4d13-a20a-56275fd18855
+handle: pageNews
+instructions: 'Choose up to three (3) news items to show on the page.'
+name: 'Page News'
+searchable: true
+settings:
+  limit: '3'
+  localizeRelations: false
+  selectionLabel: 'Add a news entry'
+  source: null
+  sources:
+    - 'section:983c9f6f-9251-4fd3-91e1-b598eccc6a1a'
+  targetSiteId: null
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Entries

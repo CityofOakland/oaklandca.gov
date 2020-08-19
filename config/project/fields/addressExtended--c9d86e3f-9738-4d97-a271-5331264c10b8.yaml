@@ -1,0 +1,19 @@
+contentColumnType: text
+fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521
+handle: addressExtended
+instructions: 'Enter any additional information about the address here, such as floor/suite number, intercom code, etc.'
+name: 'Address Extended'
+searchable: true
+settings:
+  availableTransforms: '*'
+  availableVolumes: '*'
+  columnType: text
+  purifierConfig: ''
+  purifyHtml: '1'
+  redactorConfig: ''
+  removeEmptyTags: '1'
+  removeInlineStyles: '1'
+  removeNbsp: '1'
+translationKeyFormat: null
+translationMethod: none
+type: craft\redactor\Field

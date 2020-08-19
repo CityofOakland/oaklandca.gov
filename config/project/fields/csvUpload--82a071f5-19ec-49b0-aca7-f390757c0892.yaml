@@ -1,0 +1,28 @@
+contentColumnType: string
+fieldGroup: baa859d6-a861-4617-bb79-73d0982ee25c
+handle: csvUpload
+instructions: ''
+name: 'CSV Upload'
+searchable: false
+settings:
+  allowedKinds:
+    - excel
+  defaultUploadLocationSource: 'volume:549d1a55-e94b-4c89-9cb9-b1fdac9d417d'
+  defaultUploadLocationSubpath: ''
+  limit: '1'
+  localizeRelations: false
+  restrictFiles: '1'
+  selectionLabel: 'Add a CSV'
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  singleUploadLocationSource: 'volume:58c3bf22-aa23-441f-bd65-acf677638ae6'
+  singleUploadLocationSubpath: ''
+  source: null
+  sources: '*'
+  targetSiteId: null
+  useSingleFolder: true
+  validateRelatedElements: ''
+  viewMode: list
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Assets

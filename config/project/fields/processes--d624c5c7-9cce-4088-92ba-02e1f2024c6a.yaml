@@ -1,0 +1,18 @@
+contentColumnType: string
+fieldGroup: 83c14444-efcf-4d13-a20a-56275fd18855
+handle: processes
+instructions: 'Choose the processes that relate to this page. Relationships help content surface in search. Relationships also help documents surface on index pages. '
+name: Processes
+searchable: true
+settings:
+  limit: ''
+  localizeRelations: false
+  selectionLabel: 'Add a process'
+  source: null
+  sources:
+    - 'section:92f0f749-ed5b-4acc-aa15-6340f6e25791'
+  targetSiteId: null
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Entries

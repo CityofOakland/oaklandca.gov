@@ -1,0 +1,21 @@
+fieldLayouts:
+  95c72197-cb30-4f10-b7eb-93e9bd6db998:
+    tabs:
+      -
+        elements:
+          -
+            instructions: null
+            label: Title
+            type: craft\fieldlayoutelements\EntryTitleField
+          -
+            fieldUid: 82a071f5-19ec-49b0-aca7-f390757c0892
+            required: true
+            type: craft\fieldlayoutelements\CustomField
+        name: Content
+        sortOrder: 1
+handle: datasets
+hasTitleField: true
+name: Datasets
+section: 1ab8269c-e225-472e-b5e1-1504af7a1622
+sortOrder: 1
+titleFormat: ''

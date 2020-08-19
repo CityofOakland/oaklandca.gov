@@ -1,0 +1,21 @@
+siteUid: null
+sortOrder: 7
+template: /calendar-demo/week
+uriParts:
+  - calendar-demo/week/calendar/
+  -
+    - slug
+    - '[^\/]+'
+  - /
+  -
+    - year
+    - '\d{4}'
+  - /
+  -
+    - month
+    - '(?:0?[1-9]|1[012])'
+  - /
+  -
+    - day
+    - '(?:0?[1-9]|[12][0-9]|3[01])'
+uriPattern: 'calendar-demo/week/calendar/<slug:[^\/]+>/<year:\d{4}>/<month:(?:0?[1-9]|1[012])>/<day:(?:0?[1-9]|[12][0-9]|3[01])>'

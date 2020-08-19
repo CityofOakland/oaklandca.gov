@@ -1,0 +1,153 @@
+contentColumnType: text
+fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521
+handle: ctaButton
+instructions: 'Choose an item you want to link to with this CTA Button'
+name: 'CTA Button'
+searchable: true
+settings:
+  allowCustomText: '1'
+  allowTarget: '1'
+  defaultText: ''
+  selectLinkText: ''
+  types:
+    __assoc__:
+      -
+        - fruitstudios\linkit\models\Email
+        -
+          __assoc__:
+            -
+              - enabled
+              - '1'
+            -
+              - customLabel
+              - ''
+      -
+        - fruitstudios\linkit\models\Phone
+        -
+          __assoc__:
+            -
+              - enabled
+              - ''
+            -
+              - customLabel
+              - ''
+      -
+        - fruitstudios\linkit\models\Url
+        -
+          __assoc__:
+            -
+              - enabled
+              - '1'
+            -
+              - customLabel
+              - ''
+      -
+        - fruitstudios\linkit\models\Twitter
+        -
+          __assoc__:
+            -
+              - enabled
+              - ''
+            -
+              - customLabel
+              - ''
+      -
+        - fruitstudios\linkit\models\Facebook
+        -
+          __assoc__:
+            -
+              - enabled
+              - ''
+            -
+              - customLabel
+              - ''
+      -
+        - fruitstudios\linkit\models\Instagram
+        -
+          __assoc__:
+            -
+              - enabled
+              - ''
+            -
+              - customLabel
+              - ''
+      -
+        - fruitstudios\linkit\models\LinkedIn
+        -
+          __assoc__:
+            -
+              - enabled
+              - ''
+            -
+              - customLabel
+              - ''
+      -
+        - fruitstudios\linkit\models\Entry
+        -
+          __assoc__:
+            -
+              - enabled
+              - '1'
+            -
+              - customLabel
+              - ''
+            -
+              - sources
+              - '*'
+            -
+              - customSelectionLabel
+              - ''
+      -
+        - fruitstudios\linkit\models\Category
+        -
+          __assoc__:
+            -
+              - enabled
+              - ''
+            -
+              - customLabel
+              - ''
+            -
+              - sources
+              - '*'
+            -
+              - customSelectionLabel
+              - ''
+      -
+        - fruitstudios\linkit\models\Asset
+        -
+          __assoc__:
+            -
+              - enabled
+              - ''
+            -
+              - customLabel
+              - ''
+            -
+              - sources
+              - '*'
+            -
+              - customSelectionLabel
+              - ''
+      -
+        - fruitstudios\linkit\models\User
+        -
+          __assoc__:
+            -
+              - enabled
+              - ''
+            -
+              - customLabel
+              - ''
+            -
+              - sources
+              - '*'
+            -
+              - customSelectionLabel
+              - ''
+            -
+              - userPath
+              - ''
+translationKeyFormat: null
+translationMethod: none
+type: fruitstudios\linkit\fields\LinkitField

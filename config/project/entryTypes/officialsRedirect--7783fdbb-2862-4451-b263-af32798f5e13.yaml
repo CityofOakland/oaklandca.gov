@@ -1,0 +1,41 @@
+fieldLayouts:
+  90acc5c7-0b36-4c64-af3b-40e34b0409b4:
+    tabs:
+      -
+        elements:
+          -
+            instructions: null
+            label: Title
+            type: craft\fieldlayoutelements\EntryTitleField
+          -
+            fieldUid: ddb61f35-83f1-46d4-904b-da525acf9e7c
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 211069ad-7abf-4b4d-a040-1b26ddb7a816
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 1b7fc839-7de9-4717-b41d-d74bfa40b5c8
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 93eaa329-904e-4a23-9047-4decf3d47cac
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: Content
+        sortOrder: 1
+      -
+        elements:
+          -
+            fieldUid: ecc31df6-640f-4fa6-a2e6-caea757e379d
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: SEO
+        sortOrder: 2
+handle: officialsRedirect
+hasTitleField: true
+name: 'Officials Redirect'
+section: 28881fc8-3e61-4fdb-a5ee-cce1bab725bf
+sortOrder: 2
+titleFormat: ''

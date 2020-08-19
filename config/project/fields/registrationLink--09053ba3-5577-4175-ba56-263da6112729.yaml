@@ -1,0 +1,12 @@
+contentColumnType: string(255)
+fieldGroup: 7a44f3bc-fbe1-424a-a4ea-6bb6f3528d75
+handle: registrationLink
+instructions: 'Enter the URL for an online registration page (Eg., Eventbrite) for your visitors to sign up for this event.'
+name: 'Registration Link'
+searchable: true
+settings:
+  maxLength: '255'
+  placeholder: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Url

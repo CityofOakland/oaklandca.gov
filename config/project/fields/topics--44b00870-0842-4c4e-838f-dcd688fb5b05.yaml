@@ -1,0 +1,18 @@
+contentColumnType: string
+fieldGroup: 83c14444-efcf-4d13-a20a-56275fd18855
+handle: topics
+instructions: 'Choose the topic landing pages to relate to this entry.'
+name: Topics
+searchable: true
+settings:
+  limit: ''
+  localizeRelations: false
+  selectionLabel: 'Add a topic'
+  source: null
+  sources:
+    - 'section:70778563-6dac-453d-a4b0-5121f3a614b7'
+  targetSiteId: null
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Entries

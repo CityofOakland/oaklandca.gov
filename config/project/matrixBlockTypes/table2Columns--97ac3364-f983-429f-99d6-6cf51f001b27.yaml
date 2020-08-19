@@ -1,0 +1,133 @@
+field: fd0c8e02-99b4-4ce5-ab89-b29cd0efc581
+fieldLayouts:
+  394b80da-75cf-4742-9f34-c098759900bc:
+    tabs:
+      -
+        fields:
+          42276684-be78-4449-b3e9-8eeb42ad49ba:
+            required: true
+            sortOrder: 5
+          734ed009-6dc6-4803-93b5-593791135810:
+            required: true
+            sortOrder: 1
+          bdacb1a0-9bde-46d5-87a1-ac5a7171fa9e:
+            required: true
+            sortOrder: 2
+          d99bfa25-1c4b-44f3-9355-2816615f5264:
+            required: false
+            sortOrder: 4
+          e287f156-7373-4131-bd1f-e746e20d2e99:
+            required: false
+            sortOrder: 3
+        name: Content
+        sortOrder: 1
+fields:
+  42276684-be78-4449-b3e9-8eeb42ad49ba:
+    contentColumnType: string
+    fieldGroup: null
+    handle: table
+    instructions: ''
+    name: Table
+    searchable: false
+    settings:
+      columns:
+        __assoc__:
+          -
+            - 1df2afd1-1725-4190-ae6d-b40882c360af
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 7b65742c-194e-4096-8efb-75f75936b03d
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_30_table}}'
+      fieldLayout: table
+      maxRows: ''
+      minRows: '1'
+      propagationMethod: all
+      selectionLabel: ''
+      staticField: ''
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+  734ed009-6dc6-4803-93b5-593791135810:
+    contentColumnType: text
+    fieldGroup: null
+    handle: column1Heading
+    instructions: ''
+    name: 'Column 1 Heading'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  bdacb1a0-9bde-46d5-87a1-ac5a7171fa9e:
+    contentColumnType: text
+    fieldGroup: null
+    handle: column2Heading
+    instructions: ''
+    name: 'Column 2 Heading'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  d99bfa25-1c4b-44f3-9355-2816615f5264:
+    contentColumnType: smallint(2)
+    fieldGroup: null
+    handle: column2Width
+    instructions: ''
+    name: 'Column 2 Width'
+    searchable: false
+    settings:
+      decimals: 0
+      defaultValue: '50'
+      max: '99'
+      min: '1'
+      prefix: ''
+      size: null
+      suffix: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Number
+  e287f156-7373-4131-bd1f-e746e20d2e99:
+    contentColumnType: smallint(2)
+    fieldGroup: null
+    handle: column1Width
+    instructions: ''
+    name: 'Column 1 Width'
+    searchable: false
+    settings:
+      decimals: 0
+      defaultValue: '50'
+      max: '99'
+      min: '1'
+      prefix: ''
+      size: null
+      suffix: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Number
+handle: table2Columns
+name: '2 Columns'
+sortOrder: 5

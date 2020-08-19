@@ -1,0 +1,19 @@
+contentColumnType: text
+fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521
+handle: summary
+instructions: 'Summarize the entry with a one to two brief sentences.'
+name: Summary
+searchable: true
+settings:
+  availableTransforms: '*'
+  availableVolumes: ''
+  columnType: text
+  purifierConfig: ''
+  purifyHtml: '1'
+  redactorConfig: Simple.json
+  removeEmptyTags: '1'
+  removeInlineStyles: '1'
+  removeNbsp: '1'
+translationKeyFormat: null
+translationMethod: none
+type: craft\redactor\Field

@@ -1,0 +1,10 @@
+handle: eventTypes
+name: 'Event Types'
+siteSettings:
+  c35d3a93-d7f4-4c37-ae3e-1b4d403311bb:
+    hasUrls: false
+    template: null
+    uriFormat: null
+structure:
+  maxLevels: 1
+  uid: b4e9ab1c-aa42-46f9-a679-898119f39e8d

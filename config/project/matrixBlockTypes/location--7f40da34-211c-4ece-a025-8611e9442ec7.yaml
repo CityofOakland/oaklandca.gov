@@ -1,0 +1,156 @@
+field: c7c1aa87-0003-4cdf-a925-11ae2f05ec24
+fieldLayouts:
+  99496d84-73a6-4699-8070-1945a27235f1:
+    tabs:
+      -
+        fields:
+          4c0f9e7c-fe6a-47d0-b8c9-17e8a34a39f2:
+            required: true
+            sortOrder: 1
+          7e17b706-c00f-4f94-84df-b0e91247051f:
+            required: false
+            sortOrder: 2
+        name: Content
+        sortOrder: 1
+fields:
+  4c0f9e7c-fe6a-47d0-b8c9-17e8a34a39f2:
+    contentColumnType: string
+    fieldGroup: null
+    handle: address
+    instructions: ''
+    name: Address
+    searchable: false
+    settings:
+      dragPinDefault: '1'
+      dragPinLatitude: '37.80527735793168'
+      dragPinLongitude: '-122.27239626522066'
+      dragPinZoom: '18'
+      layout:
+        __assoc__:
+          -
+            - street1
+            -
+              __assoc__:
+                -
+                  - width
+                  - 100
+                -
+                  - enable
+                  - 1
+                -
+                  - position
+                  - 1
+          -
+            - street2
+            -
+              __assoc__:
+                -
+                  - width
+                  - 100
+                -
+                  - enable
+                  - 1
+                -
+                  - position
+                  - 2
+          -
+            - city
+            -
+              __assoc__:
+                -
+                  - width
+                  - 50
+                -
+                  - enable
+                  - 1
+                -
+                  - position
+                  - 3
+          -
+            - state
+            -
+              __assoc__:
+                -
+                  - width
+                  - 15
+                -
+                  - enable
+                  - 1
+                -
+                  - position
+                  - 4
+          -
+            - zip
+            -
+              __assoc__:
+                -
+                  - width
+                  - 35
+                -
+                  - enable
+                  - 1
+                -
+                  - position
+                  - 5
+          -
+            - country
+            -
+              __assoc__:
+                -
+                  - width
+                  - 100
+                -
+                  - enable
+                  - 1
+                -
+                  - position
+                  - 6
+          -
+            - lat
+            -
+              __assoc__:
+                -
+                  - width
+                  - 50
+                -
+                  - enable
+                  - 1
+                -
+                  - position
+                  - 7
+          -
+            - lng
+            -
+              __assoc__:
+                -
+                  - width
+                  - 50
+                -
+                  - enable
+                  - 1
+                -
+                  - position
+                  - 8
+    translationKeyFormat: null
+    translationMethod: none
+    type: doublesecretagency\smartmap\fields\Address
+  7e17b706-c00f-4f94-84df-b0e91247051f:
+    contentColumnType: text
+    fieldGroup: null
+    handle: description
+    instructions: ''
+    name: Description
+    searchable: true
+    settings:
+      charLimit: ''
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: location
+name: Location
+sortOrder: 1

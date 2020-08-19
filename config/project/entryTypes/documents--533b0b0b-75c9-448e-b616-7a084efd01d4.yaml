@@ -1,0 +1,89 @@
+fieldLayouts:
+  b0bb3a67-80ac-4132-8812-209eb20659ff:
+    tabs:
+      -
+        elements:
+          -
+            instructions: null
+            label: Title
+            type: craft\fieldlayoutelements\EntryTitleField
+          -
+            fieldUid: b7ec3bdf-65b5-4385-8d12-cd2110b1c75c
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 58eda166-7a65-4fb6-8f7d-c6590b0591ae
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 5261f0db-3453-423b-87c5-e5d3112c4141
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: Content
+        sortOrder: 1
+      -
+        elements:
+          -
+            fieldUid: a25a56ba-bfb3-4e4d-a857-6d3cb4a5dcdc
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 41124ab0-0e88-44c6-b4f2-f002669d8133
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 3ff802bf-48ac-4e96-8e64-c7988d029bc1
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 73b7b0c7-bff1-4c55-97aa-fc62042f0347
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: cb9bcb47-f3e9-4ed8-a4d8-506aa11fe546
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: d624c5c7-9cce-4088-92ba-02e1f2024c6a
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: e67ec759-ea3a-4568-bfa6-a314ff3d1036
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: b54a7bd7-7357-4bd0-b0a5-ac3723945139
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: ef1b6cec-c4ea-45ca-ba65-e9dc7d0cc2ac
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 86a3f1a5-a708-49b5-bac4-ff225f556ae1
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 44b00870-0842-4c4e-838f-dcd688fb5b05
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: Relationships
+        sortOrder: 2
+      -
+        elements:
+          -
+            fieldUid: ecc31df6-640f-4fa6-a2e6-caea757e379d
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: cbc76d42-f4f0-400b-949f-08dd2b360fe7
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: SEO
+        sortOrder: 3
+handle: documents
+hasTitleField: true
+name: Documents
+section: 8b7c4e26-9aab-4c5d-874e-aee151107de3
+sortOrder: 1
+titleFormat: ''

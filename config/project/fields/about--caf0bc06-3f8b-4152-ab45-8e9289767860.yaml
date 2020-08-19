@@ -1,0 +1,19 @@
+contentColumnType: text
+fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521
+handle: about
+instructions: 'Use this field to provide additional context for the entry.'
+name: About
+searchable: true
+settings:
+  availableTransforms: '*'
+  availableVolumes: ''
+  columnType: text
+  purifierConfig: Standard.json
+  purifyHtml: '1'
+  redactorConfig: Standard.json
+  removeEmptyTags: '1'
+  removeInlineStyles: '1'
+  removeNbsp: '1'
+translationKeyFormat: null
+translationMethod: none
+type: craft\redactor\Field

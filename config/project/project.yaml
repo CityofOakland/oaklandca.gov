@@ -1,0 +1,274 @@
+dateModified: 1596836005
+email:
+  fromEmail: $EMAIL_ADDRESS
+  fromName: $EMAIL_SENDER_NAME
+  template: ''
+  transportSettings:
+    encryptionMethod: ssl
+    host: $EMAIL_HOST_NAME
+    password: $EMAIL_PASS
+    port: $EMAIL_PORT
+    timeout: '30'
+    useAuthentication: '1'
+    username: $EMAIL_USER
+  transportType: craft\mail\transportadapters\Smtp
+plugins:
+  assetusage:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.0.0
+  aws-s3:
+    enabled: '1'
+    licenseKey: null
+    schemaVersion: '1.2'
+    settings: null
+  beam:
+    enabled: '1'
+    licenseKey: null
+    schemaVersion: 2.0.0
+    settings: null
+  buttonbox:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  calendar:
+    edition: pro
+    enabled: '1'
+    licenseKey: PRJ91600ENZBQ5S7HS7UE93Z
+    schemaVersion: 3.1.0
+    settings:
+      allDay: false
+      authoredEventEditOnly: ''
+      defaultView: month
+      demoBannerDisabled: true
+      descriptionFieldHandle: null
+      eventDuration: 60
+      firstDayOfWeek: -1
+      guestAccess: null
+      locationFieldHandle: null
+      overlapThreshold: 5
+      pluginName: null
+      quickCreateEnabled: '1'
+      showDisabledEvents: '1'
+      showMiniCal: '1'
+      timeInterval: 30
+  cp-body-classes:
+    enabled: '1'
+    licenseKey: null
+    schemaVersion: 2.0.0
+    settings: null
+  cp-css:
+    enabled: '1'
+    licenseKey: null
+    schemaVersion: 2.0.0
+    settings:
+      additionalCss: "[data-type=\"table2Columns\"] .fields,\n[data-type=\"table3Columns\"] .fields,\n[data-type=\"table4Columns\"] .fields {\n  display: flex;\n  flex-wrap: wrap;\n}\n\n[data-type*=\"table2Columns\"] .fields > [id*=\"column\"]:not([data-type=\"craft\\\\redactor\\\\Field\"]),\n[data-type*=\"table3Columns\"] .fields > [id*=\"column\"]:not([data-type=\"craft\\\\redactor\\\\Field\"]),\n[data-type*=\"table4Columns\"] .fields > [id*=\"column\"]:not([data-type=\"craft\\\\redactor\\\\Field\"]) {\n  box-sizing: border-box;\n  margin: 0 0 8px !important;\n}\n\n[data-type*=\"table2Columns\"] .fields > [id*=\"column\"]:not([data-type=\"craft\\\\redactor\\\\Field\"]) {\n  width: 50%;\n}\n\n[data-type*=\"table3Columns\"] .fields > [id*=\"column\"]:not([data-type=\"craft\\\\redactor\\\\Field\"]) {\n  width: 33.33333%;\n}\n\n[data-type*=\"table4Columns\"] .fields > [id*=\"column\"]:not([data-type=\"craft\\\\redactor\\\\Field\"]) {\n  width: 25%;\n}\n\n[id*=\"column1Heading-field\"],\n[id*=\"column1Width-field\"],\n[id*=\"column1Heading-field\"],\n[id*=\"column1Width-field\"],\n[id*=\"column1Heading-field\"],\n[id*=\"column1Width-field\"] {\n  padding-right: 8px;\n}\n\n[data-type*=\"table3Columns\"] [id*=\"column2Heading-field\"],\n[data-type*=\"table3Columns\"] [id*=\"column2Width-field\"],\n[data-type*=\"table4Columns\"] [id*=\"column2Heading-field\"],\n[data-type*=\"table4Columns\"] [id*=\"column2Width-field\"],\n[data-type*=\"table4Columns\"] [id*=\"column3Heading-field\"],\n[data-type*=\"table4Columns\"] [id*=\"column3Width-field\"] {\n  padding-left: 8px;\n  padding-right: 8px;\n}\n\n[data-type*=\"table2Columns\"] [id*=\"column2Heading-field\"],\n[data-type*=\"table2Columns\"] [id*=\"column2Width-field\"],\n[data-type*=\"table3Columns\"] [id*=\"column3Heading-field\"],\n[data-type*=\"table3Columns\"] [id*=\"column3Width-field\"],\n[data-type*=\"table4Columns\"] [id*=\"column4Heading-field\"],\n[data-type*=\"table4Columns\"] [id*=\"column4Width-field\"] {\n  padding-left: 8px;\n}\n\n[data-type=\"table2Columns\"] [id*=\"column\"] input,\n[data-type=\"table3Columns\"] [id*=\"column\"] input,\n[data-type=\"table4Columns\"] [id*=\"column\"] input {\n  width: 100%;\n}"
+      cssFile: ''
+  cp-field-inspect:
+    enabled: '0'
+    licenseKey: null
+    schemaVersion: 1.0.0
+    settings: null
+  cp-js:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.0.0
+  element-api:
+    enabled: '1'
+    licenseKey: null
+    schemaVersion: 1.0.0
+    settings: null
+  empty-coalesce:
+    enabled: '1'
+    licenseKey: null
+    schemaVersion: 1.0.0
+    settings: null
+  feed-me:
+    enabled: '1'
+    licenseKey: null
+    schemaVersion: 2.1.2
+    settings: null
+  field-manager:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  imager-x:
+    edition: pro
+    enabled: true
+    licenseKey: DO8L9Q9NW2ZFBS105XUDBCMW
+    schemaVersion: 3.0.0
+  incognito-field:
+    enabled: '1'
+    licenseKey: null
+    schemaVersion: 1.1.1
+    settings: null
+  inlin:
+    enabled: '1'
+    licenseKey: null
+    schemaVersion: 2.0.0
+    settings: null
+  inventory:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.0.0
+  linkit:
+    enabled: '1'
+    licenseKey: 46HXL3KFU6B2Z3R5LOC856G4
+    schemaVersion: 1.0.8
+    settings: null
+  manytomany:
+    enabled: '1'
+    licenseKey: null
+    schemaVersion: 1.0.2
+    settings: null
+  matrixmate:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  patrol:
+    edition: standard
+    enabled: true
+    schemaVersion: 3.0.0
+    settings:
+      maintenanceModeAuthorizedIps:
+        - '::1'
+        - 127.0.0.1
+      maintenanceModeEnabled: ''
+      maintenanceModePageUrl: /offline
+      maintenanceModeResponseStatusCode: 410
+      primaryDomain: null
+      redirectStatusCode: 302
+      sslRoutingBaseUrl: 'https://www.oaklandca.gov'
+      sslRoutingEnabled: '1'
+      sslRoutingRestrictedUrls:
+        - /
+  phone-number:
+    enabled: '1'
+    licenseKey: null
+    schemaVersion: 1.0.0
+    settings: null
+  position-fieldtype:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  redactor:
+    enabled: '1'
+    licenseKey: null
+    schemaVersion: 2.3.0
+    settings: null
+  redactor-tweaks:
+    enabled: '1'
+    licenseKey: null
+    schemaVersion: 1.0.0
+    settings: null
+  related:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  retcon:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  retour:
+    enabled: '1'
+    licenseKey: 5DC6J57ZUDZKVM1WI3TONGUK
+    schemaVersion: 3.0.9
+    settings:
+      alwaysStripQueryString: ''
+      createUriChangeRedirects: '1'
+      dynamicRedirectDisplayLimit: 100
+      pluginName: Retour
+      staticRedirectDisplayLimit: 100
+      statsDisplayLimit: 1000
+      statsStoredLimit: '15000'
+      stripQueryStringFromStats: '1'
+  scout:
+    edition: standard
+    enabled: true
+    schemaVersion: 0.1.0
+  seomatic:
+    enabled: '1'
+    licenseKey: WE9YYSPHWC5CNFB2RL64YDJ6
+    schemaVersion: 3.0.9
+    settings: null
+  smart-map:
+    enabled: '1'
+    licenseKey: 8KND7ZM72H5RQY65UFT7QUH1
+    schemaVersion: 3.2.3
+    settings:
+      debugRoute: map/debug
+      geolocation: none
+      googleBrowserKey: AIzaSyCe-8KH-BppEiy7fvwFxiRVrhFy0DGbJ2o
+      googleServerKey: AIzaSyCIaOEBLWXXPFvTdGJ98Y81RNMM_upfFPI
+      maxmindLicenseKey: ''
+      maxmindService: ''
+      maxmindUserId: ''
+  smith:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  store-hours:
+    enabled: '1'
+    licenseKey: null
+    schemaVersion: 1.0.2
+    settings: null
+  super-table:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.2.1
+  tablemaker:
+    enabled: true
+    licenseKey: null
+    schemaVersion: 1.0.0
+    settings: null
+  template-select:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.0.0
+  templatecomments:
+    enabled: '1'
+    licenseKey: null
+    schemaVersion: 1.0.0
+    settings: null
+  twig-perversion:
+    enabled: '1'
+    licenseKey: null
+    schemaVersion: 1.0.0
+    settings: null
+  twigpack:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  typogrify:
+    enabled: '1'
+    licenseKey: null
+    schemaVersion: 1.0.0
+    settings: null
+  video-embedder:
+    enabled: '1'
+    licenseKey: null
+    schemaVersion: 1.0.0
+    settings: null
+  view-count:
+    edition: standard
+    enabled: true
+    licenseKey: URW1UZY5ZKSGKC22JQCSCYLQ
+    schemaVersion: 1.0.0
+    settings:
+      keepViewLog: ''
+  wordsmith:
+    enabled: '1'
+    licenseKey: null
+    schemaVersion: 0.0.0.0
+    settings: null
+  workflow:
+    edition: standard
+    enabled: true
+    licenseKey: 2WB604K477I8QSMPA1DIIVGV
+    schemaVersion: 2.1.1
+system:
+  edition: pro
+  live: true
+  name: 'City of Oakland'
+  schemaVersion: 3.5.12
+  timeZone: America/Los_Angeles

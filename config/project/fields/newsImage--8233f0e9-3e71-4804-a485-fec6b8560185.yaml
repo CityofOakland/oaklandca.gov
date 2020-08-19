@@ -1,0 +1,26 @@
+contentColumnType: string
+fieldGroup: c964d82c-a4e7-4ec4-ad42-7c3e843193c0
+handle: newsImage
+instructions: 'Be sure to double click the image after uploading it and assigning the ALT TEXT, as this is an ADA requirement.'
+name: 'News Image'
+searchable: true
+settings:
+  allowedKinds:
+    - image
+  defaultUploadLocationSource: 'volume:1e78d0ad-2af1-4556-ab43-7b6c110e75b8'
+  defaultUploadLocationSubpath: ''
+  limit: '1'
+  localizeRelations: false
+  restrictFiles: '1'
+  selectionLabel: 'Add an image'
+  singleUploadLocationSource: 'volume:7c1a62cb-b02e-40b3-840f-7e78a3a9ebd0'
+  singleUploadLocationSubpath: ''
+  source: null
+  sources: '*'
+  targetSiteId: null
+  useSingleFolder: '1'
+  validateRelatedElements: '1'
+  viewMode: large
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Assets

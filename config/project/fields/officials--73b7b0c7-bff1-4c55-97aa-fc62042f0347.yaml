@@ -1,0 +1,18 @@
+contentColumnType: string
+fieldGroup: 83c14444-efcf-4d13-a20a-56275fd18855
+handle: officials
+instructions: 'Choose the elected official to relate to this entry. Relationships help content surface in search. Relationships also help documents surface on index pages. '
+name: Officials
+searchable: true
+settings:
+  limit: ''
+  localizeRelations: false
+  selectionLabel: 'Add an official'
+  source: null
+  sources:
+    - 'section:28881fc8-3e61-4fdb-a5ee-cce1bab725bf'
+  targetSiteId: null
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Entries

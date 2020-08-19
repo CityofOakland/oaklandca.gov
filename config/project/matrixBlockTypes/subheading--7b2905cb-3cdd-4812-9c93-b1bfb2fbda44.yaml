@@ -1,0 +1,33 @@
+field: fd0c8e02-99b4-4ce5-ab89-b29cd0efc581
+fieldLayouts:
+  cda5c4fd-b1d1-4944-bd5c-c48840a472fd:
+    tabs:
+      -
+        fields:
+          065a0c81-f02c-484a-859a-ff558fe27a71:
+            required: true
+            sortOrder: 1
+        name: Content
+        sortOrder: 1
+fields:
+  065a0c81-f02c-484a-859a-ff558fe27a71:
+    contentColumnType: text
+    fieldGroup: null
+    handle: text
+    instructions: 'This is a smaller subheading used for separating content and thoughts that exist underneath the Heading block. **NOTE: You MUST use a Heading somewhere in the body before you use a Subheading. Failure to do so is a violation of WCAG 2.0 standards, and a violation of our compliance with the Americans with Disabilities Act.'
+    name: __blank__
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: subheading
+name: Subheading
+sortOrder: 2

@@ -1,0 +1,75 @@
+field: 90d724d7-7c32-4d04-8b9a-3900d6ecdb84
+fieldLayouts:
+  7c2d9899-6e1c-4c56-a1da-093fd2fdb084:
+    tabs:
+      -
+        fields:
+          06394615-97e5-4f64-8d80-da62f9f1582c:
+            required: false
+            sortOrder: 2
+          314d167b-d1f4-47dd-92e5-4d0f75339e09:
+            required: true
+            sortOrder: 1
+          b199c827-5414-4bf9-bcf7-cf6f4e144bda:
+            required: true
+            sortOrder: 3
+        name: Content
+        sortOrder: 1
+fields:
+  06394615-97e5-4f64-8d80-da62f9f1582c:
+    contentColumnType: text
+    fieldGroup: null
+    handle: locationDescription
+    instructions: ''
+    name: 'Location Description'
+    searchable: true
+    settings:
+      availableTransforms: '*'
+      availableVolumes: ''
+      cleanupHtml: true
+      columnType: text
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: Simple.json
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  314d167b-d1f4-47dd-92e5-4d0f75339e09:
+    contentColumnType: text
+    fieldGroup: null
+    handle: locationName
+    instructions: ''
+    name: 'Location Name'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  b199c827-5414-4bf9-bcf7-cf6f4e144bda:
+    contentColumnType: string(255)
+    fieldGroup: null
+    handle: webAddress
+    instructions: ''
+    name: 'Web Address'
+    searchable: true
+    settings:
+      maxLength: '255'
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Url
+handle: onlineLocation
+name: 'Online Location'
+sortOrder: 2

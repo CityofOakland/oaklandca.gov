@@ -1,0 +1,18 @@
+contentColumnType: string
+fieldGroup: 83c14444-efcf-4d13-a20a-56275fd18855
+handle: pageOfficials
+instructions: 'Choose elected officials to show on this page.'
+name: 'Page Officials'
+searchable: true
+settings:
+  limit: ''
+  localizeRelations: false
+  selectionLabel: 'Add an official'
+  source: null
+  sources:
+    - 'section:28881fc8-3e61-4fdb-a5ee-cce1bab725bf'
+  targetSiteId: null
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Entries

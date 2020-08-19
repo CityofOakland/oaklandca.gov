@@ -1,0 +1,20 @@
+contentColumnType: string
+fieldGroup: 8e8ee56e-cdb8-4206-a3b5-c3aa0eb3a884
+handle: relatedProjectEntries
+instructions: 'Choose any resources, services, or topics you wish to display on this page.'
+name: 'Related Project Entries'
+searchable: true
+settings:
+  limit: ''
+  localizeRelations: false
+  selectionLabel: ''
+  source: null
+  sources:
+    - 'section:24fa116b-8516-4626-84f3-86b685e71071'
+    - 'section:b7e437e1-239f-4c5c-8c62-5f0323f9d22c'
+    - 'section:70778563-6dac-453d-a4b0-5121f3a614b7'
+  targetSiteId: null
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Entries

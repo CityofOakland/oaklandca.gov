@@ -1,0 +1,173 @@
+field: fd0c8e02-99b4-4ce5-ab89-b29cd0efc581
+fieldLayouts:
+  00d2d434-9858-470b-9311-b6b27dc6fd06:
+    tabs:
+      -
+        fields:
+          323dd893-cdef-4562-9cfc-566d7afd7909:
+            required: true
+            sortOrder: 4
+          566d26c2-9af4-45bb-b994-a552cc3fc03b:
+            required: false
+            sortOrder: 5
+          bcbcc37a-a53b-42f8-9a80-e9abf9ffe063:
+            required: true
+            sortOrder: 1
+          d0cf7d52-44a5-44a7-9efa-ba27c7541ff9:
+            required: false
+            sortOrder: 2
+          e58f615b-174a-4196-a96c-e824862acfa9:
+            required: true
+            sortOrder: 3
+        name: Content
+        sortOrder: 1
+fields:
+  323dd893-cdef-4562-9cfc-566d7afd7909:
+    contentColumnType: text
+    fieldGroup: null
+    handle: textBlock
+    instructions: 'Enter your text content here. Remember that the image will appear to the top of the text regardless of its position on desktop, so avoid referring to the image’s position in the text.'
+    name: 'Text Block'
+    searchable: false
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      cleanupHtml: true
+      columnType: text
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: 'Basic with Links.json'
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: true
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  566d26c2-9af4-45bb-b994-a552cc3fc03b:
+    contentColumnType: boolean
+    fieldGroup: null
+    handle: displayAltTextAsCaption
+    instructions: 'If enabled, this will display your image''s alt text as a small figure caption below the image.'
+    name: 'Display Alt Text as Caption?'
+    searchable: false
+    settings:
+      default: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch
+  bcbcc37a-a53b-42f8-9a80-e9abf9ffe063:
+    contentColumnType: string
+    fieldGroup: null
+    handle: image
+    instructions: 'Choose an image to display to the side of the text.'
+    name: Image
+    searchable: false
+    settings:
+      allowSelfRelations: ''
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:549d1a55-e94b-4c89-9cb9-b1fdac9d417d'
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      restrictFiles: '1'
+      selectionLabel: 'Add an image'
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: true
+      singleUploadLocationSource: 'volume:549d1a55-e94b-4c89-9cb9-b1fdac9d417d'
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: true
+      validateRelatedElements: '1'
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  d0cf7d52-44a5-44a7-9efa-ba27c7541ff9:
+    contentColumnType: string
+    fieldGroup: null
+    handle: imageColumnPosition
+    instructions: 'Choose which side the image appears on desktop layouts. On mobile layouts it will appear above the text, so make sure you don’t refer to the image’s position in your text block.'
+    name: 'Image Column Position'
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Left
+            -
+              - value
+              - left
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - Right
+            -
+              - value
+              - right
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  e58f615b-174a-4196-a96c-e824862acfa9:
+    contentColumnType: string
+    fieldGroup: null
+    handle: imageColumnWidth
+    instructions: 'Choose a width for the image column on tablet and desktop browsers. On mobile layouts it will be 100% of the browser width.'
+    name: 'Image Column Width'
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - 25%
+            -
+              - value
+              - 1/4
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - 33%
+            -
+              - value
+              - 1/3
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 50%
+            -
+              - value
+              - 1/2
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+handle: textImageBlock
+name: 'Text & Image Block'
+sortOrder: 4

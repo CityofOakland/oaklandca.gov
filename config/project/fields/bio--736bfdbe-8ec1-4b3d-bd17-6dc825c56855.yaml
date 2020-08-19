@@ -1,0 +1,19 @@
+contentColumnType: text
+fieldGroup: a8c82666-3295-4f90-b50b-67f2299847db
+handle: bio
+instructions: 'Add a short biography/description of this person.'
+name: Bio
+searchable: true
+settings:
+  availableTransforms: '*'
+  availableVolumes: ''
+  columnType: text
+  purifierConfig: ''
+  purifyHtml: '1'
+  redactorConfig: 'Simple with Links.json'
+  removeEmptyTags: '1'
+  removeInlineStyles: '1'
+  removeNbsp: '1'
+translationKeyFormat: null
+translationMethod: none
+type: craft\redactor\Field

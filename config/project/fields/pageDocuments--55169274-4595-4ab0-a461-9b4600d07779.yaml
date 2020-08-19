@@ -1,0 +1,19 @@
+contentColumnType: string
+fieldGroup: 83c14444-efcf-4d13-a20a-56275fd18855
+handle: pageDocuments
+instructions: 'Choose up to six (6) documents or document packets to show on this page.'
+name: 'Page Documents'
+searchable: true
+settings:
+  limit: '6'
+  localizeRelations: false
+  selectionLabel: 'Add a document'
+  source: null
+  sources:
+    - 'section:9da43fd8-c505-4d19-9486-e0cb669c568a'
+    - 'section:8b7c4e26-9aab-4c5d-874e-aee151107de3'
+  targetSiteId: null
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Entries

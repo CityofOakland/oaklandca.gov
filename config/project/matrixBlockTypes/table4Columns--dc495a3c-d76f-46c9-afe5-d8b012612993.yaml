@@ -1,0 +1,231 @@
+field: fd0c8e02-99b4-4ce5-ab89-b29cd0efc581
+fieldLayouts:
+  1d85e45d-3215-4118-8e24-2848fb475fc6:
+    tabs:
+      -
+        fields:
+          1c974e73-c709-48c5-bc6e-fb8a9ae1ba8a:
+            required: true
+            sortOrder: 9
+          28f1ddd3-72ce-439e-8d65-9b9a9e19f150:
+            required: false
+            sortOrder: 5
+          2c145c6e-d6b2-418c-aa28-3ea1eaa51944:
+            required: false
+            sortOrder: 7
+          2ce783d0-daf9-44d1-a0b4-84a0163dcaad:
+            required: false
+            sortOrder: 6
+          3b5ca699-b20a-41e5-a1fd-068dd6a6c081:
+            required: false
+            sortOrder: 8
+          40abab6e-fe75-4f91-b6bd-9016b2b01dbe:
+            required: true
+            sortOrder: 2
+          9c805dc0-3e7b-4361-ace3-62b856d8711e:
+            required: true
+            sortOrder: 3
+          d49a42e8-c33e-4689-a1df-83ba0b8d67be:
+            required: true
+            sortOrder: 4
+          d535337e-0894-4ce9-80ee-a315e254df71:
+            required: true
+            sortOrder: 1
+        name: Content
+        sortOrder: 1
+fields:
+  1c974e73-c709-48c5-bc6e-fb8a9ae1ba8a:
+    contentColumnType: string
+    fieldGroup: null
+    handle: table
+    instructions: ''
+    name: Table
+    searchable: true
+    settings:
+      columns:
+        __assoc__:
+          -
+            - c51bb818-8e54-4a71-b8e6-e623907d4cae
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - c48fd91b-ae6d-42f1-9c3b-62258d7e681f
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 2200fe2a-bcb7-435e-96f9-7f00262131e5
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 7769a82a-1135-4a99-aa7c-d121376328d6
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_26_table}}'
+      fieldLayout: table
+      maxRows: ''
+      minRows: '1'
+      propagationMethod: all
+      selectionLabel: ''
+      staticField: ''
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+  28f1ddd3-72ce-439e-8d65-9b9a9e19f150:
+    contentColumnType: smallint(2)
+    fieldGroup: null
+    handle: column1Width
+    instructions: ''
+    name: 'Column 1 Width'
+    searchable: false
+    settings:
+      decimals: 0
+      defaultValue: '25'
+      max: '99'
+      min: '1'
+      prefix: ''
+      size: null
+      suffix: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Number
+  2c145c6e-d6b2-418c-aa28-3ea1eaa51944:
+    contentColumnType: smallint(2)
+    fieldGroup: null
+    handle: column3Width
+    instructions: ''
+    name: 'Column 3 Width'
+    searchable: false
+    settings:
+      decimals: 0
+      defaultValue: '25'
+      max: '99'
+      min: '1'
+      prefix: ''
+      size: null
+      suffix: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Number
+  2ce783d0-daf9-44d1-a0b4-84a0163dcaad:
+    contentColumnType: smallint(2)
+    fieldGroup: null
+    handle: column2Width
+    instructions: ''
+    name: 'Column 2 Width'
+    searchable: false
+    settings:
+      decimals: 0
+      defaultValue: '25'
+      max: '99'
+      min: '1'
+      prefix: ''
+      size: null
+      suffix: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Number
+  3b5ca699-b20a-41e5-a1fd-068dd6a6c081:
+    contentColumnType: smallint(2)
+    fieldGroup: null
+    handle: column4Width
+    instructions: ''
+    name: 'Column 4 Width'
+    searchable: false
+    settings:
+      decimals: 0
+      defaultValue: '25'
+      max: '99'
+      min: '1'
+      prefix: ''
+      size: null
+      suffix: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Number
+  40abab6e-fe75-4f91-b6bd-9016b2b01dbe:
+    contentColumnType: text
+    fieldGroup: null
+    handle: column2Heading
+    instructions: ''
+    name: 'Column 2 Heading'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  9c805dc0-3e7b-4361-ace3-62b856d8711e:
+    contentColumnType: text
+    fieldGroup: null
+    handle: column3Heading
+    instructions: ''
+    name: 'Column 3 Heading'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  d49a42e8-c33e-4689-a1df-83ba0b8d67be:
+    contentColumnType: text
+    fieldGroup: null
+    handle: column4Heading
+    instructions: ''
+    name: 'Column 4 Heading'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  d535337e-0894-4ce9-80ee-a315e254df71:
+    contentColumnType: text
+    fieldGroup: null
+    handle: column1Heading
+    instructions: ''
+    name: 'Column 1 Heading'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: table4Columns
+name: '4 Columns'
+sortOrder: 7

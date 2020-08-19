@@ -1,0 +1,19 @@
+handle: logos
+hasUrls: true
+name: Logos
+settings:
+  autoFocalPoint: ''
+  bucket: cao-94612
+  bucketSelectionMode: choose
+  cfDistributionId: ''
+  cfPrefix: ''
+  expires: ''
+  keyId: $S3_API_KEY
+  makeUploadsPublic: '1'
+  region: us-west-2
+  secret: $S3_SECRET
+  storageClass: ''
+  subfolder: logos
+sortOrder: 12
+type: craft\awss3\Volume
+url: 'https://s3.us-west-2.amazonaws.com/cao-94612/'

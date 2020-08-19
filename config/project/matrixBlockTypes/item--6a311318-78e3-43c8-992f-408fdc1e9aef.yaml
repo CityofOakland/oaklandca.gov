@@ -1,0 +1,115 @@
+field: 229564d1-ebbb-4cc3-9ff1-37466e51fae5
+fieldLayouts:
+  145a756b-2b63-43bb-b4a5-ccf731311df2:
+    tabs:
+      -
+        fields:
+          56b04dd8-2040-4e29-91f8-4decb3371c25:
+            required: true
+            sortOrder: 2
+          8206614a-68d0-4e74-94ea-8747e41a63c4:
+            required: true
+            sortOrder: 5
+          c21b1f29-17eb-4467-9985-adc20fb127c0:
+            required: true
+            sortOrder: 1
+          d731f441-f5bc-4467-9ed9-3279138f9795:
+            required: true
+            sortOrder: 4
+          f54f4116-1b8a-47fb-a361-b3894ea4d734:
+            required: true
+            sortOrder: 3
+        name: Content
+        sortOrder: 1
+fields:
+  56b04dd8-2040-4e29-91f8-4decb3371c25:
+    contentColumnType: string
+    fieldGroup: null
+    handle: image
+    instructions: ''
+    name: Image
+    searchable: true
+    settings:
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:549d1a55-e94b-4c89-9cb9-b1fdac9d417d'
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      restrictFiles: '1'
+      selectionLabel: 'Add an award image'
+      singleUploadLocationSource: 'volume:549d1a55-e94b-4c89-9cb9-b1fdac9d417d'
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: '1'
+      validateRelatedElements: '1'
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  8206614a-68d0-4e74-94ea-8747e41a63c4:
+    contentColumnType: datetime
+    fieldGroup: null
+    handle: itemDate
+    instructions: ''
+    name: 'Item Date'
+    searchable: true
+    settings:
+      minuteIncrement: '30'
+      showDate: true
+      showTime: false
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Date
+  c21b1f29-17eb-4467-9985-adc20fb127c0:
+    contentColumnType: text
+    fieldGroup: null
+    handle: itemTitle
+    instructions: ''
+    name: 'Item Title'
+    searchable: true
+    settings:
+      charLimit: ''
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  d731f441-f5bc-4467-9ed9-3279138f9795:
+    contentColumnType: string(255)
+    fieldGroup: null
+    handle: webUrl
+    instructions: ''
+    name: 'Web URL'
+    searchable: true
+    settings:
+      maxLength: '255'
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Url
+  f54f4116-1b8a-47fb-a361-b3894ea4d734:
+    contentColumnType: text
+    fieldGroup: null
+    handle: summary
+    instructions: ''
+    name: Summary
+    searchable: true
+    settings:
+      charLimit: ''
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: '1'
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: item
+name: Item
+sortOrder: 1

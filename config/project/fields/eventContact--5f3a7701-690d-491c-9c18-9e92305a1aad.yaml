@@ -1,0 +1,19 @@
+contentColumnType: text
+fieldGroup: 7a44f3bc-fbe1-424a-a4ea-6bb6f3528d75
+handle: eventContact
+instructions: 'Add contact information (e.g., phone number, email, website) to learn more.'
+name: 'Event Contact'
+searchable: true
+settings:
+  availableTransforms: ''
+  availableVolumes: ''
+  columnType: text
+  purifierConfig: ''
+  purifyHtml: '1'
+  redactorConfig: Standard.json
+  removeEmptyTags: '1'
+  removeInlineStyles: '1'
+  removeNbsp: '1'
+translationKeyFormat: null
+translationMethod: none
+type: craft\redactor\Field

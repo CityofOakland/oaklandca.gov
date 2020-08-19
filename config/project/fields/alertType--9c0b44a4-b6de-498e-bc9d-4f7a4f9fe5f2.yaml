@@ -1,0 +1,53 @@
+contentColumnType: text
+fieldGroup: a2015bc8-9d3a-4f8d-a180-1ddc7ebd3087
+handle: alertType
+instructions: 'Choose the color of the alert based on the purpose.'
+name: 'Alert Type'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Info
+        -
+          - value
+          - information
+        -
+          - cssColour
+          - '#008943'
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - Warn
+        -
+          - value
+          - warning
+        -
+          - cssColour
+          - '#f7d070'
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Alerts
+        -
+          - value
+          - alert
+        -
+          - cssColour
+          - '#d64545'
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: supercool\buttonbox\fields\Colours

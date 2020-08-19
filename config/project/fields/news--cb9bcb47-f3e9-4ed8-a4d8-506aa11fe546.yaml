@@ -1,0 +1,19 @@
+contentColumnType: string
+fieldGroup: 83c14444-efcf-4d13-a20a-56275fd18855
+handle: news
+instructions: "Choose the news items that you want to relate to this entry (limit 3). Relationships help content surface in search. Relationships also help documents surface on index pages. \r\n"
+name: News
+searchable: true
+settings:
+  limit: '2'
+  localizeRelations: false
+  selectionLabel: 'Add news'
+  source: null
+  sources:
+    - 'section:983c9f6f-9251-4fd3-91e1-b598eccc6a1a'
+  targetSiteId: null
+  validateRelatedElements: '1'
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Entries

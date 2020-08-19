@@ -1,0 +1,89 @@
+fieldLayouts:
+  220ab70d-0370-4bb5-82e9-d9b4d132b984:
+    tabs:
+      -
+        elements:
+          -
+            instructions: null
+            label: Title
+            type: craft\fieldlayoutelements\EntryTitleField
+          -
+            fieldUid: 8233f0e9-3e71-4804-a485-fec6b8560185
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 58eda166-7a65-4fb6-8f7d-c6590b0591ae
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 00ccf4ec-25d9-4bce-864a-4d06468adb36
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: fd0c8e02-99b4-4ce5-ab89-b29cd0efc581
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 02edcc9a-9985-4401-9a49-38455f47ff84
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: eae235fc-29cb-4dd5-8e91-2c0ad69877ed
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 21768f47-1c01-40db-8160-bc10697e7054
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: ea2e59d4-7906-4723-8dde-7bb4012c3361
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: Content
+        sortOrder: 1
+      -
+        elements:
+          -
+            fieldUid: a25a56ba-bfb3-4e4d-a857-6d3cb4a5dcdc
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 41124ab0-0e88-44c6-b4f2-f002669d8133
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 73b7b0c7-bff1-4c55-97aa-fc62042f0347
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: d624c5c7-9cce-4088-92ba-02e1f2024c6a
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: e67ec759-ea3a-4568-bfa6-a314ff3d1036
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 44b00870-0842-4c4e-838f-dcd688fb5b05
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: Relationships
+        sortOrder: 2
+      -
+        elements:
+          -
+            fieldUid: ecc31df6-640f-4fa6-a2e6-caea757e379d
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: cbc76d42-f4f0-400b-949f-08dd2b360fe7
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: SEO
+        sortOrder: 3
+handle: news
+hasTitleField: true
+name: News
+section: 983c9f6f-9251-4fd3-91e1-b598eccc6a1a
+sortOrder: 1
+titleFormat: ''

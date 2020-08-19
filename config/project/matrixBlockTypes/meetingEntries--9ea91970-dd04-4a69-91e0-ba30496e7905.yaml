@@ -1,0 +1,108 @@
+field: fd0c8e02-99b4-4ce5-ab89-b29cd0efc581
+fieldLayouts:
+  cfc40b14-fc2d-4b75-bb37-0bdcc83dea3a:
+    tabs:
+      -
+        fields:
+          6781472a-633d-4059-b528-3b826db0332f:
+            required: false
+            sortOrder: 4
+          84c6ab36-1b2e-49f1-93a1-aa41ce3d194a:
+            required: true
+            sortOrder: 2
+          ac349657-dbca-480e-8cb9-dc97ccae3b3a:
+            required: false
+            sortOrder: 1
+          ddd25f23-4975-475c-9bef-e8a0e0e43fc0:
+            required: false
+            sortOrder: 3
+          de14155f-e982-42aa-9b79-71ceeaf08a77:
+            required: false
+            sortOrder: 5
+        name: Content
+        sortOrder: 1
+fields:
+  6781472a-633d-4059-b528-3b826db0332f:
+    contentColumnType: boolean
+    fieldGroup: null
+    handle: hideThumbnails
+    instructions: 'Check this box if you wish to hide the thumbnail images and/or default icons for this block.'
+    name: 'Hide Thumbnails?'
+    searchable: false
+    settings:
+      default: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch
+  84c6ab36-1b2e-49f1-93a1-aa41ce3d194a:
+    contentColumnType: text
+    fieldGroup: null
+    handle: heading
+    instructions: ''
+    name: Heading
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  ac349657-dbca-480e-8cb9-dc97ccae3b3a:
+    contentColumnType: boolean
+    fieldGroup: null
+    handle: allowAutofill
+    instructions: ''
+    name: 'Allow Autofill?'
+    searchable: false
+    settings:
+      default: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch
+  ddd25f23-4975-475c-9bef-e8a0e0e43fc0:
+    contentColumnType: string
+    fieldGroup: null
+    handle: entries
+    instructions: 'If enabled, your meetings will automatically fill with the latest meetings that have been related to this page, up to 3, minus however many manual selections you make below.'
+    name: Entries
+    searchable: false
+    settings:
+      allowSelfRelations: ''
+      limit: '3'
+      localizeRelations: false
+      selectionLabel: 'Add a meeting'
+      source: null
+      sources:
+        - 'calendar:3'
+      targetSiteId: null
+      validateRelatedElements: ''
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: Solspace\Calendar\FieldTypes\EventFieldType
+  de14155f-e982-42aa-9b79-71ceeaf08a77:
+    contentColumnType: text
+    fieldGroup: null
+    handle: hideSummary
+    instructions: 'Check this box if you wish to hide the summary text that appears at the bottom of each entry’s block.'
+    name: 'Hide Summary?'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: meetingEntries
+name: 'Meeting Entries'
+sortOrder: 15

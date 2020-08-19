@@ -1,0 +1,16 @@
+contentColumnType: text
+fieldGroup: 71fb693f-011b-4669-ba10-f1b379557bb9
+handle: staffImportSection
+instructions: ''
+name: 'Staff Import Section'
+searchable: true
+settings:
+  charLimit: ''
+  code: ''
+  columnType: text
+  initialRows: '4'
+  multiline: ''
+  placeholder: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

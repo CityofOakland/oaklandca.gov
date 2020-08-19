@@ -1,0 +1,155 @@
+field: 4047207e-c317-47cc-825b-7e751cc4ad38
+fieldLayouts:
+  0d76805e-d070-44cd-bd4c-7de3b8e1bf33:
+    tabs:
+      -
+        fields:
+          2297d996-75c6-4163-9ce7-1ca5c609e89a:
+            required: true
+            sortOrder: 1
+          55afc13e-16e3-4080-9c67-ae7a4c46e3e2:
+            required: false
+            sortOrder: 3
+          b4b3c606-9215-46dd-926d-ecc0cdd900e7:
+            required: true
+            sortOrder: 2
+        name: Content
+        sortOrder: 1
+fields:
+  2297d996-75c6-4163-9ce7-1ca5c609e89a:
+    contentColumnType: text
+    fieldGroup: null
+    handle: addressTitle
+    instructions: 'e.g., "Mailing Address" or "Visit In Person".'
+    name: 'Address Title'
+    searchable: true
+    settings:
+      charLimit: ''
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  55afc13e-16e3-4080-9c67-ae7a4c46e3e2:
+    contentColumnType: text
+    fieldGroup: null
+    handle: additionalAddressInfo
+    instructions: 'Use this field to provide extra information about the address, like “First floor, Suite 7” that wouldn’t otherwise be included in a street address.'
+    name: 'Additional Address Info'
+    searchable: true
+    settings:
+      availableTransforms: '*'
+      availableVolumes: ''
+      columnType: text
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: Simple.json
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  b4b3c606-9215-46dd-926d-ecc0cdd900e7:
+    contentColumnType: string
+    fieldGroup: null
+    handle: streetAddress
+    instructions: 'Use this field to enter your street address.'
+    name: 'Street Address'
+    searchable: true
+    settings:
+      dragPinDefault: ''
+      dragPinLatitude: '0'
+      dragPinLongitude: '0'
+      dragPinZoom: '4'
+      layout:
+        __assoc__:
+          -
+            - city
+            -
+              __assoc__:
+                -
+                  - enable
+                  - 1
+                -
+                  - width
+                  - 50
+          -
+            - country
+            -
+              __assoc__:
+                -
+                  - enable
+                  - 0
+                -
+                  - width
+                  - 100
+          -
+            - lat
+            -
+              __assoc__:
+                -
+                  - enable
+                  - 0
+                -
+                  - width
+                  - 50
+          -
+            - lng
+            -
+              __assoc__:
+                -
+                  - enable
+                  - 0
+                -
+                  - width
+                  - 50
+          -
+            - state
+            -
+              __assoc__:
+                -
+                  - enable
+                  - 1
+                -
+                  - width
+                  - 15
+          -
+            - street1
+            -
+              __assoc__:
+                -
+                  - enable
+                  - 1
+                -
+                  - width
+                  - 100
+          -
+            - street2
+            -
+              __assoc__:
+                -
+                  - enable
+                  - 1
+                -
+                  - width
+                  - 100
+          -
+            - zip
+            -
+              __assoc__:
+                -
+                  - enable
+                  - 1
+                -
+                  - width
+                  - 35
+    translationKeyFormat: null
+    translationMethod: none
+    type: doublesecretagency\smartmap\fields\Address
+handle: physicalAddress
+name: 'Physical Address'
+sortOrder: 3

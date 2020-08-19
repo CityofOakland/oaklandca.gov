@@ -1,0 +1,49 @@
+fieldLayouts:
+  a15636dd-3b0a-4aa9-939d-d546a541a45a:
+    tabs:
+      -
+        elements:
+          -
+            instructions: null
+            label: Title
+            type: craft\fieldlayoutelements\EntryTitleField
+          -
+            fieldUid: c2ad07dc-05e7-4ef4-89b6-2e1eaccee210
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: f62c85ae-2203-4d1a-8702-da515126a398
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: bef74be8-b22d-4dd0-9217-9707bb43d888
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 6694c82b-6e98-442b-976a-907b6c2f4bcc
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: e14bc4b5-a350-404b-8960-15fa4ae134c4
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: '311'
+        sortOrder: 1
+      -
+        elements:
+          -
+            fieldUid: ecc31df6-640f-4fa6-a2e6-caea757e379d
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: cbc76d42-f4f0-400b-949f-08dd2b360fe7
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: SEO
+        sortOrder: 2
+handle: services311
+hasTitleField: true
+name: 'Services (311)'
+section: b7e437e1-239f-4c5c-8c62-5f0323f9d22c
+sortOrder: 2
+titleFormat: ''

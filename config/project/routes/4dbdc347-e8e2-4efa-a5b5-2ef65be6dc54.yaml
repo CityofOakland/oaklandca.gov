@@ -1,0 +1,17 @@
+siteUid: null
+sortOrder: 8
+template: /calendar-demo/day
+uriParts:
+  - calendar-demo/day/
+  -
+    - year
+    - '\d{4}'
+  - /
+  -
+    - month
+    - '(?:0?[1-9]|1[012])'
+  - /
+  -
+    - day
+    - '(?:0?[1-9]|[12][0-9]|3[01])'
+uriPattern: 'calendar-demo/day/<year:\d{4}>/<month:(?:0?[1-9]|1[012])>/<day:(?:0?[1-9]|[12][0-9]|3[01])>'

@@ -1,0 +1,17 @@
+contentColumnType: text
+fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521
+handle: departmentCodeSnippet
+instructions: 'Add code that should be run on pages related to this department.'
+name: 'Department Code Snippet'
+searchable: true
+settings:
+  byteLimit: null
+  charLimit: null
+  code: '1'
+  columnType: null
+  initialRows: '4'
+  multiline: '1'
+  placeholder: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

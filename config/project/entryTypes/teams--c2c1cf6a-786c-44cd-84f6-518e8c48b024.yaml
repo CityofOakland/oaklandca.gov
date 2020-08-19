@@ -1,0 +1,61 @@
+fieldLayouts:
+  6382efe2-462f-41b7-8f7f-c04bce666847:
+    tabs:
+      -
+        elements:
+          -
+            instructions: null
+            label: Title
+            type: craft\fieldlayoutelements\EntryTitleField
+          -
+            fieldUid: b924108b-fb70-4757-ad7f-3e713f23a6d6
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: Content
+        sortOrder: 1
+      -
+        elements:
+          -
+            fieldUid: a25a56ba-bfb3-4e4d-a857-6d3cb4a5dcdc
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 41124ab0-0e88-44c6-b4f2-f002669d8133
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 73b7b0c7-bff1-4c55-97aa-fc62042f0347
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: d624c5c7-9cce-4088-92ba-02e1f2024c6a
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: e67ec759-ea3a-4568-bfa6-a314ff3d1036
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 44b00870-0842-4c4e-838f-dcd688fb5b05
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: Relationships
+        sortOrder: 2
+      -
+        elements:
+          -
+            fieldUid: ecc31df6-640f-4fa6-a2e6-caea757e379d
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: cbc76d42-f4f0-400b-949f-08dd2b360fe7
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: SEO
+        sortOrder: 3
+handle: teams
+hasTitleField: true
+name: Teams
+section: fbf8b9b0-8875-4e08-819a-d62603676dc4
+sortOrder: 1
+titleFormat: ''

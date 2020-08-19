@@ -1,0 +1,5 @@
+handle: datasets
+name: Datasets
+permissions:
+  - 'publishentries:1ab8269c-e225-472e-b5e1-1504af7a1622'
+  - 'editentries:1ab8269c-e225-472e-b5e1-1504af7a1622'

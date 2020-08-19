@@ -1,0 +1,29 @@
+fieldLayouts:
+  bba582aa-b597-4c43-b269-f5814699bc37:
+    tabs:
+      -
+        fields:
+          fff5cf49-87e6-4751-9032-b4ca8136e237:
+            required: true
+            sortOrder: 1
+        name: Content
+        sortOrder: 1
+handle: pressReleaseImages
+hasUrls: true
+name: 'Press Release Images'
+settings:
+  autoFocalPoint: ''
+  bucket: cao-94612
+  bucketSelectionMode: choose
+  cfDistributionId: ''
+  cfPrefix: ''
+  expires: ''
+  keyId: $S3_API_KEY
+  makeUploadsPublic: '1'
+  region: us-west-2
+  secret: $S3_SECRET
+  storageClass: ''
+  subfolder: press-release-images
+sortOrder: 13
+type: craft\awss3\Volume
+url: 'https://s3.us-west-2.amazonaws.com/cao-94612/'

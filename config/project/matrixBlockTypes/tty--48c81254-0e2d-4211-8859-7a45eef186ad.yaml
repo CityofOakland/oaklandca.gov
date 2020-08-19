@@ -1,0 +1,32 @@
+field: 555efa28-a6b9-471d-8548-735eae07cb3c
+fieldLayouts:
+  035647dd-50db-4e02-9db9-c53384f56e55:
+    tabs:
+      -
+        fields:
+          2935e144-4fb1-42e3-a0c2-db09b8f6d658:
+            required: true
+            sortOrder: 1
+        name: Content
+        sortOrder: 1
+fields:
+  2935e144-4fb1-42e3-a0c2-db09b8f6d658:
+    contentColumnType: text
+    fieldGroup: null
+    handle: number
+    instructions: ''
+    name: __blank__
+    searchable: true
+    settings:
+      charLimit: ''
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: tty
+name: TTY
+sortOrder: 3

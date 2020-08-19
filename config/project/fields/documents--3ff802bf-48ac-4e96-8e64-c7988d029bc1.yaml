@@ -1,0 +1,19 @@
+contentColumnType: string
+fieldGroup: 83c14444-efcf-4d13-a20a-56275fd18855
+handle: documents
+instructions: "Choose the documents to relate to this entry. Examples may include agenda, meeting minutes, and reports. Relationships help content surface in search. Relationships also help documents surface on index pages. \r\n"
+name: Documents
+searchable: true
+settings:
+  limit: ''
+  localizeRelations: false
+  selectionLabel: 'Add a document'
+  source: null
+  sources:
+    - 'section:9da43fd8-c505-4d19-9486-e0cb669c568a'
+    - 'section:8b7c4e26-9aab-4c5d-874e-aee151107de3'
+  targetSiteId: null
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Entries

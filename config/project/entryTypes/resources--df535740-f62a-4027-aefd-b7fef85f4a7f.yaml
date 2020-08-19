@@ -1,0 +1,77 @@
+fieldLayouts:
+  96bb4dca-d6fb-4198-8f00-57dc09064d19:
+    tabs:
+      -
+        elements:
+          -
+            instructions: null
+            label: Title
+            type: craft\fieldlayoutelements\EntryTitleField
+          -
+            fieldUid: c2ad07dc-05e7-4ef4-89b6-2e1eaccee210
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: f62c85ae-2203-4d1a-8702-da515126a398
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: d7d618a5-5819-44e0-bc30-5c685f47f039
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 4047207e-c317-47cc-825b-7e751cc4ad38
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: fd0c8e02-99b4-4ce5-ab89-b29cd0efc581
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: Content
+        sortOrder: 1
+      -
+        elements:
+          -
+            fieldUid: a25a56ba-bfb3-4e4d-a857-6d3cb4a5dcdc
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 41124ab0-0e88-44c6-b4f2-f002669d8133
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 73b7b0c7-bff1-4c55-97aa-fc62042f0347
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: d624c5c7-9cce-4088-92ba-02e1f2024c6a
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: e67ec759-ea3a-4568-bfa6-a314ff3d1036
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 44b00870-0842-4c4e-838f-dcd688fb5b05
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: Relationships
+        sortOrder: 2
+      -
+        elements:
+          -
+            fieldUid: ecc31df6-640f-4fa6-a2e6-caea757e379d
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: cbc76d42-f4f0-400b-949f-08dd2b360fe7
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: SEO
+        sortOrder: 3
+handle: resources
+hasTitleField: true
+name: Resources
+section: 24fa116b-8516-4626-84f3-86b685e71071
+sortOrder: 1
+titleFormat: ''

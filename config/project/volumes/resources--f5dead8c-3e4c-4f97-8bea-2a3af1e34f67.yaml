@@ -1,0 +1,29 @@
+fieldLayouts:
+  85581bc6-c596-4282-bc53-e011830eee84:
+    tabs:
+      -
+        fields:
+          fff5cf49-87e6-4751-9032-b4ca8136e237:
+            required: true
+            sortOrder: 1
+        name: Content
+        sortOrder: 1
+handle: resources
+hasUrls: true
+name: Resources
+settings:
+  autoFocalPoint: ''
+  bucket: cao-94612
+  bucketSelectionMode: choose
+  cfDistributionId: ''
+  cfPrefix: ''
+  expires: ''
+  keyId: $S3_API_KEY
+  makeUploadsPublic: '1'
+  region: us-west-2
+  secret: $S3_SECRET
+  storageClass: ''
+  subfolder: resources
+sortOrder: 3
+type: craft\awss3\Volume
+url: $S3_URL
