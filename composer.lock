@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3cf4e27772092e9b330076ff6fd1114c",
+    "content-hash": "af13f3dd55b9491c9551f33d2351a5df",
     "packages": [
         {
             "name": "aelvan/inlin",
@@ -634,11 +634,6 @@
         {
             "name": "composer/xdebug-handler",
             "version": "1.4.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/composer/xdebug-handler.git",
-                "reference": "ebd27a9866ae8254e873866f795491f02418c5a5"
-            },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/composer/xdebug-handler/zipball/ebd27a9866ae8254e873866f795491f02418c5a5",
@@ -1796,6 +1791,81 @@
             "time": "2020-01-20T01:34:17+00:00"
         },
         {
+            "name": "erusev/parsedown",
+            "version": "1.7.4",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/erusev/parsedown/zipball/cb17b6477dfff935958ba01325f2e8a2bfa6dab3",
+                "reference": "cb17b6477dfff935958ba01325f2e8a2bfa6dab3",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Parsedown": ""
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Emanuil Rusev",
+                    "email": "hello@erusev.com",
+                    "homepage": "http://erusev.com"
+                }
+            ],
+            "description": "Parser for Markdown.",
+            "homepage": "http://parsedown.org",
+            "keywords": [
+                "markdown",
+                "parser"
+            ],
+            "time": "2019-12-30T22:54:17+00:00"
+        },
+        {
+            "name": "erusev/parsedown-extra",
+            "version": "0.8.1",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/erusev/parsedown-extra/zipball/91ac3ff98f0cea243bdccc688df43810f044dcef",
+                "reference": "91ac3ff98f0cea243bdccc688df43810f044dcef",
+                "shasum": ""
+            },
+            "require": {
+                "erusev/parsedown": "^1.7.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "ParsedownExtra": ""
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Emanuil Rusev",
+                    "email": "hello@erusev.com",
+                    "homepage": "http://erusev.com"
+                }
+            ],
+            "description": "An extension of Parsedown that adds support for Markdown Extra.",
+            "homepage": "https://github.com/erusev/parsedown-extra",
+            "keywords": [
+                "markdown",
+                "markdown extra",
+                "parsedown",
+                "parser"
+            ],
+            "time": "2019-12-30T23:20:37+00:00"
+        },
+        {
             "name": "ezyang/htmlpurifier",
             "version": "v4.13.0",
             "dist": {
@@ -2744,6 +2814,52 @@
                 "issues": "https://github.com/hybridinteractive/craft-position-fieldtype/issues"
             },
             "time": "2020-05-28T19:51:45+00:00"
+        },
+        {
+            "name": "icanboogie/inflector",
+            "version": "v1.5.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ICanBoogie/Inflector/zipball/fb6ca7977f8a7ebb46aff0183ee868d798f77ab8",
+                "reference": "fb6ca7977f8a7ebb46aff0183ee868d798f77ab8",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "php": ">=5.3.4"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "lib/"
+                ],
+                "files": [
+                    "lib/helpers.php"
+                ]
+            },
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Olivier Laviale",
+                    "email": "olivier.laviale@gmail.com",
+                    "homepage": "http://www.weirdog.com/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Multilingual inflector that transforms words from singular to plural, underscore to camel case, and more.",
+            "homepage": "http://icanboogie.org/",
+            "keywords": [
+                "camelize",
+                "hyphenate",
+                "inflect",
+                "multilingual",
+                "pluralize",
+                "singularize",
+                "underscore"
+            ],
+            "time": "2019-05-21T19:05:31+00:00"
         },
         {
             "name": "imageoptim/imageoptim",
@@ -3939,6 +4055,36 @@
                 "issues": "https://github.com/mmikkel/Retcon-Craft/issues"
             },
             "time": "2020-07-19T16:32:23+00:00"
+        },
+        {
+            "name": "mofodojodino/profanity-filter",
+            "version": "1.3.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mofodojodino/ProfanityFilter/zipball/529d24adcdb5b9507a4622db6aba6e54c5bb82a9",
+                "reference": "529d24adcdb5b9507a4622db6aba6e54c5bb82a9",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "": "src"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dean Tedesco",
+                    "email": "dino@tedesco.net.au"
+                }
+            ],
+            "description": "Filters out profanities from strings.",
+            "time": "2016-05-11T00:19:07+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -7663,6 +7809,60 @@
             "time": "2017-07-19T12:26:04+00:00"
         },
         {
+            "name": "topshelfcraft/wordsmith",
+            "version": "3.3.0.1",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/TopShelfCraft/Wordsmith/zipball/e7acf27cc33e7fef8d53ab8af2d0ff498c424e67",
+                "reference": "e7acf27cc33e7fef8d53ab8af2d0ff498c424e67",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.3",
+                "davechild/textstatistics": "^1.0",
+                "erusev/parsedown-extra": "^0.8",
+                "icanboogie/inflector": "^1.4",
+                "mofodojodino/profanity-filter": "^1.3",
+                "mundschenk-at/php-typography": "^6.0",
+                "voku/stringy": "^5.1||^6.0"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Wordsmith",
+                "handle": "wordsmith",
+                "schemaVersion": "0.0.0.0",
+                "changelogUrl": "https://raw.githubusercontent.com/topshelfcraft/wordsmith/master/CHANGELOG.md",
+                "class": "topshelfcraft\\wordsmith\\Wordsmith"
+            },
+            "autoload": {
+                "psr-4": {
+                    "topshelfcraft\\wordsmith\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Rog",
+                    "homepage": "https://topshelfcraft.com"
+                }
+            ],
+            "description": "...because you have the best words.",
+            "keywords": [
+                "cms",
+                "craft",
+                "craft-plugin",
+                "craftcms",
+                "wordsmith"
+            ],
+            "support": {
+                "docs": "https://wordsmith.docs.topshelfcraft.com/",
+                "issues": "https://github.com/topshelfcraft/wordsmith/issues"
+            },
+            "time": "2020-08-07T17:42:22+00:00"
+        },
+        {
             "name": "true/punycode",
             "version": "v2.1.1",
             "dist": {
@@ -8156,19 +8356,16 @@
         },
         {
             "name": "voku/anti-xss",
-            "version": "4.1.26",
+            "version": "4.1.27",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/voku/anti-xss/zipball/e5c4728fa6b2966b4b5c636519cbd530e060e738",
-                "reference": "e5c4728fa6b2966b4b5c636519cbd530e060e738",
+                "url": "https://api.github.com/repos/voku/anti-xss/zipball/462d39510b6a5b8fbcf85814f00239e2ba748814",
+                "reference": "462d39510b6a5b8fbcf85814f00239e2ba748814",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.0.0",
                 "voku/portable-utf8": "~5.4.27"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~6.0 || ~7.0"
             },
             "type": "library",
             "extra": {
@@ -8181,7 +8378,6 @@
                     "voku\\helper\\": "src/voku/helper/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -8204,37 +8400,15 @@
                 "security",
                 "xss"
             ],
-            "funding": [
-                {
-                    "url": "https://www.paypal.me/moelleken",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/voku",
-                    "type": "github"
-                },
-                {
-                    "url": "https://opencollective.com/anti-xss",
-                    "type": "open_collective"
-                },
-                {
-                    "url": "https://www.patreon.com/voku",
-                    "type": "patreon"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/voku/anti-xss",
-                    "type": "tidelift"
-                }
-            ],
-            "time": "2020-08-08T20:15:45+00:00"
+            "time": "2020-08-23T00:24:48+00:00"
         },
         {
             "name": "voku/arrayy",
-            "version": "7.8.2",
+            "version": "7.8.3",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/voku/Arrayy/zipball/ff32efd0036f776bd7adc3e7e6e3441d5c037c35",
-                "reference": "ff32efd0036f776bd7adc3e7e6e3441d5c037c35",
+                "url": "https://api.github.com/repos/voku/Arrayy/zipball/f8d0bcde0405d5814d8463224915b08a735254d4",
+                "reference": "f8d0bcde0405d5814d8463224915b08a735254d4",
                 "shasum": ""
             },
             "require": {
@@ -8242,9 +8416,6 @@
                 "php": ">=7.0.0",
                 "phpdocumentor/reflection-docblock": "~4.3|~5.0",
                 "symfony/polyfill-mbstring": "~1.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~6.0 || ~7.0"
             },
             "type": "library",
             "autoload": {
@@ -8255,7 +8426,6 @@
                     "src/Create.php"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -8277,29 +8447,7 @@
                 "utility",
                 "utils"
             ],
-            "funding": [
-                {
-                    "url": "https://www.paypal.me/moelleken",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/voku",
-                    "type": "github"
-                },
-                {
-                    "url": "https://opencollective.com/arrayy",
-                    "type": "open_collective"
-                },
-                {
-                    "url": "https://www.patreon.com/voku",
-                    "type": "patreon"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/voku/arrayy",
-                    "type": "tidelift"
-                }
-            ],
-            "time": "2020-07-28T21:43:54+00:00"
+            "time": "2020-08-22T10:52:20+00:00"
         },
         {
             "name": "voku/email-check",
