@@ -1,36 +1,4 @@
-{% extends '_layouts/_instant-search-index' %}
-
-{% set entry = craft.entries.section('topicsIndex').one %}
-
-{% set facets = [
-  {
-    container: 'boardsCommissions',
-    attribute: 'boardsCommissions',
-    header: 'Boards & Commissions'
-  },
-  {
-    container: 'departments',
-    attribute: 'departments',
-    header: 'Departments'
-  },
-  {
-    container: 'projects',
-    attribute: 'projects',
-    header: 'Projects'
-  },
-
-] %}
-
-{% js at head %}
-var algoliaIndex = '{{ getenv('ENVIRONMENT') }}_topics';
-var searchInputText = "Search for a specific topic. E.g., “Parking ticket”";
-var facetFilters = [
-  {% for facet in facets %}
-    {
-      container: '#{{ facet.container }}',
-      attribute: '{{ facet.attribute }}',
-      header: '{{ facet.header }}'
-    },
-  {% endfor %}
-];
-{% endjs %}
+{% include "_layouts/_simple-index.twig" with {
+  indexPage: "topicsIndex",
+  entrySection: "topics"
+} %}

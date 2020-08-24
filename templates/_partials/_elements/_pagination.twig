@@ -1,27 +1,27 @@
 {% if pageInfo.totalPages > 1 %}
   {% spaceless %}
-    <div class="pagination text-base">
-      <a class="mr-2" href="{{ pageInfo.firstUrl }}">«</a>
+    <div class="flex space-x-2 text-base pagination">
+      <a href="{{ pageInfo.firstUrl }}">«</a>
       {% if pageInfo.prevUrl %}
-        <a class="mx-2" href="{{ pageInfo.prevUrl }}">‹</a>
+        <a href="{{ pageInfo.prevUrl }}">‹</a>
       {% endif %}
 
-      <span class="oak-hidden sm:inline">
+      <span class="space-x-2 oak-hidden sm:inline">
         {% for page, url in pageInfo.getPrevUrls(5) %}
-          <a class="mx-2" href="{{ url }}">{{ page }}</a>
+          <a href="{{ url }}">{{ page }}</a>
         {% endfor %}
 
-        <span class="mx-2 current">{{ pageInfo.currentPage }}</span>
+        <span class="current">{{ pageInfo.currentPage }}</span>
 
         {% for page, url in pageInfo.getNextUrls(5) %}
-          <a class="mx-2" href="{{ url }}">{{ page }}</a>
+          <a href="{{ url }}">{{ page }}</a>
         {% endfor %}
       </span>
 
       {% if pageInfo.nextUrl %}
-        <a class="mx-2" href="{{ pageInfo.nextUrl }}">›</a>
+        <a href="{{ pageInfo.nextUrl }}">›</a>
       {% endif %}
-      <a class="ml-2" href="{{ pageInfo.lastUrl }}">»</a>
+      <a href="{{ pageInfo.lastUrl }}">»</a>
     </div>
   {% endspaceless %}
 {% endif %}
