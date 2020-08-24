@@ -1,0 +1,19 @@
+contentColumnType: string
+fieldGroup: a8c82666-3295-4f90-b50b-67f2299847db
+handle: staffEntry
+instructions: ''
+name: 'Staff Entry'
+searchable: true
+settings:
+  limit: '1'
+  localizeRelations: false
+  selectionLabel: 'Add a staff member'
+  source: null
+  sources:
+    - 'section:07faad04-9ec4-4f68-9fe8-0ca20f189f8a'
+  targetSiteId: null
+  validateRelatedElements: '1'
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Entries

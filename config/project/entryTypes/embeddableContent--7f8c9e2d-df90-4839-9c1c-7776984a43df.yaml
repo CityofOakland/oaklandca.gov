@@ -1,0 +1,21 @@
+fieldLayouts:
+  998c8fac-8eb8-4804-b97f-2c0524f7a51d:
+    tabs:
+      -
+        elements:
+          -
+            instructions: null
+            label: Title
+            type: craft\fieldlayoutelements\EntryTitleField
+          -
+            fieldUid: 1160308b-03c0-43ad-9f4b-35e26c016c89
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: Content
+        sortOrder: 1
+handle: embeddableContent
+hasTitleField: true
+name: 'Embeddable Content'
+section: 74ecde2f-b254-4f3e-b889-1affac6f5999
+sortOrder: 1
+titleFormat: null

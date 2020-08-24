@@ -1,0 +1,18 @@
+contentColumnType: string
+fieldGroup: 8ac349fa-f382-4bc4-9f01-25e04abf073c
+handle: highlightedNews
+instructions: 'Choose the news item to feature on the homepage.'
+name: 'Highlighted News'
+searchable: true
+settings:
+  limit: '1'
+  localizeRelations: false
+  selectionLabel: 'Add a news item'
+  source: null
+  sources:
+    - 'section:983c9f6f-9251-4fd3-91e1-b598eccc6a1a'
+  targetSiteId: null
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Entries

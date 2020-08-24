@@ -1,0 +1,186 @@
+contentColumnType: text
+fieldGroup: 8e8ee56e-cdb8-4206-a3b5-c3aa0eb3a884
+handle: externalPhotoGallery
+instructions: 'Use this link to point to a Flickr or SmugMug gallery'
+name: 'External Photo Gallery'
+searchable: true
+settings:
+  allowCustomText: '1'
+  allowTarget: '1'
+  defaultText: ''
+  selectLinkText: ''
+  types:
+    __assoc__:
+      -
+        - fruitstudios\linkit\models\Asset
+        -
+          __assoc__:
+            -
+              - customLabel
+              - ''
+            -
+              - customSelectionLabel
+              - ''
+            -
+              - enabled
+              - ''
+            -
+              - sources
+              - '*'
+      -
+        - fruitstudios\linkit\models\Category
+        -
+          __assoc__:
+            -
+              - customLabel
+              - ''
+            -
+              - customSelectionLabel
+              - ''
+            -
+              - enabled
+              - ''
+            -
+              - sources
+              - '*'
+      -
+        - fruitstudios\linkit\models\Email
+        -
+          __assoc__:
+            -
+              - customLabel
+              - ''
+            -
+              - customPlaceholder
+              - ''
+            -
+              - enabled
+              - ''
+      -
+        - fruitstudios\linkit\models\Entry
+        -
+          __assoc__:
+            -
+              - customLabel
+              - ''
+            -
+              - customSelectionLabel
+              - ''
+            -
+              - enabled
+              - ''
+            -
+              - sources
+              - '*'
+      -
+        - fruitstudios\linkit\models\Facebook
+        -
+          __assoc__:
+            -
+              - customLabel
+              - ''
+            -
+              - customPlaceholder
+              - ''
+            -
+              - enabled
+              - ''
+      -
+        - fruitstudios\linkit\models\Instagram
+        -
+          __assoc__:
+            -
+              - customLabel
+              - ''
+            -
+              - customPlaceholder
+              - ''
+            -
+              - enabled
+              - ''
+      -
+        - fruitstudios\linkit\models\LinkedIn
+        -
+          __assoc__:
+            -
+              - customLabel
+              - ''
+            -
+              - customPlaceholder
+              - ''
+            -
+              - enabled
+              - ''
+      -
+        - fruitstudios\linkit\models\Phone
+        -
+          __assoc__:
+            -
+              - customLabel
+              - ''
+            -
+              - customPlaceholder
+              - ''
+            -
+              - enabled
+              - ''
+      -
+        - fruitstudios\linkit\models\Twitter
+        -
+          __assoc__:
+            -
+              - customLabel
+              - ''
+            -
+              - customPlaceholder
+              - ''
+            -
+              - enabled
+              - ''
+      -
+        - fruitstudios\linkit\models\Url
+        -
+          __assoc__:
+            -
+              - allowAlias
+              - '1'
+            -
+              - allowHash
+              - ''
+            -
+              - allowMailto
+              - ''
+            -
+              - allowPaths
+              - ''
+            -
+              - customLabel
+              - ''
+            -
+              - customPlaceholder
+              - ''
+            -
+              - enabled
+              - '1'
+      -
+        - fruitstudios\linkit\models\User
+        -
+          __assoc__:
+            -
+              - customLabel
+              - ''
+            -
+              - customSelectionLabel
+              - ''
+            -
+              - enabled
+              - ''
+            -
+              - sources
+              - '*'
+            -
+              - userPath
+              - ''
+translationKeyFormat: null
+translationMethod: none
+type: fruitstudios\linkit\fields\LinkitField

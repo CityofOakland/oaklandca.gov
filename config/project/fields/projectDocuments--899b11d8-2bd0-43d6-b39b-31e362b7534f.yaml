@@ -1,0 +1,19 @@
+contentColumnType: string
+fieldGroup: 8e8ee56e-cdb8-4206-a3b5-c3aa0eb3a884
+handle: projectDocuments
+instructions: 'Add any documents or document packets that you wish to display on this page here.'
+name: 'Project Documents'
+searchable: true
+settings:
+  limit: ''
+  localizeRelations: false
+  selectionLabel: 'Add a document'
+  source: null
+  sources:
+    - 'section:9da43fd8-c505-4d19-9486-e0cb669c568a'
+    - 'section:8b7c4e26-9aab-4c5d-874e-aee151107de3'
+  targetSiteId: null
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Entries

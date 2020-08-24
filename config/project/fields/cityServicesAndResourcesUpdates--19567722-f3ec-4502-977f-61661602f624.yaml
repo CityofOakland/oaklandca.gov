@@ -1,0 +1,14 @@
+contentColumnType: string
+fieldGroup: 8ac349fa-f382-4bc4-9f01-25e04abf073c
+handle: cityServicesAndResourcesUpdates
+instructions: ''
+name: 'City Services and Resources Updates'
+searchable: true
+settings:
+  contentTable: '{{%matrixcontent_cityservicesandresourcesupdates}}'
+  maxBlocks: ''
+  minBlocks: ''
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

@@ -1,0 +1,17 @@
+contentColumnType: text
+fieldGroup: cea536bc-4ae2-48c6-b388-34eed4a79ac6
+handle: age
+instructions: ''
+name: Age
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: ''
+  placeholder: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

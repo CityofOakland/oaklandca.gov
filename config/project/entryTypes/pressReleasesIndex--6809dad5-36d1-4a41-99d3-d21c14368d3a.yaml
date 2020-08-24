@@ -1,0 +1,37 @@
+fieldLayouts:
+  a2b6134c-90f2-4b6d-9ee1-3949eb1cb843:
+    tabs:
+      -
+        elements:
+          -
+            instructions: null
+            label: Title
+            type: craft\fieldlayoutelements\EntryTitleField
+          -
+            fieldUid: f62c85ae-2203-4d1a-8702-da515126a398
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: c2ad07dc-05e7-4ef4-89b6-2e1eaccee210
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: bef74be8-b22d-4dd0-9217-9707bb43d888
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: Content
+        sortOrder: 1
+      -
+        elements:
+          -
+            fieldUid: ecc31df6-640f-4fa6-a2e6-caea757e379d
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: SEO
+        sortOrder: 2
+handle: pressReleasesIndex
+hasTitleField: true
+name: 'Press Releases Index'
+section: c61018ed-ff63-485f-aecc-aa9cdcbe7f5c
+sortOrder: 1
+titleFormat: '{section.name|raw}'

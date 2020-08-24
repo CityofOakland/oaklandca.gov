@@ -1,0 +1,18 @@
+contentColumnType: string
+fieldGroup: 83c14444-efcf-4d13-a20a-56275fd18855
+handle: projects
+instructions: 'Choose the project pages to relate to this entry. Relationships help content surface in search. Relationships also help documents surface on index pages. '
+name: Projects
+searchable: true
+settings:
+  limit: ''
+  localizeRelations: false
+  selectionLabel: 'Add a project'
+  source: null
+  sources:
+    - 'section:98d541ae-56ee-4c98-ba9c-37438dc485a0'
+  targetSiteId: null
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Entries

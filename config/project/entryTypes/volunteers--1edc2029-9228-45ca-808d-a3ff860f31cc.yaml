@@ -1,0 +1,73 @@
+fieldLayouts:
+  f4093493-9d80-4cf6-aebc-c966cf04cd3e:
+    tabs:
+      -
+        elements:
+          -
+            instructions: null
+            label: ''
+            type: craft\fieldlayoutelements\EntryTitleField
+          -
+            fieldUid: 1b7fc839-7de9-4717-b41d-d74bfa40b5c8
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 6c28ddf9-1938-489c-ad36-75d555e50269
+            required: true
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 01d73fd7-5170-4523-8658-02c344e3ff55
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 4d6dd644-455e-4186-8d05-a00079622246
+            required: true
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: e3a53ca0-960e-4ce6-933b-b3613bd64d7a
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 736bfdbe-8ec1-4b3d-bd17-6dc825c56855
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 2fb76e53-8619-4e29-b609-c984c390de9a
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 5e5aad16-6bdc-4d3e-adfd-75147a323b78
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: b34a0436-278d-4bb7-a7e8-729da1db7c4e
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 069f8ed4-d4ee-4ed8-bf37-efafb4e633e8
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: a80bc90b-ca79-4416-a71f-0e743836bcb9
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: Content
+        sortOrder: 1
+      -
+        elements:
+          -
+            fieldUid: ecc31df6-640f-4fa6-a2e6-caea757e379d
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: cbc76d42-f4f0-400b-949f-08dd2b360fe7
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: SEO
+        sortOrder: 2
+handle: volunteers
+hasTitleField: false
+name: Volunteers
+section: 17d5d48d-2d75-4742-8820-cdce13764482
+sortOrder: 1
+titleFormat: '{firstName} {lastName}'

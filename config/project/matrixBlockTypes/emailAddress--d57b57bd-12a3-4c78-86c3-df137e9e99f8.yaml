@@ -1,0 +1,65 @@
+field: 4047207e-c317-47cc-825b-7e751cc4ad38
+fieldLayouts:
+  3f1a1379-bdb2-48aa-9a5b-fb6cf6d0b97d:
+    tabs:
+      -
+        fields:
+          1f60a4d5-d5d9-46f2-8f90-d58d47a2bb34:
+            required: true
+            sortOrder: 3
+          243725a4-eeda-4e57-8cf4-d545bd6edf9c:
+            required: false
+            sortOrder: 1
+          b50fa2f6-4a94-44ce-ae39-82951e06a717:
+            required: true
+            sortOrder: 2
+        name: Content
+        sortOrder: 1
+fields:
+  1f60a4d5-d5d9-46f2-8f90-d58d47a2bb34:
+    contentColumnType: string
+    fieldGroup: null
+    handle: emailAddress
+    instructions: 'Write the email address'
+    name: 'Email Address'
+    searchable: true
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Email
+  243725a4-eeda-4e57-8cf4-d545bd6edf9c:
+    contentColumnType: text
+    fieldGroup: null
+    handle: emailTitle
+    instructions: ''
+    name: 'Email Title'
+    searchable: true
+    settings:
+      charLimit: ''
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  b50fa2f6-4a94-44ce-ae39-82951e06a717:
+    contentColumnType: text
+    fieldGroup: null
+    handle: linkText
+    instructions: 'Write the name of the individual or agency that the email goes to.'
+    name: 'Link Text'
+    searchable: true
+    settings:
+      charLimit: ''
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: emailAddress
+name: 'Email Address'
+sortOrder: 5

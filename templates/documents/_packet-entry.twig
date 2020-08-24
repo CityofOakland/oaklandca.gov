@@ -11,11 +11,11 @@
       }
     ]
   } %}
-  <section class="bg-white relative z-0">
-    <div class="container">
+  <section class="relative z-0 bg-white">
+    <div class="container pt-0">
       {{ entry.summary }}
       {% if entry.documents.exists() %}
-        <h2 class="border-b border-gray-300 py-2">Documents</h2>
+        <h2 class="py-2 border-b border-gray-300">Documents</h2>
         {% if entry.sortDocumentsByDate %}
           {% set entries = entry.documents.orderBy('postDate desc').all() %}
         {% else %}
@@ -25,24 +25,24 @@
           {% if entry.section.handle == "documents" %}
             {% set file = entry.documentFile.one %}
             <article>
-              <h3 class="text-xl mb-0">
-                <a href="{{ file.url }}" class="fill-current trans-fast inline-flex items-center">
-                  <div class="inline-block h-5 w-8">{{ craft.inlin.er('/assets/img/icon-' ~ file.kind ~ '.svg') | replace('<svg ', '<svg class="h-full w-full" ') | raw }}</div>
+              <h3 class="mb-0 text-xl">
+                <a href="{{ file.url }}" class="inline-flex items-center fill-current trans-fast">
+                  <div class="inline-block w-8 h-5">{{ craft.inlin.er('/assets/img/icon-' ~ file.kind ~ '.svg') | replace('<svg ', '<svg class="w-full h-full" ') | raw }}</div>
                   {{ entry.title }}
                   ({{ file.kind | upper }})</a>
               </h3>
               {% if entry.summary %}
-                <div class="mt-0 o-4 pl-8">
+                <div class="pl-8 mt-0 o-4">
                   {{ entry.summary }}
                 </div>
               {% endif %}
-              <p class="text-sm mt-0 pl-8">
+              <p class="pl-8 mt-0 text-sm">
                 <a class="" href="{{ entry.url }}">Permalink</a>
               </p>
             </article>
           {% else %}
             <article>
-              <h3 class="text-xl mb-0">
+              <h3 class="mb-0 text-xl">
                 <a href="{{ entry.url }}" class="inline-flex">DOCUMENT PACKET:
                   {{ entry.title }}</a>
               </h3>

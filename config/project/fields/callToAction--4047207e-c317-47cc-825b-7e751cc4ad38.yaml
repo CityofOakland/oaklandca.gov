@@ -1,0 +1,14 @@
+contentColumnType: string
+fieldGroup: 767a8f0b-6ea5-4855-a6f3-8c2a4a4aee78
+handle: callToAction
+instructions: 'If applicable, choose up to three calls to action (buttons).'
+name: 'Call to Action'
+searchable: true
+settings:
+  contentTable: '{{%matrixcontent_calltoaction}}'
+  localizeBlocks: false
+  maxBlocks: '3'
+  minBlocks: ''
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

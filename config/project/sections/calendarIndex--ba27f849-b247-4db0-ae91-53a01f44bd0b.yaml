@@ -1,0 +1,23 @@
+enableVersioning: true
+handle: calendarIndex
+name: 'Calendar Index'
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  c35d3a93-d7f4-4c37-ae3e-1b4d403311bb:
+    enabledByDefault: true
+    hasUrls: true
+    template: calendar/index
+    uriFormat: calendar
+type: single

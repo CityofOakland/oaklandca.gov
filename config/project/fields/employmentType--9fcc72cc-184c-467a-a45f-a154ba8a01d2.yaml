@@ -1,0 +1,55 @@
+contentColumnType: string
+fieldGroup: a8c82666-3295-4f90-b50b-67f2299847db
+handle: employmentType
+instructions: 'Select the type of employment this person is under, currently.'
+name: 'Employment Type'
+searchable: true
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Staff
+        -
+          - value
+          - staff
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Volunteer
+        -
+          - value
+          - volunteer
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Contractor
+        -
+          - value
+          - contractor
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Partner
+        -
+          - value
+          - partner
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

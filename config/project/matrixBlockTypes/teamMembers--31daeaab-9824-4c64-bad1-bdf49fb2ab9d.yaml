@@ -1,0 +1,55 @@
+field: b924108b-fb70-4757-ad7f-3e713f23a6d6
+fieldLayouts:
+  859a10a3-3b80-47a8-8ae8-30e2bd89736c:
+    tabs:
+      -
+        fields:
+          0cf5f750-4518-4e2c-9766-9b21e108e9be:
+            required: false
+            sortOrder: 1
+          a9d9aefa-be2d-4db6-af99-ff6d90c0e200:
+            required: true
+            sortOrder: 2
+        name: Content
+        sortOrder: 1
+fields:
+  0cf5f750-4518-4e2c-9766-9b21e108e9be:
+    contentColumnType: text
+    fieldGroup: null
+    handle: staffHeading
+    instructions: 'If this collection of staff have a specific designation, enter their group classification here.'
+    name: 'Staff Heading'
+    searchable: true
+    settings:
+      charLimit: ''
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  a9d9aefa-be2d-4db6-af99-ff6d90c0e200:
+    contentColumnType: string
+    fieldGroup: null
+    handle: staff
+    instructions: ''
+    name: Staff
+    searchable: true
+    settings:
+      limit: ''
+      localizeRelations: false
+      selectionLabel: 'Add a staff member'
+      source: null
+      sources:
+        - 'section:07faad04-9ec4-4f68-9fe8-0ca20f189f8a'
+        - 'section:17d5d48d-2d75-4742-8820-cdce13764482'
+      targetSiteId: null
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Entries
+handle: teamMembers
+name: 'Team Members'
+sortOrder: 1

@@ -1,0 +1,14 @@
+contentColumnType: string
+fieldGroup: 767a8f0b-6ea5-4855-a6f3-8c2a4a4aee78
+handle: addresses
+instructions: ''
+name: Address(es)
+searchable: true
+settings:
+  contentTable: '{{%matrixcontent_addresses}}'
+  maxBlocks: ''
+  minBlocks: ''
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

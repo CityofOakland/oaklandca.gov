@@ -1,0 +1,22 @@
+contentColumnType: text
+fieldGroup: 34f2c44b-4710-447e-9c4e-71e80288b6e4
+handle: meetingsDescription
+instructions: 'Use this field to add context to your meetings index table instead of the default text.'
+name: 'Meetings Description'
+searchable: true
+settings:
+  availableTransforms: '*'
+  availableVolumes: '*'
+  cleanupHtml: true
+  columnType: text
+  purifierConfig: ''
+  purifyHtml: '1'
+  redactorConfig: 'Basic with Links.json'
+  removeEmptyTags: '1'
+  removeInlineStyles: '1'
+  removeNbsp: '1'
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+translationKeyFormat: null
+translationMethod: none
+type: craft\redactor\Field

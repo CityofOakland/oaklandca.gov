@@ -55,13 +55,18 @@
           <p class="mb-0 md:leading-loose">{{ leadIn | raw }}</p>
         {% endif %}
       {% endif %}
-      {% if ctaButton | length %}
-        {% set attributes = {
-            class: 'btn py-2 mt-4 text-sm',
-            "data-custom": 'custom-data-attribute'
-        } %}
-        {{ ctaButton.link(attributes) }}
-      {% endif %}
+      <div class="flex space-x-4">
+        {% if ctaButton | length %}
+          {% set attributes = {
+              class: 'btn py-2 mt-4 text-sm',
+              "data-custom": 'custom-data-attribute'
+          } %}
+          {{ ctaButton.link(attributes) }}
+        {% endif %}
+        {% if entry.id == 34229 %}
+          <a class="py-2 mt-4 text-sm btn" href="https://www.oaklandca.gov/documents/special-vacancy-notices">View Local Appointments List and Special Vacancy Notices</a>
+        {% endif %}
+      </div>      
     </div>
     <div class="w-full lg:w-1/3 lg:pl-4">
       {{ headerSubContent ?? '' }}

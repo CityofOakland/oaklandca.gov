@@ -1,0 +1,26 @@
+contentColumnType: string
+fieldGroup: c964d82c-a4e7-4ec4-ad42-7c3e843193c0
+handle: photoGallery
+instructions: 'When adding your photos, be sure they have their "alt" attribute filled out. To do this, double click on each image and fill out the required "Alt Text" field. This is a requirement for adding images to our website in order to keep the content accessible and meet WCAG 2.0 standards. The Alt Text field will also provide captions for the image gallery.'
+name: 'Photo Gallery'
+searchable: true
+settings:
+  allowedKinds:
+    - image
+  defaultUploadLocationSource: 'volume:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67'
+  defaultUploadLocationSubpath: ''
+  limit: ''
+  localizeRelations: false
+  restrictFiles: '1'
+  selectionLabel: 'Add a photo'
+  singleUploadLocationSource: 'volume:56ad4140-da85-43ea-8292-3fac04cbefc1'
+  singleUploadLocationSubpath: ''
+  source: null
+  sources: '*'
+  targetSiteId: null
+  useSingleFolder: '1'
+  validateRelatedElements: '1'
+  viewMode: large
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Assets

@@ -1,0 +1,19 @@
+contentColumnType: text
+fieldGroup: 4ed914c6-b7ea-44be-a061-4430ad33baf2
+handle: mediaContact
+instructions: ''
+name: 'Media Contact'
+searchable: true
+settings:
+  availableTransforms: '*'
+  availableVolumes: ''
+  columnType: text
+  purifierConfig: ''
+  purifyHtml: '1'
+  redactorConfig: 'Simple with Links.json'
+  removeEmptyTags: '1'
+  removeInlineStyles: '1'
+  removeNbsp: '1'
+translationKeyFormat: null
+translationMethod: none
+type: craft\redactor\Field

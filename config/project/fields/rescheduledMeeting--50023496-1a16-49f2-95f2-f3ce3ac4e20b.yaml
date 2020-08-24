@@ -1,0 +1,18 @@
+contentColumnType: string
+fieldGroup: 7a44f3bc-fbe1-424a-a4ea-6bb6f3528d75
+handle: rescheduledMeeting
+instructions: 'Select the new meeting you have rescheduled for here.'
+name: 'Rescheduled Meeting'
+searchable: true
+settings:
+  limit: '1'
+  localizeRelations: false
+  selectionLabel: 'Add a meeting'
+  source: null
+  sources:
+    - 'calendar:3'
+  targetSiteId: null
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: Solspace\Calendar\FieldTypes\EventFieldType

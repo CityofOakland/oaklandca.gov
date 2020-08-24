@@ -1,0 +1,16 @@
+contentColumnType: text
+fieldGroup: 27454cbc-e66b-4d88-bef3-32b87a69a715
+handle: cityProfile
+instructions: ''
+name: 'City Profile'
+searchable: true
+settings:
+  charLimit: ''
+  code: '1'
+  columnType: text
+  initialRows: '4'
+  multiline: ''
+  placeholder: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

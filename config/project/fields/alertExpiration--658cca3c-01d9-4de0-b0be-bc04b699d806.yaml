@@ -1,0 +1,13 @@
+contentColumnType: datetime
+fieldGroup: a2015bc8-9d3a-4f8d-a180-1ddc7ebd3087
+handle: alertExpiration
+instructions: 'If the current date is after this date, then the alert will be hidden. To make the alert persistent, leave this field empty.'
+name: 'Alert Expiration'
+searchable: false
+settings:
+  minuteIncrement: '30'
+  showDate: true
+  showTime: false
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Date

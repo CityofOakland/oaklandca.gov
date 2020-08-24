@@ -1,0 +1,22 @@
+contentColumnType: text
+fieldGroup: a2015bc8-9d3a-4f8d-a180-1ddc7ebd3087
+handle: alertMessage
+instructions: 'Write the message of your alert here. Try to keep it short and use the link to guide viewers to more detailed information.'
+name: 'Alert Message'
+searchable: false
+settings:
+  availableTransforms: '*'
+  availableVolumes: '*'
+  cleanupHtml: true
+  columnType: text
+  purifierConfig: ''
+  purifyHtml: '1'
+  redactorConfig: Simple.json
+  removeEmptyTags: '1'
+  removeInlineStyles: '1'
+  removeNbsp: '1'
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+translationKeyFormat: null
+translationMethod: none
+type: craft\redactor\Field

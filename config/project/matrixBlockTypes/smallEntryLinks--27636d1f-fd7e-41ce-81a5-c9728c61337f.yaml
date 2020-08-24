@@ -1,0 +1,96 @@
+field: fd0c8e02-99b4-4ce5-ab89-b29cd0efc581
+fieldLayouts:
+  9841506c-74ac-4441-8887-761cb5aca44a:
+    tabs:
+      -
+        fields:
+          5eb32746-ba01-4a64-b84f-f6b988abfa97:
+            required: true
+            sortOrder: 1
+          646188fb-7ed1-48ae-b539-736f4fd442d1:
+            required: true
+            sortOrder: 3
+          a027ac28-65c7-472f-b9ea-d30253b0205f:
+            required: false
+            sortOrder: 2
+        name: Content
+        sortOrder: 1
+fields:
+  5eb32746-ba01-4a64-b84f-f6b988abfa97:
+    contentColumnType: text
+    fieldGroup: null
+    handle: heading
+    instructions: ''
+    name: Heading
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  646188fb-7ed1-48ae-b539-736f4fd442d1:
+    contentColumnType: string
+    fieldGroup: null
+    handle: entries
+    instructions: 'Select up to 24 entries to include as small text links on your page'
+    name: Entries
+    searchable: true
+    settings:
+      allowSelfRelations: ''
+      limit: '24'
+      localizeRelations: false
+      selectionLabel: ''
+      source: null
+      sources:
+        - 'section:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f'
+        - 'section:b3411cb1-e860-46ed-9cd6-58cf9b8daacb'
+        - 'section:9da43fd8-c505-4d19-9486-e0cb669c568a'
+        - 'section:8b7c4e26-9aab-4c5d-874e-aee151107de3'
+        - 'section:983c9f6f-9251-4fd3-91e1-b598eccc6a1a'
+        - 'section:28881fc8-3e61-4fdb-a5ee-cce1bab725bf'
+        - 'section:92f0f749-ed5b-4acc-aa15-6340f6e25791'
+        - 'section:98d541ae-56ee-4c98-ba9c-37438dc485a0'
+        - 'section:24fa116b-8516-4626-84f3-86b685e71071'
+        - 'section:b7e437e1-239f-4c5c-8c62-5f0323f9d22c'
+        - 'section:07faad04-9ec4-4f68-9fe8-0ca20f189f8a'
+        - 'section:fbf8b9b0-8875-4e08-819a-d62603676dc4'
+        - 'section:70778563-6dac-453d-a4b0-5121f3a614b7'
+        - 'section:17d5d48d-2d75-4742-8820-cdce13764482'
+      targetSiteId: null
+      validateRelatedElements: ''
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Entries
+  a027ac28-65c7-472f-b9ea-d30253b0205f:
+    contentColumnType: text
+    fieldGroup: null
+    handle: entriesDescription
+    instructions: 'Use this optional field to provide context for the pages you link to in this section.'
+    name: 'Entries Description'
+    searchable: true
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      cleanupHtml: true
+      columnType: text
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: 'Simple with Links.json'
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+handle: smallEntryLinks
+name: 'Small Entry Links'
+sortOrder: 12

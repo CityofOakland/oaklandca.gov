@@ -1,0 +1,14 @@
+contentColumnType: string
+fieldGroup: 27454cbc-e66b-4d88-bef3-32b87a69a715
+handle: awardsAndAccolades
+instructions: ''
+name: 'Awards and Accolades'
+searchable: true
+settings:
+  contentTable: '{{%matrixcontent_awardsandaccolades}}'
+  maxBlocks: '2'
+  minBlocks: ''
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

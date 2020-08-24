@@ -1,0 +1,9 @@
+contentColumnType: string(255)
+fieldGroup: 1fe293ad-52d9-4002-984e-b7a256d4b158
+handle: twitter
+instructions: 'Add the URL for the Twitter account for this entry.'
+name: Twitter
+searchable: true
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Url

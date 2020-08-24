@@ -1,0 +1,24 @@
+fieldLayouts:
+  122ffc14-c738-4425-a48b-d7d999e6e166:
+    tabs:
+      -
+        fields:
+          fff5cf49-87e6-4751-9032-b4ca8136e237:
+            required: true
+            sortOrder: 1
+        name: Content
+        sortOrder: 1
+handle: events
+hasUrls: true
+name: Events
+settings:
+  bucket: cao-94612
+  cfDistributionId: ''
+  expires: ''
+  keyId: $S3_API_KEY
+  region: us-west-2
+  secret: $S3_SECRET
+  subfolder: events
+sortOrder: 8
+type: craft\awss3\Volume
+url: 'https://cao-94612.s3.amazonaws.com/'

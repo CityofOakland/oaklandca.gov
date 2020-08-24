@@ -1,0 +1,44 @@
+contentColumnType: string
+fieldGroup: 7a44f3bc-fbe1-424a-a4ea-6bb6f3528d75
+handle: eventStatus
+instructions: ''
+name: 'Event Status'
+searchable: true
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Active
+        -
+          - value
+          - active
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Canceled
+        -
+          - value
+          - canceled
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Rescheduled
+        -
+          - value
+          - rescheduled
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

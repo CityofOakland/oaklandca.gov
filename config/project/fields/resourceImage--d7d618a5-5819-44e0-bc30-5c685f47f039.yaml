@@ -1,0 +1,26 @@
+contentColumnType: string
+fieldGroup: c964d82c-a4e7-4ec4-ad42-7c3e843193c0
+handle: resourceImage
+instructions: 'Choose the image that you would like to upload. Be sure to double click the image after uploading it and assigning the ALT TEXT, as this is an ADA requirement.'
+name: 'Resource Image'
+searchable: true
+settings:
+  allowedKinds:
+    - image
+  defaultUploadLocationSource: 'volume:1e78d0ad-2af1-4556-ab43-7b6c110e75b8'
+  defaultUploadLocationSubpath: ''
+  limit: '1'
+  localizeRelations: false
+  restrictFiles: '1'
+  selectionLabel: 'Add an image'
+  singleUploadLocationSource: 'volume:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67'
+  singleUploadLocationSubpath: ''
+  source: null
+  sources: '*'
+  targetSiteId: null
+  useSingleFolder: '1'
+  validateRelatedElements: '1'
+  viewMode: list
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Assets

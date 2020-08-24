@@ -1,0 +1,113 @@
+field: 1c974e73-c709-48c5-bc6e-fb8a9ae1ba8a
+fieldLayouts:
+  b030ded4-f9f5-4563-87c5-2be5dd856787:
+    tabs:
+      -
+        fields:
+          2200fe2a-bcb7-435e-96f9-7f00262131e5:
+            required: false
+            sortOrder: 3
+          7769a82a-1135-4a99-aa7c-d121376328d6:
+            required: false
+            sortOrder: 4
+          c48fd91b-ae6d-42f1-9c3b-62258d7e681f:
+            required: false
+            sortOrder: 2
+          c51bb818-8e54-4a71-b8e6-e623907d4cae:
+            required: false
+            sortOrder: 1
+        name: Content
+        sortOrder: 1
+fields:
+  2200fe2a-bcb7-435e-96f9-7f00262131e5:
+    contentColumnType: text
+    fieldGroup: null
+    handle: column3Cell
+    instructions: ''
+    name: 'Column 3 Cell'
+    searchable: true
+    settings:
+      availableTransforms: ''
+      availableVolumes: '*'
+      cleanupHtml: true
+      columnType: text
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: 'Basic with Links.json'
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: true
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  7769a82a-1135-4a99-aa7c-d121376328d6:
+    contentColumnType: text
+    fieldGroup: null
+    handle: column4Cell
+    instructions: ''
+    name: 'Column 4 Cell'
+    searchable: true
+    settings:
+      availableTransforms: ''
+      availableVolumes: '*'
+      cleanupHtml: true
+      columnType: text
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: 'Basic with Links.json'
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: true
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  c48fd91b-ae6d-42f1-9c3b-62258d7e681f:
+    contentColumnType: text
+    fieldGroup: null
+    handle: column2Cell
+    instructions: ''
+    name: 'Column 2 Cell'
+    searchable: true
+    settings:
+      availableTransforms: ''
+      availableVolumes: '*'
+      cleanupHtml: true
+      columnType: text
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: 'Basic with Links.json'
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: true
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  c51bb818-8e54-4a71-b8e6-e623907d4cae:
+    contentColumnType: text
+    fieldGroup: null
+    handle: column1Cell
+    instructions: ''
+    name: 'Column 1 Cell'
+    searchable: true
+    settings:
+      availableTransforms: ''
+      availableVolumes: '*'
+      cleanupHtml: true
+      columnType: text
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: 'Basic with Links.json'
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: true
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field

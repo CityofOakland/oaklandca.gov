@@ -1,0 +1,13 @@
+siteUid: null
+sortOrder: 2
+template: /calendar-demo/month
+uriParts:
+  - calendar-demo/month/
+  -
+    - year
+    - '\d{4}'
+  - /
+  -
+    - month
+    - '(?:0?[1-9]|1[012])'
+uriPattern: 'calendar-demo/month/<year:\d{4}>/<month:(?:0?[1-9]|1[012])>'

@@ -1,0 +1,100 @@
+contentColumnType: string
+fieldGroup: 8e8ee56e-cdb8-4206-a3b5-c3aa0eb3a884
+handle: projectStatus
+instructions: ''
+name: 'Project Status'
+searchable: true
+settings:
+  optgroups: true
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Planned
+        -
+          - value
+          - planned
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Started
+        -
+          - value
+          - started
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Hiatus / On Hold'
+        -
+          - value
+          - hiatus
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Completed
+        -
+          - value
+          - completed
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Canceled
+        -
+          - value
+          - canceled
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'In Process'
+        -
+          - value
+          - inProcess
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Adopted
+        -
+          - value
+          - adopted
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Implementation
+        -
+          - value
+          - implementation
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

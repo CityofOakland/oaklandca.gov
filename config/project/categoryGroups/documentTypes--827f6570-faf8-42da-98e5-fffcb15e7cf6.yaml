@@ -1,0 +1,10 @@
+handle: documentTypes
+name: 'Document Types'
+siteSettings:
+  c35d3a93-d7f4-4c37-ae3e-1b4d403311bb:
+    hasUrls: false
+    template: null
+    uriFormat: null
+structure:
+  maxLevels: 1
+  uid: 79a4e890-1384-45a7-adb9-7b0059b1c736

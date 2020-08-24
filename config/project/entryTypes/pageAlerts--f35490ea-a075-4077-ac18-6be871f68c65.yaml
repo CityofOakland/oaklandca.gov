@@ -1,0 +1,37 @@
+fieldLayouts:
+  d3053b19-aa97-40df-a583-0335fb94fe55:
+    tabs:
+      -
+        elements:
+          -
+            instructions: null
+            label: Title
+            type: craft\fieldlayoutelements\EntryTitleField
+          -
+            fieldUid: 9c0b44a4-b6de-498e-bc9d-4f7a4f9fe5f2
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: bf9907da-64c0-4cb6-bc21-493b39110166
+            required: true
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 1090a1a7-e23c-45c0-a7b3-aeeae640337e
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 6730cced-6743-4ada-abb8-1f4c0f2e8878
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 11892a6b-a44e-4406-af4e-49f3803e7931
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: 'Page Alerts'
+        sortOrder: 1
+handle: pageAlerts
+hasTitleField: false
+name: 'Page Alerts'
+section: be8acece-2031-4965-a62f-31911d00e24c
+sortOrder: 1
+titleFormat: '{{ object.alertHeading }}: {{ object.alertDescription | striptags | chop(limit=5, unit=''w'', append=''…'') }}'

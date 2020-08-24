@@ -1,0 +1,157 @@
+field: 90d724d7-7c32-4d04-8b9a-3900d6ecdb84
+fieldLayouts:
+  aeb25edb-5e97-4d36-887b-104930328dcf:
+    tabs:
+      -
+        fields:
+          6a0b2a6f-4bff-474e-a3b2-d0b19a556875:
+            required: false
+            sortOrder: 1
+          80185635-48b7-48d7-847a-53d941fdda68:
+            required: true
+            sortOrder: 2
+        name: Content
+        sortOrder: 1
+fields:
+  6a0b2a6f-4bff-474e-a3b2-d0b19a556875:
+    contentColumnType: text
+    fieldGroup: null
+    handle: locationName
+    instructions: ''
+    name: 'Location Name'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  80185635-48b7-48d7-847a-53d941fdda68:
+    contentColumnType: string
+    fieldGroup: null
+    handle: address
+    instructions: 'To ensure your map is generated correctly on your page, make sure to pick an address the popup provides. If you haven''t received a popup, click **"Search Addresses"** and then choose from that list. If you have successfully chosen an address, you will see the **Latitude** and **Longitude** fields below filled out automatically.'
+    name: Address
+    searchable: true
+    settings:
+      dragPinDefault: '1'
+      dragPinLatitude: '37.80524898225416'
+      dragPinLongitude: '-122.27233886718744'
+      dragPinZoom: '15'
+      layout:
+        __assoc__:
+          -
+            - street1
+            -
+              __assoc__:
+                -
+                  - width
+                  - 100
+                -
+                  - enable
+                  - 1
+                -
+                  - position
+                  - 1
+          -
+            - street2
+            -
+              __assoc__:
+                -
+                  - width
+                  - 100
+                -
+                  - enable
+                  - 1
+                -
+                  - position
+                  - 2
+          -
+            - city
+            -
+              __assoc__:
+                -
+                  - width
+                  - 50
+                -
+                  - enable
+                  - 1
+                -
+                  - position
+                  - 3
+          -
+            - state
+            -
+              __assoc__:
+                -
+                  - width
+                  - 15
+                -
+                  - enable
+                  - 1
+                -
+                  - position
+                  - 4
+          -
+            - zip
+            -
+              __assoc__:
+                -
+                  - width
+                  - 35
+                -
+                  - enable
+                  - 1
+                -
+                  - position
+                  - 5
+          -
+            - country
+            -
+              __assoc__:
+                -
+                  - width
+                  - 100
+                -
+                  - enable
+                  - 0
+                -
+                  - position
+                  - 6
+          -
+            - lat
+            -
+              __assoc__:
+                -
+                  - width
+                  - 50
+                -
+                  - enable
+                  - 1
+                -
+                  - position
+                  - 7
+          -
+            - lng
+            -
+              __assoc__:
+                -
+                  - width
+                  - 50
+                -
+                  - enable
+                  - 1
+                -
+                  - position
+                  - 8
+    translationKeyFormat: null
+    translationMethod: none
+    type: doublesecretagency\smartmap\fields\Address
+handle: location
+name: Location
+sortOrder: 1

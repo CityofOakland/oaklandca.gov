@@ -1,0 +1,16 @@
+contentColumnType: text
+fieldGroup: 8e8ee56e-cdb8-4206-a3b5-c3aa0eb3a884
+handle: fundingLogosAlternateTitle
+instructions: 'If you don’t wish to use the default text of “Partners” you may use a different title here to define it.'
+name: 'Funding Logos Alternate Title'
+searchable: true
+settings:
+  charLimit: ''
+  code: ''
+  columnType: text
+  initialRows: '4'
+  multiline: ''
+  placeholder: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

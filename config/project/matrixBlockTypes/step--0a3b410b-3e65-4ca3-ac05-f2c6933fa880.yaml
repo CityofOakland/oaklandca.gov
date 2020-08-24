@@ -1,0 +1,72 @@
+field: 9b53be12-6536-4cb0-8860-9b5e6e94fadd
+fieldLayouts:
+  07a77220-9b59-422c-b6e7-779fe933bce2:
+    tabs:
+      -
+        fields:
+          0ccdd608-28e4-473d-8fa8-f824e4591a7c:
+            required: true
+            sortOrder: 3
+          6d5d4d77-fe05-434f-92d4-748af5630b9a:
+            required: false
+            sortOrder: 1
+          e9feaa97-a672-4708-8e22-90e5a5116d24:
+            required: false
+            sortOrder: 2
+        name: Content
+        sortOrder: 1
+fields:
+  0ccdd608-28e4-473d-8fa8-f824e4591a7c:
+    contentColumnType: string
+    fieldGroup: null
+    handle: stepAction
+    instructions: ''
+    name: 'Step Action'
+    searchable: true
+    settings:
+      limit: '1'
+      localizeRelations: false
+      selectionLabel: 'Add an action'
+      source: null
+      sources:
+        - 'section:9da43fd8-c505-4d19-9486-e0cb669c568a'
+        - 'section:8b7c4e26-9aab-4c5d-874e-aee151107de3'
+        - 'section:24fa116b-8516-4626-84f3-86b685e71071'
+        - 'section:b7e437e1-239f-4c5c-8c62-5f0323f9d22c'
+      targetSiteId: null
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Entries
+  6d5d4d77-fe05-434f-92d4-748af5630b9a:
+    contentColumnType: text
+    fieldGroup: null
+    handle: stepNumber
+    instructions: ''
+    name: 'Step Number'
+    searchable: true
+    settings:
+      charLimit: ''
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  e9feaa97-a672-4708-8e22-90e5a5116d24:
+    contentColumnType: boolean
+    fieldGroup: null
+    handle: stepRequired
+    instructions: ''
+    name: 'Step Required?'
+    searchable: true
+    settings:
+      default: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch
+handle: step
+name: Step
+sortOrder: 1

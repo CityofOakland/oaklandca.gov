@@ -1,0 +1,21 @@
+fieldLayouts:
+  abcc9352-878a-4104-8219-485d6b9fd99f:
+    tabs:
+      -
+        elements:
+          -
+            instructions: null
+            label: Title
+            type: craft\fieldlayoutelements\EntryTitleField
+          -
+            fieldUid: bd28c3bb-d183-4caf-99bf-bff1b218c7a8
+            required: true
+            type: craft\fieldlayoutelements\CustomField
+        name: Content
+        sortOrder: 1
+handle: navigation
+hasTitleField: true
+name: Navigation
+section: bc354abe-c941-47fa-aebc-0eb5897e7f7c
+sortOrder: 1
+titleFormat: null

@@ -1,0 +1,25 @@
+contentColumnType: string
+fieldGroup: 4ed914c6-b7ea-44be-a061-4430ad33baf2
+handle: pressReleaseFile
+instructions: 'Choose a PDF to attach to this news entry for your press release.'
+name: 'Press Release File'
+searchable: true
+settings:
+  allowedKinds:
+    - pdf
+  defaultUploadLocationSource: 'volume:1e78d0ad-2af1-4556-ab43-7b6c110e75b8'
+  defaultUploadLocationSubpath: ''
+  limit: '1'
+  localizeRelations: false
+  restrictFiles: '1'
+  selectionLabel: 'Add a press release'
+  singleUploadLocationSource: 'volume:7c1a62cb-b02e-40b3-840f-7e78a3a9ebd0'
+  singleUploadLocationSubpath: ''
+  source: null
+  sources: '*'
+  targetSiteId: null
+  useSingleFolder: '1'
+  viewMode: list
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Assets

@@ -1,0 +1,53 @@
+fieldLayouts:
+  bc2507db-b195-40e3-937b-f39a0a0f4cfb:
+    tabs:
+      -
+        elements:
+          -
+            instructions: null
+            label: Title
+            type: craft\fieldlayoutelements\EntryTitleField
+          -
+            fieldUid: b9f7ae6c-d494-4169-802f-32d4e1659a1c
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 41e64e96-658b-4686-a45e-876808b04da6
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 8a298708-bd62-4f5d-b277-e76e6c2f6041
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 6f5ec8d7-c11e-43a0-9bae-82709ddffe49
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: b63ff443-ed3d-489e-b84a-b410aa3e09cd
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 0ed51bfe-acce-4e07-8017-8b3498bcba94
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: 044231f1-5e15-4ab5-bb69-e8afeb4d908d
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: d14c3f65-a312-48e0-a7e6-52cdbf5632ef
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+          -
+            fieldUid: eac17a7e-9cb8-464b-9a5e-2f0342162433
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: Content
+        sortOrder: 1
+handle: redistrictingCommissionApplication
+hasTitleField: false
+name: 'Redistricting Commission Application'
+section: 9168f154-c0f9-4cf9-991d-60b287a85fc0
+sortOrder: 2
+titleFormat: '{applicantName} - {district}'

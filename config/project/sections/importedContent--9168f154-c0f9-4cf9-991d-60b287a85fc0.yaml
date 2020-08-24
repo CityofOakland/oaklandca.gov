@@ -1,0 +1,11 @@
+enableVersioning: false
+handle: importedContent
+name: 'Imported Content'
+propagationMethod: all
+siteSettings:
+  c35d3a93-d7f4-4c37-ae3e-1b4d403311bb:
+    enabledByDefault: true
+    hasUrls: false
+    template: null
+    uriFormat: ''
+type: channel

@@ -1,0 +1,9 @@
+contentColumnType: string(255)
+fieldGroup: ed709c7c-0c3a-4457-ae2d-38a3ccb797e4
+handle: androidDownloadLink
+instructions: 'Enter the URL the user can visit to download this app for Android.'
+name: 'Android Download Link'
+searchable: true
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Url

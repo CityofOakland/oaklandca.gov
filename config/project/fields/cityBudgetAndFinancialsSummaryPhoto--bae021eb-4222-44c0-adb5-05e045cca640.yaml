@@ -1,0 +1,25 @@
+contentColumnType: string
+fieldGroup: 27454cbc-e66b-4d88-bef3-32b87a69a715
+handle: cityBudgetAndFinancialsSummaryPhoto
+instructions: ''
+name: 'City Budget and Financials Summary Photo'
+searchable: true
+settings:
+  allowedKinds: null
+  defaultUploadLocationSource: 'volume:549d1a55-e94b-4c89-9cb9-b1fdac9d417d'
+  defaultUploadLocationSubpath: ''
+  limit: '1'
+  localizeRelations: false
+  restrictFiles: ''
+  selectionLabel: 'Add a photo'
+  singleUploadLocationSource: 'volume:549d1a55-e94b-4c89-9cb9-b1fdac9d417d'
+  singleUploadLocationSubpath: ''
+  source: null
+  sources: '*'
+  targetSiteId: null
+  useSingleFolder: '1'
+  validateRelatedElements: '1'
+  viewMode: list
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Assets

@@ -1,0 +1,16 @@
+contentColumnType: text
+fieldGroup: b1b0e0eb-fd37-4708-96c7-4f5f11d8fdb0
+handle: groupHeadName
+instructions: ''
+name: 'Group Head Name'
+searchable: true
+settings:
+  charLimit: ''
+  code: ''
+  columnType: text
+  initialRows: '4'
+  multiline: ''
+  placeholder: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText
