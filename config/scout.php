@@ -316,115 +316,6 @@ return [
         ];
       }),
 
-    // BEGIN PROJECTS INDEX
-    \rias\scout\ScoutIndex::create(getenv('ENVIRONMENT') . '_projects')
-      ->criteria(function (\craft\elements\db\EntryQuery $query) {
-        return $query
-          ->section('projects')
-          ->with(['boardsCommissions', 'departments', 'officials', 'projects', 'resources', 'services', 'topics', 'documentType', 'documents']);
-      })
-      ->splitElementsOn(['about'])
-      ->transformer(function (craft\elements\Entry $entry) {
-        $milestones = [];
-        foreach ($entry->timeline as $block) {
-          $milestones[] = [
-            'name' => $block->milestoneName,
-            'dates' => $block->milestoneDates
-          ];
-        }
-        return [
-          'title' => $entry->title,
-          'url' => entryUrl($entry),
-          'date' => entryDate($entry),
-          'displayDate' => entryPrettyDate($entry),
-          'banner' => banner($entry),
-          'leadIn' => $entry->leadIn,
-          'about' => richTextSplit($entry->about),
-          'boardsCommissions' => enumEntries("boardsCommissions", $entry),
-          'departments' => enumEntries("departments", $entry),
-          'officials' => enumEntries("officials", $entry),
-          'topics' => enumEntries("topics", $entry),
-          'viewCount' => $entry->viewCount,
-        ];
-      }),
-
-    // BEGIN RESOURCES INDEX
-    \rias\scout\ScoutIndex::create(getenv('ENVIRONMENT') . '_resources')
-      ->criteria(function (\craft\elements\db\EntryQuery $query) {
-        return $query
-          ->section('resources')
-          ->with(['boardsCommissions', 'departments', 'officials', 'projects', 'resources', 'services', 'topics', 'documentType', 'documents']);
-      })
-      ->splitElementsOn(['body'])
-      ->transformer(function (craft\elements\Entry $entry) {
-        return [
-          'title' => $entry->title,
-          'url' => entryUrl($entry),
-          'date' => entryDate($entry),
-          'displayDate' => entryPrettyDate($entry),
-          'leadIn' => $entry->leadIn,
-          'boardsCommissions' => enumEntries("boardsCommissions", $entry),
-          'departments' => enumEntries("departments", $entry),
-          'officials' => enumEntries("officials", $entry),
-          'projects' => enumEntries("projects", $entry),
-          'topics' => enumEntries("topics", $entry),
-          'body' => contentBuilder($entry->contentBuilder),
-          'viewCount' => $entry->viewCount,
-        ];
-      }),
-
-    // BEGIN SERVICES INDEX
-    \rias\scout\ScoutIndex::create(getenv('ENVIRONMENT') . '_services')
-      ->criteria(function (\craft\elements\db\EntryQuery $query) {
-        return $query
-          ->section('services')
-          ->with(['boardsCommissions', 'departments', 'officials', 'projects', 'resources', 'services', 'topics', 'documentType', 'documents']);
-      })
-      ->splitElementsOn(['body'])
-      ->transformer(function (craft\elements\Entry $entry) {
-        return [
-          'title' => $entry->title,
-          'url' => entryUrl($entry),
-          'date' => entryDate($entry),
-          'displayDate' => entryPrettyDate($entry),
-          'leadIn' => $entry->leadIn,
-          'boardsCommissions' => enumEntries("boardsCommissions", $entry),
-          'departments' => enumEntries("departments", $entry),
-          'officials' => enumEntries("officials", $entry),
-          'projects' => enumEntries("projects", $entry),
-          'topics' => enumEntries("topics", $entry),
-          'body' => contentBuilder($entry->contentBuilder),
-          'viewCount' => $entry->viewCount,
-        ];    
-      }),
-
-    // BEGIN TOPICS INDEX
-    \rias\scout\ScoutIndex::create(getenv('ENVIRONMENT') . '_topics')
-      ->criteria(function (\craft\elements\db\EntryQuery $query) {
-        return $query
-          ->section('topics')
-          ->with(['boardsCommissions', 'departments', 'officials', 'projects', 'resources', 'services', 'topics', 'documentType', 'documents']);
-      })
-      ->splitElementsOn(['about', 'body'])
-      ->transformer(function (craft\elements\Entry $entry) {
-        return [
-          'title' => $entry->title,
-          'url' => entryUrl($entry),
-          'date' => entryDate($entry),
-          'displayDate' => entryPrettyDate($entry),
-          'banner' => banner($entry),
-          'leadIn' => $entry->leadIn,
-          'about' => richTextSplit($entry->about),
-          'body' => contentBuilder($entry->contentBuilder),
-          'boardsCommissions' => enumEntries("boardsCommissions", $entry),
-          'departments' => enumEntries("departments", $entry),
-          'officials' => enumEntries("officials", $entry),
-          'projects' => enumEntries("projects", $entry),
-          'topics' => enumEntries("topics", $entry),
-          'viewCount' => $entry->viewCount,
-        ];    
-      }),
-
     // BEGIN STAFF INDEX
     \rias\scout\ScoutIndex::create(getenv('ENVIRONMENT') . '_staff')
       ->criteria(function (\craft\elements\db\EntryQuery $query) {
@@ -447,7 +338,7 @@ return [
           'department' => !empty($entry->departments[0]) ? $entry->departments[0]->title : $entry->staffImportDepartment,
           'employmentType' => $entry->employmentType->label,
           'viewCount' => $entry->viewCount,
-        ];    
+        ];
       }),
 
     // BEGIN VOLUNTEERS INDEX
@@ -469,7 +360,7 @@ return [
           'email' => !empty($entry->emailAddress) ? $entry->emailAddress : null,
           'department' => !empty($entry->departmentOfficialBoardCommission->one()) ? $entry->departmentOfficialBoardCommission->one()->title : null,
           'viewCount' => $entry->viewCount,
-        ];    
+        ];
       }),
 
     // BEGIN TEAMS INDEX
