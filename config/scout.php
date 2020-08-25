@@ -230,54 +230,6 @@ return [
         ];
       }),
 
-    // BEGIN BOARDS INDEX
-    \rias\scout\ScoutIndex::create(getenv('ENVIRONMENT') . '_boards')
-      ->criteria(function (\craft\elements\db\EntryQuery $query) {
-        return $query
-          ->section('boardsCommissions')
-          ->type('boardsCommissions')
-          ->with(['boardsCommissions', 'departments', 'officials', 'projects', 'resources', 'services', 'topics', 'documentType', 'documents']);
-      })
-      ->splitElementsOn(['about'])
-      ->transformer(function (craft\elements\Entry $entry) {
-        return [
-          'title' => $entry->title,
-          'url' => entryUrl($entry),
-          'date' => entryDate($entry),
-          'displayDate' => entryPrettyDate($entry),
-          'banner' => banner($entry),
-          'ctaButtonText' => ctaButtonText($entry),
-          'leadIn' => $entry->leadIn,
-          'about' => richTextSplit($entry->about),
-          'viewCount' => $entry->viewCount,
-        ];
-      }),
-
-    // BEGIN DEPARTMENTS INDEX
-    \rias\scout\ScoutIndex::create(getenv('ENVIRONMENT') . '_departments')
-      ->criteria(function (\craft\elements\db\EntryQuery $query) {
-        return $query
-          ->section('departments')
-          ->with(['boardsCommissions', 'departments', 'officials', 'projects', 'resources', 'services', 'topics', 'documentType', 'documents', 'contentBuilder']);
-      })
-      ->transformer(function (craft\elements\Entry $entry) {
-        return [
-          'title' => $entry->title,
-          'url' => entryUrl($entry),
-          'date' => entryDate($entry),
-          'displayDate' => entryPrettyDate($entry),
-          'leadIn' => $entry->leadIn,
-          'banner' => banner($entry),
-          'ctaButtonText' => ctaButtonText($entry),
-          'body' => contentBuilder($entry->contentBuilder),
-          'groupHeadBio' => strip_tags($entry->groupHeadBio),
-          'groupHeadName' => $entry->groupHeadName,
-          'groupHeadTitle' => $entry->groupHeadTitle,
-          'officials' => enumEntries("officials", $entry),
-          'viewCount' => $entry->viewCount,
-        ];
-      }),
-
     // BEGIN DOCUMENTS INDEX
     \rias\scout\ScoutIndex::create(getenv('ENVIRONMENT') . '_documents')
       ->criteria(function (\craft\elements\db\EntryQuery $query) {
