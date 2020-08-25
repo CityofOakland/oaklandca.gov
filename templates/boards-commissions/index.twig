@@ -1,10 +1,4 @@
-{% extends '_layouts/_instant-search-index' %}
-
-{% set entry = craft.entries.section('boardsCommissionsIndex').one %}
-
-{% js at head %}
-var algoliaIndex = '{{ getenv('ENVIRONMENT') }}_boards';
-var searchInputText = "Search for a specific Board. E.g., “Public Ethics”";
-var facetFilters = [
-];
-{% endjs %}
+{% include "_layouts/_simple-index.twig" with {
+  indexPage: "boardsCommissionsIndex",
+  entrySection: "boardsCommissions"
+} %}
