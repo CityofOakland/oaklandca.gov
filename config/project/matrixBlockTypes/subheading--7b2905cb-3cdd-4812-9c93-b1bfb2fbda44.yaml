@@ -3,10 +3,16 @@ fieldLayouts:
   cda5c4fd-b1d1-4944-bd5c-c48840a472fd:
     tabs:
       -
-        fields:
-          065a0c81-f02c-484a-859a-ff558fe27a71:
+        elements:
+          -
+            fieldUid: 065a0c81-f02c-484a-859a-ff558fe27a71
+            instructions: null
+            label: null
             required: true
-            sortOrder: 1
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Content
         sortOrder: 1
 fields:
@@ -25,6 +31,7 @@ fields:
       initialRows: '4'
       multiline: ''
       placeholder: ''
+      uiMode: normal
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText

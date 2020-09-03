@@ -3,22 +3,52 @@ fieldLayouts:
   99ea9eff-a425-4d1a-a22d-11cc60957966:
     tabs:
       -
-        fields:
-          0e81d688-16ec-4519-9f60-7d2e2d72526d:
+        elements:
+          -
+            fieldUid: 321943ce-06f4-4125-b82a-baf2e174a37f
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 0e81d688-16ec-4519-9f60-7d2e2d72526d
+            instructions: null
+            label: null
             required: true
-            sortOrder: 2
-          321943ce-06f4-4125-b82a-baf2e174a37f:
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 853a4c55-fd81-4715-8804-22a057720485
+            instructions: null
+            label: null
             required: false
-            sortOrder: 1
-          6444dc50-fd8a-41d1-94c1-7af9ba982cc1:
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: e4562472-8b84-4213-97bc-476f6f092cad
+            instructions: null
+            label: null
             required: false
-            sortOrder: 5
-          853a4c55-fd81-4715-8804-22a057720485:
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 6444dc50-fd8a-41d1-94c1-7af9ba982cc1
+            instructions: null
+            label: null
             required: false
-            sortOrder: 3
-          e4562472-8b84-4213-97bc-476f6f092cad:
-            required: false
-            sortOrder: 4
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Content
         sortOrder: 1
 fields:
@@ -37,6 +67,7 @@ fields:
       initialRows: '4'
       multiline: ''
       placeholder: ''
+      uiMode: normal
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
@@ -48,7 +79,9 @@ fields:
     name: 'Allow Autofill?'
     searchable: false
     settings:
-      default: ''
+      default: false
+      offLabel: null
+      onLabel: null
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Lightswitch
@@ -60,7 +93,9 @@ fields:
     name: 'Hide Summary?'
     searchable: false
     settings:
-      default: ''
+      default: false
+      offLabel: null
+      onLabel: null
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Lightswitch
@@ -72,15 +107,16 @@ fields:
     name: Entries
     searchable: false
     settings:
-      allowSelfRelations: ''
+      allowSelfRelations: false
       limit: '3'
       localizeRelations: false
       selectionLabel: ''
+      showSiteMenu: true
       source: null
       sources:
         - 'calendar:2'
       targetSiteId: null
-      validateRelatedElements: ''
+      validateRelatedElements: false
       viewMode: null
     translationKeyFormat: null
     translationMethod: site
@@ -93,7 +129,9 @@ fields:
     name: 'Hide Thumbnails?'
     searchable: false
     settings:
-      default: ''
+      default: false
+      offLabel: null
+      onLabel: null
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Lightswitch

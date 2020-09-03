@@ -3,10 +3,16 @@ fieldLayouts:
   4aae0748-dca8-4dca-8961-92d81dd26e8f:
     tabs:
       -
-        fields:
-          bca01eec-d702-410d-8417-9f70c9146820:
+        elements:
+          -
+            fieldUid: bca01eec-d702-410d-8417-9f70c9146820
+            instructions: null
+            label: null
             required: true
-            sortOrder: 1
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Content
         sortOrder: 1
 fields:
@@ -18,15 +24,16 @@ fields:
     name: Entry
     searchable: false
     settings:
-      allowSelfRelations: ''
+      allowSelfRelations: false
       limit: '1'
       localizeRelations: false
       selectionLabel: ''
+      showSiteMenu: true
       source: null
       sources:
         - 'section:74ecde2f-b254-4f3e-b889-1affac6f5999'
       targetSiteId: null
-      validateRelatedElements: ''
+      validateRelatedElements: false
       viewMode: null
     translationKeyFormat: null
     translationMethod: site

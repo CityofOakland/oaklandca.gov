@@ -3,10 +3,16 @@ fieldLayouts:
   c35c8ca3-f23d-47c8-aee6-9a04a1244168:
     tabs:
       -
-        fields:
-          9dda7113-fc9a-4806-9315-3625689c332d:
+        elements:
+          -
+            fieldUid: 9dda7113-fc9a-4806-9315-3625689c332d
+            instructions: null
+            label: null
             required: true
-            sortOrder: 1
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Content
         sortOrder: 1
 fields:
@@ -22,14 +28,19 @@ fields:
       availableVolumes: '*'
       cleanupHtml: true
       columnType: text
+      configSelectionMode: choose
+      defaultTransform: ''
+      manualConfig: ''
       purifierConfig: ''
       purifyHtml: '1'
       redactorConfig: 'Basic with Links.json'
       removeEmptyTags: '1'
       removeInlineStyles: '1'
       removeNbsp: '1'
+      showHtmlButtonForNonAdmins: '1'
       showUnpermittedFiles: false
       showUnpermittedVolumes: true
+      uiMode: enlarged
     translationKeyFormat: null
     translationMethod: none
     type: craft\redactor\Field

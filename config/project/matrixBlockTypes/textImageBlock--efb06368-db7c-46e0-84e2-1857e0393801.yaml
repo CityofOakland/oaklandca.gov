@@ -3,22 +3,52 @@ fieldLayouts:
   00d2d434-9858-470b-9311-b6b27dc6fd06:
     tabs:
       -
-        fields:
-          323dd893-cdef-4562-9cfc-566d7afd7909:
+        elements:
+          -
+            fieldUid: bcbcc37a-a53b-42f8-9a80-e9abf9ffe063
+            instructions: null
+            label: null
             required: true
-            sortOrder: 4
-          566d26c2-9af4-45bb-b994-a552cc3fc03b:
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: d0cf7d52-44a5-44a7-9efa-ba27c7541ff9
+            instructions: null
+            label: null
             required: false
-            sortOrder: 5
-          bcbcc37a-a53b-42f8-9a80-e9abf9ffe063:
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: e58f615b-174a-4196-a96c-e824862acfa9
+            instructions: null
+            label: null
             required: true
-            sortOrder: 1
-          d0cf7d52-44a5-44a7-9efa-ba27c7541ff9:
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 323dd893-cdef-4562-9cfc-566d7afd7909
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 566d26c2-9af4-45bb-b994-a552cc3fc03b
+            instructions: null
+            label: null
             required: false
-            sortOrder: 2
-          e58f615b-174a-4196-a96c-e824862acfa9:
-            required: true
-            sortOrder: 3
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Content
         sortOrder: 1
 fields:
@@ -34,14 +64,19 @@ fields:
       availableVolumes: '*'
       cleanupHtml: true
       columnType: text
+      configSelectionMode: choose
+      defaultTransform: ''
+      manualConfig: ''
       purifierConfig: ''
       purifyHtml: '1'
       redactorConfig: 'Basic with Links.json'
       removeEmptyTags: '1'
       removeInlineStyles: '1'
       removeNbsp: '1'
+      showHtmlButtonForNonAdmins: '1'
       showUnpermittedFiles: false
       showUnpermittedVolumes: true
+      uiMode: enlarged
     translationKeyFormat: null
     translationMethod: none
     type: craft\redactor\Field
@@ -53,7 +88,9 @@ fields:
     name: 'Display Alt Text as Caption?'
     searchable: false
     settings:
-      default: ''
+      default: false
+      offLabel: null
+      onLabel: null
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Lightswitch
@@ -65,7 +102,7 @@ fields:
     name: Image
     searchable: false
     settings:
-      allowSelfRelations: ''
+      allowSelfRelations: false
       allowedKinds:
         - image
       defaultUploadLocationSource: 'volume:549d1a55-e94b-4c89-9cb9-b1fdac9d417d'
@@ -74,6 +111,7 @@ fields:
       localizeRelations: false
       restrictFiles: '1'
       selectionLabel: 'Add an image'
+      showSiteMenu: true
       showUnpermittedFiles: false
       showUnpermittedVolumes: true
       singleUploadLocationSource: 'volume:549d1a55-e94b-4c89-9cb9-b1fdac9d417d'
@@ -82,7 +120,7 @@ fields:
       sources: '*'
       targetSiteId: null
       useSingleFolder: true
-      validateRelatedElements: '1'
+      validateRelatedElements: true
       viewMode: list
     translationKeyFormat: null
     translationMethod: site

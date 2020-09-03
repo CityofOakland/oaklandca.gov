@@ -3,22 +3,52 @@ fieldLayouts:
   394b80da-75cf-4742-9f34-c098759900bc:
     tabs:
       -
-        fields:
-          42276684-be78-4449-b3e9-8eeb42ad49ba:
+        elements:
+          -
+            fieldUid: 734ed009-6dc6-4803-93b5-593791135810
+            instructions: null
+            label: null
             required: true
-            sortOrder: 5
-          734ed009-6dc6-4803-93b5-593791135810:
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: bdacb1a0-9bde-46d5-87a1-ac5a7171fa9e
+            instructions: null
+            label: null
             required: true
-            sortOrder: 1
-          bdacb1a0-9bde-46d5-87a1-ac5a7171fa9e:
-            required: true
-            sortOrder: 2
-          d99bfa25-1c4b-44f3-9355-2816615f5264:
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: e287f156-7373-4131-bd1f-e746e20d2e99
+            instructions: null
+            label: null
             required: false
-            sortOrder: 4
-          e287f156-7373-4131-bd1f-e746e20d2e99:
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: d99bfa25-1c4b-44f3-9355-2816615f5264
+            instructions: null
+            label: null
             required: false
-            sortOrder: 3
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 42276684-be78-4449-b3e9-8eeb42ad49ba
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Content
         sortOrder: 1
 fields:
@@ -50,6 +80,7 @@ fields:
       fieldLayout: table
       maxRows: ''
       minRows: '1'
+      placeholderKey: null
       propagationMethod: all
       selectionLabel: ''
       staticField: ''
@@ -71,6 +102,7 @@ fields:
       initialRows: '4'
       multiline: ''
       placeholder: ''
+      uiMode: normal
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
@@ -89,6 +121,7 @@ fields:
       initialRows: '4'
       multiline: ''
       placeholder: ''
+      uiMode: normal
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText

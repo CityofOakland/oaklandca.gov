@@ -3,10 +3,16 @@ fieldLayouts:
   be600bf9-8d6e-4a13-9a5a-2f58593ee956:
     tabs:
       -
-        fields:
-          37b9cad8-04be-41c4-938a-c869de41bfc6:
+        elements:
+          -
+            fieldUid: 37b9cad8-04be-41c4-938a-c869de41bfc6
+            instructions: null
+            label: null
             required: true
-            sortOrder: 1
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Content
         sortOrder: 1
 fields:

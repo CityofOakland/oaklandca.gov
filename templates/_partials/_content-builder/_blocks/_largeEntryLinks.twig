@@ -1,6 +1,8 @@
 <div>
   <a class="anchor-link" id="{{ blockId }}"></a>
-  <{{ heading }} class="{{ hClass }}">{{ block.heading }}</{{ heading }}>
+  {% if block.heading %}
+    <{{ heading }} class="{{ hClass }}">{{ block.heading }}</{{ heading }}>
+  {% endif %}
   {{ block.entriesDescription }}
   <div class="card-grid grid-equal-height">
     {% for entry in block.entries.all() %}

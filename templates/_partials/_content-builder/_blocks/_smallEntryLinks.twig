@@ -1,6 +1,8 @@
 <div class="body-text">
   <a class="anchor-link" id="{{ blockId }}"></a>
-  <{{ heading }} class="{{ hClass }}">{{ block.heading }}</{{ heading }}>
+  {% if block.heading %}
+    <{{ heading }} class="{{ hClass }}">{{ block.heading }}</{{ heading }}>
+  {% endif %}
   {{ block.entriesDescription }}
   <ul class="">
     {% for entry in block.entries.all() %}
