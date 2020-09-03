@@ -10,18 +10,20 @@
           title:  block.text,
           link:  block.text | kebab ~ '-' ~ block.id,
         }]) %}
-      {% case "largeEntryLinks" or 
-              "mediumEntryLinks" or 
+      {% case "largeEntryLinks" or
+              "mediumEntryLinks" or
               "smallEntryLinks" or
               "newsEntries" or
-              "meetingEntries" or 
+              "meetingEntries" or
               "eventEntries" or
               "linksWithDescriptions"
       %}
-        {% set sideNavLinks = sideNavLinks | merge([{
-          title: block.heading,
-          link: block.heading | kebab ~ '-' ~ block.id,
-        }]) %}
+        {% if block.heading %}
+          {% set sideNavLinks = sideNavLinks | merge([{
+            title: block.heading,
+            link: block.heading | kebab ~ '-' ~ block.id,
+          }]) %}
+        {% endif %}
       {% endswitch %}
   {% endfor %}
 
@@ -40,15 +42,15 @@
 
   {%- set sideNav -%}
     {% if sideNavLinks | length %}
-      <div class="oak-hidden mr-10 w-1/5 lg:w-1/6 md:block font-heading font-bold">
-        <ul class="text-sm my-0 o-2">
+      <div class="w-1/5 mr-10 font-bold oak-hidden lg:w-1/6 md:block font-heading">
+        <ul class="my-0 text-sm o-2">
           {% for item in sideNavLinks %}
             <li>
-              <a 
-                aria-label="Navigate to {{ item.title }} on this page." 
+              <a
+                aria-label="Navigate to {{ item.title }} on this page."
                 href="#{{ item.link }}"
               >{{ item.title }}</a>
-            </li>          
+            </li>
           {% endfor %}
         </ul>
       </div>
@@ -56,15 +58,15 @@
   {%- endset -%}
 {% elseif customNav %}
   {%- set sideNav -%}
-    <div class="oak-hidden mr-10 w-1/6 sm:block font-heading font-bold">
-      <ul class="text-sm my-0 o-2">
+    <div class="w-1/6 mr-10 font-bold oak-hidden sm:block font-heading">
+      <ul class="my-0 text-sm o-2">
         {% for item in customNav %}
           <li>
-            <a 
-              aria-label="Navigate to {{ item.title }} on this page." 
+            <a
+              aria-label="Navigate to {{ item.title }} on this page."
               href="#{{ item.link }}"
             >{{ item.title }}</a>
-          </li>          
+          </li>
         {% endfor %}
       </ul>
     </div>
@@ -72,13 +74,13 @@
 {% else %}
   {%- set sideNav -%}
     {% if navMenu is defined and navMenu | length %}
-      <div class="oak-hidden mr-10 w-1/6 sm:block font-heading font-bold">
-        <ul class="text-sm my-0 o-2">
+      <div class="w-1/6 mr-10 font-bold oak-hidden sm:block font-heading">
+        <ul class="my-0 text-sm o-2">
           {% for key,value in navMenu %}
             {% if value %}
               <li>
-                <a 
-                  aria-label="Featured {{ fullNavMenu[key]['title'] }}" 
+                <a
+                  aria-label="Featured {{ fullNavMenu[key]['title'] }}"
                   href="#page-{{ fullNavMenu[key]['url'] }}"
                 >{{ fullNavMenu[key]['title'] }}</a>
               </li>
