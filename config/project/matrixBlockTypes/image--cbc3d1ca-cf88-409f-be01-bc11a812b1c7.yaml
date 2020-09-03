@@ -3,10 +3,16 @@ fieldLayouts:
   fa862fc0-fd2e-4d31-8d77-3dbd4cf08c00:
     tabs:
       -
-        fields:
-          146e43c8-9154-487d-ab15-799e0f67185a:
+        elements:
+          -
+            fieldUid: 146e43c8-9154-487d-ab15-799e0f67185a
+            instructions: null
+            label: null
             required: true
-            sortOrder: 1
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Content
         sortOrder: 1
 fields:
@@ -18,7 +24,7 @@ fields:
     name: 'Image File'
     searchable: false
     settings:
-      allowSelfRelations: ''
+      allowSelfRelations: false
       allowedKinds:
         - image
       defaultUploadLocationSource: 'volume:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67'
@@ -27,6 +33,7 @@ fields:
       localizeRelations: false
       restrictFiles: '1'
       selectionLabel: 'Add an image'
+      showSiteMenu: true
       showUnpermittedFiles: false
       showUnpermittedVolumes: true
       singleUploadLocationSource: 'volume:549d1a55-e94b-4c89-9cb9-b1fdac9d417d'
@@ -35,7 +42,7 @@ fields:
       sources: '*'
       targetSiteId: null
       useSingleFolder: true
-      validateRelatedElements: '1'
+      validateRelatedElements: true
       viewMode: list
     translationKeyFormat: null
     translationMethod: site

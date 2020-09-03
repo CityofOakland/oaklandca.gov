@@ -3,34 +3,88 @@ fieldLayouts:
   1d85e45d-3215-4118-8e24-2848fb475fc6:
     tabs:
       -
-        fields:
-          1c974e73-c709-48c5-bc6e-fb8a9ae1ba8a:
+        elements:
+          -
+            fieldUid: d535337e-0894-4ce9-80ee-a315e254df71
+            instructions: null
+            label: null
             required: true
-            sortOrder: 9
-          28f1ddd3-72ce-439e-8d65-9b9a9e19f150:
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 40abab6e-fe75-4f91-b6bd-9016b2b01dbe
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 9c805dc0-3e7b-4361-ace3-62b856d8711e
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: d49a42e8-c33e-4689-a1df-83ba0b8d67be
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 28f1ddd3-72ce-439e-8d65-9b9a9e19f150
+            instructions: null
+            label: null
             required: false
-            sortOrder: 5
-          2c145c6e-d6b2-418c-aa28-3ea1eaa51944:
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 2ce783d0-daf9-44d1-a0b4-84a0163dcaad
+            instructions: null
+            label: null
             required: false
-            sortOrder: 7
-          2ce783d0-daf9-44d1-a0b4-84a0163dcaad:
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 2c145c6e-d6b2-418c-aa28-3ea1eaa51944
+            instructions: null
+            label: null
             required: false
-            sortOrder: 6
-          3b5ca699-b20a-41e5-a1fd-068dd6a6c081:
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 3b5ca699-b20a-41e5-a1fd-068dd6a6c081
+            instructions: null
+            label: null
             required: false
-            sortOrder: 8
-          40abab6e-fe75-4f91-b6bd-9016b2b01dbe:
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 1c974e73-c709-48c5-bc6e-fb8a9ae1ba8a
+            instructions: null
+            label: null
             required: true
-            sortOrder: 2
-          9c805dc0-3e7b-4361-ace3-62b856d8711e:
-            required: true
-            sortOrder: 3
-          d49a42e8-c33e-4689-a1df-83ba0b8d67be:
-            required: true
-            sortOrder: 4
-          d535337e-0894-4ce9-80ee-a315e254df71:
-            required: true
-            sortOrder: 1
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Content
         sortOrder: 1
 fields:
@@ -76,6 +130,7 @@ fields:
       fieldLayout: table
       maxRows: ''
       minRows: '1'
+      placeholderKey: null
       propagationMethod: all
       selectionLabel: ''
       staticField: ''
@@ -169,6 +224,7 @@ fields:
       initialRows: '4'
       multiline: ''
       placeholder: ''
+      uiMode: normal
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
@@ -187,6 +243,7 @@ fields:
       initialRows: '4'
       multiline: ''
       placeholder: ''
+      uiMode: normal
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
@@ -205,6 +262,7 @@ fields:
       initialRows: '4'
       multiline: ''
       placeholder: ''
+      uiMode: normal
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
@@ -223,6 +281,7 @@ fields:
       initialRows: '4'
       multiline: ''
       placeholder: ''
+      uiMode: normal
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText

@@ -3,22 +3,52 @@ fieldLayouts:
   cfc40b14-fc2d-4b75-bb37-0bdcc83dea3a:
     tabs:
       -
-        fields:
-          6781472a-633d-4059-b528-3b826db0332f:
+        elements:
+          -
+            fieldUid: ac349657-dbca-480e-8cb9-dc97ccae3b3a
+            instructions: null
+            label: null
             required: false
-            sortOrder: 4
-          84c6ab36-1b2e-49f1-93a1-aa41ce3d194a:
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 84c6ab36-1b2e-49f1-93a1-aa41ce3d194a
+            instructions: null
+            label: null
             required: true
-            sortOrder: 2
-          ac349657-dbca-480e-8cb9-dc97ccae3b3a:
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: ddd25f23-4975-475c-9bef-e8a0e0e43fc0
+            instructions: null
+            label: null
             required: false
-            sortOrder: 1
-          ddd25f23-4975-475c-9bef-e8a0e0e43fc0:
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 6781472a-633d-4059-b528-3b826db0332f
+            instructions: null
+            label: null
             required: false
-            sortOrder: 3
-          de14155f-e982-42aa-9b79-71ceeaf08a77:
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: de14155f-e982-42aa-9b79-71ceeaf08a77
+            instructions: null
+            label: null
             required: false
-            sortOrder: 5
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Content
         sortOrder: 1
 fields:
@@ -30,7 +60,9 @@ fields:
     name: 'Hide Thumbnails?'
     searchable: false
     settings:
-      default: ''
+      default: false
+      offLabel: null
+      onLabel: null
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Lightswitch
@@ -49,6 +81,7 @@ fields:
       initialRows: '4'
       multiline: ''
       placeholder: ''
+      uiMode: normal
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
@@ -60,7 +93,9 @@ fields:
     name: 'Allow Autofill?'
     searchable: false
     settings:
-      default: ''
+      default: false
+      offLabel: null
+      onLabel: null
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Lightswitch
@@ -72,15 +107,16 @@ fields:
     name: Entries
     searchable: false
     settings:
-      allowSelfRelations: ''
+      allowSelfRelations: false
       limit: '3'
       localizeRelations: false
       selectionLabel: 'Add a meeting'
+      showSiteMenu: true
       source: null
       sources:
         - 'calendar:3'
       targetSiteId: null
-      validateRelatedElements: ''
+      validateRelatedElements: false
       viewMode: null
     translationKeyFormat: null
     translationMethod: site
@@ -100,6 +136,7 @@ fields:
       initialRows: '4'
       multiline: ''
       placeholder: ''
+      uiMode: normal
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText

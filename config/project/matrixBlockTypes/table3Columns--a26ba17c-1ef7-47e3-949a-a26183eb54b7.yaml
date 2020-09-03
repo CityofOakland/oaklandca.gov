@@ -3,28 +3,70 @@ fieldLayouts:
   1ecef578-5469-4582-9db8-30d8099ecb26:
     tabs:
       -
-        fields:
-          5ca3c157-200f-49a4-9390-48c84349b0be:
+        elements:
+          -
+            fieldUid: 7664938a-7aa3-400c-ab55-335b7ef374bd
+            instructions: null
+            label: null
             required: true
-            sortOrder: 3
-          7664938a-7aa3-400c-ab55-335b7ef374bd:
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: facc7196-7444-4e77-873f-68c1b09d1298
+            instructions: null
+            label: null
             required: true
-            sortOrder: 1
-          a9027f1f-7200-4053-9b64-7be69dc993e5:
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 5ca3c157-200f-49a4-9390-48c84349b0be
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: c3cd0c7f-e997-4960-9b97-046778155766
+            instructions: null
+            label: null
             required: false
-            sortOrder: 5
-          c3cd0c7f-e997-4960-9b97-046778155766:
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: a9027f1f-7200-4053-9b64-7be69dc993e5
+            instructions: null
+            label: null
             required: false
-            sortOrder: 4
-          e9c00016-6698-4bae-ae61-26a8ced249d7:
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: e9c00016-6698-4bae-ae61-26a8ced249d7
+            instructions: null
+            label: null
             required: false
-            sortOrder: 6
-          facc7196-7444-4e77-873f-68c1b09d1298:
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: ff148937-9066-4578-8eb1-56090c97b181
+            instructions: null
+            label: null
             required: true
-            sortOrder: 2
-          ff148937-9066-4578-8eb1-56090c97b181:
-            required: true
-            sortOrder: 7
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Content
         sortOrder: 1
 fields:
@@ -43,6 +85,7 @@ fields:
       initialRows: '4'
       multiline: ''
       placeholder: ''
+      uiMode: normal
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
@@ -61,6 +104,7 @@ fields:
       initialRows: '4'
       multiline: ''
       placeholder: ''
+      uiMode: normal
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
@@ -133,6 +177,7 @@ fields:
       initialRows: '4'
       multiline: ''
       placeholder: ''
+      uiMode: normal
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
@@ -171,6 +216,7 @@ fields:
       fieldLayout: table
       maxRows: ''
       minRows: '1'
+      placeholderKey: null
       propagationMethod: all
       selectionLabel: ''
       staticField: ''

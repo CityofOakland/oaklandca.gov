@@ -3,16 +3,34 @@ fieldLayouts:
   9841506c-74ac-4441-8887-761cb5aca44a:
     tabs:
       -
-        fields:
-          5eb32746-ba01-4a64-b84f-f6b988abfa97:
-            required: true
-            sortOrder: 1
-          646188fb-7ed1-48ae-b539-736f4fd442d1:
-            required: true
-            sortOrder: 3
-          a027ac28-65c7-472f-b9ea-d30253b0205f:
+        elements:
+          -
+            fieldUid: 5eb32746-ba01-4a64-b84f-f6b988abfa97
+            instructions: null
+            label: null
             required: false
-            sortOrder: 2
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: a027ac28-65c7-472f-b9ea-d30253b0205f
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 646188fb-7ed1-48ae-b539-736f4fd442d1
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Content
         sortOrder: 1
 fields:
@@ -31,6 +49,7 @@ fields:
       initialRows: '4'
       multiline: ''
       placeholder: ''
+      uiMode: normal
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
@@ -42,10 +61,11 @@ fields:
     name: Entries
     searchable: true
     settings:
-      allowSelfRelations: ''
+      allowSelfRelations: false
       limit: '24'
       localizeRelations: false
       selectionLabel: ''
+      showSiteMenu: true
       source: null
       sources:
         - 'section:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f'
@@ -63,7 +83,7 @@ fields:
         - 'section:70778563-6dac-453d-a4b0-5121f3a614b7'
         - 'section:17d5d48d-2d75-4742-8820-cdce13764482'
       targetSiteId: null
-      validateRelatedElements: ''
+      validateRelatedElements: false
       viewMode: null
     translationKeyFormat: null
     translationMethod: site
@@ -80,14 +100,19 @@ fields:
       availableVolumes: '*'
       cleanupHtml: true
       columnType: text
+      configSelectionMode: choose
+      defaultTransform: ''
+      manualConfig: ''
       purifierConfig: ''
       purifyHtml: '1'
       redactorConfig: 'Simple with Links.json'
       removeEmptyTags: '1'
       removeInlineStyles: '1'
       removeNbsp: '1'
+      showHtmlButtonForNonAdmins: '1'
       showUnpermittedFiles: false
       showUnpermittedVolumes: false
+      uiMode: enlarged
     translationKeyFormat: null
     translationMethod: none
     type: craft\redactor\Field

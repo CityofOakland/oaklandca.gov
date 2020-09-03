@@ -11,7 +11,7 @@
   {% do view.registerCssFile(craft.twigpack.getModuleUri("/css/lightgallery.css")) %}
 {% endif %}
 
-{# 
+{#
   Table builder macro which takes the matrix block element, as well as the number of columns.
   ===================================
   NOTE: Each row heading element must be named as such: `column${n}Heading`, where `${n}` is the column number.
@@ -46,16 +46,16 @@
 {% import _self as macro %}
 
 {% for block in entry.contentBuilder.all() %}
-  {% set blockId =  (block.text ?? block.heading) | kebab ~ '-' ~ block.id ?? block.id %}
+  {% set blockId =  (block.text ?? block.heading ?? "block") | kebab ~ '-' ~ block.id ?? block.id %}
   {% switch loop.index0 %}
-  
-    {% case 0 %}    
+
+    {% case 0 %}
       {% set hClass = topHeadingClass %}
     {% default %}
       {% set hClass = headingClass %}
-  
+
   {% endswitch %}
-  
+
   <div class="break-word">
   {% switch block.type %}
     {% case "heading" %}
@@ -78,8 +78,8 @@
       {{ macro.tableBuilder(block, 3)}}
     {% case "table4Columns" %}
       {{ macro.tableBuilder(block, 4)}}
-    {% case "largeEntryLinks" or 
-            "smallEntryLinks" or 
+    {% case "largeEntryLinks" or
+            "smallEntryLinks" or
             "image" or
             "gallery" or
             "linksWithDescriptions"

@@ -3,22 +3,52 @@ fieldLayouts:
   86bfb186-a92a-4057-89bf-1c4424a3af96:
     tabs:
       -
-        fields:
-          1e960f43-f531-48ab-81a0-67d143aebac6:
+        elements:
+          -
+            fieldUid: 8960f671-8e74-4a40-a507-6ba440cb6c8e
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 1e960f43-f531-48ab-81a0-67d143aebac6
+            instructions: null
+            label: null
             required: true
-            sortOrder: 2
-          295df0c5-cc10-4392-9fbb-3452cc97b84a:
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 295df0c5-cc10-4392-9fbb-3452cc97b84a
+            instructions: null
+            label: null
             required: false
-            sortOrder: 3
-          5ee14b98-d8d9-46bd-88d8-0aa45871cfc9:
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: a2cf024d-962c-4e66-a16e-9b6faefbae19
+            instructions: null
+            label: null
             required: false
-            sortOrder: 5
-          8960f671-8e74-4a40-a507-6ba440cb6c8e:
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 5ee14b98-d8d9-46bd-88d8-0aa45871cfc9
+            instructions: null
+            label: null
             required: false
-            sortOrder: 1
-          a2cf024d-962c-4e66-a16e-9b6faefbae19:
-            required: false
-            sortOrder: 4
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Content
         sortOrder: 1
 fields:
@@ -37,6 +67,7 @@ fields:
       initialRows: '4'
       multiline: ''
       placeholder: ''
+      uiMode: normal
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
@@ -48,15 +79,16 @@ fields:
     name: Entries
     searchable: false
     settings:
-      allowSelfRelations: ''
+      allowSelfRelations: false
       limit: '3'
       localizeRelations: false
       selectionLabel: 'Add a news entry'
+      showSiteMenu: true
       source: null
       sources:
         - 'section:983c9f6f-9251-4fd3-91e1-b598eccc6a1a'
       targetSiteId: null
-      validateRelatedElements: '1'
+      validateRelatedElements: true
       viewMode: null
     translationKeyFormat: null
     translationMethod: site
@@ -69,7 +101,9 @@ fields:
     name: 'Hide Summary?'
     searchable: false
     settings:
-      default: ''
+      default: false
+      offLabel: null
+      onLabel: null
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Lightswitch
@@ -81,7 +115,9 @@ fields:
     name: 'Allow Autofill?'
     searchable: false
     settings:
-      default: ''
+      default: false
+      offLabel: null
+      onLabel: null
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Lightswitch
@@ -93,7 +129,9 @@ fields:
     name: 'Hide Thumbnails?'
     searchable: false
     settings:
-      default: ''
+      default: false
+      offLabel: null
+      onLabel: null
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Lightswitch
