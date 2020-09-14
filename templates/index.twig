@@ -4,11 +4,11 @@
 {% block content %}
   <div class="relative banner banner-home">
     {% include "_partials/_elements/_banner-google-translate.twig" %}
-    <div class="container text-green-600">
+    <div class="container text-green-1000">
       <div class="relative z-10 max-w-md p-6 mb-32 bg-white rounded-sm o-1 md:mt-12 md:mb-24 font-heading">
         <h1 class="font-extrabold leading-tight text-xxxxl"><span class="block mb-3 text-xl uppercase">Your actions save lives.</span> Wear a face covering, wash your hands, and stay home when sick.</h1>
         <p class="my-0">
-          <b><a class="text-green-300" href="/topics/covid-19" class="">Get information & resources »</a></b>
+          <b><a class="text-green-600" href="/topics/covid-19" class="">Get information & resources »</a></b>
         </p>
       </div>
       <img
@@ -18,8 +18,8 @@
         alt="{{ bannerImage.one.title }}">
       <form action="{{ url('search') }}">
         <label for="home-search" class="hidden-visually">How can we help you today?</label>
-        <div class="relative z-0 flex max-w-md text-green-300 shadow">
-          <input type="search" id="home-search" class="z-10 flex-1 w-full p-4 mb-0 text-sm leading-none text-gray-500 rounded-sm rounded-r-none appearance-none md:text-lg" aria-label="Site Search" name="query" placeholder="How can we help you?" value="">
+        <div class="relative z-0 flex max-w-md text-green-600 shadow">
+          <input type="search" id="home-search" class="z-10 flex-1 w-full p-4 mb-0 text-sm leading-none text-gray-800 rounded-sm rounded-r-none appearance-none md:text-lg" aria-label="Site Search" name="query" placeholder="How can we help you?" value="">
           <button type="submit" class="relative z-10 flex items-center justify-center px-4 rounded-l-none btn">
             <span class="hidden-visually">
               Search
@@ -67,7 +67,7 @@
             <ul>
             {% for block in entry.cityServicesAndResourcesUpdates.all() %}
               <li class="mb-2">
-                <a class="text-green-300 underline hover:text-green-500" href="{{ block.destination.url }}">{{ block.destination.text }}</a>
+                <a class="text-green-600 underline hover:text-green-900" href="{{ block.destination.url }}">{{ block.destination.text }}</a>
               </li>
             {% endfor %}
             </ul>
@@ -81,7 +81,7 @@
   <section class="bg-rotate">
     <div class="container">
       <div class="md:flex">
-        <div class="md:border-gray-400 md:border-r md:pr-10 md:w-1/2 lg:w-2/3">
+        <div class="md:border-gray-500 md:border-r md:pr-10 md:w-1/2 lg:w-2/3">
           {% include '_partials/_elements/_module-header.twig' with {
             headerText: "News & Updates",
           } %}
@@ -102,13 +102,13 @@
                 {% if featuredNews.newsImage | length %}
                   <img class="absolute inset-0 object-cover w-full h-full" src="{{ featuredNews.newsImage.one.url }}" alt="{{ featuredNews.newsImage.title }}">
                 {% else %}
-                  <div class="w-full h-full px-12 py-6 text-gray-400 opacity-75 fill-current">
+                  <div class="w-full h-full px-12 py-6 text-gray-500 opacity-75 fill-current">
                     {{ craft.inlin.er('/assets/img/icon-newspaper.svg') | replace('<svg ', '<svg class="w-32 h-32" ') | raw }}
                   </div>
                 {% endif %}
               </figure>
               <div class="flex-1 lg:pl-12 o-3">
-                <date class="block my-4 text-sm tracking-widest text-gray-400 uppercase lg:mt-0">{{ featuredNews.postDate | date('M j, Y') }}</date>
+                <date class="block my-4 text-sm tracking-widest text-gray-500 uppercase lg:mt-0">{{ featuredNews.postDate | date('M j, Y') }}</date>
                 <h3 class="my-0 text-xl font-semibold leading-tight md:text-xxl"><a href="{{ featuredNews.url }}">{{ featuredNews.title }}</a></h3>
                 {{ featuredNews.summary | md }}
               </div>
@@ -131,7 +131,7 @@
             linkText: "Newsroom"
           } %}
         </div>
-        <div class="flex items-stretch mt-8 md:mt-0 md:border-gray-400 md:border-l md:pl-10 md:w-1/2 lg:w-1/3">
+        <div class="flex items-stretch mt-8 md:mt-0 md:border-gray-500 md:border-l md:pl-10 md:w-1/2 lg:w-1/3">
           <div class="block w-full md:oak-hidden"><a class="twitter-timeline" data-height="400px" data-width="100%" href="https://twitter.com/Oakland/lists/official-agencies?ref_src=twsrc%5Etfw">A Twitter List by Oakland</a></div>
           <div class="w-full oak-hidden md:block"><a class="twitter-timeline" data-height="100%" data-width="100%" href="https://twitter.com/Oakland/lists/official-agencies?ref_src=twsrc%5Etfw">A Twitter List by Oakland</a></div><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>

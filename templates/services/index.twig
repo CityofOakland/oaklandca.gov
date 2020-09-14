@@ -14,9 +14,9 @@
         .all()
       %}
         <li>
-          <a class="block h-full rounded border-gray-500 border p-5 hover:bg-green-100" href="{{ category.url }}">
-            <h2 class="mt-0 mb-4 text-lg md:text-xl lg:text-xxl text-gray-500">{{ category.title }}</h2>
-            {{ category.summary | retcon('attr', 'p', { class: 'mt-4 mb-0 text-gray-500 text-sm md:text-base' }) }}
+          <a class="block h-full rounded border-gray-800 border p-5 hover:bg-green-100" href="{{ category.url }}">
+            <h2 class="mt-0 mb-4 text-lg md:text-xl lg:text-xxl text-gray-800">{{ category.title }}</h2>
+            {{ category.summary | retcon('attr', 'p', { class: 'mt-4 mb-0 text-gray-800 text-sm md:text-base' }) }}
           </a>
         </li>
       {% endnav %}

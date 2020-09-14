@@ -45,7 +45,7 @@
             {% if entry.portrait | length %}
               <img src="{{ entry.portrait.one.url }}" alt="Portrait of {{ entry.title }}">
             {% else %}
-              <div class="bg-gray-300 text-gray-400 opacity-75 fill-current h-full p-12">
+              <div class="bg-gray-300 text-gray-500 opacity-75 fill-current h-full p-12">
                 {{ craft.inlin.er('/assets/img/icon-user.svg') | replace('<svg ', '<svg class="h-full w-full" ') | raw }}
               </div>
             {% endif %}

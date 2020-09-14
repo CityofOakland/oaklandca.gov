@@ -32,9 +32,9 @@
   [ seoMaticLinks.facebook.url, 'facebook.svg', 'Oakland Facebook Page' ],
   [ seoMaticLinks.twitter.url, 'twitter.svg', 'Oakland Twitter Page' ],
   [ seoMaticLinks.instagram.url, 'instagram.svg', 'Oakland Instagram Page' ],
-  [ seoMaticLinks.medium.url, 'medium.svg', 'Oakland Medium Page' ] 
+  [ seoMaticLinks.medium.url, 'medium.svg', 'Oakland Medium Page' ]
 ] %}
-<footer class="relative overflow-hidden text-sm leading-loose lg:text-base text-new-gray-300 bg-new-gray-1000 bg-transparent-oakland-roots-black">
+<footer class="relative overflow-hidden text-sm leading-loose lg:text-base text-gray-300 bg-gray-1000 bg-transparent-oakland-roots-black">
   <div class="container relative z-20 py-4 sm:py-8">
     <div class="xl:flex xl:justify-between">
       <div class="flex-wrap sm:flex xl:flex-1">
@@ -76,12 +76,12 @@
         </div>
       </div>
     </div>
-    <div class="flex-wrap pt-8 mt-4 border-t sm:flex border-new-gray-700">
+    <div class="flex-wrap pt-8 mt-4 border-t sm:flex border-gray-700">
       <div class="sm:w-1/4">
       </div>
       <div class="flex items-center justify-around sm:w-1/2">
         {% for socItem in socialMedia %}
-          <a href="{{ socItem[0] }}" class="flex items-center justify-center block w-12 h-12 text-gray-700 bg-white rounded-full fill-current hover:bg-green-300 trans-fast hover:text-gray-700">
+          <a href="{{ socItem[0] }}" class="flex items-center justify-center block w-12 h-12 text-gray-1000 bg-white rounded-full fill-current hover:bg-green-600 trans-fast hover:text-gray-1000">
             {{ craft.inlin.er('/assets/img/logo-' ~ socItem[1]) | replace('<svg ', '<svg class="h-6" ') | raw }}
             <span class="hidden-visually">{{ socItem[2] }}</span>
           </a>

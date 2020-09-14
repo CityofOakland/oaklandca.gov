@@ -14,10 +14,10 @@
   </div>
   <div class="md:flex w-full mt-8">
     <div class="mb-4 md:mb-0 md:w-1/2 md:mr-4">
-      <a href="https://seeclickfix.com/web_portal/wTMihVsatbiDau5Fw66m6HFD/report/location" class="block card-grid-button py-5 bg-green-300 text-white hover:text-white hover:bg-green-600 shadow-none"><img src="/assets/img/icon-cursor.svg" class="inline h-6 w-auto mr-4">Report Online</a>
+      <a href="https://seeclickfix.com/web_portal/wTMihVsatbiDau5Fw66m6HFD/report/location" class="block card-grid-button py-5 bg-green-600 text-white hover:text-white hover:bg-green-1000 shadow-none"><img src="/assets/img/icon-cursor.svg" class="inline h-6 w-auto mr-4">Report Online</a>
     </div>
     <div class="md:w-1/2 md:ml-4">
-      <a href="tel:+1-510-615-5566" class="block card-grid-button py-5 bg-green-300 text-white hover:text-white hover:bg-green-600 shadow-none"><img src="/assets/img/icon-phone.svg" class="inline h-6 w-auto mr-4">Call 311</a>
+      <a href="tel:+1-510-615-5566" class="block card-grid-button py-5 bg-green-600 text-white hover:text-white hover:bg-green-1000 shadow-none"><img src="/assets/img/icon-phone.svg" class="inline h-6 w-auto mr-4">Call 311</a>
       <div class="mt-2 text-sm font-bold md:text-base md:font-normal">For urgent issues, call <strong><a href="tel:311">311</a></strong> or <strong><a href="tel:1+510-615-5566">(510) 615-5566</a></strong>.</div>
     </div>
   </div>
@@ -78,7 +78,7 @@
         <h2 class="text-xxl">Most Common Requests</h2>
         <ul class="font-bold leading-loose">
           <li>
-            <select id="illegalDumping" class="cursor-pointer js-select-nav inline bg-transparent appearance-none rounded-none font-body font-bold text-green-400">
+            <select id="illegalDumping" class="cursor-pointer js-select-nav inline bg-transparent appearance-none rounded-none font-body font-bold text-green-800">
               <option value="">Illegal Dumping</option>
               {% for item in dumping %}
                 {{ macro.seeClickFixLink(item.title, item.id) }}
@@ -87,7 +87,7 @@
           </li>
           <li><a href="https://seeclickfix.com/web_portal/wTMihVsatbiDau5Fw66m6HFD/report/category/20961/location">Potholes</a></li>
           <li>
-            <select id="graffiti" class="cursor-pointer js-select-nav inline bg-transparent appearance-none rounded-none font-body font-bold text-green-400">
+            <select id="graffiti" class="cursor-pointer js-select-nav inline bg-transparent appearance-none rounded-none font-body font-bold text-green-800">
               <option value="">Graffiti</option>
               {% for item in graffiti %}
                 {{ macro.seeClickFixLink(item.title, item.id) }}
@@ -95,13 +95,13 @@
             </select>
           </li>
           <li>
-            <select id="buildingMaintenance" class="cursor-pointer js-select-nav inline bg-transparent appearance-none rounded-none font-body font-bold text-green-400">
+            <select id="buildingMaintenance" class="cursor-pointer js-select-nav inline bg-transparent appearance-none rounded-none font-body font-bold text-green-800">
               <option value="" class="px-0">City Building Maintenance</option>
               {% for item in building %}
                 {{ macro.seeClickFixLink(item.title, item.id) }}
               {% endfor %}
             </select>
-          </li>            
+          </li>
           <li><a href="https://seeclickfix.com/web_portal/wTMihVsatbiDau5Fw66m6HFD/report/category/23975/location">Abandoned Vehicles</a></li>
         </ul>
       </div>
@@ -156,8 +156,8 @@
     <div class="container o-override o-4">
       <h2 class="text-xxl">Get the OAK 311 app on:</h2>
         <div class="card-grid">
-          <a href="https://play.google.com/store/apps/details?id=com.seeclickfix.oak311.app" class="border-l-4 border-green-300 card-grid-button py-5 text-green-400 hover:text-white hover:bg-green-600 shadow-btn">Google Play</a>
-          <a href="https://apps.apple.com/us/app/oak-311/id1316091489" class="border-l-4 border-green-300 card-grid-button py-5 text-green-400 hover:text-white hover:bg-green-600 shadow-btn">Apple Store</a>
+          <a href="https://play.google.com/store/apps/details?id=com.seeclickfix.oak311.app" class="border-l-4 border-green-600 card-grid-button py-5 text-green-800 hover:text-white hover:bg-green-1000 shadow-btn">Google Play</a>
+          <a href="https://apps.apple.com/us/app/oak-311/id1316091489" class="border-l-4 border-green-600 card-grid-button py-5 text-green-800 hover:text-white hover:bg-green-1000 shadow-btn">Apple Store</a>
         </div>
     </div>
   </section>
@@ -165,9 +165,9 @@
     <div class="container o-override o-4">
       <h2 class="text-xxl">View OAK 311 Service Request Information</h2>
         <div class="card-grid">
-          <a href="https://app.powerbigov.us/view?r=eyJrIjoiODE1NDg4MGYtMmJjYy00MTc1LWIyMmEtNzhkNDNlMjM0MDZlIiwidCI6Ijk4OWEyMTgwLTZmYmMtNDdmMS04MDMyLTFhOWVlOTY5YzU4ZCJ9" class="border-l-4 border-green-300 card-grid-button py-5 text-green-400 hover:text-white hover:bg-green-600 shadow-btn">Interactive 311 Chart</a>
-          <a href="https://seeclickfix.com/web_portal/wTMihVsatbiDau5Fw66m6HFD/issues/map?lat=37.769629187677&lng=-122.22453117370607&max_lat=37.79486412183907&max_lng=-122.18676567077638&min_lat=37.744385638880516&min_lng=-122.26229667663576&zoom=14" class="border-l-4 border-green-300 card-grid-button py-5 text-green-400 hover:text-white hover:bg-green-600 shadow-btn">Service Request Map</a>
-          {# <a href="https://data.oaklandnet.com/Infrastructure/Service-requests-received-by-the-Oakland-Call-Cent/quth-gb8e" class="border-l-4 border-green-300 card-grid-button py-5 text-green-400 hover:text-white hover:bg-green-600 shadow-btn">View 311 Data</a> #}
+          <a href="https://app.powerbigov.us/view?r=eyJrIjoiODE1NDg4MGYtMmJjYy00MTc1LWIyMmEtNzhkNDNlMjM0MDZlIiwidCI6Ijk4OWEyMTgwLTZmYmMtNDdmMS04MDMyLTFhOWVlOTY5YzU4ZCJ9" class="border-l-4 border-green-600 card-grid-button py-5 text-green-800 hover:text-white hover:bg-green-1000 shadow-btn">Interactive 311 Chart</a>
+          <a href="https://seeclickfix.com/web_portal/wTMihVsatbiDau5Fw66m6HFD/issues/map?lat=37.769629187677&lng=-122.22453117370607&max_lat=37.79486412183907&max_lng=-122.18676567077638&min_lat=37.744385638880516&min_lng=-122.26229667663576&zoom=14" class="border-l-4 border-green-600 card-grid-button py-5 text-green-800 hover:text-white hover:bg-green-1000 shadow-btn">Service Request Map</a>
+          {# <a href="https://data.oaklandnet.com/Infrastructure/Service-requests-received-by-the-Oakland-Call-Cent/quth-gb8e" class="border-l-4 border-green-600 card-grid-button py-5 text-green-800 hover:text-white hover:bg-green-1000 shadow-btn">View 311 Data</a> #}
         </div>
     </div>
   </section>

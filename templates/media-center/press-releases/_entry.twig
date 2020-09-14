@@ -36,12 +36,12 @@
     <div class="container pt-2 pb-8 md:pt-4 md:pb-6">
       <div class="absolute inset-0 z-0 bg-transparent-oakland-roots">
       </div>
-      <div class="relative z-10 bg-white text-green-400 text-xs md:text-xs rounded-sm px-2 py-1 inline-block shadow">
-        <a class="text-green-400 hover:text-green-400 hover:underline" href="/">
+      <div class="relative z-10 bg-white text-green-800 text-xs md:text-xs rounded-sm px-2 py-1 inline-block shadow">
+        <a class="text-green-800 hover:text-green-800 hover:underline" href="/">
           Oakland
         </a> →
         {% for link in breadCrumbLinks ?? '' %}
-          <a class="text-green-400 hover:text-green-400 hover:underline" href="{{ link.link }}">{{ link.title }}</a> →
+          <a class="text-green-800 hover:text-green-800 hover:underline" href="{{ link.link }}">{{ link.title }}</a> →
         {% endfor %}
         <span class="font-bold">{{ entry.title }}</span>
       </div>
@@ -94,15 +94,15 @@
             <ul class="text-sm my-0 o-1">
               {% for item in sideNavLinks %}
                 <li>
-                  <a 
-                    aria-label="Navigate to {{ item.title }} on this page." 
+                  <a
+                    aria-label="Navigate to {{ item.title }} on this page."
                     href="#{{ item.link }}"
                   >{{ item.title }}</a>
-                </li>          
+                </li>
               {% endfor %}
             </ul>
           </div>
-        {% endif %}        
+        {% endif %}
       </div>
     </div>
   </section>

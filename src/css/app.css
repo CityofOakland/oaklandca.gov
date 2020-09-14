@@ -8,7 +8,7 @@
   overflow: hidden;
 }
 
-/*  Formstack unfortunately includes a .hidden class that overrides our Tailwind default class, 
+/*  Formstack unfortunately includes a .hidden class that overrides our Tailwind default class,
     so we need to @apply it's class to another one to avoid namespace collision  */
 @responsive {
   .oak-hidden {
@@ -68,7 +68,7 @@
 }
 
 body {
-  @apply text-lg leading-normal text-gray-500 font-body;
+  @apply text-lg leading-normal text-gray-800 font-body;
 }
 
 h1,
@@ -106,19 +106,15 @@ p {
 }
 
 a {
-  @apply text-green-400 no-underline;
+  @apply text-green-700 no-underline;
 }
 
 a:hover {
-  @apply text-green-600;
+  @apply text-green-900;
 }
 
 .body-text a {
-  @apply text-green-300 underline break-words;
-}
-
-.body-text a:hover {
-  @apply text-green-500;
+  @apply underline break-words;
 }
 
 .anchor-link {
@@ -158,20 +154,20 @@ a:hover {
 
 /* Button Styles */
 .btn {
-  @apply inline-block px-8 py-4 text-base font-bold tracking-wide text-white no-underline bg-green-300 rounded-sm shadow trans trans-fast;
+  @apply inline-block px-8 py-4 text-base font-bold tracking-wide text-white no-underline bg-green-800 rounded-sm shadow trans trans-fast;
 }
 
 .btn:hover {
-  @apply text-white underline bg-green-400 shadow-none;
+  @apply text-white underline bg-green-900 shadow-none;
 }
 
 /* Service Styles */
 .card-grid-button {
-  @apply p-8 text-lg font-bold text-gray-700 no-underline bg-white rounded-sm shadow-btn trans trans-fast;
+  @apply p-8 text-lg font-bold text-gray-1000 no-underline bg-white rounded-sm shadow-btn trans trans-fast;
 }
 
 .card-grid-button:hover {
-  @apply text-white underline bg-green-300;
+  @apply text-white underline bg-green-600;
 }
 
 .btn-sm {
@@ -183,11 +179,11 @@ a:hover {
 }
 
 .section-box {
-  @apply block p-5 font-semibold text-green-400 bg-white border-l-4 border-green-300 rounded-sm shadow-btn;
+  @apply block p-5 font-semibold text-green-800 bg-white border-l-4 border-green-700 rounded-sm shadow-btn;
 }
 
 .section-box:hover {
-  @apply text-white bg-green-600;
+  @apply text-white bg-green-1000;
 }
 
 main,
@@ -201,7 +197,7 @@ main {
 
 @media (min-width: theme("screens.md")) {
   main {
-    padding-top: 4rem;    
+    padding-top: 4rem;
   }
 }
 
@@ -331,7 +327,7 @@ button {
 table,
 th,
 td {
-  @apply border border-gray-400 border-solid;
+  @apply border border-gray-500 border-solid;
 }
 
 th,
@@ -409,7 +405,7 @@ body.open .page-holder {
 }
 
 .search-filter-button:hover {
-  @apply text-gray-700 bg-white rounded shadow;
+  @apply text-gray-1000 bg-white rounded shadow;
 }
 
 .search-filter-button.active {

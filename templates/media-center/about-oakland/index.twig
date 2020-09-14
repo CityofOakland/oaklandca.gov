@@ -79,7 +79,7 @@
       ] %}
       <div class="card-grid">
         {% for entry in cards %}
-          {% include "_partials/_elements/_title-cards" with { cardStyle: 'text-white', cardColor: 'bg-green-300 hover:bg-green-500'} %}
+          {% include "_partials/_elements/_title-cards" with { cardStyle: 'text-white', cardColor: 'bg-green-600 hover:bg-green-900'} %}
         {% endfor %}
       </dev>
     </div>
@@ -116,7 +116,7 @@
               <h3 class="text-xxxl md:text-xxxxl my-0 font-bold">{{ fact.topText }}</h3>
               <p class="text-sm md:text-base my-0">{{ fact.description }}{% if fact.footnote %}*{% endif %}</p>
               {% if fact.footnote %}
-                <p class="text-xs mt-4 mb-0 text-gray-400 md:text-sm">{{ fact.footnote }}</p>
+                <p class="text-xs mt-4 mb-0 text-gray-500 md:text-sm">{{ fact.footnote }}</p>
               {% endif %}
             </div>
           </div>

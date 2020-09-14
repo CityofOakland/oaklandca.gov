@@ -22,12 +22,12 @@
 #}
 {% macro tableBuilder(object, columns) %}
   <table class="w-full my-8">
-    <thead class="font-bold text-white bg-green-400">
+    <thead class="font-bold text-white bg-green-800">
       <tr>
         {% for col in 1..columns %}
           {% set colAttrib = 'column' ~ col ~ 'Heading' %}
           {% set widthAttrib = 'column' ~ col ~ 'Width' %}
-          <th style="width: {{ attribute(object, widthAttrib) ~ '%' ?? '' }}" class="border-green-400">{{ attribute(object, colAttrib) }}</th>
+          <th style="width: {{ attribute(object, widthAttrib) ~ '%' ?? '' }}" class="border-green-800">{{ attribute(object, colAttrib) }}</th>
         {% endfor %}
       </tr>
     </thead>
@@ -36,7 +36,7 @@
         <tr>
           {% for col in 1..columns %}
             {% set colAttrib = 'column' ~ col ~ 'Cell' %}
-            <td class="p-4 align-top border-green-400 o-6 body-text o-override">{{ attribute(row, colAttrib) }}</td>
+            <td class="p-4 align-top border-green-800 o-6 body-text o-override">{{ attribute(row, colAttrib) }}</td>
           {% endfor %}
         </tr>
       {% endfor %}
