@@ -4,27 +4,27 @@
   <div x-data="{ openNav: false }" class="relative z-40 z-50 block w-full trans trans-fast nav-bar" id="nav-bar">
     <div class="relative z-40 bg-gray-1000">
       <nav id="main-navigation" class="flex items-stretch justify-between py-3 lg:py-5" name="Main Navigation" role="navigation">
-        <button @click="openNav = true" class="flex items-center justify-center w-16 -my-3 fill-current lg:-my-5 bg-green-500 text-gray-900 touch-action-none lg:oak-hidden hover:bg-green-700 hover:text-gray-1000">
+        <button @click="openNav = true" class="flex items-center justify-center w-16 -my-3 text-gray-900 bg-green-500 fill-current lg:-my-5 touch-action-none lg:oak-hidden hover:bg-green-700 hover:text-gray-1000">
           {{ craft.inlin.er('/assets/img/icon-menu.svg') | replace('<svg ', '<svg class="h-9 md:h-10 xl:oak-hidden" ') | raw }}
         </button>
-        <a id="home-link" class="flex items-center justify-center h-full px-2 fill-current text-gray-100 hover:text-gray-200 trans-fast" href="/" name="Home">
+        <a id="home-link" class="flex items-center justify-center h-full px-2 text-gray-100 fill-current hover:text-gray-200 trans-fast" href="/" name="Home">
           {{ craft.inlin.er('/assets/img/logo-oakland-tree.svg') | replace('<svg ', '<svg class="h-9 sm:h-10 w-14 md:h-10 sm:oak-hidden" ') | raw }}
           {{ craft.inlin.er('/assets/img/logo-oakland.svg') | replace('<svg ', '<svg class="w-40 h-10 oak-hidden sm:block" ') | raw }}
           <span class="hidden-visually">Home</span>
         </a>
         <form class="relative z-0 flex justify-end flex-1 pl-4 pr-6 lg:pr-0" action="{{ url('search') }}">
           <label for="site-search" class="hidden-visually">Search?</label>
-          <input type="search" id="site-search" class="z-10 w-full pl-10 pr-6 mb-0 text-sm leading-normal border-2 rounded appearance-none search-box h-9 md:h-10 border-gray-800 bg-gray-900 placeholder-gray-200 text-gray-100 md:text-base" aria-label="Site Search" name="query" placeholder="Search" value="">
+          <input type="search" id="site-search" class="z-10 w-full pl-10 pr-6 mb-0 text-sm leading-normal text-gray-100 placeholder-gray-200 bg-gray-900 border-2 border-gray-800 rounded appearance-none search-box h-9 md:h-10 md:text-base" aria-label="Site Search" name="query" placeholder="Search" value="">
         </form>
-        <ul class="pr-6 mr-6 text-xs font-bold tracking-wide uppercase border-r lg:flex oak-hidden lg:my-0 lg:justify-end lg:items-center xl:text-sm border-gray-700">
+        <ul class="pr-6 mr-6 text-xs font-bold tracking-wide uppercase border-r border-gray-700 lg:flex oak-hidden lg:my-0 lg:justify-end lg:items-center xl:text-sm">
           {% for nav in mainNav.navBuilder.all() %}
             {% set link = nav.navLink %}
             <li class="lg:ml-4">
-              <a href="{{ link.url }}" {% if link.target | length %} target="{{ link.target }}" {% endif %} class=" text-gray-100 hover:text-gray-200 hover:underline trans-fast">{{ link.text | replace({' ' : '&nbsp;'}) | raw }}</a>
+              <a href="{{ link.url }}" {% if link.target | length %} target="{{ link.target }}" {% endif %} class="text-gray-100  hover:text-gray-200 hover:underline trans-fast">{{ link.text | replace({' ' : '&nbsp;'}) | raw }}</a>
             </li>
           {% endfor %}
           <li class="lg:ml-4">
-            <a href="/topics/oaklandlovelife" class=" text-gray-100 hover:text-gray-200 hover:underline trans-fast">#OaklandLoveLife</a>
+            <a href="/topics/oaklandlovelife" class="text-gray-100  hover:text-gray-200 hover:underline trans-fast">#OaklandLoveLife</a>
           </li>
         </ul>
         <div class="pr-2 lg:items-center oak-hidden lg:flex">
@@ -38,19 +38,19 @@
               <span class="font-bold">{{ mayor.groupHeadTitle }}</span><br>
               {{ mayor.groupHeadName }}
             </div>
-            <img src="{{ transformedImages[1].url }}" sizes="100vw" srcset="{{ transformedImages | srcset }}" alt="Portrait of {{ mayor.groupHeadTitle }}, {{ mayor.groupHeadName }}" class="block w-10 h-10 border-2 rounded-full border-gray-800">
+            <img src="{{ transformedImages[1].url }}" sizes="100vw" srcset="{{ transformedImages | srcset }}" alt="Portrait of {{ mayor.groupHeadTitle }}, {{ mayor.groupHeadName }}" class="block w-10 h-10 border-2 border-gray-800 rounded-full">
           </a>
           {% set logo311 = craft.assets.id(24854).one() %}
           {% set transformed311Logos = craft.imager.transformImage(logo311, sizes, crop,{ fillTransforms: true}) %}
           <a href="/services/oak311" class="flex block ml-2" title="Report a problem online to OAK 311">
-            <img src="{{ transformed311Logos[1].url }}" sizes="100vw" srcset="{{ transformed311Logos | srcset }}" alt="OAK 311 Logo" class="block w-10 h-10 border-2 rounded-full border-gray-800">
+            <img src="{{ transformed311Logos[1].url }}" sizes="100vw" srcset="{{ transformed311Logos | srcset }}" alt="OAK 311 Logo" class="block w-10 h-10 border-2 border-gray-800 rounded-full">
           </a>
         </div>
       </nav>
     </div>
     {# BEGIN MOBILE NAV #}
     <div
-        class="relative z-30 py-0 font-heading bg-gray-1000"
+        class="relative z-30 py-0 bg-gray-1000"
         x-show="openNav"
         @click.away="openNav = false"
         x-cloak
@@ -59,17 +59,17 @@
         {% for nav in mainNav.navBuilder.all() %}
           {% set link = nav.navLink %}
           <li class="{% if not loop.first %}border-t {% endif %}border-gray-600">
-            <a class="flex items-center justify-between py-2 font-normal fill-current text-gray-100 hover:text-gray-200" href="{{ link.url }}" {% if link.target | length %} target="{{ link.target }}" {% endif %}><div class="text">{{ link.text }}</div><div class="text">{{ craft.inlin.er('/assets/img/icon-arrow.svg') | replace('<svg ', '<svg class="w-4 h-4 xl:oak-hidden" ') | raw }}</div></a>
+            <a class="flex items-center justify-between py-2 font-normal text-gray-100 fill-current hover:text-gray-200" href="{{ link.url }}" {% if link.target | length %} target="{{ link.target }}" {% endif %}><div class="text">{{ link.text }}</div><div class="text">{{ craft.inlin.er('/assets/img/icon-arrow.svg') | replace('<svg ', '<svg class="w-4 h-4 xl:oak-hidden" ') | raw }}</div></a>
           </li>
         {% endfor %}
         <li class="border-t border-gray-600">
-          <a class="flex items-center justify-between py-2 font-normal fill-current text-gray-100 hover:text-gray-200" href="/topics/oaklandlovelife"><div class="text">#OaklandLoveLife</div><div class="text">{{ craft.inlin.er('/assets/img/icon-arrow.svg') | replace('<svg ', '<svg class="w-4 h-4 xl:oak-hidden" ') | raw }}</div></a>
+          <a class="flex items-center justify-between py-2 font-normal text-gray-100 fill-current hover:text-gray-200" href="/topics/oaklandlovelife"><div class="text">#OaklandLoveLife</div><div class="text">{{ craft.inlin.er('/assets/img/icon-arrow.svg') | replace('<svg ', '<svg class="w-4 h-4 xl:oak-hidden" ') | raw }}</div></a>
         </li>
         <li class="border-t border-gray-600">
-          <a class="flex items-center justify-between py-2 font-normal fill-current text-gray-100 hover:text-gray-200" href="/officials/libby-schaaf"><div class="text">Mayor Libby Schaaf</div><div class="text">{{ craft.inlin.er('/assets/img/icon-arrow.svg') | replace('<svg ', '<svg class="w-4 h-4 xl:oak-hidden" ') | raw }}</div></a>
+          <a class="flex items-center justify-between py-2 font-normal text-gray-100 fill-current hover:text-gray-200" href="/officials/libby-schaaf"><div class="text">Mayor Libby Schaaf</div><div class="text">{{ craft.inlin.er('/assets/img/icon-arrow.svg') | replace('<svg ', '<svg class="w-4 h-4 xl:oak-hidden" ') | raw }}</div></a>
         </li>
         <li class="border-t border-gray-600">
-          <a class="flex items-center justify-between py-2 font-normal fill-current text-gray-100 hover:text-gray-200" href="/services/oak311"><div class="text">Report a problem to OAK 311</div><div class="text">{{ craft.inlin.er('/assets/img/icon-arrow.svg') | replace('<svg ', '<svg class="w-4 h-4 xl:oak-hidden" ') | raw }}</div></a>
+          <a class="flex items-center justify-between py-2 font-normal text-gray-100 fill-current hover:text-gray-200" href="/services/oak311"><div class="text">Report a problem to OAK 311</div><div class="text">{{ craft.inlin.er('/assets/img/icon-arrow.svg') | replace('<svg ', '<svg class="w-4 h-4 xl:oak-hidden" ') | raw }}</div></a>
         </li>
       </ul>
     </div>

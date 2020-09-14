@@ -68,7 +68,7 @@
 }
 
 body {
-  @apply text-lg leading-normal text-gray-800 font-body;
+  @apply text-lg leading-normal text-gray-900;
 }
 
 h1,
@@ -83,19 +83,19 @@ h6 {
 h1,
 h2,
 h3 {
-  @apply font-extrabold font-heading;
+  @apply font-bold;
 }
 
 h2 {
-  @apply my-8 text-xxxxl;
+  @apply text-4xl;
 }
 
 h3 {
-  @apply my-6 font-semibold text-xxxl;
+  @apply font-semibold text-3xl;
 }
 
 h4 {
-  @apply my-6 text-xxl;
+  @apply text-2xl;
 }
 
 ol,
@@ -391,7 +391,7 @@ body.open .page-holder {
 }
 
 .timeline-grid dt {
-  @apply pl-12 bg-left-top bg-no-repeat text-xxl;
+  @apply pl-12 bg-left-top bg-no-repeat text-2xl;
   background-image: url("/assets/img/icon-timeline-point.svg");
   background-size: theme(spacing.9);
 }

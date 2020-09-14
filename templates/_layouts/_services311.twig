@@ -2,22 +2,22 @@
 
 {%- set custSideNav -%}
 <figure class="w-48 pr-12 mb-8 md:mb-0 md:w-1/4">
-  <img class="w-full h-auto block" src="/assets/img/logo-311.png" alt="Logo for OAK 311">
+  <img class="block w-full h-auto" src="/assets/img/logo-311.png" alt="Logo for OAK 311">
 </figure>
 {%- endset -%}
 
 {%- set custHeaderContent -%}
-<div class="flex-1 flex flex-col justify-between">
+<div class="flex flex-col justify-between flex-1">
   <div>
-    <h1 class="text-xxxl md:text-xxxxl font-bold mb-0">OAK 311</h1>
-    <p class="mb-0 max-w-md text-xl">OAK 311 is here to help you with requests for routine maintenance and urgent infrastructure issues.</p>
+    <h1 class="mb-0 text-3xl font-bold md:text-4xl">OAK 311</h1>
+    <p class="max-w-md mb-0 text-xl">OAK 311 is here to help you with requests for routine maintenance and urgent infrastructure issues.</p>
   </div>
-  <div class="md:flex w-full mt-8">
+  <div class="w-full mt-8 md:flex">
     <div class="mb-4 md:mb-0 md:w-1/2 md:mr-4">
-      <a href="https://seeclickfix.com/web_portal/wTMihVsatbiDau5Fw66m6HFD/report/location" class="block card-grid-button py-5 bg-green-600 text-white hover:text-white hover:bg-green-1000 shadow-none"><img src="/assets/img/icon-cursor.svg" class="inline h-6 w-auto mr-4">Report Online</a>
+      <a href="https://seeclickfix.com/web_portal/wTMihVsatbiDau5Fw66m6HFD/report/location" class="block py-5 text-white bg-green-600 shadow-none card-grid-button hover:text-white hover:bg-green-1000"><img src="/assets/img/icon-cursor.svg" class="inline w-auto h-6 mr-4">Report Online</a>
     </div>
     <div class="md:w-1/2 md:ml-4">
-      <a href="tel:+1-510-615-5566" class="block card-grid-button py-5 bg-green-600 text-white hover:text-white hover:bg-green-1000 shadow-none"><img src="/assets/img/icon-phone.svg" class="inline h-6 w-auto mr-4">Call 311</a>
+      <a href="tel:+1-510-615-5566" class="block py-5 text-white bg-green-600 shadow-none card-grid-button hover:text-white hover:bg-green-1000"><img src="/assets/img/icon-phone.svg" class="inline w-auto h-6 mr-4">Call 311</a>
       <div class="mt-2 text-sm font-bold md:text-base md:font-normal">For urgent issues, call <strong><a href="tel:311">311</a></strong> or <strong><a href="tel:1+510-615-5566">(510) 615-5566</a></strong>.</div>
     </div>
   </div>
@@ -74,11 +74,13 @@
   } %}
   <section class="bg-gray-100">
     <div class="container md:flex">
-      <div class="md:w-1/2 md:pr-4 o-override o-4">
-        <h2 class="text-xxl">Most Common Requests</h2>
+      <div class="md:w-1/2 md:pr-4">
+        {% include "_partials/_elements/_module-header.twig" with {
+          headerText: "Most Common Requests"
+        } %}
         <ul class="font-bold leading-loose">
           <li>
-            <select id="illegalDumping" class="cursor-pointer js-select-nav inline bg-transparent appearance-none rounded-none font-body font-bold text-green-800">
+            <select id="illegalDumping" class="inline font-bold text-green-800 bg-transparent rounded-none appearance-none cursor-pointer js-select-nav">
               <option value="">Illegal Dumping</option>
               {% for item in dumping %}
                 {{ macro.seeClickFixLink(item.title, item.id) }}
@@ -87,7 +89,7 @@
           </li>
           <li><a href="https://seeclickfix.com/web_portal/wTMihVsatbiDau5Fw66m6HFD/report/category/20961/location">Potholes</a></li>
           <li>
-            <select id="graffiti" class="cursor-pointer js-select-nav inline bg-transparent appearance-none rounded-none font-body font-bold text-green-800">
+            <select id="graffiti" class="inline font-bold text-green-800 bg-transparent rounded-none appearance-none cursor-pointer js-select-nav">
               <option value="">Graffiti</option>
               {% for item in graffiti %}
                 {{ macro.seeClickFixLink(item.title, item.id) }}
@@ -95,7 +97,7 @@
             </select>
           </li>
           <li>
-            <select id="buildingMaintenance" class="cursor-pointer js-select-nav inline bg-transparent appearance-none rounded-none font-body font-bold text-green-800">
+            <select id="buildingMaintenance" class="inline font-bold text-green-800 bg-transparent rounded-none appearance-none cursor-pointer js-select-nav">
               <option value="" class="px-0">City Building Maintenance</option>
               {% for item in building %}
                 {{ macro.seeClickFixLink(item.title, item.id) }}
@@ -105,8 +107,10 @@
           <li><a href="https://seeclickfix.com/web_portal/wTMihVsatbiDau5Fw66m6HFD/report/category/23975/location">Abandoned Vehicles</a></li>
         </ul>
       </div>
-      <div class="md:w-1/2 md:pl-4 o-override o-4">
-        <h2 class="text-xxl">Urgent Infrastructure Issues</h2>
+      <div class="md:w-1/2 md:pl-4">
+        {% include "_partials/_elements/_module-header.twig" with {
+          headerText: "Urgent Infrastructure Issues"
+        } %}
         <ul class="font-bold leading-loose">
           <li>Downed sign</li>
           <li>Traffic signal outage</li>
@@ -118,56 +122,69 @@
     </div>
   </section>
   <section class="bg-white">
-    <div class="container o-override o-12">
-      <h2 class="text-xxl">How It Works</h2>
-      <ol class="md:flex flex-row text-center">
-        <li class="how-it-works-block">
-          <figure class="flex items-center justify-center h-12">
-            <img src="/assets/img/icon-report.png" alt="An icon of an inbox with an arrow pointing into it." class="h-auto w-12">
-          </figure>
-          <h3 class="font-semibold text-base mb-0 md:text-xl">Report</h3>
-          <p class="text-sm mt-2 mb-0 md:px-2 md:text-lg lg:px-8">You report the issue by phone, website, app, or email.</p>
-        </li>
-        <li class="how-it-works-block">
-          <figure class="flex items-center justify-center h-12">
-            <img src="/assets/img/icon-review.png" alt="An icon of a clipboard with a piece of paper and a magnifying glass over it." class="h-12 w-auto">
-          </figure>
-          <h3 class="font-semibold text-base mb-0 md:text-xl">Review</h3>
-          <p class="text-sm mt-2 mb-0 md:px-2 md:text-lg lg:px-8">We review your request and provide a tracking number.</p>
-        </li>
-        <li class="how-it-works-block">
-          <figure class="flex items-center justify-center h-12">
-            <img src="/assets/img/icon-assign.png" alt="An icon of a tree chart." class="h-auto w-12">
-          </figure>
-          <h3 class="font-semibold text-base mb-0 md:text-xl">Assign</h3>
-          <p class="text-sm mt-2 mb-0 md:px-2 md:text-lg lg:px-8">We assign your request to the appropriate work group.</p>
-        </li>
-        <li class="how-it-works-block">
-          <figure class="flex items-center justify-center h-12">
-            <img src="/assets/img/icon-report.png" alt="An icon of a wrench and screwdriver crossed over each other in an &OpenCurlyDoubleQuote;X&rdquor; pattern." class="h-auto w-12">
-          </figure>
-          <h3 class="font-semibold text-base mb-0 md:text-xl">Work</h3>
-          <p class="text-sm mt-2 mb-0 md:px-2 md:text-lg lg:px-8">Service is provided. Completion times vary.</p>
-        </li>
+    <div class="container">
+      {% include "_partials/_elements/_module-header.twig" with {
+        headerText: "How It Works"
+      } %}
+      {% set hiw = [
+        {
+          img: "/assets/img/icon-report.png",
+          alt: "An icon of an inbox with an arrow pointing into it.",
+          head: "Report",
+          text: "You report the issue by phone, website, app, or email."
+        },
+        {
+          img: "/assets/img/icon-review.png",
+          alt: "An icon of a clipboard with a piece of paper and a magnifying glass over it.",
+          head: "Review",
+          text: "We review your request and provide a tracking number."
+        },
+        {
+          img: "/assets/img/icon-assign.png",
+          alt: "An icon of a tree chart.",
+          head: "Assign",
+          text: "We assign your request to the appropriate work group."
+        },
+        {
+          img: "/assets/img/icon-report.png",
+          alt: "An icon of a wrench and screwdriver crossed over each other in an &OpenCurlyDoubleQuote;X&rdquor; pattern.",
+          head: "Work",
+          text: "Service is provided. Completion times vary."
+        },
+      ] %}
+      <ol class="flex-row text-center md:flex">
+        {% for item in hiw %}
+          <li class="how-it-works-block">
+            <figure class="flex items-center justify-center h-12 mb-2">
+              <img src="{{ item.img }}" alt="{{ item.alt }}" class="w-12 h-auto">
+            </figure>
+            <h3 class="mb-2 text-base font-semibold md:text-xl">{{ item.head }}</h3>
+            <p class="my-0 text-sm md:px-2 md:text-lg lg:px-8">{{ item.text }}</p>
+          </li>
+        {% endfor %}
       </ol>
     </div>
   </section>
   <section class="bg-gray-100">
-    <div class="container o-override o-4">
-      <h2 class="text-xxl">Get the OAK 311 app on:</h2>
-        <div class="card-grid">
-          <a href="https://play.google.com/store/apps/details?id=com.seeclickfix.oak311.app" class="border-l-4 border-green-600 card-grid-button py-5 text-green-800 hover:text-white hover:bg-green-1000 shadow-btn">Google Play</a>
-          <a href="https://apps.apple.com/us/app/oak-311/id1316091489" class="border-l-4 border-green-600 card-grid-button py-5 text-green-800 hover:text-white hover:bg-green-1000 shadow-btn">Apple Store</a>
-        </div>
+    <div class="container">
+      {% include "_partials/_elements/_module-header.twig" with {
+        headerText: "Get the OAK 311 app on:"
+      } %}
+      <div class="card-grid">
+        <a href="https://play.google.com/store/apps/details?id=com.seeclickfix.oak311.app" class="py-5 text-green-800 border-l-4 border-green-600 card-grid-button hover:text-white hover:bg-green-1000 shadow-btn">Google Play</a>
+        <a href="https://apps.apple.com/us/app/oak-311/id1316091489" class="py-5 text-green-800 border-l-4 border-green-600 card-grid-button hover:text-white hover:bg-green-1000 shadow-btn">Apple Store</a>
+      </div>
     </div>
   </section>
   <section class="bg-white">
-    <div class="container o-override o-4">
-      <h2 class="text-xxl">View OAK 311 Service Request Information</h2>
+    <div class="container">
+      {% include "_partials/_elements/_module-header.twig" with {
+        headerText: "View OAK 311 Service Request Information"
+      } %}
         <div class="card-grid">
-          <a href="https://app.powerbigov.us/view?r=eyJrIjoiODE1NDg4MGYtMmJjYy00MTc1LWIyMmEtNzhkNDNlMjM0MDZlIiwidCI6Ijk4OWEyMTgwLTZmYmMtNDdmMS04MDMyLTFhOWVlOTY5YzU4ZCJ9" class="border-l-4 border-green-600 card-grid-button py-5 text-green-800 hover:text-white hover:bg-green-1000 shadow-btn">Interactive 311 Chart</a>
-          <a href="https://seeclickfix.com/web_portal/wTMihVsatbiDau5Fw66m6HFD/issues/map?lat=37.769629187677&lng=-122.22453117370607&max_lat=37.79486412183907&max_lng=-122.18676567077638&min_lat=37.744385638880516&min_lng=-122.26229667663576&zoom=14" class="border-l-4 border-green-600 card-grid-button py-5 text-green-800 hover:text-white hover:bg-green-1000 shadow-btn">Service Request Map</a>
-          {# <a href="https://data.oaklandnet.com/Infrastructure/Service-requests-received-by-the-Oakland-Call-Cent/quth-gb8e" class="border-l-4 border-green-600 card-grid-button py-5 text-green-800 hover:text-white hover:bg-green-1000 shadow-btn">View 311 Data</a> #}
+          <a href="https://app.powerbigov.us/view?r=eyJrIjoiODE1NDg4MGYtMmJjYy00MTc1LWIyMmEtNzhkNDNlMjM0MDZlIiwidCI6Ijk4OWEyMTgwLTZmYmMtNDdmMS04MDMyLTFhOWVlOTY5YzU4ZCJ9" class="py-5 text-green-800 border-l-4 border-green-600 card-grid-button hover:text-white hover:bg-green-1000 shadow-btn">Interactive 311 Chart</a>
+          <a href="https://seeclickfix.com/web_portal/wTMihVsatbiDau5Fw66m6HFD/issues/map?lat=37.769629187677&lng=-122.22453117370607&max_lat=37.79486412183907&max_lng=-122.18676567077638&min_lat=37.744385638880516&min_lng=-122.26229667663576&zoom=14" class="py-5 text-green-800 border-l-4 border-green-600 card-grid-button hover:text-white hover:bg-green-1000 shadow-btn">Service Request Map</a>
+          {# <a href="https://data.oaklandnet.com/Infrastructure/Service-requests-received-by-the-Oakland-Call-Cent/quth-gb8e" class="py-5 text-green-800 border-l-4 border-green-600 card-grid-button hover:text-white hover:bg-green-1000 shadow-btn">View 311 Data</a> #}
         </div>
     </div>
   </section>

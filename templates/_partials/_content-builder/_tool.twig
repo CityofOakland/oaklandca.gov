@@ -1,8 +1,8 @@
 {% set templateBase = "_partials/_content-builder/_blocks/_" %}
 {% set heading = heading ?? 'h2' %}
 {% set subheading = subheading ?? 'h3' %}
-{% set headingClass = headingClass ?? 'text-xxl my-6' %}
-{% set topHeadingClass = 'text-xxl mt-0 mb-6' %}
+{% set headingClass = headingClass ?? 'text-2xl my-6' %}
+{% set topHeadingClass = 'text-2xl mt-0 mb-6' %}
 {% set subheadingClass = subheadingClass ?? 'text-xl my-4' %}
 {% set galleryTrue = craft.matrixBlocks().owner(entry).fieldId(66).type('gallery') %}
 
@@ -36,7 +36,7 @@
         <tr>
           {% for col in 1..columns %}
             {% set colAttrib = 'column' ~ col ~ 'Cell' %}
-            <td class="p-4 align-top border-green-800 o-6 body-text o-override">{{ attribute(row, colAttrib) }}</td>
+            <td class="p-4 align-top border-green-800 body-text">{{ attribute(row, colAttrib) }}</td>
           {% endfor %}
         </tr>
       {% endfor %}
@@ -65,7 +65,7 @@
       <a id="{{ blockId }}" class="anchor-link"></a>
       <{{ subheading }} class="{{ subheadingClass }}">{{ block.text }}</{{ subheading }}>
     {% case "text" %}
-      <div class="o-6 body-text">
+      <div class="body-text">
         {{ block.text }}
       </div>
     {% case "textImageBlock" %}

@@ -6,11 +6,11 @@
     {% case "alert" %}
       {% set color = "red-500" %}
     {% default %}
-      {% set color = "new-green-600" %}
+      {% set color = "green-600" %}
   {% endswitch %}
 
   <div class="rounded border border-{{ color }} border-l-8 p-4 my-4 text-base">
-    <p class="font-heading mt-0 uppercase">{{ alert.alertHeading }}</p>
+    <p class="mt-0 uppercase">{{ alert.alertHeading }}</p>
     {{ alert.alertDescription }}
     {% if alert.alertLink %}
       <p class="mt-4 mb-0">

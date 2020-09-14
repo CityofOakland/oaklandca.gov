@@ -45,7 +45,7 @@
 
 {% block content %}
   {%- set headerSubContent -%}
-    <div class="mt-4 o-4 md:mt-0">
+    <div class="mt-4 md:mt-0">
     {% if entry.projectStatus %}
       <div class="text-sm">
         <strong>Status:</strong><br>
@@ -92,7 +92,9 @@
       {% if entry.about %}
         <section class="pb-16 mb-16 border-b border-gray-500">
           <a class="anchor-link" id="page-about"></a>
-          <h2 class="text-xxl">About</h2>
+          {% include "_partials/_elements/_module-header.twig" with {
+            headerText: "About"
+          } %}
           <div class="body-text">
             {{ entry.about }}
           </div>
@@ -102,7 +104,9 @@
         {% js %}lightGallery(document.querySelector('#js-photoGallery'));{% endjs %}
         <section class="pb-16 mb-16 border-b border-gray-500">
           <a class="anchor-link" id="page-gallery"></a>
-          <h2 class="text-xxl">Gallery</h2>
+          {% include "_partials/_elements/_module-header.twig" with {
+            headerText: "Gallery"
+          } %}
           <div class="flex flex-row flex-wrap" id="js-photoGallery">
             {% for photo in entry.photoGallery.all() %}
               <figure class="w-1/3" data-src="{{ photo.url }}" data-sub-html="<p class='font-bold'>{{ photo.title }}</p><p>{{ photo.altText }}</p>">
@@ -122,8 +126,10 @@
       {% if documentsTrue %}
         <section class="pb-16 mb-16 border-b border-gray-500">
           <a class="anchor-link" id="page-documents"></a>
-          <h2 class="text-xxl">Documents</h2>
-          <div class="o-6">
+          {% include "_partials/_elements/_module-header.twig" with {
+            headerText: "Documents"
+          } %}
+          <div class="space-y-6">
             {% for entry in entry.projectDocuments.all() %}
               <a class="section-box project-documents" href="{{ entry.url }}">{{ entry.title }}</a>
             {% endfor %}
@@ -133,7 +139,9 @@
       {% if meetingsTrue %}
         <section>
           <a class="anchor-link" id="page-meetings"></a>
-          <h2 class="text-xxl">Meetings</h2>
+          {% include "_partials/_elements/_module-header.twig" with {
+            headerText: "Meetings"
+          } %}
           {% for entry in relatedMeetings.all() %}
             {% include '_partials/_elements/_vertical-cards.twig' with {
               title: entry.title,
@@ -151,14 +159,16 @@
       {% if updatesTrue %}
         <section class="pb-16 mb-16 border-b border-gray-500">
           <a class="anchor-link" id="page-updates"></a>
-          <h2 class="text-xxl">Updates</h2>
-          <div class="o-6">
+          {% include "_partials/_elements/_module-header.twig" with {
+            headerText: "Updates"
+          } %}
+          <div class="space-y-6">
             {% for entry in entry.projectUpdates.all() %}
               <a class="section-box project-updates" {{ loop.first ? '' : 'data-toggle="off"' }} href="{{ entry.url }}">{{ entry.title }}</a>
             {% endfor %}
           </div>
           {% if entry.projectUpdates | length > 1 %}
-           <p class="inline-block mt-4 font-bold border-b-2 border-green-800 font-heading"><a href="" id="project-updates-toggle" data-class="project-updates">Toggle all project updates</a></p>
+           <p class="inline-block mt-4 font-bold border-b-2 border-green-800"><a href="" id="project-updates-toggle" data-class="project-updates">Toggle all project updates</a></p>
             {% js %}toggleLinks('project-updates-toggle');{% endjs %}
           {% endif %}
         </section>
@@ -167,8 +177,9 @@
         {% js %}lightGallery(document.querySelector('#js-map'));{% endjs %}
         <section class="pb-16 mb-16 border-b border-gray-500">
           <a class="anchor-link" id="page-map"></a>
-          <h2 class="text-xxl">Map</h2>
-
+          {% include "_partials/_elements/_module-header.twig" with {
+            headerText: "Map"
+          } %}
           {% if mapImageTrue %}
             {% set image = entry.projectMapImage.one %}
             {% set transformedImage = craft.imager.transformImage(image, { width: 320 }, { ratio: 1/1, position: image.getFocalPoint()},{ fillTransforms: true}) %}
@@ -268,7 +279,9 @@
       {% if timelineTrue %}
         <section class="pb-16 mb-16 border-b border-gray-500">
           <a class="anchor-link" id="page-timeline"></a>
-          <h2 class="text-xxl">Timeline</h2>
+          {% include "_partials/_elements/_module-header.twig" with {
+            headerText: "Timeline"
+          } %}
           <div class="project-timeline">
             {% for milestone in entry.timeline.all() %}
               <div class="project-timeline-item pl-8 border-l-2 {% if not loop.last %}pb-4 border-gray-500{% else %}border-white{% endif %}">
@@ -286,14 +299,16 @@
       {% if relatedTrue %}
         <section class="pb-16 mb-16 border-b border-gray-500">
           <a class="anchor-link" id="page-related"></a>
-          <h2 class="text-xxl">Related pages</h2>
-          <div class="o-6">
+          {% include "_partials/_elements/_module-header.twig" with {
+            headerText: "Related Pages"
+          } %}
+          <div class="space-y-6">
             {% for entry in entry.relatedProjectEntries.all() %}
               <a class="section-box project-related" {{ loop.first ? '' : 'data-toggle="off"' }} href="{{ entry.url }}">{{ entry.title }}</a>
             {% endfor %}
           </div>
           {% if entry.relatedProjectEntries | length > 1 %}
-            <p class="inline-block mt-4 font-bold border-b-2 border-green-800 font-heading"><a href="" id="project-related-toggle" data-class="project-related">Toggle all related pages</a></p>
+            <p class="inline-block mt-4 font-bold border-b-2 border-green-800"><a href="" id="project-related-toggle" data-class="project-related">Toggle all related pages</a></p>
             {% js %}toggleLinks('project-related-toggle');{% endjs %}
           {% endif %}
         </section>
@@ -301,7 +316,9 @@
       {% if fundingTrue %}
         <section class="pb-16 mb-16 border-b border-gray-500">
           <a class="anchor-link" id="page-logos"></a>
-          <h2 class="text-xxl">{{ entry.fundingLogosAlternateTitle ?? 'Partners' }}</h2>
+          {% include "_partials/_elements/_module-header.twig" with {
+            headerText: entry.fundingLogosAlternateTitle ?? "Partners"
+          } %}
           <div class="flex flex-wrap items-center justify-center -mx-4">
             {% for logo in entry.fundingLogos.all() %}
               <figure class="w-full mx-4 mb-4 sm:w-1/2 md:w-1/3 lg:w-1/5 md:mb-8">
@@ -314,7 +331,9 @@
       {% if contactTrue %}
         <section>
           <a class="anchor-link" id="page-contact"></a>
-          <h2 class="text-xxl">Contact</h2>
+          {% include "_partials/_elements/_module-header.twig" with {
+            headerText: "Contact"
+          } %}
           {% if emailTrue %}
             <h3 class="mb-2 text-xl">Email</h3>
             <p class="mt-0">

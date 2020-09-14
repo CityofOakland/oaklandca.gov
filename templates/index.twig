@@ -5,8 +5,8 @@
   <div class="relative banner banner-home">
     {% include "_partials/_elements/_banner-google-translate.twig" %}
     <div class="container text-green-1000">
-      <div class="relative z-10 max-w-md p-6 mb-32 bg-white rounded-sm o-1 md:mt-12 md:mb-24 font-heading">
-        <h1 class="font-extrabold leading-tight text-xxxxl"><span class="block mb-3 text-xl uppercase">Your actions save lives.</span> Wear a face covering, wash your hands, and stay home when sick.</h1>
+      <div class="relative z-10 max-w-md p-6 mb-32 bg-white rounded-sm md:mt-12 md:mb-24">
+        <h1 class="text-4xl font-extrabold leading-tight"><span class="block mb-3 text-xl uppercase">Your actions save lives.</span> Wear a face covering, wash your hands, and stay home when sick.</h1>
         <p class="my-0">
           <b><a class="text-green-600" href="/topics/covid-19" class="">Get information & resources »</a></b>
         </p>
@@ -107,9 +107,9 @@
                   </div>
                 {% endif %}
               </figure>
-              <div class="flex-1 lg:pl-12 o-3">
+              <div class="flex-1 lg:pl-12">
                 <date class="block my-4 text-sm tracking-widest text-gray-500 uppercase lg:mt-0">{{ featuredNews.postDate | date('M j, Y') }}</date>
-                <h3 class="my-0 text-xl font-semibold leading-tight md:text-xxl"><a href="{{ featuredNews.url }}">{{ featuredNews.title }}</a></h3>
+                <h3 class="my-0 text-xl font-semibold leading-tight md:text-2xl"><a href="{{ featuredNews.url }}">{{ featuredNews.title }}</a></h3>
                 {{ featuredNews.summary | md }}
               </div>
             </article>
@@ -120,7 +120,7 @@
             {% endif %}
             {% for entry in otherFeaturedNews %}
               <article class="my-3">
-                <h3 class="my-0 text-base font-normal font-body">
+                <h3 class="my-0 text-base font-normal">
                   <a class="flex-1 hover:underline" href="{{ entry.url }}">{{ entry.title }}</a>
                 </h3>
               </article>
