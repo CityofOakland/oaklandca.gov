@@ -123,7 +123,7 @@
         <section class="pb-16 mb-16 border-b border-gray-400">
           <a class="anchor-link" id="page-documents"></a>
           <h2 class="text-xxl">Documents</h2>
-          <div class="o-6"> 
+          <div class="o-6">
             {% for entry in entry.projectDocuments.all() %}
               <a class="section-box project-documents" href="{{ entry.url }}">{{ entry.title }}</a>
             {% endfor %}
@@ -138,10 +138,9 @@
             {% include '_partials/_elements/_vertical-cards.twig' with {
               title: entry.title,
               url: entry.url,
-              icon: 'calendar',
-              photo: entry.eventImage.one,
               byline: entry.startDate.format("M d, Y"),
-              body: entry.body | chop(limit=20, unit='w', append='…')
+              photoHide: true,
+              summaryHide: true
             } %}
           {% endfor %}
         </section>
@@ -180,7 +179,7 @@
             {%- set mapImageBlock -%}
             <figure class="w-full mt-4 cursor-pointer" id='js-map'>
               <img
-                data-src="{{ image.url }}" 
+                data-src="{{ image.url }}"
                 data-sub-html="<p class='font-bold'>Map of Project: {{ entry.title }}</p>"
                 src="{{ transformedImage.url }}"
                 srcset="{{ transformedImages | srcset }}"
@@ -222,13 +221,13 @@
             {% else %}
               <figure class="w-full mt-4 cursor-pointer" id='js-map'>
                 <img
-                  data-src="{{ largePhoto }}" 
+                  data-src="{{ largePhoto }}"
                   data-sub-html="<p class='font-bold'>Map of Project: {{ entry.title }}</p><p>Showing locations of {{ locationText ?? '' }}</p>"
-                  src="{{ src }}" 
+                  src="{{ src }}"
                   alt="Map of Project: {{ entry.title }}">
               </figure>
             {% endif %}
-            
+
             {% for location in locations %}
               {% if location.description %}
                 <h3 class="my-3 text-lg font-bold">{{ location.description }}</h3>
@@ -243,7 +242,7 @@
           {% else %}
             {{ mapImageBlock | raw }}
           {% endif %}
-          
+
         </section>
       {% endif %}
       {% css %}
@@ -264,7 +263,7 @@
           top: 0;
         }
       {% endcss %}
-      
+
       {% if timelineTrue %}
         <section class="pb-16 mb-16 border-b border-gray-400">
           <a class="anchor-link" id="page-timeline"></a>
@@ -294,7 +293,7 @@
           </div>
           {% if entry.relatedProjectEntries | length > 1 %}
             <p class="inline-block mt-4 font-bold border-b-2 border-green-400 font-heading"><a href="" id="project-related-toggle" data-class="project-related">Toggle all related pages</a></p>
-            {% js %}toggleLinks('project-related-toggle');{% endjs %}          
+            {% js %}toggleLinks('project-related-toggle');{% endjs %}
           {% endif %}
         </section>
       {% endif %}
