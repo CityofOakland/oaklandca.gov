@@ -1,0 +1,11 @@
+{# An individual block #}
+<div class="relative flex flex-col w-full overflow-hidden rounded shadow md:w-1/3">
+  {# The holder for the image #}
+  <div class="relative pb-5/12">
+    <img src="{{ img }}" class="absolute object-cover w-full h-full">
+  </div>
+  {# Our card title #}
+  <div class="flex-1 px-6 py-4 text-white bg-blue-900">
+    <h3 class="my-0 text-xl md:text-base lg:text-2xl line-clamp-2">{{ title }}</h3>
+  </div>
+</div>

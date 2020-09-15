@@ -288,5 +288,5 @@ module.exports = {
     require("tailwindcss-multi-column")(), // no options to configure
     require("tailwindcss-owl")(),
     require("@neojp/tailwindcss-line-clamp-utilities"),
-  ],
+  ]
 };
