@@ -16,7 +16,9 @@
           {{ macro.buttonTemplate(cta.phoneNumberTitle, 'tel:' ~ cta.number | replace('/[^0-9]/', ''), cta.number) }}
         {% case "documentLink" %}
           {% set doc = cta.documentLink.one %}
-          {{ macro.buttonTemplate(cta.documentLabel ?? doc.title, doc.url ?? '', cta.buttonLabel) }}
+          {% set isDoc = (doc.type == "documents") ? true : false %}
+          {% set docUrl = isDoc ? doc.documentFile.one.url : entry.url %}
+          {{ macro.buttonTemplate(cta.documentLabel ?? doc.title, docUrl ?? '', cta.buttonLabel) }}
         {% case "emailAddress" %}
           {{ macro.buttonTemplate(cta.emailTitle, 'mailto:' ~ cta.emailAddress, cta.linkText) }}
         {% case "physicalAddress" %}
