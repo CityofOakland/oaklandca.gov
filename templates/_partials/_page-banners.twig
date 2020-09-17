@@ -12,9 +12,9 @@
 {% if bannerImage | length %}
   {%- set banner -%}
     <figure class="absolute inset-0 z-0">
-      <img 
-        class="absolute inset-0 z-0 object-cover w-full h-full" 
-        style="object-position:{{ bannerImage.one.getFocalPoint('asCss') }};" 
+      <img
+        class="absolute inset-0 z-0 object-cover w-full h-full"
+        style="object-position:{{ bannerImage.one.getFocalPoint('asCss') }};"
         src="{{ bannerImage.one.url }}"
         alt="{{ bannerImage.one.title }}">
     </figure>
@@ -30,12 +30,12 @@
 {%- set breadCrumbs -%}
   <div class="relative flex flex-col items-start py-0 sm:justify-between sm:flex-row-reverse sm:items-center">
     {% include "_partials/_elements/_banner-google-translate.twig" with { paddingTop: "pt-0" } %}
-    <div class="relative z-10 inline-block px-2 py-1 mt-4 text-xs text-green-400 bg-white rounded-sm shadow sm:mt-0 md:text-xs">
-      <a class="text-green-400 hover:text-green-400 hover:underline" href="/">
+    <div class="relative z-10 inline-block px-2 py-1 mt-4 text-xs text-green-800 bg-white rounded-sm shadow sm:mt-0 md:text-xs">
+      <a class="text-green-800 hover:text-green-800 hover:underline" href="/">
         Oakland
       </a> →
       {% for link in breadCrumbLinks ?? '' %}
-        <a class="text-green-400 hover:text-green-400 hover:underline" href="{{ link.link }}">{{ link.title }}</a> →
+        <a class="text-green-800 hover:text-green-800 hover:underline" href="{{ link.link }}">{{ link.title }}</a> →
       {% endfor %}
       <span class="font-bold">{{ bannerTitle }}</span>
     </div>
@@ -46,11 +46,11 @@
 {%- set headerContent -%}
   <div class="flex flex-col flex-1 lg:flex-row">
     <div class="w-full lg:w-2/3">
-      <h1 class="mb-0 font-bold text-xxxl md:text-xxxxl">{{ bannerTitle }}</h1>
+      <h1 class="mb-0 font-bold text-3xl md:text-4xl">{{ bannerTitle }}</h1>
       {% include "_partials/_elements/_page-alerts.twig" %}
       {% if leadIn %}
         {% if leadInParagraph ?? "" %}
-          {{ leadIn | replace({'<p' : '<p class="my-2 last:mb-0"', '<a': '<a class="font-bold text-new-green-800 hover:text-new-green-700"'}) | raw }}
+          {{ leadIn | replace({'<p' : '<p class="my-2 last:mb-0"', '<a': '<a class="font-bold text-green-800 hover:text-green-700"'}) | raw }}
         {% else %}
           <p class="mb-0 md:leading-loose">{{ leadIn | raw }}</p>
         {% endif %}
@@ -66,7 +66,7 @@
         {% if entry.id == 34229 %}
           <a class="py-2 mt-4 text-sm btn" href="https://www.oaklandca.gov/documents/special-vacancy-notices">View Local Appointments List and Special Vacancy Notices</a>
         {% endif %}
-      </div>      
+      </div>
     </div>
     <div class="w-full lg:w-1/3 lg:pl-4">
       {{ headerSubContent ?? '' }}

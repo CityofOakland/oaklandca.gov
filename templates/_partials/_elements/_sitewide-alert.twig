@@ -5,14 +5,14 @@
     {% case "alert" %}
       {% set color = "red-500" %}
     {% default %}
-      {% set color = "green-300" %}
+      {% set color = "green-600" %}
   {% endswitch %}
   <div class="relative bg-{{ color }} z-0 text-white">
     <img alt="" class="absolute inset-0 object-cover w-full h-full opacity-3" role="presentation" src="/assets/img/oaklandroots.svg">
     <div class="container relative z-20 py-4 text-sm">
       <div class="items-center content-start sm:flex">
         <div class="flex-1 mb-2 sm:mb-0 sm:mr-8 md:flex">
-          {% if sitewideAlert.alertLabel %}<p class="m-0 font-bold uppercase sm:mr-2">{{ sitewideAlert.alertLabel }}:</p>{% endif %}<div class="o-override o-2">{{ sitewideAlert.alertMessage }}</div>
+          {% if sitewideAlert.alertLabel %}<p class="m-0 font-bold uppercase sm:mr-2">{{ sitewideAlert.alertLabel }}:</p>{% endif %}{{ sitewideAlert.alertMessage }}
         </div>
         {% if sitewideAlert.alertUrl %}
           <div>

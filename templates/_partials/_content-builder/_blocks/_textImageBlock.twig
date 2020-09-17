@@ -18,9 +18,9 @@
     sizes="100vw"
     alt="{{ text }}"
     class="block border border-gray-200">
-    {% if block.displayAltTextAsCaption %}<figcaption class="block text-center my-2 text-base">{{ text }}</figcaption>{% endif %}
+    {% if block.displayAltTextAsCaption %}<figcaption class="block my-2 text-base text-center">{{ text }}</figcaption>{% endif %}
 </figure>
-<div class="{{ textPad }} md:flex-1 o-override o-6 body-text">
+<div class="{{ textPad }} md:flex-1 body-text">
     {{ block.textBlock }}
 </div>
 </div>

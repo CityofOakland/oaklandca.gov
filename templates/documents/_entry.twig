@@ -2,6 +2,8 @@
 
 {% set document = entry.documentFile %}
 
+{% redirect document.one.url %}
+
 {% block content %}
   {% include '_partials/_page-banners.twig' with {
     breadCrumbLinks: [
@@ -12,7 +14,7 @@
     ],
     leadIn: 'Publish Date: ' ~ entry.postDate | date('M, d Y')
   } %}
-  <section class="bg-white relative z-0">
+  <section class="relative z-0 bg-white">
     <div class="container">
       {% if document.exists() %}
         <div>

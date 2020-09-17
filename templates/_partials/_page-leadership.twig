@@ -10,23 +10,25 @@
           {% if entry.portrait | length %}
             <img src="{{ entry.portrait.one.url }}" alt="Portrait of {{ entry.groupHeadName }}">
           {% else %}
-            <div class="bg-gray-300 text-gray-400 opacity-75 fill-current h-full p-12">
-              {{ craft.inlin.er('/assets/img/icon-user.svg') | replace('<svg ', '<svg class="h-full w-full" ') | raw }}
+            <div class="h-full p-12 text-gray-500 bg-gray-300 opacity-75 fill-current">
+              {{ craft.inlin.er('/assets/img/icon-user.svg') | replace('<svg ', '<svg class="w-full h-full" ') | raw }}
             </div>
           {% endif %}
         </figure>
         {% if entry.teams | length %}
           {% for entry in entry.teams.all() %}
-            <a href="{{ entry.url }}" class="btn btn-sm block text-center mt-4">{{ entry.title }}</a>
+            <a href="{{ entry.url }}" class="block mt-4 text-center btn btn-sm">{{ entry.title }}</a>
           {% endfor %}
         {% endif %}
       </div>
       <div class="sm:flex-1">
-        <h2 class="text-xxxl sm:mt-0 mb-0">{{ entry.groupHeadName }}</h2>
+        {% include "_partials/_elements/_module-header.twig" with {
+          headerText: entry.groupHeadName
+        } %}
         {% if pageLeadershipHeaderText is not defined %}
-          <p class="text-xl mt-2">{{ entry.groupHeadTitle }}</p>
+          <p class="mt-2 text-xl">{{ entry.groupHeadTitle }}</p>
         {% endif %}
-        <div class="text-xl mt-8">{{ entry.groupHeadBio | raw }}</div>
+        <div class="mt-8 text-xl">{{ entry.groupHeadBio | raw }}</div>
       </div>
     </div>
   </section>

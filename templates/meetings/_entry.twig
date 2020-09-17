@@ -19,10 +19,10 @@
       <div class="sm:w-2/3 sm:mr-8">
         {% set startDate = event.startDate %}
         {% set endDate = event.endDate %}
-        <div class="p-4 text-white bg-gray-700 md:inline-flex md:items-center">
+        <div class="p-4 text-white bg-gray-1000 md:inline-flex md:items-center">
           <h3 class="my-0 md:mr-8">Meeting</h3>
           <time datetime="{{ startDate | atom }}">
-            <h4 class="my-0 font-bold text-xxxxl">
+            <h4 class="my-0 font-bold text-4xl">
               {{ startDate.format("F j, Y") }}
             </h4>
             {% if not event.allDay %}
@@ -150,11 +150,11 @@
           {% for block in entry.addresses.all() %}
             {% switch block.type %}
               {% case "location" %}
-                {% if block.locationName %}<h4 class="mb-0 text-base uppercase font-heading">{{ block.locationName }}</h4>{% endif %}
+                {% if block.locationName %}<h4 class="mb-0 text-base uppercase">{{ block.locationName }}</h4>{% endif %}
                 {% include '_partials/_elements/_address.twig' %}
               {% case "onlineLocation" %}
                 <div class="mt-4 mb-8">
-                  {% if block.locationName %}<h4 class="mb-0 text-base uppercase font-heading">{{ block.locationName }}</h4>{% endif %}
+                  {% if block.locationName %}<h4 class="mb-0 text-base uppercase">{{ block.locationName }}</h4>{% endif %}
                   {{ block.locationDescription }}
                   <p class="mb-0">
                     <a href="{{ block.webAddress }}" class="btn btn-sm">Visit {{ block.locationName }}</a>

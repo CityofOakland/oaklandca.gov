@@ -6,7 +6,7 @@ const closedClasses = ["opacity-0", "h-0", "z-neg-10", "invisible"];
 if (filterReveal != null) {
   filterReveal.addEventListener("click", function(e) {
     e.preventDefault();
-  
+
     if (filters.classList.contains("opacity-0")) {
       filters.classList.add(...openClasses);
       filters.classList.remove(...closedClasses);
@@ -16,7 +16,7 @@ if (filterReveal != null) {
       filters.classList.remove(...openClasses);
       filterReveal.innerHTML = "Show Filters";
     }
-  }, false);  
+  }, false);
 }
 
 if (window.section && window.entryTitle) {
@@ -44,14 +44,14 @@ search.addWidget(
   })
 );
 
-const defaultTemplate = 
+const defaultTemplate =
 `<article class="py-8 sm:py-12 border-gray-300 border-b-2">
   {{#displayDate}}
   <div class="text-base text-gray-400 mb-4">
     Publish Date: <b>{{ displayDate }}</b>
   </div>
   {{/displayDate}}
-  <h2 class="text-xl md:text-xxl my-0 {{#leadIn}} mt-0 mb-3 md:mb-6 {{/leadIn}}">
+  <h2 class="text-xl md:text-2xl my-0 {{#leadIn}} mt-0 mb-3 md:mb-6 {{/leadIn}}">
     <a href="{{ url }}">
       {{{ _highlightResult.title.value }}}
     </a>
@@ -74,13 +74,13 @@ facetFilters.forEach(facet => {
         header: facet.header
       }
     })
-  );    
+  );
 });
 
 if (typeof moment !== 'undefined') {
   const ONE_DAY_IN_MS = 3600 * 24 * 1000;
 
-  const TODAY = moment().format('L'); 
+  const TODAY = moment().format('L');
 
 
   const datePicker = instantsearch.connectors.connectRange(
@@ -130,7 +130,7 @@ if (typeof moment !== 'undefined') {
   const dateRangeWidget = datePicker({
     attributeName: 'date',
   });
-  
+
   search.addWidget(dateRangeWidget);
 }
 

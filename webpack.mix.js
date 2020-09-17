@@ -21,7 +21,7 @@ const imageminMozjpeg = require("imagemin-mozjpeg");
 
 mix.setPublicPath('./web/assets/')
   .postCss(pkg.paths.src.css + "app.css", "css")
-  .styles(pkg.paths.src.css + "lightgallery/" + "*.css", pkg.paths.dist.css + "lightgallery.css")
+  .combine([pkg.paths.src.css + 'lightgallery/lightgallery.css', pkg.paths.src.css + 'lightgallery/lg-fb-comment-box.css', pkg.paths.src.css + 'lightgallery/lg-transitions.css'], "./web/assets/css/lightgallery.css")
   .options({
     postCss: [
       tailwindcss(),
@@ -42,7 +42,7 @@ mix.setPublicPath('./web/assets/')
   .extract(["alpinejs", "picturefill"])
   .sourceMaps()
   .browserSync({
-    proxy: "http://oakland.test",
+    proxy: "https://oakland.test",
     notify: {
       styles: {
         top: 'auto',

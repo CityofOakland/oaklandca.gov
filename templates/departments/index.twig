@@ -4,17 +4,17 @@
   {% include '_partials/_page-banners.twig' %}
 
   {# Begin Departments #}
-  <section class="bg-white relative z-0">
+  <section class="relative z-0 bg-white">
     <div class="container">
       {% set departmentsGrouped = craft.entries.section('departments').officialDepartment(true).orderBy('title').all() | group('title | first') %}
       {% for letter, entries in departmentsGrouped %}
-        <div class="pt-12 mb-12 border-light-grey border-t">
-          <h2 class="mt-0 leading-none font-semibold text-lg">{{ letter | upper }}</h2>
-          {% spaceless %}            
+        <div class="pt-12 mb-12 border-t border-light-grey">
+          <h2 class="mb-4 text-lg font-semibold leading-none">{{ letter | upper }}</h2>
+          {% spaceless %}
           {% for entry in entries %}
-            <div class="shadow-btn p-6 my-2 rounded-sm">
-              <h3 class="font-body text-lg mt-0 mb-4"><a href="{{ entry.redirectUrl ?? entry.url }}">{{ entry.title }}</a></h3>
-              <p class="my-0 max-w-md">{{ entry.leadIn | chop(limit=200, unit='c', append='…') }}</p>
+            <div class="p-6 my-2 rounded-sm shadow-btn">
+              <h3 class="mb-4 text-lg"><a href="{{ entry.redirectUrl ?? entry.url }}">{{ entry.title }}</a></h3>
+              <p class="max-w-md my-0">{{ entry.leadIn | chop(limit=200, unit='c', append='…') }}</p>
             </div>
           {% endfor %}
           {% endspaceless %}

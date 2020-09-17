@@ -26,8 +26,8 @@
             {% if entry.portrait | length %}
               <img src="{{ entry.portrait.one.url }}" alt="Portrait of {{ entry.title }}">
             {% else %}
-              <div class="bg-gray-300 text-gray-400 opacity-75 fill-current h-full p-12">
-                {{ craft.inlin.er('/assets/img/icon-user.svg') | replace('<svg ', '<svg class="h-full w-full" ') | raw }}
+              <div class="h-full p-12 text-gray-500 bg-gray-300 opacity-75 fill-current">
+                {{ craft.inlin.er('/assets/img/icon-user.svg') | replace('<svg ', '<svg class="w-full h-full" ') | raw }}
               </div>
             {% endif %}
           </figure>
@@ -35,19 +35,19 @@
           {% if dobc.exists() %}
             {% set dobcLength = dobc | length %}
             {% set plural = dobcLength > 1 ? true : false %}
-            <h3 class="text-lg font-bold flex items-center mb-2">Team{% if plural %}s{% endif %}:</h3>
-            <div class="o-4">
+            <h3 class="flex items-center mb-2 text-lg font-bold">Team{% if plural %}s{% endif %}:</h3>
+            <div class="space-y-4">
               {% for entry in dobc.all() %}
-                <a href="{{ entry.url }}" class="btn btn-sm block text-center">{{ entry.title }}</a>
+                <a href="{{ entry.url }}" class="block text-center btn btn-sm">{{ entry.title }}</a>
               {% endfor %}
             </div>
           {% elseif entry.staffImportDepartment | length %}
-            <h3 class="text-lg font-bold flex items-center">{{ entry.staffImportDepartment }}</h3>
+            <h3 class="flex items-center text-lg font-bold">{{ entry.staffImportDepartment }}</h3>
           {% endif %}
         </div>
-        <div class="sm:flex-1 o-4">
+        <div class="sm:flex-1">
             {% if entry.bio | length %}
-            <div class="text-xl o-4">{{ entry.bio | replace('<p>', '<p class="my-0">') | raw }}</div>
+            <div class="text-xl">{{ entry.bio | replace('<p>', '<p class="my-0">') | raw }}</div>
           {% endif %}
           {% if email | length %}
             <p class="my-0">
