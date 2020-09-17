@@ -137,4 +137,4 @@ fields:
     type: craft\fields\Lightswitch
 handle: eventEntries
 name: 'Event Entries'
-sortOrder: 14
+sortOrder: 16

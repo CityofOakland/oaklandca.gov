@@ -14,6 +14,6 @@ settings:
   secret: $S3_SECRET
   storageClass: ''
   subfolder: logos
-sortOrder: 12
+sortOrder: 13
 type: craft\awss3\Volume
 url: 'https://s3.us-west-2.amazonaws.com/cao-94612/'

@@ -1,0 +1,32 @@
+<div class="{% if not loop.last %}mb-12{% endif %}">
+  <a class="anchor-link" id="{{ blockId }}"></a>
+  {% if block.heading %}
+    <{{ heading }} class="{{ hClass }}">{{ block.heading }}</{{ heading }}>
+  {% endif %}
+  {{ block.linkSetDescription }}
+  <div class="flex flex-col space-y-6 md:space-y-0 md:space-x-6 md:flex-row md:items-stretch">
+    {% for linkSet in block.linkSet.all() %}
+      {% set link = linkSet.linkLocation %}
+      {% set linkType = link.typeHandle %}
+      {# An individual block #}
+      <a href="{{ link.url }}" target="{{ link.target }}" class="relative flex flex-col w-full overflow-hidden rounded shadow md:w-1/3">
+        {# The holder for the image #}
+        <div class="relative pb-5/12">
+          <img src="{{ linkSet.linkImage.one.url }}" class="absolute object-cover w-full h-full">
+        </div>
+        {# Our card title #}
+        <div class="flex-1 px-6 py-4 text-white bg-blue-900">
+          <h3 class="my-0 text-xl md:text-base lg:text-2xl line-clamp-2">{{ link.text }}</h3>
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+</div>
+{% set link = block.readMoreLink %}
+{% if link %}
+  {% include "_partials/_elements/_read-more.twig" with {
+    url: link.url,
+    text: link.text,
+    target: link.target
+  } %}
+{% endif %}

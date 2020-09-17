@@ -14,6 +14,6 @@ settings:
   secret: $S3_SECRET
   storageClass: ''
   subfolder: press-release-files
-sortOrder: 14
+sortOrder: 15
 type: craft\awss3\Volume
 url: 'https://s3.us-west-2.amazonaws.com/cao-94612/'

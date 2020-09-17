@@ -10,7 +10,7 @@
     { width: 912 },
     { width: 528, jpegQuality: 65 }
 ],{ fillTransforms: true}) %}
-<figure class="mb-6 {{ imagePad }} md:w-{{ block.imageColumnWidth }}">
+<figure class="mb-6 md:mb-0 {{ imagePad }} md:w-{{ block.imageColumnWidth }}">
     {% set text = image.altText ?? image.filename %}
     <img
     src="{{ transformedImage.url }}"
@@ -20,7 +20,18 @@
     class="block border border-gray-200">
     {% if block.displayAltTextAsCaption %}<figcaption class="block my-2 text-base text-center">{{ text }}</figcaption>{% endif %}
 </figure>
-<div class="{{ textPad }} md:flex-1 body-text">
+<div class="{{ textPad }} md:flex-1 flex flex-col">
+  <div class="body-text">
+    {% if block.heading %}
+      <{{ heading }} class="{{ hClass }}">{{ block.heading }}</{{ heading }}>
+    {% endif %}
     {{ block.textBlock }}
+  </div>
+  {% set link = block.callToAction %}
+  {% if link %}
+    <p class="md:mb-0">
+      <a href="{{ link.url }}" target="{{ link.target }}" class="btn btn-md">{{ link.text }}</a>
+    </p>
+  {% endif %}
 </div>
 </div>
