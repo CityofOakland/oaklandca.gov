@@ -142,4 +142,4 @@ fields:
     type: craft\fields\PlainText
 handle: meetingEntries
 name: 'Meeting Entries'
-sortOrder: 15
+sortOrder: 17

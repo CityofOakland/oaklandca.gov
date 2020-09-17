@@ -1,11 +1,11 @@
 field: fd0c8e02-99b4-4ce5-ab89-b29cd0efc581
 fieldLayouts:
-  25ddc7d5-b636-4886-a112-15195c636ae7:
+  491528bc-a1a3-4ff2-a64d-42cf081790fd:
     tabs:
       -
         elements:
           -
-            fieldUid: ad4e3d36-752c-48da-bfbd-bd61e083119b
+            fieldUid: 03c4672b-b061-4dbb-a8f5-2e5dfb76467a
             instructions: null
             label: null
             required: true
@@ -14,7 +14,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 5dc172d1-4954-444f-b558-6f9f388d0ac3
+            fieldUid: 6be0fbe6-9b30-487c-abaf-b73127a553bd
             instructions: null
             label: null
             required: false
@@ -23,7 +23,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 7897bf8b-9bea-4c58-8f04-aea29c95d7bf
+            fieldUid: 9c457cb3-7498-4b3d-8b1e-84454f649934
             instructions: null
             label: null
             required: true
@@ -32,7 +32,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 1b8f26ab-01a9-4570-9e96-1d18389f8226
+            fieldUid: 823b335f-ee31-4526-b6f4-952682ef1061
             instructions: null
             label: null
             required: false
@@ -43,11 +43,58 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  1b8f26ab-01a9-4570-9e96-1d18389f8226:
+  03c4672b-b061-4dbb-a8f5-2e5dfb76467a:
+    contentColumnType: text
+    fieldGroup: null
+    handle: heading
+    instructions: ''
+    name: Heading
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  6be0fbe6-9b30-487c-abaf-b73127a553bd:
+    contentColumnType: text
+    fieldGroup: null
+    handle: linkSetDescription
+    instructions: 'Use this optional field to provide context for the links you create in this section.'
+    name: 'Link Set Description'
+    searchable: false
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      cleanupHtml: true
+      columnType: text
+      configSelectionMode: choose
+      defaultTransform: ''
+      manualConfig: ''
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: 'Simple with Links.json'
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showHtmlButtonForNonAdmins: ''
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      uiMode: enlarged
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  823b335f-ee31-4526-b6f4-952682ef1061:
     contentColumnType: text
     fieldGroup: null
     handle: readMoreLink
-    instructions: ''
+    instructions: 'Use this field to add a small green text link at the bottom of this block to another page or section on the site.'
     name: 'Read More Link'
     searchable: false
     settings:
@@ -63,13 +110,13 @@ fields:
               __assoc__:
                 -
                   - enabled
-                  - '1'
+                  - ''
                 -
                   - customLabel
                   - ''
                 -
                   - customPlaceholder
-                  - dotgovsupport@oaklandca.gov
+                  - ''
           -
             - fruitstudios\linkit\models\Phone
             -
@@ -177,11 +224,13 @@ fields:
                     - 'section:b3411cb1-e860-46ed-9cd6-58cf9b8daacb'
                     - 'section:9da43fd8-c505-4d19-9486-e0cb669c568a'
                     - 'section:8b7c4e26-9aab-4c5d-874e-aee151107de3'
+                    - 'section:bc354abe-c941-47fa-aebc-0eb5897e7f7c'
                     - 'section:983c9f6f-9251-4fd3-91e1-b598eccc6a1a'
                     - 'section:28881fc8-3e61-4fdb-a5ee-cce1bab725bf'
                     - 'section:98d541ae-56ee-4c98-ba9c-37438dc485a0'
                     - 'section:24fa116b-8516-4626-84f3-86b685e71071'
                     - 'section:b7e437e1-239f-4c5c-8c62-5f0323f9d22c'
+                    - singles
                     - 'section:07faad04-9ec4-4f68-9fe8-0ca20f189f8a'
                     - 'section:fbf8b9b0-8875-4e08-819a-d62603676dc4'
                     - 'section:70778563-6dac-453d-a4b0-5121f3a614b7'
@@ -211,14 +260,13 @@ fields:
               __assoc__:
                 -
                   - enabled
-                  - '1'
+                  - ''
                 -
                   - customLabel
                   - ''
                 -
                   - sources
-                  -
-                    - 'folder:baf733c3-48be-42a7-8b4f-7a6bf9763542'
+                  - '*'
                 -
                   - customSelectionLabel
                   - ''
@@ -244,59 +292,31 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: fruitstudios\linkit\fields\LinkitField
-  5dc172d1-4954-444f-b558-6f9f388d0ac3:
-    contentColumnType: text
-    fieldGroup: null
-    handle: linkSetDescription
-    instructions: 'Use this optional field to provide context for the links you create in this section.'
-    name: 'Link Set Description'
-    searchable: false
-    settings:
-      availableTransforms: '*'
-      availableVolumes: '*'
-      cleanupHtml: true
-      columnType: text
-      configSelectionMode: choose
-      defaultTransform: ''
-      manualConfig: ''
-      purifierConfig: ''
-      purifyHtml: '1'
-      redactorConfig: 'Simple with Links.json'
-      removeEmptyTags: '1'
-      removeInlineStyles: '1'
-      removeNbsp: '1'
-      showHtmlButtonForNonAdmins: '1'
-      showUnpermittedFiles: false
-      showUnpermittedVolumes: false
-      uiMode: enlarged
-    translationKeyFormat: null
-    translationMethod: none
-    type: craft\redactor\Field
-  7897bf8b-9bea-4c58-8f04-aea29c95d7bf:
+  9c457cb3-7498-4b3d-8b1e-84454f649934:
     contentColumnType: string
     fieldGroup: null
     handle: linkSet
-    instructions: ''
+    instructions: 'Add a link and an image up to three blocks. Choose an image that is cropped at ~ 800 x 333 pixels. It will have a ratio of 12:5 when presented on the website.'
     name: 'Link Set'
     searchable: false
     settings:
       columns:
         __assoc__:
           -
-            - ac30e2e0-2f26-4b6c-a404-07b749af00dc
+            - 530b68fe-6b94-432c-8399-4f944cb2b9a1
             -
               __assoc__:
                 -
                   - width
                   - ''
           -
-            - 109ddbd1-80ea-471e-a6f9-ef77d84a0800
+            - cbfce010-f6e1-46eb-a360-1152a3a07447
             -
               __assoc__:
                 -
                   - width
                   - ''
-      contentTable: '{{%stc_46_linkset}}'
+      contentTable: '{{%stc_50_linkset}}'
       fieldLayout: table
       maxRows: ''
       minRows: ''
@@ -307,25 +327,6 @@ fields:
     translationKeyFormat: null
     translationMethod: site
     type: verbb\supertable\fields\SuperTableField
-  ad4e3d36-752c-48da-bfbd-bd61e083119b:
-    contentColumnType: text
-    fieldGroup: null
-    handle: heading
-    instructions: ''
-    name: Heading
-    searchable: false
-    settings:
-      byteLimit: null
-      charLimit: null
-      code: ''
-      columnType: null
-      initialRows: '4'
-      multiline: ''
-      placeholder: ''
-      uiMode: normal
-    translationKeyFormat: null
-    translationMethod: none
-    type: craft\fields\PlainText
-handle: linksWithDescriptions
-name: 'Links with Descriptions'
-sortOrder: 12
+handle: linkBlocksWithImages
+name: 'Link Blocks with Images'
+sortOrder: 10

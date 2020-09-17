@@ -11,11 +11,11 @@ $topicsTextBlock = [
 $adminTextBlock = $topicsTextBlock;
 $defaultLinksBlock = [
   'label' => 'Links',
-  'types' => ['largeEntryLinks', 'smallEntryLinks', 'newsEntries', 'eventEntries', 'meetingEntries']
+  'types' => ['linksWithDescriptions', 'linkBlocksWithImages', 'linkBlocksWithIcons', 'largeEntryLinks', 'smallEntryLinks', 'newsEntries', 'eventEntries', 'meetingEntries']
 ];
 $adminLinksBlock = [
   'label' => 'Links',
-  'types' => ['linksWithDescriptions', 'largeEntryLinks', 'smallEntryLinks', 'newsEntries', 'eventEntries', 'meetingEntries']
+  'types' => ['linksWithDescriptions', 'linkBlocksWithImages', 'linkBlocksWithIcons', 'largeEntryLinks', 'smallEntryLinks', 'newsEntries', 'eventEntries', 'meetingEntries']
 ];
 $adminOnlyBlock = [
   'label' => 'Admin',
