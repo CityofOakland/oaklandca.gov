@@ -1,0 +1,9 @@
+{% for entry in craft.entries
+  .section("documents")
+  .summary(":notempty:")
+  .all()
+%}
+  <h2><a href="{{ entry.url }}">{{ entry.title }}</a></h2>
+  {{ entry.summary }}
+  <hr>
+{% endfor %}
