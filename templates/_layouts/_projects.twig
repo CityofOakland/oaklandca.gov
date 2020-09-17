@@ -41,7 +41,7 @@
                   {% for block in entry.timeline.all() %}
                     <div class="timeline__item">
                       <div class="timeline__content">
-                        <h3 class="font-bold text-xl my-0">{{ block.milestoneName }}</h3>
+                        <h3 class="my-0 text-xl font-bold">{{ block.milestoneName }}</h3>
                         <p>{{ block.milestoneDates }}</p>
                       </div>
                     </div>
@@ -103,7 +103,7 @@
       <div class="md:pl-4 md:w-1/3">
         <h3 class="mb-4">Project Updates</h3>
         {% for entry in craft.entries.section('news').relatedTo(entry).all() %}
-          <a href="{{ entry.url }}" class="block mb-4 p-4 bg-gray-300 hover:bg-green-300 text-gray-700 hover:text-white">
+          <a href="{{ entry.url }}" class="block p-4 mb-4 text-gray-700 bg-gray-300 hover:bg-green-300 hover:text-white">
             <h4 class="mt-0 mb-2 text-sm">{{ entry.title }}</h4>
             <p class="my-0 text-xs">{{ entry.postDate | date() }}</p>
           </a>
@@ -132,7 +132,10 @@
         <div {% if relProj %} class="md:pl-4 md:w-1/3" {% endif %}>
           <h3 class="mb-10">Project Documents</h3>
           {% for entry in projDocs.all() %}
-            <a href="{{ entry.url }}" class="block mt-4 p-4 bg-gray-300 hover:bg-green-300 text-gray-700 hover:text-white">
+            {% set isDoc = (entry.type == "documents") ? true : false %}
+            {% set url = isDoc ? entry.documentFile.one.url : entry.url %}
+            {% set target = isDoc ? "_blank" : "_self" %}
+            <a href="{{ url }}" target="{{ target }}" class="block p-4 mt-4 text-gray-700 bg-gray-300 hover:bg-green-300 hover:text-white">
               <h4 class="my-0 text-sm">{{ entry.title }}</h4>
             </a>
           {% endfor %}
@@ -149,8 +152,8 @@
         <h3 class="mb-4 text-center">Project Funding</h3>
         <div class="flex flex-wrap items-center justify-center -mx-4">
           {% for logo in entry.fundingLogos.all() %}
-            <figure class="w-full sm:w-1/2 md:w-1/3 lg:w-1/5 mb-4 md:mb-8 mx-4">
-              <img class="w-full h-auto block mx-auto" src="{{ logo.url }}" alt="{{ logo.title }}">
+            <figure class="w-full mx-4 mb-4 sm:w-1/2 md:w-1/3 lg:w-1/5 md:mb-8">
+              <img class="block w-full h-auto mx-auto" src="{{ logo.url }}" alt="{{ logo.title }}">
             </figure>
           {% endfor %}
         </div>

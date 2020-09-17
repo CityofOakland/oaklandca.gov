@@ -125,7 +125,10 @@
           <h2 class="text-xxl">Documents</h2>
           <div class="o-6">
             {% for entry in entry.projectDocuments.all() %}
-              <a class="section-box project-documents" href="{{ entry.url }}">{{ entry.title }}</a>
+              {% set isDoc = (entry.type == "documents") ? true : false %}
+              {% set url = isDoc ? entry.documentFile.one.url : entry.url %}
+              {% set target = isDoc ? "_blank" : "_self" %}
+              <a class="section-box project-documents" href="{{ url }}" target="{{ target }}">{{ entry.title }}</a>
             {% endfor %}
           </div>
         </section>
