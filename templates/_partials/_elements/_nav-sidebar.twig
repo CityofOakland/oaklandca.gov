@@ -16,7 +16,10 @@
               "newsEntries" or
               "meetingEntries" or
               "eventEntries" or
-              "linksWithDescriptions"
+              "linksWithDescriptions" or
+              "linkBlocksWithIcons" or
+              "linkBlocksWithImages" or
+              "textImageBlock"
       %}
         {% if block.heading %}
           {% set sideNavLinks = sideNavLinks | merge([{
@@ -33,7 +36,7 @@
   {% if about ?? '' %}
     {% set sideNavLinks = sideNavLinks | merge([{title: "About", link: "page-about"}]) %}
   {% endif %}
-  {% if relatedContent ?? '' %}
+  {% if relatedContent ?? '' and not entry.hideRelatedPages %}
     {% set sideNavLinks = sideNavLinks | merge([{title: "Related Pages", link: "page-relatedpages"}]) %}
   {% endif %}
   {% if contact ?? '' %}

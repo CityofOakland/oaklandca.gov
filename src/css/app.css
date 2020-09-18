@@ -311,6 +311,10 @@ main .bg-rotate:nth-of-type(even) {
       @apply pl-2 ml-5;
     }
   }
+
+  & > *:first-child {
+    margin-top: 0;
+  }
 }
 
 a,

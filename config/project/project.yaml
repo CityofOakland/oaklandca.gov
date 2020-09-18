@@ -1,4 +1,4 @@
-dateModified: 1600379856
+dateModified: 1600462570
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -92,6 +92,10 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
+  formie:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.9
   imager-x:
     edition: pro
     enabled: true

@@ -1,17 +1,20 @@
 {% import "_macros/_macros.twig" as macros %}
+{% set pageObject = entry ?? event %}
 
-{% set relatedContent = relatedContent ?? [] %}
-{% if relatedContent | length %}
-  {% set isRelated = macros.relatedSectionCount(entry ?? event, relatedContent) %}
-  <a id="page-relatedpages" class="anchor-link"></a>
-  <h2 class="my-8 text-2xl">Related Pages</h2>
-  {% if isRelated %}
-    <section class="mb-16 card-grid">
-      {% for section in relatedContent %}
-        {{ macros.relatedEntry(entry ?? event, section) }}
-      {% endfor %}
-    </section>
-  {% else %}
-    <p class="text-xl">No pages have been related to this entry yet.</p>
+{% if not pageObject.hideRelatedPages %}
+  {% set relatedContent = relatedContent ?? [] %}
+  {% if relatedContent | length %}
+    {% set isRelated = macros.relatedSectionCount(pageObject, relatedContent) %}
+    <a id="page-relatedpages" class="anchor-link"></a>
+    <h2 class="my-8 text-2xl">Related Pages</h2>
+    {% if isRelated %}
+      <section class="mb-16 card-grid">
+        {% for section in relatedContent %}
+          {{ macros.relatedEntry(pageObject, section) }}
+        {% endfor %}
+      </section>
+    {% else %}
+      <p class="text-xl">No pages have been related to this entry yet.</p>
+    {% endif %}
   {% endif %}
 {% endif %}
