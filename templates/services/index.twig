@@ -5,8 +5,8 @@
     breadCrumbLinks: [
     ],
   } %}
-  <div class="container mx-auto pt-0">
-    <ul class="mt-0 card-grid card-grid-tight items-stretch">
+  <div class="container pt-0 mx-auto">
+    <ul class="items-stretch mt-0 card-grid card-grid-tight">
       {% nav category in craft.categories
         .group("serviceTypes")
         .limit(null)
@@ -14,8 +14,8 @@
         .all()
       %}
         <li>
-          <a class="block h-full rounded border-gray-800 border p-5 hover:bg-green-100" href="{{ category.url }}">
-            <h2 class="mt-0 mb-4 text-lg md:text-xl lg:text-2xl text-gray-800">{{ category.title }}</h2>
+          <a class="block h-full p-5 transition-all duration-75 bg-blue-100 rounded shadow text-cool-gray-800 hover:bg-blue-200 hover:text-cool-gray-900" href="{{ category.url }}">
+            <h2 class="mt-0 mb-4 text-lg text-gray-800 md:text-xl lg:text-2xl">{{ category.title }}</h2>
             {{ category.summary | retcon('attr', 'p', { class: 'mt-4 mb-0 text-gray-800 text-sm md:text-base' }) }}
           </a>
         </li>

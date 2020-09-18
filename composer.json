@@ -43,7 +43,8 @@
     "doublesecretagency/craft-viewcount": "1.0.4",
     "spacecatninja/imager-x": "v3.2.1",
     "hybridinteractive/craft-position-fieldtype": "1.0.16",
-    "topshelfcraft/wordsmith": "3.3.0.1"
+    "topshelfcraft/wordsmith": "3.3.0.1",
+    "verbb/formie": "1.2.14"
   },
   "autoload": {
     "psr-4": {

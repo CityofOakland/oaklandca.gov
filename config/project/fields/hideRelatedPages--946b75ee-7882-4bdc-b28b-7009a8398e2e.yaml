@@ -1,0 +1,13 @@
+contentColumnType: boolean
+fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521
+handle: hideRelatedPages
+instructions: 'If enabled, your page will not display a set of links at the bottom of the page of content that has been related to it.'
+name: 'Hide Related Pages?'
+searchable: false
+settings:
+  default: false
+  offLabel: null
+  onLabel: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch
