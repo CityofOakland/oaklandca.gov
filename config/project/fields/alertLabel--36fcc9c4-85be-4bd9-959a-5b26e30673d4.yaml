@@ -5,12 +5,14 @@ instructions: 'Label this alert (e.g., Warning, Important, Urgent, Info)'
 name: 'Alert Label'
 searchable: true
 settings:
-  charLimit: ''
+  byteLimit: null
+  charLimit: null
   code: ''
   columnType: text
   initialRows: '4'
   multiline: ''
   placeholder: ''
+  uiMode: normal
 translationKeyFormat: null
 translationMethod: none
 type: craft\fields\PlainText

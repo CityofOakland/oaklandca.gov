@@ -6,9 +6,9 @@ name: 'Open Hours'
 searchable: true
 settings:
   contentTable: '{{%matrixcontent_openhours}}'
-  localizeBlocks: false
   maxBlocks: ''
   minBlocks: ''
+  propagationMethod: all
 translationKeyFormat: null
 translationMethod: site
 type: craft\fields\Matrix

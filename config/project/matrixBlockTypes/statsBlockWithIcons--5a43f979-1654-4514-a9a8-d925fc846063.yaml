@@ -1,0 +1,91 @@
+field: fd0c8e02-99b4-4ce5-ab89-b29cd0efc581
+fieldLayouts:
+  2a99b8f4-d025-4800-babc-7f6cde0515a0:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: e01574f5-8305-4c87-a518-b387aecc4997
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 25bae0ad-a048-4573-a10a-8b9f823ed9dc
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  25bae0ad-a048-4573-a10a-8b9f823ed9dc:
+    contentColumnType: string
+    fieldGroup: null
+    handle: stats
+    instructions: 'Add a statistic with a description and an image up to three blocks. Choose a square icon, no more than 300x300px in size. For best results, use a dark gray outlined illustration/lineart.'
+    name: Stats
+    searchable: false
+    settings:
+      columns:
+        __assoc__:
+          -
+            - af570273-47b3-4f58-a281-2d71a35d131c
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - e5003330-f1d5-467d-843b-ce12bc26a5bb
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - c516a5f3-3955-47d3-96a8-73a2658e3fe7
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_52_stats}}'
+      fieldLayout: table
+      maxRows: ''
+      minRows: ''
+      placeholderKey: null
+      propagationMethod: all
+      selectionLabel: 'Add a statistic'
+      staticField: ''
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+  e01574f5-8305-4c87-a518-b387aecc4997:
+    contentColumnType: text
+    fieldGroup: null
+    handle: heading
+    instructions: ''
+    name: Heading
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: statsBlockWithIcons
+name: 'Stats Block with Icons'
+sortOrder: 12

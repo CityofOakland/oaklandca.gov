@@ -5,12 +5,14 @@ instructions: 'Add the URL for the YouTube account for this entry.'
 name: YouTube
 searchable: true
 settings:
-  charLimit: ''
+  byteLimit: null
+  charLimit: null
   code: ''
   columnType: text
   initialRows: '4'
   multiline: ''
   placeholder: ''
+  uiMode: normal
 translationKeyFormat: null
 translationMethod: none
 type: craft\fields\PlainText

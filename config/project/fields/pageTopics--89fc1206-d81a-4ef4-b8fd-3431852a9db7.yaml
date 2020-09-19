@@ -5,13 +5,16 @@ instructions: 'Choose up to six (6) topics to show on this page.'
 name: 'Page Topics'
 searchable: true
 settings:
+  allowSelfRelations: false
   limit: '6'
   localizeRelations: false
   selectionLabel: 'Add a topic'
+  showSiteMenu: true
   source: null
   sources:
     - 'section:70778563-6dac-453d-a4b0-5121f3a614b7'
   targetSiteId: null
+  validateRelatedElements: false
   viewMode: null
 translationKeyFormat: null
 translationMethod: site

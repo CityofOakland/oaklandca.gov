@@ -5,14 +5,16 @@ instructions: ''
 name: 'Staff Entry'
 searchable: true
 settings:
+  allowSelfRelations: false
   limit: '1'
   localizeRelations: false
   selectionLabel: 'Add a staff member'
+  showSiteMenu: true
   source: null
   sources:
     - 'section:07faad04-9ec4-4f68-9fe8-0ca20f189f8a'
   targetSiteId: null
-  validateRelatedElements: '1'
+  validateRelatedElements: true
   viewMode: null
 translationKeyFormat: null
 translationMethod: site

@@ -3,22 +3,52 @@ fieldLayouts:
   145a756b-2b63-43bb-b4a5-ccf731311df2:
     tabs:
       -
-        fields:
-          56b04dd8-2040-4e29-91f8-4decb3371c25:
+        elements:
+          -
+            fieldUid: c21b1f29-17eb-4467-9985-adc20fb127c0
+            instructions: null
+            label: null
             required: true
-            sortOrder: 2
-          8206614a-68d0-4e74-94ea-8747e41a63c4:
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 56b04dd8-2040-4e29-91f8-4decb3371c25
+            instructions: null
+            label: null
             required: true
-            sortOrder: 5
-          c21b1f29-17eb-4467-9985-adc20fb127c0:
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: f54f4116-1b8a-47fb-a361-b3894ea4d734
+            instructions: null
+            label: null
             required: true
-            sortOrder: 1
-          d731f441-f5bc-4467-9ed9-3279138f9795:
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: d731f441-f5bc-4467-9ed9-3279138f9795
+            instructions: null
+            label: null
             required: true
-            sortOrder: 4
-          f54f4116-1b8a-47fb-a361-b3894ea4d734:
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 8206614a-68d0-4e74-94ea-8747e41a63c4
+            instructions: null
+            label: null
             required: true
-            sortOrder: 3
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Content
         sortOrder: 1
 fields:
@@ -30,6 +60,7 @@ fields:
     name: Image
     searchable: true
     settings:
+      allowSelfRelations: false
       allowedKinds:
         - image
       defaultUploadLocationSource: 'volume:549d1a55-e94b-4c89-9cb9-b1fdac9d417d'
@@ -38,13 +69,16 @@ fields:
       localizeRelations: false
       restrictFiles: '1'
       selectionLabel: 'Add an award image'
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: true
       singleUploadLocationSource: 'volume:549d1a55-e94b-4c89-9cb9-b1fdac9d417d'
       singleUploadLocationSubpath: ''
       source: null
       sources: '*'
       targetSiteId: null
-      useSingleFolder: '1'
-      validateRelatedElements: '1'
+      useSingleFolder: true
+      validateRelatedElements: true
       viewMode: list
     translationKeyFormat: null
     translationMethod: site
@@ -57,6 +91,8 @@ fields:
     name: 'Item Date'
     searchable: true
     settings:
+      max: null
+      min: null
       minuteIncrement: '30'
       showDate: true
       showTime: false
@@ -71,12 +107,14 @@ fields:
     name: 'Item Title'
     searchable: true
     settings:
-      charLimit: ''
+      byteLimit: null
+      charLimit: null
       code: ''
       columnType: text
       initialRows: '4'
       multiline: ''
       placeholder: ''
+      uiMode: normal
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
@@ -101,12 +139,14 @@ fields:
     name: Summary
     searchable: true
     settings:
-      charLimit: ''
+      byteLimit: null
+      charLimit: null
       code: ''
       columnType: text
       initialRows: '4'
       multiline: '1'
       placeholder: ''
+      uiMode: normal
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText

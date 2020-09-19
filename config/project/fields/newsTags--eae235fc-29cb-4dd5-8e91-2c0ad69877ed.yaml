@@ -5,12 +5,17 @@ instructions: ''
 name: 'News Tags'
 searchable: true
 settings:
+  allowLimit: false
+  allowMultipleSources: false
+  allowSelfRelations: false
   limit: null
   localizeRelations: false
   selectionLabel: ''
+  showSiteMenu: true
   source: 'taggroup:56057193-b9d8-4ac0-9f31-d4a755c91447'
   sources: '*'
   targetSiteId: null
+  validateRelatedElements: false
   viewMode: null
 translationKeyFormat: null
 translationMethod: site

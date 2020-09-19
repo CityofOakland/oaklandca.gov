@@ -5,7 +5,9 @@ instructions: 'Toggling this will cause your documents to be organized by their 
 name: 'Sort Documents by Date?'
 searchable: true
 settings:
-  default: ''
+  default: false
+  offLabel: null
+  onLabel: null
 translationKeyFormat: null
 translationMethod: none
 type: craft\fields\Lightswitch

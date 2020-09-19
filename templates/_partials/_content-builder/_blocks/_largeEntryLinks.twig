@@ -1,4 +1,4 @@
-<div>
+<div class="{% if not loop.last %}mb-12{% endif %}">
   <a class="anchor-link" id="{{ blockId }}"></a>
   {% if block.heading %}
     <{{ heading }} class="{{ hClass }}">{{ block.heading }}</{{ heading }}>

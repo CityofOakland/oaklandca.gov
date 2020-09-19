@@ -3,10 +3,16 @@ fieldLayouts:
   235e82e4-67b9-49c2-a910-cc2825c6a79e:
     tabs:
       -
-        fields:
-          843d53f7-253d-4ed1-b7da-309cd0e4df69:
+        elements:
+          -
+            fieldUid: 843d53f7-253d-4ed1-b7da-309cd0e4df69
+            instructions: null
+            label: null
             required: true
-            sortOrder: 1
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Content
         sortOrder: 1
 fields:
@@ -18,12 +24,14 @@ fields:
     name: __blank__
     searchable: true
     settings:
-      charLimit: ''
+      byteLimit: null
+      charLimit: null
       code: ''
       columnType: text
       initialRows: '4'
       multiline: ''
       placeholder: ''
+      uiMode: normal
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText

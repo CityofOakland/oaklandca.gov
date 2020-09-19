@@ -3,16 +3,34 @@ fieldLayouts:
   07a77220-9b59-422c-b6e7-779fe933bce2:
     tabs:
       -
-        fields:
-          0ccdd608-28e4-473d-8fa8-f824e4591a7c:
+        elements:
+          -
+            fieldUid: 6d5d4d77-fe05-434f-92d4-748af5630b9a
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: e9feaa97-a672-4708-8e22-90e5a5116d24
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 0ccdd608-28e4-473d-8fa8-f824e4591a7c
+            instructions: null
+            label: null
             required: true
-            sortOrder: 3
-          6d5d4d77-fe05-434f-92d4-748af5630b9a:
-            required: false
-            sortOrder: 1
-          e9feaa97-a672-4708-8e22-90e5a5116d24:
-            required: false
-            sortOrder: 2
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Content
         sortOrder: 1
 fields:
@@ -24,9 +42,11 @@ fields:
     name: 'Step Action'
     searchable: true
     settings:
+      allowSelfRelations: false
       limit: '1'
       localizeRelations: false
       selectionLabel: 'Add an action'
+      showSiteMenu: true
       source: null
       sources:
         - 'section:9da43fd8-c505-4d19-9486-e0cb669c568a'
@@ -34,6 +54,7 @@ fields:
         - 'section:24fa116b-8516-4626-84f3-86b685e71071'
         - 'section:b7e437e1-239f-4c5c-8c62-5f0323f9d22c'
       targetSiteId: null
+      validateRelatedElements: false
       viewMode: null
     translationKeyFormat: null
     translationMethod: site
@@ -46,12 +67,14 @@ fields:
     name: 'Step Number'
     searchable: true
     settings:
-      charLimit: ''
+      byteLimit: null
+      charLimit: null
       code: ''
       columnType: text
       initialRows: '4'
       multiline: ''
       placeholder: ''
+      uiMode: normal
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
@@ -63,7 +86,9 @@ fields:
     name: 'Step Required?'
     searchable: true
     settings:
-      default: ''
+      default: false
+      offLabel: null
+      onLabel: null
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Lightswitch

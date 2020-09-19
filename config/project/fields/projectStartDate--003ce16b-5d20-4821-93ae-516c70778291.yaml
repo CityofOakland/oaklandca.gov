@@ -5,6 +5,8 @@ instructions: ''
 name: 'Project Start Date'
 searchable: true
 settings:
+  max: null
+  min: null
   minuteIncrement: '30'
   showDate: true
   showTime: false

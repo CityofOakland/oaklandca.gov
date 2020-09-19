@@ -4,6 +4,9 @@ handle: instagram
 instructions: 'Add the URL for the Instagram account for this entry.'
 name: Instagram
 searchable: true
+settings:
+  maxLength: 255
+  placeholder: null
 translationKeyFormat: null
 translationMethod: none
 type: craft\fields\Url

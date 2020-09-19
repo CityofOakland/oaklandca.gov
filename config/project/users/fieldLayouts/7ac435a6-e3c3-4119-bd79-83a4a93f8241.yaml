@@ -1,8 +1,14 @@
 tabs:
   -
-    fields:
-      b34a0436-278d-4bb7-a7e8-729da1db7c4e:
+    elements:
+      -
+        fieldUid: b34a0436-278d-4bb7-a7e8-729da1db7c4e
+        instructions: null
+        label: null
         required: false
-        sortOrder: 1
+        tip: null
+        type: craft\fieldlayoutelements\CustomField
+        warning: null
+        width: 100
     name: 'Additional Information'
     sortOrder: 1

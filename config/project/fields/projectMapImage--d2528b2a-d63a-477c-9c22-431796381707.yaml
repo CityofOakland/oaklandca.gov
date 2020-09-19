@@ -5,6 +5,7 @@ instructions: 'Add an image of the project map with any key points in a legend.'
 name: 'Project Map Image'
 searchable: true
 settings:
+  allowSelfRelations: false
   allowedKinds:
     - image
   defaultUploadLocationSource: 'volume:a31d23bf-e3ee-4942-95e0-3d14c29620bb'
@@ -13,12 +14,16 @@ settings:
   localizeRelations: false
   restrictFiles: '1'
   selectionLabel: 'Add a map image'
+  showSiteMenu: true
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: true
   singleUploadLocationSource: 'volume:a31d23bf-e3ee-4942-95e0-3d14c29620bb'
   singleUploadLocationSubpath: ''
   source: null
   sources: '*'
   targetSiteId: null
-  useSingleFolder: '1'
+  useSingleFolder: true
+  validateRelatedElements: false
   viewMode: large
 translationKeyFormat: null
 translationMethod: site

@@ -1,0 +1,17 @@
+<div class="p-6 bg-cool-gray-100 {% if not loop.last %}mb-12{% endif %}">
+  <a class="anchor-link" id="{{ blockId }}"></a>
+  {% if block.heading %}
+    <{{ heading }} class="{{ hClass }} mt-0">{{ block.heading }}</{{ heading }}>
+  {% endif %}
+  <div class="flex flex-col space-y-6 md:space-y-0 md:space-x-8 md:flex-row md:items-stretch">
+    {% for stat in block.stats.all() %}
+      <div class="md:w-1/3">
+        <div class="relative flex items-end mb-2">
+          <img class="block w-20 h-auto mr-4" src="{{ stat.icon.one.url }}">
+          <h3 class="text-lg md:text-xl lg:text-2xl">{{ stat.heading }}</h3>
+       </div>
+        <p class="my-0 text-sm italic md:text-base">{{ stat.description }}</p>
+      </div>
+    {% endfor %}
+  </div>
+</div>

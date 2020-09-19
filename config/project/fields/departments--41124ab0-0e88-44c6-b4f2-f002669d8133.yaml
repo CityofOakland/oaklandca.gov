@@ -5,13 +5,16 @@ instructions: "Choose the department pages to relate to this entry. Relationship
 name: Departments
 searchable: true
 settings:
+  allowSelfRelations: false
   limit: ''
   localizeRelations: false
   selectionLabel: 'Add a department'
+  showSiteMenu: true
   source: null
   sources:
     - 'section:b3411cb1-e860-46ed-9cd6-58cf9b8daacb'
   targetSiteId: null
+  validateRelatedElements: false
   viewMode: null
 translationKeyFormat: null
 translationMethod: site

@@ -3,13 +3,25 @@ fieldLayouts:
   8f37ffd8-930c-4774-a80c-34e639885697:
     tabs:
       -
-        fields:
-          66c28d05-1cce-4903-af5e-5667d0a1cb53:
-            required: false
-            sortOrder: 2
-          d2258f6a-704e-413b-8079-a7611a4139c4:
+        elements:
+          -
+            fieldUid: d2258f6a-704e-413b-8079-a7611a4139c4
+            instructions: null
+            label: null
             required: true
-            sortOrder: 1
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 66c28d05-1cce-4903-af5e-5667d0a1cb53
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Content
         sortOrder: 1
 fields:
@@ -21,12 +33,14 @@ fields:
     name: 'Milestone Date(s)'
     searchable: true
     settings:
+      byteLimit: null
       charLimit: '50'
       code: ''
       columnType: text
       initialRows: '4'
       multiline: ''
       placeholder: ''
+      uiMode: normal
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
@@ -38,12 +52,14 @@ fields:
     name: 'Milestone Name'
     searchable: true
     settings:
+      byteLimit: null
       charLimit: '50'
       code: ''
       columnType: text
       initialRows: '4'
       multiline: ''
       placeholder: ''
+      uiMode: normal
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText

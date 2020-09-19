@@ -5,6 +5,7 @@ instructions: 'Select the file that you need to add.'
 name: 'Document File'
 searchable: true
 settings:
+  allowSelfRelations: false
   allowedKinds:
     - audio
     - compressed
@@ -21,13 +22,17 @@ settings:
   localizeRelations: false
   restrictFiles: '1'
   selectionLabel: 'Add a file'
+  showSiteMenu: true
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: true
   singleUploadLocationSource: 'volume:c419ecb0-79c8-411d-b440-db5bdfa1f823'
   singleUploadLocationSubpath: ''
   source: null
   sources:
     - 'volume:c419ecb0-79c8-411d-b440-db5bdfa1f823'
   targetSiteId: null
-  useSingleFolder: '1'
+  useSingleFolder: true
+  validateRelatedElements: false
   viewMode: list
 translationKeyFormat: null
 translationMethod: site

@@ -5,14 +5,17 @@ instructions: 'Add any documents or document packets that you wish to display on
 name: 'Project Documents'
 searchable: true
 settings:
+  allowSelfRelations: false
   limit: ''
   localizeRelations: false
   selectionLabel: 'Add a document'
+  showSiteMenu: true
   source: null
   sources:
     - 'section:9da43fd8-c505-4d19-9486-e0cb669c568a'
     - 'section:8b7c4e26-9aab-4c5d-874e-aee151107de3'
   targetSiteId: null
+  validateRelatedElements: false
   viewMode: null
 translationKeyFormat: null
 translationMethod: site

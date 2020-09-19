@@ -4,6 +4,9 @@ handle: facebook
 instructions: 'Add the URL for the Facebook account for this entry.'
 name: Facebook
 searchable: true
+settings:
+  maxLength: 255
+  placeholder: null
 translationKeyFormat: null
 translationMethod: none
 type: craft\fields\Url

@@ -3,13 +3,25 @@ fieldLayouts:
   b2bdbd9c-8a57-4737-acb9-78ab2b12bab8:
     tabs:
       -
-        fields:
-          0accbbf3-3501-4536-b0f0-19facda9bb98:
+        elements:
+          -
+            fieldUid: 0accbbf3-3501-4536-b0f0-19facda9bb98
+            instructions: null
+            label: null
             required: true
-            sortOrder: 1
-          107df6dd-7f1a-4575-811d-ae34d2258fd8:
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 107df6dd-7f1a-4575-811d-ae34d2258fd8
+            instructions: null
+            label: null
             required: true
-            sortOrder: 2
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Content
         sortOrder: 1
 fields:
@@ -21,12 +33,14 @@ fields:
     name: 'Number Title'
     searchable: true
     settings:
-      charLimit: ''
+      byteLimit: null
+      charLimit: null
       code: ''
       columnType: text
       initialRows: '4'
       multiline: ''
       placeholder: ''
+      uiMode: normal
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
@@ -38,12 +52,14 @@ fields:
     name: Number
     searchable: true
     settings:
-      charLimit: ''
+      byteLimit: null
+      charLimit: null
       code: ''
       columnType: text
       initialRows: '4'
       multiline: ''
       placeholder: ''
+      uiMode: normal
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText

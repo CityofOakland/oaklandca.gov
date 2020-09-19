@@ -3,16 +3,34 @@ fieldLayouts:
   dbe5f13a-451e-4b09-94e1-530be31baf7b:
     tabs:
       -
-        fields:
-          18c27d2b-612d-49e3-87d4-9a61c6c85408:
+        elements:
+          -
+            fieldUid: 18c27d2b-612d-49e3-87d4-9a61c6c85408
+            instructions: null
+            label: null
             required: false
-            sortOrder: 1
-          7332ba8f-a9ac-4e3b-b372-8b4724617ae4:
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 7332ba8f-a9ac-4e3b-b372-8b4724617ae4
+            instructions: null
+            label: null
             required: true
-            sortOrder: 2
-          fbdba36a-ff35-4883-a29d-e5194516c7ae:
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: fbdba36a-ff35-4883-a29d-e5194516c7ae
+            instructions: null
+            label: null
             required: true
-            sortOrder: 3
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Content
         sortOrder: 1
 fields:
@@ -24,12 +42,14 @@ fields:
     name: 'Online Title'
     searchable: true
     settings:
-      charLimit: ''
+      byteLimit: null
+      charLimit: null
       code: ''
       columnType: text
       initialRows: '4'
       multiline: ''
       placeholder: ''
+      uiMode: normal
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
@@ -41,12 +61,14 @@ fields:
     name: 'Link Text'
     searchable: true
     settings:
-      charLimit: ''
+      byteLimit: null
+      charLimit: null
       code: ''
       columnType: text
       initialRows: '4'
       multiline: ''
       placeholder: ''
+      uiMode: normal
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
@@ -58,12 +80,14 @@ fields:
     name: 'Link URL'
     searchable: true
     settings:
-      charLimit: ''
+      byteLimit: null
+      charLimit: null
       code: ''
       columnType: text
       initialRows: '4'
       multiline: ''
       placeholder: ''
+      uiMode: normal
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText

@@ -3,13 +3,25 @@ fieldLayouts:
   859a10a3-3b80-47a8-8ae8-30e2bd89736c:
     tabs:
       -
-        fields:
-          0cf5f750-4518-4e2c-9766-9b21e108e9be:
+        elements:
+          -
+            fieldUid: 0cf5f750-4518-4e2c-9766-9b21e108e9be
+            instructions: null
+            label: null
             required: false
-            sortOrder: 1
-          a9d9aefa-be2d-4db6-af99-ff6d90c0e200:
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: a9d9aefa-be2d-4db6-af99-ff6d90c0e200
+            instructions: null
+            label: null
             required: true
-            sortOrder: 2
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Content
         sortOrder: 1
 fields:
@@ -21,12 +33,14 @@ fields:
     name: 'Staff Heading'
     searchable: true
     settings:
-      charLimit: ''
+      byteLimit: null
+      charLimit: null
       code: ''
       columnType: text
       initialRows: '4'
       multiline: ''
       placeholder: ''
+      uiMode: normal
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
@@ -38,14 +52,17 @@ fields:
     name: Staff
     searchable: true
     settings:
+      allowSelfRelations: false
       limit: ''
       localizeRelations: false
       selectionLabel: 'Add a staff member'
+      showSiteMenu: true
       source: null
       sources:
         - 'section:07faad04-9ec4-4f68-9fe8-0ca20f189f8a'
         - 'section:17d5d48d-2d75-4742-8820-cdce13764482'
       targetSiteId: null
+      validateRelatedElements: false
       viewMode: null
     translationKeyFormat: null
     translationMethod: site

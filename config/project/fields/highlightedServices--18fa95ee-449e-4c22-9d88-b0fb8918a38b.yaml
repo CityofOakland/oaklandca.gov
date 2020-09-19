@@ -5,13 +5,16 @@ instructions: 'Choose up to 9 services to display on the homepage.'
 name: 'Highlighted Services'
 searchable: true
 settings:
+  allowSelfRelations: false
   limit: '9'
   localizeRelations: false
   selectionLabel: 'Add a service'
+  showSiteMenu: true
   source: null
   sources:
     - 'section:b7e437e1-239f-4c5c-8c62-5f0323f9d22c'
   targetSiteId: null
+  validateRelatedElements: false
   viewMode: null
 translationKeyFormat: null
 translationMethod: site

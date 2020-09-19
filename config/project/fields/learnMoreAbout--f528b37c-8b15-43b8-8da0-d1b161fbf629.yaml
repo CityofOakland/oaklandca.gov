@@ -5,9 +5,11 @@ instructions: 'Select two (2) entries you wish to highlight above the City Offic
 name: 'Learn More About'
 searchable: true
 settings:
+  allowSelfRelations: false
   limit: '4'
   localizeRelations: false
   selectionLabel: ''
+  showSiteMenu: true
   source: null
   sources:
     - 'section:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f'
@@ -23,6 +25,7 @@ settings:
     - 'section:fbf8b9b0-8875-4e08-819a-d62603676dc4'
     - 'section:70778563-6dac-453d-a4b0-5121f3a614b7'
   targetSiteId: null
+  validateRelatedElements: false
   viewMode: null
 translationKeyFormat: null
 translationMethod: site

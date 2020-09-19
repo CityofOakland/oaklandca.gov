@@ -5,12 +5,14 @@ instructions: 'What role does this person have in regard to the entry?'
 name: Role
 searchable: false
 settings:
-  charLimit: ''
+  byteLimit: null
+  charLimit: null
   code: ''
   columnType: text
   initialRows: '4'
   multiline: ''
   placeholder: ''
+  uiMode: normal
 translationKeyFormat: null
 translationMethod: none
 type: craft\fields\PlainText

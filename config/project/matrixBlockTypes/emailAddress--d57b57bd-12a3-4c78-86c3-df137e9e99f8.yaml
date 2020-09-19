@@ -3,16 +3,34 @@ fieldLayouts:
   3f1a1379-bdb2-48aa-9a5b-fb6cf6d0b97d:
     tabs:
       -
-        fields:
-          1f60a4d5-d5d9-46f2-8f90-d58d47a2bb34:
-            required: true
-            sortOrder: 3
-          243725a4-eeda-4e57-8cf4-d545bd6edf9c:
+        elements:
+          -
+            fieldUid: 243725a4-eeda-4e57-8cf4-d545bd6edf9c
+            instructions: null
+            label: null
             required: false
-            sortOrder: 1
-          b50fa2f6-4a94-44ce-ae39-82951e06a717:
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: b50fa2f6-4a94-44ce-ae39-82951e06a717
+            instructions: null
+            label: null
             required: true
-            sortOrder: 2
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 1f60a4d5-d5d9-46f2-8f90-d58d47a2bb34
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Content
         sortOrder: 1
 fields:
@@ -23,6 +41,8 @@ fields:
     instructions: 'Write the email address'
     name: 'Email Address'
     searchable: true
+    settings:
+      placeholder: null
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Email
@@ -34,12 +54,14 @@ fields:
     name: 'Email Title'
     searchable: true
     settings:
-      charLimit: ''
+      byteLimit: null
+      charLimit: null
       code: ''
       columnType: text
       initialRows: '4'
       multiline: ''
       placeholder: ''
+      uiMode: normal
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
@@ -51,12 +73,14 @@ fields:
     name: 'Link Text'
     searchable: true
     settings:
-      charLimit: ''
+      byteLimit: null
+      charLimit: null
       code: ''
       columnType: text
       initialRows: '4'
       multiline: ''
       placeholder: ''
+      uiMode: normal
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText

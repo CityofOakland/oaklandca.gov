@@ -3,16 +3,34 @@ fieldLayouts:
   3101cd79-5a68-4647-8df4-743f760cee98:
     tabs:
       -
-        fields:
-          0a2f1442-0d83-4c78-abcb-b69b5862ddf9:
+        elements:
+          -
+            fieldUid: e97175ac-0144-4961-9a33-a723d33e2910
+            instructions: null
+            label: null
             required: true
-            sortOrder: 2
-          40ab201a-4e31-4217-8e83-d92aa0b73567:
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 0a2f1442-0d83-4c78-abcb-b69b5862ddf9
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 40ab201a-4e31-4217-8e83-d92aa0b73567
+            instructions: null
+            label: null
             required: false
-            sortOrder: 3
-          e97175ac-0144-4961-9a33-a723d33e2910:
-            required: true
-            sortOrder: 1
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Content
         sortOrder: 1
 fields:
@@ -24,12 +42,14 @@ fields:
     name: Description
     searchable: false
     settings:
-      charLimit: ''
+      byteLimit: null
+      charLimit: null
       code: ''
       columnType: text
       initialRows: '4'
       multiline: ''
       placeholder: ''
+      uiMode: normal
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
@@ -41,12 +61,14 @@ fields:
     name: Footnote
     searchable: false
     settings:
-      charLimit: ''
+      byteLimit: null
+      charLimit: null
       code: ''
       columnType: text
       initialRows: '4'
       multiline: ''
       placeholder: ''
+      uiMode: normal
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
@@ -58,12 +80,14 @@ fields:
     name: 'Top Text'
     searchable: false
     settings:
-      charLimit: ''
+      byteLimit: null
+      charLimit: null
       code: ''
       columnType: text
       initialRows: '4'
       multiline: ''
       placeholder: ''
+      uiMode: normal
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText

@@ -2,22 +2,57 @@ fieldLayouts:
   5ca0b141-93fb-43cd-95ce-f4c021b05dcc:
     tabs:
       -
-        fields:
-          fff5cf49-87e6-4751-9032-b4ca8136e237:
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\TitleField
+            warning: null
+            width: 100
+          -
+            fieldUid: fff5cf49-87e6-4751-9032-b4ca8136e237
+            instructions: null
+            label: null
             required: true
-            sortOrder: 1
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Content
         sortOrder: 1
 handle: data
 hasUrls: true
 name: Data
 settings:
+  addSubfolderToRootUrl: true
+  autoFocalPoint: false
   bucket: cao-94612
+  bucketSelectionMode: choose
   cfDistributionId: ''
+  cfPrefix: null
   expires: ''
   keyId: $S3_API_KEY
+  makeUploadsPublic: true
   region: us-west-2
   secret: $S3_SECRET
+  storageClass: ''
   subfolder: data
 sortOrder: 9
 type: craft\awss3\Volume

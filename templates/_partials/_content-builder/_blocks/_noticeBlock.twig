@@ -1,0 +1,31 @@
+{% switch block.alertType %}
+  {% case "information" %}
+    {% set colors = {
+      border: "border-green-400",
+      links: {
+        link: "text-green-700",
+        hover: "hover:text-green-800"
+      }
+    } %}
+  {% case "caution" %}
+    {% set colors = {
+      border: "border-yellow-400",
+      links: {
+        link: "text-yellow-700",
+        hover: "hover:text-green-800"
+      }
+    } %}
+  {% case "warning" %}
+    {% set colors = {
+      border: "border-red-400",
+      links: {
+        link: "text-red-700",
+        hover: "hover:text-red-800"
+      }
+    } %}
+  {% default %}
+{% endswitch %}
+
+<div class="p-4 border-l-8 bg-cool-gray-100 {% if not loop.last %}mb-12{% endif %} {{ colors.border }} text-sm">
+  {{ block.text | retcon('attr', 'a', { class: colors.links.link ~ " " ~ colors.links.hover }) | retcon('attr', 'p', { class: "first:mt-0 my-4 last:mb-0" }) }}
+</div>

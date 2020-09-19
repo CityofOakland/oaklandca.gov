@@ -3,22 +3,52 @@ fieldLayouts:
   ec6de2e7-73ca-492e-ae67-0ccb0b7e86eb:
     tabs:
       -
-        fields:
-          236ba3eb-c1d3-4cb0-a2e5-f340dbf38399:
-            required: false
-            sortOrder: 5
-          4d103112-5444-4b00-aefb-95f9d113a8a2:
-            required: false
-            sortOrder: 3
-          8bd35022-d988-494a-9395-34bb21d37c18:
+        elements:
+          -
+            fieldUid: 8bd35022-d988-494a-9395-34bb21d37c18
+            instructions: null
+            label: null
             required: true
-            sortOrder: 1
-          91c73b27-40c7-4fb9-b63e-fecb57ed61ec:
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: a8865a0e-a230-4411-902e-53af47982f47
+            instructions: null
+            label: null
             required: false
-            sortOrder: 4
-          a8865a0e-a230-4411-902e-53af47982f47:
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 4d103112-5444-4b00-aefb-95f9d113a8a2
+            instructions: null
+            label: null
             required: false
-            sortOrder: 2
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 91c73b27-40c7-4fb9-b63e-fecb57ed61ec
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 236ba3eb-c1d3-4cb0-a2e5-f340dbf38399
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Content
         sortOrder: 1
 fields:
@@ -30,12 +60,14 @@ fields:
     name: 'Phone Number'
     searchable: true
     settings:
-      charLimit: ''
+      byteLimit: null
+      charLimit: null
       code: ''
       columnType: text
       initialRows: '4'
       multiline: ''
       placeholder: ''
+      uiMode: normal
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
@@ -47,12 +79,14 @@ fields:
     name: Office/Department
     searchable: true
     settings:
-      charLimit: ''
+      byteLimit: null
+      charLimit: null
       code: ''
       columnType: text
       initialRows: '4'
       multiline: ''
       placeholder: ''
+      uiMode: normal
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
@@ -64,15 +98,17 @@ fields:
     name: Person
     searchable: true
     settings:
+      allowSelfRelations: false
       limit: '1'
       localizeRelations: false
       selectionLabel: 'Add an official'
+      showSiteMenu: true
       source: null
       sources:
         - 'section:28881fc8-3e61-4fdb-a5ee-cce1bab725bf'
         - 'section:07faad04-9ec4-4f68-9fe8-0ca20f189f8a'
       targetSiteId: null
-      validateRelatedElements: '1'
+      validateRelatedElements: true
       viewMode: null
     translationKeyFormat: null
     translationMethod: site
@@ -85,12 +121,14 @@ fields:
     name: Email
     searchable: true
     settings:
-      charLimit: ''
+      byteLimit: null
+      charLimit: null
       code: ''
       columnType: text
       initialRows: '4'
       multiline: ''
       placeholder: ''
+      uiMode: normal
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
@@ -102,12 +140,14 @@ fields:
     name: 'Job Title'
     searchable: true
     settings:
-      charLimit: ''
+      byteLimit: null
+      charLimit: null
       code: ''
       columnType: text
       initialRows: '4'
       multiline: ''
       placeholder: ''
+      uiMode: normal
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText

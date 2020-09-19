@@ -5,6 +5,7 @@ instructions: ''
 name: 'Press Release'
 searchable: true
 settings:
+  allowSelfRelations: false
   allowedKinds:
     - pdf
   defaultUploadLocationSource: 'volume:549d1a55-e94b-4c89-9cb9-b1fdac9d417d'
@@ -13,13 +14,16 @@ settings:
   localizeRelations: false
   restrictFiles: '1'
   selectionLabel: 'Add a PDF'
+  showSiteMenu: true
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: true
   singleUploadLocationSource: 'volume:5fab788c-0374-4ac2-945d-ba96ffd84669'
   singleUploadLocationSubpath: ''
   source: null
   sources: '*'
   targetSiteId: null
-  useSingleFolder: '1'
-  validateRelatedElements: ''
+  useSingleFolder: true
+  validateRelatedElements: false
   viewMode: list
 translationKeyFormat: null
 translationMethod: site

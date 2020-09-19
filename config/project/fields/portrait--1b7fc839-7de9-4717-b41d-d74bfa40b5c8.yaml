@@ -5,6 +5,7 @@ instructions: 'Add a headshot of this person. Be sure to double click the image 
 name: Portrait
 searchable: true
 settings:
+  allowSelfRelations: false
   allowedKinds:
     - image
   defaultUploadLocationSource: 'volume:1e78d0ad-2af1-4556-ab43-7b6c110e75b8'
@@ -13,13 +14,16 @@ settings:
   localizeRelations: false
   restrictFiles: '1'
   selectionLabel: 'Add a portrait'
+  showSiteMenu: true
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: true
   singleUploadLocationSource: 'volume:7a12e399-b320-4d23-8abb-a79b5f303015'
   singleUploadLocationSubpath: ''
   source: null
   sources: '*'
   targetSiteId: null
-  useSingleFolder: '1'
-  validateRelatedElements: '1'
+  useSingleFolder: true
+  validateRelatedElements: true
   viewMode: large
 translationKeyFormat: null
 translationMethod: site
