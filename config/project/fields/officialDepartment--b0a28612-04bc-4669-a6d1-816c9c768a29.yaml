@@ -5,7 +5,9 @@ instructions: 'Turn this switch on so that this department landing page appears 
 name: 'Official Department'
 searchable: true
 settings:
-  default: ''
+  default: false
+  offLabel: null
+  onLabel: null
 translationKeyFormat: null
 translationMethod: none
 type: craft\fields\Lightswitch

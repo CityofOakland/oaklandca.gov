@@ -5,13 +5,16 @@ instructions: 'Include any news items you wish to display on this page.'
 name: 'Project Updates'
 searchable: true
 settings:
+  allowSelfRelations: false
   limit: ''
   localizeRelations: false
   selectionLabel: 'Add an update'
+  showSiteMenu: true
   source: null
   sources:
     - 'section:983c9f6f-9251-4fd3-91e1-b598eccc6a1a'
   targetSiteId: null
+  validateRelatedElements: false
   viewMode: null
 translationKeyFormat: null
 translationMethod: site

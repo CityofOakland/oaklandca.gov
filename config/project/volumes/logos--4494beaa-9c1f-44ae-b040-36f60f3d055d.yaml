@@ -1,7 +1,38 @@
+fieldLayouts:
+  9cac7bcc-373b-46a4-bc99-9b60dfb5071e:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\TitleField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
 handle: logos
 hasUrls: true
 name: Logos
 settings:
+  addSubfolderToRootUrl: true
   autoFocalPoint: ''
   bucket: cao-94612
   bucketSelectionMode: choose

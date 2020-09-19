@@ -6,9 +6,9 @@ name: 'Nav Builder'
 searchable: true
 settings:
   contentTable: '{{%matrixcontent_navbuilder}}'
-  localizeBlocks: false
   maxBlocks: ''
   minBlocks: ''
+  propagationMethod: all
 translationKeyFormat: null
 translationMethod: site
 type: craft\fields\Matrix

@@ -5,6 +5,7 @@ instructions: 'When adding your photos, be sure they have their "alt" attribute 
 name: 'Photo Gallery'
 searchable: true
 settings:
+  allowSelfRelations: false
   allowedKinds:
     - image
   defaultUploadLocationSource: 'volume:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67'
@@ -13,13 +14,16 @@ settings:
   localizeRelations: false
   restrictFiles: '1'
   selectionLabel: 'Add a photo'
+  showSiteMenu: true
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: true
   singleUploadLocationSource: 'volume:56ad4140-da85-43ea-8292-3fac04cbefc1'
   singleUploadLocationSubpath: ''
   source: null
   sources: '*'
   targetSiteId: null
-  useSingleFolder: '1'
-  validateRelatedElements: '1'
+  useSingleFolder: true
+  validateRelatedElements: true
   viewMode: large
 translationKeyFormat: null
 translationMethod: site

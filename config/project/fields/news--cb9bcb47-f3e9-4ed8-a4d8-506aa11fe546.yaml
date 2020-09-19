@@ -5,14 +5,16 @@ instructions: "Choose the news items that you want to relate to this entry (limi
 name: News
 searchable: true
 settings:
+  allowSelfRelations: false
   limit: '2'
   localizeRelations: false
   selectionLabel: 'Add news'
+  showSiteMenu: true
   source: null
   sources:
     - 'section:983c9f6f-9251-4fd3-91e1-b598eccc6a1a'
   targetSiteId: null
-  validateRelatedElements: '1'
+  validateRelatedElements: true
   viewMode: null
 translationKeyFormat: null
 translationMethod: site

@@ -5,13 +5,18 @@ instructions: ''
 name: 'Document Type'
 searchable: true
 settings:
+  allowLimit: false
+  allowMultipleSources: false
+  allowSelfRelations: false
   branchLimit: ''
   limit: null
   localizeRelations: false
   selectionLabel: 'Add a type'
+  showSiteMenu: true
   source: 'group:827f6570-faf8-42da-98e5-fffcb15e7cf6'
   sources: '*'
   targetSiteId: null
+  validateRelatedElements: false
   viewMode: null
 translationKeyFormat: null
 translationMethod: site

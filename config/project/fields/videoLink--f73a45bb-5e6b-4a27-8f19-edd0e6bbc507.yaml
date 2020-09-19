@@ -4,6 +4,9 @@ handle: videoLink
 instructions: ''
 name: 'Video Link'
 searchable: true
+settings:
+  maxLength: 255
+  placeholder: null
 translationKeyFormat: null
 translationMethod: none
 type: craft\fields\Url

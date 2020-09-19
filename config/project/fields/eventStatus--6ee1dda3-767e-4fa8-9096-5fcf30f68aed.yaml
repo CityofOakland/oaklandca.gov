@@ -5,6 +5,7 @@ instructions: ''
 name: 'Event Status'
 searchable: true
 settings:
+  optgroups: true
   options:
     -
       __assoc__:

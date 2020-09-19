@@ -5,13 +5,16 @@ instructions: 'Select from the list of **approved** embeddable content that your
 name: 'Embedded Content'
 searchable: true
 settings:
+  allowSelfRelations: false
   limit: '1'
   localizeRelations: false
   selectionLabel: ''
+  showSiteMenu: true
   source: null
   sources:
     - 'section:74ecde2f-b254-4f3e-b889-1affac6f5999'
   targetSiteId: null
+  validateRelatedElements: false
   viewMode: null
 translationKeyFormat: null
 translationMethod: site

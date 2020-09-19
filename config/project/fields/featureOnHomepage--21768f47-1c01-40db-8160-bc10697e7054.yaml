@@ -5,7 +5,9 @@ instructions: 'Toggle this switch if you wish for the article to be prioritized 
 name: 'Feature on Homepage'
 searchable: true
 settings:
-  default: ''
+  default: false
+  offLabel: null
+  onLabel: null
 translationKeyFormat: null
 translationMethod: none
 type: craft\fields\Lightswitch

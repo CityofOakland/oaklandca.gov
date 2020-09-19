@@ -5,12 +5,14 @@ instructions: 'If you don’t wish to use the default text of “Partners” you
 name: 'Funding Logos Alternate Title'
 searchable: true
 settings:
-  charLimit: ''
+  byteLimit: null
+  charLimit: null
   code: ''
   columnType: text
   initialRows: '4'
   multiline: ''
   placeholder: ''
+  uiMode: normal
 translationKeyFormat: null
 translationMethod: none
 type: craft\fields\PlainText

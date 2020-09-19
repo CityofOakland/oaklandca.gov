@@ -6,9 +6,9 @@ name: 'Team Members'
 searchable: true
 settings:
   contentTable: '{{%matrixcontent_teammembers}}'
-  localizeBlocks: false
   maxBlocks: ''
   minBlocks: ''
+  propagationMethod: all
 translationKeyFormat: null
 translationMethod: site
 type: craft\fields\Matrix

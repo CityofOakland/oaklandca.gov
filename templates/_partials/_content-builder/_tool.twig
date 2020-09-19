@@ -21,7 +21,7 @@
   Further additions (like column widths and optional classes for styling) should follow a similar naming convention.
 #}
 {% macro tableBuilder(object, columns) %}
-  <table class="w-full my-8">
+  <table class="w-full{% if not loop.last %} mb-12{% endif %}">
     <thead class="font-bold text-white bg-green-800">
       <tr>
         {% for col in 1..columns %}
@@ -65,7 +65,7 @@
       <a id="{{ blockId }}" class="anchor-link"></a>
       <{{ subheading }} class="{{ subheadingClass }}">{{ block.text }}</{{ subheading }}>
     {% case "text" %}
-      <div class="body-text">
+      <div class="body-text{% if not loop.last %} mb-12{% endif %}">
         {{ block.text }}
       </div>
     {% case "textImageBlock" %}
@@ -84,7 +84,9 @@
             "gallery" or
             "linksWithDescriptions" or
             "linkBlocksWithIcons" or
-            "linkBlocksWithImages"
+            "linkBlocksWithImages" or
+            "statsBlockWithIcons" or
+            "noticeBlock"
     %}
       {% include templateBase ~ block.type ~ ".twig" %}
     {% case "newsEntries" %}
@@ -100,5 +102,5 @@
     {% case "embeddedContent" %}
       {% include templateBase ~ "embeddedContent.twig" %}
     {% endswitch %}
-  {% endfor %}
-</div>
+  </div>
+{% endfor %}

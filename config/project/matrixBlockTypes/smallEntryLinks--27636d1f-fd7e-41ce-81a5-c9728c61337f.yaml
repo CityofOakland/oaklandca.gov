@@ -118,4 +118,4 @@ fields:
     type: craft\redactor\Field
 handle: smallEntryLinks
 name: 'Small Entry Links'
-sortOrder: 14
+sortOrder: 16

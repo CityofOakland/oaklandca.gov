@@ -5,13 +5,16 @@ instructions: 'Pick the team(s) associated with this entry'
 name: Teams
 searchable: true
 settings:
+  allowSelfRelations: false
   limit: ''
   localizeRelations: false
   selectionLabel: 'Add a team'
+  showSiteMenu: true
   source: null
   sources:
     - 'section:fbf8b9b0-8875-4e08-819a-d62603676dc4'
   targetSiteId: null
+  validateRelatedElements: false
   viewMode: null
 translationKeyFormat: null
 translationMethod: site

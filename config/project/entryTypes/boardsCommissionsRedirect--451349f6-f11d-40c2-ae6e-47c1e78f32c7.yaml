@@ -1,7 +1,38 @@
+fieldLayouts:
+  48e13720-9add-439d-8a27-1f9b9e1d81df:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\EntryTitleField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
 handle: boardsCommissionsRedirect
 hasTitleField: true
 name: 'Boards & Commissions Redirect'
 section: fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f
 sortOrder: 2
 titleFormat: null
-titleLabel: Title
+titleTranslationKeyFormat: null
+titleTranslationMethod: ''

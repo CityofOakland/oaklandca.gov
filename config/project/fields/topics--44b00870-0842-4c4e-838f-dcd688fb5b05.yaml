@@ -5,13 +5,16 @@ instructions: 'Choose the topic landing pages to relate to this entry.'
 name: Topics
 searchable: true
 settings:
+  allowSelfRelations: false
   limit: ''
   localizeRelations: false
   selectionLabel: 'Add a topic'
+  showSiteMenu: true
   source: null
   sources:
     - 'section:70778563-6dac-453d-a4b0-5121f3a614b7'
   targetSiteId: null
+  validateRelatedElements: false
   viewMode: null
 translationKeyFormat: null
 translationMethod: site

@@ -1,13 +1,49 @@
+fieldLayouts:
+  4dfaed65-ad3f-4148-8727-a09d6b317b2a:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\TitleField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
 handle: seo
 hasUrls: true
 name: SEO
 settings:
+  addSubfolderToRootUrl: true
+  autoFocalPoint: false
   bucket: cao-94612
+  bucketSelectionMode: choose
   cfDistributionId: ''
+  cfPrefix: null
   expires: ''
   keyId: $S3_API_KEY
+  makeUploadsPublic: true
   region: us-west-2
   secret: $S3_SECRET
+  storageClass: ''
   subfolder: seo
 sortOrder: 11
 type: craft\awss3\Volume

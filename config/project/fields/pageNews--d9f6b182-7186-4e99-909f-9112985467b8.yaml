@@ -5,13 +5,16 @@ instructions: 'Choose up to three (3) news items to show on the page.'
 name: 'Page News'
 searchable: true
 settings:
+  allowSelfRelations: false
   limit: '3'
   localizeRelations: false
   selectionLabel: 'Add a news entry'
+  showSiteMenu: true
   source: null
   sources:
     - 'section:983c9f6f-9251-4fd3-91e1-b598eccc6a1a'
   targetSiteId: null
+  validateRelatedElements: false
   viewMode: null
 translationKeyFormat: null
 translationMethod: site

@@ -4,6 +4,9 @@ handle: appStoreDownloadLink
 instructions: 'Enter the URL the user can go to to download this app on the Apple App Store.'
 name: 'App Store Download Link'
 searchable: true
+settings:
+  maxLength: 255
+  placeholder: null
 translationKeyFormat: null
 translationMethod: none
 type: craft\fields\Url

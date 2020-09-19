@@ -5,13 +5,16 @@ instructions: 'Choose up to six (6) boards or commissions to show on this page.'
 name: 'Page Boards & Commissions'
 searchable: true
 settings:
+  allowSelfRelations: false
   limit: '6'
   localizeRelations: false
   selectionLabel: 'Add a board or commission'
+  showSiteMenu: true
   source: null
   sources:
     - 'section:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f'
   targetSiteId: null
+  validateRelatedElements: false
   viewMode: null
 translationKeyFormat: null
 translationMethod: site

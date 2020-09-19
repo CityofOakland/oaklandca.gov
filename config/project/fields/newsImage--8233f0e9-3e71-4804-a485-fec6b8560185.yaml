@@ -5,6 +5,7 @@ instructions: 'Be sure to double click the image after uploading it and assignin
 name: 'News Image'
 searchable: true
 settings:
+  allowSelfRelations: false
   allowedKinds:
     - image
   defaultUploadLocationSource: 'volume:1e78d0ad-2af1-4556-ab43-7b6c110e75b8'
@@ -13,13 +14,16 @@ settings:
   localizeRelations: false
   restrictFiles: '1'
   selectionLabel: 'Add an image'
+  showSiteMenu: true
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: true
   singleUploadLocationSource: 'volume:7c1a62cb-b02e-40b3-840f-7e78a3a9ebd0'
   singleUploadLocationSubpath: ''
   source: null
   sources: '*'
   targetSiteId: null
-  useSingleFolder: '1'
-  validateRelatedElements: '1'
+  useSingleFolder: true
+  validateRelatedElements: true
   viewMode: large
 translationKeyFormat: null
 translationMethod: site

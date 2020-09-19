@@ -23,7 +23,7 @@
   {% set entryIds = entryIds | merge(relatedNews) %}
 {% endif %}
 
-<div>
+<div class="{% if not loop.last %}mb-12{% endif %}">
   <a class="anchor-link" id="{{ blockId }}"></a>
   <{{ heading }} class="{{ hClass }}">{{ block.heading }}</{{ heading }}>
   <div class="card-grid vertical-cards">

@@ -5,13 +5,16 @@ instructions: 'Choose the service landing pages to relate to this entry.'
 name: Services
 searchable: true
 settings:
+  allowSelfRelations: false
   limit: ''
   localizeRelations: false
   selectionLabel: 'Add a service'
+  showSiteMenu: true
   source: null
   sources:
     - 'section:b7e437e1-239f-4c5c-8c62-5f0323f9d22c'
   targetSiteId: null
+  validateRelatedElements: false
   viewMode: null
 translationKeyFormat: null
 translationMethod: site
