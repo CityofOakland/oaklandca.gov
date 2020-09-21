@@ -1,8 +1,5 @@
 <div class="{% if not loop.last %}mb-12{% endif %}">
-  <a class="anchor-link" id="{{ blockId }}"></a>
-  {% if block.heading %}
-    <{{ heading }} class="{{ hClass }}">{{ block.heading }}</{{ heading }}>
-  {% endif %}
+  {% include "_partials/_content-builder/_elements/_heading.twig" %}
   {{ block.linkSetDescription }}
   <div class="flex flex-col space-y-6 md:space-y-0 md:space-x-6 md:flex-row md:items-stretch">
     {% for linkSet in block.linkSet.all() %}

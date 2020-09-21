@@ -13,8 +13,7 @@
 {% endif %}
 
 <div class="{% if not loop.last %}mb-12{% endif %}">
-  <a class="anchor-link" id="{{ blockId }}"></a>
-  <{{ heading }} class="{{ hClass }}">{{ block.heading }}</{{ heading }}>
+  {% include "_partials/_content-builder/_elements/_heading.twig" %}
   <div class="card-grid vertical-cards">
     {% for eventId in eventIds %}
       {% set entry = craft.calendar.events.id(eventId).one %}
