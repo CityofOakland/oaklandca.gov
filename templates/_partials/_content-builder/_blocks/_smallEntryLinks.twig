@@ -1,5 +1,5 @@
 <div class="{% if not loop.last %}mb-12 {% endif %}body-text">
-  {% include "_partials/_content-builder/_elements/_heading.twig" %}
+  {% include "_partials/_content-builder/_blocks/_elements/_heading.twig" %}
   {{ block.entriesDescription }}
   <ul class="">
     {% for entry in block.entries.all() %}
