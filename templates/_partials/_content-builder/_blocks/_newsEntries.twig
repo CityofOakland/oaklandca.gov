@@ -41,8 +41,8 @@
       } %}
     {% endfor %}
   </div>
-    {% include "_partials/_elements/_module-readmore.twig" with {
-      linkText: pageNewsLinkText ?? "Related News",
-      linkUrl: pageNewsLinkUrl ?? defaultButtonUrl
-    } %}
+  {% include "_partials/_elements/_module-readmore.twig" with {
+    linkText: pageNewsLinkText ?? "Related News",
+    linkUrl: pageNewsLinkUrl ?? defaultButtonUrl
+  } %}
 </div>
