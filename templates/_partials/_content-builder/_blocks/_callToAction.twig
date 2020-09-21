@@ -1,0 +1,5 @@
+<div class="{% if not loop.last %}mb-12{% endif %}">
+  {% include "_partials/_content-builder/_blocks/_elements/_ctaLink.twig" with {
+    link: block.linkField
+  } %}
+</div>

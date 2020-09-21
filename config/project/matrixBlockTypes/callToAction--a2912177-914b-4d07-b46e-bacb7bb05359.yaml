@@ -1,0 +1,219 @@
+field: fd0c8e02-99b4-4ce5-ab89-b29cd0efc581
+fieldLayouts:
+  646b97c4-6da0-452a-9223-db6577a4a8cd:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 2e52b334-4732-47a2-9c3b-7a8bf656425e
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  2e52b334-4732-47a2-9c3b-7a8bf656425e:
+    contentColumnType: text
+    fieldGroup: null
+    handle: linkField
+    instructions: ''
+    name: Link
+    searchable: false
+    settings:
+      allowCustomText: '1'
+      allowTarget: '1'
+      defaultText: ''
+      selectLinkText: ''
+      types:
+        __assoc__:
+          -
+            - fruitstudios\linkit\models\Email
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - '1'
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - dotgovsupport@oaklandca.gov
+          -
+            - fruitstudios\linkit\models\Phone
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - '1'
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - '(510) 867-5309'
+          -
+            - fruitstudios\linkit\models\Url
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - '1'
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - 'https://www.oaklandca.gov'
+                -
+                  - allowAlias
+                  - ''
+                -
+                  - allowMailto
+                  - ''
+                -
+                  - allowHash
+                  - ''
+                -
+                  - allowPaths
+                  - ''
+          -
+            - fruitstudios\linkit\models\Twitter
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - ''
+          -
+            - fruitstudios\linkit\models\Facebook
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - ''
+          -
+            - fruitstudios\linkit\models\Instagram
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - ''
+          -
+            - fruitstudios\linkit\models\LinkedIn
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - ''
+          -
+            - fruitstudios\linkit\models\Entry
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - '1'
+                -
+                  - customLabel
+                  - ''
+                -
+                  - sources
+                  -
+                    - 'section:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f'
+                    - 'section:b3411cb1-e860-46ed-9cd6-58cf9b8daacb'
+                    - 'section:9da43fd8-c505-4d19-9486-e0cb669c568a'
+                    - 'section:8b7c4e26-9aab-4c5d-874e-aee151107de3'
+                    - 'section:983c9f6f-9251-4fd3-91e1-b598eccc6a1a'
+                    - 'section:28881fc8-3e61-4fdb-a5ee-cce1bab725bf'
+                    - 'section:98d541ae-56ee-4c98-ba9c-37438dc485a0'
+                    - 'section:24fa116b-8516-4626-84f3-86b685e71071'
+                    - 'section:b7e437e1-239f-4c5c-8c62-5f0323f9d22c'
+                    - 'section:70778563-6dac-453d-a4b0-5121f3a614b7'
+                -
+                  - customSelectionLabel
+                  - ''
+          -
+            - fruitstudios\linkit\models\Category
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - sources
+                  - '*'
+                -
+                  - customSelectionLabel
+                  - ''
+          -
+            - fruitstudios\linkit\models\Asset
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - '1'
+                -
+                  - customLabel
+                  - ''
+                -
+                  - sources
+                  -
+                    - 'folder:baf733c3-48be-42a7-8b4f-7a6bf9763542'
+                -
+                  - customSelectionLabel
+                  - 'Select Document'
+          -
+            - fruitstudios\linkit\models\User
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - sources
+                  - '*'
+                -
+                  - customSelectionLabel
+                  - ''
+                -
+                  - userPath
+                  - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: fruitstudios\linkit\fields\LinkitField
+handle: callToAction
+name: 'Call to Action'
+sortOrder: 23

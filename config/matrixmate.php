@@ -1,31 +1,31 @@
 <?php
 
-$defaultTextBlock = [
+$textBlock = [
   'label' => 'Text',
-  'types' => ['heading', 'subheading', 'text', ],
+  'types' => ['heading', 'subheading', 'text', 'textImageBlock', 'noticeBlock'],
 ];
-$topicsTextBlock = [
-  'label' => 'Text',
-  'types' => ['heading', 'subheading', 'text', 'textImageBlock'],
-];
-$adminTextBlock = $topicsTextBlock;
-$defaultLinksBlock = [
+$adminTextBlock = $textBlock;
+$linksBlock = [
   'label' => 'Links',
-  'types' => ['linksWithDescriptions', 'linkBlocksWithImages', 'linkBlocksWithIcons', 'largeEntryLinks', 'smallEntryLinks', 'newsEntries', 'eventEntries', 'meetingEntries']
+  'types' => ['linksWithDescriptions', 'linkBlocksWithImages', 'linkBlocksWithIcons', 'largeEntryLinks', 'smallEntryLinks', 'newsEntries', 'eventEntries', 'meetingEntries', 'callToAction'],
 ];
 $adminLinksBlock = [
   'label' => 'Links',
-  'types' => ['linksWithDescriptions', 'linkBlocksWithImages', 'linkBlocksWithIcons', 'largeEntryLinks', 'smallEntryLinks', 'newsEntries', 'eventEntries', 'meetingEntries']
+  'types' => ['linksWithDescriptions', 'linkBlocksWithImages', 'linkBlocksWithIcons', 'largeEntryLinks', 'smallEntryLinks', 'newsEntries', 'eventEntries', 'meetingEntries', 'callToAction']
 ];
-$adminOnlyBlock = [
-  'label' => 'Admin',
-  'types' => ['customTemplate', 'embeddedContent']
+$pageElementsBlock = [
+  'label' => 'Page Elements',
+  'types' => ['statsBlockWithIcons']
 ];
-$defaultImagesBlock = [
+$adminPageElementsBlock = [
+  'label' => 'Page Elements',
+  'types' => ['statsBlockWithIcons', 'customTemplate', 'embeddedContent', 'emailSignup']
+];
+$imagesBlock = [
   'label' => 'Images',
   'types' => ['image', 'gallery']
 ];
-$defaultTablesBlock = [
+$tablesBlock = [
   'label' => 'Tables',
   'types' => ['table2Columns', 'table3Columns', 'table4Columns']
 ];
@@ -37,9 +37,9 @@ if ($isUserAdmin) {
   $defaultBlock = [
     $adminTextBlock,
     $adminLinksBlock,
-    $defaultImagesBlock,
-    $defaultTablesBlock,
-    $adminOnlyBlock
+    $imagesBlock,
+    $tablesBlock,
+    $adminPageElementsBlock
   ];
   $departmentsBlock = $defaultBlock;
   $topicsBlock = $defaultBlock;
@@ -48,31 +48,34 @@ if ($isUserAdmin) {
   $servicesBlock = $defaultBlock;
 } else {
   $defaultBlock = [
-    $defaultTextBlock
+    $textBlock
   ];
   $departmentsBlock = [
-    $defaultTextBlock,
-    $defaultLinksBlock
+    $textBlock,
+    $linksBlock
   ];
   $topicsBlock = [
-    $topicsTextBlock,
-    $defaultLinksBlock,
-    $defaultImagesBlock,
-    $defaultTablesBlock
+    $textBlock,
+    $linksBlock,
+    $imagesBlock,
+    $tablesBlock,
+    $pageElementsBlock
   ];
   $newsPressBlock = [
-    $defaultTextBlock,
-    $defaultImagesBlock,
-    $defaultTablesBlock
+    $textBlock,
+    $imagesBlock,
+    $tablesBlock,
+    $pageElementsBlock
   ];
   $resourcesBlock = [
-    $defaultTextBlock,
-    $defaultImagesBlock,
-    $defaultTablesBlock
+    $textBlock,
+    $imagesBlock,
+    $tablesBlock,
+    $pageElementsBlock
   ];
   $servicesBlock = [
-    $defaultTextBlock,
-    $defaultLinksBlock,
+    $textBlock,
+    $linksBlock,
   ];
 };
 
