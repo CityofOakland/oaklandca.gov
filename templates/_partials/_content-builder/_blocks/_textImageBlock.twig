@@ -26,12 +26,9 @@
     <div class="body-text">
       {{ block.textBlock }}
     </div>
-    {% set link = block.callToAction %}
-    {% if link %}
-      <p class="md:mb-0">
-        <a href="{{ link.url }}" target="{{ link.target }}" class="btn btn-md">{{ link.text }}</a>
-      </p>
-    {% endif %}
+    {% include "_partials/_content-builder/_blocks/_elements/_ctaLink.twig" with {
+      link: block.callToAction
+    } %}
   </div>
   </div>
 </div>

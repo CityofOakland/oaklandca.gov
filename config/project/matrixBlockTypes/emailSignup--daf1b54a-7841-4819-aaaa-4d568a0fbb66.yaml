@@ -1,0 +1,77 @@
+field: fd0c8e02-99b4-4ce5-ab89-b29cd0efc581
+fieldLayouts:
+  bd9571fe-eb18-4627-baaa-940cebabc1b9:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: e8b1b583-82e1-4793-a5fc-048294165afd
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 7a1afdd7-99e2-4194-b1e1-b6a4f0c7ed62
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  7a1afdd7-99e2-4194-b1e1-b6a4f0c7ed62:
+    contentColumnType: text
+    fieldGroup: null
+    handle: description
+    instructions: ''
+    name: Description
+    searchable: false
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      cleanupHtml: true
+      columnType: text
+      configSelectionMode: choose
+      defaultTransform: ''
+      manualConfig: ''
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: 'Basic with Links.json'
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showHtmlButtonForNonAdmins: ''
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  e8b1b583-82e1-4793-a5fc-048294165afd:
+    contentColumnType: text
+    fieldGroup: null
+    handle: heading
+    instructions: ''
+    name: Heading
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: emailSignup
+name: 'Email Signup'
+sortOrder: 22

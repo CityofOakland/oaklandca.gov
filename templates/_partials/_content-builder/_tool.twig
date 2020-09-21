@@ -68,8 +68,6 @@
       <div class="body-text{% if not loop.last %} mb-12{% endif %}">
         {{ block.text }}
       </div>
-    {% case "textImageBlock" %}
-      {% include templateBase ~ block.type ~ ".twig" %}
     {% case "customTemplate" %}
       {% include templateBase ~ "custom-elements/" ~ block.templateSelect %}
     {% case "table2Columns" %}
@@ -86,10 +84,13 @@
             "linkBlocksWithIcons" or
             "linkBlocksWithImages" or
             "statsBlockWithIcons" or
-            "noticeBlock"
+            "textImageBlock" or
+            "noticeBlock" or
+            "emailSignup" or
+            "newsEntries" or
+            "embeddedContent" or
+            "callToAction"
     %}
-      {% include templateBase ~ block.type ~ ".twig" %}
-    {% case "newsEntries" %}
       {% include templateBase ~ block.type ~ ".twig" %}
     {% case "meetingEntries" %}
       {% include templateBase ~ "calendarEntries.twig" with {
@@ -99,8 +100,6 @@
       {% include templateBase ~ "calendarEntries.twig" with {
         calendarHandle: "events"
       } %}
-    {% case "embeddedContent" %}
-      {% include templateBase ~ "embeddedContent.twig" %}
     {% endswitch %}
   </div>
 {% endfor %}
