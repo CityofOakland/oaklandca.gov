@@ -1,5 +1,5 @@
 <div class="{% if not loop.last %}mb-12{% endif %}">
-  {% include "_partials/_content-builder/_elements/_heading.twig" %}
+  {% include "_partials/_content-builder/_blocks/_elements/_heading.twig" %}
   {{ block.entriesDescription }}
   <div class="card-grid grid-equal-height">
     {% for entry in block.entries.all() %}

@@ -3,7 +3,7 @@
 {% set imagePad = imageIsLeft ? "md:pr-4" : "md:pl-4" %}
 {% set textPad = imageIsLeft ? "md:pl-4" : "md:pr-4" %}
 <div class="{% if not loop.last %}mb-12{% endif %}">
-  {% include "_partials/_content-builder/_elements/_heading.twig" %}
+  {% include "_partials/_content-builder/_blocks/_elements/_heading.twig" %}
   <div class="md:flex {{ direction }}">
   {% set image = block.image.one %}
   {% set transformedImage = craft.imager.transformImage(image, { width: 320 },{ fillTransforms: true}) %}
