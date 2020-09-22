@@ -18,12 +18,12 @@
       </a>
     {% endfor %}
   </div>
+  {% set link = block.readMoreLink %}
+  {% if link %}
+    {% include "_partials/_elements/_read-more.twig" with {
+      url: link.url,
+      text: link.text,
+      target: link.target
+    } %}
+  {% endif %}
 </div>
-{% set link = block.readMoreLink %}
-{% if link %}
-  {% include "_partials/_elements/_read-more.twig" with {
-    url: link.url,
-    text: link.text,
-    target: link.target
-  } %}
-{% endif %}
