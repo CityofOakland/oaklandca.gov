@@ -104,6 +104,9 @@ return [
         'hideUngroupedTypes' => ($isUserAdmin ? false : true),
       ],
     ],
+    'recordings' => [
+      'hiddenTypes' => ($isUserAdmin ? '' : ['embed']),
+    ],
     // 'addresses' => [
     //   'hiddenTypes' => ['onlineLocation'],
     // ],
