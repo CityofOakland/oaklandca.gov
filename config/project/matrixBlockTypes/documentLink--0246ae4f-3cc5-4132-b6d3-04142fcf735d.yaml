@@ -3,16 +3,34 @@ fieldLayouts:
   03ea29e2-c637-49cf-bd11-d404ab05cca5:
     tabs:
       -
-        fields:
-          4c46efcc-d38f-4f25-8873-d8c0837babd9:
+        elements:
+          -
+            fieldUid: 4c46efcc-d38f-4f25-8873-d8c0837babd9
+            instructions: null
+            label: null
             required: false
-            sortOrder: 1
-          afb94d9f-c334-44c9-a37a-e71360270610:
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: afb94d9f-c334-44c9-a37a-e71360270610
+            instructions: null
+            label: null
             required: true
-            sortOrder: 2
-          e51016cb-464b-4bd1-b32c-ace827d1b9dc:
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: e51016cb-464b-4bd1-b32c-ace827d1b9dc
+            instructions: null
+            label: null
             required: true
-            sortOrder: 3
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Content
         sortOrder: 1
 fields:
@@ -24,12 +42,14 @@ fields:
     name: 'Document Label'
     searchable: true
     settings:
-      charLimit: ''
+      byteLimit: null
+      charLimit: null
       code: ''
       columnType: text
       initialRows: '4'
       multiline: ''
       placeholder: ''
+      uiMode: normal
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
@@ -41,12 +61,14 @@ fields:
     name: 'Button Label'
     searchable: true
     settings:
+      byteLimit: null
       charLimit: '20'
       code: ''
       columnType: text
       initialRows: '4'
       multiline: ''
       placeholder: ''
+      uiMode: normal
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
@@ -58,14 +80,17 @@ fields:
     name: 'Document Link'
     searchable: true
     settings:
+      allowSelfRelations: false
       limit: '1'
       localizeRelations: false
       selectionLabel: 'Add a document'
+      showSiteMenu: true
       source: null
       sources:
         - 'section:9da43fd8-c505-4d19-9486-e0cb669c568a'
         - 'section:8b7c4e26-9aab-4c5d-874e-aee151107de3'
       targetSiteId: null
+      validateRelatedElements: false
       viewMode: null
     translationKeyFormat: null
     translationMethod: site

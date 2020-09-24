@@ -6,9 +6,9 @@ name: 'Phone Numbers'
 searchable: true
 settings:
   contentTable: '{{%matrixcontent_phonenumbers}}'
-  localizeBlocks: false
   maxBlocks: ''
   minBlocks: ''
+  propagationMethod: all
 translationKeyFormat: null
 translationMethod: site
 type: craft\fields\Matrix

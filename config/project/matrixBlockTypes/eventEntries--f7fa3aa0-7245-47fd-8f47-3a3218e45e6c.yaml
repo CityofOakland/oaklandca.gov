@@ -17,7 +17,7 @@ fieldLayouts:
             fieldUid: 0e81d688-16ec-4519-9f60-7d2e2d72526d
             instructions: null
             label: null
-            required: true
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
@@ -137,4 +137,4 @@ fields:
     type: craft\fields\Lightswitch
 handle: eventEntries
 name: 'Event Entries'
-sortOrder: 14
+sortOrder: 18

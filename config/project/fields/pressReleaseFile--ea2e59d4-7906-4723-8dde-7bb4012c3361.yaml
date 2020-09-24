@@ -5,20 +5,26 @@ instructions: 'Choose a PDF to attach to this news entry for your press release.
 name: 'Press Release File'
 searchable: true
 settings:
+  allowSelfRelations: false
   allowedKinds:
     - pdf
   defaultUploadLocationSource: 'volume:1e78d0ad-2af1-4556-ab43-7b6c110e75b8'
   defaultUploadLocationSubpath: ''
   limit: '1'
   localizeRelations: false
+  previewMode: full
   restrictFiles: '1'
   selectionLabel: 'Add a press release'
+  showSiteMenu: true
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: true
   singleUploadLocationSource: 'volume:7c1a62cb-b02e-40b3-840f-7e78a3a9ebd0'
   singleUploadLocationSubpath: ''
   source: null
   sources: '*'
   targetSiteId: null
-  useSingleFolder: '1'
+  useSingleFolder: true
+  validateRelatedElements: false
   viewMode: list
 translationKeyFormat: null
 translationMethod: site

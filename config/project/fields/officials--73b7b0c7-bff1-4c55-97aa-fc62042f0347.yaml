@@ -5,13 +5,16 @@ instructions: 'Choose the elected official to relate to this entry. Relationship
 name: Officials
 searchable: true
 settings:
+  allowSelfRelations: false
   limit: ''
   localizeRelations: false
   selectionLabel: 'Add an official'
+  showSiteMenu: true
   source: null
   sources:
     - 'section:28881fc8-3e61-4fdb-a5ee-cce1bab725bf'
   targetSiteId: null
+  validateRelatedElements: false
   viewMode: null
 translationKeyFormat: null
 translationMethod: site

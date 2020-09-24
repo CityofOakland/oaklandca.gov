@@ -17,7 +17,7 @@
       <div class="my-4 space-y-4 md:space-y-8 md:my-8">
         {% for entry in pageEntries %}
           <article>
-            <h2 class="my-0 text-lg font-normal md:text-xxl"><a href="{{ entry.url }}">{{ entry.title }}</a></h2>
+            <h2 class="my-0 text-lg font-normal md:text-2xl"><a href="{{ entry.url }}">{{ entry.title }}</a></h2>
             {% if entry.leadIn %}
               <p class="mt-2 mb-0 text-sm md:text-lg">{{ entry.leadIn }}</p>
             {% endif %}

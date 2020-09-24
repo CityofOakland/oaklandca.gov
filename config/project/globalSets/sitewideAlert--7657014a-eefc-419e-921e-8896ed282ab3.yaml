@@ -2,25 +2,61 @@ fieldLayouts:
   5a2d2246-c14b-4c8b-a973-cc070f30ce97:
     tabs:
       -
-        fields:
-          277068ba-95c5-4881-862f-85c19b60d4da:
+        elements:
+          -
+            fieldUid: 7485ca3f-30b1-4ca6-a095-c2061d848559
+            instructions: null
+            label: null
             required: false
-            sortOrder: 6
-          36fcc9c4-85be-4bd9-959a-5b26e30673d4:
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 658cca3c-01d9-4de0-b0be-bc04b699d806
+            instructions: null
+            label: null
             required: false
-            sortOrder: 3
-          658cca3c-01d9-4de0-b0be-bc04b699d806:
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 36fcc9c4-85be-4bd9-959a-5b26e30673d4
+            instructions: null
+            label: null
             required: false
-            sortOrder: 2
-          6fb3f41c-93f6-4185-9622-e6765cdcc837:
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 9c0b44a4-b6de-498e-bc9d-4f7a4f9fe5f2
+            instructions: null
+            label: null
             required: false
-            sortOrder: 5
-          7485ca3f-30b1-4ca6-a095-c2061d848559:
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 6fb3f41c-93f6-4185-9622-e6765cdcc837
+            instructions: null
+            label: null
             required: false
-            sortOrder: 1
-          9c0b44a4-b6de-498e-bc9d-4f7a4f9fe5f2:
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 277068ba-95c5-4881-862f-85c19b60d4da
+            instructions: null
+            label: null
             required: false
-            sortOrder: 4
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Content
         sortOrder: 1
 handle: sitewideAlert

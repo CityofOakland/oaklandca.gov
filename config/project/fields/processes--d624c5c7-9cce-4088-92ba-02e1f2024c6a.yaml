@@ -5,13 +5,16 @@ instructions: 'Choose the processes that relate to this page. Relationships help
 name: Processes
 searchable: true
 settings:
+  allowSelfRelations: false
   limit: ''
   localizeRelations: false
   selectionLabel: 'Add a process'
+  showSiteMenu: true
   source: null
   sources:
     - 'section:92f0f749-ed5b-4acc-aa15-6340f6e25791'
   targetSiteId: null
+  validateRelatedElements: false
   viewMode: null
 translationKeyFormat: null
 translationMethod: site

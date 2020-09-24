@@ -4,6 +4,9 @@ handle: androidDownloadLink
 instructions: 'Enter the URL the user can visit to download this app for Android.'
 name: 'Android Download Link'
 searchable: true
+settings:
+  maxLength: 255
+  placeholder: null
 translationKeyFormat: null
 translationMethod: none
 type: craft\fields\Url

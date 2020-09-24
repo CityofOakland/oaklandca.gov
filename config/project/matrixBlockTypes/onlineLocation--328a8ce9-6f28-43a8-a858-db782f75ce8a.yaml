@@ -3,16 +3,34 @@ fieldLayouts:
   7c2d9899-6e1c-4c56-a1da-093fd2fdb084:
     tabs:
       -
-        fields:
-          06394615-97e5-4f64-8d80-da62f9f1582c:
+        elements:
+          -
+            fieldUid: 314d167b-d1f4-47dd-92e5-4d0f75339e09
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 06394615-97e5-4f64-8d80-da62f9f1582c
+            instructions: null
+            label: null
             required: false
-            sortOrder: 2
-          314d167b-d1f4-47dd-92e5-4d0f75339e09:
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: b199c827-5414-4bf9-bcf7-cf6f4e144bda
+            instructions: null
+            label: null
             required: true
-            sortOrder: 1
-          b199c827-5414-4bf9-bcf7-cf6f4e144bda:
-            required: true
-            sortOrder: 3
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Content
         sortOrder: 1
 fields:
@@ -28,14 +46,19 @@ fields:
       availableVolumes: ''
       cleanupHtml: true
       columnType: text
+      configSelectionMode: choose
+      defaultTransform: ''
+      manualConfig: ''
       purifierConfig: ''
       purifyHtml: '1'
       redactorConfig: Simple.json
       removeEmptyTags: '1'
       removeInlineStyles: '1'
       removeNbsp: '1'
+      showHtmlButtonForNonAdmins: true
       showUnpermittedFiles: false
       showUnpermittedVolumes: false
+      uiMode: enlarged
     translationKeyFormat: null
     translationMethod: none
     type: craft\redactor\Field
@@ -54,6 +77,7 @@ fields:
       initialRows: '4'
       multiline: ''
       placeholder: ''
+      uiMode: normal
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText

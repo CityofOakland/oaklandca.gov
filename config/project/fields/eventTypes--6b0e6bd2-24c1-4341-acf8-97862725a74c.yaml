@@ -5,13 +5,18 @@ instructions: ''
 name: 'Event Types'
 searchable: true
 settings:
+  allowLimit: false
+  allowMultipleSources: false
+  allowSelfRelations: false
   branchLimit: '1'
   limit: null
   localizeRelations: false
   selectionLabel: ''
+  showSiteMenu: true
   source: 'group:947de11d-3d94-45c2-8565-04542ce0e737'
   sources: '*'
   targetSiteId: null
+  validateRelatedElements: false
   viewMode: null
 translationKeyFormat: null
 translationMethod: site

@@ -5,6 +5,7 @@ instructions: ''
 name: Metadata
 searchable: true
 settings:
+  elementDisplayPreviewType: google
   facebookTabEnabled: ''
   generalEnabledFields:
     - seoPreview

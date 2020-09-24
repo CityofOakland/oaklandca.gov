@@ -5,9 +5,11 @@ instructions: 'Select all the pages you want this alert to show up on'
 name: 'Alert Pages'
 searchable: false
 settings:
+  allowSelfRelations: false
   limit: ''
   localizeRelations: false
   selectionLabel: ''
+  showSiteMenu: true
   source: null
   sources:
     - 'section:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f'
@@ -24,7 +26,7 @@ settings:
     - 'section:70778563-6dac-453d-a4b0-5121f3a614b7'
     - 'section:17d5d48d-2d75-4742-8820-cdce13764482'
   targetSiteId: null
-  validateRelatedElements: ''
+  validateRelatedElements: false
   viewMode: null
 translationKeyFormat: null
 translationMethod: site

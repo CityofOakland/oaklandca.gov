@@ -23,9 +23,8 @@
   {% set entryIds = entryIds | merge(relatedNews) %}
 {% endif %}
 
-<div>
-  <a class="anchor-link" id="{{ blockId }}"></a>
-  <{{ heading }} class="{{ hClass }}">{{ block.heading }}</{{ heading }}>
+<div class="{% if not loop.last %}mb-12{% endif %}">
+  {% include "_partials/_content-builder/_blocks/_elements/_heading.twig" %}
   <div class="card-grid vertical-cards">
     {% for entryId in entryIds %}
       {% set entry = craft.entries.id(entryId).one() %}
@@ -41,8 +40,8 @@
       } %}
     {% endfor %}
   </div>
-    {% include "_partials/_elements/_module-readmore.twig" with {
-      linkText: pageNewsLinkText ?? "Related News",
-      linkUrl: pageNewsLinkUrl ?? defaultButtonUrl
-    } %}
+  {% include "_partials/_elements/_module-readmore.twig" with {
+    linkText: pageNewsLinkText ?? "Related News",
+    linkUrl: pageNewsLinkUrl ?? defaultButtonUrl
+  } %}
 </div>

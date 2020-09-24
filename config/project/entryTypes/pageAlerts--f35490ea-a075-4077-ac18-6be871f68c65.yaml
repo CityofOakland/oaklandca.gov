@@ -4,29 +4,73 @@ fieldLayouts:
       -
         elements:
           -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
             instructions: null
             label: Title
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
             type: craft\fieldlayoutelements\EntryTitleField
+            warning: null
+            width: 100
           -
             fieldUid: 9c0b44a4-b6de-498e-bc9d-4f7a4f9fe5f2
+            instructions: null
+            label: null
             required: false
+            tip: null
             type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
           -
             fieldUid: bf9907da-64c0-4cb6-bc21-493b39110166
+            instructions: null
+            label: null
             required: true
+            tip: null
             type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
           -
             fieldUid: 1090a1a7-e23c-45c0-a7b3-aeeae640337e
+            instructions: null
+            label: null
             required: false
+            tip: null
             type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
           -
             fieldUid: 6730cced-6743-4ada-abb8-1f4c0f2e8878
+            instructions: null
+            label: null
             required: false
+            tip: null
             type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
           -
             fieldUid: 11892a6b-a44e-4406-af4e-49f3803e7931
+            instructions: null
+            label: null
             required: false
+            tip: null
             type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: 'Page Alerts'
         sortOrder: 1
 handle: pageAlerts
@@ -35,3 +79,5 @@ name: 'Page Alerts'
 section: be8acece-2031-4965-a62f-31911d00e24c
 sortOrder: 1
 titleFormat: '{{ object.alertHeading }}: {{ object.alertDescription | striptags | chop(limit=5, unit=''w'', append=''…'') }}'
+titleTranslationKeyFormat: null
+titleTranslationMethod: ''

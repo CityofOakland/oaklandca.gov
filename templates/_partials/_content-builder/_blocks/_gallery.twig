@@ -1,5 +1,5 @@
 {% js %}lightGallery(document.querySelector('#js-photoGallery-{{ block.id }}'));{% endjs %}
-<div class="flex flex-row flex-wrap my-8" id="js-photoGallery-{{ block.id }}">
+<div class="flex flex-row flex-wrap{% if not loop.last %} mb-12{% endif %}" id="js-photoGallery-{{ block.id }}">
   {% for photo in block.images.all() %}
     <figure class="w-1/6" data-src="{{ photo.url }}" data-sub-html="<p class='font-bold'>{{ photo.title }}</p><p>{{ photo.altText }}</p>">
       <a href="{{ photo.url }}">

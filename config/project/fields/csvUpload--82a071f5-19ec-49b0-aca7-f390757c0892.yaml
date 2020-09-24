@@ -5,14 +5,17 @@ instructions: ''
 name: 'CSV Upload'
 searchable: false
 settings:
+  allowSelfRelations: false
   allowedKinds:
     - excel
   defaultUploadLocationSource: 'volume:549d1a55-e94b-4c89-9cb9-b1fdac9d417d'
   defaultUploadLocationSubpath: ''
   limit: '1'
   localizeRelations: false
+  previewMode: full
   restrictFiles: '1'
   selectionLabel: 'Add a CSV'
+  showSiteMenu: true
   showUnpermittedFiles: false
   showUnpermittedVolumes: false
   singleUploadLocationSource: 'volume:58c3bf22-aa23-441f-bd65-acf677638ae6'
@@ -21,7 +24,7 @@ settings:
   sources: '*'
   targetSiteId: null
   useSingleFolder: true
-  validateRelatedElements: ''
+  validateRelatedElements: false
   viewMode: list
 translationKeyFormat: null
 translationMethod: site

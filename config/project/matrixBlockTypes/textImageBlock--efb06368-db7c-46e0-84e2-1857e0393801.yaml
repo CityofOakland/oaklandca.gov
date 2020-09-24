@@ -5,6 +5,15 @@ fieldLayouts:
       -
         elements:
           -
+            fieldUid: bde3bd63-a118-435a-b947-3f2667918e1b
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
             fieldUid: bcbcc37a-a53b-42f8-9a80-e9abf9ffe063
             instructions: null
             label: null
@@ -42,6 +51,15 @@ fieldLayouts:
             width: 100
           -
             fieldUid: 566d26c2-9af4-45bb-b994-a552cc3fc03b
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: c8061611-d9e5-4ee6-b698-dc19feb2e2a5
             instructions: null
             label: null
             required: false
@@ -109,6 +127,7 @@ fields:
       defaultUploadLocationSubpath: ''
       limit: '1'
       localizeRelations: false
+      previewMode: full
       restrictFiles: '1'
       selectionLabel: 'Add an image'
       showSiteMenu: true
@@ -125,6 +144,224 @@ fields:
     translationKeyFormat: null
     translationMethod: site
     type: craft\fields\Assets
+  bde3bd63-a118-435a-b947-3f2667918e1b:
+    contentColumnType: text
+    fieldGroup: null
+    handle: heading
+    instructions: ''
+    name: Heading
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  c8061611-d9e5-4ee6-b698-dc19feb2e2a5:
+    contentColumnType: text
+    fieldGroup: null
+    handle: callToAction
+    instructions: 'Adds a button link at the bottom of your text that can link out to other content'
+    name: 'Call to Action'
+    searchable: false
+    settings:
+      allowCustomText: '1'
+      allowTarget: '1'
+      defaultText: ''
+      selectLinkText: ''
+      types:
+        __assoc__:
+          -
+            - fruitstudios\linkit\models\Email
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - '1'
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - dotgovsupport@oaklandca.gov
+          -
+            - fruitstudios\linkit\models\Phone
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - ''
+          -
+            - fruitstudios\linkit\models\Url
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - '1'
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - 'https://www.oaklandca.gov'
+                -
+                  - allowAlias
+                  - ''
+                -
+                  - allowMailto
+                  - ''
+                -
+                  - allowHash
+                  - ''
+                -
+                  - allowPaths
+                  - ''
+          -
+            - fruitstudios\linkit\models\Twitter
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - ''
+          -
+            - fruitstudios\linkit\models\Facebook
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - ''
+          -
+            - fruitstudios\linkit\models\Instagram
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - ''
+          -
+            - fruitstudios\linkit\models\LinkedIn
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - ''
+          -
+            - fruitstudios\linkit\models\Entry
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - '1'
+                -
+                  - customLabel
+                  - ''
+                -
+                  - sources
+                  -
+                    - 'section:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f'
+                    - 'section:b3411cb1-e860-46ed-9cd6-58cf9b8daacb'
+                    - 'section:9da43fd8-c505-4d19-9486-e0cb669c568a'
+                    - 'section:8b7c4e26-9aab-4c5d-874e-aee151107de3'
+                    - 'section:983c9f6f-9251-4fd3-91e1-b598eccc6a1a'
+                    - 'section:28881fc8-3e61-4fdb-a5ee-cce1bab725bf'
+                    - 'section:be8acece-2031-4965-a62f-31911d00e24c'
+                    - 'section:98d541ae-56ee-4c98-ba9c-37438dc485a0'
+                    - 'section:24fa116b-8516-4626-84f3-86b685e71071'
+                    - 'section:b7e437e1-239f-4c5c-8c62-5f0323f9d22c'
+                    - 'section:70778563-6dac-453d-a4b0-5121f3a614b7'
+                -
+                  - customSelectionLabel
+                  - ''
+          -
+            - fruitstudios\linkit\models\Category
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - sources
+                  - '*'
+                -
+                  - customSelectionLabel
+                  - ''
+          -
+            - fruitstudios\linkit\models\Asset
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - '1'
+                -
+                  - customLabel
+                  - ''
+                -
+                  - sources
+                  -
+                    - 'folder:baf733c3-48be-42a7-8b4f-7a6bf9763542'
+                -
+                  - customSelectionLabel
+                  - 'Select Document'
+          -
+            - fruitstudios\linkit\models\User
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - sources
+                  - '*'
+                -
+                  - customSelectionLabel
+                  - ''
+                -
+                  - userPath
+                  - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: fruitstudios\linkit\fields\LinkitField
   d0cf7d52-44a5-44a7-9efa-ba27c7541ff9:
     contentColumnType: string
     fieldGroup: null

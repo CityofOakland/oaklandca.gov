@@ -5,13 +5,16 @@ instructions: 'Choose up to three (3) events to show on the page.'
 name: 'Page Events'
 searchable: true
 settings:
+  allowSelfRelations: false
   limit: '3'
   localizeRelations: false
   selectionLabel: ''
+  showSiteMenu: true
   source: null
   sources:
     - 'calendar:2'
   targetSiteId: null
+  validateRelatedElements: false
   viewMode: null
 translationKeyFormat: null
 translationMethod: site

@@ -3,13 +3,25 @@ fieldLayouts:
   7f11f9d7-2312-46de-b9f6-4361fac0a116:
     tabs:
       -
-        fields:
-          2894ae3a-7b9b-4435-8435-8df18709cf7b:
+        elements:
+          -
+            fieldUid: d349329b-ec60-41dd-8bfa-097958ff477c
+            instructions: null
+            label: null
             required: false
-            sortOrder: 2
-          d349329b-ec60-41dd-8bfa-097958ff477c:
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 2894ae3a-7b9b-4435-8435-8df18709cf7b
+            instructions: null
+            label: null
             required: false
-            sortOrder: 1
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Content
         sortOrder: 1
 fields:
@@ -74,12 +86,14 @@ fields:
     name: 'Hours Title'
     searchable: true
     settings:
-      charLimit: ''
+      byteLimit: null
+      charLimit: null
       code: ''
       columnType: text
       initialRows: '4'
       multiline: ''
       placeholder: ''
+      uiMode: normal
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText

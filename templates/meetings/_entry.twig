@@ -1,6 +1,46 @@
 {% extends '_layouts/_banner-with-nav.twig' %}
 {% set entry = event %}
 
+{% css %}
+  .embed-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+  }
+  .embed-container embed,
+  .embed-container iframe,
+  .embed-container object {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+{% endcss %}
+{% macro videoEmbed(videoUrl, videoTitle) %}
+  {% set splitVideoUrl = videoUrl | split('://')[1] | split('&')[0] %}
+  {% set title = videoTitle ?? "Meeting Video" %}
+  {% if splitVideoUrl starts with 'oakland.granicus.com' %}
+    {% set embed = "https://" ~ splitVideoUrl ~ "&starttime=undefined&stoptime=undefined&autostart=0&embed=1" %}
+  {% else %}
+    {% set embed = craft.videoEmbedder.getEmbedUrl(videoUrl) %}
+  {% endif %}
+  {% if embed | length %}
+    <p class="mt-4 mb-2 font-bold">{{ title }}</p>
+    <div class='mb-12 embed-container'>
+      <iframe src='{{ embed }}' frameborder='0' allowfullscreen="allowfullscreen"></iframe>
+    </div>
+  {% else %}
+    <p>
+      <a href="{{ videoUrl }}" target="_blank">{{ videoTitle }}: ({{ videoUrl }})</a>
+    </p>
+  {% endif %}
+{% endmacro %}
+
+{% import _self as macros %}
+
 {% block content %}
   {% block banner %}
     {% include '_partials/_page-banners.twig' with {
@@ -19,10 +59,10 @@
       <div class="sm:w-2/3 sm:mr-8">
         {% set startDate = event.startDate %}
         {% set endDate = event.endDate %}
-        <div class="p-4 text-white bg-gray-700 md:inline-flex md:items-center">
+        <div class="p-4 mb-8 text-white bg-gray-1000 md:inline-flex md:items-center">
           <h3 class="my-0 md:mr-8">Meeting</h3>
           <time datetime="{{ startDate | atom }}">
-            <h4 class="my-0 font-bold text-xxxxl">
+            <h4 class="my-0 text-4xl font-bold">
               {{ startDate.format("F j, Y") }}
             </h4>
             {% if not event.allDay %}
@@ -36,12 +76,13 @@
           </time>
         </div>
         {% if entry.body | length %}
-          <h3>Details</h3>
+          {% include "_partials/_elements/_module-header.twig" with {
+            headerText: "Details"
+          } %}
           <div class="body-text">
             {{ entry.body }}
           </div>
         {% endif %}
-        {# .relatedTo('and', 'not ' ~ minutes ~ ', not ' ~ agendas).all() #}
         {% set minuteCat = craft.categories.group('documentTypes').id(12).one %}
         {% set agendaCat = craft.categories.group('documentTypes').id(13).one %}
 
@@ -55,7 +96,9 @@
         {% set documents = entry.documents.id(otherDocs).all() %}
 
         {% if minutes | length %}
-          <h3>Minutes</h3>
+          {% include "_partials/_elements/_module-header.twig" with {
+            headerText: "Minutes"
+          } %}
           <ul>
             {% for entry in minutes %}
               {% set file = entry.documentFile.one %}
@@ -67,7 +110,9 @@
         {% endif %}
 
         {% if agendas | length %}
-          <h3>Agendas</h3>
+          {% include "_partials/_elements/_module-header.twig" with {
+            headerText: "Agendas"
+          } %}
           <ul>
             {% for entry in agendas %}
               {% set file = entry.documentFile.one %}
@@ -79,7 +124,9 @@
         {% endif %}
 
         {% if documents | length %}
-          <h3>Documents</h3>
+          {% include "_partials/_elements/_module-header.twig" with {
+            headerText: "Documents"
+          } %}
           <ul>
             {% for entry in documents %}
               {% set file = entry.documentFile.one %}
@@ -89,55 +136,45 @@
             {% endfor %}
           </ul>
         {% endif %}
-        {% if entry.videoLink | length %}
-          <h3>Video</h3>
-          {% set videoUrl = entry.videoLink %}
-          {% set splitVideoUrl = videoUrl | split('://')[1] | split('&')[0] %}
-          {% if splitVideoUrl starts with 'oakland.granicus.com' %}
-            {% set embed = "https://" ~ splitVideoUrl ~ "&starttime=undefined&stoptime=undefined&autostart=0&embed=1" %}
+
+        {% if entry.recordings | length or entry.videoLink %}
+          {% include "_partials/_elements/_module-header.twig" with {
+            headerText: "Recordings"
+          } %}
+          {% if entry.recordings | length %}
+            {% for block in entry.recordings.all() %}
+              <div class="mb-8">
+                {% switch block.type %}
+                  {% case "video" %}
+                    {{ macros.videoEmbed(block.videoLink, block.videoTitle) }}
+                  {% case "audio" %}
+                      <h3 class="mb-4 text-lg font-semibold">{{ block.audioTitle ?? "Audio Recording" }}</h3>
+                    <p class="mt-0"><a href="{{ block.audioLink }}" target="_blank">{{ block.audioLink }}</a></p>
+                  {% case "embed" %}
+                    {% if block.embedTitle %}
+                      <h3 class="mb-4 text-lg font-semibold">{{ block.embedTitle }}</h3>
+                      {{ block.embedCode | raw }}
+                    {% endif %}
+                  {% default %}
+                {% endswitch %}
+              </div>
+            {% endfor %}
           {% else %}
-            {% set embed = craft.videoEmbedder.getEmbedUrl(entry.videoLink) %}
-          {% endif %}
-          {% if embed | length %}
-            <style>
-              .embed-container {
-                position: relative;
-                padding-bottom: 56.25%;
-                height: 0;
-                overflow: hidden;
-                max-width: 100%;
-              }
-              .embed-container embed,
-              .embed-container iframe,
-              .embed-container object {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-              }
-            </style>
-            <div class='embed-container'>
-              <iframe src='{{ embed }}' frameborder='0' allowfullscreen="allowfullscreen"></iframe>
-            </div>
-          {% else %}
-            <p>
-              <a href="{{ entry.videoLink }}" target="_blank">Meeting Video ({{ entry.videoLink }})</a>
-            </p>
+            {{ macros.videoEmbed(entry.videoLink) }}
           {% endif %}
         {% endif %}
+
         {% if entry.registrationLink | length %}
           <p>
             <a class="btn" href="{{ entry.registrationLink }}">Register for this event</a>
           </p>
         {% endif %}
         {% if entry.eventContact | length %}
-          <h3>Contact</h3>
+          {% include "_partials/_elements/_module-header.twig" with {
+            headerText: "Contact"
+          } %}
           {{ entry.eventContact }}
         {% endif %}
-        {# {% if entry.embeddedContent.exists() %}
-          {{ entry.embeddedContent.one.codeInsertion | raw }}
-        {% endif %} #}
       </div>
       <div class="sm:flex-1">
         {% if entry.eventImage.exists() %}
@@ -146,15 +183,20 @@
           </figure>
         {% endif %}
         {% if entry.addresses | length %}
-          <h3>Address{% if entry.addresses | length > 1%}es{% endif %}</h3>
+          {% set addressTitle = (entry.addresses | length > 1) ? "Addresses" : "Address" %}
+          {% include "_partials/_elements/_module-header.twig" with {
+            headerText: addressTitle
+          } %}
           {% for block in entry.addresses.all() %}
             {% switch block.type %}
               {% case "location" %}
-                {% if block.locationName %}<h4 class="mb-0 text-base uppercase font-heading">{{ block.locationName }}</h4>{% endif %}
-                {% include '_partials/_elements/_address.twig' %}
+                {% if block.locationName %}<h4 class="mb-0 text-base uppercase">{{ block.locationName }}</h4>{% endif %}
+                {% include '_partials/_elements/_address.twig' with {
+                  location: block
+                } %}
               {% case "onlineLocation" %}
                 <div class="mt-4 mb-8">
-                  {% if block.locationName %}<h4 class="mb-0 text-base uppercase font-heading">{{ block.locationName }}</h4>{% endif %}
+                  {% if block.locationName and block.locationName != "Address" %}<h3 class="mb-0 text-base uppercase">{{ block.locationName }}</h3>{% endif %}
                   {{ block.locationDescription }}
                   <p class="mb-0">
                     <a href="{{ block.webAddress }}" class="btn btn-sm">Visit {{ block.locationName }}</a>

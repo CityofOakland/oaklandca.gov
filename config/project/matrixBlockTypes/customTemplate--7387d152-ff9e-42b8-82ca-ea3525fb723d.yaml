@@ -30,4 +30,4 @@ fields:
     type: superbig\templateselect\fields\TemplateSelectField
 handle: customTemplate
 name: 'Custom Template'
-sortOrder: 16
+sortOrder: 20

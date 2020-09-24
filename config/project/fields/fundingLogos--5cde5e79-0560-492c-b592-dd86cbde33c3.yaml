@@ -5,21 +5,26 @@ instructions: 'Add logos for any funders that are involved with this project. Th
 name: 'Funding Logos'
 searchable: true
 settings:
+  allowSelfRelations: false
   allowedKinds:
     - image
   defaultUploadLocationSource: 'volume:a31d23bf-e3ee-4942-95e0-3d14c29620bb'
   defaultUploadLocationSubpath: ''
   limit: ''
   localizeRelations: false
+  previewMode: full
   restrictFiles: '1'
   selectionLabel: 'Add a logo'
+  showSiteMenu: true
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: true
   singleUploadLocationSource: 'volume:4494beaa-9c1f-44ae-b040-36f60f3d055d'
   singleUploadLocationSubpath: ''
   source: null
   sources: '*'
   targetSiteId: null
-  useSingleFolder: '1'
-  validateRelatedElements: ''
+  useSingleFolder: true
+  validateRelatedElements: false
   viewMode: list
 translationKeyFormat: null
 translationMethod: site

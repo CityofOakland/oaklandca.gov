@@ -1,6 +1,5 @@
-<div>
-  <a class="anchor-link" id="{{ blockId }}"></a>
-  <{{ heading }} class="{{ hClass }}">{{ block.heading }}</{{ heading }}>
+<div class="{% if not loop.last %}mb-12{% endif %}">
+  {% include "_partials/_content-builder/_blocks/_elements/_heading.twig" %}
   {{ block.linkSetDescription }}
   <ul class="items-stretch mt-0 card-grid card-grid-tight">
     {% for linkSet in block.linkSet.all() %}
@@ -12,12 +11,11 @@
         {% set isDoc = false %}
       {% endif %}
       <li>
-        <a class="block h-full p-5 border border-gray-500 rounded hover:bg-green-100" href="{{ link.url }}" target="{{ link.target }}">
-          <{{ subheading }} class="my-0 text-lg text-gray-500 md:text-xl">{{ link.text }}</{{ subheading }}>
-          <p class="mt-4 mb-0 text-sm text-gray-500 md:text-base">{{ linkSet.linkDescription }}</p>
+        <a class="block h-full p-5 transition-all duration-75 bg-blue-100 rounded shadow text-cool-gray-800 hover:bg-blue-200 hover:text-cool-gray-900" href="{{ link.url }}" target="{{ link.target }}">
+          <{{ subheading }} class="my-0 text-lg md:text-xl">{{ link.text }}</{{ subheading }}>
+          <p class="mt-4 mb-0 text-sm md:text-base">{{ linkSet.linkDescription }}</p>
         </a>
       </li>
     {% endfor %}
   </ul>
 </div>
-

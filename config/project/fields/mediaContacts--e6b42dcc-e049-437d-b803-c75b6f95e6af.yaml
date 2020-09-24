@@ -5,14 +5,16 @@ instructions: ''
 name: 'Media Contacts'
 searchable: true
 settings:
+  allowSelfRelations: false
   limit: ''
   localizeRelations: false
   selectionLabel: 'Add a contact'
+  showSiteMenu: true
   source: null
   sources:
     - 'section:4c69249e-8905-4924-88d0-4eaa4ce13edc'
   targetSiteId: null
-  validateRelatedElements: '1'
+  validateRelatedElements: true
   viewMode: null
 translationKeyFormat: null
 translationMethod: site

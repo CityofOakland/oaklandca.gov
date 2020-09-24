@@ -6,9 +6,9 @@ name: Timeline
 searchable: true
 settings:
   contentTable: '{{%matrixcontent_timeline}}'
-  localizeBlocks: false
   maxBlocks: '6'
   minBlocks: ''
+  propagationMethod: all
 translationKeyFormat: null
 translationMethod: site
 type: craft\fields\Matrix

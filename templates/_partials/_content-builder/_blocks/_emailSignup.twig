@@ -1,0 +1,23 @@
+<div class="p-6 bg-cool-gray-100 {% if not loop.last %}mb-12{% endif %}">
+  {% include "_partials/_content-builder/_blocks/_elements/_heading.twig" with {
+    addClasses: "mt-0 mb-4"
+  } %}
+  {% if block.description %}
+    <div class="max-w-sm text-sm">
+      {{ block.description }}
+    </div>
+  {% endif %}
+  <form action="" class="flex flex-col items-end space-y-2 md:space-y-0 md:space-x-6 md:flex-row">
+    <fieldset class="md:w-2/5">
+      <label for="firstName" class="mb-2 text-sm">First Name</label>
+      <input type="text" class="w-full p-2 bg-white rounded shadow" name="firstName" id="firstName" value="">
+    </fieldset>
+    <fieldset class="md:w-2/5">
+      <label for="email" class="mb-2 text-sm">Email</label>
+      <input type="email" class="w-full p-2 bg-white rounded shadow" name="firstName" id="email" value="">
+    </fieldset>
+    <fieldset class="flex-1 w-full">
+      <input class="w-full px-6 py-2 mt-4 font-bold text-white transition-all duration-150 bg-blue-800 border border-transparent rounded shadow cursor-pointer md:mt-0 md:w-auto hover:text-blue-800 hover:border-blue-800 hover:shadow-none hover:bg-transparent hover:border-bg-blue-800" type="submit" value="Submit »">
+    </fieldset>
+  </form>
+</div>

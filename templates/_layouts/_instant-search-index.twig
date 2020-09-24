@@ -22,18 +22,18 @@
       bannerTitle: entry.title | replace(' Index', '') ~ bannerTitleSuffix ?? '',
     } %}
   {% endblock %}
-  <div class="bg-new-gray-100" id="search-bar-container">
+  <div class="bg-gray-100" id="search-bar-container">
     <div class="container text-right">
       <div class="flex flex-col sm:flex-row">
         <label class="hidden-visually" for="search-input">{{ searchInputText ?? 'Search this Index' }}</label>
         <input class="w-full p-2 rounded-none appearance-none md:py-4 md:px-8" id="search-input" name="keywords" required type="search" value="">
       </div>
       {% if facets is defined %}
-        <a class="inline-block mt-4 text-right text-new-gray-800 hover:text-new-gray-900" href="#" id="filter-reveal">Show Filters</a>
+        <a class="inline-block mt-4 text-right text-gray-800 hover:text-gray-900" href="#" id="filter-reveal">Show Filters</a>
       {% endif %}
     </div>
   </div>
-  <div class="relative invisible h-0 overflow-hidden opacity-0 bg-new-gray-300 text-new-gray-700 z-neg-10 trans trans-all" id="algolia-filters">
+  <div class="relative invisible h-0 overflow-hidden opacity-0 bg-gray-300 text-gray-700 z-neg-10 trans trans-all" id="algolia-filters">
     <div class="container flex-col -my-4" id="facet-holder">
       {% if facets is defined %}
         {% for facet in facets %}
@@ -46,7 +46,7 @@
     <div class="container">
       <div class="w-full">
         <div id="hits"></div>
-        <div class="flex items-center text-xxl">
+        <div class="flex items-center text-2xl">
           <div class="inline-block" id="bottom-pagination"></div>
         </div>
       </div>

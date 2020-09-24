@@ -3,13 +3,25 @@ fieldLayouts:
   36901763-c86a-4bda-9d82-c7a57b5aa5fc:
     tabs:
       -
-        fields:
-          519a6fee-ee4d-479c-a823-a3501a9adfbf:
+        elements:
+          -
+            fieldUid: 519a6fee-ee4d-479c-a823-a3501a9adfbf
+            instructions: null
+            label: null
             required: true
-            sortOrder: 1
-          ea37cb8f-52f5-4b75-a1f0-a6a5c5581093:
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: ea37cb8f-52f5-4b75-a1f0-a6a5c5581093
+            instructions: null
+            label: null
             required: true
-            sortOrder: 2
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Content
         sortOrder: 1
 fields:
@@ -21,12 +33,14 @@ fields:
     name: 'Agency Name'
     searchable: true
     settings:
-      charLimit: ''
+      byteLimit: null
+      charLimit: null
       code: ''
       columnType: text
       initialRows: '4'
       multiline: ''
       placeholder: ''
+      uiMode: normal
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText

@@ -1,0 +1,9 @@
+enabled: '1'
+handle: activecampaign
+name: ActiveCampaign
+settings:
+  apiKey: $AC_API_KEY
+  apiUrl: $AC_API_URL
+sortOrder: 1
+tokenId: null
+type: verbb\formie\integrations\emailmarketing\ActiveCampaign

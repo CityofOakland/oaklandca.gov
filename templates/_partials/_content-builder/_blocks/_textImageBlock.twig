@@ -2,25 +2,33 @@
 {% set direction = imageIsLeft ? "md:flex-row" : "md:flex-row-reverse" %}
 {% set imagePad = imageIsLeft ? "md:pr-4" : "md:pl-4" %}
 {% set textPad = imageIsLeft ? "md:pl-4" : "md:pr-4" %}
-<div class="md:flex my-8 {{ direction }}">
-{% set image = block.image.one %}
-{% set transformedImage = craft.imager.transformImage(image, { width: 320 },{ fillTransforms: true}) %}
-{% set transformedImages = craft.imager.transformImage(image, [
-    { width: 1400 },
-    { width: 912 },
-    { width: 528, jpegQuality: 65 }
-],{ fillTransforms: true}) %}
-<figure class="mb-6 {{ imagePad }} md:w-{{ block.imageColumnWidth }}">
-    {% set text = image.altText ?? image.filename %}
-    <img
-    src="{{ transformedImage.url }}"
-    srcset="{{ transformedImages | srcset }}"
-    sizes="100vw"
-    alt="{{ text }}"
-    class="block border border-gray-200">
-    {% if block.displayAltTextAsCaption %}<figcaption class="block text-center my-2 text-base">{{ text }}</figcaption>{% endif %}
-</figure>
-<div class="{{ textPad }} md:flex-1 o-override o-6 body-text">
-    {{ block.textBlock }}
-</div>
+<div class="{% if not loop.last %}mb-12{% endif %}">
+  {% include "_partials/_content-builder/_blocks/_elements/_heading.twig" %}
+  <div class="md:flex {{ direction }}">
+    {% set image = block.image.one %}
+    {% set transformedImage = craft.imager.transformImage(image, { width: 320 },{ fillTransforms: true}) %}
+    {% set transformedImages = craft.imager.transformImage(image, [
+        { width: 1400 },
+        { width: 912 },
+        { width: 528, jpegQuality: 65 }
+    ],{ fillTransforms: true}) %}
+    <figure class="mb-6 md:mb-0 {{ imagePad }} md:w-{{ block.imageColumnWidth }}">
+        {% set text = image.altText ?? image.filename %}
+        <img
+        src="{{ transformedImage.url }}"
+        srcset="{{ transformedImages | srcset }}"
+        sizes="100vw"
+        alt="{{ text }}"
+        class="block border border-gray-200">
+        {% if block.displayAltTextAsCaption %}<figcaption class="block my-2 text-base text-center">{{ text }}</figcaption>{% endif %}
+    </figure>
+    <div class="{{ textPad }} md:flex-1 flex flex-col">
+      <div class="body-text">
+        {{ block.textBlock }}
+      </div>
+      {% include "_partials/_content-builder/_blocks/_elements/_ctaLink.twig" with {
+        link: block.callToAction
+      } %}
+    </div>
+  </div>
 </div>

@@ -1,0 +1,81 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{# @var entry \craft\elements\Entry #}
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    {# Calls in the SEOmatic tags, all handled through the CMS settings #}
+    {% hook 'seomaticRender' %}
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,600,700&display=swap" rel="stylesheet">
+    {{ craft.twigpack.includeCssModule("/css/app.css") }}
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/assets/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/assets/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/assets/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+
+  {# We set the class to overflow-x-hidden to prevent content from stretching page width on mobile views.#}
+  <body class="overflow-x-hidden font-body">
+    <div class="container mx-auto">
+      {% include "staging/_modules/heading" with {
+        heading: "Our Strategies"
+      } %}
+      {# Our holder for the aspect ratio blocks #}
+      <div class="flex flex-col space-y-6 md:space-y-0 md:space-x-6 md:flex-row md:items-stretch">
+        {% set strategies = [
+          { image: "/assets/img/sushil-nash-g8yJjfQrOJA-unsplash.jpg",
+            title: "Community Healing & Restorative Justice"},
+          { image: "/assets/img/devin-avery-lhAy4wmkjSk-unsplash.jpg",
+            title: "Youth Diversion & Reentry"},
+          { image: "/assets/img/mike-erskine-Xtnt5xtK03E-unsplash.jpg",
+            title: "Mobile Assistance Community Responders"}
+        ] %}
+        {% for item in strategies %}
+          {% include "staging/_modules/title-card-with-image" with {
+            img: item.image,
+            title: item.title
+          } %}
+        {% endfor %}
+      </div>
+      <p class="mt-6 font-semibold"><a href="#" class="text-green-800 underline">Learn more about our strategies »</a></p>
+
+      {# Opportunities & Resources Block #}
+      <div class="my-6 bg-cool-gray-100 full-width md:my-12">
+        <div class="container py-6 mx-auto md:py-16">
+          {% include "staging/_modules/heading" with {
+            heading: "Opportunities & Resources"
+          } %}
+          <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {% set oppLinks = ["Community Healing Mini-Grants", "Funding Opportunities", "Resources for Grantees", "Gun Violence Response", "Gender-based Violence Respones", "Our Grantees"] %}
+            {% for item in oppLinks %}
+              <a href="#" class="relative p-4 font-semibold text-gray-900 duration-150 bg-white border-l-8 border-green-700 rounded rounded-l-none shadow bordertransition-all hover:bg-cool-gray-100 hover:text-gray-1000 hover:shadow-btn">
+                {{ item }}
+              </a>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine-ie11.min.js" defer></script>
+    {{ craft.twigpack.includeJsModule("/js/manifest.js") }}
+    {{ craft.twigpack.includeJsModule("/js/vendor.js") }}
+    {{ craft.twigpack.includeJsModule("/js/app.js") }}
+  </body>
+</html>

@@ -1,4 +1,4 @@
-<section class="bg-white">
+<section class="mt-12 bg-white">
   <a class="anchor-link" id="page-about"></a>
   {% include '_partials/_elements/_module-header.twig' with {
     headerText: pageAboutHeaderText ?? "About",
@@ -7,15 +7,13 @@
     {% if entry.teams | length %}
       <div class="sm:w-1/4 sm:mr-8">
         {% for entry in entry.teams.all() %}
-          <a href="{{ entry.url }}" class="btn btn-sm block text-center mb-4">{{ entry.title }}</a>
+          <a href="{{ entry.url }}" class="block mb-4 text-center btn btn-sm">{{ entry.title }}</a>
         {% endfor %}
       </div>
     {% endif %}
     <div class="sm:flex-1">
-      <div class="text-xl">
-        <div class="body-text">
-          {{ entry.about }}
-        </div>
+      <div class="body-text">
+        {{ entry.about }}
       </div>
     </div>
   </div>

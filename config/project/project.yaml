@@ -1,4 +1,4 @@
-dateModified: 1600130542
+dateModified: 1600983334
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -265,7 +265,7 @@ plugins:
     edition: standard
     enabled: true
     licenseKey: 2WB604K477I8QSMPA1DIIVGV
-    schemaVersion: 2.1.1
+    schemaVersion: 2.0.0
 system:
   edition: pro
   live: true

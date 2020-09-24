@@ -16,7 +16,11 @@
               "newsEntries" or
               "meetingEntries" or
               "eventEntries" or
-              "linksWithDescriptions"
+              "linksWithDescriptions" or
+              "linkBlocksWithIcons" or
+              "linkBlocksWithImages" or
+              "statsBlockWithIcons" or
+              "textImageBlock"
       %}
         {% if block.heading %}
           {% set sideNavLinks = sideNavLinks | merge([{
@@ -33,7 +37,7 @@
   {% if about ?? '' %}
     {% set sideNavLinks = sideNavLinks | merge([{title: "About", link: "page-about"}]) %}
   {% endif %}
-  {% if relatedContent ?? '' %}
+  {% if relatedContent ?? '' and not entry.hideRelatedPages %}
     {% set sideNavLinks = sideNavLinks | merge([{title: "Related Pages", link: "page-relatedpages"}]) %}
   {% endif %}
   {% if contact ?? '' %}
@@ -42,8 +46,8 @@
 
   {%- set sideNav -%}
     {% if sideNavLinks | length %}
-      <div class="w-1/5 mr-10 font-bold oak-hidden lg:w-1/6 md:block font-heading">
-        <ul class="my-0 text-sm o-2">
+      <div class="w-1/5 mr-10 font-bold oak-hidden lg:w-1/6 md:block">
+        <ul class="my-0 text-sm">
           {% for item in sideNavLinks %}
             <li>
               <a
@@ -58,8 +62,8 @@
   {%- endset -%}
 {% elseif customNav %}
   {%- set sideNav -%}
-    <div class="w-1/6 mr-10 font-bold oak-hidden sm:block font-heading">
-      <ul class="my-0 text-sm o-2">
+    <div class="w-1/6 mr-10 font-bold oak-hidden sm:block">
+      <ul class="my-0 text-sm">
         {% for item in customNav %}
           <li>
             <a
@@ -74,8 +78,8 @@
 {% else %}
   {%- set sideNav -%}
     {% if navMenu is defined and navMenu | length %}
-      <div class="w-1/6 mr-10 font-bold oak-hidden sm:block font-heading">
-        <ul class="my-0 text-sm o-2">
+      <div class="w-1/6 mr-10 font-bold oak-hidden sm:block">
+        <ul class="my-0 text-sm">
           {% for key,value in navMenu %}
             {% if value %}
               <li>

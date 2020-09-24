@@ -6,9 +6,9 @@ name: 'Call to Action'
 searchable: true
 settings:
   contentTable: '{{%matrixcontent_calltoaction}}'
-  localizeBlocks: false
   maxBlocks: '3'
   minBlocks: ''
+  propagationMethod: all
 translationKeyFormat: null
 translationMethod: site
 type: craft\fields\Matrix

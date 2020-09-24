@@ -138,6 +138,8 @@ fields:
       max: '99'
       min: '1'
       prefix: ''
+      previewCurrency: null
+      previewFormat: decimal
       size: null
       suffix: ''
     translationKeyFormat: null
@@ -156,6 +158,8 @@ fields:
       max: '99'
       min: '1'
       prefix: ''
+      previewCurrency: null
+      previewFormat: decimal
       size: null
       suffix: ''
     translationKeyFormat: null

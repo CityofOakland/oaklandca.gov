@@ -1,7 +1,38 @@
+fieldLayouts:
+  b7570fc4-9a91-4b49-bae3-7cc7113b82f9:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\TitleField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
 handle: logos
 hasUrls: true
 name: Logos
 settings:
+  addSubfolderToRootUrl: true
   autoFocalPoint: ''
   bucket: cao-94612
   bucketSelectionMode: choose
@@ -14,6 +45,6 @@ settings:
   secret: $S3_SECRET
   storageClass: ''
   subfolder: logos
-sortOrder: 12
+sortOrder: 13
 type: craft\awss3\Volume
 url: 'https://s3.us-west-2.amazonaws.com/cao-94612/'

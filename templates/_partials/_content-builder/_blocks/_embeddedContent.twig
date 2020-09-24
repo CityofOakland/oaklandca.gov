@@ -1,3 +1,3 @@
-<div class="my-6">
+<div class="{% if not loop.last %}mb-12{% endif %}">
   {{ block.entry.one.codeInsertion | raw }}
 </div>

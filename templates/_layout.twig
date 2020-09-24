@@ -5,11 +5,11 @@
 
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
     {# Calls in the SEOmatic tags, all handled through the CMS settings #}
     {% hook 'seomaticRender' %}
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:600,800|Noto+Sans:400,400i,700,700i&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,600,700&display=swap" rel="stylesheet">
     {{ craft.twigpack.includeCssModule("/css/app.css") }}
     <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicon/apple-icon-60x60.png">
@@ -51,7 +51,7 @@
   {# We’re setting the class to overflow-x-hidden to prevent content from stretching page width on mobile views.#}
   {# Sets the navigation to the nav section entry, "Main Nav" #}
   {% set mainNav = craft.entries.section('navigation').slug('main-nav').one() %}
-  <body class="overflow-x-hidden {{ pageClass ?? '' }}">
+  <body class="overflow-x-hidden font-body {{ pageClass ?? '' }}">
     <div class="page-holder">
       {% include '_partials/_elements/_nav-bar.twig' %}
       <main>
@@ -59,7 +59,7 @@
         {% block content %}
           <div class="container">
             <p>No content has been added to this layout. Please make sure to include the following in your template:</p>
-            <pre class="inline-block p-4 text-white whitespace-pre-line bg-gray-500">{% verbatim %}
+            <pre class="inline-block p-4 text-white whitespace-pre-line bg-gray-800">{% verbatim %}
             {% block content %}
             {% endblock %}{% endverbatim %}</pre>
           </div>

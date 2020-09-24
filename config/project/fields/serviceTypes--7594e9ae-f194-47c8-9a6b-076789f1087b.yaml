@@ -5,13 +5,18 @@ instructions: ''
 name: 'Service Types'
 searchable: true
 settings:
+  allowLimit: false
+  allowMultipleSources: false
+  allowSelfRelations: false
   branchLimit: ''
   limit: null
   localizeRelations: false
   selectionLabel: 'Add a type'
+  showSiteMenu: true
   source: 'group:8bcf4697-1dd2-47b2-91e2-8ad9b4b86741'
   sources: '*'
   targetSiteId: null
+  validateRelatedElements: false
   viewMode: null
 translationKeyFormat: null
 translationMethod: site
