@@ -7,7 +7,7 @@ $textBlock = [
 $adminTextBlock = $textBlock;
 $linksBlock = [
   'label' => 'Links',
-  'types' => ['linksWithDescriptions', 'linkBlocksWithImages', 'linkBlocksWithIcons', 'largeEntryLinks', 'smallEntryLinks', 'newsEntries', 'eventEntries', 'meetingEntries', 'callToAction'],
+  'types' => ['linksWithDescriptions', 'largeEntryLinks', 'smallEntryLinks', 'newsEntries', 'eventEntries', 'meetingEntries', 'callToAction'],
 ];
 $adminLinksBlock = [
   'label' => 'Links',
