@@ -12,6 +12,7 @@ settings:
   defaultUploadLocationSubpath: ''
   limit: ''
   localizeRelations: false
+  previewMode: full
   restrictFiles: '1'
   selectionLabel: 'Add a logo'
   showSiteMenu: true

@@ -240,6 +240,7 @@ fields:
       defaultUploadLocationSubpath: ''
       limit: '1'
       localizeRelations: false
+      previewMode: full
       restrictFiles: ''
       selectionLabel: 'Add an image'
       showSiteMenu: true
