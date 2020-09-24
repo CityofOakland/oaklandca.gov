@@ -13,10 +13,10 @@ $adminLinksBlock = [
   'label' => 'Links',
   'types' => ['linksWithDescriptions', 'linkBlocksWithImages', 'linkBlocksWithIcons', 'largeEntryLinks', 'smallEntryLinks', 'newsEntries', 'eventEntries', 'meetingEntries', 'callToAction']
 ];
-$pageElementsBlock = [
-  'label' => 'Page Elements',
-  'types' => ['statsBlockWithIcons']
-];
+// $pageElementsBlock = [
+//   'label' => 'Page Elements',
+//   'types' => ['statsBlockWithIcons']
+// ];
 $adminPageElementsBlock = [
   'label' => 'Page Elements',
   'types' => ['statsBlockWithIcons', 'customTemplate', 'embeddedContent', 'emailSignup']
@@ -59,19 +59,16 @@ if ($isUserAdmin) {
     $linksBlock,
     $imagesBlock,
     $tablesBlock,
-    $pageElementsBlock
   ];
   $newsPressBlock = [
     $textBlock,
     $imagesBlock,
     $tablesBlock,
-    $pageElementsBlock
   ];
   $resourcesBlock = [
     $textBlock,
     $imagesBlock,
     $tablesBlock,
-    $pageElementsBlock
   ];
   $servicesBlock = [
     $textBlock,
