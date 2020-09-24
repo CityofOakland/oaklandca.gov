@@ -1,0 +1,68 @@
+field: fe5b4078-9713-41ab-a60c-66622aed9991
+fieldLayouts:
+  ffec0563-08e9-4114-ac44-fd739f52a948:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: ff296662-c84b-4d15-8bcf-d4d851573f51
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: b703d11b-3d2f-4305-b0bf-3abf4ebeeec7
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  b703d11b-3d2f-4305-b0bf-3abf4ebeeec7:
+    contentColumnType: text
+    fieldGroup: null
+    handle: embedCode
+    instructions: ''
+    name: 'Embed Code'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: '1'
+      columnType: null
+      initialRows: '4'
+      multiline: '1'
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  ff296662-c84b-4d15-8bcf-d4d851573f51:
+    contentColumnType: text
+    fieldGroup: null
+    handle: embedTitle
+    instructions: ''
+    name: 'Embed Title'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: embed
+name: Embed
+sortOrder: 3
