@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "65949154d33978e23981b094b4372ef8",
+    "content-hash": "b28e59b0af211f5fbf495e9f2945e97c",
     "packages": [
         {
             "name": "aelvan/inlin",
@@ -1036,11 +1036,11 @@
         },
         {
             "name": "craftcms/redactor",
-            "version": "2.7.5",
+            "version": "2.8.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/redactor/zipball/ebbf50acd8f543b1e1d79c11a3727ab1489d7cbb",
-                "reference": "ebbf50acd8f543b1e1d79c11a3727ab1489d7cbb",
+                "url": "https://api.github.com/repos/craftcms/redactor/zipball/2fff5171f89538e84921119e8af533e6379ad24b",
+                "reference": "2fff5171f89538e84921119e8af533e6379ad24b",
                 "shasum": ""
             },
             "require": {
@@ -1081,7 +1081,7 @@
                 "docs": "https://github.com/craftcms/redactor/blob/v2/README.md",
                 "rss": "https://github.com/craftcms/redactor/commits/v2.atom"
             },
-            "time": "2020-09-22T13:02:23+00:00"
+            "time": "2020-09-30T16:50:06+00:00"
         },
         {
             "name": "craftcms/server-check",
@@ -4834,11 +4834,11 @@
         },
         {
             "name": "nystudio107/craft-seomatic",
-            "version": "3.3.18",
+            "version": "3.3.21",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/2c32a61643c406577a80982c2b9d6d1f975dfd7d",
-                "reference": "2c32a61643c406577a80982c2b9d6d1f975dfd7d",
+                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/618d96de589275bfcb97f3395304f1fd6196485c",
+                "reference": "618d96de589275bfcb97f3395304f1fd6196485c",
                 "shasum": ""
             },
             "require": {
@@ -4902,7 +4902,7 @@
                 "docs": "https://nystudio107.com/plugins/seomatic/documentation",
                 "issues": "https://nystudio107.com/plugins/seomatic/support"
             },
-            "time": "2020-09-01T03:03:28+00:00"
+            "time": "2020-09-30T13:32:55+00:00"
         },
         {
             "name": "nystudio107/craft-twigpack",
@@ -8409,11 +8409,11 @@
         },
         {
             "name": "verbb/field-manager",
-            "version": "2.2.0",
+            "version": "2.2.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/verbb/field-manager/zipball/fedbf0eeb514405e6afbd0e87aaa40ac46f605f8",
-                "reference": "fedbf0eeb514405e6afbd0e87aaa40ac46f605f8",
+                "url": "https://api.github.com/repos/verbb/field-manager/zipball/bcc9bbc0d36daa19f8dc4dcd9b7f3369b9f12bd7",
+                "reference": "bcc9bbc0d36daa19f8dc4dcd9b7f3369b9f12bd7",
                 "shasum": ""
             },
             "require": {
@@ -8456,7 +8456,7 @@
                 "docs": "https://github.com/verbb/field-manager",
                 "rss": "https://github.com/verbb/field-manager/commits/v2.atom"
             },
-            "time": "2020-09-05T07:03:04+00:00"
+            "time": "2020-09-28T09:06:01+00:00"
         },
         {
             "name": "verbb/formie",
@@ -8625,11 +8625,11 @@
         },
         {
             "name": "verbb/super-table",
-            "version": "2.6.2",
+            "version": "2.6.3",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/verbb/super-table/zipball/34a3c1a79c2956fc0c83c349fa2b303b4d9cbced",
-                "reference": "34a3c1a79c2956fc0c83c349fa2b303b4d9cbced",
+                "url": "https://api.github.com/repos/verbb/super-table/zipball/d1e7b06082aebb67750e0793eaa7f0e5a868107e",
+                "reference": "d1e7b06082aebb67750e0793eaa7f0e5a868107e",
                 "shasum": ""
             },
             "require": {
@@ -8674,7 +8674,7 @@
                 "docs": "https://github.com/verbb/super-table",
                 "rss": "https://github.com/verbb/super-table/commits/v2.atom"
             },
-            "time": "2020-08-21T00:48:21+00:00"
+            "time": "2020-09-29T00:19:36+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -9030,11 +9030,11 @@
         },
         {
             "name": "voku/stringy",
-            "version": "6.3.1",
+            "version": "6.4.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/voku/Stringy/zipball/68429ad7626e94e2ec3a2a9f0b530e96ebb4a4db",
-                "reference": "68429ad7626e94e2ec3a2a9f0b530e96ebb4a4db",
+                "url": "https://api.github.com/repos/voku/Stringy/zipball/b534a95b58b020faf3e3b779abc0bc277b5fb83c",
+                "reference": "b534a95b58b020faf3e3b779abc0bc277b5fb83c",
                 "shasum": ""
             },
             "require": {
@@ -9051,9 +9051,6 @@
             "replace": {
                 "danielstjules/stringy": "~3.0"
             },
-            "require-dev": {
-                "phpunit/phpunit": "~6.0 || ~7.0"
-            },
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -9063,7 +9060,6 @@
                     "src/Create.php"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -9094,25 +9090,7 @@
                 "utility",
                 "utils"
             ],
-            "funding": [
-                {
-                    "url": "https://www.paypal.me/moelleken",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/voku",
-                    "type": "github"
-                },
-                {
-                    "url": "https://www.patreon.com/voku",
-                    "type": "patreon"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/voku/stringy",
-                    "type": "tidelift"
-                }
-            ],
-            "time": "2020-05-24T00:26:26+00:00"
+            "time": "2020-09-27T21:32:36+00:00"
         },
         {
             "name": "voku/urlify",
