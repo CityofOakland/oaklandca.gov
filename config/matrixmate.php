@@ -19,7 +19,7 @@ $adminLinksBlock = [
 // ];
 $adminPageElementsBlock = [
   'label' => 'Page Elements',
-  'types' => ['statsBlockWithIcons', 'customTemplate', 'embeddedContent', 'emailSignup']
+  'types' => ['statsBlockWithIcons', 'timeline', 'customTemplate', 'embeddedContent', 'emailSignup']
 ];
 $imagesBlock = [
   'label' => 'Images',

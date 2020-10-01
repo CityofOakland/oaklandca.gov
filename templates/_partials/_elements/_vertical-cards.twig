@@ -1,6 +1,6 @@
-<article>
+<article class="overflow-hidden bg-white rounded shadow">
   {% if not photoHide ?? '' %}
-      <figure class="relative z-0 flex items-center justify-center w-full p-4 mb-4 bg-gray-300 aspect-ratio-box aspect-ratio-4/3">
+    <figure class="relative z-0 flex items-center justify-center w-full p-4 bg-gray-300 pb-3/5">
       {% if photo | length %}
         <img src="{{ photo.url }}" class="absolute inset-0 object-cover w-full h-full aspect-ratio" alt="{{ photo.altText ?? ''}}">
       {% elseif icon is defined %}
@@ -10,13 +10,15 @@
       {% endif %}
     </figure>
   {% endif %}
-  <div class="mb-2 text-base text-gray-800 uppercase">{{ byline }}</div>
-  <h3 class="mt-0 mb-4 text-xl">
-    <a href="{{ url }}">{{ title }}</a>
-  </h3>
-  {% if not summaryHide ?? '' %}
-    <div class="text-base text-gray-1000">
-      {{ body }}
-    </div>
-  {% endif %}
+  <div class="p-4">
+    <div class="mb-2 text-sm text-gray-800 uppercase">{{ byline }}</div>
+    <h3 class="mt-0 mb-2 text-lg">
+      <a href="{{ url }}" class="line-clamp-3">{{ title }}</a>
+    </h3>
+    {% if not summaryHide ?? '' %}
+      <div class="text-sm text-gray-1000 line-clamp-4">
+        {{ body | retcon('attr', '*', { class: 'mt-2 mb-0' })}}
+      </div>
+    {% endif %}
+  </div>
 </article>

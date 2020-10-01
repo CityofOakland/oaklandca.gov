@@ -121,7 +121,7 @@ fields:
       max: '99'
       min: '1'
       prefix: ''
-      previewCurrency: null
+      previewCurrency: ''
       previewFormat: decimal
       size: null
       suffix: ''
@@ -141,7 +141,7 @@ fields:
       max: '99'
       min: '1'
       prefix: ''
-      previewCurrency: null
+      previewCurrency: ''
       previewFormat: decimal
       size: null
       suffix: ''
@@ -161,7 +161,7 @@ fields:
       max: '99'
       min: '1'
       prefix: ''
-      previewCurrency: null
+      previewCurrency: ''
       previewFormat: decimal
       size: null
       suffix: ''
