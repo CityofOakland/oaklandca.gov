@@ -74,6 +74,7 @@
     {{ craft.twigpack.includeJsModule("/js/app.js") }}
     {% do craft.viewCount.increment(entry.id ?? event.id ?? category.id ?? '') %}
     {% set page = entry ?? null %}
+    {% if craft.app.env == "production" %}
       {% for department in craft.entries.section("departments").type("departments").departmentCodeSnippet(":notempty:").all() %}
       <pre>
         {{ dump(craft.entries.id(page.id).relatedTo(department).ids()) }}
@@ -85,6 +86,7 @@
           {% endif %}
         {% endif %}
       {% endfor %}
+    {% endif %}
   </body>
 </html>
 {% if section is defined and slug is defined %}
