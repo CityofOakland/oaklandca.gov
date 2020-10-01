@@ -76,9 +76,6 @@
     {% set page = entry ?? null %}
     {% if craft.app.env == "production" %}
       {% for department in craft.entries.section("departments").type("departments").departmentCodeSnippet(":notempty:").all() %}
-      <pre>
-        {{ dump(craft.entries.id(page.id).relatedTo(department).ids()) }}
-      </pre>
         {% if page %}
           {% if craft.entries.id(page.id).relatedTo(department) | length or page.id == department.id %}
             <!-- Loading code snippet -->
