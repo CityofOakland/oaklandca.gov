@@ -6,7 +6,10 @@
     <div class="absolute top-0 z-10 h-full border-r-2 border-blue-500" style="left: 15px"></div>
     <ul class="relative z-20 p-0 m-0 list-none">
       {% for item in block.timeline %}
-        {% set heading = item.milestoneDate ~ " - " ~ item.milestoneName %}
+        {% set heading = item.milestoneDate %}
+        {% if item.milestoneName %}
+          {% set heading = heading ~ " - " ~ item.milestoneName %}
+        {% endif %}
         {% set started = item.milestoneStarted.contains("yes") %}
         <li class="mb-4 last:mb-0">
           <div class="flex items-center">

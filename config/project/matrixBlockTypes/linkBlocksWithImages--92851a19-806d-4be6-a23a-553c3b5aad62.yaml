@@ -316,7 +316,7 @@ fields:
                 -
                   - width
                   - ''
-      contentTable: '{{%stc_50_linkset}}'
+      contentTable: '{{%stc_51_linkset_1}}'
       fieldLayout: table
       maxRows: ''
       minRows: ''

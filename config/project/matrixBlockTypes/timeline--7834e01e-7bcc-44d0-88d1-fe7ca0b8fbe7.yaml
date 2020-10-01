@@ -82,6 +82,13 @@ fields:
                 -
                   - width
                   - ''
+          -
+            - 4b278e2a-dc49-4f60-a4bd-18575fb15098
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
       contentTable: '{{%stc_59_timeline}}'
       fieldLayout: row
       maxRows: ''
