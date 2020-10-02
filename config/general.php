@@ -33,9 +33,6 @@ return [
     // The secure key Craft will use for hashing and encrypting data
     'securityKey' => getenv('SECURITY_KEY'),
 
-    // Enables Project Config file
-    'useProjectConfigFile' => true,
-
     // Sets a maximum number of entry revisions
     'maxRevisions' => 20,
 
@@ -57,7 +54,7 @@ return [
   // Dev environment settings
   'dev' => [
     // Base site URL
-    'siteUrl' => 'http://oakland.test',
+    'siteUrl' => 'https://oakland.test',
 
     // Dev Mode (see https://craftcms.com/support/dev-mode)
     'devMode' => true,

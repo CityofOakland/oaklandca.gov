@@ -1,4 +1,4 @@
-dateModified: 1601675837
+dateModified: 1601676355
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -63,7 +63,12 @@ plugins:
         - gclid
         - fbclid
       excludedUriPatterns: ''
-      includedUriPatterns: ''
+      includedUriPatterns:
+        -
+          __assoc__:
+            -
+              - uriPattern
+              - '.*'
       injectScriptEvent: DOMContentLoaded
       integrations:
         - putyourlightson\blitz\drivers\integrations\FeedMeIntegration
