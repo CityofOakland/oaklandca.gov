@@ -1,4 +1,4 @@
-dateModified: 1601676355
+dateModified: 1601687504
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -30,6 +30,7 @@ plugins:
   blitz:
     edition: standard
     enabled: true
+    licenseKey: V1MGTTWWOX2B8VX28A8VJ2ZQ
     schemaVersion: 3.6.6
     settings:
       apiKey: ''
