@@ -1,5 +1,19 @@
 {% extends '_layout.twig' %}
-{% set bannerImage = entry.banner %}
+{% do craft.app.elements.eagerLoadElements(
+    className(entry),
+    [entry],
+    [
+      'banner',
+      'cityServicesAndResourcesUpdates',
+      'highlightedNews',
+      'learnMoreAbout',
+      'highlightedNews.newsImage'
+    ]
+) %}
+{% set bannerImage = entry.banner[0] %}
+{% set cityServices = entry.cityServicesAndResourcesUpdates %}
+{% set hlNews = entry.highlightedNews[0] %}
+{% set learnMore = entry.learnMoreAbout %}
 
 {% block content %}
   <div class="relative banner banner-home">
@@ -13,9 +27,9 @@
       </div>
       <img
         class="absolute inset-0 z-0 object-cover w-full h-full"
-        src="{{ bannerImage.one.url }}"
-        style="object-position:{{ bannerImage.one.getFocalPoint('asCss') }};"
-        alt="{{ bannerImage.one.title }}">
+        src="{{ bannerImage.url }}"
+        style="object-position:{{ bannerImage.getFocalPoint('asCss') }};"
+        alt="{{ bannerImage.title }}">
       <form action="{{ url('search') }}">
         <label for="home-search" class="hidden-visually">How can we help you today?</label>
         <div class="relative z-0 flex max-w-md text-green-600 shadow">
@@ -31,28 +45,7 @@
     </div>
   </div>
 
-  {# Begin Services #}
-  {# {% if entry.highlightedServices | length %}
-    <section class="bg-rotate">
-      <div class="container">
-        {% include '_partials/_elements/_module-header.twig' with {
-          headerText: "Services",
-        } %}
-        <div class="card-grid card-grid-tight">
-          {% for entry in entry.highlightedServices.all() %}
-            <a href="{{ entry.url }}" class="section-box">{{ entry.title | raw }}</a>
-          {% endfor %}
-        </div>
-        {% include "_partials/_elements/_module-readmore.twig" with {
-          linkUrl: "/services",
-          linkText: "All Services"
-        } %}
-      </div>
-    </section>
-  {% endif %} #}
-  {# End Services #}
-
-  {% if entry.cityServicesAndResourcesUpdates | length %}
+  {% if cityServices | length %}
     <section class="bg-rotate">
       <div class="container">
         {% include '_partials/_elements/_module-header.twig' with {
@@ -65,7 +58,7 @@
           </div>
           <div class="flex-1 text-base">
             <ul>
-            {% for block in entry.cityServicesAndResourcesUpdates.all() %}
+            {% for block in cityServices %}
               <li class="mb-2">
                 <a class="text-green-600 underline hover:text-green-900" href="{{ block.destination.url }}">{{ block.destination.text }}</a>
               </li>
@@ -86,12 +79,13 @@
             headerText: "News & Updates",
           } %}
           <div class="mt-8 lg:flex lg:flex-col">
-            {% if entry.highlightedNews.exists() %}
-              {% set featuredNews = entry.highlightedNews.one() %}
+            {% if hlNews | length %}
+              {% set featuredNews = hlNews %}
             {% else %}
               {% set featuredNews = craft.entries()
                 .section('news')
                 .search('featureOnHomepage:1')
+                .with(['newsImage'])
                 .newsImage(':notempty:')
                 .after('2019-10-01')
                 .orderBy('RAND()')
@@ -139,14 +133,14 @@
     </div>
   </section>
 
-  {% if entry.learnMoreAbout | length %}
+  {% if learnMore | length %}
     <section class="bg-rotate">
       <div class="container">
         {% include '_partials/_elements/_module-header.twig' with {
           headerText: "Learn More About",
         } %}
         <div class="card-grid card-grid-2up">
-          {% for entry in entry.learnMoreAbout.all() %}
+          {% for entry in learnMore %}
             <a href="{{ entry.url }}" class="section-box">{{ entry.title | raw }}</a>
           {% endfor %}
         </div>
@@ -161,9 +155,10 @@
         headerText: "City Officials",
       } %}
       <div class="mt-12 card-grid grid-equal-height profile-cards">
-        {% for entry in craft.entries.section('officials').all() %}
+        {% for entry in craft.entries.section('officials').with(['portrait']).all() %}
+          {% set portrait = entry.portrait[0] ?? "" %}
           {% include '_partials/_elements/_profile-cards.twig' with {
-            photo: entry.portrait.one,
+            photo: portrait,
             name: entry.groupHeadName,
             jobTitle: entry.title,
             url: entry.redirectUrl ?? entry.url ?? '',
