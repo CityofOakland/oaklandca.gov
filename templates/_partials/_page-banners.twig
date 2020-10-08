@@ -1,46 +1,29 @@
-{% set bannerImage = bannerImage ?? entry.banner ?? '' %}
-{% set leadIn = leadIn ?? category.summary ?? entry.leadIn ?? '' %}
-{% set ctaButton = ctaButton ?? entry.ctaButton ?? '' %}
-
 {% if bannerTitle is defined %}
   {% do seomatic.meta.seoTitle(bannerTitle) %}
 {% else %}
   {% set bannerTitle = category.title ?? entry.title ?? '' %}
 {% endif %}
 
-{# BANNER IMAGE #}
-{% if bannerImage | length %}
-  {%- set banner -%}
-    <figure class="absolute inset-0 z-0">
-      <img
-        class="absolute inset-0 z-0 object-cover w-full h-full"
-        style="object-position:{{ bannerImage.one.getFocalPoint('asCss') }};"
-        src="{{ bannerImage.one.url }}"
-        alt="{{ bannerImage.one.title }}">
-    </figure>
-  {%- endset -%}
+{% if category is defined %}
+  {% set bannerImage = bannerImage ?? "" %}
+  {% set leadIn = category.summary %}
+  {% set ctaButton = ctaButton ?? "" %}
+{% elseif entry is defined %}
+  {% do craft.app.elements.eagerLoadElements(
+      className(entry),
+      [entry],
+      [
+        'banner'
+      ]
+  ) %}
+  {% set bannerImage = entry.banner[0] %}
+  {% set leadIn = entry.leadIn %}
+  {% set ctaButton = entry.ctaButton %}
 {% else %}
-  {%- set banner -%}
-    <div class="absolute inset-0 z-0 bg-transparent-oakland-roots">
-    </div>
-  {%- endset -%}
+  {% set bannerImage = bannerImage ?? "" %}
+  {% set leadIn = leadIn ?? "" %}
+  {% set ctaButton = ctaButton ?? "" %}
 {% endif %}
-
-{# BREADCRUMBS #}
-{%- set breadCrumbs -%}
-  <div class="relative flex flex-col items-start py-0 sm:justify-between sm:flex-row-reverse sm:items-center">
-    {% include "_partials/_elements/_banner-google-translate.twig" with { paddingTop: "pt-0" } %}
-    <div class="relative z-10 inline-block px-2 py-1 mt-4 text-xs text-green-800 bg-white rounded-sm shadow sm:mt-0 md:text-xs">
-      <a class="text-green-800 hover:text-green-800 hover:underline" href="/">
-        Oakland
-      </a> →
-      {% for link in breadCrumbLinks ?? '' %}
-        <a class="text-green-800 hover:text-green-800 hover:underline" href="{{ link.link }}">{{ link.title }}</a> →
-      {% endfor %}
-      <span class="font-bold">{{ bannerTitle }}</span>
-    </div>
-  </div>
-{%- endset -%}
 
 {# HEADER CONTENT #}
 {%- set headerContent -%}
@@ -58,12 +41,12 @@
       <div class="flex space-x-4">
         {% if ctaButton | length %}
           {% set attributes = {
-              class: 'btn py-2 mt-4 text-sm',
-              "data-custom": 'custom-data-attribute'
+            class: 'btn py-2 mt-4 text-sm',
+            "data-custom": 'custom-data-attribute'
           } %}
           {{ ctaButton.link(attributes) }}
         {% endif %}
-        {% if entry.id == 34229 %}
+        {% if entry is defined and entry.id == 34229 %}
           <a class="py-2 mt-4 text-sm btn" href="https://www.oaklandca.gov/documents/special-vacancy-notices">View Local Appointments List and Special Vacancy Notices</a>
         {% endif %}
       </div>
@@ -77,17 +60,17 @@
 {% if bannerImage | length %}
   <div class="leading-normal aspect-ratio-box aspect-ratio-1/4 banner">
     <div class="object-cover pt-2 pb-8 leading-none aspect-ratio md:pt-4 md:pb-6 min-h-2-1/2 md:min-h-4">
-      {{ banner }}
+      {% include "_partials/_elements/_banner/_bannerimage.twig" %}
       <div class="container py-0">
-        {{ breadCrumbs }}
+        {% include "_partials/_elements/_banner/_breadcrumbs.twig" %}
       </div>
     </div>
   </div>
 {% else %}
   <div class="leading-none banner">
     <div class="container pt-2 pb-8 md:pt-4 md:pb-6">
-      {{ banner }}
-      {{ breadCrumbs }}
+      {% include "_partials/_elements/_banner/_bannernoimage.twig" %}
+      {% include "_partials/_elements/_banner/_breadcrumbs.twig" %}
     </div>
   </div>
 {% endif %}

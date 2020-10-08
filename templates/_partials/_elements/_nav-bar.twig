@@ -1,4 +1,10 @@
-{% set mainNav = craft.entries.section('navigation').with(['navBuilder']).slug('main-nav').one() %}
+{% set mainNav = [
+  { title: "News", url: "/departments/media-center" },
+  { title: "Services", url: "/services" },
+  { title: "Departments", url: "/departments" },
+  { title: "Calendar", url: "/calendar" },
+  { title: "City Council", url: "/departments/oakland-city-council" }
+] %}
 
 <div id="nav-wrapper" class="fixed z-40 w-full">
   <div x-data="{ openNav: false }" class="relative z-50 block w-full trans trans-fast nav-bar" id="nav-bar">
@@ -17,10 +23,9 @@
           <input type="search" id="site-search" class="z-10 w-full pl-10 pr-6 mb-0 text-sm leading-normal text-gray-100 placeholder-gray-200 bg-gray-900 border-2 border-gray-800 rounded appearance-none search-box h-9 md:h-10 md:text-base" aria-label="Site Search" name="query" placeholder="Search" value="">
         </form>
         <ul class="pr-6 mr-6 text-xs font-bold tracking-wide uppercase border-r border-gray-700 lg:flex oak-hidden lg:my-0 lg:justify-end lg:items-center xl:text-sm">
-          {% for nav in mainNav.navBuilder %}
-            {% set link = nav.navLink %}
+          {% for nav in mainNav %}
             <li class="lg:ml-4">
-              <a href="{{ link.url }}" {% if link.target | length %} target="{{ link.target }}" {% endif %} class="text-gray-100 hover:text-gray-200 hover:underline trans-fast">{{ link.text | replace({' ' : '&nbsp;'}) | raw }}</a>
+              <a href="{{ nav.url }}" class="text-gray-100 hover:text-gray-200 hover:underline trans-fast">{{ nav.title | replace({' ' : '&nbsp;'}) | raw }}</a>
             </li>
           {% endfor %}
           <li class="lg:ml-4">
@@ -56,10 +61,9 @@
         x-cloak
       >
       <ul class="container justify-end flex-1 w-full pt-0 pb-4 mx-auto my-0 text-lg">
-        {% for nav in mainNav.navBuilder %}
-          {% set link = nav.navLink %}
+        {% for nav in mainNav %}
           <li class="{% if not loop.first %}border-t {% endif %}border-gray-600">
-            <a class="flex items-center justify-between py-2 font-normal text-gray-100 fill-current hover:text-gray-200" href="{{ link.url }}" {% if link.target | length %} target="{{ link.target }}" {% endif %}><div class="text">{{ link.text }}</div><div class="text">{{ craft.inlin.er('/assets/img/icon-arrow.svg') | replace('<svg ', '<svg class="w-4 h-4 xl:oak-hidden" ') | raw }}</div></a>
+            <a class="flex items-center justify-between py-2 font-normal text-gray-100 fill-current hover:text-gray-200" href="{{ nav.url }}"><div class="text">{{ nav.title }}</div><div class="text">{{ craft.inlin.er('/assets/img/icon-arrow.svg') | replace('<svg ', '<svg class="w-4 h-4 xl:oak-hidden" ') | raw }}</div></a>
           </li>
         {% endfor %}
         <li class="border-t border-gray-600">
