@@ -47,7 +47,7 @@
         </div>
         <div class="sm:flex-1">
             {% if entry.bio | length %}
-            <div class="text-xl">{{ entry.bio | replace('<p>', '<p class="my-0">') | raw }}</div>
+            <div class="text-xl">{{ entry.bio | retcon('attr', '*', { class: 'mt-4 first:mt-0 text-base max-w-md'}) | raw }}</div>
           {% endif %}
           {% if email | length %}
             <p class="my-0">
