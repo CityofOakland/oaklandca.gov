@@ -16,33 +16,23 @@
 {% set learnMore = entry.learnMoreAbout %}
 
 {% block content %}
-  <div class="relative banner banner-home">
-    {% include "_partials/_elements/_banner-google-translate.twig" %}
-    <div class="container text-green-1000">
-      <div class="relative z-10 max-w-md p-6 mb-32 bg-white rounded-sm md:mt-12 md:mb-24">
-        <h1 class="text-4xl font-extrabold leading-tight"><span class="block mb-3 text-xl uppercase">Your actions save lives.</span> Wear a face covering, wash your hands, and stay home when sick.</h1>
-        <p class="my-0">
+  <div class="relative banner">
+    <div class="container relative z-10 text-green-1000">
+      <div class="mt-16 mb-4">
+        {% include "_partials/_elements/_banner-google-translate.twig" with { paddingTop: "pt-0" } %}
+      </div>
+      <div class="relative z-20 max-w-md p-6 bg-white rounded-sm">
+        <h1 class="mt-0 mb-4 text-2xl font-extrabold leading-tight md:text-3xl"><span class="block mb-3 text-xl uppercase">Your actions save lives.</span> Wear a face covering, wash your hands, and stay home when sick.</h1>
+        <p class="my-0 leading-tight">
           <b><a class="text-green-600" href="/topics/covid-19" class="">Get information & resources »</a></b>
         </p>
       </div>
-      <img
-        class="absolute inset-0 z-0 object-cover w-full h-full"
-        src="{{ bannerImage.url }}"
-        style="object-position:{{ bannerImage.getFocalPoint('asCss') }};"
-        alt="{{ bannerImage.title }}">
-      <form action="{{ url('search') }}">
-        <label for="home-search" class="hidden-visually">How can we help you today?</label>
-        <div class="relative z-0 flex max-w-md text-green-600 shadow">
-          <input type="search" id="home-search" class="z-10 flex-1 w-full p-4 mb-0 text-sm leading-none text-gray-800 rounded-sm rounded-r-none appearance-none md:text-lg" aria-label="Site Search" name="query" placeholder="How can we help you?" value="">
-          <button type="submit" class="relative z-10 flex items-center justify-center px-4 rounded-l-none btn">
-            <span class="hidden-visually">
-              Search
-            </span>
-            {{ craft.inlin.er('/assets/img/icon-magnifier.svg') | replace('<svg ', '<svg class="z-20 w-auto h-auto fill-current" ') | raw }}
-          </button>
-        </div>
-      </form>
     </div>
+    <img
+      class="absolute inset-0 z-0 object-cover w-full h-full"
+      src="{{ bannerImage.url }}"
+      style="object-position:{{ bannerImage.getFocalPoint('asCss') }};"
+      alt="{{ bannerImage.title }}">
   </div>
 
   {% if cityServices | length %}

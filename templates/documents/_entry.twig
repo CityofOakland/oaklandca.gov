@@ -1,8 +1,15 @@
 {% extends '_layout.twig' %}
+{% do craft.app.elements.eagerLoadElements(
+    className(entry),
+    [entry],
+    [
+      'documentFile'
+    ]
+) %}
 
-{% set document = entry.documentFile %}
+{% set document = entry.documentFile[0] %}
 
-{% redirect document.one.url %}
+{% redirect document.url %}
 
 {% block content %}
   {% include '_partials/_page-banners.twig' with {
