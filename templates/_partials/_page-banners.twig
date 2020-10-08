@@ -9,16 +9,9 @@
   {% set leadIn = category.summary %}
   {% set ctaButton = ctaButton ?? "" %}
 {% elseif entry is defined %}
-  {% do craft.app.elements.eagerLoadElements(
-      className(entry),
-      [entry],
-      [
-        'banner'
-      ]
-  ) %}
-  {% set bannerImage = entry.banner[0] %}
-  {% set leadIn = entry.leadIn %}
-  {% set ctaButton = entry.ctaButton %}
+  {% set bannerImage = bannerImage ?? entry.banner ?? "" %}
+  {% set leadIn = leadIn ?? entry.leadIn %}
+  {% set ctaButton = ctaButton ?? entry.ctaButton %}
 {% else %}
   {% set bannerImage = bannerImage ?? "" %}
   {% set leadIn = leadIn ?? "" %}

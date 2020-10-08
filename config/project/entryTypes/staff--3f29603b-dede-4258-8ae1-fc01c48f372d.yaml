@@ -243,9 +243,9 @@ fieldLayouts:
             width: 100
         name: SEO
         sortOrder: 3
-handle: newStaff
+handle: staff
 hasTitleField: false
-name: 'New Staff'
+name: Staff
 section: 07faad04-9ec4-4f68-9fe8-0ca20f189f8a
 sortOrder: 1
 titleFormat: '{{ object.firstName ??? object.staffImportGivenName }} {{ object.lastName ??? object.staffImportSurname }}'

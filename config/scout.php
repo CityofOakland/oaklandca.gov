@@ -273,7 +273,6 @@ return [
       ->criteria(function (\craft\elements\db\EntryQuery $query) {
         return $query
           ->section('staff')
-          ->type('newStaff')
           ->with(['portrait', 'department']);
       })
       ->transformer(function (craft\elements\Entry $entry) {
