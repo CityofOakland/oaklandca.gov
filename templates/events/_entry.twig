@@ -5,8 +5,7 @@
   {% block banner %}
     {% include '_partials/_page-banners.twig' with {
       bannerImage: entry.eventImage,
-      bannerImageBlur: 'large',
-        breadCrumbLinks: [
+      breadCrumbLinks: [
         {
           title: 'Events',
           link: '/events'
@@ -22,7 +21,7 @@
         <div class="p-6 text-white bg-gray-1000 md:inline-flex md:items-start">
           <h3 class="my-0 md:mr-8">Event</h3>
           <time datetime="{{ startDate | atom }}">
-            <h4 class="my-0 font-bold text-3xl">
+            <h4 class="my-0 text-3xl font-bold">
               {% if event.occurrences | length %}
                 {% for event in event.occurrences %}
                   <div>{{ event.startDate.format("F j, Y" )}}</div>

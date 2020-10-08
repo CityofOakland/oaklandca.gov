@@ -1,0 +1,12 @@
+<div class="relative flex flex-col items-start py-0 sm:justify-between sm:flex-row-reverse sm:items-center">
+  {% include "_partials/_elements/_banner-google-translate.twig" with { paddingTop: "pt-0" } %}
+  <div class="relative z-10 inline-block px-2 py-1 mt-4 text-xs text-green-800 bg-white rounded-sm shadow sm:mt-0 md:text-xs">
+    <a class="text-green-800 hover:text-green-800 hover:underline" href="/">
+      Oakland
+    </a> →
+    {% for link in breadCrumbLinks ?? '' %}
+      <a class="text-green-800 hover:text-green-800 hover:underline" href="{{ link.link }}">{{ link.title }}</a> →
+    {% endfor %}
+    <span class="font-bold">{{ bannerTitle }}</span>
+  </div>
+</div>

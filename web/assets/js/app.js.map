@@ -1,1 +1,1 @@
-{"version":3,"sources":["webpack:///./src/js/app.js"],"names":[],"mappings":"iKAAA,6B","file":"/js/app.js","sourcesContent":["import 'alpinejs'\nimport 'picturefill'"],"sourceRoot":""}
+{"version":3,"sources":["webpack:///./src/js/app.js"],"names":[],"mappings":"iKAAA,6B","file":"/js/app.js","sourcesContent":["import 'alpinejs'\nimport 'picturefill'\n"],"sourceRoot":""}
