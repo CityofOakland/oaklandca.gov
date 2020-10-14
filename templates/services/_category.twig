@@ -9,15 +9,16 @@
       }
     ],
   } %}
-  <section class="bg-rotate">
-    <div class="container mx-auto">
+  <section>
+    <div class="container pt-0 mx-auto">
       <h2 class="my-0 text-xl md:text-2xl">Services</h2>
       <ul class="items-stretch card-grid card-grid-tight">
         {% set entries = craft.entries.section("services").limit(null).orderBy("title asc").relatedTo(category).all() %}
         {% nav entry in entries %}
           <li>
-            <a class="block h-full p-5 bg-white border border-gray-800 rounded hover:bg-green-100" href="{{ entry.redirectUrl ?? entry.url ?? '' }}">
-              <h3 class="mt-0 mb-4 text-lg font-normal text-gray-800 md:text-xl">{{ entry.title }}</h3>
+            <a class="block h-full p-5 transition-all duration-75 rounded shadow bg-cool-gray-100 text-cool-gray-800 hover:bg-cool-gray-200 hover:text-cool-gray-900" href="{{ entry.redirectUrl ?? entry.url ?? '' }}">
+              <h3 class="mt-0 mb-4 text-lg text-gray-800 md:text-xl lg:text-2xl">{{ entry.title }}</h3>
+              {{ category.summary | retcon('attr', 'p', { class: 'mt-4 mb-0 text-gray-800 text-sm md:text-base' }) }}
             </a>
           </li>
         {% endnav %}

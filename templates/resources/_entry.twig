@@ -1,5 +1,11 @@
 {% extends '_layout.twig' %}
 
+{% do craft.app.elements.eagerLoadElements(
+  className(entry),
+  [entry],
+  ['banner']
+) %}
+
 {% block content %}
   {% include '_partials/_page-banners.twig' with {
     breadCrumbLinks: [
@@ -8,8 +14,13 @@
         link: '/resources'
       }
     ],
+    bannerImage: entry.banner | length ? {
+      position: entry.banner[0].getFocalPoint('asCss'),
+      src: entry.banner[0].url,
+      alt: entry.banner[0].title ?? entry.banner[0].filename
+    } : false
   } %}
-  <section class="bg-white relative z-0">
+  <section class="relative z-0 bg-white">
     <div class="container pt-0">
       {% include '_partials/_elements/_ctas.twig' %}
       <div class="flex">
@@ -17,7 +28,7 @@
       <div class="flex-1">
         {% if entry.resourceImage.exists() %}
           <figure class="mb-8">
-            <img class="w-full block" src="{{ entry.resourceImage.one.url }}" alt="{{ entry.title }} Image">
+            <img class="block w-full" src="{{ entry.resourceImage.one.url }}" alt="{{ entry.title }} Image">
           </figure>
         {% endif %}
         {% include '_partials/_elements/_last-update.twig' %}
