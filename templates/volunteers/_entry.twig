@@ -15,17 +15,18 @@
       }
     ],
     leadIn: jobTitle,
+    bannerImage: false
   } %}
   <section class="bg-white">
     <div class="container py-16">
       <div class="sm:flex sm:flex-row-reverse">
         <div class="sm:flex-1">
-            <h2 class="text-3xl sm:mt-0 mb-0">{{ entry.title }}</h2>
-          <p class="text-xl mt-2">
+            <h2 class="mb-0 text-3xl sm:mt-0">{{ entry.title }}</h2>
+          <p class="mt-2 text-xl">
             {{ jobTitle }}
           </p>
           {% if entry.bio | length %}
-            <div class="text-xl mt-8">{{ entry.bio }}</div>
+            <div class="mt-8 text-xl">{{ entry.bio }}</div>
           {% endif %}
           {% if email | length %}
             <p class="my-0"><span class="font-bold">Email Address:</span> <a href="mailto:{{ email }}">{{ email }}</a></p>
@@ -45,16 +46,16 @@
             {% if entry.portrait | length %}
               <img src="{{ entry.portrait.one.url }}" alt="Portrait of {{ entry.title }}">
             {% else %}
-              <div class="bg-gray-300 text-gray-500 opacity-75 fill-current h-full p-12">
-                {{ craft.inlin.er('/assets/img/icon-user.svg') | replace('<svg ', '<svg class="h-full w-full" ') | raw }}
+              <div class="h-full p-12 text-gray-500 bg-gray-300 opacity-75 fill-current">
+                {{ craft.inlin.er('/assets/img/icon-user.svg') | replace('<svg ', '<svg class="w-full h-full" ') | raw }}
               </div>
             {% endif %}
           </figure>
           {% set dobc = entry.departmentOfficialBoardCommission %}
           {% if dobc.exists() %}
-            <h3 class="text-lg font-bold flex items-center"><span class="w-16">Team: </span><a href="{{ dobc.one.url }}" class="flex-1 btn btn-sm inline-block text-center">{{ dobc.one.title }}</a></h3>
+            <h3 class="flex items-center text-lg font-bold"><span class="w-16">Team: </span><a href="{{ dobc.one.url }}" class="flex-1 inline-block text-center btn btn-sm">{{ dobc.one.title }}</a></h3>
           {% elseif entry.staffImportDepartment | length %}
-            <h3 class="text-lg font-bold flex items-center">{{ entry.staffImportDepartment }}</h3>
+            <h3 class="flex items-center text-lg font-bold">{{ entry.staffImportDepartment }}</h3>
           {% endif %}
         </div>
       </div>

@@ -1,5 +1,11 @@
 {% extends '_layouts/_banner-with-nav.twig' %}
 
+{% do craft.app.elements.eagerLoadElements(
+  className(entry),
+  [entry],
+  ['banner']
+) %}
+
 {% set relatedMeetings = craft.calendar.events.relatedTo(entry) %}
 {% set relatedTeams = craft.entries.section('teams').relatedTo(entry).all() %}
 
@@ -24,24 +30,6 @@
   {% do view.registerJsFile(craft.twigpack.getModuleUri("/js/lightgallery.js")) %}
   {% do view.registerCssFile(craft.twigpack.getModuleUri("/css/lightgallery.css")) %}
 {% endif %}
-
-{% js %}
-  function toggleLinks(toggleId) {
-    var toggle = document.getElementById(toggleId);
-    toggle.addEventListener('click', function(e) {
-      e.preventDefault();
-      var toggleClass = e.target.dataset.class;
-      var toggleLinks = document.querySelectorAll('.' + toggleClass + '[data-toggle]');
-      toggleLinks.forEach(function(e) {
-        if (e.getAttribute('data-toggle') == 'off') {
-          e.setAttribute('data-toggle', 'on');
-        } else {
-          e.setAttribute('data-toggle', 'off');
-        }
-      });
-    });
-  }
-{% endjs %}
 
 {% block content %}
   {%- set headerSubContent -%}
@@ -85,6 +73,11 @@
       'logos': fundingTrue,
       'contact': contactTrue,
     },
+    bannerImage: entry.banner | length ? {
+      position: entry.banner[0].getFocalPoint('asCss'),
+      src: entry.banner[0].url,
+      alt: entry.banner[0].title ?? entry.banner[0].filename
+    } : false,
     headerSubContent: headerSubContent
   } %}
   <div class="container pt-0 md:flex">
@@ -145,15 +138,17 @@
           {% include "_partials/_elements/_module-header.twig" with {
             headerText: "Meetings"
           } %}
-          {% for entry in relatedMeetings.all() %}
-            {% include '_partials/_elements/_vertical-cards.twig' with {
-              title: entry.title,
-              url: entry.url,
-              byline: entry.startDate.format("M d, Y"),
-              photoHide: true,
-              summaryHide: true
-            } %}
-          {% endfor %}
+          <div class="mt-8 card-grid vertical-cards">
+            {% for entry in relatedMeetings.all() %}
+              {% include '_partials/_elements/_vertical-cards.twig' with {
+                title: entry.title,
+                url: entry.url,
+                byline: entry.startDate.format("M d, Y"),
+                photoHide: true,
+                summaryHide: true
+              } %}
+            {% endfor %}
+          </div>
         </section>
       {% endif %}
     </div>
@@ -166,13 +161,9 @@
           } %}
           <div class="space-y-6">
             {% for entry in entry.projectUpdates.all() %}
-              <a class="section-box project-updates" {{ loop.first ? '' : 'data-toggle="off"' }} href="{{ entry.url }}">{{ entry.title }}</a>
+              <a class="section-box project-updates" href="{{ entry.url }}">{{ entry.title }}</a>
             {% endfor %}
           </div>
-          {% if entry.projectUpdates | length > 1 %}
-           <p class="inline-block mt-4 font-bold border-b-2 border-green-800"><a href="" id="project-updates-toggle" data-class="project-updates">Toggle all project updates</a></p>
-            {% js %}toggleLinks('project-updates-toggle');{% endjs %}
-          {% endif %}
         </section>
       {% endif %}
       {% if mapTrue %}
@@ -306,13 +297,9 @@
           } %}
           <div class="space-y-6">
             {% for entry in entry.relatedProjectEntries.all() %}
-              <a class="section-box project-related" {{ loop.first ? '' : 'data-toggle="off"' }} href="{{ entry.url }}">{{ entry.title }}</a>
+              <a class="section-box project-related" href="{{ entry.url }}">{{ entry.title }}</a>
             {% endfor %}
           </div>
-          {% if entry.relatedProjectEntries | length > 1 %}
-            <p class="inline-block mt-4 font-bold border-b-2 border-green-800"><a href="" id="project-related-toggle" data-class="project-related">Toggle all related pages</a></p>
-            {% js %}toggleLinks('project-related-toggle');{% endjs %}
-          {% endif %}
         </section>
       {% endif %}
       {% if fundingTrue %}

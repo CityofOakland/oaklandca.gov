@@ -1,5 +1,11 @@
 {% extends '_layout.twig' %}
 
+{% do craft.app.elements.eagerLoadElements(
+  className(entry),
+  [entry],
+  ['banner']
+) %}
+
 {%- set custSideNav -%}
 <figure class="w-48 pr-12 mb-8 md:mb-0 md:w-1/4">
   <img class="block w-full h-auto" src="/assets/img/logo-311.png" alt="Logo for OAK 311">
@@ -69,8 +75,13 @@
         link: '/services'
       }
     ],
+    bannerImage: entry.banner | length ? {
+      position: entry.banner[0].getFocalPoint('asCss'),
+      src: entry.banner[0].url,
+      alt: entry.banner[0].title ?? entry.banner[0].filename
+    } : false,
     custSideNav: custSideNav,
-    custHeaderContent: custHeaderContent
+    custHeaderContent: custHeaderContent,
   } %}
   <section class="bg-gray-100">
     <div class="container md:flex">
