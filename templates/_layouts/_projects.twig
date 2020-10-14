@@ -1,5 +1,11 @@
 {% extends '_layouts/_banner-with-nav.twig' %}
 
+{% do craft.app.elements.eagerLoadElements(
+  className(entry),
+  [entry],
+  ['banner']
+) %}
+
 {% set relatedMeetings = craft.calendar.events.relatedTo(entry) %}
 {% set relatedNews = craft.entries.section('news').relatedTo(entry) %}
 
@@ -19,7 +25,12 @@
       'about': true,
       'contact': contactState,
       'logos': entry.fundingLogos.exists(),
-    }
+    },
+    bannerImage: entry.banner | length ? {
+      position: entry.banner[0].getFocalPoint('asCss'),
+      src: entry.banner[0].url,
+      alt: entry.banner[0].title ?? entry.banner[0].filename
+    } : false
   } %}
   {% css %}
   {% include "_css/timeline.css" %}

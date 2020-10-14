@@ -50,20 +50,41 @@
   </div>
 {%- endset -%}
 
+{%- set breadcrumbs -%}
+<div class="relative flex flex-col items-start py-0 sm:justify-between sm:flex-row-reverse sm:items-center">
+  {% include "_partials/_elements/_banner-google-translate.twig" with { paddingTop: "pt-0" } %}
+  <div class="relative z-10 inline-block px-2 py-1 mt-4 text-xs text-green-800 bg-white rounded-sm shadow sm:mt-0 md:text-xs">
+    <a class="text-green-800 hover:text-green-800 hover:underline" href="/">
+      Oakland
+    </a> →
+    {% for link in breadCrumbLinks ?? '' %}
+      <a class="text-green-800 hover:text-green-800 hover:underline" href="{{ link.link }}">{{ link.title }}</a> →
+    {% endfor %}
+    <span class="font-bold">{{ bannerTitle }}</span>
+  </div>
+</div>
+{%- endset -%}
+
 {% if bannerImage | length %}
   <div class="leading-normal aspect-ratio-box aspect-ratio-1/4 banner">
     <div class="object-cover pt-2 pb-8 leading-none aspect-ratio md:pt-4 md:pb-6 min-h-2-1/2 md:min-h-4">
-      {% include "_partials/_elements/_banner/_bannerimage.twig" %}
+      <figure class="absolute inset-0 z-0">
+        <img
+          class="absolute inset-0 z-0 object-cover w-full h-full"
+          style="object-position:{{ bannerImage.position }};"
+          src="{{ bannerImage.src }}"
+          alt="{{ bannerImage.alt }}">
+      </figure>
       <div class="container py-0">
-        {% include "_partials/_elements/_banner/_breadcrumbs.twig" %}
+        {{ breadcrumbs }}
       </div>
     </div>
   </div>
 {% else %}
   <div class="leading-none banner">
     <div class="container pt-2 pb-8 md:pt-4 md:pb-6">
-      {% include "_partials/_elements/_banner/_bannernoimage.twig" %}
-      {% include "_partials/_elements/_banner/_breadcrumbs.twig" %}
+      <div class="absolute inset-0 z-0 bg-transparent-oakland-roots"></div>
+      {{ breadcrumbs }}
     </div>
   </div>
 {% endif %}

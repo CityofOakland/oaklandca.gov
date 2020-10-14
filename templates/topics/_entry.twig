@@ -1,5 +1,11 @@
 {% extends '_layouts/_banner-with-nav.twig' %}
 
+{% do craft.app.elements.eagerLoadElements(
+  className(entry),
+  [entry],
+  ['banner']
+) %}
+
 {% set relatedEvents = craft.calendar.events.relatedTo(entry) %}
 {% set relatedNews = craft.entries.section('news').relatedTo(entry) %}
 {% set relatedMeetings = craft.calendar.events.relatedTo(entry) %}
@@ -17,6 +23,11 @@
         link: '/topics'
       }
     ],
+    bannerImage: entry.banner | length ? {
+      position: entry.banner[0].getFocalPoint('asCss'),
+      src: entry.banner[0].url,
+      alt: entry.banner[0].title ?? entry.banner[0].filename
+    } : false
   } %}
   <div class="container pt-0">
     <div class="flex">
@@ -56,6 +67,6 @@
         {% endif %}
         {% include '_partials/_page-location.twig' %}
       </div>
-    </div>  
+    </div>
   </div>
 {% endblock %}

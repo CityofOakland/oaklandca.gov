@@ -1,5 +1,11 @@
 {% extends '_layouts/_banner-with-nav.twig' %}
 
+{% do craft.app.elements.eagerLoadElements(
+  className(entry),
+  [entry],
+  ['banner']
+) %}
+
 {% set relatedContent = [
   ['events', 'calendar'],
   ['news', 'entries'],
@@ -26,6 +32,11 @@
         link: '/officials'
       }
     ],
+    bannerImage: entry.banner | length ? {
+      position: entry.banner[0].getFocalPoint('asCss'),
+      src: entry.banner[0].url,
+      alt: entry.banner[0].title ?? entry.banner[0].filename
+    } : false
   } %}
   <div class="container pt-0">
     <div class="flex">
