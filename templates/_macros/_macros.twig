@@ -16,7 +16,7 @@
   {% set hasRels = isEntries ? craft.entries.section(relSectionHandle).relatedTo(entry) : craft.calendar.events({calendar: relSectionHandle}).relatedTo(entry) %}
   {% if hasRels | length %}
     {% set section = entry.section %}
-    {% set relSection = isEntries ? craft.sections.getSectionByHandle(relSectionHandle) : craft.calendar.calendar({handle: relSectionHandle}) %}
+    {% set relSection = isEntries ? craft.app.sections.getSectionByHandle(relSectionHandle) : craft.calendar.calendar({handle: relSectionHandle}) %}
     {% set urlBase = relSectionHandle | kebab %}
     {% set relUrl = "/" ~ urlBase ~ "/related-to/" ~ section.handle ~ "/" ~ entry.slug %}
     {% include "_partials/_elements/_title-cards" with { title: relSection.name, url: relUrl} %}
