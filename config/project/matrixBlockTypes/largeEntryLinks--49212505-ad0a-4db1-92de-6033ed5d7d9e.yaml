@@ -118,4 +118,4 @@ fields:
     type: craft\redactor\Field
 handle: largeEntryLinks
 name: 'Large Entry Links'
-sortOrder: 14
+sortOrder: 15

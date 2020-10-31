@@ -216,4 +216,4 @@ fields:
     type: fruitstudios\linkit\fields\LinkitField
 handle: callToAction
 name: 'Call to Action'
-sortOrder: 23
+sortOrder: 24

@@ -224,7 +224,6 @@ fields:
                     - 'section:b3411cb1-e860-46ed-9cd6-58cf9b8daacb'
                     - 'section:9da43fd8-c505-4d19-9486-e0cb669c568a'
                     - 'section:8b7c4e26-9aab-4c5d-874e-aee151107de3'
-                    - 'section:bc354abe-c941-47fa-aebc-0eb5897e7f7c'
                     - 'section:983c9f6f-9251-4fd3-91e1-b598eccc6a1a'
                     - 'section:28881fc8-3e61-4fdb-a5ee-cce1bab725bf'
                     - 'section:98d541ae-56ee-4c98-ba9c-37438dc485a0'
@@ -316,7 +315,7 @@ fields:
                 -
                   - width
                   - ''
-      contentTable: '{{%stc_51_linkset_1}}'
+      contentTable: '{{%stc_51_linkset}}'
       fieldLayout: table
       maxRows: ''
       minRows: ''
@@ -329,4 +328,4 @@ fields:
     type: verbb\supertable\fields\SuperTableField
 handle: linkBlocksWithImages
 name: 'Link Blocks with Images'
-sortOrder: 10
+sortOrder: 11

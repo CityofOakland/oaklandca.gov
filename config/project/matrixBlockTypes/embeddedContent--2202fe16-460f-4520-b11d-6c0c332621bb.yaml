@@ -40,4 +40,4 @@ fields:
     type: craft\fields\Entries
 handle: embeddedContent
 name: 'Embedded Content'
-sortOrder: 21
+sortOrder: 22

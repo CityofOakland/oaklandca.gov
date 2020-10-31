@@ -67,7 +67,7 @@ fields:
                 -
                   - width
                   - ''
-      contentTable: '{{%stc_50_linkset_1}}'
+      contentTable: '{{%stc_52_linkset}}'
       fieldLayout: table
       maxRows: '3'
       minRows: ''
@@ -328,4 +328,4 @@ fields:
     type: craft\redactor\Field
 handle: linkBlocksWithIcons
 name: 'Link Blocks with Icons'
-sortOrder: 11
+sortOrder: 12
