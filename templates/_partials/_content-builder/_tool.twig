@@ -77,20 +77,21 @@
     {% case "table4Columns" %}
       {{ macro.tableBuilder(block, 4)}}
     {% case "largeEntryLinks" or
-            "smallEntryLinks" or
-            "image" or
-            "gallery" or
-            "linksWithDescriptions" or
-            "linkBlocksWithIcons" or
-            "linkBlocksWithImages" or
-            "statsBlockWithIcons" or
-            "textImageBlock" or
-            "noticeBlock" or
-            "emailSignup" or
-            "newsEntries" or
-            "embeddedContent" or
-            "callToAction" or
-            "timeline"
+        "smallEntryLinks" or
+        "image" or
+        "gallery" or
+        "linksWithDescriptions" or
+        "linkBlocksWithIcons" or
+        "linkBlocksWithImages" or
+        "statsBlockWithIcons" or
+        "textImageBlock" or
+        "noticeBlock" or
+        "emailSignup" or
+        "newsEntries" or
+        "embeddedContent" or
+        "callToAction" or
+        "timeline" or
+        "officials"
     %}
       {% include templateBase ~ block.type ~ ".twig" %}
     {% case "meetingEntries" %}

@@ -1,11 +1,11 @@
 field: fd0c8e02-99b4-4ce5-ab89-b29cd0efc581
 fieldLayouts:
-  bd9571fe-eb18-4627-baaa-940cebabc1b9:
+  623c1b00-595f-4ec0-9d62-065f2ba39f92:
     tabs:
       -
         elements:
           -
-            fieldUid: e8b1b583-82e1-4793-a5fc-048294165afd
+            fieldUid: ea240b78-53b7-49b7-9899-30cdda02cd3f
             instructions: null
             label: null
             required: false
@@ -14,10 +14,19 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 7a1afdd7-99e2-4194-b1e1-b6a4f0c7ed62
+            fieldUid: 94aa2374-4435-452b-a007-320f14f53e8d
             instructions: null
             label: null
             required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: f9ee611f-21b4-48f8-8fc6-267f5b3ee36b
+            instructions: null
+            label: null
+            required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
@@ -25,12 +34,12 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  7a1afdd7-99e2-4194-b1e1-b6a4f0c7ed62:
+  94aa2374-4435-452b-a007-320f14f53e8d:
     contentColumnType: text
     fieldGroup: null
-    handle: description
+    handle: entriesDescription
     instructions: ''
-    name: Description
+    name: 'Entries Description'
     searchable: false
     settings:
       availableTransforms: '*'
@@ -53,7 +62,7 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\redactor\Field
-  e8b1b583-82e1-4793-a5fc-048294165afd:
+  ea240b78-53b7-49b7-9899-30cdda02cd3f:
     contentColumnType: text
     fieldGroup: null
     handle: heading
@@ -72,6 +81,28 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
-handle: emailSignup
-name: 'Email Signup'
-sortOrder: 23
+  f9ee611f-21b4-48f8-8fc6-267f5b3ee36b:
+    contentColumnType: string
+    fieldGroup: null
+    handle: officials
+    instructions: ''
+    name: Officials
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      limit: ''
+      localizeRelations: false
+      selectionLabel: 'Add an official'
+      showSiteMenu: true
+      source: null
+      sources:
+        - 'section:28881fc8-3e61-4fdb-a5ee-cce1bab725bf'
+      targetSiteId: null
+      validateRelatedElements: true
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Entries
+handle: officials
+name: Officials
+sortOrder: 10

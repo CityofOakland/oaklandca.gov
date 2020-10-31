@@ -102,4 +102,4 @@ fields:
     type: verbb\supertable\fields\SuperTableField
 handle: timeline
 name: Timeline
-sortOrder: 24
+sortOrder: 25

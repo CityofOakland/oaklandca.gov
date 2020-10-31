@@ -25,6 +25,7 @@ fields:
     searchable: false
     settings:
       allowSelfRelations: false
+      allowUploads: true
       allowedKinds:
         - image
       defaultUploadLocationSource: 'volume:f5dead8c-3e4c-4f97-8bea-2a3af1e34f67'

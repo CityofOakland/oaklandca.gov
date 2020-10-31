@@ -56,7 +56,7 @@ fields:
                 -
                   - width
                   - ''
-      contentTable: '{{%stc_52_stats}}'
+      contentTable: '{{%stc_53_stats}}'
       fieldLayout: table
       maxRows: ''
       minRows: ''
@@ -88,4 +88,4 @@ fields:
     type: craft\fields\PlainText
 handle: statsBlockWithIcons
 name: 'Stats Block with Icons'
-sortOrder: 12
+sortOrder: 13

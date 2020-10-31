@@ -72,42 +72,6 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 55169274-4595-4ab0-a461-9b4600d07779
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            fieldUid: ca2e4145-9289-482b-b1f1-c2843b4b4d60
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            fieldUid: 9723e73e-bf9d-4785-809e-fa94b4b85e14
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            fieldUid: be548529-2247-4e87-85a8-f0d44b966e46
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
             fieldUid: 946b75ee-7882-4bdc-b28b-7009a8398e2e
             instructions: null
             label: null
@@ -216,6 +180,46 @@ fieldLayouts:
             width: 100
         name: SEO
         sortOrder: 3
+      -
+        elements:
+          -
+            fieldUid: 55169274-4595-4ab0-a461-9b4600d07779
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: ca2e4145-9289-482b-b1f1-c2843b4b4d60
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: be548529-2247-4e87-85a8-f0d44b966e46
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 9723e73e-bf9d-4785-809e-fa94b4b85e14
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: 'Legacy Fields | DO NOT USE'
+        sortOrder: 4
 handle: cityCouncil
 hasTitleField: true
 name: 'City Council'

@@ -72,69 +72,6 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: ca2e4145-9289-482b-b1f1-c2843b4b4d60
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            fieldUid: 9723e73e-bf9d-4785-809e-fa94b4b85e14
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            fieldUid: a1b84d64-99d2-4d66-a914-6260fc55fe55
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            fieldUid: d9f6b182-7186-4e99-909f-9112985467b8
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            fieldUid: 89fc1206-d81a-4ef4-b8fd-3431852a9db7
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            fieldUid: a658ef46-5ee4-44f5-b775-9df0ea27df38
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            fieldUid: 55169274-4595-4ab0-a461-9b4600d07779
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
             fieldUid: 946b75ee-7882-4bdc-b28b-7009a8398e2e
             instructions: null
             label: null
@@ -304,7 +241,7 @@ fieldLayouts:
       -
         elements:
           -
-            fieldUid: 509d4604-912b-44dc-a01a-a728586e87a2
+            fieldUid: ca2e4145-9289-482b-b1f1-c2843b4b4d60
             instructions: null
             label: null
             required: false
@@ -312,7 +249,61 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 100
-        name: 'ADMIN ONLY'
+          -
+            fieldUid: 9723e73e-bf9d-4785-809e-fa94b4b85e14
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: a1b84d64-99d2-4d66-a914-6260fc55fe55
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: d9f6b182-7186-4e99-909f-9112985467b8
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 89fc1206-d81a-4ef4-b8fd-3431852a9db7
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: a658ef46-5ee4-44f5-b775-9df0ea27df38
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 55169274-4595-4ab0-a461-9b4600d07779
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: 'Legacy Fields | DO NOT USE'
         sortOrder: 5
 handle: departments
 hasTitleField: true

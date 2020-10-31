@@ -1,4 +1,3 @@
-{%- cache using key "topics-export" for 1 day -%}
 {%- macro entries(field, title, blockType) -%}
   {%- set blockType = (blockType ?? "Entries") ~ "Block" -%}
   {%- if field | length -%}
@@ -30,7 +29,7 @@
       {{ macro.entries(entry.pageDocuments, "Documents") }}
       {{ macro.entries(entry.pageProjects, "Projects") }}
       {{ macro.entries(entry.pageTopics, "Topics") }}
-      {{ macro.events(entry.pageEvents, "Events", "Events") }}
+      {{ macro.entries(entry.pageEvents, "Events", "Events") }}
       <MeetingsBlock>
         <Heading>Meetings</Heading>
         <Autofill>Yes</Autofill>
@@ -44,4 +43,3 @@
     {%- if pageInfo.nextUrl %}<next>{{ pageInfo.nextUrl }}</next>{%- endif -%}
   </paginate>
 </entries>
-{%- endcache -%}
