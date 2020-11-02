@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "084dff3628bd3fb1e72af0401f55975c",
+    "content-hash": "db929c3e3957dac4eae03deb8a0bb3ec",
     "packages": [
         {
             "name": "aelvan/inlin",
@@ -1431,6 +1431,46 @@
             "time": "2019-06-08T11:03:04+00:00"
         },
         {
+            "name": "donatj/phpuseragentparser",
+            "version": "v0.9.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/donatj/PhpUserAgent/zipball/ea79de6a18e52285e62cd75cf1cebe276ecaf503",
+                "reference": "ea79de6a18e52285e62cd75cf1cebe276ecaf503",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "Source/UserAgentParser.php"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jesse G. Donat",
+                    "email": "donatj@gmail.com",
+                    "homepage": "http://donatstudios.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Simple, streamlined PHP user-agent parser",
+            "homepage": "http://donatstudios.com/PHP-Parser-HTTP_USER_AGENT",
+            "keywords": [
+                "browser",
+                "browser detection",
+                "parser",
+                "user agent",
+                "useragent"
+            ],
+            "time": "2017-10-23T16:52:52+00:00"
+        },
+        {
             "name": "doublesecretagency/craft-cpbodyclasses",
             "version": "2.2.1",
             "dist": {
@@ -2143,6 +2183,48 @@
                 "fixtures"
             ],
             "time": "2019-12-12T13:22:17+00:00"
+        },
+        {
+            "name": "geoip2/geoip2",
+            "version": "v2.10.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/maxmind/GeoIP2-php/zipball/419557cd21d9fe039721a83490701a58c8ce784a",
+                "reference": "419557cd21d9fe039721a83490701a58c8ce784a",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "maxmind-db/reader": "~1.5",
+                "maxmind/web-service-common": "~0.6",
+                "php": ">=5.6"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "GeoIp2\\": "src"
+                }
+            },
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Gregory J. Oschwald",
+                    "email": "goschwald@maxmind.com",
+                    "homepage": "https://www.maxmind.com/"
+                }
+            ],
+            "description": "MaxMind GeoIP2 PHP API",
+            "homepage": "https://github.com/maxmind/GeoIP2-php",
+            "keywords": [
+                "IP",
+                "geoip",
+                "geoip2",
+                "geolocation",
+                "maxmind"
+            ],
+            "time": "2019-12-12T18:48:39+00:00"
         },
         {
             "name": "giggsey/libphonenumber-for-php",
@@ -4106,6 +4188,88 @@
                 "xml"
             ],
             "time": "2020-07-05T07:53:37+00:00"
+        },
+        {
+            "name": "maxmind-db/reader",
+            "version": "v1.6.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/maxmind/MaxMind-DB-Reader-php/zipball/febd4920bf17c1da84cef58e56a8227dfb37fbe4",
+                "reference": "febd4920bf17c1da84cef58e56a8227dfb37fbe4",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6"
+            },
+            "conflict": {
+                "ext-maxminddb": "<1.6.0,>=2.0.0"
+            },
+            "suggest": {
+                "ext-bcmath": "bcmath or gmp is required for decoding larger integers with the pure PHP decoder",
+                "ext-gmp": "bcmath or gmp is required for decoding larger integers with the pure PHP decoder",
+                "ext-maxminddb": "A C-based database decoder that provides significantly faster lookups"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "MaxMind\\Db\\": "src/MaxMind/Db"
+                }
+            },
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Gregory J. Oschwald",
+                    "email": "goschwald@maxmind.com",
+                    "homepage": "https://www.maxmind.com/"
+                }
+            ],
+            "description": "MaxMind DB Reader API",
+            "homepage": "https://github.com/maxmind/MaxMind-DB-Reader-php",
+            "keywords": [
+                "database",
+                "geoip",
+                "geoip2",
+                "geolocation",
+                "maxmind"
+            ],
+            "time": "2019-12-19T22:59:03+00:00"
+        },
+        {
+            "name": "maxmind/web-service-common",
+            "version": "v0.7.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/maxmind/web-service-common-php/zipball/74c996c218ada5c639c8c2f076756e059f5552fc",
+                "reference": "74c996c218ada5c639c8c2f076756e059f5552fc",
+                "shasum": ""
+            },
+            "require": {
+                "composer/ca-bundle": "^1.0.3",
+                "ext-curl": "*",
+                "ext-json": "*",
+                "php": ">=5.6"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "MaxMind\\Exception\\": "src/Exception",
+                    "MaxMind\\WebService\\": "src/WebService"
+                }
+            },
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Gregory Oschwald",
+                    "email": "goschwald@maxmind.com"
+                }
+            ],
+            "description": "Internal MaxMind Web Service API",
+            "homepage": "https://github.com/maxmind/web-service-common-php",
+            "time": "2020-05-06T14:07:26+00:00"
         },
         {
             "name": "michelf/php-smartypants",
@@ -6500,6 +6664,57 @@
             "time": "2016-11-22T22:57:47+00:00"
         },
         {
+            "name": "superbig/craft-audit",
+            "version": "1.1.3",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sjelfull/craft-audit/zipball/65671881ee7526e973d15a32c2ee8bc8de2618a7",
+                "reference": "65671881ee7526e973d15a32c2ee8bc8de2618a7",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.2",
+                "donatj/phpuseragentparser": "^0.9.0",
+                "geoip2/geoip2": "^2.5"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Audit",
+                "handle": "audit",
+                "hasCpSettings": true,
+                "hasCpSection": true,
+                "changelogUrl": "https://raw.githubusercontent.com/sjelfull/craft-audit/v1/CHANGELOG.md",
+                "class": "superbig\\audit\\Audit"
+            },
+            "autoload": {
+                "psr-4": {
+                    "superbig\\audit\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Superbig",
+                    "homepage": "https://superbig.co"
+                }
+            ],
+            "description": "Log adding/updating/deleting of elements",
+            "keywords": [
+                "audit",
+                "cms",
+                "craft",
+                "craft-plugin",
+                "craftcms"
+            ],
+            "support": {
+                "docs": "https://github.com/sjelfull/craft-audit/blob/v1/README.md",
+                "issues": "https://github.com/sjelfull/craft-audit/issues"
+            },
+            "time": "2020-08-27T11:07:08+00:00"
+        },
+        {
             "name": "superbig/craft3-beam",
             "version": "2.1.5",
             "dist": {
@@ -8419,119 +8634,6 @@
             ],
             "description": "Common utilities and building-blocks for Verbb plugins for Craft CMS.",
             "time": "2020-04-14T23:40:29+00:00"
-        },
-        {
-            "name": "verbb/field-manager",
-            "version": "2.2.1",
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/verbb/field-manager/zipball/bcc9bbc0d36daa19f8dc4dcd9b7f3369b9f12bd7",
-                "reference": "bcc9bbc0d36daa19f8dc4dcd9b7f3369b9f12bd7",
-                "shasum": ""
-            },
-            "require": {
-                "craftcms/cms": "^3.5.0",
-                "verbb/base": "^1.0.2"
-            },
-            "type": "craft-plugin",
-            "extra": {
-                "name": "Field Manager",
-                "handle": "field-manager",
-                "changelogUrl": "https://raw.githubusercontent.com/verbb/field-manager/craft-3/CHANGELOG.md",
-                "class": "verbb\\fieldmanager\\FieldManager"
-            },
-            "autoload": {
-                "psr-4": {
-                    "verbb\\fieldmanager\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Verbb",
-                    "homepage": "https://verbb.io"
-                }
-            ],
-            "description": "Manage your fields and field groups with ease with simple field or group cloning and quicker overall management.",
-            "keywords": [
-                "cms",
-                "craft",
-                "craft-plugin",
-                "craftcms",
-                "field manager"
-            ],
-            "support": {
-                "email": "support@verbb.io",
-                "issues": "https://github.com/verbb/field-manager/issues?state=open",
-                "source": "https://github.com/verbb/field-manager",
-                "docs": "https://github.com/verbb/field-manager",
-                "rss": "https://github.com/verbb/field-manager/commits/v2.atom"
-            },
-            "time": "2020-09-28T09:06:01+00:00"
-        },
-        {
-            "name": "verbb/formie",
-            "version": "1.2.14",
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/verbb/formie/zipball/5711fd8c4c41cecfc6b43c01397142424a9275ee",
-                "reference": "5711fd8c4c41cecfc6b43c01397142424a9275ee",
-                "shasum": ""
-            },
-            "require": {
-                "commerceguys/addressing": "^1.0",
-                "craftcms/cms": "^3.4.0",
-                "ext-json": "*",
-                "ezyang/htmlpurifier": "^4.13",
-                "fzaninotto/faker": "^1.9",
-                "giggsey/libphonenumber-for-php": "^8.12",
-                "guzzlehttp/oauth-subscriber": "^0.3.0",
-                "html2text/html2text": "^4.3",
-                "league/html-to-markdown": "^4.10",
-                "league/oauth1-client": "^1.7",
-                "league/oauth2-client": "^2.4.0",
-                "league/oauth2-google": "^3.0",
-                "verbb/base": "^1.0.0"
-            },
-            "type": "craft-plugin",
-            "extra": {
-                "name": "Formie",
-                "handle": "formie",
-                "changelogUrl": "https://raw.githubusercontent.com/verbb/formie/craft-3/CHANGELOG.md",
-                "class": "verbb\\formie\\Formie"
-            },
-            "autoload": {
-                "psr-4": {
-                    "verbb\\formie\\": "src/"
-                }
-            },
-            "license": [
-                "proprietary"
-            ],
-            "authors": [
-                {
-                    "name": "Verbb",
-                    "homepage": "https://verbb.io"
-                }
-            ],
-            "description": "The most user-friendly forms plugin for Craft.",
-            "keywords": [
-                "cms",
-                "craft",
-                "craft-plugin",
-                "craftcms",
-                "formie"
-            ],
-            "support": {
-                "email": "support@verbb.io",
-                "issues": "https://github.com/verbb/formie/issues?state=open",
-                "source": "https://github.com/verbb/formie",
-                "docs": "https://github.com/verbb/formie",
-                "rss": "https://github.com/verbb/formie/commits/v2.atom"
-            },
-            "time": "2020-09-17T13:45:06+00:00"
         },
         {
             "name": "verbb/redactor-tweaks",

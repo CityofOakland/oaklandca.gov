@@ -1,4 +1,4 @@
-dateModified: 1604337678
+dateModified: 1604338857
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -17,6 +17,23 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 2.0.0
+  audit:
+    edition: standard
+    enabled: true
+    licenseKey: DIHEDGOO9YB18029NWMB3149
+    schemaVersion: 1.0.3
+    settings:
+      dbPath: /Users/ckennedy/Code/oaklandca.gov/storage/audit/
+      enabled: true
+      enabledGeolocation: true
+      logDraftEvents: false
+      logElementEvents: true
+      logPluginEvents: true
+      logRouteEvents: true
+      logUserEvents: true
+      pruneDays: 30
+      pruneRecordsOnAdminRequests: false
+      updateAuthKey: tszernjiniefppwr
   aws-s3:
     enabled: '1'
     licenseKey: null
@@ -148,10 +165,6 @@ plugins:
     licenseKey: null
     schemaVersion: 2.1.2
     settings: null
-  field-manager:
-    edition: standard
-    enabled: true
-    schemaVersion: 1.0.0
   imager-x:
     edition: pro
     enabled: true
