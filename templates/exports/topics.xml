@@ -22,7 +22,7 @@
   {%- for entry in pageEntries -%}
   <entry>
     <Title>{{ entry.title }}</Title>
-    <ID>{{ entry.title }}</ID>
+    <ID>{{ entry.id }}</ID>
     <Entries>
       {{ macro.entries(entry.pageServices, "Services") }}
       {{ macro.entries(entry.pageResources, "Resources") }}
