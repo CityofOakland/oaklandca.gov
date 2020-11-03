@@ -1,7 +1,0 @@
-{% include "exports/address.xml" with {
-  query: craft.calendar.events({
-    calendar: "meetings",
-    status: null,
-    limit: 25
-  })
-} %}

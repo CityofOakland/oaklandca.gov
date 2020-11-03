@@ -44,32 +44,13 @@
       {% include "_partials/_elements/_nav-sidebar.twig" with {
         navMenu: {
           'meetings': relatedMeetings.exists(),
-          'documents': entry.pageDocuments.exists(),
-          'projects': entry.pageProjects.exists(),
-          'topics': entry.pageTopics.exists(),
-          'services': entry.pageServices.exists(),
-          'resources': entry.pageResources.exists(),
-          'news': relatedNews.exists(),
           'relatedPages': true,
           'about': true,
           'contact': contactState
         }
       } %}
       <div class="w-full">
-        {% if contentBuilder %}
-          {% include '_partials/_content-builder/_tool.twig' %}
-        {% else %}
-          {% include '_partials/_page-meetings.twig' with {
-            pageMeetingsLinkUrl: '/' ~ entry.uri ~ '/meetings',
-            pageMeetingsLinkText: 'View All Meetings, Minutes & Agendas'
-          } %}
-          {% include '_partials/_page-documents.twig' %}
-          {% include '_partials/_page-projects.twig' %}
-          {% include '_partials/_page-topics.twig' %}
-          {% include '_partials/_page-resources.twig' %}
-          {% include '_partials/_page-services.twig' %}
-          {% include '_partials/_page-news.twig' %}
-        {% endif %}
+        {% include '_partials/_content-builder/_tool.twig' %}
         {% include "_partials/_page-related-content.twig" with {
           relatedContent : relatedContent
         } %}

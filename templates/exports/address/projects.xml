@@ -1,3 +1,0 @@
-{% include "exports/address.xml" with {
-  query: craft.entries.section("projects").type("not projectsBeta").limit(25)
-} %}

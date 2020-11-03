@@ -1,3 +1,0 @@
-{% include "exports/address.xml" with {
-  query: craft.entries.section("boardsCommissions").type("boardsCommissions").limit(25)
-} %}
