@@ -1,0 +1,7 @@
+<div class="{% if not loop.last %}mb-12{% endif %}">
+  <ul>
+  {% for entry in craft.entries.section("documents").type("infoMemo").all() %}
+    <li><a href="{{ entry.documentFile.one.url }}">{{ entry.title }}</a></li>
+  {% endfor %}
+  </ul>
+</div>
