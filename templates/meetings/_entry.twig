@@ -44,9 +44,7 @@
 {% block content %}
   {% block banner %}
     {% include '_partials/_page-banners.twig' with {
-      bannerImage: entry.eventImage,
-      bannerImageBlur: 'large',
-        breadCrumbLinks: [
+      breadCrumbLinks: [
         {
           title: 'Meetings',
           link: '/meetings'
