@@ -1,0 +1,95 @@
+{% set addresses = entry.addresses | length %}
+{% if addresses or entry.phoneNumbers | length or entry.emailAddress %}
+  <section class="mt-16 bg-white">
+    <a class="anchor-link" id="page-contact"></a>
+    {% include '_partials/_elements/_module-header.twig' with {
+      headerText: pageLocationHeaderText ?? "Contact Us",
+    } %}
+    <div class="mt-4 lg:flex">
+      {% if addresses %}
+        <div class="lg:w-1/2 lg:pr-8">
+          <h3 class="mb-0 text-2xl">Address{% if addresses > 1 %}es{% endif %}</h3>
+          {% for block in entry.addresses.all() ?? '' %}
+            {% switch block.type %}
+              {% case "location" %}
+                <h4 class="{% if not loop.first %} mt-8 {% endif %} text-2xl mb-0">{{ block.locationName }}</h4>
+                {% include '_partials/_elements/_address.twig' with { location: block } %}
+              {% case "onlineLocation" %}
+                <div class="mt-4 mb-8">
+                  {% if block.locationName %}<h4 class="{% if not loop.first %} mt-8 {% endif %} text-2xl mb-0">{{ block.locationName }}</h4>{% endif %}
+                  {{ block.locationDescription }}
+                  <p class="mb-0">
+                    <a href="{{ block.webAddress }}" class="btn btn-sm">Visit {{ block.locationName }}</a>
+                  </p>
+                </div>
+              {% default %}
+            {% endswitch %}
+          {% endfor %}
+          {{ entry.addressExtended }}
+        </div>
+      {% endif %}
+      <div class="{% if addresses %} lg:w-1/2 lg:pl-8 {% else %} flex-1 {% endif %}">
+        {% set phonesTrue = entry.phoneNumber ?? entry.faxNumber ?? entry.ttyNumber ?? false %}
+        {% if entry.phoneNumbers | length %}
+          <h3 class="mb-0 text-2xl">Phone Numbers</h3>
+          <ul class="mb-8">
+            {% for phone in entry.phoneNumbers.all() %}
+              {% include '_partials/_elements/_phone-numbers.twig' %}
+            {% endfor %}
+          </ul>
+        {% elseif phonesTrue %}
+          <h3 class="mb-0 text-2xl">Phone Numbers</h3>
+          <ul class="mb-8">
+            {% if entry.phoneNumber | length %}
+              <li>Phone Number:
+                <a href="tel:{{ entry.phoneNumber }}">{{ entry.phoneNumber }}</a>
+              </li>
+            {% endif %}
+            {% if entry.faxNumber | length %}
+              <li>Fax Number:
+                <a href="tel:{{ entry.faxNumber }}">{{ entry.faxNumber }}</a>
+              </li>
+            {% endif %}
+            {% if entry.ttyNumber | length %}
+              <li>TTY Number:
+                {{ entry.ttyNumber }}</li>
+            {% endif %}
+          </ul>
+        {% endif %}
+        {% if entry.emailAddress | length %}
+          <h3 class="mb-0 text-2xl">Email Address</h3>
+          <p>
+            <a href="mailto:{{ entry.emailAddress }}">{{ entry.emailAddress }}</a>
+          </p>
+        {% endif %}
+        {% if entry.openHours | length %}
+          <h3 class="mb-0 text-2xl">Open Hours</h3>
+          {% for item in entry.openHours.all() %}
+            {% if item.hoursTitle | length %}
+              <h4 class="text-lg">{{ item.hoursTitle }}</h4>
+            {% endif %}
+            <dl>
+              {% for day in item.hours.getRange(1, 0) %}
+                {% include '_partials/_elements/_hours.twig' %}
+              {% endfor %}
+            </dl>
+          {% endfor %}
+        {% endif %}
+        {# TODO: Move Topics, processes (negligible) and officials to matrix immediately #}
+        {% if entry.hours %}
+          {# <h3 class="mb-0 text-2xl">Open Hours</h3>
+          <dl>
+            {% for day in entry.hours.getRange(1, 0) %}
+              {% include '_partials/_elements/_hours.twig' %}
+            {% endfor %}
+          </dl> #}
+        {% endif %}
+        {% if entry.boardHours | length %}
+          <h3 class="mb-0 text-2xl">Business Hours</h3>
+          {{ entry.boardHours }}
+        {% endif %}
+        {% include '_partials/_elements/_social-media.twig' %}
+      </div>
+    </div>
+  </section>
+{% endif %}
