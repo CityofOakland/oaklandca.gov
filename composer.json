@@ -1,5 +1,5 @@
 {
-  "name": "oaklandcitywebsite",
+  "name": "CityofOakland/oaklandca.gov",
   "description": "The official Craft CMS website for the City of OaklandCA.gov",
   "require": {
     "craftcms/cms": "3.5.14",
