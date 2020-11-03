@@ -1,0 +1,10 @@
+{% set infoMemos = craft.categories.id(29) %}
+<div class="{% if not loop.last %}mb-12{% endif %}">
+  <div class="body-text">
+    <ul>
+    {% for entry in craft.entries.section("documents").documentType(infoMemos).all() %}
+      <li><a href="{{ entry.documentFile.one.getUrl() ?? " " }}">{{ entry.title }}</a>, {{ entry.postDate | date("m/d/y") }}</li>
+    {% endfor %}
+    </ul>
+  </div>
+</div>
