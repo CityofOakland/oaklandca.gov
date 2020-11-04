@@ -63,7 +63,7 @@ function contentBuilder($element)
 {
   $body = [];
   if (!empty($element)) {
-    foreach ($element as $block) {
+    foreach ($element->all() as $block) {
       switch ($block->type) {
         case 'heading':
         case 'subheading':
