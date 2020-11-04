@@ -1,15 +1,31 @@
 {% set eventIds = block.entries.ids() %}
 {% set relatedEvents = "" %}
 
-{% if block.allowAutofill %}
-  {% set options = {
-    calendar: calendarHandle ?? '',
-    limit: 3 - eventIds | length,
-    rangeStart: now | date('Y-m-d'),
-  } %}
+{% set defaultButtonUrl = "/" ~ calendarHandle ~ "/related-to/" ~ entry.section.handle ~ '/' ~ entry.slug %}
+{% set defaultButtonText = "All " ~ calendarHandle | capitalize %}
 
+{% set options = {
+  calendar: calendarHandle ?? '',
+  limit: 3 - eventIds | length,
+  rangeStart: now | date('Y-m-d'),
+} %}
+
+{% set pastOptions = {
+  calendar: calendarHandle ?? '',
+  limit: 3 - eventIds | length,
+  rangeEnd: now | date('Y-m-d'),
+  order: "startDate desc"
+} %}
+
+{% if block.allowAutofill %}
+  {% set pastEvents = craft.calendar.events(pastOptions).relatedTo(entry).ids() %}
   {% set relatedEvents = craft.calendar.events(options).relatedTo(entry).ids() %}
-  {% set eventIds = eventIds | merge(relatedEvents) %}
+
+  {% if relatedEvents | length %}
+    {% set eventIds = eventIds | merge(relatedEvents) %}
+  {% else %}
+    {% set eventIds = eventIds | merge(pastEvents) %}
+  {% endif %}
 {% endif %}
 
 <div class="{% if not loop.last %}mb-12{% endif %}">
@@ -29,4 +45,8 @@
       } %}
     {% endfor %}
   </div>
+  {% include "_partials/_elements/_module-readmore.twig" with {
+    linkText: calLinkText ?? defaultButtonText,
+    linkUrl: calLinkUrl ?? defaultButtonUrl
+  } %}
 </div>

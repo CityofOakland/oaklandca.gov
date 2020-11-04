@@ -17,13 +17,7 @@
   ['documents', 'entries']
 ] %}
 
-{% set relatedMeetings = craft.calendar.events.relatedTo(entry) %}
-{% set relatedNews = craft.entries.section('news').relatedTo(entry) %}
-
-{% set contactState = entry.addresses | length or not entry.address.isEmpty or entry.phoneNumbers | length or entry.emailAddress | length or entry.openHours | length %}
-{% set contentBuilder = entry.contentBuilder | length %}
-{% set leadership = true %}
-{% set contact = contactState %}
+{% set contactState = entry.addresses | length or entry.phoneNumbers | length or entry.emailAddress | length or entry.openHours | length %}
 
 {% block content %}
   {% include '_partials/_page-banners.twig' with {
@@ -41,16 +35,12 @@
   } %}
   <div class="container pt-0">
     <div class="flex">
-      {% include "_partials/_elements/_nav-sidebar.twig" with {
-        navMenu: {
-          'meetings': relatedMeetings.exists(),
-          'relatedPages': true,
-          'about': true,
-          'contact': contactState
-        }
-      } %}
+      {% include "_partials/_elements/_nav-sidebar.twig" %}
       <div class="w-full">
-        {% include '_partials/_content-builder/_tool.twig' %}
+        {% include '_partials/_content-builder/_tool.twig' with {
+          calLinkUrl: '/' ~ entry.uri ~ '/meetings',
+          calLinkText: 'View All Meetings, Minutes & Agendas'
+        } %}
         {% include "_partials/_page-related-content.twig" with {
           relatedContent : relatedContent
         } %}
