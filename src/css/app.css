@@ -328,15 +328,16 @@ button {
   }
 }
 
-table,
-th,
-td {
-  @apply border border-gray-500 border-solid;
-}
-
-th,
-td {
+.standard-table {
+  &:table,
+  &:th,
+  &:td {
+    @apply border border-gray-500 border-solid;
+  }
+  &:th,
+  &:td {
   @apply p-2;
+  }
 }
 
 .search-box {
