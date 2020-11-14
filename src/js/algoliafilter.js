@@ -97,8 +97,8 @@ if (typeof moment !== 'undefined') {
       new Calendar({
         element: $('#calendar'),
         same_day_range: true,
-        start_date: MONTHSTART,
-        end_date: MONTHEND,
+        start_date: moment().startOf('month'),
+        end_date: moment().add(11, 'month').endOf('month'),
         presets: [{
           label: 'This month',
           start: moment().startOf('month'),
