@@ -8,7 +8,7 @@
       {% case "heading" %}
         {% set sideNavLinks = sideNavLinks | merge([{
           title:  block.text,
-          link:  block.text | kebab ~ '-' ~ block.id,
+          link:  block.text | kebab,
         }]) %}
       {% case "largeEntryLinks" or
               "mediumEntryLinks" or
@@ -27,7 +27,7 @@
         {% if block.heading %}
           {% set sideNavLinks = sideNavLinks | merge([{
             title: block.heading,
-            link: block.heading | kebab ~ '-' ~ block.id,
+            link: block.heading | kebab,
           }]) %}
         {% endif %}
       {% endswitch %}
