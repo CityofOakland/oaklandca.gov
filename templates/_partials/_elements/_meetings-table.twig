@@ -1,0 +1,112 @@
+{% set eventOptions = {
+  calendarId: 3,
+  relatedTo: entry,
+  order: "startDate DESC",
+  limit: null
+} %}
+{% set events = craft.calendar.events(eventOptions) %}
+
+{# Use these variables to set the table status attributes  #}
+{% set tableColorPalette = {
+  'active': {
+    'statusTextColor': 'cool-gray-1000',
+    'statusBgColor': 'white',
+  },
+  'canceled': {
+    'statusTextColor': 'white',
+    'statusBgColor': 'green-600',
+  },
+  'rescheduled': {
+    'statusTextColor': 'white',
+    'statusBgColor': 'cool-gray-1000',
+  },
+} %}
+
+{# The below tag pairs set javascript and CSS for our responsive tables #}
+{% css %}
+  @media screen and (max-width: 575px) {
+    #meetings caption { background-image: none; }
+    #meetings thead { display: none; }
+    #meetings tbody td {
+      display: block; padding: .6rem;
+    }
+    #meetings tbody tr td:first-child {
+    }
+    #meetings tbody td:before {
+      content: attr(data-th);
+      font-weight: bold;
+      display: block;
+      width: 100%;
+    }
+  }
+{% endcss %}
+{% js %}
+  { % include '_js/responsivetable.js'  %}
+  responsiveTable('meetings');
+{% endjs %}
+{% if events | length %}
+  <table class="w-full text-xs border border-cool-gray-500" id="meetings">
+    <thead>
+      <tr>
+        <th class="px-3 py-1 text-white border bg-cool-gray-500 border-cool-gray-500 md:w-1/3">Meeting</th>
+        <th class="px-3 py-1 text-white border bg-cool-gray-500 border-cool-gray-500">Date</th>
+        <th class="px-3 py-1 text-white border bg-cool-gray-500 border-cool-gray-500">Meeting Minutes</th>
+        <th class="px-3 py-1 text-white border bg-cool-gray-500 border-cool-gray-500">Video</th>
+        <th class="px-3 py-1 text-white border bg-cool-gray-500 border-cool-gray-500">Agenda</th>
+        {% if not (hideUpdate ?? "") %}
+          <th class="px-3 py-1 text-white border bg-cool-gray-500 border-cool-gray-500 md:w-10">Updates</th>
+        {% endif %}
+      </tr>
+    </thead>
+    <tbody>
+      {% for event in events.all() %}
+        {% set documents = event.documents %}
+        {% set minutes = craft.categories.group('documentTypes').id(12).one %}
+        {% set agendas = craft.categories.group('documentTypes').id(13).one %}
+        <tr>
+          <td class="px-3 text-white border bg-cool-gray-500 border-cool-gray-500 sm:bg-white sm:text-cool-gray-1000">
+            <a class="text-white sm:text-green-800" href="{{ event.url }}">{{ event.title }}</a>
+          </td>
+          <td class="px-3 border border-cool-gray-500">
+            {{ event.startDate | date('m/d/y') }}
+          </td>
+          <td class="px-3 border border-cool-gray-500">
+            {% if documents.relatedTo(minutes) | length %}
+              {% for document in documents.all() %}
+                {% set file = document.documentFile.one %}
+                <a href="{{ file.url }}">{{ file.title }}</a><br>
+              {% endfor %}
+            {% else %}
+              N/A
+            {% endif %}
+          </td>
+          <td class="px-3 border border-cool-gray-500">
+            {% if event.videoLink | length %}
+              <a href="{{ event.videoLink }}" target="_blank">Link</a>
+            {% else %}
+              N/A
+            {% endif %}
+          </td>
+          <td class="px-3 border border-cool-gray-500">
+            {% if documents.relatedTo(agendas) | length %}
+              {% for document in documents.all() %}
+                {% set file = document.documentFile.one %}
+                <a href="{{ file.url }}">{{ file.title }}</a><br>
+              {% endfor %}
+            {% else %}
+              N/A
+            {% endif %}
+          </td>
+          {% if not (hideUpdate ?? "") %}
+            {% set eventStatus = event.eventStatus.value ?? 'active' %}
+            {% set eventLabel = event.eventStatus.label ?? 'Active' %}
+            {% set tableColor = tableColorPalette[eventStatus] %}
+            <td class="border border-cool-gray-500 px-3 bg-{{ tableColor.statusBgColor }} text-{{ tableColor.statusTextColor }}">
+              {{ eventLabel == 'Active' ? '' : eventLabel }}
+            </td>
+          {% endif %}
+        {% endfor %}
+      </tbody>
+    </tbody>
+  </table>
+{% endif %}
