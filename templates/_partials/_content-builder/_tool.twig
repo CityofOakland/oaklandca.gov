@@ -48,7 +48,7 @@
 {% import _self as macro %}
 
 {% for block in entry.contentBuilder.all() %}
-  {% set blockId =  (block.text ?? block.heading ?? "block") | kebab ~ '-' ~ block.id ?? block.id %}
+  {% set blockId =  (block.text ?? block.heading ?? "block") | kebab %}
   {% switch loop.index0 %}
 
     {% case 0 %}
