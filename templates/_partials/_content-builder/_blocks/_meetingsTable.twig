@@ -1,0 +1,5 @@
+<div class="{% if not loop.last %}mb-12{% endif %}">
+  {% include "_partials/_elements/_meetings-table.twig" with {
+    hideUpdate: true
+  } %}
+</div>

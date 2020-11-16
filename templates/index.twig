@@ -10,9 +10,9 @@
       'highlightedNews.newsImage'
     ]
 ) %}
-{% set bannerImage = entry.banner[0] %}
+{% set bannerImage = entry.banner[0] ?? "" %}
 {% set cityServices = entry.cityServicesAndResourcesUpdates %}
-{% set hlNews = entry.highlightedNews[0] %}
+{% set hlNews = entry.highlightedNews %}
 {% set learnMore = entry.learnMoreAbout %}
 
 {% block content %}
@@ -72,19 +72,19 @@
             {% if hlNews | length %}
               {% set featuredNews = hlNews %}
             {% else %}
-              {% set featuredNews = craft.entries()
+              {% set featuredNews = craft.entries
                 .section('news')
                 .search('featureOnHomepage:1')
-                .with(['newsImage'])
                 .newsImage(':notempty:')
-                .after('2019-10-01')
-                .orderBy('RAND()')
+                .with(['newsImage'])
+                .orderBy('postDate desc')
                 .one() %}
+                {% set featuredImage = featuredNews.newsImage[0] %}
             {% endif %}
             <article class="lg:flex lg:flex-row">
               <figure class="relative z-0 flex items-center justify-center h-48 p-4 bg-gray-300 lg:w-2/5">
-                {% if featuredNews.newsImage | length %}
-                  <img class="absolute inset-0 object-cover w-full h-full" src="{{ featuredNews.newsImage.one.url }}" alt="{{ featuredNews.newsImage.title }}">
+                {% if featuredImage | length %}
+                  <img class="absolute inset-0 object-cover w-full h-full" src="{{ featuredImage.url }}" alt="{{ featuredImage.title }}">
                 {% else %}
                   <div class="w-full h-full px-12 py-6 text-gray-500 opacity-75 fill-current">
                     {{ craft.inlin.er('/assets/img/icon-newspaper.svg') | replace('<svg ', '<svg class="w-32 h-32" ') | raw }}

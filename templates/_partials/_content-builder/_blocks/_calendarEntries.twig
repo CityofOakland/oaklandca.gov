@@ -45,8 +45,10 @@
       } %}
     {% endfor %}
   </div>
-  {% include "_partials/_elements/_module-readmore.twig" with {
-    linkText: calLinkText ?? defaultButtonText,
-    linkUrl: calLinkUrl ?? defaultButtonUrl
-  } %}
+  {% if not block.hideReadMoreLink %}
+    {% include "_partials/_elements/_module-readmore.twig" with {
+      linkText: calLinkText ?? defaultButtonText,
+      linkUrl: calLinkUrl ?? defaultButtonUrl
+    } %}
+  {% endif %}
 </div>

@@ -49,6 +49,15 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 100
+          -
+            fieldUid: d446c3b2-3606-4327-bbf1-c2603c47142a
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Content
         sortOrder: 1
 fields:
@@ -91,6 +100,20 @@ fields:
     handle: allowAutofill
     instructions: ''
     name: 'Allow Autofill?'
+    searchable: false
+    settings:
+      default: false
+      offLabel: null
+      onLabel: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch
+  d446c3b2-3606-4327-bbf1-c2603c47142a:
+    contentColumnType: boolean
+    fieldGroup: null
+    handle: hideReadMoreLink
+    instructions: ''
+    name: 'Hide Read More Link?'
     searchable: false
     settings:
       default: false

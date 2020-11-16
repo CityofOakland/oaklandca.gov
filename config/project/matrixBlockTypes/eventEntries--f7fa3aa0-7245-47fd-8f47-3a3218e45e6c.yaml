@@ -49,6 +49,15 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 100
+          -
+            fieldUid: 11e84e2c-1c7f-451b-8631-999dc2c33f1f
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Content
         sortOrder: 1
 fields:
@@ -71,6 +80,20 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
+  11e84e2c-1c7f-451b-8631-999dc2c33f1f:
+    contentColumnType: boolean
+    fieldGroup: null
+    handle: hideReadMoreLink
+    instructions: ''
+    name: 'Hide Read More Link?'
+    searchable: false
+    settings:
+      default: false
+      offLabel: null
+      onLabel: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch
   321943ce-06f4-4125-b82a-baf2e174a37f:
     contentColumnType: boolean
     fieldGroup: null

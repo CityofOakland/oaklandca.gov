@@ -13,13 +13,9 @@ $adminLinksBlock = [
   'label' => 'Links',
   'types' => ['linksWithDescriptions', 'linkBlocksWithImages', 'linkBlocksWithIcons', 'largeEntryLinks', 'smallEntryLinks', 'newsEntries', 'eventEntries', 'meetingEntries', 'callToAction']
 ];
-// $pageElementsBlock = [
-//   'label' => 'Page Elements',
-//   'types' => ['statsBlockWithIcons']
-// ];
 $adminPageElementsBlock = [
   'label' => 'Page Elements',
-  'types' => ['statsBlockWithIcons', 'timeline', 'customTemplate', 'embeddedContent', 'emailSignup']
+  'types' => ['statsBlockWithIcons', 'timeline', 'customTemplate', 'embeddedContent', 'emailSignup', 'meetingsTable']
 ];
 $imagesBlock = [
   'label' => 'Images',
@@ -81,34 +77,52 @@ return [
     'contentBuilder' => [
       '*' => [
         'groups' => $defaultBlock,
+        'types' => [
+          'meetingsTable' => [
+            'maxLimit' => 1
+          ],
+        ],
         'hideUngroupedTypes' => ($isUserAdmin ? false : true),
       ],
       'section:departments,section:boardsCommissions,section:officials' => [
         'groups' => $departmentsBlock,
+        'types' => [
+          'meetingsTable' => [
+            'maxLimit' => 1
+          ],
+        ],
         'hideUngroupedTypes' => ($isUserAdmin ? false : true),
       ],
       'section:topics' => [
         'groups' => $topicsBlock,
-        'hideUngroupedTypes' => ($isUserAdmin ? false : true),
-      ],
-      'section:news,section:pressReleases' => [
-        'groups' => $newsPressBlock,
+        'types' => [
+          'meetingsTable' => [
+            'maxLimit' => 1
+          ],
+        ],
         'hideUngroupedTypes' => ($isUserAdmin ? false : true),
       ],
       'section:resources' => [
         'groups' => $resourcesBlock,
+        'types' => [
+          'meetingsTable' => [
+            'maxLimit' => 1
+          ],
+        ],
         'hideUngroupedTypes' => ($isUserAdmin ? false : true),
       ],
       'section:services' => [
         'groups' => $servicesBlock,
+        'types' => [
+          'meetingsTable' => [
+            'maxLimit' => 1
+          ],
+        ],
         'hideUngroupedTypes' => ($isUserAdmin ? false : true),
       ],
     ],
     'recordings' => [
       'hiddenTypes' => ($isUserAdmin ? '' : ['embed']),
     ],
-    // 'addresses' => [
-    //   'hiddenTypes' => ['onlineLocation'],
-    // ],
   ],
 ];
