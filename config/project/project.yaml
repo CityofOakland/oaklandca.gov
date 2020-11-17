@@ -1,4 +1,4 @@
-dateModified: 1605638493
+dateModified: 1605646985
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -69,7 +69,7 @@ plugins:
         __assoc__:
           -
             - concurrency
-            - '3'
+            - '10'
       cacheWarmerType: putyourlightson\blitz\drivers\warmers\GuzzleWarmer
       cachingEnabled: ''
       clearCacheAutomatically: '1'
