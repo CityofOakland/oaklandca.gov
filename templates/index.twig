@@ -70,17 +70,16 @@
           } %}
           <div class="mt-8 lg:flex lg:flex-col">
             {% if hlNews | length %}
-              {% set featuredNews = hlNews %}
+              {% set featuredNews = hlNews[0] %}
             {% else %}
               {% set featuredNews = craft.entries
                 .section('news')
-                .search('featureOnHomepage:1')
+                .featureOnHomepage(true)
                 .newsImage(':notempty:')
-                .with(['newsImage'])
                 .orderBy('postDate desc')
-                .one() %}
-                {% set featuredImage = featuredNews.newsImage[0] %}
+                [0] %}
             {% endif %}
+            {% set featuredImage = featuredNews.newsImage[0] ?? "" %}
             <article class="lg:flex lg:flex-row">
               <figure class="relative z-0 flex items-center justify-center h-48 p-4 bg-gray-300 lg:w-2/5">
                 {% if featuredImage | length %}
