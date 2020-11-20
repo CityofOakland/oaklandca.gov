@@ -328,18 +328,6 @@ button {
   }
 }
 
-.standard-table {
-  &:table,
-  &:th,
-  &:td {
-    @apply border border-gray-500 border-solid;
-  }
-  &:th,
-  &:td {
-  @apply p-2;
-  }
-}
-
 .search-box {
   background-image: url("/assets/img/icon-spyglass.svg");
   background-repeat: no-repeat;

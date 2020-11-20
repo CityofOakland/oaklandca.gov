@@ -20,42 +20,39 @@
   ===================================
   Further additions (like column widths and optional classes for styling) should follow a similar naming convention.
 #}
+
 {% macro tableBuilder(object, columns) %}
-  <div class="standard-table">
-    <table class="w-full{% if not loop.last %} mb-12{% endif %}">
-      <thead class="font-bold text-white bg-green-800">
-        <tr>
+  <table class="w-full text-sm border border-cool-gray-500">
+    <thead>
+      <tr>
+        {% for col in 1..columns %}
+          {% set colAttrib = 'column' ~ col ~ 'Heading' %}
+          {% set widthAttrib = 'column' ~ col ~ 'Width' %}
+          <th class="px-3 py-1 text-white border bg-cool-gray-500 border-cool-gray-500" style="width: {{ attribute(object, widthAttrib) ~ '%' ?? '' }}">{{ attribute(object, colAttrib) }}</th>
+        {% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in object.table.all() %}
+        <tr class="odd:bg-white even:bg-cool-gray-100">
           {% for col in 1..columns %}
-            {% set colAttrib = 'column' ~ col ~ 'Heading' %}
-            {% set widthAttrib = 'column' ~ col ~ 'Width' %}
-            <th style="width: {{ attribute(object, widthAttrib) ~ '%' ?? '' }}" class="border-green-800">{{ attribute(object, colAttrib) }}</th>
+            {% set colAttrib = 'column' ~ col ~ 'Cell' %}
+            <td class="p-4 align-top border body-text border-cool-gray-500">{{ attribute(row, colAttrib) | retconAttr( '*', { 'class' : 'last:mb-0' }, false ) }}</td>
           {% endfor %}
         </tr>
-      </thead>
-      <tbody>
-        {% for row in object.table.all() %}
-          <tr>
-            {% for col in 1..columns %}
-              {% set colAttrib = 'column' ~ col ~ 'Cell' %}
-              <td class="p-4 align-top border-green-800 body-text">{{ attribute(row, colAttrib) }}</td>
-            {% endfor %}
-          </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-  </div>
+      {% endfor %}
+    </tbody>
+  </table>
 {% endmacro %}
 {% import _self as macro %}
 
-{% for block in entry.contentBuilder.all() %}
+{% for block in entry.contentBuilder %}
   {% set blockId =  (block.text ?? block.heading ?? "block") | kebab %}
   {% switch loop.index0 %}
-
     {% case 0 %}
       {% set hClass = topHeadingClass %}
     {% default %}
       {% set hClass = headingClass %}
-
   {% endswitch %}
 
   <div class="break-word">
@@ -73,11 +70,17 @@
     {% case "customTemplate" %}
       {% include templateBase ~ "custom-elements/" ~ block.templateSelect %}
     {% case "table2Columns" %}
-      {{ macro.tableBuilder(block, 2)}}
+      <div class="{% if not loop.last %}mb-12{% endif %}">
+        {{ macro.tableBuilder(block, 2)}}
+      </div>
     {% case "table3Columns" %}
-      {{ macro.tableBuilder(block, 3)}}
+      <div class="{% if not loop.last %}mb-12{% endif %}">
+        {{ macro.tableBuilder(block, 3)}}
+      </div>
     {% case "table4Columns" %}
-      {{ macro.tableBuilder(block, 4)}}
+      <div class="{% if not loop.last %}mb-12{% endif %}">
+        {{ macro.tableBuilder(block, 4)}}
+      </div>
     {% case "largeEntryLinks" or
         "smallEntryLinks" or
         "image" or

@@ -8,7 +8,7 @@
       <div class="sm:w-1/4 sm:mr-8">
         <figure class="w-full">
           {% if entry.portrait | length %}
-            <img src="{{ entry.portrait.one.url }}" alt="Portrait of {{ entry.groupHeadName }}">
+            <img src="{{ entry.portrait[0].url }}" alt="Portrait of {{ entry.groupHeadName }}">
           {% else %}
             <div class="h-full p-12 text-gray-500 bg-gray-300 opacity-75 fill-current">
               {{ craft.inlin.er('/assets/img/icon-user.svg') | replace('<svg ', '<svg class="w-full h-full" ') | raw }}
@@ -16,7 +16,7 @@
           {% endif %}
         </figure>
         {% if entry.teams | length %}
-          {% for entry in entry.teams.all() %}
+          {% for entry in entry.teams %}
             <a href="{{ entry.url }}" class="block mt-4 text-center btn btn-sm">{{ entry.title }}</a>
           {% endfor %}
         {% endif %}

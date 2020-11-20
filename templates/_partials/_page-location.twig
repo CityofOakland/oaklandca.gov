@@ -33,7 +33,7 @@
         {% if entry.phoneNumbers | length %}
           <h3 class="mb-0 text-2xl">Phone Numbers</h3>
           <ul class="mb-8">
-            {% for phone in entry.phoneNumbers.all() %}
+            {% for phone in entry.phoneNumbers %}
               {% include '_partials/_elements/_phone-numbers.twig' %}
             {% endfor %}
           </ul>
@@ -64,7 +64,7 @@
         {% endif %}
         {% if entry.openHours | length %}
           <h3 class="mb-0 text-2xl">Open Hours</h3>
-          {% for item in entry.openHours.all() %}
+          {% for item in entry.openHours %}
             {% if item.hoursTitle | length %}
               <h4 class="text-lg">{{ item.hoursTitle }}</h4>
             {% endif %}
