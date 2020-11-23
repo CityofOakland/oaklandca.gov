@@ -3,7 +3,18 @@
 {% do craft.app.elements.eagerLoadElements(
   className(entry),
   [entry],
-  ['banner']
+  [
+    'banner',
+    'callToAction.documentLink:documentLink',
+    'callToAction.documentLink:documentLink.documentFile',
+    'contentBuilder',
+    'contentBuilder.largeEntryLinks:entries',
+    'contentBuilder.largeEntryLinks:entries.documentFile',
+    'contentBuilder.smallEntryLinks:entries',
+    'contentBuilder.smallEntryLinks:entries.documentFile',
+    'contentBuilder.officials.officials',
+    'embeddedContent',
+  ]
 ) %}
 
 {% block content %}

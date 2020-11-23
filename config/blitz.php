@@ -204,4 +204,7 @@ return [
   'dev' => [
     'cachingEnabled' => false,
   ],
+  'staging' => [
+    'cachingEnabled' => false,
+  ],
 ];

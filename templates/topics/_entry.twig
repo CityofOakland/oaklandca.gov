@@ -3,7 +3,20 @@
 {% do craft.app.elements.eagerLoadElements(
   className(entry),
   [entry],
-  ['banner']
+  [
+    'banner',
+    'addresses',
+    'contentBuilder',
+    'portrait',
+    'teams',
+    'phoneNumbers',
+    'openHours',
+    'contentBuilder.largeEntryLinks:entries',
+    'contentBuilder.largeEntryLinks:entries.documentFile',
+    'contentBuilder.smallEntryLinks:entries',
+    'contentBuilder.smallEntryLinks:entries.documentFile',
+    'contentBuilder.officials.officials,'
+  ]
 ) %}
 
 {% set relatedEvents = craft.calendar.events.relatedTo(entry) %}

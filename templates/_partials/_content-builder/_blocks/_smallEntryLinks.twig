@@ -2,9 +2,9 @@
   {% include "_partials/_content-builder/_blocks/_elements/_heading.twig" %}
   {{ block.entriesDescription }}
   <ul class="">
-    {% for entry in block.entries.all() %}
+    {% for entry in block.entries %}
       {% set isDoc = (entry.type == "documents") ? true : false %}
-      {% set url = isDoc ? entry.documentFile.one.url : entry.redirectUrl ?? entry.url %}
+      {% set url = isDoc ? entry.documentFile[0].url : entry.redirectUrl ?? entry.url %}
       {% set target = isDoc ? "_blank" : "_self" %}
       <li class="my-2"><a href="{{ url }}" target="{{ target }}">{{ entry.title }}</a></li>
     {% endfor %}

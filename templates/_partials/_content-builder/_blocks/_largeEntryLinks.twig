@@ -2,10 +2,10 @@
   {% include "_partials/_content-builder/_blocks/_elements/_heading.twig" %}
   {{ block.entriesDescription }}
   <div class="card-grid grid-equal-height">
-    {% for entry in block.entries.all() %}
+    {% for entry in block.entries %}
       {% set isDoc = (entry.type == "documents") ? true : false %}
       {% include '_partials/_elements/_title-cards.twig' with {
-        url: isDoc ? entry.documentFile.one.url : entry.url,
+        url: isDoc ? entry.documentFile[0].url : entry.url,
         target: isDoc ? "_blank" : "_self"
       } %}
     {% endfor %}

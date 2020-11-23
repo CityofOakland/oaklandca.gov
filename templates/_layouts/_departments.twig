@@ -3,7 +3,18 @@
 {% do craft.app.elements.eagerLoadElements(
   className(entry),
   [entry],
-  ['banner']
+  [
+    'banner',
+    'addresses',
+    'contentBuilder',
+    'portrait',
+    'teams',
+    'phoneNumbers',
+    'openHours',
+    'contentBuilder.largeEntryLinks:entries',
+    'contentBuilder.largeEntryLinks:documentFile',
+    'contentBuilder.officials.officials',
+  ]
 ) %}
 
 {% set defaultButtonUrl = "/events/related-to/" ~ entry.section.handle ~ "/" ~ entry.slug %}

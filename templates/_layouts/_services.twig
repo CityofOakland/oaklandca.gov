@@ -1,5 +1,22 @@
 {% extends '_layout.twig' %}
 
+{% do craft.app.elements.eagerLoadElements(
+  className(entry),
+  [entry],
+  [
+    'banner',
+    'callToAction.documentLink:documentLink',
+    'callToAction.documentLink:documentLink.documentFile',
+    'contentBuilder',
+    'contentBuilder.largeEntryLinks:entries',
+    'contentBuilder.largeEntryLinks:entries.documentFile',
+    'contentBuilder.smallEntryLinks:entries',
+    'contentBuilder.smallEntryLinks:entries.documentFile',
+    'contentBuilder.officials.officials',
+    'embeddedContent',
+  ]
+) %}
+
 {% block content %}
   {% include '_partials/_page-banners.twig' with {
     breadCrumbLinks: [
@@ -9,15 +26,15 @@
       }
     ],
   } %}
-  <section class="bg-white relative z-0">
+  <section class="relative z-0 bg-white">
     <div class="container pt-0">
       {% include '_partials/_elements/_ctas.twig' %}
       <div class="flex">
       {% include "_partials/_elements/_nav-sidebar.twig" %}
       <div class="flex-1">
         {% include '_partials/_content-builder/_tool.twig' %}
-        {% if entry.embeddedContent.exists() %}
-          {{ entry.embeddedContent.one.codeInsertion | raw }}
+        {% if entry.embeddedContent %}
+          {{ entry.embeddedContent[0].codeInsertion | raw }}
         {% endif %}
       </div>
       </div>

@@ -3,26 +3,27 @@
 
 {% if contentBuilder | length %}
   {% set sideNavLinks = [] %}
-  {% for block in entry.contentBuilder.all() %}
+  {% for block in entry.contentBuilder %}
     {% switch block.type %}
       {% case "heading" %}
         {% set sideNavLinks = sideNavLinks | merge([{
           title:  block.text,
           link:  block.text | kebab,
         }]) %}
-      {% case "largeEntryLinks" or
-              "mediumEntryLinks" or
-              "smallEntryLinks" or
-              "newsEntries" or
-              "meetingEntries" or
-              "eventEntries" or
-              "linksWithDescriptions" or
-              "linkBlocksWithIcons" or
-              "linkBlocksWithImages" or
-              "statsBlockWithIcons" or
-              "textImageBlock" or
-              "timeline" or
-              "officials"
+      {% case 
+        "largeEntryLinks" or
+        "mediumEntryLinks" or
+        "smallEntryLinks" or
+        "newsEntries" or
+        "meetingEntries" or
+        "eventEntries" or
+        "linksWithDescriptions" or
+        "linkBlocksWithIcons" or
+        "linkBlocksWithImages" or
+        "statsBlockWithIcons" or
+        "textImageBlock" or
+        "timeline" or
+        "officials"
       %}
         {% if block.heading %}
           {% set sideNavLinks = sideNavLinks | merge([{
