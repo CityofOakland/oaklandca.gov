@@ -3,7 +3,10 @@
 {% do craft.app.elements.eagerLoadElements(
   className(entry),
   [entry],
-  ['banner']
+  [
+    'banner',
+    'teams'
+  ]
 ) %}
 
 {% set relatedMeetings = craft.calendar.events.relatedTo(entry) %}
