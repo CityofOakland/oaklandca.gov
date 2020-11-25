@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "368ef2576f5283bab6aa5fd8cee80415",
+    "content-hash": "0aba4b4df97819f207010a215c40be1b",
     "packages": [
         {
             "name": "aelvan/inlin",
@@ -116,11 +116,11 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.161.2",
+            "version": "3.163.3",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/2703896142f292058ce9d6c9026a9329a89778e0",
-                "reference": "2703896142f292058ce9d6c9026a9329a89778e0",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/f6cd8fe1334b19e1dc0d841fa1b2da7cd30a1e8a",
+                "reference": "f6cd8fe1334b19e1dc0d841fa1b2da7cd30a1e8a",
                 "shasum": ""
             },
             "require": {
@@ -175,7 +175,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2020-11-16T19:11:59+00:00"
+            "time": "2020-11-23T20:34:30+00:00"
         },
         {
             "name": "born05/craft-assetusage",
@@ -5019,11 +5019,11 @@
         },
         {
             "name": "nystudio107/craft-seomatic",
-            "version": "3.3.22",
+            "version": "3.3.24",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/3d9113e9a407d797da9a794883c494e199a12f33",
-                "reference": "3d9113e9a407d797da9a794883c494e199a12f33",
+                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/35bf58761613bf40c71d80a973f875ff41c0ab7c",
+                "reference": "35bf58761613bf40c71d80a973f875ff41c0ab7c",
                 "shasum": ""
             },
             "require": {
@@ -5087,7 +5087,7 @@
                 "docs": "https://nystudio107.com/plugins/seomatic/documentation",
                 "issues": "https://nystudio107.com/plugins/seomatic/support"
             },
-            "time": "2020-10-20T16:34:40+00:00"
+            "time": "2020-11-23T17:11:27+00:00"
         },
         {
             "name": "nystudio107/craft-twigpack",
@@ -5816,11 +5816,11 @@
         },
         {
             "name": "putyourlightson/craft-blitz-recommendations",
-            "version": "1.1.0",
+            "version": "1.2.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/putyourlightson/craft-blitz-recommendations/zipball/d06630f3172a569404c14706b7d30e85f26055c2",
-                "reference": "d06630f3172a569404c14706b7d30e85f26055c2",
+                "url": "https://api.github.com/repos/putyourlightson/craft-blitz-recommendations/zipball/25ae49355ae6c53a80ab9cde060102e77309eb36",
+                "reference": "25ae49355ae6c53a80ab9cde060102e77309eb36",
                 "shasum": ""
             },
             "require": {
@@ -5850,7 +5850,7 @@
                 "source": "https://github.com/putyourlightson/craft-blitz-recommendations",
                 "issues": "https://github.com/putyourlightson/craft-blitz-recommendations/issues"
             },
-            "time": "2020-06-29T07:52:05+00:00"
+            "time": "2020-10-06T09:27:19+00:00"
         },
         {
             "name": "putyourlightson/craft-log-to-file",
@@ -6428,11 +6428,11 @@
         },
         {
             "name": "solspace/craft3-calendar",
-            "version": "3.0.14",
+            "version": "3.0.15",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/solspace/craft3-calendar/zipball/7c4d42fb8d19972250181b14d97fbc0b8b9709d2",
-                "reference": "7c4d42fb8d19972250181b14d97fbc0b8b9709d2",
+                "url": "https://api.github.com/repos/solspace/craft3-calendar/zipball/d6011f36b65b9ff92bd8f479e5e16ccdcb899e59",
+                "reference": "d6011f36b65b9ff92bd8f479e5e16ccdcb899e59",
                 "shasum": ""
             },
             "require": {
@@ -6470,7 +6470,7 @@
                 }
             ],
             "description": "The most reliable and powerful event management plugin for Craft.",
-            "time": "2020-10-23T21:23:54+00:00"
+            "time": "2020-11-24T17:36:06+00:00"
         },
         {
             "name": "solspace/craft3-commons",
@@ -6499,11 +6499,11 @@
         },
         {
             "name": "spacecatninja/imager-x",
-            "version": "v3.2.5",
+            "version": "v3.2.6",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spacecatninja/craft-imager-x/zipball/bf184bf78efca959decf0b269583301ca4411404",
-                "reference": "bf184bf78efca959decf0b269583301ca4411404",
+                "url": "https://api.github.com/repos/spacecatninja/craft-imager-x/zipball/8af747ee050e3416e03fff1dc182f7fe5373adf0",
+                "reference": "8af747ee050e3416e03fff1dc182f7fe5373adf0",
                 "shasum": ""
             },
             "require": {
@@ -6559,7 +6559,7 @@
                 "docs": "http://imager-x.spacecat.ninja/",
                 "issues": "https://github.com/spacecatninja/craft-imager-x/issues"
             },
-            "time": "2020-11-13T21:56:12+00:00"
+            "time": "2020-11-22T19:10:11+00:00"
         },
         {
             "name": "ssnepenthe/color-utils",

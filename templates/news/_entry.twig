@@ -1,4 +1,22 @@
 {% extends '_layout.twig' %}
+
+{% do craft.app.elements.eagerLoadElements(
+  className(entry),
+  [entry],
+  [
+    'banner',
+    'addresses',
+    'contentBuilder',
+    'portrait',
+    'teams',
+    'phoneNumbers',
+    'openHours',
+    'contentBuilder.largeEntryLinks:entries',
+    'contentBuilder.largeEntryLinks:documentFile',
+    'contentBuilder.officials.officials',
+  ]
+) %}
+
 {% set pressRelease = entry.pressReleaseFile %}
 {% set contentBuilder = entry.contentBuilder | length %}
 
@@ -14,7 +32,7 @@
   <div class="container pt-0">
     <div class="flex">
       {% include "_partials/_elements/_nav-sidebar.twig" %}
-      <div class="w-full flex">
+      <div class="flex w-full">
         <div class="md:w-3/4 md:mr-8">
           {% include '_partials/_elements/_last-update.twig' %}
           {% if entry.newsImage | length %}
@@ -37,7 +55,7 @@
             {{ entry.mediaContact }}
           {% endif %}
           {% if pressRelease.exists() %}
-            <a href="{{ pressRelease.one.url }}" class="btn w-full">Download Press Release</a>
+            <a href="{{ pressRelease.one.url }}" class="w-full btn">Download Press Release</a>
           {% endif %}
         </div>
       </div>

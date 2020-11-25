@@ -1,4 +1,12 @@
 {% extends '_layouts/_banner-with-nav.twig' %}
+{% do craft.app.elements.eagerLoadElements(
+  className(event),
+  [event],
+  [
+    'banner',
+  ]
+) %}
+
 {% set entry = event %}
 
 {% css %}

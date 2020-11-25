@@ -1,20 +1,3 @@
-{% do craft.app.elements.eagerLoadElements(
-  className(entry),
-  [entry],
-  [
-    'banner',
-    'addresses',
-    'contentBuilder',
-    'portrait',
-    'teams',
-    'phoneNumbers',
-    'openHours',
-    'contentBuilder.largeEntryLinks:entries',
-    'contentBuilder.largeEntryLinks:documentFile',
-    'contentBuilder.officials.officials',
-  ]
-) %}
-
 {% set idsToExclude = ['not'] %}
 {% set entryIds = block.entries.ids() %}
 {% for entry in entryIds ?? '' %}

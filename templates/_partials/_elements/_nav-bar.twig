@@ -33,22 +33,15 @@
           </li>
         </ul>
         <div class="pr-2 lg:items-center oak-hidden lg:flex">
-          {% set mayor = craft.entries.section("officials").with(['portrait']).id(30812).one() %}
-          {% set photo = mayor.portrait[0] %}
-          {% set sizes = [{ width: 128, jpegQuality: 65 },{ width: 64, jpegQuality: 65 }] %}
-          {% set crop = { ratio: 1/1, position: photo.getFocalPoint()} %}
-          {% set transformedImages = craft.imager.transformImage(photo, sizes, crop,{ fillTransforms: true}) %}
-          <a href="{{ mayor.url }}" class="flex items-center text-xs text-gray-100 hover:text-gray-200" title="View the homepage of Libby Schaaf, The Mayor of the City of Oakland">
+          <a href="/officials/libby-schaaf" class="flex items-center text-xs text-gray-100 hover:text-gray-200" title="View the homepage of Libby Schaaf, The Mayor of the City of Oakland">
             <div class="mx-2 leading-tight text-right oak-hidden xl:block">
-              <span class="font-bold">{{ mayor.groupHeadTitle }}</span><br>
-              {{ mayor.groupHeadName }}
+              <span class="font-bold">Mayor</span><br>
+              Libby Schaaf
             </div>
-            <img src="{{ transformedImages[1].url }}" sizes="100vw" srcset="{{ transformedImages | srcset }}" alt="Portrait of {{ mayor.groupHeadTitle }}, {{ mayor.groupHeadName }}" class="block w-10 h-10 border-2 border-gray-800 rounded-full">
+            <img src="https://city-of-oakland.imgix.net/portraits/oakland_mayor_libby_schaaf_city_of_oakland-1519844049-5198.jpg?auto=compress%2Cformat&amp;crop=focalpoint&amp;fit=min&amp;fp-x=0.5&amp;fp-y=0.5&amp;h=64&amp;q=80&amp;w=64" sizes="100vw" srcset="https://city-of-oakland.imgix.net/portraits/oakland_mayor_libby_schaaf_city_of_oakland-1519844049-5198.jpg?auto=compress%2Cformat&amp;crop=focalpoint&amp;fit=min&amp;fp-x=0.5&amp;fp-y=0.5&amp;h=128&amp;q=80&amp;w=128 128w, https://city-of-oakland.imgix.net/portraits/oakland_mayor_libby_schaaf_city_of_oakland-1519844049-5198.jpg?auto=compress%2Cformat&amp;crop=focalpoint&amp;fit=min&amp;fp-x=0.5&amp;fp-y=0.5&amp;h=64&amp;q=80&amp;w=64 64w" alt="Portrait of Mayor, Libby Schaaf" class="block w-10 h-10 border-2 border-gray-800 rounded-full">
           </a>
-          {% set logo311 = craft.assets.id(24854).one() %}
-          {% set transformed311Logos = craft.imager.transformImage(logo311, sizes, crop,{ fillTransforms: true}) %}
           <a href="/services/oak311" class="flex ml-2" title="Report a problem online to OAK 311">
-            <img src="{{ transformed311Logos[1].url }}" sizes="100vw" srcset="{{ transformed311Logos | srcset }}" alt="OAK 311 Logo" class="block w-10 h-10 border-2 border-gray-800 rounded-full">
+            <img src="https://city-of-oakland.imgix.net/news/311-Logo.png?auto=compress%2Cformat&amp;crop=focalpoint&amp;fit=min&amp;fp-x=0.5&amp;fp-y=0.5&amp;h=64&amp;q=80&amp;w=64" sizes="100vw" srcset="https://city-of-oakland.imgix.net/news/311-Logo.png?auto=compress%2Cformat&amp;crop=focalpoint&amp;fit=min&amp;fp-x=0.5&amp;fp-y=0.5&amp;h=128&amp;q=80&amp;w=128 128w, https://city-of-oakland.imgix.net/news/311-Logo.png?auto=compress%2Cformat&amp;crop=focalpoint&amp;fit=min&amp;fp-x=0.5&amp;fp-y=0.5&amp;h=64&amp;q=80&amp;w=64 64w" alt="OAK 311 Logo" class="block w-10 h-10 border-2 border-gray-800 rounded-full">
           </a>
         </div>
       </nav>
