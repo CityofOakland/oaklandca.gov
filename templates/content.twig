@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Listing</title>
+    {{ craft.twigpack.includeCssModule("/css/app.css") }}
+  </head>
+  <body class="text-cool-gray-600">
+    <table class="max-w-2xl mx-auto text-sm">
+      <thead class="text-left">
+        <tr class="bg-cool-gray-1000 text-cool-gray-100">
+          <th class="p-1">Title</th>
+          <th class="p-1">Edit&nbsp;URL</th>
+          <th class="p-1">Author Username</th>
+          <th class="p-1">Author Email</th>
+          <th class="p-1">Entry Type</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% cache for 1 hour %}
+          {% for entry in craft.entries
+            .section(["topics", "services", "resources", "news", "documents", "documentPackets"])
+            .with(["author.username", "author.email"])
+            .limit(null)
+            .all()
+          %}
+            <tr class="odd:bg-cool-gray-200 even:bg-cool-gray-100">
+              <td class="p-1"><a class="text-cool-gray-900" href="{{ entry.url }}">{{ entry.title }}</a></td>
+              <td class="p-1"><a class="text-cool-gray-900" href="{{ entry.cpEditUrl }}">Edit</a></td>
+              <td class="p-1">{{ entry.author.username ?? "" }}</td>
+              <td class="p-1">{{ entry.author.email ?? "" }}</td>
+              <td class="p-1">{{ entry.section.name }}</td>
+            </tr>
+          {% endfor %}
+        {% endcache %}
+      </tbody>
+    </table>
+  </body>
+</html>
