@@ -52,7 +52,7 @@
       <div class="w-1/5 mr-10 font-bold oak-hidden lg:w-1/6 md:block">
         <ul class="my-0 text-sm">
           {% for item in sideNavLinks %}
-            <li>
+            <li class="mb-2">
               <a
                 aria-label="Navigate to {{ item.title }} on this page."
                 href="#{{ item.link }}"
@@ -65,10 +65,10 @@
   {%- endset -%}
 {% elseif customNav %}
   {%- set sideNav -%}
-    <div class="w-1/6 mr-10 font-bold oak-hidden sm:block">
+    <div class="w-1/5 mr-10 font-bold oak-hidden sm:block">
       <ul class="my-0 text-sm">
         {% for item in customNav %}
-          <li>
+          <li class="mb-2">
             <a
               aria-label="Navigate to {{ item.title }} on this page."
               href="#{{ item.link }}"
@@ -81,11 +81,11 @@
 {% else %}
   {%- set sideNav -%}
     {% if navMenu is defined and navMenu | length %}
-      <div class="w-1/6 mr-10 font-bold oak-hidden sm:block">
+      <div class="w-1/5 mr-10 font-bold oak-hidden sm:block">
         <ul class="my-0 text-sm">
           {% for key,value in navMenu %}
             {% if value %}
-              <li>
+              <li class="mb-2">
                 <a
                   aria-label="Featured {{ fullNavMenu[key]['title'] }}"
                   href="#page-{{ fullNavMenu[key]['url'] }}"
