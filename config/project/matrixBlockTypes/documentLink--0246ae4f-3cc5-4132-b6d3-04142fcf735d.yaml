@@ -40,7 +40,7 @@ fields:
     handle: documentLabel
     instructions: 'Write the full name of the document.'
     name: 'Document Label'
-    searchable: true
+    searchable: false
     settings:
       byteLimit: null
       charLimit: null
@@ -59,10 +59,10 @@ fields:
     handle: buttonLabel
     instructions: 'Write an action word such as Download or Access to fit on the button.'
     name: 'Button Label'
-    searchable: true
+    searchable: false
     settings:
       byteLimit: null
-      charLimit: '20'
+      charLimit: 20
       code: ''
       columnType: text
       initialRows: '4'
@@ -78,7 +78,7 @@ fields:
     handle: documentLink
     instructions: 'Select the document to link to this CTA button.'
     name: 'Document Link'
-    searchable: true
+    searchable: false
     settings:
       allowSelfRelations: false
       limit: '1'

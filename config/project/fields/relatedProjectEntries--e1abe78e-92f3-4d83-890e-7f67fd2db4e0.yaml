@@ -3,7 +3,7 @@ fieldGroup: 8e8ee56e-cdb8-4206-a3b5-c3aa0eb3a884
 handle: relatedProjectEntries
 instructions: 'Choose any resources, services, or topics you wish to display on this page.'
 name: 'Related Project Entries'
-searchable: true
+searchable: false
 settings:
   allowSelfRelations: false
   limit: ''

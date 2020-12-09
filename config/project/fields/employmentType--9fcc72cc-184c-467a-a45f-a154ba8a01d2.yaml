@@ -3,7 +3,7 @@ fieldGroup: a8c82666-3295-4f90-b50b-67f2299847db
 handle: employmentType
 instructions: 'Select the type of employment this person is under, currently.'
 name: 'Employment Type'
-searchable: true
+searchable: false
 settings:
   optgroups: true
   options:

@@ -3,7 +3,7 @@ fieldGroup: 767a8f0b-6ea5-4855-a6f3-8c2a4a4aee78
 handle: phoneNumbers
 instructions: ''
 name: 'Phone Numbers'
-searchable: true
+searchable: false
 settings:
   contentTable: '{{%matrixcontent_phonenumbers}}'
   maxBlocks: ''

@@ -40,7 +40,7 @@ fields:
     handle: addressTitle
     instructions: 'e.g., "Mailing Address" or "Visit In Person".'
     name: 'Address Title'
-    searchable: true
+    searchable: false
     settings:
       byteLimit: null
       charLimit: null
@@ -59,7 +59,7 @@ fields:
     handle: additionalAddressInfo
     instructions: 'Use this field to provide extra information about the address, like “First floor, Suite 7” that wouldn’t otherwise be included in a street address.'
     name: 'Additional Address Info'
-    searchable: true
+    searchable: false
     settings:
       availableTransforms: '*'
       availableVolumes: ''
@@ -74,7 +74,7 @@ fields:
       removeEmptyTags: '1'
       removeInlineStyles: '1'
       removeNbsp: '1'
-      showHtmlButtonForNonAdmins: true
+      showHtmlButtonForNonAdmins: '1'
       showUnpermittedFiles: false
       showUnpermittedVolumes: true
       uiMode: enlarged
@@ -87,11 +87,11 @@ fields:
     handle: streetAddress
     instructions: 'Use this field to enter your street address.'
     name: 'Street Address'
-    searchable: true
+    searchable: false
     settings:
       dragPinDefault: ''
-      dragPinLatitude: '0'
-      dragPinLongitude: '0'
+      dragPinLatitude: '37.81766663487279'
+      dragPinLongitude: '-122.27178725040258'
       dragPinZoom: '4'
       layout:
         __assoc__:
@@ -100,81 +100,105 @@ fields:
             -
               __assoc__:
                 -
+                  - width
+                  - 50
+                -
                   - enable
                   - 1
                 -
-                  - width
-                  - 50
+                  - position
+                  - 1
           -
             - country
             -
               __assoc__:
                 -
+                  - width
+                  - 100
+                -
                   - enable
                   - 0
                 -
-                  - width
-                  - 100
+                  - position
+                  - 2
           -
             - lat
             -
               __assoc__:
                 -
+                  - width
+                  - 50
+                -
                   - enable
                   - 0
                 -
-                  - width
-                  - 50
+                  - position
+                  - 3
           -
             - lng
             -
               __assoc__:
                 -
+                  - width
+                  - 50
+                -
                   - enable
                   - 0
                 -
-                  - width
-                  - 50
+                  - position
+                  - 4
           -
             - state
             -
               __assoc__:
                 -
+                  - width
+                  - 15
+                -
                   - enable
                   - 1
                 -
-                  - width
-                  - 15
+                  - position
+                  - 5
           -
             - street1
             -
               __assoc__:
                 -
+                  - width
+                  - 100
+                -
                   - enable
                   - 1
                 -
-                  - width
-                  - 100
+                  - position
+                  - 6
           -
             - street2
             -
               __assoc__:
                 -
+                  - width
+                  - 100
+                -
                   - enable
                   - 1
                 -
-                  - width
-                  - 100
+                  - position
+                  - 7
           -
             - zip
             -
               __assoc__:
                 -
+                  - width
+                  - 35
+                -
                   - enable
                   - 1
                 -
-                  - width
-                  - 35
+                  - position
+                  - 8
     translationKeyFormat: null
     translationMethod: none
     type: doublesecretagency\smartmap\fields\Address

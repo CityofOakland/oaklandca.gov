@@ -3,7 +3,7 @@ fieldGroup: 83c14444-efcf-4d13-a20a-56275fd18855
 handle: resources
 instructions: 'Choose the resource landing pages to relate to this entry.'
 name: Resources
-searchable: true
+searchable: false
 settings:
   allowSelfRelations: false
   limit: ''

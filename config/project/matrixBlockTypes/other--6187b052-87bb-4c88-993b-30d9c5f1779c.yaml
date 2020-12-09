@@ -50,7 +50,7 @@ fields:
     handle: number
     instructions: ''
     name: Number
-    searchable: true
+    searchable: false
     settings:
       byteLimit: null
       charLimit: null

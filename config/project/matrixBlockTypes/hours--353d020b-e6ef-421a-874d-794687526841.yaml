@@ -31,7 +31,7 @@ fields:
     handle: hours
     instructions: ''
     name: Hours
-    searchable: true
+    searchable: false
     settings:
       slots:
         __assoc__:
@@ -84,7 +84,7 @@ fields:
     handle: hoursTitle
     instructions: 'If you have different groups or offices that have different office hours, enter the title here.'
     name: 'Hours Title'
-    searchable: true
+    searchable: false
     settings:
       byteLimit: null
       charLimit: null

@@ -3,7 +3,7 @@ fieldGroup: 83c14444-efcf-4d13-a20a-56275fd18855
 handle: documents
 instructions: "Choose the documents to relate to this entry. Examples may include agenda, meeting minutes, and reports. Relationships help content surface in search. Relationships also help documents surface on index pages. \r\n"
 name: Documents
-searchable: true
+searchable: false
 settings:
   allowSelfRelations: false
   limit: ''

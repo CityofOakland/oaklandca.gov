@@ -3,7 +3,7 @@ fieldGroup: a8c82666-3295-4f90-b50b-67f2299847db
 handle: termEnd
 instructions: 'Choose the day this person’s term will end.'
 name: 'Term End'
-searchable: true
+searchable: false
 settings:
   max: null
   min: null

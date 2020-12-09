@@ -161,15 +161,6 @@ a:hover {
   @apply text-white underline bg-green-900 shadow-none;
 }
 
-/* Service Styles */
-.card-grid-button {
-  @apply p-8 text-lg font-bold text-gray-1000 no-underline bg-white rounded-sm shadow-btn trans trans-fast;
-}
-
-.card-grid-button:hover {
-  @apply text-white underline bg-green-600;
-}
-
 .btn-sm {
   @apply px-2 py-2;
 }

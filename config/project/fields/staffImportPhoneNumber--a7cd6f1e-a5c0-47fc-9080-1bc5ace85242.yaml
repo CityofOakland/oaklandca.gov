@@ -3,7 +3,7 @@ fieldGroup: 71fb693f-011b-4669-ba10-f1b379557bb9
 handle: staffImportPhoneNumber
 instructions: ''
 name: 'Staff Import Phone Number'
-searchable: true
+searchable: false
 settings:
   byteLimit: null
   charLimit: null

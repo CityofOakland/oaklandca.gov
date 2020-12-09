@@ -4,4 +4,6 @@
 {% set cardColor = cardColor ?? null %}
 {% set target = target ?? "_self" %}
 
-<a href="{{ url }}" target="{{ target }}" class="card-grid-button {{ cardStyle }} {{ cardColor }}">{{ title | raw }}</a>
+<a href="{{ url }}" target="{{ target }}" class="p-8 text-lg font-bold text-gray-1000 no-underline bg-white rounded-sm shadow-btn trans trans-fast hover:text-white hover:underline hover:bg-green-600 {{ cardStyle }} {{ cardColor }}">{{ title | raw }}</a>
+
+{# <a href="{{ url }}" target="{{ target }}" class="block font-bold p-8 transition-all duration-75 rounded shadow bg-cool-gray-100 text-cool-gray-800 hover:bg-cool-gray-200 hover:text-cool-gray-900 {{ cardStyle }} {{ cardColor }}">{{ title | raw }}</a> #}

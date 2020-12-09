@@ -3,7 +3,7 @@ fieldGroup: 4ed914c6-b7ea-44be-a061-4430ad33baf2
 handle: newsTags
 instructions: ''
 name: 'News Tags'
-searchable: true
+searchable: false
 settings:
   allowLimit: false
   allowMultipleSources: false

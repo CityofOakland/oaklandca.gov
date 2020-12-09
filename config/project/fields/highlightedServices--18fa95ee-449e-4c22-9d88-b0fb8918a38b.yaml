@@ -3,7 +3,7 @@ fieldGroup: 8ac349fa-f382-4bc4-9f01-25e04abf073c
 handle: highlightedServices
 instructions: 'Choose up to 9 services to display on the homepage.'
 name: 'Highlighted Services'
-searchable: true
+searchable: false
 settings:
   allowSelfRelations: false
   limit: '9'

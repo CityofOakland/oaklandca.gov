@@ -3,7 +3,7 @@ fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521
 handle: departmentCodeSnippet
 instructions: 'Add code that should be run on pages related to this department.'
 name: 'Department Code Snippet'
-searchable: true
+searchable: false
 settings:
   byteLimit: null
   charLimit: null

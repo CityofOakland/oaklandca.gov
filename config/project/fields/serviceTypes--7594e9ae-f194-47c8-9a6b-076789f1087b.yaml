@@ -3,7 +3,7 @@ fieldGroup: 5bc46e53-a87c-4584-89aa-808cacedf461
 handle: serviceTypes
 instructions: ''
 name: 'Service Types'
-searchable: true
+searchable: false
 settings:
   allowLimit: false
   allowMultipleSources: false

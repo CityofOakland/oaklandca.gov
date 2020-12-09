@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d8ffce47970c7aa6e0048e7f0f19df41",
+    "content-hash": "ab97e3a69c409cd4f6f42d1b40dae29a",
     "packages": [
         {
             "name": "aelvan/inlin",
@@ -1061,11 +1061,11 @@
         },
         {
             "name": "craftcms/redactor",
-            "version": "2.8.4",
+            "version": "2.8.5",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/redactor/zipball/73113daea0541ee53036a4129428ddcf8e056ba0",
-                "reference": "73113daea0541ee53036a4129428ddcf8e056ba0",
+                "url": "https://api.github.com/repos/craftcms/redactor/zipball/baa05090b17b9b631ed3eb9f0687f48947d7dbc2",
+                "reference": "baa05090b17b9b631ed3eb9f0687f48947d7dbc2",
                 "shasum": ""
             },
             "require": {
@@ -1106,7 +1106,7 @@
                 "docs": "https://github.com/craftcms/redactor/blob/v2/README.md",
                 "rss": "https://github.com/craftcms/redactor/commits/v2.atom"
             },
-            "time": "2020-11-30T15:20:16+00:00"
+            "time": "2020-12-08T12:55:30+00:00"
         },
         {
             "name": "craftcms/server-check",
@@ -1669,11 +1669,11 @@
         },
         {
             "name": "doublesecretagency/craft-smartmap",
-            "version": "3.3.4",
+            "version": "3.3.5",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doublesecretagency/craft-smartmap/zipball/3564cb341ed05192e0500faa029ebb68d54af4b5",
-                "reference": "3564cb341ed05192e0500faa029ebb68d54af4b5",
+                "url": "https://api.github.com/repos/doublesecretagency/craft-smartmap/zipball/9f87ba880dd3b83b72ba8582efd2e958d3193ccd",
+                "reference": "9f87ba880dd3b83b72ba8582efd2e958d3193ccd",
                 "shasum": ""
             },
             "require": {
@@ -1717,7 +1717,7 @@
                 "docs": "https://www.doublesecretagency.com/plugins/smart-map/docs",
                 "issues": "https://github.com/doublesecretagency/craft-smartmap/issues"
             },
-            "time": "2020-08-23T05:39:52+00:00"
+            "time": "2020-11-25T00:25:29+00:00"
         },
         {
             "name": "doublesecretagency/craft-viewcount",
@@ -2228,11 +2228,11 @@
         },
         {
             "name": "giggsey/libphonenumber-for-php",
-            "version": "8.12.9",
+            "version": "8.12.14",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giggsey/libphonenumber-for-php/zipball/674b79ae3362409d08e550cb196d982485a76225",
-                "reference": "674b79ae3362409d08e550cb196d982485a76225",
+                "url": "https://api.github.com/repos/giggsey/libphonenumber-for-php/zipball/c42a963110b08b8a4a419c35566bf9d3456ba479",
+                "reference": "c42a963110b08b8a4a419c35566bf9d3456ba479",
                 "shasum": ""
             },
             "require": {
@@ -2277,7 +2277,7 @@
                 "phonenumber",
                 "validation"
             ],
-            "time": "2020-08-31T09:51:44+00:00"
+            "time": "2020-12-02T10:54:10+00:00"
         },
         {
             "name": "giggsey/locale",
@@ -4089,11 +4089,11 @@
         },
         {
             "name": "marionnewlevant/twig-perversion",
-            "version": "2.1.0",
+            "version": "2.2.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/marionnewlevant/craft-twig_perversion/zipball/d201d177a892f64bf0de541a3d291b227b973b0d",
-                "reference": "d201d177a892f64bf0de541a3d291b227b973b0d",
+                "url": "https://api.github.com/repos/marionnewlevant/craft-twig_perversion/zipball/7c47292256361c173a4df80826c70a1519637de7",
+                "reference": "7c47292256361c173a4df80826c70a1519637de7",
                 "shasum": ""
             },
             "require": {
@@ -4114,7 +4114,6 @@
                     "marionnewlevant\\twigperversion\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -4126,12 +4125,12 @@
             ],
             "description": "Making twig do things it really shouldn't",
             "keywords": [
-                "Craft",
+                "craft",
                 "craftcms",
                 "plugin",
                 "twigperversion"
             ],
-            "time": "2019-06-09T22:12:28+00:00"
+            "time": "2020-12-08T04:39:49+00:00"
         },
         {
             "name": "masterminds/html5",
@@ -4964,11 +4963,11 @@
         },
         {
             "name": "nystudio107/craft-retour",
-            "version": "3.1.42",
+            "version": "3.1.44",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-retour/zipball/400542fb8f79a6c3226ff4b9c69b4e1cd6f95e43",
-                "reference": "400542fb8f79a6c3226ff4b9c69b4e1cd6f95e43",
+                "url": "https://api.github.com/repos/nystudio107/craft-retour/zipball/98589ce7977c1e2898ef9034099c3e90aa33387b",
+                "reference": "98589ce7977c1e2898ef9034099c3e90aa33387b",
                 "shasum": ""
             },
             "require": {
@@ -5015,15 +5014,15 @@
                 "docs": "https://nystudio107.com/plugins/retour/documentation",
                 "issues": "https://nystudio107.com/plugins/retour/support"
             },
-            "time": "2020-10-05T02:56:59+00:00"
+            "time": "2020-12-08T20:35:26+00:00"
         },
         {
             "name": "nystudio107/craft-seomatic",
-            "version": "3.3.24",
+            "version": "3.3.26",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/35bf58761613bf40c71d80a973f875ff41c0ab7c",
-                "reference": "35bf58761613bf40c71d80a973f875ff41c0ab7c",
+                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/94080ab57cf0509f22630abe12061ebcffd2ac0f",
+                "reference": "94080ab57cf0509f22630abe12061ebcffd2ac0f",
                 "shasum": ""
             },
             "require": {
@@ -5087,7 +5086,7 @@
                 "docs": "https://nystudio107.com/plugins/seomatic/documentation",
                 "issues": "https://nystudio107.com/plugins/seomatic/support"
             },
-            "time": "2020-11-23T17:11:27+00:00"
+            "time": "2020-12-08T20:42:00+00:00"
         },
         {
             "name": "nystudio107/craft-twigpack",
@@ -6152,11 +6151,11 @@
         },
         {
             "name": "rynpsc/craft-phone-number",
-            "version": "1.3.0",
+            "version": "1.4.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rynpsc/craft-phone-number/zipball/99b7fc66f8a3f3fa6382f3390b58adb57a093d74",
-                "reference": "99b7fc66f8a3f3fa6382f3390b58adb57a093d74",
+                "url": "https://api.github.com/repos/rynpsc/craft-phone-number/zipball/8ef253c980763300d93680a97dcd0f20282959c5",
+                "reference": "8ef253c980763300d93680a97dcd0f20282959c5",
                 "shasum": ""
             },
             "require": {
@@ -6199,7 +6198,7 @@
                 "source": "https://github.com/rynpsc/craft-phone-number",
                 "docs": "https://github.com/rynpsc/craft-phone-number"
             },
-            "time": "2020-01-20T21:59:54+00:00"
+            "time": "2020-12-05T14:33:31+00:00"
         },
         {
             "name": "sebastian/diff",

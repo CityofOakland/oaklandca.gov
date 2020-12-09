@@ -3,7 +3,7 @@ fieldGroup: c8e06b4a-2f85-41db-94e3-101a5c02dd6d
 handle: sortDocumentsByDate
 instructions: 'Toggling this will cause your documents to be organized by their `postDate` in descending order (most recent to last) instead of any specific organization you have chosen in the entries above.'
 name: 'Sort Documents by Date?'
-searchable: true
+searchable: false
 settings:
   default: false
   offLabel: null

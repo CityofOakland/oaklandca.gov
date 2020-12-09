@@ -3,7 +3,7 @@ fieldGroup: 83c14444-efcf-4d13-a20a-56275fd18855
 handle: news
 instructions: "Choose the news items that you want to relate to this entry (limit 3). Relationships help content surface in search. Relationships also help documents surface on index pages. \r\n"
 name: News
-searchable: true
+searchable: false
 settings:
   allowSelfRelations: false
   limit: '2'

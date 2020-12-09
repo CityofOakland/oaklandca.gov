@@ -3,7 +3,7 @@ fieldGroup: a8c82666-3295-4f90-b50b-67f2299847db
 handle: departmentOfficialBoardCommission
 instructions: 'What department / elected official / board / commission does this person work for?'
 name: Department/Official/Board/Commission
-searchable: true
+searchable: false
 settings:
   allowSelfRelations: false
   limit: ''

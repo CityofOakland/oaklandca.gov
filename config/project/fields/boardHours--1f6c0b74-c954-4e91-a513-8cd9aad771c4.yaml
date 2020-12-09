@@ -3,7 +3,7 @@ fieldGroup: 34f2c44b-4710-447e-9c4e-71e80288b6e4
 handle: boardHours
 instructions: ''
 name: 'Board Hours'
-searchable: true
+searchable: false
 settings:
   byteLimit: null
   charLimit: null
