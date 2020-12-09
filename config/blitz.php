@@ -120,7 +120,7 @@ return [
     //'clearCacheAutomatically' => true,
 
     // Whether the cache should automatically be warmed after clearing.
-    //'warmCacheAutomatically' => true,
+    'warmCacheAutomatically' => false,
 
     // Whether the cache should automatically be refreshed after a global set is updated.
     //'refreshCacheAutomaticallyForGlobals' => true,
