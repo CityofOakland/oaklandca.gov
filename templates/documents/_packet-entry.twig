@@ -1,6 +1,11 @@
 {% extends '_layout.twig' %}
-
-{% set document = entry.documentFile %}
+{% do craft.app.elements.eagerLoadElements(
+    className(entry),
+    [entry],
+    [
+      'teams'
+    ]
+) %}
 
 {% block content %}
   {% include '_partials/_page-banners.twig' with {

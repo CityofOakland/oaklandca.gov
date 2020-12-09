@@ -3,9 +3,10 @@ fieldGroup: c964d82c-a4e7-4ec4-ad42-7c3e843193c0
 handle: portrait
 instructions: 'Add a headshot of this person. Be sure to double click the image after uploading it and assigning the ALT TEXT, as this is an ADA requirement.'
 name: Portrait
-searchable: true
+searchable: false
 settings:
   allowSelfRelations: false
+  allowUploads: true
   allowedKinds:
     - image
   defaultUploadLocationSource: 'volume:1e78d0ad-2af1-4556-ab43-7b6c110e75b8'

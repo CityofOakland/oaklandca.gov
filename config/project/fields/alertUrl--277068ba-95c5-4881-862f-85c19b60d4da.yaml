@@ -3,7 +3,7 @@ fieldGroup: a2015bc8-9d3a-4f8d-a180-1ddc7ebd3087
 handle: alertUrl
 instructions: 'Link to a more detailed page if necessary.'
 name: 'Alert URL'
-searchable: true
+searchable: false
 settings:
   allowCustomText: ''
   allowTarget: ''

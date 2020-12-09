@@ -3,7 +3,7 @@ fieldGroup: 7a44f3bc-fbe1-424a-a4ea-6bb6f3528d75
 handle: eventStatus
 instructions: ''
 name: 'Event Status'
-searchable: true
+searchable: false
 settings:
   optgroups: true
   options:

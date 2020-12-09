@@ -3,19 +3,18 @@ fieldGroup: c8e06b4a-2f85-41db-94e3-101a5c02dd6d
 handle: documentFile
 instructions: 'Select the file that you need to add.'
 name: 'Document File'
-searchable: true
+searchable: false
 settings:
   allowSelfRelations: false
+  allowUploads: true
   allowedKinds:
     - audio
     - compressed
     - excel
-    - illustrator
     - image
     - pdf
     - powerpoint
     - word
-    - xml
   defaultUploadLocationSource: 'volume:1e78d0ad-2af1-4556-ab43-7b6c110e75b8'
   defaultUploadLocationSubpath: ''
   limit: '1'

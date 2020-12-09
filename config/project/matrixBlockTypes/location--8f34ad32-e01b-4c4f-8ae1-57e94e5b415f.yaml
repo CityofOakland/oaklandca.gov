@@ -50,7 +50,7 @@ fields:
     handle: address
     instructions: 'To ensure your map is generated correctly on your page, make sure to pick an address the popup provides. If you haven''t received a popup, click **"Search Addresses"** and then choose from that list. If you have successfully chosen an address, you will see the **Latitude** and **Longitude** fields below filled out automatically.'
     name: Address
-    searchable: true
+    searchable: false
     settings:
       dragPinDefault: '1'
       dragPinLatitude: '37.80524898225416'

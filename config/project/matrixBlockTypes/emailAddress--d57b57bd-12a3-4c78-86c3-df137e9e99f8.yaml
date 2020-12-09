@@ -40,9 +40,9 @@ fields:
     handle: emailAddress
     instructions: 'Write the email address'
     name: 'Email Address'
-    searchable: true
+    searchable: false
     settings:
-      placeholder: null
+      placeholder: ''
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Email
@@ -52,7 +52,7 @@ fields:
     handle: emailTitle
     instructions: ''
     name: 'Email Title'
-    searchable: true
+    searchable: false
     settings:
       byteLimit: null
       charLimit: null
@@ -71,7 +71,7 @@ fields:
     handle: linkText
     instructions: 'Write the name of the individual or agency that the email goes to.'
     name: 'Link Text'
-    searchable: true
+    searchable: false
     settings:
       byteLimit: null
       charLimit: null

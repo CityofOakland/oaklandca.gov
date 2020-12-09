@@ -3,7 +3,7 @@ fieldGroup: a8c82666-3295-4f90-b50b-67f2299847db
 handle: staffEntry
 instructions: ''
 name: 'Staff Entry'
-searchable: true
+searchable: false
 settings:
   allowSelfRelations: false
   limit: '1'

@@ -31,7 +31,7 @@ fields:
     handle: staffHeading
     instructions: 'If this collection of staff have a specific designation, enter their group classification here.'
     name: 'Staff Heading'
-    searchable: true
+    searchable: false
     settings:
       byteLimit: null
       charLimit: null
@@ -50,7 +50,7 @@ fields:
     handle: staff
     instructions: ''
     name: Staff
-    searchable: true
+    searchable: false
     settings:
       allowSelfRelations: false
       limit: ''

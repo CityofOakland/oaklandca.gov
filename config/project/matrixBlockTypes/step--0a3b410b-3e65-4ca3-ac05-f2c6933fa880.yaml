@@ -40,7 +40,7 @@ fields:
     handle: stepAction
     instructions: ''
     name: 'Step Action'
-    searchable: true
+    searchable: false
     settings:
       allowSelfRelations: false
       limit: '1'
@@ -65,7 +65,7 @@ fields:
     handle: stepNumber
     instructions: ''
     name: 'Step Number'
-    searchable: true
+    searchable: false
     settings:
       byteLimit: null
       charLimit: null

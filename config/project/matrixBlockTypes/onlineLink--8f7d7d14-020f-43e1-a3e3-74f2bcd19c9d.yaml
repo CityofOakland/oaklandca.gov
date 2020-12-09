@@ -40,7 +40,7 @@ fields:
     handle: onlineTitle
     instructions: 'Write a short description of this call to action.'
     name: 'Online Title'
-    searchable: true
+    searchable: false
     settings:
       byteLimit: null
       charLimit: null
@@ -59,7 +59,7 @@ fields:
     handle: linkText
     instructions: 'This is text for the button. Use action words such as Apply, Pay, Report a Problem, Access, Request, Visit Online.'
     name: 'Link Text'
-    searchable: true
+    searchable: false
     settings:
       byteLimit: null
       charLimit: null
@@ -78,7 +78,7 @@ fields:
     handle: linkUrl
     instructions: 'Write the complete URL for the link. Example: http://www.edd.ca.gov/'
     name: 'Link URL'
-    searchable: true
+    searchable: false
     settings:
       byteLimit: null
       charLimit: null

@@ -3,9 +3,10 @@ fieldGroup: 8e8ee56e-cdb8-4206-a3b5-c3aa0eb3a884
 handle: fundingLogos
 instructions: 'Add logos for any funders that are involved with this project. They will be placed in a grid at the bottom of the page.'
 name: 'Funding Logos'
-searchable: true
+searchable: false
 settings:
   allowSelfRelations: false
+  allowUploads: true
   allowedKinds:
     - image
   defaultUploadLocationSource: 'volume:a31d23bf-e3ee-4942-95e0-3d14c29620bb'

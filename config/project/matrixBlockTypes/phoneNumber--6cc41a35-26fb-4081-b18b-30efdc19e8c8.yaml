@@ -31,7 +31,7 @@ fields:
     handle: number
     instructions: 'Write the phone number in this format: (510) XXX-XXXX'
     name: Number
-    searchable: true
+    searchable: false
     settings:
       byteLimit: null
       charLimit: null
@@ -50,7 +50,7 @@ fields:
     handle: phoneNumberTitle
     instructions: 'Write the name of the individual or agency for the phone number. For example: "Fax to the City Administrator", or "Call the Program Coordinator"'
     name: 'Phone Number Title'
-    searchable: true
+    searchable: false
     settings:
       byteLimit: null
       charLimit: null

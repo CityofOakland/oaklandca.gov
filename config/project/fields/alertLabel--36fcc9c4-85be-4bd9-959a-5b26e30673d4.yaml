@@ -3,7 +3,7 @@ fieldGroup: a2015bc8-9d3a-4f8d-a180-1ddc7ebd3087
 handle: alertLabel
 instructions: 'Label this alert (e.g., Warning, Important, Urgent, Info)'
 name: 'Alert Label'
-searchable: true
+searchable: false
 settings:
   byteLimit: null
   charLimit: null

@@ -3,7 +3,7 @@ fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521
 handle: officialDepartment
 instructions: 'Turn this switch on so that this department landing page appears in the departments index.'
 name: 'Official Department'
-searchable: true
+searchable: false
 settings:
   default: false
   offLabel: null

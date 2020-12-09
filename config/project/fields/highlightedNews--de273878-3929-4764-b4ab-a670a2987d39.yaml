@@ -3,7 +3,7 @@ fieldGroup: 8ac349fa-f382-4bc4-9f01-25e04abf073c
 handle: highlightedNews
 instructions: 'Choose the news item to feature on the homepage.'
 name: 'Highlighted News'
-searchable: true
+searchable: false
 settings:
   allowSelfRelations: false
   limit: '1'

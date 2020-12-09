@@ -3,7 +3,7 @@ fieldGroup: 112bec4a-44ab-4d8b-afab-679c5e8bfb5c
 handle: metadata
 instructions: ''
 name: Metadata
-searchable: true
+searchable: false
 settings:
   elementDisplayPreviewType: google
   facebookTabEnabled: ''

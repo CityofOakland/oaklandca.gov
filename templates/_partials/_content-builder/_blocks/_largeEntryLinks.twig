@@ -1,7 +1,7 @@
 <div class="{% if not loop.last %}mb-12{% endif %}">
   {% include "_partials/_content-builder/_blocks/_elements/_heading.twig" %}
   {{ block.entriesDescription }}
-  <div class="card-grid grid-equal-height">
+  <div class="items-stretch card-grid">
     {% for entry in block.entries %}
       {% set isDoc = (entry.type == "documents") ? true : false %}
       {% include '_partials/_elements/_title-cards.twig' with {

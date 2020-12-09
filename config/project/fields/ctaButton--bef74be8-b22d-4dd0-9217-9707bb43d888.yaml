@@ -3,7 +3,7 @@ fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521
 handle: ctaButton
 instructions: 'Choose an item you want to link to with this CTA Button'
 name: 'CTA Button'
-searchable: true
+searchable: false
 settings:
   allowCustomText: '1'
   allowTarget: '1'
@@ -21,6 +21,9 @@ settings:
             -
               - customLabel
               - ''
+            -
+              - customPlaceholder
+              - ''
       -
         - fruitstudios\linkit\models\Phone
         -
@@ -30,6 +33,9 @@ settings:
               - ''
             -
               - customLabel
+              - ''
+            -
+              - customPlaceholder
               - ''
       -
         - fruitstudios\linkit\models\Url
@@ -41,6 +47,21 @@ settings:
             -
               - customLabel
               - ''
+            -
+              - customPlaceholder
+              - ''
+            -
+              - allowAlias
+              - '1'
+            -
+              - allowMailto
+              - '1'
+            -
+              - allowHash
+              - '1'
+            -
+              - allowPaths
+              - '1'
       -
         - fruitstudios\linkit\models\Twitter
         -
@@ -50,6 +71,9 @@ settings:
               - ''
             -
               - customLabel
+              - ''
+            -
+              - customPlaceholder
               - ''
       -
         - fruitstudios\linkit\models\Facebook
@@ -61,6 +85,9 @@ settings:
             -
               - customLabel
               - ''
+            -
+              - customPlaceholder
+              - ''
       -
         - fruitstudios\linkit\models\Instagram
         -
@@ -71,6 +98,9 @@ settings:
             -
               - customLabel
               - ''
+            -
+              - customPlaceholder
+              - ''
       -
         - fruitstudios\linkit\models\LinkedIn
         -
@@ -80,6 +110,9 @@ settings:
               - ''
             -
               - customLabel
+              - ''
+            -
+              - customPlaceholder
               - ''
       -
         - fruitstudios\linkit\models\Entry

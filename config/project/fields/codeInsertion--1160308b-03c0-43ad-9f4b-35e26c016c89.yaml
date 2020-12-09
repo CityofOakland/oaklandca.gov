@@ -3,7 +3,7 @@ fieldGroup: ed709c7c-0c3a-4457-ae2d-38a3ccb797e4
 handle: codeInsertion
 instructions: 'Use this field to insert code on your page. **WARNING: Take care that the code you are adding is not inserting content that is inaccessible via mobile or screen readers, as this may put the website out of compliance with various regulations.**'
 name: 'Code Insertion'
-searchable: true
+searchable: false
 settings:
   byteLimit: null
   charLimit: null

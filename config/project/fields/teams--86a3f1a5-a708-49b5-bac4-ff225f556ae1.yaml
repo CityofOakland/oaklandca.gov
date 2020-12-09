@@ -3,7 +3,7 @@ fieldGroup: 83c14444-efcf-4d13-a20a-56275fd18855
 handle: teams
 instructions: 'Pick the team(s) associated with this entry'
 name: Teams
-searchable: true
+searchable: false
 settings:
   allowSelfRelations: false
   limit: ''

@@ -8,7 +8,7 @@ fieldLayouts:
             fieldUid: 4c0f9e7c-fe6a-47d0-b8c9-17e8a34a39f2
             instructions: null
             label: null
-            required: true
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
@@ -152,7 +152,7 @@ fields:
     handle: description
     instructions: ''
     name: Description
-    searchable: true
+    searchable: false
     settings:
       byteLimit: null
       charLimit: null

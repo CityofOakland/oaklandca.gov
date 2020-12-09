@@ -3,10 +3,10 @@ fieldGroup: 1fe293ad-52d9-4002-984e-b7a256d4b158
 handle: instagram
 instructions: 'Add the URL for the Instagram account for this entry.'
 name: Instagram
-searchable: true
+searchable: false
 settings:
-  maxLength: 255
-  placeholder: null
+  maxLength: '255'
+  placeholder: ''
 translationKeyFormat: null
 translationMethod: none
 type: craft\fields\Url

@@ -3,9 +3,10 @@ fieldGroup: 4ed914c6-b7ea-44be-a061-4430ad33baf2
 handle: pressReleaseFile
 instructions: 'Choose a PDF to attach to this news entry for your press release.'
 name: 'Press Release File'
-searchable: true
+searchable: false
 settings:
   allowSelfRelations: false
+  allowUploads: true
   allowedKinds:
     - pdf
   defaultUploadLocationSource: 'volume:1e78d0ad-2af1-4556-ab43-7b6c110e75b8'

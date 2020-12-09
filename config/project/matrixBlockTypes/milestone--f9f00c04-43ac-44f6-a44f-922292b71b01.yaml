@@ -31,10 +31,10 @@ fields:
     handle: milestoneDates
     instructions: 'Name the dates or time periods to show the deadline and progress (max. 50 characters.)'
     name: 'Milestone Date(s)'
-    searchable: true
+    searchable: false
     settings:
       byteLimit: null
-      charLimit: '50'
+      charLimit: 50
       code: ''
       columnType: text
       initialRows: '4'
@@ -50,10 +50,10 @@ fields:
     handle: milestoneName
     instructions: 'Name this milestone (max. 50 characters)'
     name: 'Milestone Name'
-    searchable: true
+    searchable: false
     settings:
       byteLimit: null
-      charLimit: '50'
+      charLimit: 50
       code: ''
       columnType: text
       initialRows: '4'

@@ -3,7 +3,7 @@ fieldGroup: 71fb693f-011b-4669-ba10-f1b379557bb9
 handle: staffImportId
 instructions: ''
 name: 'Staff Import ID'
-searchable: true
+searchable: false
 settings:
   byteLimit: null
   charLimit: null
