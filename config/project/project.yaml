@@ -1,4 +1,4 @@
-dateModified: 1610130653
+dateModified: 1610150369
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -1434,6 +1434,10 @@ plugins:
     licenseKey: 46HXL3KFU6B2Z3R5LOC856G4
     schemaVersion: 1.0.8
     settings: null
+  lockout:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
   manytomany:
     enabled: '1'
     licenseKey: null
@@ -1588,5 +1592,6 @@ system:
   edition: pro
   live: true
   name: 'City of Oakland'
+  retryDuration: null
   schemaVersion: 3.5.13
   timeZone: America/Los_Angeles
