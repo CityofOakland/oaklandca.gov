@@ -121,6 +121,10 @@ fieldLayouts:
       -
         elements:
           -
+            style: warning
+            tip: "**DO NOT CHANGE ANYTHING BELOW THIS LINE**\r\n\r\nAll content here is imported from our payroll system and as such will be overwritten each time we update the information.\r\n\r\nPlease use the previous fields on the People tab to modify staff information."
+            type: craft\fieldlayoutelements\Tip
+          -
             fieldUid: 8a89416e-010d-4a83-a254-dafb9b29ce26
             instructions: null
             label: null
@@ -219,7 +223,7 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 100
-        name: 'New Staff Fields'
+        name: 'HR Staff Fields'
         sortOrder: 2
       -
         elements:
