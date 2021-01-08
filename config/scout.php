@@ -286,7 +286,7 @@ return [
           'bio' => strip_tags($entry->bio),
           'phone' => !empty($entry->phoneNumber) ? $entry->phoneNumber : $entry->staffImportPhoneNumber,
           'email' => !empty($entry->emailAddress) ? $entry->emailAddress : str_replace("@oaklandnet.com", "@oaklandca.gov", $entry->staffImportEmail),
-          'department' => !empty($entry->departments[0]) ? $entry->departments[0]->title : $entry->staffImportDepartment,
+          'department' => !empty($entry->departments[0]) ? $entry->departments[0]->title : $entry->staffImportOrganization ?? $entry->staffImportDepartment,
           'employmentType' => $entry->employmentType->label,
           'viewCount' => $entry->viewCount,
         ];

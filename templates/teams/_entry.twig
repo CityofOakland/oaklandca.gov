@@ -31,8 +31,8 @@
         {% endif %}
         <div class="mt-12 card-grid grid-equal-height profile-cards">
           {% for entry in team.staff.all() %}
-            {% set department = entry.departments.one.title ?? entry.staffImportDepartment ?? '' %}
             {% set organization = entry.staffImportOrganization ?? '' %}
+            {% set department = entry.departments.one.title ?? organization ?? entry.staffImportDepartment ?? '' %}
             {% set email = entry.emailAddress ??? entry.staffImportEmail %}
             {% set phone = entry.phoneNumber ??? entry.staffImportPhoneNumber %}
             {%- set extraContent -%}
