@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a359b77cb6981920a4f3f6f946f9f205",
+    "content-hash": "4128b36421275606dab98b5b8083e428",
     "packages": [
         {
             "name": "aelvan/inlin",
@@ -3271,6 +3271,61 @@
             ],
             "description": "Provides functionality for http_build_url() to environments without pecl_http.",
             "time": "2017-05-01T15:36:40+00:00"
+        },
+        {
+            "name": "jalendport/craft-lockout",
+            "version": "1.0.1",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jalendport/craft-lockout/zipball/8eb80e32726ef318d5d533b9245b7662a463950a",
+                "reference": "8eb80e32726ef318d5d533b9245b7662a463950a",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0-RC1"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Lockout",
+                "handle": "lockout",
+                "hasCpSettings": true,
+                "hasCpSection": false,
+                "changelogUrl": "https://raw.githubusercontent.com/lockout/lockout/master/CHANGELOG.md",
+                "components": {
+                    "lockoutService": "jalendport\\lockout\\services\\LockoutService"
+                },
+                "class": "jalendport\\lockout\\Lockout"
+            },
+            "autoload": {
+                "psr-4": {
+                    "jalendport\\lockout\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jalen Davenport",
+                    "homepage": "https://jalendport.com"
+                }
+            ],
+            "description": "Temporarily lock certain users out of the control panel.",
+            "keywords": [
+                "admin",
+                "cms",
+                "craft",
+                "craft-plugin",
+                "craftcms",
+                "lockout",
+                "maintenance",
+                "users"
+            ],
+            "support": {
+                "docs": "https://github.com/jalendport/craft-lockout/blob/master/README.md",
+                "issues": "https://github.com/jalendport/craft-lockout/issues"
+            },
+            "time": "2020-01-03T18:12:56+00:00"
         },
         {
             "name": "justinrainbow/json-schema",
