@@ -1,4 +1,4 @@
-dateModified: 1610150369
+dateModified: 1610416006
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -1384,7 +1384,7 @@ plugins:
     licenseKey: null
     schemaVersion: 2.0.0
     settings:
-      additionalCss: "[data-type=\"table2Columns\"] .fields,\n[data-type=\"table3Columns\"] .fields,\n[data-type=\"table4Columns\"] .fields {\n  display: flex;\n  flex-wrap: wrap;\n}\n\n[data-type*=\"table2Columns\"] .fields > [id*=\"column\"]:not([data-type=\"craft\\\\redactor\\\\Field\"]),\n[data-type*=\"table3Columns\"] .fields > [id*=\"column\"]:not([data-type=\"craft\\\\redactor\\\\Field\"]),\n[data-type*=\"table4Columns\"] .fields > [id*=\"column\"]:not([data-type=\"craft\\\\redactor\\\\Field\"]) {\n  box-sizing: border-box;\n  margin: 0 0 8px !important;\n}\n\n[data-type*=\"table2Columns\"] .fields > [id*=\"column\"]:not([data-type=\"craft\\\\redactor\\\\Field\"]) {\n  width: 50%;\n}\n\n[data-type*=\"table3Columns\"] .fields > [id*=\"column\"]:not([data-type=\"craft\\\\redactor\\\\Field\"]) {\n  width: 33.33333%;\n}\n\n[data-type*=\"table4Columns\"] .fields > [id*=\"column\"]:not([data-type=\"craft\\\\redactor\\\\Field\"]) {\n  width: 25%;\n}\n\n[id*=\"column1Heading-field\"],\n[id*=\"column1Width-field\"],\n[id*=\"column1Heading-field\"],\n[id*=\"column1Width-field\"],\n[id*=\"column1Heading-field\"],\n[id*=\"column1Width-field\"] {\n  padding-right: 8px;\n}\n\n[data-type*=\"table3Columns\"] [id*=\"column2Heading-field\"],\n[data-type*=\"table3Columns\"] [id*=\"column2Width-field\"],\n[data-type*=\"table4Columns\"] [id*=\"column2Heading-field\"],\n[data-type*=\"table4Columns\"] [id*=\"column2Width-field\"],\n[data-type*=\"table4Columns\"] [id*=\"column3Heading-field\"],\n[data-type*=\"table4Columns\"] [id*=\"column3Width-field\"] {\n  padding-left: 8px;\n  padding-right: 8px;\n}\n\n[data-type*=\"table2Columns\"] [id*=\"column2Heading-field\"],\n[data-type*=\"table2Columns\"] [id*=\"column2Width-field\"],\n[data-type*=\"table3Columns\"] [id*=\"column3Heading-field\"],\n[data-type*=\"table3Columns\"] [id*=\"column3Width-field\"],\n[data-type*=\"table4Columns\"] [id*=\"column4Heading-field\"],\n[data-type*=\"table4Columns\"] [id*=\"column4Width-field\"] {\n  padding-left: 8px;\n}\n\n[data-type=\"table2Columns\"] [id*=\"column\"] input,\n[data-type=\"table3Columns\"] [id*=\"column\"] input,\n[data-type=\"table4Columns\"] [id*=\"column\"] input {\n  width: 100%;\n}"
+      additionalCss: ''
       cssFile: ''
   cp-field-inspect:
     enabled: '0'
