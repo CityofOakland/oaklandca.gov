@@ -13,7 +13,7 @@
   ['/documents', 'Documents'],
   ['/topics', 'Topics'],
   ['/projects', 'Projects'],
-  ['/topics/oaklandlovelife', '#OaklandLoveLife'],
+  ['/services/apply-for-city-of-oakland-and-port-of-oakland-jobs', 'City Jobs'],
   ['https://www.oaklandlibrary.org/', 'Oakland Library'],
   ['https://www.visitoakland.com/', 'Visit Oakland'],
   ['http://museumca.org/', 'Oakland Museum'],
@@ -25,15 +25,13 @@
   ['/topics/civil-rights-access', 'Civil Rights Policies & Procedures'],
   ['/topics/civil-rights-access', 'Políticas de derechos civiles y Procedimientos'],
   ['/topics/civil-rights-access', '民權政策與程序'],
-  ['/services/apply-for-city-of-oakland-and-port-of-oakland-jobs', 'City Jobs'],
   ['https://www.oaklandauditor.com/whistleblower/', 'Whistleblower Program']
 ] %}
 {% set seoMaticLinks = seomatic.site.sameAsLinks %}
 {% set socialMedia = [
   [ seoMaticLinks.facebook.url, 'facebook.svg', 'Oakland Facebook Page' ],
   [ seoMaticLinks.twitter.url, 'twitter.svg', 'Oakland Twitter Page' ],
-  [ seoMaticLinks.instagram.url, 'instagram.svg', 'Oakland Instagram Page' ],
-  [ seoMaticLinks.medium.url, 'medium.svg', 'Oakland Medium Page' ]
+  [ seoMaticLinks.instagram.url, 'instagram.svg', 'Oakland Instagram Page' ]
 ] %}
 <footer class="relative overflow-hidden text-sm leading-loose text-gray-300 lg:text-base bg-gray-1000 bg-transparent-oakland-roots-black">
   <div class="container relative z-20 py-4 sm:py-8">
@@ -71,17 +69,21 @@
           1 Frank H. Ogawa Plaza<br>
           Oakland, CA 94612
         </div>
+
+        <div>
+        <br><a class="text-white hover:text-white hover:underline" href="/topics/oaklandlovelife">#OaklandLoveLife</a>
+        </div>
       </div>
     </div>
     <div class="flex-wrap pt-8 mt-4 border-t border-gray-700 sm:flex">
       <div class="sm:w-1/4">
       </div>
-      <div class="flex items-center justify-around sm:w-1/2">
+      <div class="flex items-center justify-center p-10 sm:w-1/2">
         {% for socItem in socialMedia %}
-          <a href="{{ socItem[0] }}" class="flex items-center justify-center w-12 h-12 bg-white rounded-full fill-current text-gray-1000 hover:bg-green-600 trans-fast hover:text-gray-1000">
+          <div class="p-4"><a href="{{ socItem[0] }}" class="flex items-center justify-center w-12 h-12 bg-white rounded-full fill-current text-gray-1000 hover:bg-green-600 trans-fast hover:text-gray-1000">
             {{ craft.inlin.er('/assets/img/logo-' ~ socItem[1]) | replace('<svg ', '<svg class="h-6" ') | raw }}
             <span class="hidden-visually">{{ socItem[2] }}</span>
-          </a>
+          </a></div>
         {% endfor %}
       </div>
       <div class="flex items-center justify-end mt-4 text-xs sm:w-1/4 sm:mt-0 lg:text-base">

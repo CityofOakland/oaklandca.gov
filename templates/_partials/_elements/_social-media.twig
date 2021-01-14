@@ -1,6 +1,6 @@
 {% if entry.facebook | length or entry.twitter | length or entry.instagram | length or entry.medium | length %}
-  <h3 class="text-xl">Social Media</h3>
-  <div>
+  <h3 class="mb-0 text-2xl">Social Media</h3>
+  <ul class="mb-8">
     {% if entry.facebook ?? "" %}
       {% include '_partials/_elements/_social-media-button.twig' with {
         network: "facebook",
@@ -25,5 +25,5 @@
         url: entry.medium
       } %}
     {% endif %}
-  </div>
+  </ul>
 {% endif %}
