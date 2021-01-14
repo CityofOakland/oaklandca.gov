@@ -1,2 +1,2 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[2],{0:function(n,o,w){w("kOmT"),n.exports=w("Ww3z")},Ww3z:function(n,o){},kOmT:function(n,o,w){"use strict";w.r(o);w("3yRE"),w("7sg0")}},[[0,0,5]]]);
+(window.webpackJsonp=window.webpackJsonp||[]).push([[2],{0:function(n,e,t){t("kOmT"),n.exports=t("Ww3z")},Ww3z:function(n,e){},kOmT:function(n,e,t){"use strict";t.r(e);t("3yRE"),t("7sg0");document.addEventListener("readystatechange",(function(){"complete"===document.readyState&&function(){var n=document.getElementsByClassName("js-select-nav");function e(n){window.location.href=n.target.value}n&&Array.from(n).forEach((function(n){n.addEventListener("change",e)}))}()}))}},[[0,0,5]]]);
 //# sourceMappingURL=app.js.map
