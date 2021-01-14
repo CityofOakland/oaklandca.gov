@@ -99,7 +99,7 @@
             {% set featuredNewsId = featuredNews.id ?? '' %}
             {% set otherFeaturedNews = craft.entries.section('news').id('not ' ~ featuredNewsId).featureOnHomepage(true).limit(4).all() %}
             {% if otherFeaturedNews | length %}
-              <h2 class="mb-0 text-lg">More News</h2>
+              <h2 class="mt-4 mb-0 text-lg">More News</h2>
             {% endif %}
             {% for entry in otherFeaturedNews %}
               <article class="my-3">

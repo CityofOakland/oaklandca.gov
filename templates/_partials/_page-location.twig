@@ -12,7 +12,7 @@
           {% for block in entry.addresses ?? '' %}
             {% switch block.type %}
               {% case "location" %}
-                <h4 class="{% if not loop.first %} mt-8 {% endif %} text-2xl mb-0">{{ block.locationName }}</h4>
+                <p class="{% if not loop.first %} mt-8 {% endif %} text-1xl mb-0">{{ block.locationName }}</p>
                 {% include '_partials/_elements/_address.twig' with { location: block } %}
               {% case "onlineLocation" %}
                 <div class="mt-4 mb-8">
@@ -58,9 +58,11 @@
         {% endif %}
         {% if entry.emailAddress | length %}
           <h3 class="mb-0 text-2xl">Email Address</h3>
-          <p>
+          <ul class="mb-8">
+          <li>
             <a href="mailto:{{ entry.emailAddress }}">{{ entry.emailAddress }}</a>
-          </p>
+          </li>
+          </ul>
         {% endif %}
         {% if entry.openHours | length %}
           <h3 class="mb-0 text-2xl">Open Hours</h3>
