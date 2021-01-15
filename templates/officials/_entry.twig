@@ -16,7 +16,7 @@
   ['documents', 'entries']
 ] %}
 
-{% if entry.type == "officialsRedirect" %}{{ {% redirect entry.redirectUrl %}{% endif %}
+{% if entry.type == "officialsRedirect" %}{% redirect entry.redirectUrl %}{% endif %}
 
 {% set relatedEvents = craft.calendar.events.relatedTo(entry) %}
 {% set relatedNews = craft.entries.section('news').relatedTo(entry) %}
