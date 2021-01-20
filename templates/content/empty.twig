@@ -20,8 +20,16 @@
       <tbody>
         {% cache for 1 hour %}
           {% for entry in craft.entries
-            .section(["topics", "services", "resources", "news", "documents", "documentPackets"])
-            .with(["author.username", "author.email"])
+            .section(["topics", "services", "resources", "projects",])
+            .with(["contentBuilder"])
+            .contentBuilder(":empty:")
+            .about(":empty:")
+            .resourceImage(":empty:")
+            .embeddedContent(":empty:")
+            .callToAction(":empty:")
+            .ctaButton(":empty:")
+            .leadIn(":empty:")
+            .type(["not", "serviceRedirect", "services311"])
             .limit(null)
             .all()
           %}

@@ -1,4 +1,4 @@
-dateModified: 1610649617
+dateModified: 1611168418
 email:
   fromEmail: $EMAIL_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -1384,7 +1384,7 @@ plugins:
     licenseKey: null
     schemaVersion: 2.0.0
     settings:
-      additionalCss: ''
+      additionalCss: "#fields-primaryUnit-field {\r\n    padding: 1rem;\r\n\tbackground-color: #e4edf6;\r\n\tborder-radius: .25rem;\r\n\tborder: 1px solid rgba(96, 125, 159, 0.25);\r\n}"
       cssFile: ''
   cp-field-inspect:
     enabled: '0'
