@@ -1,0 +1,23 @@
+contentColumnType: string
+fieldGroup: 909c71fc-999c-4729-86d5-49cc9061f521
+handle: primaryUnit
+instructions: 'Select the Department, City Official, or Board/Commission that this entry belongs to.'
+name: 'Primary Unit'
+searchable: false
+settings:
+  allowSelfRelations: false
+  limit: '1'
+  localizeRelations: false
+  selectionLabel: 'Select a Unit'
+  showSiteMenu: false
+  source: null
+  sources:
+    - 'section:fb3b532b-07c0-4cc1-a0ea-a2b75a26cc8f'
+    - 'section:b3411cb1-e860-46ed-9cd6-58cf9b8daacb'
+    - 'section:28881fc8-3e61-4fdb-a5ee-cce1bab725bf'
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Entries

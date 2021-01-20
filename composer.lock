@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4128b36421275606dab98b5b8083e428",
+    "content-hash": "4870b6a6321a93a4795b6307b6f7fd32",
     "packages": [
         {
             "name": "aelvan/inlin",
@@ -420,11 +420,11 @@
         },
         {
             "name": "composer/ca-bundle",
-            "version": "1.2.8",
+            "version": "1.2.9",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/ca-bundle/zipball/8a7ecad675253e4654ea05505233285377405215",
-                "reference": "8a7ecad675253e4654ea05505233285377405215",
+                "url": "https://api.github.com/repos/composer/ca-bundle/zipball/78a0e288fdcebf92aa2318a8d3656168da6ac1a5",
+                "reference": "78a0e288fdcebf92aa2318a8d3656168da6ac1a5",
                 "shasum": ""
             },
             "require": {
@@ -435,7 +435,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.x-dev"
+                    "dev-main": "1.x-dev"
                 }
             },
             "autoload": {
@@ -461,7 +461,7 @@
                 "ssl",
                 "tls"
             ],
-            "time": "2020-08-23T12:54:47+00:00"
+            "time": "2021-01-12T12:10:35+00:00"
         },
         {
             "name": "composer/composer",
@@ -787,11 +787,11 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "3.5.17.1",
+            "version": "3.5.18",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/c4b999b325736968a05d3bcc1a5a2444dfbe9323",
-                "reference": "c4b999b325736968a05d3bcc1a5a2444dfbe9323",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/b307136753bac5b6adcc2e92bf56173417259f2e",
+                "reference": "b307136753bac5b6adcc2e92bf56173417259f2e",
                 "shasum": ""
             },
             "require": {
@@ -872,7 +872,7 @@
                 "docs": "https://craftcms.com/docs/3.x/",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2020-12-17T12:04:00+00:00"
+            "time": "2021-01-19T18:30:41+00:00"
         },
         {
             "name": "craftcms/element-api",
@@ -5141,11 +5141,11 @@
         },
         {
             "name": "nystudio107/craft-twigpack",
-            "version": "1.2.7",
+            "version": "1.2.9",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-twigpack/zipball/17c68e9e2dd7273b7ede435adf60dd08a0c54c3c",
-                "reference": "17c68e9e2dd7273b7ede435adf60dd08a0c54c3c",
+                "url": "https://api.github.com/repos/nystudio107/craft-twigpack/zipball/74088cd00df0188f676bae64bd26f54c0ff2b1d9",
+                "reference": "74088cd00df0188f676bae64bd26f54c0ff2b1d9",
                 "shasum": ""
             },
             "require": {
@@ -5191,7 +5191,7 @@
                 "docs": "https://nystudio107.com/plugins/twigpack/documentation",
                 "issues": "https://nystudio107.com/plugins/twigpack/support"
             },
-            "time": "2020-12-11T15:02:20+00:00"
+            "time": "2021-01-12T18:52:15+00:00"
         },
         {
             "name": "nystudio107/craft-typogrify",
@@ -6959,11 +6959,11 @@
         },
         {
             "name": "swiftmailer/swiftmailer",
-            "version": "v6.2.4",
+            "version": "v6.2.5",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/56f0ab23f54c4ccbb0d5dcc67ff8552e0c98d59e",
-                "reference": "56f0ab23f54c4ccbb0d5dcc67ff8552e0c98d59e",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/698a6a9f54d7eb321274de3ad19863802c879fb7",
+                "reference": "698a6a9f54d7eb321274de3ad19863802c879fb7",
                 "shasum": ""
             },
             "require": {
@@ -7006,7 +7006,7 @@
                 "mail",
                 "mailer"
             ],
-            "time": "2020-12-08T18:02:06+00:00"
+            "time": "2021-01-12T09:35:59+00:00"
         },
         {
             "name": "symfony/console",
@@ -8722,11 +8722,11 @@
         },
         {
             "name": "verbb/smith",
-            "version": "1.1.10",
+            "version": "1.1.12",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/verbb/smith/zipball/8842126e9caae7c7fa5d3863f0361e18bca18f82",
-                "reference": "8842126e9caae7c7fa5d3863f0361e18bca18f82",
+                "url": "https://api.github.com/repos/verbb/smith/zipball/21d9831bfc9d70f69e017b641e70918ff7c3ba56",
+                "reference": "21d9831bfc9d70f69e017b641e70918ff7c3ba56",
                 "shasum": ""
             },
             "require": {
@@ -8769,7 +8769,7 @@
                 "docs": "https://github.com/verbb/smith",
                 "rss": "https://github.com/verbb/smith/commits/v2.atom"
             },
-            "time": "2020-10-20T22:14:33+00:00"
+            "time": "2021-01-19T09:08:37+00:00"
         },
         {
             "name": "verbb/super-table",
