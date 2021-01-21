@@ -2,10 +2,10 @@ tabs:
   -
     elements:
       -
-        fieldUid: b34a0436-278d-4bb7-a7e8-729da1db7c4e
-        instructions: null
-        label: null
-        required: false
+        fieldUid: d8042d7b-1c67-4b28-bb84-2002e74ed94b
+        instructions: ''
+        label: ''
+        required: '1'
         tip: null
         type: craft\fieldlayoutelements\CustomField
         warning: null
