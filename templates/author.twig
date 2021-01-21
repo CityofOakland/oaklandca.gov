@@ -18,16 +18,16 @@
       }
     </style>
     <div class="container">
-      <h1 class="my-4 text-3xl uppercase font-bold">All entries owned by {{ currentUser.username }}</h1>
+      <h1 class="my-4 text-3xl font-bold uppercase">All entries owned by {{ currentUser }}</h1>
       <div id="entries">
-        <input type="text" class="search inline-block p-4 border border-green-1000" placeholder="Search Titles" />
-        <ul class="pagination pagination-top flex"></ul>
-        <table class="text-sm w-full">
+        <input type="text" class="inline-block p-4 border search border-green-1000" placeholder="Search Titles" />
+        <ul class="flex pagination pagination-top"></ul>
+        <table class="w-full text-sm">
           <thead>
-            <tr class="bg-green-1000 text-white cursor-pointer">
+            <tr class="text-white cursor-pointer bg-green-1000">
               <th class="sort" data-sort="title">Entry Title</th>
-              <th class="sort w-32" data-sort="section">Section</th>
-              <th class="sort w-32" data-sort="status">Status</th>
+              <th class="w-32 sort" data-sort="section">Section</th>
+              <th class="w-32 sort" data-sort="status">Status</th>
               <th class="w-32">View on Site</th>
             </tr>
           </thead>
@@ -48,7 +48,7 @@
             {% endfor %}
           </tbody>
         </table>
-        <ul class="pagination pagination-bottom flex"></ul>
+        <ul class="flex pagination pagination-bottom"></ul>
       </div>
     </div>
     <script>
