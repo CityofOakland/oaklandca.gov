@@ -1,11 +1,20 @@
 {% if currentUser %}
+  {% if craft.app.request.getSegment(2) %}
+    {% set person = craft.users().username(user).one() %}
+    {% if person %}
+    {% else %}
+      {% redirect "/author" %}
+    {% endif %}
+  {% else %}
+    {% set person = currentUser %}
+  {% endif %}
   <!DOCTYPE html>
   <html lang="en">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>All entries owned by {{ currentUser.username }}</title>
+    <title>All entries owned by {{ person.username }}</title>
     {{ craft.twigpack.includeCssModule("/css/app.css") }}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
@@ -18,7 +27,7 @@
       }
     </style>
     <div class="container">
-      <h1 class="my-4 text-3xl font-bold uppercase">All entries owned by {{ currentUser }}</h1>
+      <h1 class="my-4 text-3xl font-bold uppercase">All entries owned by {{ person }}</h1>
       <div id="entries">
         <input type="text" class="inline-block p-4 border search border-green-1000" placeholder="Search Titles" />
         <ul class="flex pagination pagination-top"></ul>
@@ -32,7 +41,7 @@
             </tr>
           </thead>
           <tbody class="list">
-            {% for entry in craft.entries.authorId(currentUser.id).orderBy('title asc').limit(null).status(null).all %}
+            {% for entry in craft.entries.authorId(person.id).orderBy('title asc').limit(null).status(null).all %}
               <tr>
                 <td class="title"><a href="{{ entry.cpEditUrl }}" target="_blank">{{ entry.title }}</a></td>
                 <td class="section">{{ entry.section.name }}</td>

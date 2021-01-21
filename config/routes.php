@@ -29,5 +29,6 @@ return [
   'resources/related-to/<section>/<slug>' => ['template' => 'resources'],
   'services/related-to/<section>/<slug>' => ['template' => '_layouts/_instant-search-services'],
   'topics/related-to/<section>/<slug>' => ['template' => 'topics'],
+  'author/<user>' => ['template' => 'author'],
   'api' => 'graphql/api'
 ];
