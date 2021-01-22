@@ -139,8 +139,8 @@
     "vue-template-compiler": "^2.6.10"
   },
   "dependencies": {
-    "BaremetricsCalendar": "1.0.12",
     "alpinejs": "^2.3.1",
+    "BaremetricsCalendar": "1.0.12",
     "cross-env": "^6.0.3",
     "es6-promise": "^4.2.6",
     "hover.css": "^2.3.2",
