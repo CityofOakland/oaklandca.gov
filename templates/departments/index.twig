@@ -5,20 +5,15 @@
 
   {# Begin Departments #}
   <section class="relative z-0 bg-white">
-    <div class="container">
+    <div class="container pt-0 mx-auto">
       {% set departmentsGrouped = craft.entries.section('departments').officialDepartment(true).orderBy('title').all() | group('title | first') %}
-      {% for letter, entries in departmentsGrouped %}
-        <div class="pt-12 mb-12 border-t border-light-grey">
-          <h2 class="mb-4 text-lg font-semibold leading-none">{{ letter | upper }}</h2>
-          {% spaceless %}
+      {% for entries in departmentsGrouped %}
           {% for entry in entries %}
             <div class="p-6 my-2 rounded-sm shadow-btn">
               <h3 class="mb-4 text-lg"><a href="{{ entry.redirectUrl ?? entry.url }}">{{ entry.title }}</a></h3>
               <p class="max-w-md my-0">{{ entry.leadIn | chop(limit=200, unit='c', append='…') }}</p>
             </div>
           {% endfor %}
-          {% endspaceless %}
-        </div>
       {% endfor %}
     </div>
   </section>
