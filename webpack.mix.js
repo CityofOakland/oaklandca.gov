@@ -42,7 +42,7 @@ mix.setPublicPath('./web/assets/')
   .extract(["alpinejs", "picturefill"])
   .sourceMaps()
   .browserSync({
-    proxy: "https://oakland.test",
+    proxy: process.env.MIX_LOCAL_SITE_URL,
     notify: {
       styles: {
         top: 'auto',

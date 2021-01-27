@@ -54,7 +54,7 @@ return [
   // Dev environment settings
   'dev' => [
     // Base site URL
-    'siteUrl' => 'https://oakland.test',
+    'siteUrl' => getenv('LOCAL_SITE_URL'),
 
     // Dev Mode (see https://craftcms.com/support/dev-mode)
     'devMode' => true,
