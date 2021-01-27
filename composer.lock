@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4870b6a6321a93a4795b6307b6f7fd32",
+    "content-hash": "4c7e1e4b90168539821d4634fbfb43be",
     "packages": [
         {
             "name": "aelvan/inlin",
@@ -8773,11 +8773,11 @@
         },
         {
             "name": "verbb/super-table",
-            "version": "2.6.5",
+            "version": "2.6.6",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/verbb/super-table/zipball/348c41fc687254036a58cfa0d82a614bedc41707",
-                "reference": "348c41fc687254036a58cfa0d82a614bedc41707",
+                "url": "https://api.github.com/repos/verbb/super-table/zipball/b497156928ecd0459829a0316b6f723229c57c59",
+                "reference": "b497156928ecd0459829a0316b6f723229c57c59",
                 "shasum": ""
             },
             "require": {
@@ -8822,7 +8822,7 @@
                 "docs": "https://github.com/verbb/super-table",
                 "rss": "https://github.com/verbb/super-table/commits/v2.atom"
             },
-            "time": "2020-12-16T01:37:53+00:00"
+            "time": "2021-01-27T04:43:16+00:00"
         },
         {
             "name": "vlucas/phpdotenv",

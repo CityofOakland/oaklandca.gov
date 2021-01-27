@@ -15,7 +15,7 @@ $adminLinksBlock = [
 ];
 $adminPageElementsBlock = [
   'label' => 'Page Elements',
-  'types' => ['statsBlockWithIcons', 'timeline', 'customTemplate', 'embeddedContent', 'emailSignup', 'meetingsTable']
+  'types' => ['statsBlockWithIcons', 'timeline', 'customTemplate', 'embeddedContent', 'emailSignup', 'meetingsTable', 'officials']
 ];
 $imagesBlock = [
   'label' => 'Images',
