@@ -22,6 +22,15 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 100
+          -
+            fieldUid: d14546db-2be3-4821-b471-2f2714b1f322
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Content
         sortOrder: 1
 fields:
@@ -53,6 +62,26 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\redactor\Field
+  d14546db-2be3-4821-b471-2f2714b1f322:
+    contentColumnType: integer(10)
+    fieldGroup: null
+    handle: formId
+    instructions: 'Enter the numeric ID for your form found on the embed tab It will be a 3-4 digit number, and will follow text like "`_form_`"'
+    name: 'Form ID'
+    searchable: false
+    settings:
+      decimals: 0
+      defaultValue: null
+      max: null
+      min: '0'
+      prefix: ''
+      previewCurrency: ''
+      previewFormat: decimal
+      size: null
+      suffix: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Number
   e8b1b583-82e1-4793-a5fc-048294165afd:
     contentColumnType: text
     fieldGroup: null
