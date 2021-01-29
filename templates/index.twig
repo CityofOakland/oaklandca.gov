@@ -16,23 +16,25 @@
 {% set learnMore = entry.learnMoreAbout %}
 
 {% block content %}
-  <div class="relative banner">
-    <div class="container relative z-10 text-green-1000">
-      <div class="mt-16 mb-4">
-        {% include "_partials/_elements/_banner-google-translate.twig" with { paddingTop: "pt-0" } %}
+  <div class="relative banner home-banner">
+    <div class="md:absolute md:inset-0 md:w-full md:h-full">
+      <div class="container relative z-10 text-green-1000">
+        <div class="mt-16 mb-4">
+          {% include "_partials/_elements/_banner-google-translate.twig" with { paddingTop: "pt-0" } %}
+        </div>
+        <div class="relative z-20 max-w-md p-6 bg-white rounded-sm">
+          <h1 class="mt-0 mb-4 text-2xl font-extrabold leading-tight md:text-3xl"><span class="block mb-3 text-xl uppercase">Your actions save lives.</span> Wear a mask, wash your hands, keep your distance.</h1>
+          <p class="my-0 leading-tight">
+            <b><a class="text-green-600" href="/topics/covid-19" class="">Get information & resources »</a></b>
+          </p>
+        </div>
       </div>
-      <div class="relative z-20 max-w-md p-6 bg-white rounded-sm">
-        <h1 class="mt-0 mb-4 text-2xl font-extrabold leading-tight md:text-3xl"><span class="block mb-3 text-xl uppercase">Your actions save lives.</span> Wear a mask, wash your hands, keep your distance.</h1>
-        <p class="my-0 leading-tight">
-          <b><a class="text-green-600" href="/topics/covid-19" class="">Get information & resources »</a></b>
-        </p>
-      </div>
+      <img
+        class="absolute inset-0 z-0 object-cover w-full h-full"
+        src="{{ bannerImage.url }}"
+        style="object-position:{{ bannerImage.getFocalPoint('asCss') }};"
+        alt="{{ bannerImage.title }}">
     </div>
-    <img
-      class="absolute inset-0 z-0 object-cover w-full h-full"
-      src="{{ bannerImage.url }}"
-      style="object-position:{{ bannerImage.getFocalPoint('asCss') }};"
-      alt="{{ bannerImage.title }}">
   </div>
 
   {% if cityServices | length %}
