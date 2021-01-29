@@ -203,6 +203,12 @@ main {
   @apply relative text-xl leading-loose text-white bg-white;
 }
 
+@media (min-width: theme("screens.md")) {
+  .home-banner {
+    padding-top: calc(6 / 16 * 100%);
+  }
+}
+
 /* Background Section Color Rotations */
 main .bg-rotate:nth-of-type(odd) {
   @apply bg-gray-100;
