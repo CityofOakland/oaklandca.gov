@@ -7,8 +7,8 @@
   RewriteCond %{HTTP_HOST} beta\.oaklandca.gov [NC]
   RewriteRule ^(.*)$ https://www.oaklandca.gov [R=301,NC,L]
 
-  RewriteCond %{HTTP:X-Forwarded-Port} !=443
-  RewriteRule (.*) https://%{HTTP_HOST}/$1 [R=301,L]
+  # RewriteCond %{HTTP:X-Forwarded-Port} !=443
+  # RewriteRule (.*) https://%{HTTP_HOST}/$1 [R=301,L]
 
   # Send would-be 404 requests to Craft
   RewriteCond %{REQUEST_FILENAME} !-f
