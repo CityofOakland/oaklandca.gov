@@ -58,6 +58,9 @@ return [
 
     // Dev Mode (see https://craftcms.com/support/dev-mode)
     'devMode' => true,
+
+    'backupCommand' => getenv('BACKUP_COMMAND'),
+    'restoreCommand' => getenv('RESTORE_COMMAND'),
   ],
 
   // Staging environment settings
