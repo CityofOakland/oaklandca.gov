@@ -72,7 +72,15 @@
     {{ craft.twigpack.includeJsModule("/js/manifest.js") }}
     {{ craft.twigpack.includeJsModule("/js/vendor.js") }}
     {{ craft.twigpack.includeJsModule("/js/app.js") }}
-    {% do craft.viewCount.increment(entry.id ?? event.id ?? category.id ?? '') %}
+
+    {% if entry is defined %}
+      {% do craft.viewCount.increment(entry.id) %}
+    {% elseif event is defined %}
+      {% do craft.viewCount.increment(event.id) %}
+    {% elseif category is defined %}
+      {% do craft.viewCount.increment(category.id) %}
+    {% endif %}
+
     {% set page = entry ?? null %}
     {% if craft.app.env == "production" %}
       {% for department in craft.entries.section("departments").type("departments").departmentCodeSnippet(":notempty:").all() %}
