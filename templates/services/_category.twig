@@ -18,7 +18,9 @@
           <li>
             <a class="block h-full p-5 transition-all duration-75 rounded shadow bg-cool-gray-100 text-cool-gray-800 hover:bg-cool-gray-200 hover:text-cool-gray-900" href="{{ entry.redirectUrl ?? entry.url ?? '' }}">
               <h3 class="mt-0 mb-4 text-lg text-gray-800 md:text-xl lg:text-2xl">{{ entry.title }}</h3>
-              {{ category.summary | retcon('attr', 'p', { class: 'mt-4 mb-0 text-gray-800 text-sm md:text-base' }) }}
+              {% if entry.leadIn %}
+                <p class="mt-4 mb-0 text-gray-800 text-sm md:text-base">{{ entry.leadIn }}</p>
+              {% endif %}
             </a>
           </li>
         {% endnav %}
