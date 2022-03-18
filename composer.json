@@ -6,7 +6,7 @@
     "vlucas/phpdotenv": "^2.4.0",
     "nystudio107/craft-typogrify": "1.1.18",
     "solspace/craft3-calendar": "3.1.0",
-    "nystudio107/craft-seomatic": "3.3.30",
+    "nystudio107/craft-seomatic": "3.4.12",
     "craftcms/store-hours": "2.1.1.1",
     "craftcms/redactor": "2.8.5",
     "verbb/redactor-tweaks": "2.0.4",
